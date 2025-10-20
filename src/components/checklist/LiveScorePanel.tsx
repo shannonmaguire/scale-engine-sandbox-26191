@@ -65,28 +65,28 @@ export const LiveScorePanel = ({
     if (overallProgress >= 86) return {
       icon: CheckCircle2,
       title: "Excellent",
-      message: "You're operating at a high level",
+      message: "Your systems operate at an advanced level",
       color: "text-green-600",
       bg: "bg-green-500/10"
     };
     if (overallProgress >= 71) return {
       icon: TrendingUp,
       title: "Strong",
-      message: "Solid foundation with room to optimize",
+      message: "Your foundation supports current operations and targeted optimization",
       color: "text-blue-600",
       bg: "bg-blue-500/10"
     };
     if (overallProgress >= 41) return {
       icon: AlertCircle,
-      title: "Fair",
-      message: "Good start, opportunities ahead",
+      title: "Developing",
+      message: "Your systems show early progress with substantial capacity for improvement",
       color: "text-yellow-600",
       bg: "bg-yellow-500/10"
     };
     return {
       icon: AlertCircle,
-      title: "Needs Work",
-      message: "Significant improvement opportunities",
+      title: "Foundational",
+      message: "Your systems require structural improvements across multiple areas",
       color: "text-red-600",
       bg: "bg-red-500/10"
     };
@@ -160,7 +160,7 @@ export const LiveScorePanel = ({
           </Button>
           {unansweredCount > 0 && answeredItems > 0 && (
             <p className="text-xs text-center text-muted-foreground">
-              You can download now or complete all questions for full insights
+              Results are available now with partial data or upon completion for comprehensive analysis
             </p>
           )}
         </div>

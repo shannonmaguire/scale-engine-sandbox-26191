@@ -12,29 +12,29 @@ export const ResultsHero = ({ score, totalItems, completedItems }: ResultsHeroPr
   const getScoreInsight = (score: number) => {
     if (score >= 86) return {
       icon: Trophy,
-      title: "Outstanding Performance!",
-      message: "You're operating at an exceptional level. Your systems are well-positioned for scale.",
+      title: "Advanced",
+      message: "Your systems operate at an exceptional level with capacity for sustained growth and complexity.",
       color: "text-green-600",
       bg: "bg-green-500/10"
     };
     if (score >= 71) return {
       icon: TrendingUp,
-      title: "Strong Foundation",
-      message: "You're doing great! A few optimizations will take you to the next level.",
+      title: "Established",
+      message: "Your foundation supports current operations with defined paths toward optimization.",
       color: "text-blue-600",
       bg: "bg-blue-500/10"
     };
     if (score >= 41) return {
       icon: AlertCircle,
-      title: "Room for Improvement",
-      message: "You're on the right track. Some focused improvements will make a big difference.",
+      title: "Developing",
+      message: "Your systems demonstrate early structure with substantial opportunity for systematic improvement.",
       color: "text-yellow-600",
       bg: "bg-yellow-500/10"
     };
     return {
       icon: AlertCircle,
-      title: "Time to Level Up",
-      message: "Your systems need attention. Let's identify the quick wins that will move the needle.",
+      title: "Foundational",
+      message: "Your systems require structural development across operational, technical, and process dimensions.",
       color: "text-red-600",
       bg: "bg-red-500/10"
     };
@@ -103,10 +103,10 @@ export const ResultsHero = ({ score, totalItems, completedItems }: ResultsHeroPr
       {/* Comparison (Optional Enhancement) */}
       {score < 100 && (
         <div className="text-sm text-muted-foreground font-mono">
-          {score >= 86 && "You're in the top 15% of teams. Keep it up!"}
-          {score >= 71 && score < 86 && "You're performing better than 60% of similar companies."}
-          {score >= 41 && score < 71 && "With some focused work, you can join the top performers."}
-          {score < 41 && "Every point of improvement translates to real business impact."}
+          {score >= 86 && "Your performance places you among the top 15% of assessed organizations."}
+          {score >= 71 && score < 86 && "Your systems exceed 60% of comparable implementations."}
+          {score >= 41 && score < 71 && "Targeted improvements position you within the upper performance tier."}
+          {score < 41 && "Each improvement point correlates directly with operational efficiency gains."}
         </div>
       )}
     </div>

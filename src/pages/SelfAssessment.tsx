@@ -31,9 +31,9 @@ const SelfAssessment = () => {
       <div className="container-standard py-12">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h1 className="heading-page mb-6">How Mature Are Your Revenue Systems?</h1>
+          <h1 className="heading-page mb-6">Technical Maturity Assessment</h1>
           <p className="text-description">
-            Answer 42 questions about your systems. Get instant scoring and personalized recommendations.
+            Evaluate your revenue systems through 42 questions that measure operational readiness, technical debt, and execution capacity. Results include scoring and specific recommendations based on your current state.
           </p>
         </div>
 
