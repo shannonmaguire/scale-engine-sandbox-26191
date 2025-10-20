@@ -154,7 +154,7 @@ const SampleReport = () => {
         <div className="max-w-5xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <img src={cwtLogo} alt="CWT Studio" className="h-8 w-8 opacity-60" />
+              <img src={cwtLogo} alt="CWT Studio" className="h-8 w-8" />
               <div>
                 <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider">CONFIDENTIAL ASSESSMENT REPORT</div>
                 <div className="text-sm font-mono font-bold text-foreground">CWT-2025-0142 • March 2025 • Version 1.0</div>
@@ -349,28 +349,28 @@ const SampleReport = () => {
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">Salesforce Sales Cloud</span>
-                    <Badge className="text-xs bg-secondary/20 text-secondary">Active</Badge>
+                    <Badge variant="outline" className="text-xs border-border text-foreground bg-background font-mono">Active</Badge>
                   </div>
                   <div className="text-xs text-muted-foreground">Utilization: 23% • Health: Good • Version: Enterprise</div>
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">HubSpot Marketing</span>
-                    <Badge className="text-xs bg-accent/20 text-accent">Partial</Badge>
+                    <Badge variant="outline" className="text-xs border-border text-muted-foreground bg-muted/20 font-mono">Partial</Badge>
                   </div>
                   <div className="text-xs text-muted-foreground">Utilization: 45% • Health: Warning • Integration: Limited</div>
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">Gong.io</span>
-                    <Badge className="text-xs bg-secondary/20 text-secondary">Active</Badge>
+                    <Badge variant="outline" className="text-xs border-border text-foreground bg-background font-mono">Active</Badge>
                   </div>
                   <div className="text-xs text-muted-foreground">Utilization: 78% • Health: Excellent • Data: Not synced</div>
                 </div>
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">Outreach.io</span>
-                    <Badge className="text-xs bg-primary/20 text-primary">Issues</Badge>
+                    <Badge variant="outline" className="text-xs border-border text-foreground bg-muted/20 font-mono">Issues</Badge>
                   </div>
                   <div className="text-xs text-muted-foreground">Utilization: 34% • Health: Critical • Integration: Broken</div>
                 </div>
@@ -384,28 +384,28 @@ const SampleReport = () => {
                 </h3>
                 <div className="space-y-3">
                 <div className="flex items-start gap-2">
-                  <AlertTriangle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                  <AlertTriangle className="w-4 h-4 text-foreground mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">Salesforce ↔ Marketing Automation</p>
                     <p className="text-xs text-muted-foreground mt-1">Manual data entry creating 18-hour weekly burden</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <AlertTriangle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                  <AlertTriangle className="w-4 h-4 text-foreground mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">Gong ↔ Salesforce</p>
                     <p className="text-xs text-muted-foreground mt-1">Call insights not flowing to CRM records</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <AlertTriangle className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                  <AlertTriangle className="w-4 h-4 text-muted-foreground mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">BI Tool Connection</p>
                     <p className="text-xs text-muted-foreground mt-1">No direct reporting pipeline, manual exports</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
-                  <AlertTriangle className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
+                  <AlertTriangle className="w-4 h-4 text-muted-foreground mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">CPQ System</p>
                   <p className="text-xs text-muted-foreground mt-1">Quote generation disconnected from pipeline</p>
@@ -426,23 +426,23 @@ const SampleReport = () => {
                   Critical Issues (High Priority)
                 </h3>
                 <div className="space-y-4">
-                <div className="border-l-2 border-primary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Data Quality Crisis</p>
                   <p className="text-xs text-muted-foreground">47% of leads lack proper attribution data. 12,300+ duplicate records. $2.3M pipeline affected.</p>
                 </div>
-                <div className="border-l-2 border-primary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">No Lead Scoring</p>
                   <p className="text-xs text-muted-foreground">Reps manually evaluating every lead. 40% of time wasted on unqualified prospects.</p>
                 </div>
-                <div className="border-l-2 border-primary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Pipeline Stage Confusion</p>
                   <p className="text-xs text-muted-foreground">No clear exit criteria. 62% of deals lack proper qualification. Forecast accuracy at 73%.</p>
                 </div>
-                <div className="border-l-2 border-primary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Manual Reporting Burden</p>
                   <p className="text-xs text-muted-foreground">15 hours weekly spent on manual reports. No real-time dashboards. Insights lag by 3-5 days.</p>
                 </div>
-                <div className="border-l-2 border-accent pl-3">
+                <div className="border-l-2 border-muted-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Integration Failures</p>
                   <p className="text-xs text-muted-foreground">4 broken integrations. Double-entry in 6 workflows. Data sync errors weekly.</p>
                 </div>
@@ -455,23 +455,23 @@ const SampleReport = () => {
                   Strengths & Opportunities
                 </h3>
                 <div className="space-y-4">
-                <div className="border-l-2 border-secondary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Strong Technology Foundation</p>
                   <p className="text-xs text-muted-foreground">Salesforce Enterprise properly configured. Good bones for automation expansion.</p>
                 </div>
-                <div className="border-l-2 border-secondary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Excellent Process Documentation</p>
                   <p className="text-xs text-muted-foreground">Well-documented workflows and SOPs. Easy to scale once tech is optimized.</p>
                 </div>
-                <div className="border-l-2 border-secondary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Team Alignment</p>
                   <p className="text-xs text-muted-foreground">Leadership and reps aligned on revenue goals. High adoption readiness.</p>
                 </div>
-                <div className="border-l-2 border-secondary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Data-Driven Culture</p>
                   <p className="text-xs text-muted-foreground">Team values metrics and wants better insights. Low resistance to change.</p>
                 </div>
-                <div className="border-l-2 border-secondary pl-3">
+                <div className="border-l-2 border-foreground pl-3">
                   <p className="text-sm font-medium mb-1">Quick Win Potential</p>
                   <p className="text-xs text-muted-foreground">Several high-impact, low-effort improvements identified. Can show ROI in 30 days.</p>
                 </div>
@@ -487,15 +487,15 @@ const SampleReport = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-3">
-                    <Shield className="w-5 h-5 text-primary" />
+                    <Shield className="w-5 h-5 text-foreground" />
                     <h3 className="font-mono font-bold">High Risk</h3>
                   </div>
                   <div className="space-y-2">
-                    <div className="p-3 bg-primary/10 border border-primary/20 rounded">
+                    <div className="p-3 bg-muted/30 border border-border rounded">
                       <p className="text-sm font-medium mb-1">Data Integrity</p>
                       <p className="text-xs text-muted-foreground">Poor data quality will compound with scale</p>
                     </div>
-                    <div className="p-3 bg-primary/10 border border-primary/20 rounded">
+                    <div className="p-3 bg-muted/30 border border-border rounded">
                       <p className="text-sm font-medium mb-1">Rep Productivity</p>
                       <p className="text-xs text-muted-foreground">40% efficiency loss vs benchmark</p>
                     </div>
@@ -503,15 +503,15 @@ const SampleReport = () => {
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-3">
-                    <Shield className="w-5 h-5 text-accent" />
+                    <Shield className="w-5 h-5 text-muted-foreground" />
                     <h3 className="font-mono font-bold">Medium Risk</h3>
                   </div>
                   <div className="space-y-2">
-                    <div className="p-3 bg-accent/10 border border-accent/20 rounded">
+                    <div className="p-3 bg-muted/20 border border-border rounded">
                       <p className="text-sm font-medium mb-1">Forecast Accuracy</p>
                       <p className="text-xs text-muted-foreground">73% accuracy creates planning issues</p>
                     </div>
-                    <div className="p-3 bg-accent/10 border border-accent/20 rounded">
+                    <div className="p-3 bg-muted/20 border border-border rounded">
                       <p className="text-sm font-medium mb-1">Tool Adoption</p>
                       <p className="text-xs text-muted-foreground">Low utilization of available features</p>
                     </div>
@@ -519,15 +519,15 @@ const SampleReport = () => {
                 </div>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-3">
-                    <Shield className="w-5 h-5 text-secondary" />
+                    <Shield className="w-5 h-5 text-muted-foreground" />
                     <h3 className="font-mono font-bold">Low Risk</h3>
                   </div>
                   <div className="space-y-2">
-                    <div className="p-3 bg-secondary/10 border border-secondary/20 rounded">
+                    <div className="p-3 bg-muted/10 border border-border rounded">
                       <p className="text-sm font-medium mb-1">Team Readiness</p>
                       <p className="text-xs text-muted-foreground">High willingness to adopt changes</p>
                     </div>
-                    <div className="p-3 bg-secondary/10 border border-secondary/20 rounded">
+                    <div className="p-3 bg-muted/10 border border-border rounded">
                       <p className="text-sm font-medium mb-1">Infrastructure</p>
                       <p className="text-xs text-muted-foreground">Solid foundation to build upon</p>
                     </div>
@@ -558,43 +558,43 @@ const SampleReport = () => {
                       <td className="py-3 px-4 text-sm">Lead Response Time</td>
                       <td className="text-center py-3 px-4 text-sm">4.2 hrs</td>
                       <td className="text-center py-3 px-4 text-sm">2.1 hrs</td>
-                      <td className="text-center py-3 px-4 text-sm text-secondary font-medium">0.5 hrs</td>
-                      <td className="text-center py-3 px-4 text-sm text-primary">-87%</td>
+                      <td className="text-center py-3 px-4 text-sm text-foreground font-medium">0.5 hrs</td>
+                      <td className="text-center py-3 px-4 text-sm text-muted-foreground">-87%</td>
                     </tr>
                     <tr className="border-b border-border">
                       <td className="py-3 px-4 text-sm">Data Completeness</td>
                       <td className="text-center py-3 px-4 text-sm">53%</td>
                       <td className="text-center py-3 px-4 text-sm">82%</td>
-                      <td className="text-center py-3 px-4 text-sm text-secondary font-medium">95%</td>
-                      <td className="text-center py-3 px-4 text-sm text-primary">-44%</td>
+                      <td className="text-center py-3 px-4 text-sm text-foreground font-medium">95%</td>
+                      <td className="text-center py-3 px-4 text-sm text-muted-foreground">-44%</td>
                     </tr>
                     <tr className="border-b border-border">
                       <td className="py-3 px-4 text-sm">Sales Cycle Length</td>
                       <td className="text-center py-3 px-4 text-sm">89 days</td>
                       <td className="text-center py-3 px-4 text-sm">67 days</td>
-                      <td className="text-center py-3 px-4 text-sm text-secondary font-medium">45 days</td>
-                      <td className="text-center py-3 px-4 text-sm text-primary">-49%</td>
+                      <td className="text-center py-3 px-4 text-sm text-foreground font-medium">45 days</td>
+                      <td className="text-center py-3 px-4 text-sm text-muted-foreground">-49%</td>
                     </tr>
                     <tr className="border-b border-border">
                       <td className="py-3 px-4 text-sm">Win Rate</td>
                       <td className="text-center py-3 px-4 text-sm">18%</td>
                       <td className="text-center py-3 px-4 text-sm">24%</td>
-                      <td className="text-center py-3 px-4 text-sm text-secondary font-medium">35%</td>
-                      <td className="text-center py-3 px-4 text-sm text-primary">-49%</td>
+                      <td className="text-center py-3 px-4 text-sm text-foreground font-medium">35%</td>
+                      <td className="text-center py-3 px-4 text-sm text-muted-foreground">-49%</td>
                     </tr>
                     <tr className="border-b border-border">
                       <td className="py-3 px-4 text-sm">Forecast Accuracy</td>
                       <td className="text-center py-3 px-4 text-sm">73%</td>
                       <td className="text-center py-3 px-4 text-sm">85%</td>
-                      <td className="text-center py-3 px-4 text-sm text-secondary font-medium">92%</td>
-                      <td className="text-center py-3 px-4 text-sm text-accent">-21%</td>
+                      <td className="text-center py-3 px-4 text-sm text-foreground font-medium">92%</td>
+                      <td className="text-center py-3 px-4 text-sm text-muted-foreground">-21%</td>
                     </tr>
                     <tr>
                       <td className="py-3 px-4 text-sm">Rep Quota Attainment</td>
                       <td className="text-center py-3 px-4 text-sm">64%</td>
                       <td className="text-center py-3 px-4 text-sm">78%</td>
-                      <td className="text-center py-3 px-4 text-sm text-secondary font-medium">89%</td>
-                      <td className="text-center py-3 px-4 text-sm text-primary">-28%</td>
+                      <td className="text-center py-3 px-4 text-sm text-foreground font-medium">89%</td>
+                      <td className="text-center py-3 px-4 text-sm text-muted-foreground">-28%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -608,7 +608,7 @@ const SampleReport = () => {
               <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">8.0 Executive Summary</h2>
             <div className="prose prose-gray max-w-none space-y-6">
               <div>
-                <p className="text-sm font-mono text-primary mb-2">CURRENT STATE</p>
+                <p className="text-sm font-mono text-foreground font-bold mb-2">CURRENT STATE</p>
                 <p className="text-muted-foreground leading-relaxed">
                   TechCorp has built solid technology foundations with Salesforce Enterprise and complementary tools, 
                   but is significantly underutilizing these investments (23% feature adoption). Critical data quality 
@@ -619,7 +619,7 @@ const SampleReport = () => {
               </div>
               
               <div>
-                <p className="text-sm font-mono text-primary mb-2">PRIMARY RISKS</p>
+                <p className="text-sm font-mono text-foreground font-bold mb-2">PRIMARY RISKS</p>
                 <p className="text-muted-foreground leading-relaxed">
                   Without immediate data hygiene improvements, continued growth will compound existing inefficiencies 
                   at scale. Current state represents a 47% efficiency gap versus industry leaders: sales team productivity 
@@ -630,7 +630,7 @@ const SampleReport = () => {
               </div>
 
               <div>
-                <p className="text-sm font-mono text-primary mb-2">OPPORTUNITY</p>
+                <p className="text-sm font-mono text-foreground font-bold mb-2">OPPORTUNITY</p>
                 <p className="text-muted-foreground leading-relaxed">
                   The combination of strong foundations and clear gaps creates exceptional ROI potential. Six prioritized 
                   initiatives over 90 days can deliver $1.02M in annual value through efficiency gains, productivity 
@@ -640,7 +640,7 @@ const SampleReport = () => {
               </div>
               
               <div>
-                <p className="text-sm font-mono text-primary mb-2">RECOMMENDATION</p>
+                <p className="text-sm font-mono text-foreground font-bold mb-2">RECOMMENDATION</p>
                 <p className="text-muted-foreground leading-relaxed">
                   Implement the 6-phase roadmap over 90 days, sequenced to deliver quick wins while building toward 
                   sustainable infrastructure improvements. Expected outcomes: 30-35% improvement in sales efficiency, 
@@ -652,19 +652,19 @@ const SampleReport = () => {
               <div className="mt-8 pt-6 border-t border-border">
                 <div className="grid md:grid-cols-4 gap-4">
                   <div className="text-center p-4 bg-muted/30 rounded">
-                    <div className="text-2xl font-bold text-secondary">$1.02M</div>
+                    <div className="text-2xl font-bold text-foreground">$1.02M</div>
                     <div className="text-xs text-muted-foreground mt-1">Annual ROI</div>
                   </div>
                   <div className="text-center p-4 bg-muted/30 rounded">
-                    <div className="text-2xl font-bold text-accent">90 Days</div>
+                    <div className="text-2xl font-bold text-foreground">90 Days</div>
                     <div className="text-xs text-muted-foreground mt-1">Implementation</div>
                   </div>
                   <div className="text-center p-4 bg-muted/30 rounded">
-                    <div className="text-2xl font-bold text-primary">4.2 Mo</div>
+                    <div className="text-2xl font-bold text-foreground">4.2 Mo</div>
                     <div className="text-xs text-muted-foreground mt-1">Payback Period</div>
                   </div>
                   <div className="text-center p-4 bg-muted/30 rounded">
-                    <div className="text-2xl font-bold text-secondary">35%</div>
+                    <div className="text-2xl font-bold text-foreground">35%</div>
                     <div className="text-xs text-muted-foreground mt-1">Efficiency Gain</div>
                   </div>
                 </div>
