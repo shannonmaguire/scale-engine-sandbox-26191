@@ -202,9 +202,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </Section>
 
-      <Section variant="muted">
         {/* Working with Us */}
         <div>
           <div className="bg-card border border-border rounded-lg p-8">
