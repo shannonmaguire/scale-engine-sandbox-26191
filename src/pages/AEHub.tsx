@@ -61,29 +61,35 @@ export default function AEHub() {
         </div>
       </Section>
 
-      {/* Support Response Times */}
-      <Section variant="standard">
-        <div className="max-w-5xl mx-auto space-y-8">
+      {/* Support Response Times - Compact Table */}
+      <Section variant="muted">
+        <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-3xl font-bold text-center">Support Response Times</h2>
           
-          <div className="grid md:grid-cols-4 gap-4">
-            {supportTiers.map((tier, index) => (
-              <Card key={tier.tier} className="p-6 border-accent-data/30">
-                <div className="space-y-3">
-                  <div className="text-2xl">
-                    {index === 0 ? '🔴' : index === 1 ? '🟠' : index === 2 ? '🟡' : '⚪'}
+          <Card className="border-accent-data/30">
+            <CardContent className="p-0">
+              <div className="divide-y divide-border">
+                {supportTiers.map((tier, index) => (
+                  <div key={tier.tier} className="flex items-center justify-between p-6 hover:bg-accent-data/5 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <div className="text-2xl">
+                        {index === 0 ? '🔴' : index === 1 ? '🟠' : index === 2 ? '🟡' : '⚪'}
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg">{tier.tier}</p>
+                        <p className="text-sm text-muted-foreground">{tier.example}</p>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-lg font-semibold text-accent-data">{tier.responseTime}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-lg">{tier.tier}</p>
-                    <p className="text-sm text-accent-data font-medium">{tier.responseTime}</p>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{tier.example}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
-          <div className="text-center pt-4">
+          <div className="text-center">
             <Button size="lg" className="bg-accent-data hover:bg-accent-data/90" onClick={() => navigate('/ae-technical-support')}>
               Submit Support Request
             </Button>
@@ -92,138 +98,144 @@ export default function AEHub() {
       </Section>
 
       {/* Top 3 Tools */}
-      <Section id="resources" variant="muted">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <h2 className="text-3xl font-bold text-center">Top 3 Tools</h2>
+      <Section id="resources" variant="standard">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-3xl font-bold text-center">Essential Tools</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center space-y-3">
-            <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
-              <ClipboardCheck className="w-8 h-8 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold">Assessment Framework</h3>
-            <p className="text-sm text-muted-foreground">
-              Discovery guide to qualify technical fit and identify deal risks in 15 minutes
-            </p>
-          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="text-center p-8 border-accent-data/30 hover:border-accent-data/50 transition-all hover-scale">
+              <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto mb-4">
+                <ClipboardCheck className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Assessment Framework</h3>
+              <p className="text-sm text-muted-foreground">
+                15-minute qualification guide
+              </p>
+            </Card>
 
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
+            <Card className="text-center p-8 border-accent-data/30 hover:border-accent-data/50 transition-all hover-scale">
+              <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto mb-4">
                 <Calculator className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold">ROI Calculator</h3>
+              <h3 className="text-lg font-semibold mb-2">ROI Calculator</h3>
               <p className="text-sm text-muted-foreground">
-                Spreadsheet template to quantify cost savings and efficiency gains for prospects
+                Quantify savings for prospects
               </p>
-            </div>
+            </Card>
 
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
+            <Card className="text-center p-8 border-accent-data/30 hover:border-accent-data/50 transition-all hover-scale">
+              <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold">Battle Cards</h3>
+              <h3 className="text-lg font-semibold mb-2">Battle Cards</h3>
               <p className="text-sm text-muted-foreground">
-                Response templates for common objections and competitive scenarios
+                Objection response templates
               </p>
-            </div>
+            </Card>
           </div>
 
-          <div className="text-center pt-4">
-            <Button size="lg" variant="outline" onClick={() => setIsResourceModalOpen(true)}>
-              <Download className="mr-2 h-5 w-5" />
-              Download Resources
-            </Button>
-          </div>
-        </div>
-      </Section>
-
-      {/* Quick Wins */}
-      <Section variant="standard">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <h2 className="text-3xl font-bold text-center">Quick Win Scenarios</h2>
-          
-          <div className="space-y-4">
-            {quickWins.map((win, index) => (
-              <Card key={index} className="p-6 border-accent-data/30">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent-data/20 flex items-center justify-center">
-                    <span className="text-lg font-bold text-accent-data">{index + 1}</span>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="font-semibold">{win.scenario}</p>
-                    <p className="text-sm text-muted-foreground">{win.action}</p>
-                    <p className="text-sm text-accent-data font-medium">{win.result}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Objections */}
-      <Section variant="muted">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <h2 className="text-3xl font-bold text-center">Top 3 Objections</h2>
-          <ObjectionFramework />
           <div className="text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link to="/ae-objection-library">
-                View Full Objection Library
-              </Link>
+            <Button size="lg" variant="outline" onClick={() => setIsResourceModalOpen(true)} className="border-accent-data text-accent-data hover:bg-accent-data/10">
+              <Download className="mr-2 h-5 w-5" />
+              Download Resource Pack
             </Button>
           </div>
         </div>
       </Section>
 
-      {/* What We Do */}
-      <Section variant="standard">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">What We Do</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="p-6 border-accent-data/30">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <AlertCircle className="w-5 h-5 text-accent-data" />
-                When to Bring Us In
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li>→ Deal qualification (tech fit, scope)</li>
-                <li>→ Technical objections or stalls</li>
-                <li>→ Discovery call prep</li>
-                <li>→ Competitive scenarios</li>
-                <li>→ ROI validation</li>
-              </ul>
-            </Card>
-
-            <Card className="p-6 border-accent/30">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-accent" />
-                What We Provide
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li><strong>15-minute assessments:</strong> Same-day technical validation</li>
-                <li><strong>Prospect call support:</strong> Join as technical advisor</li>
-                <li><strong>Deal-specific positioning:</strong> Custom battle cards and messaging</li>
-                <li><strong>Proposal drafts:</strong> Scope and estimate documents</li>
-                <li><strong>Red flag analysis:</strong> Early identification of bad-fit deals</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </Section>
-
-      {/* Links */}
+      {/* What We Do - Single Clear Section */}
       <Section variant="muted">
-        <div className="max-w-3xl mx-auto text-center space-y-6">
-          <h2 className="text-2xl font-bold">More Resources</h2>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button asChild variant="outline" size="lg" className="border-accent-data text-accent-data hover:bg-accent-data/10">
-              <Link to="/salesforce/partners">Deal Playbook</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-accent-data text-accent-data hover:bg-accent-data/10">
-              <Link to="/ae-objection-library">Objection Library</Link>
-            </Button>
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h2 className="text-3xl font-bold text-center">What We Provide</h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="p-8 border-accent-data/30">
+              <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-accent-data" />
+                When to Engage
+              </h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex gap-3">
+                  <span className="text-accent-data">→</span>
+                  <span>Technical qualification and scoping</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent-data">→</span>
+                  <span>Deal stalled on objections</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent-data">→</span>
+                  <span>Discovery call preparation</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent-data">→</span>
+                  <span>Competitive displacement</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent-data">→</span>
+                  <span>ROI validation needed</span>
+                </li>
+              </ul>
+            </Card>
+
+            <Card className="p-8 border-accent/30">
+              <h3 className="text-xl font-semibold mb-6 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-accent" />
+                Support Delivered
+              </h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex gap-3">
+                  <span className="text-accent">→</span>
+                  <span><strong>Technical validation:</strong> Same-day feedback</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">→</span>
+                  <span><strong>Prospect calls:</strong> Join as technical advisor</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">→</span>
+                  <span><strong>Custom positioning:</strong> Deal-specific battle cards</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">→</span>
+                  <span><strong>Proposal drafts:</strong> Scope and estimates</span>
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-accent">→</span>
+                  <span><strong>Red flags:</strong> Early bad-fit identification</span>
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </Section>
+
+      {/* Resource Links */}
+      <Section variant="standard">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <h2 className="text-3xl font-bold">Additional Resources</h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <Card className="p-8 border-accent-data/30 hover:border-accent-data transition-all hover-scale group">
+              <FileText className="w-12 h-12 text-accent-data mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-semibold mb-2">Deal Playbook</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Technical collaboration framework and positioning guides
+              </p>
+              <Button asChild variant="outline" className="w-full border-accent-data text-accent-data hover:bg-accent-data/10">
+                <Link to="/salesforce/partners">View Playbook</Link>
+              </Button>
+            </Card>
+
+            <Card className="p-8 border-accent-data/30 hover:border-accent-data transition-all hover-scale group">
+              <MessageSquare className="w-12 h-12 text-accent-data mx-auto mb-4 group-hover:scale-110 transition-transform" />
+              <h3 className="text-xl font-semibold mb-2">Objection Library</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                500+ tested responses with discovery frameworks
+              </p>
+              <Button asChild variant="outline" className="w-full border-accent-data text-accent-data hover:bg-accent-data/10">
+                <Link to="/ae-objection-library">Browse Objections</Link>
+              </Button>
+            </Card>
           </div>
         </div>
       </Section>
