@@ -485,13 +485,13 @@ const SampleReport = () => {
             <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">6.0 Risk Assessment</h2>
             <div className="border border-border rounded bg-background p-6">
               <div className="grid grid-cols-3 gap-6">
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield className="w-5 h-5 text-foreground" />
                     <h3 className="font-mono font-bold">High Risk</h3>
                   </div>
-                  <div className="space-y-2">
-                    <div className="p-3 bg-muted/30 border border-border rounded">
+                  <div className="space-y-2 flex-1">
+                    <div className="p-3 bg-muted/30 border border-border rounded h-full">
                       <p className="text-sm font-medium mb-1">Data Integrity</p>
                       <p className="text-xs text-muted-foreground">Poor data quality will compound with scale</p>
                     </div>
@@ -501,13 +501,13 @@ const SampleReport = () => {
                     </div>
                   </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield className="w-5 h-5 text-muted-foreground" />
                     <h3 className="font-mono font-bold">Medium Risk</h3>
                   </div>
-                  <div className="space-y-2">
-                    <div className="p-3 bg-muted/20 border border-border rounded">
+                  <div className="space-y-2 flex-1">
+                    <div className="p-3 bg-muted/20 border border-border rounded h-full">
                       <p className="text-sm font-medium mb-1">Forecast Accuracy</p>
                       <p className="text-xs text-muted-foreground">73% accuracy creates planning issues</p>
                     </div>
@@ -517,13 +517,13 @@ const SampleReport = () => {
                     </div>
                   </div>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield className="w-5 h-5 text-muted-foreground" />
                     <h3 className="font-mono font-bold">Low Risk</h3>
                   </div>
-                  <div className="space-y-2">
-                    <div className="p-3 bg-muted/10 border border-border rounded">
+                  <div className="space-y-2 flex-1">
+                    <div className="p-3 bg-muted/10 border border-border rounded h-full">
                       <p className="text-sm font-medium mb-1">Team Readiness</p>
                       <p className="text-xs text-muted-foreground">High willingness to adopt changes</p>
                     </div>
