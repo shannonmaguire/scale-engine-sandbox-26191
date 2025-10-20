@@ -62,10 +62,10 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "FREE interactive checklist, no email required. 47 points covering content, assets, integrations, and stakeholder alignment. Prevents $15K+ in scope creep. Export results to PDF.",
+    description: "FREE download, no email required. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents $15K+ in scope creep.",
     icon: CheckSquare,
     category: "Planning",
-    downloadUrl: "/website-readiness-checklist"
+    downloadUrl: "/pdfs/website-readiness-checklist.pdf"
   },
   {
     id: "vendor-handoff-sop",
@@ -82,10 +82,10 @@ const Resources = () => {
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
 
   const handleDownloadClick = (resource: Resource) => {
-    // Free interactive checklist - navigate to page
+    // Free download - no email required
     if (resource.id === 'website-readiness-checklist') {
-      window.location.href = '/website-readiness-checklist';
-      trackEvent('free_resource_accessed', {
+      window.open(resource.downloadUrl, '_blank');
+      trackEvent('free_resource_downloaded', {
         resourceId: resource.id,
         resourceTitle: resource.title,
         location: 'resources_page',
@@ -182,17 +182,8 @@ const Resources = () => {
                     variant={isFree ? "default" : "outline"}
                     onClick={() => handleDownloadClick(resource)}
                   >
-                    {isFree ? (
-                      <>
-                        <CheckCircle className="mr-2 h-4 w-4" />
-                        Start Checklist
-                      </>
-                    ) : (
-                      <>
-                        <Download className="mr-2 h-4 w-4" />
-                        Get Resource
-                      </>
-                    )}
+                    <Download className="mr-2 h-4 w-4" />
+                    {isFree ? "Download Free" : "Get Resource"}
                   </Button>
                 </StandardCard>
               );
