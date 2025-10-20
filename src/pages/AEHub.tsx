@@ -218,10 +218,10 @@ export default function AEHub() {
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="text-2xl font-bold">More Resources</h2>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button asChild variant="outline" size="lg" className="border-accent-data/30 text-accent-data">
+            <Button asChild variant="outline" size="lg" className="border-accent-data text-accent-data hover:bg-accent-data/10">
               <Link to="/salesforce/partners">Deal Playbook</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-accent-data/30 text-accent-data">
+            <Button asChild variant="outline" size="lg" className="border-accent-data text-accent-data hover:bg-accent-data/10">
               <Link to="/ae-objection-library">Objection Library</Link>
             </Button>
           </div>
