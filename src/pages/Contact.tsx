@@ -132,8 +132,10 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
           <div className="text-center mb-20">
-            <div className="inline-block system-status mb-6">
-              CONTACT
+            <div className="flex justify-center mb-6">
+              <div className="system-status">
+                CONTACT
+              </div>
             </div>
             <h1 className="heading-page mb-4">
               Let's Talk
