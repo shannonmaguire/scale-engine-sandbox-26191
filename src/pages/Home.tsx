@@ -126,7 +126,7 @@ const Home = () => {
         
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div key={index} className="border-l-4 border-primary pl-6">
+            <div key={index} className="border-l-4 border-primary pl-6 flex flex-col">
               <div className="font-mono text-sm text-muted-foreground mb-2">{String(index + 1).padStart(2, '0')}</div>
               <h3 className="heading-subsection mb-2">{service.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
@@ -143,6 +143,8 @@ const Home = () => {
                   <span className="text-primary">{service.price}</span>
                 </div>
               </div>
+              
+              <div className="flex-grow" />
               
               <Button asChild className="w-full" size="sm">
                 <Link to={service.link}>{service.cta}</Link>
