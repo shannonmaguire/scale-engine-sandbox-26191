@@ -3,19 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
 import cwtLogo from "@/assets/cwt-logo-white.svg";
 import { memo } from "react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-[hsl(var(--burgundy))] text-white border-t border-white/10">
       <div className=" mx-auto px-6 sm:px-8 py-16">
         {/* Logo + Tagline */}
         <div className="mb-12">
-          <img 
-            src={cwtLogo} 
-            alt="CWT Studio" 
-            className="h-[36px] sm:h-[42px] md:h-12 w-auto mb-4 hover:opacity-90 transition-opacity"
-            style={{ imageRendering: 'crisp-edges' }}
-          />
+          <img src={cwtLogo} alt="CWT Studio" className="h-[36px] sm:h-[42px] md:h-12 w-auto mb-4 hover:opacity-90 transition-opacity" style={{
+          imageRendering: 'crisp-edges'
+        }} />
           <p className="text-white/60 font-mono text-sm max-w-md">
             Infrastructure that compounds
           </p>
@@ -30,9 +26,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  View All Services
-                </Link>
+                
               </li>
               <li>
                 <Link to="/assessment" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
@@ -170,5 +164,4 @@ const Footer = () => {
       </div>
     </footer>;
 };
-
 export default memo(Footer);
