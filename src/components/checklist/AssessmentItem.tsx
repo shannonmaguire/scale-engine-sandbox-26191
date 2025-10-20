@@ -34,10 +34,7 @@ export const AssessmentItem = ({
   };
 
   const getBackgroundColor = () => {
-    if (!value) return "bg-card";
-    if (value === "yes") return "bg-green-500/5";
-    if (value === "partial") return "bg-yellow-500/5";
-    return "bg-red-500/5";
+    return "bg-card";
   };
 
   return (
@@ -57,7 +54,7 @@ export const AssessmentItem = ({
             {label}
           </label>
           {helpText && (
-            <TooltipProvider>
+            <TooltipProvider delayDuration={0}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <button
