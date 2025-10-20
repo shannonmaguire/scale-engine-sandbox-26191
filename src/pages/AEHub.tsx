@@ -35,17 +35,17 @@ export default function AEHub() {
     example: "Exploring partnership, want to learn more"
   }];
   const quickWins = [{
-    scenario: "Data quality issues mentioned",
-    action: "Offer free 1-hour assessment",
-    result: "Surface 3-5 quick wins → Assessment"
+    scenario: "Prospect mentions data quality issues",
+    action: "Offer complimentary 1-hour assessment to surface quick wins",
+    result: "3-5 immediate improvements identified, converts to paid assessment"
   }, {
     scenario: "Deal stalled on technical objections",
-    action: "Request support (we join call)",
-    result: "Real-time resolution → Deal unstuck"
+    action: "Request support to join prospect call as technical advisor",
+    result: "Real-time validation unsticks deal momentum"
   }, {
-    scenario: "Prospect unsure about ROI",
-    action: "Share qualification calculator",
-    result: "Quantified value → Executive buy-in"
+    scenario: "Prospect uncertain about return on investment",
+    action: "Share ROI qualification calculator with concrete savings model",
+    result: "Quantified value creates executive buy-in"
   }];
   return <div className="min-h-screen">
       <SEOHead title="AE Resource Hub - Technical Support for Salesforce Deals | CWT Studio" description="Technical backstop for Account Executives selling Salesforce services. Request support, download tools, and access deal playbooks." canonicalUrl="https://coalescentwebtech.com/ae-hub" />
@@ -53,10 +53,10 @@ export default function AEHub() {
       {/* Hero */}
       <Section variant="standard" className="pt-20 pb-12">
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          <div className="system-status">AE RESOURCES</div>
+          <div className="system-status">ACCOUNT EXECUTIVE RESOURCES</div>
           <h1 className="heading-page">AE Resource Hub</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Tools, support, and playbooks to close Salesforce deals faster.
+            Resources to qualify technical deals, handle objections, and accelerate Salesforce sales cycles.
           </p>
         </div>
       </Section>
@@ -97,15 +97,15 @@ export default function AEHub() {
           <h2 className="text-3xl font-bold text-center">Top 3 Tools</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center space-y-3">
-              <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
-                <ClipboardCheck className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-lg font-semibold">Assessment Framework</h3>
-              <p className="text-sm text-muted-foreground">
-                15-min discovery guide to qualify deals
-              </p>
+          <div className="text-center space-y-3">
+            <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
+              <ClipboardCheck className="w-8 h-8 text-white" />
             </div>
+            <h3 className="text-lg font-semibold">Assessment Framework</h3>
+            <p className="text-sm text-muted-foreground">
+              Discovery guide to qualify technical fit and identify deal risks in 15 minutes
+            </p>
+          </div>
 
             <div className="text-center space-y-3">
               <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
@@ -113,7 +113,7 @@ export default function AEHub() {
               </div>
               <h3 className="text-lg font-semibold">ROI Calculator</h3>
               <p className="text-sm text-muted-foreground">
-                Quantify savings for prospects
+                Spreadsheet template to quantify cost savings and efficiency gains for prospects
               </p>
             </div>
 
@@ -123,7 +123,7 @@ export default function AEHub() {
               </div>
               <h3 className="text-lg font-semibold">Battle Cards</h3>
               <p className="text-sm text-muted-foreground">
-                One-pagers for objections
+                Response templates for common objections and competitive scenarios
               </p>
             </div>
           </div>
@@ -149,10 +149,10 @@ export default function AEHub() {
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent-data/20 flex items-center justify-center">
                     <span className="text-lg font-bold text-accent-data">{index + 1}</span>
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-1">
                     <p className="font-semibold">{win.scenario}</p>
-                    <p className="text-sm text-muted-foreground">→ {win.action}</p>
-                    <p className="text-sm text-accent-data font-medium">Result: {win.result}</p>
+                    <p className="text-sm text-muted-foreground">{win.action}</p>
+                    <p className="text-sm text-accent-data font-medium">{win.result}</p>
                   </div>
                 </div>
               </Card>
@@ -202,11 +202,11 @@ export default function AEHub() {
                 What We Provide
               </h3>
               <ul className="space-y-2 text-sm">
-                <li><strong>Rapid validation:</strong> 15-min assessments, same-day feedback</li>
-                <li><strong>Call support:</strong> We join as technical advisor</li>
-                <li><strong>Custom battle cards:</strong> Deal-specific positioning</li>
-                <li><strong>Proposals:</strong> Scope + estimate drafts</li>
-                <li><strong>Red flags:</strong> Save time on bad-fit deals</li>
+                <li><strong>15-minute assessments:</strong> Same-day technical validation</li>
+                <li><strong>Prospect call support:</strong> Join as technical advisor</li>
+                <li><strong>Deal-specific positioning:</strong> Custom battle cards and messaging</li>
+                <li><strong>Proposal drafts:</strong> Scope and estimate documents</li>
+                <li><strong>Red flag analysis:</strong> Early identification of bad-fit deals</li>
               </ul>
             </Card>
           </div>

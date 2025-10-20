@@ -172,7 +172,7 @@ const AETechnicalSupport = () => {
         </h1>
         
         <p className="text-description max-w-3xl">
-          Fill out the form below and we'll respond based on urgency level. Critical deals get answers in 4 hours.
+          Submit your request using the form below. Response times range from 4 hours for critical deals to 3-5 days for general questions.
         </p>
       </Section>
 

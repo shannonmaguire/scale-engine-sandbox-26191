@@ -91,10 +91,10 @@ PERSONA ANGLES:
 
             <div className="max-w-4xl">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Complete Objection Response Library
+                Objection Response Library
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Battle-tested responses from 500+ technical sales calls. Search by keyword or filter by category to find exactly what you need.
+                Tested responses from 500+ technical sales calls with discovery questions, proof points, and closing frameworks.
               </p>
 
               {/* Stats Bar */}
@@ -279,9 +279,9 @@ PERSONA ANGLES:
             <Card className="max-w-3xl mx-auto border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-background">
               <CardHeader className="text-center pb-6">
                 <MessageSquare className="w-12 h-12 mx-auto mb-4 text-primary" />
-                <CardTitle className="text-3xl mb-3">Still Stuck on an Objection?</CardTitle>
+                <CardTitle className="text-3xl mb-3">Need Deal-Specific Support?</CardTitle>
                 <CardDescription className="text-base">
-                  Get live support from our team. We'll help you craft the perfect response for your specific situation.
+                  Submit a support request for live assistance with complex objections or technical validation.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
