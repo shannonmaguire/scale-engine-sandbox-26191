@@ -11,7 +11,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Target, Zap, Clock, Palette, Linkedin, Award, CheckCircle, ArrowRight } from "lucide-react";
+import { Target, Zap, Clock, Palette, Linkedin } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { useState } from "react";
 import shannonPhoto from "@/assets/shannon-founder.png";
@@ -48,78 +48,59 @@ const About = () => {
       
       <Breadcrumbs />
       
-      <Section className="relative overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 pointer-events-none" />
-        
+      <Section>
         {/* Hero */}
-        <div className="relative text-center mb-16 max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-            <Award className="h-4 w-4 text-primary" />
-            <span className="font-mono text-sm font-semibold text-primary uppercase tracking-wide">
-              Revenue Leadership
-            </span>
+        <div className="text-center mb-12 max-w-2xl mx-auto">
+          <div className="system-status mb-6">
+            REVENUE LEADERSHIP
           </div>
           
-          <h1 className="heading-page mb-6 animate-fade-in">
+          <h1 className="heading-page mb-6">
             We Install Backend Revenue Systems
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-description max-w-2xl mx-auto mb-8">
             Infrastructure designed to compound—systems that make revenue growth reliable and repeatable through documented execution. We install working systems in 90 days because revenue infrastructure cannot wait for transformation roadmaps.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-8">
             <ConversionOptimizedButton to="/assessment" ctaName="About Hero - Start Assessment" location="About Hero" size="lg">
               Start Assessment
             </ConversionOptimizedButton>
-            <Button asChild variant="outline" size="lg" className="font-mono">
-              <Link to="/proof">
-                View Case Studies
-              </Link>
-            </Button>
           </div>
         </div>
 
         {/* Shannon's Bio */}
-        <div className="relative mt-20 max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-card to-muted/20 border-2 border-primary/20 rounded-2xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500">
-            <div className="flex flex-col md:flex-row gap-12 items-start">
-              <div className="flex-shrink-0 mx-auto md:mx-0">
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary/50 rounded-full opacity-75 group-hover:opacity-100 blur transition-opacity"></div>
-                  <Avatar className="relative w-40 h-40 md:w-48 md:h-48 border-4 border-background shadow-2xl">
-                    <AvatarImage src={shannonPhoto} alt="Shannon Maguire, Founder and Systems Architect" />
-                    <AvatarFallback className="text-3xl font-bold">SM</AvatarFallback>
-                  </Avatar>
-                </div>
+        <div className="mt-16 max-w-4xl mx-auto">
+          <div className="bg-card border border-border rounded-lg p-10 shadow-sm">
+            <div className="flex flex-col md:flex-row gap-10 items-start">
+              <div className="flex-shrink-0">
+                <Avatar className="w-36 h-36 md:w-44 md:h-44 border-2 border-primary/20 shadow-md">
+                  <AvatarImage src={shannonPhoto} alt="Shannon Maguire, Founder and Systems Architect" />
+                  <AvatarFallback>SM</AvatarFallback>
+                </Avatar>
               </div>
-              
               <div className="flex-1">
                 <div className="mb-6">
-                  <h2 className="text-3xl md:text-4xl font-mono font-bold mb-2 text-foreground">Shannon Maguire</h2>
-                  <p className="text-primary font-mono text-base font-semibold mb-4">Founder & Systems Architect</p>
-                  <div className="h-1 w-20 bg-gradient-to-r from-primary to-primary/50 rounded-full"></div>
+                  <h2 className="heading-subsection mb-2 text-foreground">Shannon Maguire</h2>
+                  <p className="text-primary font-mono text-sm font-semibold mb-1">Founder & Systems Architect</p>
+                  
                 </div>
                 
-                <div className="space-y-6 mb-8">
-                  <p className="text-foreground leading-relaxed text-lg">
-                    Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure means revenue loss.
-                  </p>
-                  
-                  <p className="text-muted-foreground leading-relaxed">
-                    She builds documented systems that enable founders to scale without breaking what already works, combining deep technical expertise with practical execution to deliver measurable results in 90-day sprints.
+                <div className="space-y-4 mb-6">
+                  <p className="text-foreground leading-relaxed text-base">
+                Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure means revenue loss. She builds documented systems that enable founders to scale without breaking what already works.
                   </p>
                   
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20 hover:bg-primary/20 transition-colors">Salesforce Expert</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20 hover:bg-primary/20 transition-colors">Systems Integration</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20 hover:bg-primary/20 transition-colors">Revenue Operations</span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-mono rounded-full">Salesforce Expert</span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-mono rounded-full">Systems Integration</span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs font-mono rounded-full">Revenue Operations</span>
                   </div>
                 </div>
                 
-                <Button asChild variant="default" size="lg" className="font-mono group hover:shadow-lg transition-all">
+                <Button asChild variant="outline" size="default" className="hover:bg-primary hover:text-primary-foreground transition-colors">
                   <a href="https://www.linkedin.com/in/shanmag/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Shannon Maguire on LinkedIn">
-                    <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2 group-hover:scale-110 transition-transform" aria-hidden="true" />
+                    <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" aria-hidden="true" />
                     Connect on LinkedIn
                   </a>
                 </Button>
@@ -129,220 +110,146 @@ const About = () => {
         </div>
 
         {/* Values */}
-        <div className="relative mt-24">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-muted border border-border rounded-full">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              <span className="font-mono text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                Our Principles
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-mono font-bold mb-4 text-foreground">How We Work</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Four principles that govern every engagement—no exceptions.
+        <div className="mt-16">
+          <div className="text-center mb-12">
+            <h2 className="heading-section mb-4">How We Work</h2>
+            	<p className="text-description text-center max-w-prose mx-auto">
+              Four principles that govern every engagement.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {values.map((value, index) => <div key={index} className="group animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-                <StandardCard className="h-full hover:shadow-2xl hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 bg-gradient-to-br from-background to-muted/5">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-primary/20">
-                      <value.icon className="w-8 h-8 text-primary" aria-hidden="true" />
+          <div className="grid md:grid-cols-2 gutter-content">
+            {values.map((value, index) => <StandardCard key={index}>
+                <div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <value.icon className="w-6 h-6 text-primary" aria-hidden="true" />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-mono font-bold mb-4 text-primary group-hover:text-primary/90 transition-colors">{value.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed text-base">{value.description}</p>
+                    <div>
+                      <h3 className="heading-subsection mb-3 text-primary">{value.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                     </div>
                   </div>
-                </StandardCard>
-              </div>)}
+                </div>
+              </StandardCard>)}
           </div>
         </div>
       </Section>
 
       {/* Who We're For Section */}
-      <Section variant="muted" className="relative">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-background border border-border rounded-full">
-              <Target className="h-4 w-4 text-primary" />
-              <span className="font-mono text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-                Ideal Client Profile
-              </span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-mono font-bold mb-4 text-foreground">Who We're For</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We work with operators who need systems installed within weeks, where execution determines value.
-            </p>
+      <Section variant="muted">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="heading-section mb-6 text-foreground">Who We're For</h2>
+              <p className="text-description mx-auto">
+                We work with operators who need systems installed within weeks, where execution determines value.
+              </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-primary/10 to-primary/5 border-2 border-primary/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center">
-                  <CheckCircle className="h-6 w-6 text-primary-foreground" />
-                </div>
-                <h3 className="text-2xl font-mono font-bold text-primary">You're a Fit If</h3>
+          <div className="grid md:grid-cols-2 gutter-content">
+            <StandardCard>
+              <div className="space-y-4">
+                <h3 className="heading-subsection text-primary">You're a Fit If</h3>
+                <ul className="space-y-3 text-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                    Revenue is growing but infrastructure is breaking
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                    You need fixes in weeks, not quarters
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                    Salesforce exists but isn't delivering leverage
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
+                    You value execution over presentations
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-4 text-foreground">
-                <li className="flex items-start gap-4 group">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform" />
-                  <span className="text-base leading-relaxed">Revenue is growing but infrastructure is breaking</span>
-                </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform" />
-                  <span className="text-base leading-relaxed">You need fixes in weeks, not quarters</span>
-                </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform" />
-                  <span className="text-base leading-relaxed">Salesforce exists but isn't delivering leverage</span>
-                </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-150 transition-transform" />
-                  <span className="text-base leading-relaxed">You value execution over presentations</span>
-                </li>
-              </ul>
-            </div>
+            </StandardCard>
             
-            <div className="bg-gradient-to-br from-muted to-muted/50 border-2 border-border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 opacity-75">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-full bg-muted-foreground/20 flex items-center justify-center">
-                  <div className="w-6 h-6 border-2 border-muted-foreground/50 rounded-full" />
-                </div>
-                <h3 className="text-2xl font-mono font-bold text-muted-foreground">You're Not a Fit If</h3>
+            <StandardCard>
+              <div className="space-y-4">
+                <h3 className="heading-subsection text-muted-foreground">You're Not a Fit If</h3>
+                <ul className="space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
+                    You need 18-month transformation roadmaps
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
+                    You want strategy consulting without implementation
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
+                    Systems are working — you're just optimizing
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
+                    You need a full-time employee, not a sprint partner
+                  </li>
+                </ul>
               </div>
-              <ul className="space-y-4 text-muted-foreground">
-                <li className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-base leading-relaxed">You need 18-month transformation roadmaps</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-base leading-relaxed">You want strategy consulting without implementation</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-base leading-relaxed">Systems are working — you're just optimizing</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-2 h-2 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                  <span className="text-base leading-relaxed">You need a full-time employee, not a sprint partner</span>
-                </li>
-              </ul>
-            </div>
+            </StandardCard>
           </div>
           
-          <div className="text-center bg-background/50 backdrop-blur-sm border border-border rounded-xl p-8">
-            <p className="text-muted-foreground font-mono text-base mb-4">
-              Still not sure? Check our <Link to="/proof" className="text-primary hover:underline font-semibold inline-flex items-center gap-1 group">
-                case studies
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Link> to see if your situation matches.
+          <div className="mt-8 text-center">
+            <p className="text-muted-foreground font-mono text-sm mb-6">
+              Still not sure? Check our <Link to="/proof" className="text-primary hover:underline font-semibold">case studies</Link> to see if your situation matches.
             </p>
           </div>
         </div>
       </Section>
 
-      <Section>
+      <Section variant="muted">
         {/* Working with Us */}
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-card to-muted/10 border-2 border-border rounded-2xl p-10 md:p-12 shadow-xl">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-mono font-bold mb-4 text-foreground">Working with Us</h2>
-              <div className="h-1 w-24 bg-gradient-to-r from-primary to-primary/50 rounded-full mx-auto"></div>
-            </div>
+        <div>
+          <div className="bg-card border border-border rounded-lg p-8">
+            <h2 className="heading-section mb-6 text-foreground">Working with Us</h2>
             
             {/* Meet You Where You Are */}
-            <div className="mb-10 p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background border-2 border-primary/30 rounded-2xl hover:shadow-lg transition-all">
-              <h3 className="text-2xl font-mono font-bold mb-6 text-primary flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                </div>
-                We Meet You Where You Are
-              </h3>
-              <p className="text-foreground leading-relaxed mb-6 text-base">
+            <div className="mb-8 p-6 bg-accent/10 border-2 border-accent/20 rounded-lg">
+              <h3 className="font-mono font-bold mb-4 text-primary">We Meet You Where You Are</h3>
+              <p className="text-foreground leading-relaxed mb-4">
                 Every company operates under different constraints—stage, timeline, existing infrastructure. We work with what you have because forcing wholesale replacement creates more problems than it solves. Improvements must function within your reality, which means adapting our methods to your operations rather than demanding you rebuild around our preferences.
               </p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-background/80 backdrop-blur-sm p-5 rounded-xl border border-primary/20">
-                  <p className="text-base font-bold mb-2 text-foreground">Flexible Engagement</p>
-                  <p className="text-sm text-muted-foreground">Virtual or in-person. Sprint or assessment only. You choose the format that works.</p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-sm font-medium mb-2 text-foreground">Flexible</p>
+                  <p className="text-xs text-muted-foreground">Virtual or in-person. Sprint or assessment only. You choose.</p>
                 </div>
-                <div className="bg-background/80 backdrop-blur-sm p-5 rounded-xl border border-primary/20">
-                  <p className="text-base font-bold mb-2 text-foreground">Industry Agnostic</p>
-                  <p className="text-sm text-muted-foreground">SaaS, services, manufacturing. Revenue patterns are universal across sectors.</p>
+                <div>
+                  <p className="text-sm font-medium mb-2 text-foreground">Industry Agnostic</p>
+                  <p className="text-xs text-muted-foreground">SaaS, services, manufacturing. Revenue patterns are universal.</p>
                 </div>
               </div>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-10">
-              <div className="bg-background/50 p-8 rounded-xl border-2 border-primary/20">
-                <h3 className="text-xl font-mono font-bold mb-6 text-foreground flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  What We Do
-                </h3>
-                <ul className="space-y-3 text-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Assess current state with precision diagnostics</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Diagnose gaps using data-driven analysis</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Work with existing tools and systems</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Install fixes fast within sprint timelines</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Adapt to your timeline constraints</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Optimize continuously post-deployment</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    <span>Partner at executive leadership level</span>
-                  </li>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+              <h3 className="font-mono font-bold mb-3 text-foreground">What We Do</h3>
+                <ul className="space-y-2 text-foreground">
+                  <li>• Assess current state</li>
+                  <li>• Diagnose gaps</li>
+                  <li>• Work with existing tools</li>
+                  <li>• Install fixes fast</li>
+                  <li>• Adapt to timeline</li>
+                  <li>• Optimize continuously</li>
+                  <li>• Partner at exec level</li>
                 </ul>
               </div>
-              <div className="bg-muted/30 p-8 rounded-xl border-2 border-border">
-                <h3 className="text-xl font-mono font-bold mb-6 text-muted-foreground flex items-center gap-2">
-                  <div className="w-5 h-5 border-2 border-muted-foreground/50 rounded-full" />
-                  What We Don't Do
-                </h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>Force complete system overhauls</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>Discovery phases without execution</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>Apply generic industry frameworks</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>Drop documentation and disappear</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>Over-architect in early stages</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>Evaluate without operational context</span>
-                  </li>
+              <div>
+              <h3 className="font-mono font-bold mb-3 text-foreground">What We Don't Do</h3>
+                <ul className="space-y-2 text-foreground">
+                  <li>• Force overhauls</li>
+                  <li>• Discovery without execution</li>
+                  <li>• Generic frameworks</li>
+                  <li>• Drop docs and disappear</li>
+                  <li>• Over-architect early</li>
+                  <li>• Evaluate without context</li>
                 </ul>
               </div>
             </div>
@@ -354,28 +261,19 @@ const About = () => {
       <TrustBar />
       
       {/* CTA Section */}
-      <Section className="bg-gradient-to-br from-primary/5 via-background to-primary/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-background border border-border rounded-full">
-            <ArrowRight className="h-4 w-4 text-primary" />
-            <span className="font-mono text-xs font-semibold text-muted-foreground uppercase tracking-wide">
-              Ready to Start
-            </span>
-          </div>
-          
-          <h2 className="text-3xl md:text-5xl font-mono font-bold mb-6 text-foreground leading-tight">Install Infrastructure That Scales</h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+      <Section>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="heading-section mb-6">Install Infrastructure That Scales</h2>
+          <p className="text-description mb-8">
             Revenue systems that compound—built to carry growth without breaking under load.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ConversionOptimizedButton to="/assessment" ctaName="About - Start Assessment" location="About CTA Section" size="lg">
+            <ConversionOptimizedButton to="/assessment" ctaName="About - Start Assessment" location="About CTA Section">
               Start Assessment
             </ConversionOptimizedButton>
-            <Button asChild variant="outline" size="lg" className="font-mono hover:bg-primary/10 hover:border-primary transition-all">
-              <Link to="/proof">
-                View Proof
-              </Link>
-            </Button>
+            <ConversionOptimizedButton to="/proof" ctaName="About - View Proof" location="About CTA Section" variant="outline">
+              View Proof
+            </ConversionOptimizedButton>
           </div>
         </div>
       </Section>
