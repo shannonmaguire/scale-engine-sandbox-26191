@@ -129,6 +129,11 @@ const WebSystems = () => {
         
         {/* Hero */}
         <div className="max-w-3xl mb-16">
+          <div className="flex mb-6">
+            <div className="system-status">
+              WEB DEVELOPMENT
+            </div>
+          </div>
           <h1 className="heading-page mb-4">
             Web Systems
           </h1>
