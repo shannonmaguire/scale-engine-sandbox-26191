@@ -285,6 +285,16 @@ img {
     @apply text-foreground;
   }
   
+  /* All interactive elements get consistent focus */
+  a, button, input, select, textarea, [role="button"], [tabindex]:not([tabindex="-1"]) {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all duration-200;
+  }
+  
+  /* Link hover states - unified */
+  a:not(.no-hover) {
+    @apply hover:text-primary;
+  }
+  
   p, span, div, a, li, label, input, textarea, select {
     @apply text-foreground;
   }
@@ -479,7 +489,7 @@ img {
   /* Stat Block - Clean metrics display */
   .stat-block {
     @apply border border-border bg-card p-6;
-    @apply shadow-sm hover:shadow-md transition-shadow duration-150;
+    @apply shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200;
   }
   
   .stat-number {
@@ -524,7 +534,7 @@ img {
   /* Console Card - Clean, functional */
   .console-card {
     @apply bg-card border border-border shadow-sm;
-    @apply transition-all duration-150 hover:shadow-md;
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 hover:border-primary/30;
   }
   
   /* Monospace Numbers - Tabular alignment */
