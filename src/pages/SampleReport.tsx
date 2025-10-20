@@ -539,7 +539,7 @@ const SampleReport = () => {
           </div>
 
           {/* Benchmarking */}
-          <div className="mb-16">
+          <div className="mb-16 mt-20">
             <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">7.0 Industry Benchmarking</h2>
             <div className="border border-border rounded bg-background p-6">
               <div className="overflow-x-auto">
@@ -714,19 +714,19 @@ const SampleReport = () => {
 
       {/* Document Footer Bar - Sticky */}
       <div className="sticky bottom-0 bg-background border-t-2 border-border shadow-lg z-20">
-        <div className="max-w-5xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between gap-4">
-            <Button variant="outline" asChild className="font-mono">
-              <Link to="/" className="flex items-center gap-2">
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <Button variant="outline" asChild className="font-mono w-full md:w-auto">
+              <Link to="/" className="flex items-center justify-center gap-2">
                 <ArrowLeft className="w-4 h-4" />
                 Back to CWT Studio
               </Link>
             </Button>
-            <div className="flex items-center gap-3">
-              <div className="text-xs text-muted-foreground font-mono hidden md:block">
+            <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+              <p className="text-sm text-muted-foreground font-mono text-center md:text-right">
                 To receive a customized report for your organization
-              </div>
-              <Button asChild size="lg" className="font-mono">
+              </p>
+              <Button asChild size="lg" className="font-mono w-full md:w-auto whitespace-nowrap">
                 <Link to="/assessment">Get Your Assessment</Link>
               </Button>
             </div>
