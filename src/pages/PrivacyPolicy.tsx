@@ -98,7 +98,7 @@ const PrivacyPolicy = memo(() => {
                   <li><strong>Withdraw Consent:</strong> Withdraw consent at any time</li>
                 </ul>
                 <p className="mt-4">
-                  To exercise these rights, please contact us at hello@thecwtstudio.com.
+                  To exercise these rights, please contact us at hello@cwtstudio.com.
                 </p>
               </section>
 
@@ -149,8 +149,8 @@ const PrivacyPolicy = memo(() => {
                   If you have questions about this privacy policy or our data practices, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
-                  <li><strong>Address:</strong> CWT Studio LLC</li>
+                  <li><strong>Email:</strong> hello@cwtstudio.com</li>
+                  <li><strong>Company:</strong> CWT Studio</li>
                 </ul>
               </section>
             </div>

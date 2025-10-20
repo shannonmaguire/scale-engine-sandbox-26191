@@ -36,14 +36,16 @@ const TermsOfService = memo(() => {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">2. Description of Services</h2>
                 <p className="mb-4">
-                  CWT Studio provides Salesforce consulting, technical support, and revenue operations services. Our Services include:
+                  CWT Studio provides revenue infrastructure installation and optimization services. Our Services include:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Salesforce implementation and optimization</li>
-                  <li>Technical support and maintenance</li>
-                  <li>Revenue operations consulting</li>
-                  <li>Assessment tools and analysis</li>
-                  <li>Custom development and integrations</li>
+                  <li>Assessment: Deep diagnostic of backend revenue systems with 90-day roadmaps</li>
+                  <li>Sprint: 8-12 week implementation of CRM, automation, and pipeline infrastructure</li>
+                  <li>Fractional Ops: Ongoing revenue operations support and optimization</li>
+                  <li>Web Systems: Custom web application development and optimization</li>
+                  <li>Salesforce: Implementation, optimization, and technical support</li>
+                  <li>AE Technical Support: Deal support and objection handling for account executives</li>
+                  <li>Custom development, integrations, and system installations</li>
                 </ul>
               </section>
 
@@ -188,7 +190,7 @@ const TermsOfService = memo(() => {
                   For questions about these Terms, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
+                  <li><strong>Email:</strong> hello@cwtstudio.com</li>
                 </ul>
               </section>
             </div>

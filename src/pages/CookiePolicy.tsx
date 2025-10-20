@@ -64,7 +64,8 @@ const CookiePolicy = memo(() => {
                   These cookies enhance functionality and personalization:
                 </p>
                 <ul className="list-disc pl-6 space-y-2 mb-6">
-                  <li><strong>UI Preferences:</strong> Remembers sidebar state and display preferences</li>
+                  <li><strong>Assessment Progress:</strong> Saves checklist and self-assessment progress</li>
+                  <li><strong>UI Preferences:</strong> Remembers display preferences and settings</li>
                   <li><strong>Form Data:</strong> Temporarily stores form information for convenience</li>
                 </ul>
 
@@ -108,15 +109,15 @@ const CookiePolicy = memo(() => {
                         <td className="border border-border px-4 py-2">Necessary</td>
                       </tr>
                       <tr>
-                        <td className="border border-border px-4 py-2 font-mono text-sm">sidebar-state</td>
-                        <td className="border border-border px-4 py-2">Remembers sidebar open/closed state</td>
-                        <td className="border border-border px-4 py-2">7 days</td>
+                        <td className="border border-border px-4 py-2 font-mono text-sm">cwtIntroSeen</td>
+                        <td className="border border-border px-4 py-2">Tracks if loading screen was shown</td>
+                        <td className="border border-border px-4 py-2">Session</td>
                         <td className="border border-border px-4 py-2">Functional</td>
                       </tr>
                       <tr>
-                        <td className="border border-border px-4 py-2 font-mono text-sm">intro_seen</td>
-                        <td className="border border-border px-4 py-2">Tracks if loading screen was shown</td>
-                        <td className="border border-border px-4 py-2">Session</td>
+                        <td className="border border-border px-4 py-2 font-mono text-sm">checklist_progress</td>
+                        <td className="border border-border px-4 py-2">Saves assessment checklist progress</td>
+                        <td className="border border-border px-4 py-2">30 days</td>
                         <td className="border border-border px-4 py-2">Functional</td>
                       </tr>
                     </tbody>
@@ -204,7 +205,7 @@ const CookiePolicy = memo(() => {
                   If you have questions about our use of cookies, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
+                  <li><strong>Email:</strong> hello@cwtstudio.com</li>
                   <li><strong>Privacy Policy:</strong> <a href="/privacy-policy" className="text-primary hover:underline">View our Privacy Policy</a></li>
                 </ul>
               </section>
