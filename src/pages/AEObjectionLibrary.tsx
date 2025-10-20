@@ -79,7 +79,7 @@ PERSONA ANGLES:
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-background to-background">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-accent-data/5 via-background to-background">
           <div className="container mx-auto px-4">
             <Link 
               to="/ae-hub" 

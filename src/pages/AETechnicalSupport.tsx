@@ -311,7 +311,7 @@ const AETechnicalSupport = () => {
 
                   {/* Submit Button */}
                   <div className="pt-4">
-                    <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                    <Button type="submit" size="lg" className="w-full bg-accent-data hover:bg-accent-data/90 text-white" disabled={isSubmitting}>
                       {isSubmitting ? <>Processing...</> : <>
                           Submit Support Request
                           <Send className="w-4 h-4 ml-2" />
@@ -326,10 +326,10 @@ const AETechnicalSupport = () => {
           {/* Sidebar Info */}
           <div className="space-y-6">
             {/* Response Times */}
-            <StandardCard variant="bordered">
+            <StandardCard variant="bordered" className="border-accent-data/30">
               <StandardCardHeader>
                 <StandardCardTitle className="text-lg flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-primary" />
+                  <Clock className="w-5 h-5 text-accent-data" />
                   Response Times
                 </StandardCardTitle>
               </StandardCardHeader>
@@ -346,29 +346,29 @@ const AETechnicalSupport = () => {
             </StandardCard>
 
             {/* What We Provide */}
-            <StandardCard variant="bordered">
+            <StandardCard variant="bordered" className="border-accent-data/30">
               <StandardCardHeader>
                 <StandardCardTitle className="text-lg flex items-center gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-success" aria-hidden="true" />
+                  <CheckCircle2 className="w-5 h-5 text-accent-data" aria-hidden="true" />
                   What We Provide
                 </StandardCardTitle>
               </StandardCardHeader>
               <StandardCardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">•</span>
+                    <span className="text-accent-data mt-0.5">•</span>
                     <span>Technical validation & scoping</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">•</span>
+                    <span className="text-accent-data mt-0.5">•</span>
                     <span>Prospect call support</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">•</span>
+                    <span className="text-accent-data mt-0.5">•</span>
                     <span>Deal-specific proposals</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">•</span>
+                    <span className="text-accent-data mt-0.5">•</span>
                     <span>ROI quantification</span>
                   </li>
                 </ul>
@@ -376,10 +376,10 @@ const AETechnicalSupport = () => {
             </StandardCard>
 
             {/* Before You Submit */}
-            <StandardCard variant="bordered">
+            <StandardCard variant="bordered" className="border-accent-data/30">
               <StandardCardHeader>
                 <StandardCardTitle className="text-lg flex items-center gap-2">
-                  <AlertCircle className="w-5 h-5 text-warm" aria-hidden="true" />
+                  <AlertCircle className="w-5 h-5 text-accent-data" aria-hidden="true" />
                   Before You Submit
                 </StandardCardTitle>
               </StandardCardHeader>

@@ -65,55 +65,6 @@ export default function AEHub() {
         </div>
       </Section>
 
-      {/* Founder's Letter - Elevated to Hero */}
-      <Section variant="muted" className="py-16">
-        <div className="max-w-4xl mx-auto">
-          <Card className="overflow-hidden border-2 border-accent/20">
-            <CardContent className="p-8 md:p-12 space-y-6">
-              <h2 className="heading-subsection">A Note from the Founder</h2>
-              <div className="space-y-6 text-base text-muted-foreground border-l-4 border-accent pl-6">
-                <p>
-                  I built CWT because I saw too many Account Executives lose deals they should have won. Not because they weren't great salespeople, but because Salesforce implementations are complex, and prospects ask technical questions that derail momentum.
-                </p>
-                <p>
-                  You don't need to become a Salesforce architect. You need a technical partner who can validate your deals, answer the hard questions, and give prospects confidence. That's exactly what we do—and we do it fast.
-                </p>
-                <p>
-                  This hub gives you everything: rapid support when deals are stuck, proven objection frameworks, assessment tools, and direct access to our team. Use it liberally. We're here to help you close more business.
-                </p>
-                <p className="text-foreground font-medium pt-2">
-                  — Shannon, Founder
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Trust Bar */}
-          <div className="grid md:grid-cols-3 gutter-standard spacing-content">
-            <Card className="text-center p-6 border-accent/20">
-              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-6 h-6 text-accent" />
-              </div>
-              <p className="font-semibold text-lg mb-1">4hr Response SLA</p>
-              <p className="text-sm text-muted-foreground">Critical deal support guaranteed</p>
-            </Card>
-            <Card className="text-center p-6 border-accent/20">
-              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-6 h-6 text-accent" />
-              </div>
-              <p className="font-semibold text-lg mb-1">87% Deal Success</p>
-              <p className="text-sm text-muted-foreground">Assessments → approved projects</p>
-            </Card>
-            <Card className="text-center p-6 border-accent/20">
-              <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-accent" />
-              </div>
-              <p className="font-semibold text-lg mb-1">200+ AEs</p>
-              <p className="text-sm text-muted-foreground">Trust CWT for deal support</p>
-            </Card>
-          </div>
-        </div>
-      </Section>
 
       {/* Response Tiers - Decision Table */}
       <Section variant="standard">
@@ -127,21 +78,21 @@ export default function AEHub() {
             </p>
           </div>
 
-          <Card className="overflow-hidden border-2 border-accent/20">
+          <Card className="overflow-hidden border-2 border-accent-data/30 hover:border-accent-data/50 transition-colors">
             <div className="grid md:grid-cols-2 gap-0">
               {/* Left: Tiers List */}
-              <div className="p-8 space-y-6 border-r border-accent/20">
+              <div className="p-8 space-y-6 border-r border-accent-data/20">
                 <h3 className="text-xl font-semibold mb-6">Support Tiers</h3>
                 <div className="space-y-5">
                   {supportTiers.map((tier, index) => <div key={tier.tier} className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center text-lg">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent-data/20 flex items-center justify-center text-lg">
                         {index === 0 ? '🔴' : index === 1 ? '🟠' : index === 2 ? '🟡' : '⚪'}
                       </div>
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           <p className="font-semibold">{tier.tier}</p>
                           <span className="text-sm text-muted-foreground">•</span>
-                          <p className="text-sm font-medium text-accent">{tier.responseTime}</p>
+                          <p className="text-sm font-medium text-accent-data">{tier.responseTime}</p>
                         </div>
                         <p className="text-sm text-muted-foreground">{tier.example}</p>
                       </div>
@@ -150,12 +101,12 @@ export default function AEHub() {
               </div>
 
               {/* Right: Decision Guide */}
-              <div className="p-8 bg-accent/5 space-y-6">
+              <div className="p-8 bg-accent-data/5 space-y-6">
                 <h3 className="text-xl font-semibold mb-6">How to Choose</h3>
                 <div className="space-y-5">
                   <div className="space-y-2">
                     <p className="font-medium flex items-center gap-2">
-                      <Target className="w-4 h-4 text-accent" aria-hidden="true" />
+                      <Target className="w-4 h-4 text-accent-data" aria-hidden="true" />
                       Is the deal at risk?
                     </p>
                     <p className="text-sm text-muted-foreground pl-6">
@@ -164,7 +115,7 @@ export default function AEHub() {
                   </div>
                   <div className="space-y-2">
                     <p className="font-medium flex items-center gap-2">
-                      <Target className="w-4 h-4 text-accent" aria-hidden="true" />
+                      <Target className="w-4 h-4 text-accent-data" aria-hidden="true" />
                       Do you have a demo scheduled?
                     </p>
                     <p className="text-sm text-muted-foreground pl-6">
@@ -173,7 +124,7 @@ export default function AEHub() {
                   </div>
                   <div className="space-y-2">
                     <p className="font-medium flex items-center gap-2">
-                      <Target className="w-4 h-4 text-accent" aria-hidden="true" />
+                      <Target className="w-4 h-4 text-accent-data" aria-hidden="true" />
                       Are you qualifying a lead?
                     </p>
                     <p className="text-sm text-muted-foreground pl-6">
@@ -182,7 +133,7 @@ export default function AEHub() {
                   </div>
                   <div className="space-y-2">
                     <p className="font-medium flex items-center gap-2">
-                      <Target className="w-4 h-4 text-accent" aria-hidden="true" />
+                      <Target className="w-4 h-4 text-accent-data" aria-hidden="true" />
                       General questions?
                     </p>
                     <p className="text-sm text-muted-foreground pl-6">
@@ -195,7 +146,7 @@ export default function AEHub() {
           </Card>
 
           <div className="text-center">
-            <Button size="lg" onClick={() => navigate('/ae-technical-support')}>
+            <Button size="lg" className="bg-accent-data hover:bg-accent-data/90 text-white" onClick={() => navigate('/ae-technical-support')}>
               <MessageSquare className="mr-2 h-5 w-5" />
               Submit Support Request
             </Button>
@@ -217,7 +168,7 @@ export default function AEHub() {
 
           <div className="grid md:grid-cols-3 gutter-content">
             <div className="text-center space-y-4">
-              <div className="w-20 h-20 rounded-lg bg-accent flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
                 <ClipboardCheck className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold">Assessment Framework</h3>
@@ -227,7 +178,7 @@ export default function AEHub() {
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-20 h-20 rounded-lg bg-accent flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
                 <Calculator className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold">ROI Calculator</h3>
@@ -237,7 +188,7 @@ export default function AEHub() {
             </div>
 
             <div className="text-center space-y-4">
-              <div className="w-20 h-20 rounded-lg bg-accent flex items-center justify-center mx-auto">
+              <div className="w-20 h-20 rounded-lg bg-accent-data flex items-center justify-center mx-auto">
                 <FileText className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-xl font-semibold">Battle Cards</h3>
@@ -272,10 +223,10 @@ export default function AEHub() {
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold">Quick Win Scenarios</h3>
             <div className="space-y-6">
-              {quickWins.map((win, index) => <Card key={index} className="p-8 border-accent/20">
+              {quickWins.map((win, index) => <Card key={index} className="p-8 border-accent-data/30 hover:border-accent-data/50 transition-colors">
                   <div className="flex gap-6">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                      <span className="text-xl font-bold text-accent">{index + 1}</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent-data/20 flex items-center justify-center">
+                      <span className="text-xl font-bold text-accent-data">{index + 1}</span>
                     </div>
                     <div className="space-y-3 flex-1">
                       <div>
@@ -284,9 +235,9 @@ export default function AEHub() {
                           → {win.action}
                         </p>
                       </div>
-                      <div className="pl-4 border-l-2 border-accent/30">
+                      <div className="pl-4 border-l-2 border-accent-data/30">
                         <p className="text-sm font-medium text-muted-foreground mb-1">Result:</p>
-                        <p className="text-base text-accent font-medium">{win.result}</p>
+                        <p className="text-base text-accent-data font-medium">{win.result}</p>
                       </div>
                     </div>
                   </div>
@@ -319,45 +270,45 @@ export default function AEHub() {
             </p>
           </div>
 
-          <Card className="overflow-hidden border-2 border-accent/20">
+          <Card className="overflow-hidden border-2 border-accent-data/30 hover:border-accent-data/50 transition-colors">
             <div className="grid md:grid-cols-2 gap-0">
               {/* When to Bring Us In */}
-              <div className="p-8 space-y-6 border-r border-accent/20">
+              <div className="p-8 space-y-6 border-r border-accent-data/20">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                    <AlertCircle className="w-6 h-6 text-accent" aria-hidden="true" />
+                  <div className="w-12 h-12 rounded-lg bg-accent-data/20 flex items-center justify-center">
+                    <AlertCircle className="w-6 h-6 text-accent-data" aria-hidden="true" />
                   </div>
                   <h3 className="text-xl font-semibold">When to Bring Us In</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded bg-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-accent">→</span>
+                    <div className="w-6 h-6 rounded bg-accent-data/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-accent-data">→</span>
                     </div>
                     <p className="text-base">Deal qualification (tech fit, scope validation)</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-accent">→</span>
+                    <div className="w-6 h-6 rounded bg-accent-data/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-accent-data">→</span>
                     </div>
                     <p className="text-base">Technical objections or stalled momentum</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-accent">→</span>
+                    <div className="w-6 h-6 rounded bg-accent-data/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-accent-data">→</span>
                     </div>
                     <p className="text-base">Discovery call prep (red flags, questions to ask)</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-accent">→</span>
+                    <div className="w-6 h-6 rounded bg-accent-data/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-accent-data">→</span>
                     </div>
                     <p className="text-base">Competitive displacement scenarios</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-accent">→</span>
+                    <div className="w-6 h-6 rounded bg-accent-data/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-accent-data">→</span>
                     </div>
                     <p className="text-base">ROI validation and business case building</p>
                   </div>
