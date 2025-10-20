@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { StandardCard, StandardCardContent, StandardCardHeader, StandardCardTitle } from "@/components/ui/standard-card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { AlertTriangle, CheckCircle, TrendingUp, TrendingDown, DollarSign, Clock, Database, Zap, Shield, ArrowLeft, FileDown } from "lucide-react";
+import { AlertTriangle, CheckCircle, TrendingUp, TrendingDown, DollarSign, Clock, Database, Zap, Shield, ArrowLeft, ArrowRight, FileDown } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import cwtLogo from "@/assets/cwt-logo-mark.svg";
 const SampleReport = () => {
@@ -712,22 +712,41 @@ const SampleReport = () => {
         </div>
       </div>
 
-      {/* Document Footer Bar - Sticky */}
-      <div className="sticky bottom-0 bg-background border-t-2 border-border shadow-lg z-20">
-        <div className="max-w-5xl mx-auto px-6 py-6">
+      {/* Footer CTA - Optimized for conversion */}
+      <div className="sticky bottom-0 bg-background border-t-2 border-primary/20 shadow-2xl z-20">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <Button variant="outline" asChild className="font-mono w-full md:w-auto">
-              <Link to="/" className="flex items-center justify-center gap-2">
+            {/* Secondary action - subtle */}
+            <Button 
+              variant="ghost" 
+              asChild 
+              className="font-mono text-muted-foreground hover:text-foreground order-2 md:order-1"
+            >
+              <Link to="/" className="flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4" />
-                Back to CWT Studio
+                Back to Home
               </Link>
             </Button>
-            <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
-              <p className="text-sm text-muted-foreground font-mono text-center md:text-right">
-                To receive a customized report for your organization
-              </p>
-              <Button asChild size="lg" className="font-mono w-full md:w-auto whitespace-nowrap">
-                <Link to="/assessment">Get Your Assessment</Link>
+            
+            {/* Primary CTA - prominent */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 order-1 md:order-2 w-full md:w-auto">
+              <div className="text-center sm:text-right">
+                <p className="font-mono text-sm text-muted-foreground mb-1">
+                  Want this for your organization?
+                </p>
+                <p className="font-mono text-xs text-muted-foreground/70">
+                  Get a custom assessment in 5 days
+                </p>
+              </div>
+              <Button 
+                asChild 
+                size="lg" 
+                className="font-mono font-bold uppercase tracking-wide w-full sm:w-auto whitespace-nowrap shadow-lg hover:shadow-xl"
+              >
+                <Link to="/assessment" className="flex items-center gap-2">
+                  Get Your Assessment
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </Button>
             </div>
           </div>
