@@ -129,35 +129,41 @@ const Contact = () => {
       <Breadcrumbs />
       
       <Section>
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Hero */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <div className="system-status mb-6">
               CONTACT
             </div>
             <h1 className="heading-page mb-6">
               Let's Talk
             </h1>
-            <p className="text-description">
+            <p className="text-description text-lg">
               Tell us what you need. We'll respond in 24 hours.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Form */}
-            <div className="md:col-span-2">
-              <StandardCard>
-                <StandardCardContent className="pt-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="lg:col-span-3">
+              <div className="border-l-4 border-primary pl-8">
+                <h2 className="font-mono text-sm font-bold text-primary mb-8 uppercase tracking-wider">
+                  Send a Message
+                </h2>
+                
+                <form onSubmit={handleSubmit} className="space-y-8">
                     <div>
-                      <Label htmlFor="fullName" className="font-mono text-sm font-medium">Name *</Label>
+                      <Label htmlFor="fullName" className="font-mono text-sm font-medium mb-2 block">
+                        Name *
+                      </Label>
                       <Input
                         id="fullName"
                         value={formData.fullName}
                         onChange={(e) => handleInputChange("fullName", e.target.value)}
                         onBlur={() => handleBlur("fullName")}
+                        placeholder="Your full name"
                         required
-                        className={`mt-2 font-mono ${errors.fullName && touched.fullName ? 'border-destructive' : ''}`}
+                        className={`font-mono ${errors.fullName && touched.fullName ? 'border-destructive' : ''}`}
                       />
                       {errors.fullName && touched.fullName && (
                         <p className="text-xs text-destructive mt-1">{errors.fullName}</p>
@@ -165,15 +171,18 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="email" className="font-mono text-sm font-medium">Email *</Label>
+                      <Label htmlFor="email" className="font-mono text-sm font-medium mb-2 block">
+                        Email *
+                      </Label>
                       <Input
                         id="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         onBlur={() => handleBlur("email")}
+                        placeholder="you@company.com"
                         required
-                        className={`mt-2 font-mono ${errors.email && touched.email ? 'border-destructive' : ''}`}
+                        className={`font-mono ${errors.email && touched.email ? 'border-destructive' : ''}`}
                       />
                       {errors.email && touched.email && (
                         <p className="text-xs text-destructive mt-1">{errors.email}</p>
@@ -181,7 +190,9 @@ const Contact = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="font-mono text-sm font-medium">What do you need? *</Label>
+                      <Label htmlFor="message" className="font-mono text-sm font-medium mb-2 block">
+                        What do you need? *
+                      </Label>
                       <Textarea
                         id="message"
                         value={formData.message}
@@ -189,7 +200,7 @@ const Contact = () => {
                         onBlur={() => handleBlur("message")}
                         placeholder="Tell us about your project, challenge, or question..."
                         required
-                        className={`mt-2 font-mono ${errors.message && touched.message ? 'border-destructive' : ''}`}
+                        className={`font-mono resize-none ${errors.message && touched.message ? 'border-destructive' : ''}`}
                         rows={6}
                       />
                       {errors.message && touched.message && (
@@ -197,14 +208,14 @@ const Contact = () => {
                       )}
                     </div>
 
-                    <div className="flex items-start gap-2 pt-4 border-t border-border">
+                    <div className="flex items-start gap-3 pt-6 border-t border-border/50">
                       <Checkbox
                         id="privacyConsent"
                         checked={formData.privacyConsent}
                         onCheckedChange={(checked) => handleInputChange("privacyConsent", checked as boolean)}
-                        className={errors.privacyConsent && touched.privacyConsent ? 'border-destructive' : ''}
+                        className={`mt-0.5 ${errors.privacyConsent && touched.privacyConsent ? 'border-destructive' : ''}`}
                       />
-                      <Label htmlFor="privacyConsent" className="text-sm leading-relaxed cursor-pointer">
+                      <Label htmlFor="privacyConsent" className="text-sm leading-relaxed cursor-pointer text-muted-foreground">
                         I agree to the{" "}
                         <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
                           Privacy Policy
@@ -216,8 +227,9 @@ const Contact = () => {
                       <p className="text-xs text-destructive">{errors.privacyConsent}</p>
                     )}
 
-                    <Button 
+                    <Button
                       type="submit" 
+                      size="lg"
                       className="w-full hover-lift hover-glow group" 
                       disabled={isSubmitting}
                     >
@@ -253,32 +265,45 @@ const Contact = () => {
                       </div>
                     )}
                   </form>
-                </StandardCardContent>
-              </StandardCard>
+              </div>
             </div>
 
             {/* Sidebar Info */}
-            <div>
-              <StandardCard>
-                <StandardCardContent className="pt-6 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Email</p>
-                      <a href="mailto:hello@thecwtstudio.com" className="text-sm text-muted-foreground hover:text-primary">
-                        hello@thecwtstudio.com
-                      </a>
+            <div className="lg:col-span-2 space-y-8">
+              <div className="border-l-2 border-border pl-6 space-y-6">
+                <div>
+                  <h3 className="font-mono text-sm font-bold text-foreground mb-4 uppercase tracking-wider">
+                    Direct Contact
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Mail className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-medium text-foreground text-sm mb-1">Email</p>
+                        <a href="mailto:hello@thecwtstudio.com" className="text-sm text-muted-foreground hover:text-primary font-mono">
+                          hello@thecwtstudio.com
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
+                      <div>
+                        <p className="font-medium text-foreground text-sm mb-1">Response Time</p>
+                        <p className="text-sm text-muted-foreground">Within 24 hours</p>
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-primary" />
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Response Time</p>
-                      <p className="text-sm text-muted-foreground">Within 24 hours</p>
-                    </div>
-                  </div>
-                </StandardCardContent>
-              </StandardCard>
+                </div>
+
+                <div className="bg-muted/30 border border-border/50 rounded-lg p-6">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Prefer to skip the form? Email us directly at{" "}
+                    <a href="mailto:hello@thecwtstudio.com" className="text-primary hover:underline font-medium">
+                      hello@thecwtstudio.com
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
