@@ -1,0 +1,1142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Performance optimizations */
+img {
+  content-visibility: auto;
+}
+
+/* CWT Studio Design System - Operator Console Aesthetic */
+
+@layer base {
+  :root {
+    /* ===== 9-COLOR PROFESSIONAL SYSTEM ===== */
+    /* Every color has a strategic purpose */
+    
+    /* Core Brand Colors */
+    --burgundy: 327 82% 31%;             /* #681038 - Primary/Conversion CTAs */
+    --forest: 135 27% 15%;               /* #1B3022 - Authority/Navigation */
+    --deep-black: 0 0% 0%;               /* #010400 - All Text */
+    
+    /* Data & Intelligence Colors */
+    --teal: 184 28% 44%;                 /* #52939C - Enhanced contrast for interactivity */
+    --yellow-green: 75 100% 90%;         /* #F0FFCE - Spotlight/Success */
+    
+    /* Warm & Supporting Colors */
+    --warm-tan: 47 27% 71%;              /* #CCC9A1 - Differentiator/Warmth */
+    --muted-gray: 240 3% 61%;            /* #9999A1 - Supporting/Secondary */
+    
+    /* Surface Colors - Warmed for approachability */
+    --gray-very-light: 40 15% 96%;       /* #F9F8F5 - Warm white elevation */
+    --gray-light: 40 12% 91%;            /* #EBE9E3 - Warm ivory foundation */
+    
+    /* ===== SEMANTIC TOKEN MAPPINGS ===== */
+    
+    /* Backgrounds & Surfaces */
+    --background: var(--gray-light);
+    --foreground: var(--deep-black);
+
+    --card: var(--gray-very-light);
+    --card-foreground: var(--deep-black);
+
+    --popover: var(--gray-very-light);
+    --popover-foreground: var(--deep-black);
+
+    /* Primary Actions - Burgundy for conversion */
+    --primary: var(--burgundy);
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 327 82% 38%;        /* Standardized hover state */
+
+    /* Secondary Actions - Muted Gray for supporting */
+    --secondary: var(--muted-gray);
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Elements */
+    --muted: var(--muted-gray);
+    --muted-foreground: 0 0% 35%;  /* Improved contrast: was deep-black, now darker gray for AA compliance */
+
+    /* Accent - Teal for data/interaction */
+    --accent: var(--teal);
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 184 28% 38%;        /* Darker teal for hover states */
+
+    /* Success/Highlight - Yellow-Green */
+    --success: var(--yellow-green);
+    --success-foreground: var(--deep-black);
+
+    /* Warmth - Tan for alternating sections */
+    --warm: var(--warm-tan);
+    --warm-foreground: var(--deep-black);
+
+    /* Authority - Forest Green for navigation */
+    --authority: var(--forest);
+    --authority-foreground: 0 0% 100%;
+
+    /* Data Accent - Teal for charts/metrics */
+    --accent-data: var(--teal);
+    --accent-data-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--muted-gray);
+    --input: var(--gray-very-light);
+    --ring: var(--burgundy);
+
+    --radius: 0.375rem;
+
+  /* Console Design Elements */
+  --console-grid: linear-gradient(90deg, hsl(var(--border-gray)) 1px, transparent 1px),
+                  linear-gradient(hsl(var(--border-gray)) 1px, transparent 1px);
+  --console-grid-size: 24px 24px;
+  
+  /* Typography system */
+  --font-mono: 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  
+  /* Spacing Rhythm - 80px (5rem) baseline for editorial design */
+  --spacing-baseline: 5rem;          /* 80px - Standard section spacing */
+  --spacing-half: 2.5rem;            /* 40px - Mobile section spacing */
+  --spacing-quarter: 1.25rem;        /* 20px - Internal spacing */
+  --spacing-gutter: 1.5rem;          /* 24px - Grid gutter */
+  
+  /* Fortune 500 Grid System */
+  --grid-max-width: 1440px;        /* Cap content width */
+  --grid-gutter: 2rem;             /* Consistent outer margins */
+  --section-spacing-xl: 120px;     /* Hero sections */
+  --section-spacing-lg: 96px;      /* Major sections */
+  --section-spacing-md: 64px;      /* Sub-sections */
+  --section-spacing-sm: 32px;      /* Internal spacing */
+  
+  /* Editorial Typography Scale - Fortune 500 Standard */
+  --font-size-display: clamp(3rem, 5vw, 5rem);         /* 48-80px */
+  --font-size-h1: clamp(2.5rem, 4vw, 3.5rem);          /* 40-56px */
+  --font-size-h2: clamp(2rem, 3.5vw, 2.75rem);         /* 32-44px */
+  --font-size-h3: clamp(1.5rem, 2.5vw, 2rem);          /* 24-32px */
+  --font-size-body-lg: clamp(1.125rem, 1.5vw, 1.25rem);/* 18-20px */
+  --font-size-body: 1rem;                               /* 16px */
+  
+  /* Line Heights - Editorial Standards */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Letter Spacing - Professional Typography */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  
+  /* Animation variables - Fortune 500 standard timing */
+  --transition-fast: all 0.15s ease-out;
+  --transition-standard: all 0.2s ease-out;
+  --transition-slow: all 0.3s ease-out;
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    --transition-fast: none;
+    --transition-standard: none;
+    --transition-slow: none;
+  }
+  
+  /* ===== CRITICAL COLOR PAIRING RULES ===== */
+  /* NEVER use black text on burgundy (primary) backgrounds */
+  /* ALWAYS pair bg-primary with text-primary-foreground or text-white */
+  }
+
+  .dark {
+    /* Dark mode using all 9 colors */
+    --background: var(--forest);
+    --foreground: 0 0% 100%;
+
+    --card: var(--forest);
+    --card-foreground: 0 0% 100%;
+
+    --popover: var(--forest);
+    --popover-foreground: 0 0% 100%;
+
+    --primary: var(--burgundy);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: var(--muted-gray);
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: var(--muted-gray);
+    --muted-foreground: 0 0% 80%;
+
+    --accent: var(--teal);
+    --accent-foreground: 0 0% 100%;
+
+    --success: var(--yellow-green);
+    --success-foreground: var(--deep-black);
+
+    --warm: var(--warm-tan);
+    --warm-foreground: var(--deep-black);
+
+    --authority: var(--forest);
+    --authority-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--muted-gray);
+    --input: var(--forest);
+    --ring: var(--burgundy);
+  }
+}
+
+/* ===== CRITICAL COLOR SAFETY RULES ===== */
+/* Prevent common burgundy background + black text mistakes */
+/* These rules ensure accessibility and brand consistency */
+
+/* If someone tries to use bg-primary without explicit text color, 
+   ensure it defaults to white (not black) */
+.bg-primary:not([class*="text-"]) {
+  @apply text-primary-foreground;
+}
+
+/* Explicit warning class for development */
+.bg-primary.text-foreground,
+.bg-primary.text-black {
+  /* This combination violates WCAG contrast - use text-primary-foreground or text-white instead */
+  @apply text-primary-foreground !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  /* Enhanced focus indicators for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+  
+  /* Skip to main content link - WCAG 2.1 AA requirement */
+  .skip-to-main {
+    @apply absolute left-4 top-4 bg-primary text-primary-foreground px-6 py-3 rounded;
+    @apply font-mono font-bold uppercase tracking-wide;
+    @apply transition-all;
+    z-index: 9999;
+    transform: translateY(-200%);
+  }
+  
+  .skip-to-main:focus {
+    transform: translateY(0);
+    @apply ring-4 ring-primary ring-offset-4;
+  }
+  
+  /* Screen reader only content */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Consistent Typography Scale - Using Semantic Tokens */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    font-feature-settings: "ss01", "ss02";
+    text-wrap: balance; /* Prevent widows on headings */
+    @apply text-foreground;
+  }
+  
+  p, span, div, a, li, label, input, textarea, select {
+    @apply text-foreground;
+  }
+  
+  p {
+    text-wrap: pretty; /* Prevent widows/orphans on paragraphs */
+    orphans: 2;
+    widows: 2;
+  }
+  
+  /* ===== STRICT TYPOGRAPHY SCALE - EDITORIAL GRADE ===== */
+  /* Desktop First (1200px+) */
+  .heading-page {
+    @apply font-mono font-bold;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  .heading-section {
+    @apply font-mono font-bold;
+    font-size: 48px;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  
+  .heading-subsection {
+    @apply font-mono font-semibold;
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-description {
+    @apply font-sans text-foreground;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 500;              /* Upgraded from 400 for better readability */
+    max-width: 70ch;               /* Optimal reading length */
+    text-wrap: pretty;             /* Better line breaks */
+  }
+  
+  .text-label {
+    @apply font-mono uppercase tracking-wider text-foreground;
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 600;              /* Upgraded from 500 for hierarchy */
+  }
+  
+  /* Tablet (768px) - Proportional scaling */
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .heading-page {
+      font-size: 48px;
+    }
+    
+    .heading-section {
+      font-size: 36px;
+    }
+    
+    .heading-subsection {
+      font-size: 24px;
+    }
+  }
+  
+  /* Mobile (375px-767px) - Optimized scaling */
+  @media (max-width: 767px) {
+    .heading-page {
+      font-size: 40px;               /* Increased from 36px for impact */
+    }
+    
+    .heading-section {
+      font-size: 28px;
+    }
+    
+    .heading-subsection {
+      font-size: 20px;
+    }
+    
+    .text-description {
+      font-size: 17px;               /* Increased from 16px for readability */
+    }
+  }
+  
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  /* Console Grid - Minimal functional grid */
+  .console-grid {
+    background-image: var(--console-grid);
+    background-size: var(--console-grid-size);
+    opacity: 0.1;
+  }
+  
+  /* Console Line - Clean separator */
+  .console-line {
+    @apply relative;
+  }
+  
+  .console-line::before {
+    content: '';
+    @apply absolute left-0 top-0 w-4 h-px bg-border;
+  }
+
+  /* Blueprint Line - Section headers */
+  .blueprint-line {
+    @apply relative inline-flex items-center;
+  }
+  
+  .blueprint-line::before {
+    content: '';
+    @apply absolute -left-6 top-1/2 w-4 h-px bg-primary;
+  }
+
+  /* CTA Primary - Main action buttons */
+  .cta-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
+    @apply font-mono font-bold uppercase tracking-wider;
+    @apply transition-all duration-150;
+    @apply shadow-sm hover:shadow-md;
+  }
+  
+  /* Micro-interactions - Optimized timing (150-200ms standard) */
+  .hover-lift {
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+  
+  .hover-glow {
+    transition: box-shadow 0.2s ease-out;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .hover-lift,
+    .hover-glow,
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  /* Form Group - Matching input and button heights */
+  .form-group-horizontal {
+    @apply flex flex-col sm:flex-row gap-4 sm:gap-3;
+  }
+  
+  .form-group-horizontal input,
+  .form-group-horizontal .input-matched {
+    @apply h-[44px];
+  }
+  
+  .form-group-horizontal button,
+  .form-group-horizontal .button-matched {
+    @apply h-[44px] px-6;
+  }
+  
+  /* Status Indicators - Three-color brand system */
+  .status-positive {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  .status-negative {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .status-neutral {
+    @apply bg-secondary text-secondary-foreground;
+  }
+  
+  .status-new {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  /* Stat Block - Clean metrics display */
+  .stat-block {
+    @apply border border-border bg-card p-6;
+    @apply shadow-sm hover:shadow-md transition-shadow duration-150;
+  }
+  
+  .stat-number {
+    @apply text-3xl font-bold text-primary font-mono tabular-nums;
+  }
+  
+  .stat-label {
+    @apply text-xs text-muted-foreground uppercase tracking-wider mt-1 font-mono;
+  }
+  
+  /* Console Buttons - High visibility, functional */
+  .btn-console {
+    @apply bg-transparent text-foreground border-2 border-foreground;
+    @apply px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider;
+    @apply transition-all duration-150;
+    @apply hover:bg-foreground hover:text-background focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply shadow-sm hover:shadow-md  ; 
+  }
+  
+  .btn-console-secondary {
+    @apply bg-transparent text-foreground border-2 border-foreground;
+    @apply px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider;
+    @apply transition-all duration-150;
+    @apply hover:bg-foreground hover:text-background focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply shadow-sm hover:shadow-md;
+  }
+  
+  .btn-console-accent {
+    @apply bg-accent text-accent-foreground border-0;
+    @apply px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider;
+    @apply transition-all duration-150;
+    @apply hover:bg-accent/90 focus:ring-2 focus:ring-ring focus:ring-offset-2;
+    @apply shadow-sm hover:shadow-md;
+  }
+  
+  /* System Badge - Status indicator */
+  .system-badge {
+    @apply inline-flex items-center px-2 py-1 text-xs font-mono font-medium;
+    @apply rounded-full border;
+  }
+  
+  /* Console Card - Clean, functional */
+  .console-card {
+    @apply bg-card border border-border shadow-sm;
+    @apply transition-all duration-150 hover:shadow-md;
+  }
+  
+  /* Monospace Numbers - Tabular alignment */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* ===== UTILITY CLASSES - ALL 9 COLORS ===== */
+
+  /* Teal - Data/Analyst */
+  .accent-data {
+    @apply text-[hsl(var(--accent-data))];
+  }
+  
+  .bg-accent-data {
+    @apply bg-[hsl(var(--accent-data))];
+  }
+  
+  .border-accent-data {
+    @apply border-[hsl(var(--accent-data))];
+  }
+  
+  .bg-accent-data\/10 {
+    background-color: hsl(var(--accent-data) / 0.1);
+  }
+  
+  /* Yellow-Green - Success/Spotlight */
+  .text-success {
+    @apply text-[hsl(var(--success-foreground))];
+  }
+  
+  .bg-success {
+    @apply bg-[hsl(var(--success))];
+  }
+  
+  .bg-success\/10 {
+    background-color: hsl(var(--success) / 0.1);
+  }
+  
+  .border-success {
+    @apply border-[hsl(var(--success))];
+  }
+  
+  /* Warm Tan - Differentiator */
+  .text-warm {
+    @apply text-[hsl(var(--warm-foreground))];
+  }
+  
+  .bg-warm {
+    @apply bg-[hsl(var(--warm))];
+  }
+  
+  .bg-warm\/10 {
+    background-color: hsl(var(--warm) / 0.1);
+  }
+  
+  /* ===== FORTUNE 500 INTERACTIVE HOVER UTILITIES ===== */
+  /* Consistent teal/primary hover states across all interactive elements */
+  
+  .interactive-hover {
+    @apply transition-all duration-200 hover:text-primary hover:scale-105 cursor-pointer;
+  }
+  
+  .card-hover-primary {
+    @apply transition-all duration-200 hover:shadow-lg hover:border-primary/30;
+  }
+  
+  .button-hover-teal {
+    @apply hover:bg-primary/10 hover:text-primary transition-colors duration-200;
+  }
+  
+  .link-hover-teal {
+    @apply transition-colors duration-200 hover:text-primary focus:text-primary;
+  }
+  
+  .border-warm {
+    @apply border-[hsl(var(--warm))];
+  }
+  
+  /* Forest Green - Authority */
+  .text-authority {
+    @apply text-[hsl(var(--authority-foreground))];
+  }
+  
+  .bg-authority {
+    @apply bg-[hsl(var(--authority))];
+  }
+  
+  .bg-authority\/90 {
+    background-color: hsl(var(--authority) / 0.9);
+  }
+  
+  .border-authority {
+    @apply border-[hsl(var(--authority))];
+  }
+  
+  /* Stat block variants with new colors */
+  .stat-block-data {
+    @apply stat-block border-l-4 border-accent-data;
+  }
+  
+  .stat-number-data {
+    @apply stat-number accent-data;
+  }
+  
+  .stat-block-success {
+    @apply stat-block border-l-4 border-success;
+  }
+  
+  .stat-block-warm {
+    @apply stat-block border-l-4 border-warm;
+  }
+  
+  /* ===== STANDARDIZED SPACING SYSTEM - 8px baseline ===== */
+  /* Vertical Rhythm - Semantic spacing utilities for consistency */
+  
+  /* Micro spacing (8px) - Icon to label, inline elements */
+  .spacing-micro {
+    @apply mt-2;  /* 8px */
+  }
+  
+  /* Tight spacing (16px) - Paragraph to paragraph */
+  .spacing-tight {
+    @apply mt-4;  /* 16px */
+  }
+  
+  /* Element spacing (24px) - Element to button, list items */
+  .spacing-element {
+    @apply mt-6;  /* 24px */
+  }
+  
+  /* Content spacing (40px) - Content blocks, card internals */
+  .spacing-content {
+    @apply mt-10;  /* 40px */
+  }
+  
+  /* Subsection spacing (64px) - Major content divisions */
+  .spacing-subsection {
+    @apply mt-16;  /* 64px */
+  }
+  
+  /* Section spacing (80px) - Section boundaries */
+  .spacing-section {
+    @apply mt-20;  /* 80px */
+  }
+  
+  /* Heading to content spacing (24px) */
+  .heading-spacing {
+    @apply mb-6;  /* 24px */
+  }
+  
+  /* Section padding utilities */
+  .section-spacing {
+    @apply py-20;  /* 80px - Standard section spacing */
+  }
+  
+  .section-spacing-half {
+    @apply py-10;  /* 40px - Half spacing (mobile) */
+  }
+  
+  .section-spacing-quarter {
+    @apply py-5;   /* 20px - Quarter spacing (internal) */
+  }
+  
+  /* Responsive spacing adjustments */
+  @media (max-width: 767px) {
+    .section-spacing {
+      @apply py-10;  /* 40px on mobile */
+    }
+    
+    .spacing-content {
+      @apply mt-6;  /* 24px on mobile */
+    }
+    
+    .spacing-subsection {
+      @apply mt-10;  /* 40px on mobile */
+    }
+    
+    .spacing-section {
+      @apply mt-12;  /* 48px on mobile */
+    }
+    
+    .heading-spacing {
+      @apply mb-4;  /* 16px on mobile */
+    }
+  }
+  
+  /* ===== GRID SYSTEM UTILITIES ===== */
+  .container-standard {
+    @apply container mx-auto px-6;
+    max-width: 1200px;
+  }
+  
+  .grid-standard {
+    @apply grid grid-cols-12 gap-6;  /* 24px gutters */
+  }
+  
+  /* Semantic grid gap utilities */
+  .gutter-micro {
+    @apply gap-2;  /* 8px - Tight inline elements */
+  }
+  
+  .gutter-tight {
+    @apply gap-4;  /* 16px - Compact grids */
+  }
+  
+  .gutter-standard {
+    @apply gap-6;  /* 24px - Standard grid spacing (default) */
+  }
+  
+  .gutter-content {
+    @apply gap-8;  /* 32px - Generous content spacing */
+  }
+  
+  /* ===== SAFE COLOR PAIRING UTILITIES ===== */
+  /* These utilities automatically pair backgrounds with correct text colors */
+  /* Use these to prevent black text on burgundy backgrounds */
+  
+  .bg-primary-safe {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .bg-primary-safe\/10 {
+    background-color: hsl(var(--primary) / 0.1);
+    /* Text inherits from parent - safe for decorative elements */
+  }
+  
+  .bg-primary-safe\/20 {
+    background-color: hsl(var(--primary) / 0.2);
+    /* Text inherits from parent - safe for decorative elements */
+  }
+  
+  /* Badge/pill variants with safe text */
+  .badge-primary-safe {
+    @apply inline-flex items-center rounded-full px-3 py-1;
+    @apply bg-primary text-primary-foreground;
+    @apply font-mono text-xs uppercase tracking-wide;
+  }
+  
+  /* Button variant with safe text */
+  .btn-primary-safe {
+    @apply inline-flex items-center justify-center;
+    @apply bg-primary text-primary-foreground;
+    @apply hover:bg-[hsl(327_82%_38%)] transition-all;
+    @apply px-8 py-4 rounded-md font-mono uppercase tracking-wide;
+  }
+  
+  /* ===== TERMINAL/ASSESSMENT DESIGN ELEMENTS ===== */
+  .assessment-panel {
+    @apply bg-card border-2 border-accent-data p-8 rounded-lg;
+    @apply shadow-lg relative;
+  }
+  
+  .assessment-panel::before {
+    content: '';
+    @apply absolute top-2 left-2 w-2 h-2 bg-[hsl(var(--yellow-green))] rounded-full;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .system-monitor {
+    @apply font-mono text-xs uppercase tracking-wider;
+    @apply flex items-center gap-2;
+  }
+  
+  .system-monitor::before {
+    content: '';
+    @apply w-2 h-2 bg-accent-data rounded-full inline-block;
+  }
+  
+  .metric-display {
+    @apply bg-card border border-border p-6 rounded;
+    @apply font-mono tabular-nums;
+  }
+  
+  .inline-graph {
+    @apply h-16 w-full relative border-l-2 border-accent-data;
+    background: linear-gradient(to right, hsl(var(--accent-data) / 0.2), hsl(var(--accent-data) / 0.05));
+  }
+  
+  .terminal-prompt {
+    @apply font-mono text-sm;
+    color: hsl(var(--accent-data));
+  }
+  
+  .terminal-prompt::before {
+    content: '> ';
+    color: hsl(var(--accent-data));
+  }
+  
+  /* System Status Badge */
+  .system-status {
+    @apply inline-flex items-center gap-2 px-2.5 py-0.5;
+    @apply border rounded;
+    @apply font-mono text-xs uppercase tracking-wider;
+    background-color: hsl(var(--accent-data) / 0.1);
+    border-color: hsl(var(--accent-data) / 0.2);
+  }
+  
+  .system-status::before {
+    content: '';
+    @apply w-2 h-2 rounded-full;
+    background-color: hsl(var(--yellow-green));
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Data Visualization Grid */
+  .data-grid {
+    @apply grid gap-6;
+    @apply border border-border p-6 rounded-lg bg-card;
+  }
+  
+  /* ===== ADVANCED MICRO-INTERACTIONS ===== */
+  
+  /* Smooth scale on hover */
+  .hover-scale-sm {
+    @apply transition-transform duration-200 ease-out;
+  }
+  
+  .hover-scale-sm:hover {
+    @apply scale-105;
+  }
+  
+  /* Subtle lift effect */
+  .hover-elevate {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .hover-elevate:hover {
+    @apply -translate-y-0.5 shadow-md;
+  }
+  
+  /* Animated border */
+  .animated-border {
+    @apply relative overflow-hidden;
+  }
+  
+  .animated-border::before {
+    content: '';
+    @apply absolute inset-0 border-2 border-primary opacity-0 transition-opacity duration-300;
+  }
+  
+  .animated-border:hover::before {
+    @apply opacity-100;
+  }
+  
+  /* Gradient hover effect */
+  .hover-gradient {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .hover-gradient::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5;
+    @apply opacity-0 transition-opacity duration-300;
+  }
+  
+  .hover-gradient:hover::after {
+    @apply opacity-100;
+  }
+  
+  /* Shimmer loading effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 0%,
+      hsl(var(--muted-foreground) / 0.1) 50%,
+      hsl(var(--muted)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  /* Pulse animation for CTAs */
+  .pulse-cta {
+    animation: pulse-cta 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-cta {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+    }
+  }
+  
+  /* Smooth entrance animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
+  }
+  
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in-left {
+    animation: fade-in-left 0.6s ease-out;
+  }
+  
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .fade-in-right {
+    animation: fade-in-right 0.6s ease-out;
+  }
+  
+  /* Staggered animations */
+  .stagger-1 { animation-delay: 100ms; }
+  .stagger-2 { animation-delay: 200ms; }
+  .stagger-3 { animation-delay: 300ms; }
+  .stagger-4 { animation-delay: 400ms; }
+  .stagger-5 { animation-delay: 500ms; }
+  
+  /* Focus state improvements for accessibility */
+  .focus-visible-primary:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+  
+  .focus-visible-accent:focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+  
+  /* Additional utility animations */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+  
+  .animate-shake {
+    animation: shake 0.3s ease-in-out;
+  }
+  
+  @keyframes scale-in {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+  
+  /* Progress bar animation */
+  @keyframes progress {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  .animate-progress {
+    animation: progress 2s ease-out;
+  }
+  
+  /* ===== BLOG ARTICLE TYPOGRAPHY ===== */
+  /* Fortune 500 editorial standards - Bloomberg/McKinsey level */
+  
+  .prose-blog {
+    @apply text-foreground;
+  }
+  
+  /* Newspaper-style typography */
+  .prose-blog {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .prose-blog h2 {
+    @apply font-mono font-bold text-foreground;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 3rem 0 1rem;
+    scroll-margin-top: 100px;
+  }
+  
+  .prose-blog h3 {
+    @apply font-mono font-bold text-foreground;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin: 2.5rem 0 0.75rem;
+  }
+  
+  .prose-blog h4 {
+    @apply font-mono font-semibold text-foreground;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 2rem 0 0.5rem;
+  }
+  
+  .prose-blog h5 {
+    @apply font-mono font-semibold text-foreground;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    margin: 1.5rem 0 0.5rem;
+  }
+  
+  .prose-blog p {
+    @apply text-foreground leading-relaxed;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    max-width: 75ch;
+    text-wrap: pretty;
+  }
+  
+  .prose-blog ul,
+  .prose-blog ol {
+    @apply text-foreground leading-relaxed;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .prose-blog li {
+    margin-bottom: 0.5rem;
+    max-width: 75ch;
+  }
+  
+  .prose-blog strong {
+    @apply font-semibold text-foreground;
+  }
+  
+  .prose-blog a {
+    @apply text-primary underline underline-offset-2;
+    transition: color 0.2s ease;
+  }
+  
+  .prose-blog a:hover {
+    @apply text-primary/80;
+  }
+  
+  .prose-blog blockquote {
+    @apply border-l-2 border-border pl-6 my-6 italic text-foreground;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+  
+  .prose-blog code {
+    @apply bg-muted px-2 py-1 rounded text-sm font-mono text-foreground;
+  }
+  
+  .prose-blog pre {
+    @apply bg-muted p-4 rounded overflow-x-auto my-6;
+  }
+  
+  .prose-blog pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  /* Newspaper utilities */
+  .newspaper-divider {
+    border-top: 1px solid hsl(var(--border));
+    margin: 3rem 0;
+    opacity: 0.5;
+  }
+  
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  
+  /* Reading experience enhancements */
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+
+  /* Horizontal scrolling carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .hover\:scrollbar-default:hover {
+    -ms-overflow-style: auto;
+    scrollbar-width: thin;
+  }
+  
+  .hover\:scrollbar-default:hover::-webkit-scrollbar {
+    display: block;
+    height: 8px;
+  }
+  
+  .hover\:scrollbar-default:hover::-webkit-scrollbar-track {
+    @apply bg-muted/30 rounded;
+  }
+  
+  .hover\:scrollbar-default:hover::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded hover:bg-primary/30;
+  }
+}

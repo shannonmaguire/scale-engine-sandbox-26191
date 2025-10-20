@@ -1,0 +1,20 @@
+{
+  "name": "CWT Studio - Revenue System Infrastructure",
+  "short_name": "CWT Studio",
+  "description": "We install the systems that drive revenue. Infrastructure assessments, revenue sprints, and fractional ops for scaling businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1B3022",
+  "theme_color": "#1B3022",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/src/assets/cwt-symbol-burgundy.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en-US"
+}

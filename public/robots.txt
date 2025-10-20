@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Priority pages
+Allow: /services
+Allow: /salesforce
+Allow: /proof
+Allow: /blog
+Allow: /assessment
+Allow: /ae-hub
+Allow: /resources
+
+# Block utility pages
+Disallow: /auth
+Disallow: /design-system
+Disallow: /partner-dashboard
+
+Sitemap: https://cwtstudio.com/sitemap.xml
+
+Host: cwtstudio.com
