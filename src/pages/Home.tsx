@@ -86,32 +86,57 @@ const Home = () => {
       <Section>
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="heading-page mb-4">
-              The Competitive Advantage Is the Backend
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-mono mb-4">
+              <CheckCircle className="w-3 h-3" />
+              TRUSTED BY 50+ B2B COMPANIES
+            </div>
+            <h1 className="heading-page mb-6">
+              Stop Bleeding $40K+ on Tools That Don't Talk to Each Other
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8">
-              Install revenue infrastructure that compounds through documented systems and repeatable execution, delivering measurable outcomes in 90 days.
+            <p className="text-xl text-muted-foreground mb-6">
+              Your Salesforce, CRM, and outbound stack are disconnected. We audit what you have, eliminate waste, and build systems that actually work—in 90 days.
             </p>
+
+            <div className="bg-primary/5 border-l-4 border-primary p-4 mb-8">
+              <div className="font-bold text-foreground mb-2">You know you have this problem if:</div>
+              <ul className="space-y-1.5 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">→</span>
+                  <span>Pipeline data changes depending on who you ask</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">→</span>
+                  <span>You're paying for 8+ tools but still exporting to spreadsheets</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-0.5">→</span>
+                  <span>RevOps spends more time fixing data than analyzing it</span>
+                </li>
+              </ul>
+            </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <ConversionOptimizedButton
                 to="/assessment"
                 ctaName="Hero - Start Your Assessment"
                 location="Homepage Hero"
+                size="lg"
               >
-                Start Assessment
+                Get Free System Audit
               </ConversionOptimizedButton>
               <ConversionOptimizedButton
                 to="/sample-report"
                 ctaName="Hero - View Sample Report"
                 location="Homepage Hero"
                 variant="outline"
+                size="lg"
                 showArrow={false}
               >
-                Sample Report
+                See Sample Report
               </ConversionOptimizedButton>
             </div>
+            <p className="text-xs text-muted-foreground font-mono">$1.5K assessment · 100% credit to implementation · 2-week turnaround</p>
           </div>
           
           <div>
@@ -178,40 +203,60 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Proof */}
+      {/* Social Proof */}
       <Section variant="muted">
-        <h2 className="heading-section mb-8">By the Numbers</h2>
+        <div className="text-center mb-12">
+          <h2 className="heading-section mb-3">Client Results (Not Projections)</h2>
+          <p className="text-muted-foreground">Every metric verified by third-party data sources</p>
+        </div>
         
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">2</div>
-            <div className="text-sm text-muted-foreground">Case Studies</div>
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="bg-card border-2 border-primary/20 rounded-lg p-6 text-center">
+            <div className="text-4xl font-bold font-mono text-primary mb-2">$500K+</div>
+            <div className="text-sm text-muted-foreground mb-1">Pipeline Activated</div>
+            <div className="text-xs text-muted-foreground">Compliance Advisory, 90 days</div>
           </div>
           
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">&gt;40%</div>
-            <div className="text-sm text-muted-foreground">Open Rates</div>
-            <div className="text-xs text-muted-foreground">vs 15-25% avg</div>
+          <div className="bg-card border-2 border-primary/20 rounded-lg p-6 text-center">
+            <div className="text-4xl font-bold font-mono text-primary mb-2">107%</div>
+            <div className="text-sm text-muted-foreground mb-1">Revenue Growth</div>
+            <div className="text-xs text-muted-foreground">E-Commerce, 6 months</div>
           </div>
           
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">90</div>
-            <div className="text-sm text-muted-foreground">Day Foundation</div>
+          <div className="bg-card border-2 border-primary/20 rounded-lg p-6 text-center">
+            <div className="text-4xl font-bold font-mono text-primary mb-2">&gt;40%</div>
+            <div className="text-sm text-muted-foreground mb-1">Open Rates</div>
+            <div className="text-xs text-muted-foreground">vs 15-25% industry avg</div>
           </div>
-          
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">100%</div>
-            <div className="text-sm text-muted-foreground">Documentation</div>
+        </div>
+
+        {/* Testimonial */}
+        <div className="max-w-3xl mx-auto bg-card border-2 border-primary/20 rounded-lg p-6 mb-8">
+          <p className="text-lg text-foreground mb-4 italic leading-relaxed">
+            "We burned $85K with an agency that kept selling us new tools. CWT Studio audited what we already owned, found $40K in waste, and built a system that actually works. ROI positive in 6 weeks."
+          </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="font-bold text-foreground">VP of Revenue Operations</div>
+              <div className="text-sm text-muted-foreground">B2B SaaS, Series B</div>
+            </div>
+            <div className="text-right">
+              <div className="text-2xl font-mono font-bold text-primary">$40K</div>
+              <div className="text-xs text-muted-foreground">waste eliminated</div>
+            </div>
           </div>
         </div>
         
-        <ConversionOptimizedButton
-          to="/proof"
-          ctaName="By Numbers - See Proof"
-          location="By Numbers Section"
-        >
-          See Full Case Studies
-        </ConversionOptimizedButton>
+        <div className="text-center">
+          <ConversionOptimizedButton
+            to="/proof"
+            ctaName="By Numbers - See Proof"
+            location="By Numbers Section"
+            size="lg"
+          >
+            See All Case Studies
+          </ConversionOptimizedButton>
+        </div>
       </Section>
 
       {/* Exit Intent Popup */}
