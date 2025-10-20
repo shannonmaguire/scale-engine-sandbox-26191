@@ -484,7 +484,7 @@ const SampleReport = () => {
           <div className="mb-16">
             <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">6.0 Risk Assessment</h2>
             <div className="border border-border rounded bg-background p-6">
-              <div className="grid md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-3 gap-6">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-3">
                     <Shield className="w-5 h-5 text-foreground" />
