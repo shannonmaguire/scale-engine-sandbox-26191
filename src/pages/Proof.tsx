@@ -127,7 +127,7 @@ const Proof = () => {
       </Section>
 
       {/* Quick Metrics Bar */}
-      <Section variant="muted" className="py-8">
+      <Section variant="muted" className="py-16">
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
             <div className="text-3xl font-mono font-bold text-primary mb-1">4</div>
@@ -219,7 +219,7 @@ const Proof = () => {
       </Section>
 
       {/* CTA Section */}
-      <Section>
+      <Section className="section-spacing-half">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
