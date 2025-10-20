@@ -40,74 +40,46 @@ export const generateAssessmentPDF = async ({
   };
 
   // === COVER PAGE ===
-  // Add subtle background accent
-  doc.setFillColor(250, 245, 245);
-  doc.rect(0, 0, pageWidth, 100, 'F');
-  
   yPosition = 40;
 
   // Company Name
-  doc.setFontSize(11);
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(139, 0, 0); // Burgundy
-  doc.text("CWT STUDIO", margin, yPosition);
-  yPosition += 7;
-
-  doc.setFontSize(8);
+  doc.setFontSize(10);
   doc.setFont("helvetica", "normal");
-  doc.setTextColor(100, 100, 100);
-  doc.text("TECHNICAL SYSTEMS & REVENUE INFRASTRUCTURE", margin, yPosition);
-  yPosition += 40;
+  doc.setTextColor(0, 0, 0);
+  doc.text("CWT STUDIO", margin, yPosition);
+  yPosition += 20;
 
   // Main Title
-  doc.setFontSize(28);
+  doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(0, 0, 0);
   const titleLines = doc.splitTextToSize(title, contentWidth);
   titleLines.forEach((line: string) => {
     doc.text(line, margin, yPosition);
-    yPosition += 12;
+    yPosition += 10;
   });
-  yPosition += 10;
+  yPosition += 5;
 
   // Subtitle
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "normal");
-  doc.setTextColor(60, 60, 60);
-  doc.text("Technical Maturity Assessment Report", margin, yPosition);
-  yPosition += 50;
-
-  // Score Box with gradient effect
-  const boxWidth = contentWidth;
-  const boxHeight = 80;
-  
-  // Background with subtle shadow effect
-  doc.setFillColor(245, 245, 245);
-  doc.rect(margin + 2, yPosition + 2, boxWidth, boxHeight, 'F');
-  
-  doc.setFillColor(255, 255, 255);
-  doc.setDrawColor(139, 0, 0); // Burgundy border
-  doc.setLineWidth(2);
-  doc.rect(margin, yPosition, boxWidth, boxHeight, 'FD');
-
-  // Score Label
   doc.setFontSize(10);
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(120, 120, 120);
-  doc.text("OVERALL MATURITY SCORE", margin + 15, yPosition + 15);
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(0, 0, 0);
+  doc.text("Technical Maturity Assessment Report", margin, yPosition);
+  yPosition += 30;
 
-  // Score Value with color coding
-  doc.setFontSize(52);
+  // Score Box - plain
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(0, 0, 0);
+  doc.text("OVERALL MATURITY SCORE", margin, yPosition);
+  yPosition += 10;
+
+  // Score Value
+  doc.setFontSize(36);
   doc.setFont("helvetica", "bold");
-  // Color based on score
-  if (overallProgress >= 75) {
-    doc.setTextColor(34, 139, 34); // Green
-  } else if (overallProgress >= 50) {
-    doc.setTextColor(255, 165, 0); // Orange
-  } else {
-    doc.setTextColor(139, 0, 0); // Burgundy/Red
-  }
-  doc.text(`${overallProgress}%`, margin + 15, yPosition + 48);
+  doc.setTextColor(0, 0, 0);
+  doc.text(`${overallProgress}%`, margin, yPosition);
+  yPosition += 15;
 
   // Metrics
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
@@ -120,43 +92,20 @@ export const generateAssessmentPDF = async ({
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
-  doc.setTextColor(60, 60, 60);
-  doc.text(`${yesCount} Yes • ${partialCount} Partial • ${noCount} No`, margin + 15, yPosition + 58);
+  doc.setTextColor(0, 0, 0);
+  doc.text(`${yesCount} Yes, ${partialCount} Partial, ${noCount} No (${totalItems} total)`, margin, yPosition);
+  yPosition += 25;
 
-  // Visual Progress Bar (right side) - improved
-  const barX = pageWidth - margin - 95;
-  const barY = yPosition + 20;
-  const barWidth = 85;
-  const barHeight = 45;
-
-  // Background
-  doc.setFillColor(240, 240, 240);
-  doc.setDrawColor(200, 200, 200);
-  doc.setLineWidth(1);
-  doc.roundedRect(barX, barY, barWidth, barHeight, 3, 3, 'FD');
-  
-  // Fill
-  const fillHeight = (barHeight * overallProgress) / 100;
-  if (overallProgress >= 75) {
-    doc.setFillColor(34, 139, 34);
-  } else if (overallProgress >= 50) {
-    doc.setFillColor(255, 165, 0);
-  } else {
-    doc.setFillColor(139, 0, 0);
-  }
-  doc.roundedRect(barX, barY + (barHeight - fillHeight), barWidth, fillHeight, 3, 3, 'F');
-
-  doc.setFontSize(20);
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(255, 255, 255);
-  doc.text(`${overallProgress}%`, barX + barWidth / 2, barY + barHeight / 2 + 5, { align: 'center' });
-
-  yPosition += boxHeight + 25;
+  // Separator line
+  doc.setDrawColor(0, 0, 0);
+  doc.setLineWidth(0.5);
+  doc.line(margin, yPosition, pageWidth - margin, yPosition);
+  yPosition += 15;
 
   // Metadata
   doc.setFontSize(8);
   doc.setFont("helvetica", "normal");
-  doc.setTextColor(120, 120, 120);
+  doc.setTextColor(0, 0, 0);
   doc.text(`Generated: ${new Date().toLocaleDateString('en-US', { 
     year: 'numeric', 
     month: 'long', 
@@ -169,13 +118,13 @@ export const generateAssessmentPDF = async ({
   doc.addPage();
   yPosition = margin;
 
-  doc.setFontSize(18);
+  doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(0, 0, 0);
   doc.text("Executive Summary", margin, yPosition);
-  yPosition += 15;
+  yPosition += 12;
 
-  doc.setFontSize(10);
+  doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(0, 0, 0);
   
@@ -187,23 +136,18 @@ export const generateAssessmentPDF = async ({
     yPosition += 5;
   });
 
-  yPosition += 15;
+  yPosition += 12;
 
-  // Key Findings Box - improved
-  doc.setFillColor(250, 245, 245);
-  doc.roundedRect(margin, yPosition, contentWidth, 50, 3, 3, 'F');
-  doc.setDrawColor(139, 0, 0);
-  doc.setLineWidth(1);
-  doc.roundedRect(margin, yPosition, contentWidth, 50, 3, 3, 'S');
-
-  doc.setFontSize(11);
+  // Key Findings - plain
+  doc.setFontSize(10);
   doc.setFont("helvetica", "bold");
-  doc.setTextColor(139, 0, 0);
-  doc.text("KEY FINDINGS", margin + 10, yPosition + 12);
+  doc.setTextColor(0, 0, 0);
+  doc.text("KEY FINDINGS", margin, yPosition);
+  yPosition += 8;
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
-  doc.setTextColor(60, 60, 60);
+  doc.setTextColor(0, 0, 0);
 
   const findings = [
     `${yesCount} capabilities fully operational, ${partialCount} partially implemented`,
@@ -212,10 +156,11 @@ export const generateAssessmentPDF = async ({
   ];
 
   findings.forEach((finding, index) => {
-    doc.text(`• ${finding}`, margin + 10, yPosition + 26 + (index * 8));
+    doc.text(`• ${finding}`, margin, yPosition);
+    yPosition += 6;
   });
 
-  yPosition += 70;
+  yPosition += 15;
 
   // === CATEGORY PERFORMANCE ===
   doc.addPage();
@@ -294,82 +239,54 @@ export const generateAssessmentPDF = async ({
     yPosition += rowHeight;
   });
 
+  yPosition += 10;
+
   // === DETAILED CRITERIA ===
   doc.addPage();
   yPosition = margin;
 
-  doc.setFontSize(18);
+  doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(0, 0, 0);
   doc.text("Assessment Criteria", margin, yPosition);
-  yPosition += 15;
+  yPosition += 12;
 
   categories.forEach((category, catIndex) => {
-    checkForNewPage(25);
+    checkForNewPage(20);
 
-    // Category Header with gradient effect
-    doc.setFillColor(139, 0, 0);
-    doc.roundedRect(margin, yPosition, contentWidth, 14, 2, 2, 'F');
-
-    doc.setFontSize(11);
+    // Category Header - plain
+    doc.setFontSize(10);
     doc.setFont("helvetica", "bold");
-    doc.setTextColor(255, 255, 255);
-    doc.text(`${catIndex + 1}. ${category.title}`, margin + 8, yPosition + 9);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`${catIndex + 1}. ${category.title}`, margin, yPosition);
+    yPosition += 10;
 
-    yPosition += 20;
-
-    // Items
+    // Items - plain text style
     category.items.forEach((item) => {
-      checkForNewPage(12);
+      checkForNewPage(10);
 
       const answer = checklistState[checklistId]?.[item.id];
-
-      // Status indicator
-      const boxSize = 4;
-      const boxX = margin + 4;
-      const boxY = yPosition - 3;
-
-      if (answer === "yes") {
-        // Green checkmark
-        doc.setFillColor(34, 139, 34);
-        doc.rect(boxX, boxY, boxSize, boxSize, 'F');
-        doc.setDrawColor(255, 255, 255);
-        doc.setLineWidth(0.6);
-        doc.line(boxX + 0.8, boxY + 2, boxX + 1.6, boxY + 3);
-        doc.line(boxX + 1.6, boxY + 3, boxX + 3.2, boxY + 1);
-      } else if (answer === "partial") {
-        // Orange partial
-        doc.setFillColor(255, 165, 0);
-        doc.rect(boxX, boxY, boxSize, boxSize, 'F');
-        doc.setDrawColor(255, 255, 255);
-        doc.setLineWidth(0.8);
-        doc.line(boxX + 0.8, boxY + 2, boxX + 3.2, boxY + 2);
-      } else if (answer === "no") {
-        // Red X
-        doc.setFillColor(200, 50, 50);
-        doc.rect(boxX, boxY, boxSize, boxSize, 'F');
-        doc.setDrawColor(255, 255, 255);
-        doc.setLineWidth(0.6);
-        doc.line(boxX + 0.8, boxY + 0.8, boxX + 3.2, boxY + 3.2);
-        doc.line(boxX + 3.2, boxY + 0.8, boxX + 0.8, boxY + 3.2);
-      } else {
-        // Unanswered
-        doc.setFillColor(255, 255, 255);
-        doc.rect(boxX, boxY, boxSize, boxSize, 'F');
-        doc.setDrawColor(180, 180, 180);
-        doc.setLineWidth(0.5);
-        doc.rect(boxX, boxY, boxSize, boxSize, 'S');
-      }
+      
+      // Simple status indicator
+      doc.setFontSize(8);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(0, 0, 0);
+      
+      let status = "[ ]";
+      if (answer === "yes") status = "[✓]";
+      else if (answer === "partial") status = "[~]";
+      else if (answer === "no") status = "[✗]";
+      
+      doc.text(status, margin, yPosition);
 
       // Item Text
       doc.setFontSize(9);
       doc.setFont("helvetica", "normal");
-      const textColor = answer === "yes" ? 60 : 0;
-      doc.setTextColor(textColor, textColor, textColor);
+      doc.setTextColor(0, 0, 0);
       
       const itemLines = doc.splitTextToSize(item.label, contentWidth - 15);
       itemLines.forEach((line: string, idx: number) => {
-        doc.text(line, margin + 12, yPosition + (idx * 4));
+        doc.text(line, margin + 10, yPosition + (idx * 4));
       });
 
       yPosition += Math.max(itemLines.length * 4, 6);
@@ -382,11 +299,11 @@ export const generateAssessmentPDF = async ({
   doc.addPage();
   yPosition = margin;
 
-  doc.setFontSize(18);
+  doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
   doc.setTextColor(0, 0, 0);
   doc.text("Recommendations", margin, yPosition);
-  yPosition += 15;
+  yPosition += 12;
 
   const recommendations = [
     {
@@ -402,8 +319,8 @@ export const generateAssessmentPDF = async ({
       text: "Implement formal change management and documentation to prevent future technical debt."
     },
     {
-      title: "Consider Professional Support",
-      text: "Schedule a consultation with CWT Studio for comprehensive assessment and planning."
+      title: "Invest in Team Enablement",
+      text: "Ensure your team has the training and resources to maintain system improvements long-term."
     }
   ];
 
@@ -449,30 +366,13 @@ export const generateAssessmentPDF = async ({
   for (let i = 1; i <= pageCount; i++) {
     doc.setPage(i);
 
-    const footerY = pageHeight - 15;
+    const footerY = pageHeight - 12;
 
-    // Line
-    doc.setDrawColor(200, 200, 200);
-    doc.setLineWidth(0.3);
-    doc.line(margin, footerY, pageWidth - margin, footerY);
-
-    // Left - Company
+    // Page number only - plain
     doc.setFontSize(8);
-    doc.setFont("helvetica", "bold");
+    doc.setFont("helvetica", "normal");
     doc.setTextColor(0, 0, 0);
-    doc.text("CWT STUDIO", margin, footerY + 6);
-
-    // Center - Website
-    doc.setFontSize(8);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(60, 60, 60);
-    doc.text("cwtstudio.com", pageWidth / 2, footerY + 6, { align: 'center' });
-
-    // Right - Page
-    doc.setFontSize(8);
-    doc.setFont("helvetica", "normal");
-    doc.setTextColor(60, 60, 60);
-    doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin, footerY + 6, { align: 'right' });
+    doc.text(`Page ${i} of ${pageCount}`, pageWidth / 2, footerY, { align: 'center' });
   }
 
   // Save
