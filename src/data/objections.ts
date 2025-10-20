@@ -21,7 +21,7 @@ export const objections: Objection[] = [
     id: "budget-1",
     category: "budget",
     objection: "We don't have budget right now",
-    responseScript: "I completely understand. Most teams don't have a line item for 'Salesforce assessment insurance.' Here's the thing—this isn't consulting, it's a $1,200 insurance policy against a $50K mistake. If we find even 2-3 issues before your next implementation, you've already saved 10-15x the cost.",
+    responseScript: "Most teams don't have a line item for 'Salesforce assessment insurance.' This assessment is a $1,200 insurance policy against a $50K mistake. If we find even 2-3 issues before your next implementation, you've already saved 10-15x the cost.",
     fullFramework: {
       discovery: [
         "What's your typical project budget range?",
@@ -45,7 +45,7 @@ export const objections: Objection[] = [
     id: "budget-2",
     category: "budget",
     objection: "How do I justify this to my manager?",
-    responseScript: "Great question—you're thinking like an exec. Here's your pitch: 'I found a $1,200 service that flags deal-blocking technical issues before they cost us opportunities. They've helped 200+ AEs close technical deals faster. Can we test it on my next two deals?' We'll even hop on the call with you if needed.",
+    responseScript: "You're thinking like an exec. Here's your pitch: 'I found a $1,200 service that flags deal-blocking technical issues before they cost us opportunities. They've helped 200+ AEs close technical deals faster. Can we test it on my next two deals?' We'll hop on the call with you if needed.",
     fullFramework: {
       discovery: [
         "What metrics does your manager care about most?",
@@ -69,7 +69,7 @@ export const objections: Objection[] = [
     id: "budget-3",
     category: "budget",
     objection: "Can we start with something smaller/cheaper?",
-    responseScript: "I appreciate you wanting to test the waters. The challenge is technical assessments have a fixed cost—we have to review the entire org to spot integration risks and data issues. Think of it like a home inspection: you can't inspect 'just the kitchen' and call it good. That said, we do offer a free 15-minute triage call to confirm if an assessment makes sense for your deal.",
+    responseScript: "Technical assessments have a fixed cost because we have to review the entire org to spot integration risks and data issues. Think of it like a home inspection: you can't inspect 'just the kitchen' and call it good. We do offer a free 15-minute triage call to confirm if an assessment makes sense for your deal.",
     fullFramework: {
       discovery: [
         "What size deal would make this worth it for you?",
@@ -93,7 +93,7 @@ export const objections: Objection[] = [
     id: "budget-4",
     category: "budget",
     objection: "What's the ROI proof?",
-    responseScript: "Love that you're asking for data. Here's what we track: average client saves $47K on their first project (typically 5-7 hours of rework avoided), deals close 22 days faster on average, and 87% of assessments find at least 3 issues that would've blocked the deal. We also have a simple calculator I can share that shows ROI based on your deal size and average sales cycle.",
+    responseScript: "Here's what we track: average client saves $47K on their first project (typically 5-7 hours of rework avoided), deals close 22 days faster on average, and 87% of assessments find at least 3 issues that would've blocked the deal. I can share a simple calculator that shows ROI based on your deal size and average sales cycle.",
     fullFramework: {
       discovery: [
         "What would good ROI look like for you?",
@@ -119,7 +119,7 @@ export const objections: Objection[] = [
     id: "internal-1",
     category: "internal",
     objection: "We have an internal team that can handle this",
-    responseScript: "That's great—having internal expertise is huge. The challenge is your team is already slammed with BAU and implementations. When a hot deal needs answers in 24 hours, can they drop everything? We're the 'technical overflow' for when deals need instant validation without pulling your architects off their roadmap. Most clients use us alongside their team, not instead of them.",
+    responseScript: "Having internal expertise is valuable. Your team is already handling BAU and implementations. When a hot deal needs answers in 24 hours and they can't drop everything, we're the technical overflow. We provide instant validation without pulling your architects off their roadmap. Most clients use us alongside their team to handle surge capacity.",
     fullFramework: {
       discovery: [
         "How long does it typically take your team to turn around technical reviews?",
@@ -143,7 +143,7 @@ export const objections: Objection[] = [
     id: "internal-2",
     category: "internal",
     objection: "Our Salesforce admin can handle this",
-    responseScript: "Your admin is probably awesome at keeping the org running. But here's the thing—pre-sales technical validation is a different skillset than admin work. We're not replacing your admin; we're answering the gnarly prospect questions your admin shouldn't have to field while managing 50 users. Think of us as your 'AE technical co-pilot' for complex deals.",
+    responseScript: "Your admin likely keeps the org running well. Pre-sales technical validation is a different skillset than admin work. We're not replacing your admin; we answer the prospect questions your admin shouldn't have to field while managing 50 users. We serve as your 'AE technical co-pilot' for complex deals.",
     fullFramework: {
       discovery: [
         "What's your admin currently focused on?",
@@ -167,7 +167,7 @@ export const objections: Objection[] = [
     id: "internal-3",
     category: "internal",
     objection: "We already have a consultant",
-    responseScript: "Perfect—that means you understand the value of outside expertise. Here's how we're different: we're built for speed. Your consultant is great for implementations, but when you need answers in hours (not days), that's where we come in. Many clients use their consultant for execution and us for rapid deal support. We're complementary, not competitive.",
+    responseScript: "You understand the value of outside expertise. We're built for speed. Your consultant is great for implementations, but when you need answers in hours instead of days, that's where we come in. Many clients use their consultant for execution and us for rapid deal support. We're complementary to their work.",
     fullFramework: {
       discovery: [
         "What does your consultant typically help with?",
@@ -193,7 +193,7 @@ export const objections: Objection[] = [
     id: "timing-1",
     category: "timing",
     objection: "We're not ready yet",
-    responseScript: "I hear you. Here's the thing—'ready' usually means after you've already hit the pain. Most AEs come to us after losing a deal or getting stuck in a 3-month technical back-and-forth. The teams that win? They call us at the first sign of complexity. What would make you feel ready? Happy to revisit when you hit your next technical snag.",
+    responseScript: "'Ready' usually means after you've already hit the pain. Most AEs come to us after losing a deal or getting stuck in a 3-month technical back-and-forth. The teams that win call us at the first sign of complexity. What would make you feel ready? I'm happy to revisit when you hit your next technical snag.",
     fullFramework: {
       discovery: [
         "What would 'ready' look like for you?",
@@ -217,7 +217,7 @@ export const objections: Objection[] = [
     id: "timing-2",
     category: "timing",
     objection: "We need this done faster than you can deliver",
-    responseScript: "Speed is literally our business model. Standard turnaround is 4 hours for critical issues, 24 hours for full assessments. If you've got a demo tomorrow and need validation today, that's exactly what we do. Most 'fast' services take 2-3 days. We're built for deal-speed urgency because we know your prospects don't wait.",
+    responseScript: "Speed is our business model. Standard turnaround is 4 hours for critical issues, 24 hours for full assessments. If you've got a demo tomorrow and need validation today, that's exactly what we do. Most 'fast' services take 2-3 days. We're built for deal-speed urgency because prospects don't wait.",
     fullFramework: {
       discovery: [
         "What's your timeline?",
@@ -241,7 +241,7 @@ export const objections: Objection[] = [
     id: "timing-3",
     category: "timing",
     objection: "Can we revisit this next quarter?",
-    responseScript: "Totally fine—we're not going anywhere. Just curious: what changes next quarter? Usually when AEs say this, it's either budget timing or they don't have a hot deal right now. If it's budget, I can send over ROI docs to help with planning. If it's deal flow, let's set a reminder for when you land your next complex opp. Sound good?",
+    responseScript: "We're not going anywhere. What changes next quarter? Usually when AEs say this, it's either budget timing or they don't have a hot deal right now. If it's budget, I can send over ROI docs to help with planning. If it's deal flow, let's set a reminder for when you land your next complex opp.",
     fullFramework: {
       discovery: [
         "What's different next quarter?",
@@ -267,7 +267,7 @@ export const objections: Objection[] = [
     id: "technical-1",
     category: "technical",
     objection: "Our org is too complex/customized",
-    responseScript: "That's actually why most clients hire us. The vanilla orgs? Those are easy. It's the heavily customized, 10-year-old orgs with weird integrations that need expert eyes. We've seen 500+ Salesforce orgs—from 5 users to 50,000. Complexity is our specialty. The question isn't 'are we too complex?' it's 'can we afford not to validate before our next big move?'",
+    responseScript: "Complexity is why most clients hire us. The vanilla orgs are straightforward. It's the heavily customized, 10-year-old orgs with unusual integrations that need expert eyes. We've seen 500+ Salesforce orgs—from 5 users to 50,000. Complexity is our specialty. The question is whether you can afford not to validate before your next big move.",
     fullFramework: {
       discovery: [
         "What makes your org complex? (custom code, integrations, data volume?)",
@@ -291,7 +291,7 @@ export const objections: Objection[] = [
     id: "technical-2",
     category: "technical",
     objection: "We're mid-implementation already",
-    responseScript: "Interesting—so you're in the danger zone. Here's the thing: most implementations fail in weeks 4-8 when hidden issues surface. A mid-flight assessment can spot those landmines before they blow up your timeline. Think of it as a 'technical health check' to make sure you're still on track. We've saved dozens of projects that were 60% done but headed toward disaster.",
+    responseScript: "You're in the danger zone. Most implementations fail in weeks 4-8 when hidden issues surface. A mid-flight assessment can spot those landmines before they blow up your timeline. Think of it as a 'technical health check' to make sure you're still on track. We've saved dozens of projects that were 60% done but headed toward disaster.",
     fullFramework: {
       discovery: [
         "How far into the implementation are you?",
@@ -315,7 +315,7 @@ export const objections: Objection[] = [
     id: "technical-3",
     category: "technical",
     objection: "Integration concerns with [specific system]",
-    responseScript: "Great question—integrations are where most deals get stuck. We've done [system] integrations dozens of times. The key things we validate: data flow, sync frequency, error handling, and what breaks if [system] goes down. Most prospects don't think to ask about those until after they've signed. Want me to put together a quick integration validation checklist specific to [system]?",
+    responseScript: "Integrations are where most deals get stuck. We've done [system] integrations dozens of times. The key things we validate: data flow, sync frequency, error handling, and what breaks if [system] goes down. Most prospects don't think to ask about those until after they've signed. Want me to put together a quick integration validation checklist specific to [system]?",
     fullFramework: {
       discovery: [
         "What's the integration supposed to do?",
@@ -341,7 +341,7 @@ export const objections: Objection[] = [
     id: "trust-1",
     category: "trust",
     objection: "How do I know you understand our industry?",
-    responseScript: "Fair question. Here's how we work: we don't pretend to know your industry better than you. What we know is Salesforce—inside and out. We've worked with [industry] companies before, but more importantly, we know the technical questions that matter regardless of industry. Data security, compliance, integration patterns—those are universal. Want to see case studies from [industry] clients?",
+    responseScript: "Here's how we work: we don't pretend to know your industry better than you. What we know is Salesforce—inside and out. We've worked with [industry] companies before, and we know the technical questions that matter regardless of industry. Data security, compliance, integration patterns—those are universal. Want to see case studies from [industry] clients?",
     fullFramework: {
       discovery: [
         "What industry-specific concerns do you have?",
