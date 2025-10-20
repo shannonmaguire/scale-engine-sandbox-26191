@@ -110,10 +110,10 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-hub" element={<AEHub />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
-            <Route path="/ae-hub/objections" element={<AEObjectionLibrary />} />
+            <Route path="/ae-objection-library" element={<AEObjectionLibrary />} />
+            <Route path="/ae-hub/objections" element={<Navigate to="/ae-objection-library" replace />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/assessment-tools" element={<Navigate to="/ae-hub#resources" replace />} />
-            <Route path="/salesforce/partners" element={<Navigate to="/ae-hub" replace />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
