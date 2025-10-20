@@ -712,15 +712,15 @@ const SampleReport = () => {
         </div>
       </div>
 
-      {/* Footer CTA - Optimized for conversion */}
-      <div className="sticky bottom-0 bg-background border-t-2 border-primary/20 shadow-2xl z-20">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 py-8">
+      {/* Footer CTA - Conversion optimized */}
+      <div className="sticky bottom-0 bg-[hsl(var(--burgundy))] border-t border-white/10 shadow-2xl z-20">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Secondary action - subtle */}
+            {/* Back navigation - minimal, non-competing */}
             <Button 
               variant="ghost" 
               asChild 
-              className="font-mono text-muted-foreground hover:text-foreground order-2 md:order-1"
+              className="font-mono text-white/60 hover:text-white hover:bg-white/10 order-2 md:order-1"
             >
               <Link to="/" className="flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4" />
@@ -728,22 +728,22 @@ const SampleReport = () => {
               </Link>
             </Button>
             
-            {/* Primary CTA - prominent */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 order-1 md:order-2 w-full md:w-auto">
+            {/* Primary CTA - high contrast, clear hierarchy */}
+            <div className="flex flex-col sm:flex-row items-center gap-6 order-1 md:order-2">
               <div className="text-center sm:text-right">
-                <p className="font-mono text-sm text-muted-foreground mb-1">
+                <p className="font-sans font-semibold text-base text-white mb-0.5">
                   Want this for your organization?
                 </p>
-                <p className="font-mono text-xs text-muted-foreground/70">
+                <p className="font-mono text-xs text-white/70">
                   Get a custom assessment in 5 days
                 </p>
               </div>
               <Button 
                 asChild 
                 size="lg" 
-                className="font-mono font-bold uppercase tracking-wide w-full sm:w-auto whitespace-nowrap shadow-lg hover:shadow-xl"
+                className="bg-white text-[hsl(var(--burgundy))] hover:bg-white/90 font-mono font-bold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all w-full sm:w-auto min-w-[240px]"
               >
-                <Link to="/assessment" className="flex items-center gap-2">
+                <Link to="/assessment" className="flex items-center justify-center gap-2">
                   Get Your Assessment
                   <ArrowRight className="w-4 h-4" />
                 </Link>
