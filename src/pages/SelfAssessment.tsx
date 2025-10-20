@@ -33,7 +33,7 @@ const SelfAssessment = () => {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <h1 className="heading-page mb-6">How Mature Are Your Revenue Systems?</h1>
           <p className="text-description">
-            42 questions. 5 minutes. See where you stand.
+            Answer 42 questions about your systems. Get instant scoring and personalized recommendations.
           </p>
         </div>
 

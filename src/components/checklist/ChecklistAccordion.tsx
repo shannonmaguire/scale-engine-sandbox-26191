@@ -1,9 +1,10 @@
 import { ChecklistCategory } from "./InteractiveChecklist";
-import { ChecklistItem } from "./ChecklistItem";
+import { AssessmentItem, AssessmentAnswer } from "./AssessmentItem";
 import { useChecklist } from "./ChecklistContext";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { CategoryIcon } from "./CategoryIcon";
 import { trackEvent } from "@/hooks/usePageTracking";
+import { Badge } from "@/components/ui/badge";
 
 interface ChecklistAccordionProps {
   checklistId: string;
@@ -18,7 +19,7 @@ export const ChecklistAccordion = ({
   expandedCategory,
   onExpandedChange
 }: ChecklistAccordionProps) => {
-  const { checklistState, toggleItem } = useChecklist();
+  const { checklistState, setAnswer, getProgress: calculateProgress } = useChecklist();
 
   return (
     <Accordion
@@ -30,10 +31,16 @@ export const ChecklistAccordion = ({
     >
       {categories.map((category, index) => {
         const categoryItems = category.items.length;
-        const categoryCompleted = category.items.filter(
-          item => checklistState[checklistId]?.[item.id]
-        ).length;
-        const categoryProgress = categoryItems > 0 ? Math.round((categoryCompleted / categoryItems) * 100) : 0;
+        const categoryAnswers = category.items.map(item => checklistState[checklistId]?.[item.id]);
+        const unansweredInCategory = categoryAnswers.filter(a => !a).length;
+        
+        // Calculate weighted progress for this category
+        const categoryScore = categoryAnswers.reduce((sum, answer) => {
+          if (answer === "yes") return sum + 100;
+          if (answer === "partial") return sum + 50;
+          return sum;
+        }, 0);
+        const categoryProgress = categoryItems > 0 ? Math.round(categoryScore / (categoryItems * 100) * 100) : 0;
 
         return (
           <AccordionItem
@@ -50,8 +57,15 @@ export const ChecklistAccordion = ({
 
                 {/* Title */}
                 <div className="flex-1 text-left">
-                  <div className="font-mono font-bold text-base text-foreground">
-                    {category.title}
+                  <div className="flex items-center gap-2">
+                    <div className="font-mono font-bold text-base text-foreground">
+                      {category.title}
+                    </div>
+                    {unansweredInCategory > 0 && (
+                      <Badge variant="outline" className="text-xs">
+                        {unansweredInCategory} unanswered
+                      </Badge>
+                    )}
                   </div>
                 </div>
 
@@ -67,19 +81,20 @@ export const ChecklistAccordion = ({
             <AccordionContent className="px-6 py-6 bg-background">
               <div className="space-y-3">
                 {category.items.map((item) => (
-                  <ChecklistItem
+                  <AssessmentItem
                     key={item.id}
                     id={item.id}
                     label={item.label}
                     description={item.description}
                     helpText={item.helpText}
-                    checked={checklistState[checklistId]?.[item.id] || false}
-                    onChange={() => {
-                      toggleItem(checklistId, item.id);
-                      trackEvent("assessment_item_toggle", {
+                    value={checklistState[checklistId]?.[item.id] || null}
+                    onChange={(value: AssessmentAnswer) => {
+                      setAnswer(checklistId, item.id, value);
+                      trackEvent("assessment_answer_changed", {
                         checklistId,
                         itemId: item.id,
-                        categoryId: category.id
+                        categoryId: category.id,
+                        answer: value
                       });
                     }}
                   />

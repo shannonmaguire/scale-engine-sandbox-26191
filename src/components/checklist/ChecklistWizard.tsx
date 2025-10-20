@@ -168,10 +168,14 @@ export const ChecklistWizard = ({
           <div className="space-y-4">
             {categories.map(category => {
               const catItems = category.items.length;
-              const catCompleted = category.items.filter(
-                item => checklistState[checklistId]?.[item.id]
-              ).length;
-              const catProgress = catItems > 0 ? Math.round((catCompleted / catItems) * 100) : 0;
+              const catAnswers = category.items.map(item => checklistState[checklistId]?.[item.id]);
+              const catScore = catAnswers.reduce((sum, answer) => {
+                if (answer === "yes") return sum + 100;
+                if (answer === "partial") return sum + 50;
+                return sum;
+              }, 0);
+              const catProgress = catItems > 0 ? Math.round(catScore / (catItems * 100) * 100) : 0;
+              const catCompleted = catAnswers.filter(a => a === "yes").length;
 
               return (
                 <CategoryCard
@@ -184,7 +188,7 @@ export const ChecklistWizard = ({
                   items={category.items.map(item => ({
                     id: item.id,
                     label: item.label,
-                    checked: checklistState[checklistId]?.[item.id] || false
+                    checked: (checklistState[checklistId]?.[item.id] === "yes") || false
                   }))}
                 />
               );
@@ -321,7 +325,7 @@ export const ChecklistWizard = ({
                 label={item.label}
                 description={item.description}
                 helpText={item.helpText}
-                checked={checklistState[checklistId]?.[item.id] || false}
+                checked={(checklistState[checklistId]?.[item.id] === "yes") || false}
                 onChange={() => {
                   toggleItem(checklistId, item.id);
                   trackEvent("assessment_item_toggle", { 

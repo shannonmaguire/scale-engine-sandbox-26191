@@ -207,15 +207,15 @@ export const InteractiveChecklist = ({
                 <CollapsibleContent>
                   <div className="p-6 pt-0 space-y-3">
                     {category.items.map((item) => (
-                      <ChecklistItem
-                        key={item.id}
-                        id={item.id}
-                        label={item.label}
-                        description={item.description}
-                        helpText={item.helpText}
-                        checked={checklistState[checklistId]?.[item.id] || false}
-                        onChange={() => {
-                          toggleItem(checklistId, item.id);
+                  <ChecklistItem
+                    key={item.id}
+                    id={item.id}
+                    label={item.label}
+                    description={item.description}
+                    helpText={item.helpText}
+                    checked={(checklistState[checklistId]?.[item.id] === "yes") || false}
+                    onChange={() => {
+                      toggleItem(checklistId, item.id);
                           trackEvent("checklist_item_toggle", { 
                             checklistId, 
                             itemId: item.id,

@@ -1,16 +1,21 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
+export type AssessmentAnswer = "yes" | "partial" | "no" | null;
+
 interface ChecklistState {
   [checklistId: string]: {
-    [itemId: string]: boolean;
+    [itemId: string]: AssessmentAnswer;
   };
 }
 
 interface ChecklistContextType {
   checklistState: ChecklistState;
-  toggleItem: (checklistId: string, itemId: string) => void;
+  setAnswer: (checklistId: string, itemId: string, value: AssessmentAnswer) => void;
+  toggleItem: (checklistId: string, itemId: string) => void; // Deprecated, kept for backwards compatibility
   resetChecklist: (checklistId: string) => void;
   getProgress: (checklistId: string, totalItems: number) => number;
+  getUnansweredCount: (checklistId: string, totalItems: number) => number;
+  getAnswerCounts: (checklistId: string) => { yes: number; partial: number; no: number; unanswered: number };
 }
 
 const ChecklistContext = createContext<ChecklistContextType | undefined>(undefined);
@@ -29,14 +34,29 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
     return () => clearTimeout(handler);
   }, [checklistState]);
 
-  const toggleItem = (checklistId: string, itemId: string) => {
+  const setAnswer = (checklistId: string, itemId: string, value: AssessmentAnswer) => {
     setChecklistState(prev => ({
       ...prev,
       [checklistId]: {
         ...(prev[checklistId] || {}),
-        [itemId]: !(prev[checklistId]?.[itemId] || false)
+        [itemId]: value
       }
     }));
+  };
+
+  // Deprecated: kept for backwards compatibility with old checkbox-based checklists
+  const toggleItem = (checklistId: string, itemId: string) => {
+    setChecklistState(prev => {
+      const currentValue = prev[checklistId]?.[itemId];
+      const newValue = currentValue === "yes" ? null : "yes";
+      return {
+        ...prev,
+        [checklistId]: {
+          ...(prev[checklistId] || {}),
+          [itemId]: newValue
+        }
+      };
+    });
   };
 
   const resetChecklist = (checklistId: string) => {
@@ -48,12 +68,42 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const getProgress = (checklistId: string, totalItems: number) => {
-    const completed = Object.values(checklistState[checklistId] || {}).filter(Boolean).length;
-    return totalItems > 0 ? Math.round((completed / totalItems) * 100) : 0;
+    const answers = Object.values(checklistState[checklistId] || {});
+    const totalScore = answers.reduce((sum, answer) => {
+      if (answer === "yes") return sum + 100;
+      if (answer === "partial") return sum + 50;
+      return sum;
+    }, 0);
+    const maxPossibleScore = totalItems * 100;
+    return maxPossibleScore > 0 ? Math.round(totalScore / maxPossibleScore * 100) : 0;
+  };
+
+  const getUnansweredCount = (checklistId: string, totalItems: number) => {
+    const answers = Object.values(checklistState[checklistId] || {});
+    const answeredCount = answers.filter(a => a !== null).length;
+    return totalItems - answeredCount;
+  };
+
+  const getAnswerCounts = (checklistId: string) => {
+    const answers = Object.values(checklistState[checklistId] || {});
+    return {
+      yes: answers.filter(a => a === "yes").length,
+      partial: answers.filter(a => a === "partial").length,
+      no: answers.filter(a => a === "no").length,
+      unanswered: answers.filter(a => a === null).length
+    };
   };
 
   return (
-    <ChecklistContext.Provider value={{ checklistState, toggleItem, resetChecklist, getProgress }}>
+    <ChecklistContext.Provider value={{ 
+      checklistState, 
+      setAnswer,
+      toggleItem, 
+      resetChecklist, 
+      getProgress, 
+      getUnansweredCount,
+      getAnswerCounts 
+    }}>
       {children}
     </ChecklistContext.Provider>
   );

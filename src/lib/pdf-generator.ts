@@ -1,5 +1,7 @@
 import jsPDF from "jspdf";
 
+type AssessmentAnswer = "yes" | "partial" | "no" | null;
+
 interface CategoryData {
   id: string;
   title: string;
@@ -10,7 +12,7 @@ interface PDFGeneratorOptions {
   title: string;
   checklistId: string;
   categories: CategoryData[];
-  checklistState: Record<string, Record<string, boolean>>;
+  checklistState: Record<string, Record<string, AssessmentAnswer>>;
   overallProgress: number;
 }
 
@@ -109,13 +111,17 @@ export const generateAssessmentPDF = async ({
 
   // Metrics
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
-  const completedCount = categories.reduce((sum, cat) => 
-    sum + cat.items.filter(item => checklistState[checklistId]?.[item.id]).length, 0);
+  const allAnswers = categories.flatMap(cat => 
+    cat.items.map(item => checklistState[checklistId]?.[item.id])
+  );
+  const yesCount = allAnswers.filter(a => a === "yes").length;
+  const partialCount = allAnswers.filter(a => a === "partial").length;
+  const noCount = allAnswers.filter(a => a === "no").length;
 
   doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
   doc.setTextColor(60, 60, 60);
-  doc.text(`${completedCount} of ${totalItems} criteria met`, margin + 15, yPosition + 58);
+  doc.text(`${yesCount} Yes • ${partialCount} Partial • ${noCount} No`, margin + 15, yPosition + 58);
 
   // Visual Progress Bar (right side) - improved
   const barX = pageWidth - margin - 95;
@@ -200,8 +206,8 @@ export const generateAssessmentPDF = async ({
   doc.setTextColor(60, 60, 60);
 
   const findings = [
-    `${completedCount} operational capabilities currently implemented`,
-    `${totalItems - completedCount} improvement opportunities identified`,
+    `${yesCount} capabilities fully operational, ${partialCount} partially implemented`,
+    `${noCount} high-priority improvement opportunities identified`,
     `${categories.length} capability dimensions assessed`
   ];
 
@@ -242,10 +248,15 @@ export const generateAssessmentPDF = async ({
   // Data rows
   categories.forEach((category, index) => {
     const catItems = category.items.length;
-    const catCompleted = category.items.filter(
-      item => checklistState[checklistId]?.[item.id]
-    ).length;
-    const catProgress = catItems > 0 ? Math.round((catCompleted / catItems) * 100) : 0;
+    const catAnswers = category.items.map(item => checklistState[checklistId]?.[item.id]);
+    const catScore = catAnswers.reduce((sum, answer) => {
+      if (answer === "yes") return sum + 100;
+      if (answer === "partial") return sum + 50;
+      return sum;
+    }, 0);
+    const catProgress = catItems > 0 ? Math.round(catScore / (catItems * 100) * 100) : 0;
+    const catCompleted = catAnswers.filter(a => a === "yes").length;
+    const catPartial = catAnswers.filter(a => a === "partial").length;
 
     // Alternating row colors
     if (index % 2 === 0) {
@@ -311,26 +322,41 @@ export const generateAssessmentPDF = async ({
     category.items.forEach((item) => {
       checkForNewPage(12);
 
-      const isChecked = checklistState[checklistId]?.[item.id] || false;
+      const answer = checklistState[checklistId]?.[item.id];
 
-      // Checkbox
+      // Status indicator
       const boxSize = 4;
       const boxX = margin + 4;
       const boxY = yPosition - 3;
 
-      if (isChecked) {
-        doc.setFillColor(0, 0, 0);
+      if (answer === "yes") {
+        // Green checkmark
+        doc.setFillColor(34, 139, 34);
         doc.rect(boxX, boxY, boxSize, boxSize, 'F');
-        
-        // Check mark
         doc.setDrawColor(255, 255, 255);
         doc.setLineWidth(0.6);
         doc.line(boxX + 0.8, boxY + 2, boxX + 1.6, boxY + 3);
         doc.line(boxX + 1.6, boxY + 3, boxX + 3.2, boxY + 1);
+      } else if (answer === "partial") {
+        // Orange partial
+        doc.setFillColor(255, 165, 0);
+        doc.rect(boxX, boxY, boxSize, boxSize, 'F');
+        doc.setDrawColor(255, 255, 255);
+        doc.setLineWidth(0.8);
+        doc.line(boxX + 0.8, boxY + 2, boxX + 3.2, boxY + 2);
+      } else if (answer === "no") {
+        // Red X
+        doc.setFillColor(200, 50, 50);
+        doc.rect(boxX, boxY, boxSize, boxSize, 'F');
+        doc.setDrawColor(255, 255, 255);
+        doc.setLineWidth(0.6);
+        doc.line(boxX + 0.8, boxY + 0.8, boxX + 3.2, boxY + 3.2);
+        doc.line(boxX + 3.2, boxY + 0.8, boxX + 0.8, boxY + 3.2);
       } else {
+        // Unanswered
         doc.setFillColor(255, 255, 255);
         doc.rect(boxX, boxY, boxSize, boxSize, 'F');
-        doc.setDrawColor(0, 0, 0);
+        doc.setDrawColor(180, 180, 180);
         doc.setLineWidth(0.5);
         doc.rect(boxX, boxY, boxSize, boxSize, 'S');
       }
@@ -338,7 +364,8 @@ export const generateAssessmentPDF = async ({
       // Item Text
       doc.setFontSize(9);
       doc.setFont("helvetica", "normal");
-      doc.setTextColor(isChecked ? 60 : 0, isChecked ? 60 : 0, isChecked ? 60 : 0);
+      const textColor = answer === "yes" ? 60 : 0;
+      doc.setTextColor(textColor, textColor, textColor);
       
       const itemLines = doc.splitTextToSize(item.label, contentWidth - 15);
       itemLines.forEach((line: string, idx: number) => {
