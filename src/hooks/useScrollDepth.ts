@@ -9,6 +9,9 @@ export const useScrollDepth = () => {
   const depths = useRef(new Set<number>());
 
   useEffect(() => {
+    // Reset depths when component mounts (new page)
+    depths.current.clear();
+    
     const handleScroll = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
