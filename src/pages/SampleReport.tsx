@@ -311,41 +311,6 @@ const SampleReport = () => {
             </div>
           </div>
 
-          {/* CTA Bar #1 - After Roadmap */}
-          <div className="my-16 bg-background/90 supports-[backdrop-filter]:bg-background/80 backdrop-blur border-y border-border/60 shadow-sm">
-            <div className="max-w-5xl mx-auto px-6 py-4 md:py-5">
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6">
-                <Button
-                  variant="outline"
-                  asChild
-                  size="lg"
-                  className="font-mono w-full md:w-[240px] h-11 md:h-12 px-5 shrink-0 focus-visible:ring-2 focus-visible:ring-[hsl(var(--burgundy))] focus-visible:ring-offset-2"
-                >
-                  <Link to="/" className="flex items-center justify-center gap-2">
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to CWT Studio
-                  </Link>
-                </Button>
-
-                <p className="text-sm md:text-sm text-muted-foreground font-mono text-center leading-snug md:mx-4">
-                  Ready to build your 90-day roadmap?
-                  <span className="hidden md:inline"> Takes 2 minutes.</span>
-                </p>
-
-                <Button
-                  asChild
-                  size="lg"
-                  className="font-mono w-full md:w-[240px] h-11 md:h-12 px-5 shrink-0 whitespace-nowrap bg-[hsl(var(--burgundy))] text-white hover:bg-[hsl(var(--burgundy))]/90 focus-visible:ring-2 focus-visible:ring-[hsl(var(--burgundy))] focus-visible:ring-offset-2"
-                >
-                  <Link to="/assessment" className="flex items-center justify-center gap-2">
-                    Get Your Assessment
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-
           {/* Financial Impact Analysis */}
           <div className="mb-16">
             <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">3.0 Financial Impact Analysis</h2>
@@ -515,41 +480,6 @@ const SampleReport = () => {
             </div>
           </div>
 
-          {/* CTA Bar #2 - After Findings */}
-          <div className="my-16 bg-background/90 supports-[backdrop-filter]:bg-background/80 backdrop-blur border-y border-border/60 shadow-sm">
-            <div className="max-w-5xl mx-auto px-6 py-4 md:py-5">
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6">
-                <Button
-                  variant="outline"
-                  asChild
-                  size="lg"
-                  className="font-mono w-full md:w-[240px] h-11 md:h-12 px-5 shrink-0 focus-visible:ring-2 focus-visible:ring-[hsl(var(--burgundy))] focus-visible:ring-offset-2"
-                >
-                  <Link to="/" className="flex items-center justify-center gap-2">
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to CWT Studio
-                  </Link>
-                </Button>
-
-                <p className="text-sm md:text-sm text-muted-foreground font-mono text-center leading-snug md:mx-4">
-                  Want to fix these gaps?
-                  <span className="hidden md:inline"> Takes 2 minutes.</span>
-                </p>
-
-                <Button
-                  asChild
-                  size="lg"
-                  className="font-mono w-full md:w-[240px] h-11 md:h-12 px-5 shrink-0 whitespace-nowrap bg-[hsl(var(--burgundy))] text-white hover:bg-[hsl(var(--burgundy))]/90 focus-visible:ring-2 focus-visible:ring-[hsl(var(--burgundy))] focus-visible:ring-offset-2"
-                >
-                  <Link to="/assessment" className="flex items-center justify-center gap-2">
-                    Get Your Assessment
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-
           {/* Risk Matrix */}
           <div className="mb-16">
             <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">6.0 Risk Assessment</h2>
@@ -668,41 +598,6 @@ const SampleReport = () => {
                     </tr>
                   </tbody>
                 </table>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Bar #3 - After Benchmarking */}
-          <div className="my-16 bg-background/90 supports-[backdrop-filter]:bg-background/80 backdrop-blur border-y border-border/60 shadow-sm">
-            <div className="max-w-5xl mx-auto px-6 py-4 md:py-5">
-              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr_auto] items-center gap-4 md:gap-6">
-                <Button
-                  variant="outline"
-                  asChild
-                  size="lg"
-                  className="font-mono w-full md:w-[240px] h-11 md:h-12 px-5 shrink-0 focus-visible:ring-2 focus-visible:ring-[hsl(var(--burgundy))] focus-visible:ring-offset-2"
-                >
-                  <Link to="/" className="flex items-center justify-center gap-2">
-                    <ArrowLeft className="w-4 h-4" />
-                    Back to CWT Studio
-                  </Link>
-                </Button>
-
-                <p className="text-sm md:text-sm text-muted-foreground font-mono text-center leading-snug md:mx-4">
-                  Close your performance gap.
-                  <span className="hidden md:inline"> Takes 2 minutes.</span>
-                </p>
-
-                <Button
-                  asChild
-                  size="lg"
-                  className="font-mono w-full md:w-[240px] h-11 md:h-12 px-5 shrink-0 whitespace-nowrap bg-[hsl(var(--burgundy))] text-white hover:bg-[hsl(var(--burgundy))]/90 focus-visible:ring-2 focus-visible:ring-[hsl(var(--burgundy))] focus-visible:ring-offset-2"
-                >
-                  <Link to="/assessment" className="flex items-center justify-center gap-2">
-                    Get Your Assessment
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
