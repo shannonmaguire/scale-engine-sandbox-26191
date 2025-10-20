@@ -59,6 +59,9 @@ const AppContent = () => {
   useServiceWorker();
   useErrorTracking();
 
+  // Determine if we're on the sample report page (document mode)
+  const isDocumentMode = location.pathname === '/sample-report';
+
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
     if (!location.hash) {
@@ -77,7 +80,7 @@ const AppContent = () => {
   return (
     <>
       <NetworkStatusBanner />
-      <Navigation />
+      {!isDocumentMode && <Navigation />}
       <main id="main-content" tabIndex={-1}>
         <Suspense fallback={
           <div className="min-h-screen flex items-center justify-center">
@@ -120,9 +123,9 @@ const AppContent = () => {
           </Routes>
         </Suspense>
       </main>
-      <Footer />
-      <CookieBanner />
-      <ChatWidget />
+      {!isDocumentMode && <Footer />}
+      {!isDocumentMode && <CookieBanner />}
+      {!isDocumentMode && <ChatWidget />}
       <InstallPrompt />
     </>
   );

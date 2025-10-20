@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { StandardCard, StandardCardContent, StandardCardHeader, StandardCardTitle } from "@/components/ui/standard-card";
-import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { AlertTriangle, CheckCircle, TrendingUp, TrendingDown, DollarSign, Clock, Users, Database, Zap, Shield } from "lucide-react";
+import { AlertTriangle, CheckCircle, TrendingUp, TrendingDown, DollarSign, Clock, Database, Zap, Shield, ArrowLeft, FileDown } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import cwtLogo from "@/assets/cwt-logo-mark.svg";
 const SampleReport = () => {
   const scorecard = [{
     category: "Technology Stack",
@@ -135,7 +135,7 @@ const SampleReport = () => {
     metrics: ["Connect 6 critical systems", "Eliminate double-entry", "Enable 360° customer view"]
   }];
   // Removed color-based helper functions for grayscale document aesthetic
-  return <div className="min-h-screen">
+  return <div className="min-h-screen bg-muted/30">
       <SEOHead
         title="Sample Automation & Salesforce Assessment Report | CWT Studio"
         description="Preview a Creator Wealth Tools assessment showcasing how we evaluate business automation, Salesforce health, and product readiness across web and mobile stacks."
@@ -148,75 +148,79 @@ const SampleReport = () => {
         ]}
         canonicalUrl="/sample-report"
       />
-      <Section>
-        {/* Hero */}
-        <div className="text-center mb-12 max-w-2xl mx-auto">
-          <Badge variant="outline" className="mb-6 border-foreground/20 text-foreground bg-transparent font-mono uppercase tracking-wider">
-            <CheckCircle className="w-3 h-3 mr-1" />
-            ASSESSMENT COMPLETE
-          </Badge>
-          
-          <h1 className="font-mono text-4xl lg:text-5xl font-bold mb-6 text-foreground">
-            Revenue Infrastructure Assessment
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Example of what you receive after a complete infrastructure assessment. 
-            Scorecard, benchmarks, and prioritized roadmap.
-          </p>
-        </div>
-
-        {/* Report Header */}
-        <div className="mt-16">
-          <StandardCard className="border-2 border-border">
-            <StandardCardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <StandardCardTitle className="font-mono text-2xl mb-2 text-foreground">TechCorp SaaS - Assessment Results</StandardCardTitle>
-                  <p className="text-muted-foreground font-mono text-sm uppercase tracking-wide">Series B • $15M ARR • 85 employees</p>
-                </div>
-                <Badge variant="outline" className="border-foreground/20 text-foreground bg-muted/10 font-mono uppercase tracking-wider">
-                  COMPLETED
-                </Badge>
+      
+      {/* Document Header */}
+      <div className="bg-background border-b-2 border-border sticky top-0 z-10 shadow-sm">
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <img src={cwtLogo} alt="CWT Studio" className="h-8 w-8 opacity-60" />
+              <div>
+                <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider">CONFIDENTIAL ASSESSMENT REPORT</div>
+                <div className="text-sm font-mono font-bold text-foreground">CWT-2025-0142 • March 2025 • Version 1.0</div>
               </div>
-            </StandardCardHeader>
-            <StandardCardContent>
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="text-center bg-muted/5 p-4 rounded border border-border/30">
-                  <div className="text-3xl font-black text-foreground mb-1 tabular-nums">5.9</div>
-                  <p className="text-sm text-muted-foreground uppercase font-mono tracking-wide text-xs">Overall Score</p>
-                  <p className="text-xs text-muted-foreground mt-1">vs 7.9 benchmark</p>
-                </div>
-                <div className="text-center bg-muted/5 p-4 rounded border border-border/30">
-                  <div className="text-3xl font-black text-foreground mb-1 tabular-nums">21</div>
-                  <p className="text-sm text-muted-foreground uppercase font-mono tracking-wide text-xs">Issues Identified</p>
-                  <p className="text-xs text-muted-foreground mt-1">across 6 categories</p>
-                </div>
-                <div className="text-center bg-muted/5 p-4 rounded border border-border/30">
-                  <div className="text-3xl font-black text-foreground mb-1 tabular-nums">$1.02M</div>
-                  <p className="text-sm text-muted-foreground uppercase font-mono tracking-wide text-xs">Annual ROI</p>
-                  <p className="text-xs text-muted-foreground mt-1">projected impact</p>
-                </div>
-                <div className="text-center bg-muted/5 p-4 rounded border border-border/30">
-                  <div className="text-3xl font-black text-foreground mb-1 tabular-nums">90</div>
-                  <p className="text-sm text-muted-foreground uppercase font-mono tracking-wide text-xs">Day Roadmap</p>
-                  <p className="text-xs text-muted-foreground mt-1">6 priority phases</p>
-                </div>
-                <div className="text-center bg-muted/5 p-4 rounded border border-border/30">
-                  <div className="text-3xl font-black text-foreground mb-1 tabular-nums">47%</div>
-                  <p className="text-sm text-muted-foreground uppercase font-mono tracking-wide text-xs">Efficiency Gap</p>
-                  <p className="text-xs text-muted-foreground mt-1">vs industry leaders</p>
-                </div>
-              </div>
-            </StandardCardContent>
-          </StandardCard>
+            </div>
+            <Badge variant="outline" className="border-foreground/20 text-foreground bg-muted/10 font-mono uppercase tracking-wider">
+              SAMPLE
+            </Badge>
+          </div>
         </div>
+      </div>
 
-        {/* Scorecard */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8 text-foreground uppercase tracking-wide border-b-2 border-border pb-4">Infrastructure Scorecard</h2>
-          <div className="space-y-6">
-            {scorecard.map((item, index) => <StandardCard key={index} className="border-2 border-border">
-                <StandardCardContent className="!pt-6">
+      {/* Document Container - Paper-like */}
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        <div className="bg-background rounded-lg shadow-lg border border-border p-12 relative">
+          {/* Watermark */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02] select-none">
+            <div className="text-9xl font-black rotate-[-45deg] text-foreground">SAMPLE REPORT</div>
+          </div>
+
+          {/* Document Title Block */}
+          <div className="mb-12 border-b-4 border-border pb-8 relative z-10">
+            <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider mb-2">PREPARED FOR</div>
+            <h1 className="font-mono text-4xl font-bold mb-2 text-foreground">TechCorp SaaS</h1>
+            <div className="text-muted-foreground font-mono text-sm mb-4">Series B • $15M ARR • 85 Employees</div>
+            <h2 className="font-mono text-2xl font-semibold text-foreground mb-6">Revenue Infrastructure Assessment Report</h2>
+            <div className="text-sm text-muted-foreground mb-6">Assessment Period: January 15 - February 12, 2025</div>
+          </div>
+
+          {/* Executive Summary Snapshot */}
+          <div className="mb-16">
+            <h3 className="font-mono text-sm font-bold mb-4 text-muted-foreground uppercase tracking-wider">Executive Summary</h3>
+            <div className="grid grid-cols-5 gap-4">
+              <div className="text-center bg-background p-4 rounded border border-border">
+                <div className="text-3xl font-black text-foreground mb-1 tabular-nums">5.9</div>
+                <p className="text-xs text-muted-foreground uppercase font-mono tracking-wide">Overall Score</p>
+                <p className="text-xs text-muted-foreground mt-1">vs 7.9 benchmark</p>
+              </div>
+              <div className="text-center bg-background p-4 rounded border border-border">
+                <div className="text-3xl font-black text-foreground mb-1 tabular-nums">21</div>
+                <p className="text-xs text-muted-foreground uppercase font-mono tracking-wide">Issues Identified</p>
+                <p className="text-xs text-muted-foreground mt-1">across 6 categories</p>
+              </div>
+              <div className="text-center bg-background p-4 rounded border border-border">
+                <div className="text-3xl font-black text-foreground mb-1 tabular-nums">$1.02M</div>
+                <p className="text-xs text-muted-foreground uppercase font-mono tracking-wide">Annual ROI</p>
+                <p className="text-xs text-muted-foreground mt-1">projected impact</p>
+              </div>
+              <div className="text-center bg-background p-4 rounded border border-border">
+                <div className="text-3xl font-black text-foreground mb-1 tabular-nums">90</div>
+                <p className="text-xs text-muted-foreground uppercase font-mono tracking-wide">Day Roadmap</p>
+                <p className="text-xs text-muted-foreground mt-1">6 priority phases</p>
+              </div>
+              <div className="text-center bg-background p-4 rounded border border-border">
+                <div className="text-3xl font-black text-foreground mb-1 tabular-nums">47%</div>
+                <p className="text-xs text-muted-foreground uppercase font-mono tracking-wide">Efficiency Gap</p>
+                <p className="text-xs text-muted-foreground mt-1">vs industry leaders</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Scorecard */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">1.0 Infrastructure Scorecard</h2>
+            <div className="space-y-4">
+              {scorecard.map((item, index) => <div key={index} className="border border-border rounded bg-background p-6">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-3">
@@ -256,17 +260,15 @@ const SampleReport = () => {
                       </p>
                     </div>
                   </div>
-                </StandardCardContent>
-              </StandardCard>)}
+              </div>)}
+            </div>
           </div>
-        </div>
 
-        {/* Priority Roadmap */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8 text-foreground uppercase tracking-wide border-b-2 border-border pb-4">90-Day Priority Roadmap</h2>
-          <div className="space-y-6">
-            {priorities.map((item, index) => <StandardCard key={index} className="border-2 border-border">
-                <StandardCardContent className="!pt-6">
+          {/* Priority Roadmap */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">2.0 90-Day Priority Roadmap</h2>
+            <div className="space-y-4">
+              {priorities.map((item, index) => <div key={index} className="border border-border rounded bg-background p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full border-2 border-foreground bg-transparent flex items-center justify-center font-black flex-shrink-0 text-foreground tabular-nums">
                       {item.priority}
@@ -305,54 +307,45 @@ const SampleReport = () => {
                       </div>
                     </div>
                   </div>
-                </StandardCardContent>
-              </StandardCard>)}
+              </div>)}
+            </div>
           </div>
-        </div>
 
-        {/* Financial Impact Analysis */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8 text-foreground uppercase tracking-wide border-b-2 border-border pb-4">Financial Impact Analysis</h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <StandardCard className="border-2 border-border">
-              <StandardCardContent className="!pt-6 text-center">
-                <DollarSign className="w-8 h-8 text-foreground mx-auto mb-3" />
-                <div className="text-3xl font-black text-foreground mb-2 tabular-nums">$2.3M</div>
-                <p className="text-sm text-muted-foreground mb-1 uppercase font-mono tracking-wide text-xs">At-Risk Pipeline</p>
-                <p className="text-xs text-muted-foreground">Due to data quality issues</p>
-              </StandardCardContent>
-            </StandardCard>
-            <StandardCard className="border-2 border-border">
-              <StandardCardContent className="!pt-6 text-center">
-                <TrendingUp className="w-8 h-8 text-foreground mx-auto mb-3" />
-                <div className="text-3xl font-black text-foreground mb-2 tabular-nums">$1.02M</div>
-                <p className="text-sm text-muted-foreground mb-1 uppercase font-mono tracking-wide text-xs">Annual ROI</p>
-                <p className="text-xs text-muted-foreground">From implementing roadmap</p>
-              </StandardCardContent>
-            </StandardCard>
-            <StandardCard className="border-2 border-border">
-              <StandardCardContent className="!pt-6 text-center">
-                <Clock className="w-8 h-8 text-foreground mx-auto mb-3" />
-                <div className="text-3xl font-black text-foreground mb-2 tabular-nums">45 hrs</div>
-                <p className="text-sm text-muted-foreground mb-1 uppercase font-mono tracking-wide text-xs">Weekly Time Saved</p>
-                <p className="text-xs text-muted-foreground">Across revenue team</p>
-              </StandardCardContent>
-            </StandardCard>
+          {/* Financial Impact Analysis */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">3.0 Financial Impact Analysis</h2>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="border border-border rounded bg-background p-6 text-center">
+                  <DollarSign className="w-8 h-8 text-foreground mx-auto mb-3" />
+                  <div className="text-3xl font-black text-foreground mb-2 tabular-nums">$2.3M</div>
+                  <p className="text-xs text-muted-foreground mb-1 uppercase font-mono tracking-wide">At-Risk Pipeline</p>
+                  <p className="text-xs text-muted-foreground">Due to data quality issues</p>
+              </div>
+              <div className="border border-border rounded bg-background p-6 text-center">
+                  <TrendingUp className="w-8 h-8 text-foreground mx-auto mb-3" />
+                  <div className="text-3xl font-black text-foreground mb-2 tabular-nums">$1.02M</div>
+                  <p className="text-xs text-muted-foreground mb-1 uppercase font-mono tracking-wide">Annual ROI</p>
+                  <p className="text-xs text-muted-foreground">From implementing roadmap</p>
+              </div>
+              <div className="border border-border rounded bg-background p-6 text-center">
+                  <Clock className="w-8 h-8 text-foreground mx-auto mb-3" />
+                  <div className="text-3xl font-black text-foreground mb-2 tabular-nums">45 hrs</div>
+                  <p className="text-xs text-muted-foreground mb-1 uppercase font-mono tracking-wide">Weekly Time Saved</p>
+                  <p className="text-xs text-muted-foreground">Across revenue team</p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Technology Stack Analysis */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8">Technology Stack Analysis</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <StandardCard>
-              <StandardCardHeader>
-                <StandardCardTitle className="flex items-center gap-2">
-                  <Database className="w-5 h-5 text-primary" />
+          {/* Technology Stack Analysis */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">4.0 Technology Stack Analysis</h2>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="border border-border rounded bg-background p-6">
+                <h3 className="font-mono font-bold mb-4 flex items-center gap-2">
+                  <Database className="w-5 h-5 text-foreground" />
                   Current Stack
-                </StandardCardTitle>
-              </StandardCardHeader>
-              <StandardCardContent className="space-y-4">
+                </h3>
+                <div className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium">Salesforce Sales Cloud</span>
@@ -381,17 +374,15 @@ const SampleReport = () => {
                   </div>
                   <div className="text-xs text-muted-foreground">Utilization: 34% • Health: Critical • Integration: Broken</div>
                 </div>
-              </StandardCardContent>
-            </StandardCard>
+                </div>
+              </div>
 
-            <StandardCard>
-              <StandardCardHeader>
-                <StandardCardTitle className="flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-accent" />
+              <div className="border border-border rounded bg-background p-6">
+                <h3 className="font-mono font-bold mb-4 flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-foreground" />
                   Integration Gaps
-                </StandardCardTitle>
-              </StandardCardHeader>
-              <StandardCardContent className="space-y-3">
+                </h3>
+                <div className="space-y-3">
                 <div className="flex items-start gap-2">
                   <AlertTriangle className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
                   <div>
@@ -417,26 +408,24 @@ const SampleReport = () => {
                   <AlertTriangle className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm font-medium">CPQ System</p>
-                    <p className="text-xs text-muted-foreground mt-1">Quote generation disconnected from pipeline</p>
-                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">Quote generation disconnected from pipeline</p>
                 </div>
-              </StandardCardContent>
-            </StandardCard>
+              </div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Key Findings */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8">Detailed Findings</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <StandardCard>
-              <StandardCardHeader>
-                <StandardCardTitle className="flex items-center gap-2 text-primary">
+          {/* Key Findings */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">5.0 Detailed Findings</h2>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="border border-border rounded bg-background p-6">
+                <h3 className="font-mono font-bold mb-4 flex items-center gap-2 text-foreground">
                   <AlertTriangle className="w-5 h-5" />
                   Critical Issues (High Priority)
-                </StandardCardTitle>
-              </StandardCardHeader>
-              <StandardCardContent className="space-y-4">
+                </h3>
+                <div className="space-y-4">
                 <div className="border-l-2 border-primary pl-3">
                   <p className="text-sm font-medium mb-1">Data Quality Crisis</p>
                   <p className="text-xs text-muted-foreground">47% of leads lack proper attribution data. 12,300+ duplicate records. $2.3M pipeline affected.</p>
@@ -457,17 +446,15 @@ const SampleReport = () => {
                   <p className="text-sm font-medium mb-1">Integration Failures</p>
                   <p className="text-xs text-muted-foreground">4 broken integrations. Double-entry in 6 workflows. Data sync errors weekly.</p>
                 </div>
-              </StandardCardContent>
-            </StandardCard>
+                </div>
+              </div>
 
-            <StandardCard>
-              <StandardCardHeader>
-                <StandardCardTitle className="flex items-center gap-2 text-secondary">
+              <div className="border border-border rounded bg-background p-6">
+                <h3 className="font-mono font-bold mb-4 flex items-center gap-2 text-foreground">
                   <CheckCircle className="w-5 h-5" />
                   Strengths & Opportunities
-                </StandardCardTitle>
-              </StandardCardHeader>
-              <StandardCardContent className="space-y-4">
+                </h3>
+                <div className="space-y-4">
                 <div className="border-l-2 border-secondary pl-3">
                   <p className="text-sm font-medium mb-1">Strong Technology Foundation</p>
                   <p className="text-xs text-muted-foreground">Salesforce Enterprise properly configured. Good bones for automation expansion.</p>
@@ -488,16 +475,15 @@ const SampleReport = () => {
                   <p className="text-sm font-medium mb-1">Quick Win Potential</p>
                   <p className="text-xs text-muted-foreground">Several high-impact, low-effort improvements identified. Can show ROI in 30 days.</p>
                 </div>
-              </StandardCardContent>
-            </StandardCard>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Risk Matrix */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8">Risk Assessment</h2>
-          <StandardCard>
-            <StandardCardContent className="!pt-6">
+          {/* Risk Matrix */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">6.0 Risk Assessment</h2>
+            <div className="border border-border rounded bg-background p-6">
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 mb-3">
@@ -548,15 +534,14 @@ const SampleReport = () => {
                   </div>
                 </div>
               </div>
-            </StandardCardContent>
-          </StandardCard>
-        </div>
+            </div>
+            </div>
+          </div>
 
-        {/* Benchmarking */}
-        <div className="mt-16">
-          <h2 className="font-mono text-2xl font-bold mb-8">Industry Benchmarking</h2>
-          <StandardCard>
-            <StandardCardContent className="!pt-6">
+          {/* Benchmarking */}
+          <div className="mb-16">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">7.0 Industry Benchmarking</h2>
+            <div className="border border-border rounded bg-background p-6">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
@@ -614,14 +599,13 @@ const SampleReport = () => {
                   </tbody>
                 </table>
               </div>
-            </StandardCardContent>
-          </StandardCard>
-        </div>
+            </div>
+          </div>
 
-        {/* Executive Summary */}
-        <div className="mt-16">
-          <div className="bg-card border border-border rounded-lg p-8">
-            <h2 className="font-mono text-2xl font-bold mb-6">Executive Summary</h2>
+          {/* Executive Summary */}
+          <div className="mb-16">
+            <div className="border border-border rounded bg-background p-8">
+              <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider border-b-2 border-border pb-3">8.0 Executive Summary</h2>
             <div className="prose prose-gray max-w-none space-y-6">
               <div>
                 <p className="text-sm font-mono text-primary mb-2">CURRENT STATE</p>
@@ -687,25 +671,68 @@ const SampleReport = () => {
               </div>
             </div>
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="mt-16 text-center">
-          <StandardCard>
-            <StandardCardContent className="!pt-8 !pb-8">
-              <div className="system-status mb-4">READY TO IMPLEMENT</div>
-              <h2 className="font-mono text-2xl font-bold mb-4">Get Your Custom Assessment</h2>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                This is an example report. Your assessment will be customized to your specific 
-                infrastructure, challenges, and growth goals.
-              </p>
-              <Button asChild size="lg" className="btn-console">
-                <Link to="/assessment">Book Your Assessment</Link>
-              </Button>
-            </StandardCardContent>
-          </StandardCard>
+          {/* Appendix */}
+          <div className="mb-12 border-t-2 border-border pt-8">
+            <h2 className="font-mono text-xl font-bold mb-6 text-foreground uppercase tracking-wider">Appendix: Methodology & Contact</h2>
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-mono font-semibold text-sm mb-3 text-muted-foreground uppercase tracking-wide">Assessment Methodology</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  This assessment was conducted using CWT Studio's proprietary Revenue Infrastructure Framework, 
+                  evaluating 6 core categories across 50+ evaluation criteria. Data was gathered through:
+                </p>
+                <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                  <li>System configuration analysis</li>
+                  <li>Data quality audits</li>
+                  <li>Stakeholder interviews</li>
+                  <li>Usage analytics review</li>
+                  <li>Industry benchmark comparison</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-mono font-semibold text-sm mb-3 text-muted-foreground uppercase tracking-wide">Questions or Next Steps?</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  To receive a customized assessment report for your organization or to discuss implementation:
+                </p>
+                <div className="text-sm space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-muted-foreground">Email:</span>
+                    <span className="text-foreground font-medium">hello@thecwtstudio.com</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-mono text-muted-foreground">Website:</span>
+                    <span className="text-foreground font-medium">thecwtstudio.com</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </Section>
+      </div>
+
+      {/* Document Footer Bar - Sticky */}
+      <div className="sticky bottom-0 bg-background border-t-2 border-border shadow-lg z-20">
+        <div className="max-w-5xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between gap-4">
+            <Button variant="outline" asChild className="font-mono">
+              <Link to="/" className="flex items-center gap-2">
+                <ArrowLeft className="w-4 h-4" />
+                Back to CWT Studio
+              </Link>
+            </Button>
+            <div className="flex items-center gap-3">
+              <div className="text-xs text-muted-foreground font-mono hidden md:block">
+                To receive a customized report for your organization
+              </div>
+              <Button asChild size="lg" className="font-mono">
+                <Link to="/assessment">Get Your Assessment</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>;
 };
 export default SampleReport;
