@@ -136,75 +136,13 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Who We're For Section */}
+      {/* Who We're For & Working with Us */}
       <Section variant="muted">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="heading-section mb-6 text-foreground">Who We're For</h2>
-              <p className="text-description mx-auto">
-                We work with operators who need systems installed within weeks, where execution determines value.
-              </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gutter-content">
-            <StandardCard>
-              <div className="space-y-4">
-                <h3 className="heading-subsection text-primary">You're a Fit If</h3>
-                <ul className="space-y-3 text-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    Revenue is growing but infrastructure is breaking
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    You need fixes in weeks, not quarters
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    Salesforce exists but isn't delivering leverage
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                    You value execution over presentations
-                  </li>
-                </ul>
-              </div>
-            </StandardCard>
-            
-            <StandardCard>
-              <div className="space-y-4">
-                <h3 className="heading-subsection text-muted-foreground">You're Not a Fit If</h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                    You need 18-month transformation roadmaps
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                    You want strategy consulting without implementation
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                    Systems are working — you're just optimizing
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                    You need a full-time employee, not a sprint partner
-                  </li>
-                </ul>
-              </div>
-            </StandardCard>
-          </div>
-          
-          <div className="mt-8 text-center">
-            <p className="text-muted-foreground font-mono text-sm mb-6">
-              Still not sure? Check our <Link to="/proof" className="text-primary hover:underline font-semibold">case studies</Link> to see if your situation matches.
-            </p>
-          </div>
+        {/* Who We're For */}
+        <div className="max-w-4xl mx-auto mb-16">
+...
         </div>
-      </Section>
-
-      <Section variant="muted">
+        
         {/* Working with Us */}
         <div>
           <div className="bg-card border border-border rounded-lg p-8">
