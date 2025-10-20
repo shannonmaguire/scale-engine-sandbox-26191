@@ -132,13 +132,13 @@ const Contact = () => {
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
           <div className="text-center mb-20">
-            <div className="system-status mb-6">
+            <div className="inline-block system-status mb-6">
               CONTACT
             </div>
-            <h1 className="heading-page mb-6">
+            <h1 className="heading-page mb-4">
               Let's Talk
             </h1>
-            <p className="text-description text-lg">
+            <p className="text-description text-lg max-w-2xl mx-auto">
               Tell us what you need. We'll respond in 24 hours.
             </p>
           </div>
