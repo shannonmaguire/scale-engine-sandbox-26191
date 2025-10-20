@@ -21,7 +21,7 @@ export const objections: Objection[] = [
     id: "budget-1",
     category: "budget",
     objection: "We don't have budget right now",
-    responseScript: "Most teams don't have a line item for 'Salesforce assessment insurance.' This assessment is a $1,200 insurance policy against a $50K mistake. If we find even 2-3 issues before your next implementation, you've already saved 10-15x the cost.",
+    responseScript: "Most teams don't budget for technical assessment. This costs $1,200 and typically prevents $50K in mistakes. If we find 2-3 issues before your next implementation, you've already saved 10x the cost.",
     fullFramework: {
       discovery: [
         "What's your typical project budget range?",
@@ -45,7 +45,7 @@ export const objections: Objection[] = [
     id: "budget-2",
     category: "budget",
     objection: "How do I justify this to my manager?",
-    responseScript: "You're thinking like an exec. Here's your pitch: 'I found a $1,200 service that flags deal-blocking technical issues before they cost us opportunities. They've helped 200+ AEs close technical deals faster. Can we test it on my next two deals?' We'll hop on the call with you if needed.",
+    responseScript: "Tell your manager you found a $1,200 service that flags deal-blocking technical issues before they cost opportunities. We've helped 200+ AEs close technical deals faster. Can we test it on your next two deals? I'll hop on the call with you if it helps.",
     fullFramework: {
       discovery: [
         "What metrics does your manager care about most?",
@@ -69,7 +69,7 @@ export const objections: Objection[] = [
     id: "budget-3",
     category: "budget",
     objection: "Can we start with something smaller/cheaper?",
-    responseScript: "Technical assessments have a fixed cost because we have to review the entire org to spot integration risks and data issues. Think of it like a home inspection: you can't inspect 'just the kitchen' and call it good. We do offer a free 15-minute triage call to confirm if an assessment makes sense for your deal.",
+    responseScript: "Technical assessments have a fixed cost because we review the entire org to spot integration risks and data issues. You can't assess part of a system and catch everything. We do offer a free 15-minute triage call to confirm if a full assessment makes sense for your deal.",
     fullFramework: {
       discovery: [
         "What size deal would make this worth it for you?",
@@ -193,7 +193,7 @@ export const objections: Objection[] = [
     id: "timing-1",
     category: "timing",
     objection: "We're not ready yet",
-    responseScript: "'Ready' usually means after you've already hit the pain. Most AEs come to us after losing a deal or getting stuck in a 3-month technical back-and-forth. The teams that win call us at the first sign of complexity. What would make you feel ready? I'm happy to revisit when you hit your next technical snag.",
+    responseScript: "Most AEs call us after losing a deal or getting stuck in a 3-month technical back-and-forth. The ones who close faster call us at the first sign of complexity. What would make you feel ready? I can revisit when you hit your next technical snag.",
     fullFramework: {
       discovery: [
         "What would 'ready' look like for you?",
@@ -217,7 +217,7 @@ export const objections: Objection[] = [
     id: "timing-2",
     category: "timing",
     objection: "We need this done faster than you can deliver",
-    responseScript: "Speed is our business model. Standard turnaround is 4 hours for critical issues, 24 hours for full assessments. If you've got a demo tomorrow and need validation today, that's exactly what we do. Most 'fast' services take 2-3 days. We're built for deal-speed urgency because prospects don't wait.",
+    responseScript: "We turn around critical issues in 4 hours, full assessments in 24 hours. If you've got a demo tomorrow and need validation today, that's what we do. Most services take 2-3 days. We're built for deals that can't wait.",
     fullFramework: {
       discovery: [
         "What's your timeline?",
@@ -267,7 +267,7 @@ export const objections: Objection[] = [
     id: "technical-1",
     category: "technical",
     objection: "Our org is too complex/customized",
-    responseScript: "Complexity is why most clients hire us. The vanilla orgs are straightforward. It's the heavily customized, 10-year-old orgs with unusual integrations that need expert eyes. We've seen 500+ Salesforce orgs—from 5 users to 50,000. Complexity is our specialty. The question is whether you can afford not to validate before your next big move.",
+    responseScript: "Complexity is why most clients hire us. Simple orgs are straightforward. Heavily customized, 10-year-old orgs with unusual integrations need expert eyes. We've assessed hundreds of Salesforce orgs across every size and configuration. The question is whether you can afford not to validate before your next big move.",
     fullFramework: {
       discovery: [
         "What makes your org complex? (custom code, integrations, data volume?)",
@@ -291,7 +291,7 @@ export const objections: Objection[] = [
     id: "technical-2",
     category: "technical",
     objection: "We're mid-implementation already",
-    responseScript: "You're in the danger zone. Most implementations fail in weeks 4-8 when hidden issues surface. A mid-flight assessment can spot those landmines before they blow up your timeline. Think of it as a 'technical health check' to make sure you're still on track. We've saved dozens of projects that were 60% done but headed toward disaster.",
+    responseScript: "Most implementations fail in weeks 4-8 when hidden issues surface. A mid-flight assessment spots those problems before they blow up your timeline. We've saved dozens of projects that were 60% done but headed toward disaster.",
     fullFramework: {
       discovery: [
         "How far into the implementation are you?",
