@@ -491,11 +491,11 @@ const SampleReport = () => {
                     <h3 className="font-mono font-bold">High Risk</h3>
                   </div>
                   <div className="flex flex-col gap-3 mt-3">
-                    <div className="p-4 bg-muted/20 border border-border rounded flex-1">
+                    <div className="p-4 bg-muted/20 border border-border rounded h-24 flex flex-col justify-between">
                       <p className="text-sm font-medium mb-1">Data Integrity</p>
                       <p className="text-xs text-muted-foreground">Poor data quality will compound with scale</p>
                     </div>
-                    <div className="p-4 bg-muted/20 border border-border rounded flex-1">
+                    <div className="p-4 bg-muted/20 border border-border rounded h-24 flex flex-col justify-between">
                       <p className="text-sm font-medium mb-1">Rep Productivity</p>
                       <p className="text-xs text-muted-foreground">40% efficiency loss vs benchmark</p>
                     </div>
@@ -507,11 +507,11 @@ const SampleReport = () => {
                     <h3 className="font-mono font-bold">Medium Risk</h3>
                   </div>
                   <div className="flex flex-col gap-3 mt-3">
-                    <div className="p-4 bg-muted/20 border border-border rounded flex-1">
+                    <div className="p-4 bg-muted/20 border border-border rounded h-24 flex flex-col justify-between">
                       <p className="text-sm font-medium mb-1">Forecast Accuracy</p>
                       <p className="text-xs text-muted-foreground">73% accuracy creates planning issues</p>
                     </div>
-                    <div className="p-4 bg-muted/20 border border-border rounded flex-1">
+                    <div className="p-4 bg-muted/20 border border-border rounded h-24 flex flex-col justify-between">
                       <p className="text-sm font-medium mb-1">Tool Adoption</p>
                       <p className="text-xs text-muted-foreground">Low utilization of available features</p>
                     </div>
@@ -523,11 +523,11 @@ const SampleReport = () => {
                     <h3 className="font-mono font-bold">Low Risk</h3>
                   </div>
                   <div className="flex flex-col gap-3 mt-3">
-                    <div className="p-4 bg-muted/20 border border-border rounded flex-1">
+                    <div className="p-4 bg-muted/20 border border-border rounded h-24 flex flex-col justify-between">
                       <p className="text-sm font-medium mb-1">Team Readiness</p>
                       <p className="text-xs text-muted-foreground">High willingness to adopt changes</p>
                     </div>
-                    <div className="p-4 bg-muted/20 border border-border rounded flex-1">
+                    <div className="p-4 bg-muted/20 border border-border rounded h-24 flex flex-col justify-between">
                       <p className="text-sm font-medium mb-1">Infrastructure</p>
                       <p className="text-xs text-muted-foreground">Solid foundation to build upon</p>
                     </div>
