@@ -22,7 +22,7 @@ const resources: Resource[] = [
   {
     id: "service-selection-guide",
     title: "Service Selection Guide",
-    description: "Match your current revenue maturity and technical debt level to the correct engagement tier. Explains when to start with a $1.5K assessment versus jumping directly to a $9-18K sprint or ongoing fractional support.",
+    description: "Which $9-18K engagement prevents $200K in wasted spend? Match your revenue maturity stage to the right CWT Studio service—Assessment, Sprint, or Fractional Ops.",
     icon: Map,
     category: "Planning",
     downloadUrl: "/pdfs/service-selection-guide.pdf"
@@ -30,7 +30,7 @@ const resources: Resource[] = [
   {
     id: "roi-calculator",
     title: "ROI Calculator",
-    description: "Input your current Salesforce data quality score, deal cycle length, and average contract value to project 12-month ROI from system cleanup. Shows how a $47K investment can prevent $340K in pipeline leakage through improved forecasting accuracy and reduced sales friction.",
+    description: "See exactly how $47K in Salesforce cleanup saves $340K in pipeline risk over 12 months. Input your current metrics, get projected ROI with cost/benefit breakdown.",
     icon: Calculator,
     category: "Financial",
     downloadUrl: "/pdfs/roi-calculator.pdf"
@@ -38,7 +38,7 @@ const resources: Resource[] = [
   {
     id: "technical-assessment-framework",
     title: "Technical Assessment Framework",
-    description: "Self-score your Salesforce instance across six operational dimensions: data quality, automation maturity, integration architecture, governance controls, reporting effectiveness, and user adoption. This is the identical scoring rubric we apply in paid assessments and takes approximately 15 minutes to complete.",
+    description: "The same 6-dimension audit framework (Data Quality, Automation, Integration, Governance, Reporting, Adoption) we use in $1.5K paid assessments. Self-score in 15 minutes.",
     icon: CheckSquare,
     category: "Assessment",
     downloadUrl: "/pdfs/technical-assessment-framework.pdf"
@@ -46,7 +46,7 @@ const resources: Resource[] = [
   {
     id: "90-day-roadmap-template",
     title: "90-Day Roadmap Template",
-    description: "Convert assessment findings into a sequenced implementation plan with weekly milestones, dependency mapping, and stage-gate decision criteria. Structures system remediation work into manageable sprints with defined deliverables and rollback protocols.",
+    description: "Turn assessment findings into executable sprints. Break system installation into weekly milestones with clear deliverables, dependencies, and go/no-go decision points.",
     icon: FileText,
     category: "Planning",
     downloadUrl: "/pdfs/90-day-roadmap-template.pdf"
@@ -54,7 +54,7 @@ const resources: Resource[] = [
   {
     id: "discovery-questions-library",
     title: "Discovery Questions Library",
-    description: "Thirty-plus qualification questions organized by sales stage and technical objection category. Designed for account executives working Salesforce implementation deals above $50K to surface hidden technical debt and integration requirements during discovery calls.",
+    description: "30+ proven questions that uncover technical debt in prospect deals. Organized by deal stage and objection type—helps AEs qualify $50K+ Salesforce opportunities.",
     icon: FileQuestion,
     category: "Sales Enablement",
     downloadUrl: "/pdfs/discovery-questions-library.pdf"
@@ -62,7 +62,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "Downloads immediately without an email gate. A 47-point pre-engagement audit covering content readiness, asset preparation, third-party integrations, and stakeholder sign-off requirements. Designed to eliminate scope expansion that typically adds $15K+ to web projects.",
+    description: "FREE download, no email required. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents $15K+ in scope creep.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -70,7 +70,7 @@ const resources: Resource[] = [
   {
     id: "vendor-handoff-sop",
     title: "Vendor Handoff SOP",
-    description: "Standard operating procedure for transferring complete web infrastructure ownership from an existing vendor. Covers domain registrar access, hosting credentials, CMS administrator rights, analytics properties, and CRM integration handoff in a sequence that prevents service interruption.",
+    description: "Take full ownership of your web infrastructure from any vendor. Step-by-step SOP for domain, hosting, CMS, analytics, and CRM transfer—eliminate ongoing vendor dependency.",
     icon: FileText,
     category: "Operations",
     downloadUrl: "/pdfs/vendor-handoff-sop.pdf"
@@ -131,10 +131,10 @@ const Resources = () => {
             </div>
           </div>
           <h1 className="heading-page text-primary mb-6">
-            The Frameworks We Use in Paid Engagements
+            Battle-Tested Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl mb-4">
-            These are the same diagnostic tools, scoring matrices, and planning templates that structure our $1.5K assessments and $18K sprint engagements. The Website Readiness Checklist downloads immediately without an email gate. Everything else requires your email address and delivers within seconds.
+            The same tools we use in $1.5K assessments and $18K sprint engagements. One resource is completely free—no email required. The rest unlock with your email and arrive instantly.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
             <CheckCircle className="w-4 h-4 text-primary" />
@@ -195,12 +195,17 @@ const Resources = () => {
       {/* Social Proof Section */}
       <section className="section-spacing-half px-6 bg-muted/30 border-y-2 border-border">
         <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="heading-subsection text-foreground mb-4">
+              Used By Revenue Leaders Who Demand Results
+            </h2>
+          </div>
           <div className="bg-card border-2 border-primary/20 rounded-lg p-8">
             <div className="flex items-start gap-4">
               <div className="w-1 h-full bg-primary rounded-full flex-shrink-0" />
               <div>
                 <p className="text-lg text-foreground mb-4 italic">
-                  "The Technical Assessment Framework identified three structural Salesforce problems our external consultant had evaluated and cleared during their $400/hour audit. We caught them before starting implementation and avoided what would have been a $60K remediation cycle six months into the project."
+                  "The Technical Assessment Framework caught 3 critical Salesforce gaps our $400/hr consultant missed. Saved us from a $60K mistake before we even started the project."
                 </p>
                 <div className="text-sm font-mono text-muted-foreground">
                   <div className="font-bold text-foreground">Director of Revenue Operations</div>
@@ -219,10 +224,10 @@ const Resources = () => {
             FOR ACCOUNT EXECUTIVES
           </div>
           <h2 className="heading-section text-foreground mb-6">
-            Account Executives Working Salesforce Deals
+            Selling Salesforce Services?
           </h2>
           <p className="text-description text-muted-foreground mb-8">
-            The AE Hub contains discovery frameworks, objection handling scripts, and technical qualification tools specifically designed for account executives selling Salesforce implementation and remediation services.
+            If you're an AE working Salesforce deals, we have dedicated tools, playbooks, and technical support in the AE Hub.
           </p>
           <Button asChild size="lg">
             <Link to="/ae-hub">
@@ -237,10 +242,10 @@ const Resources = () => {
       <section className="section-spacing px-6 bg-card">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-section text-foreground mb-6">
-            From Diagnosis to Implementation
+            These Resources Answer "What's Broken?"
           </h2>
           <p className="text-description text-muted-foreground mb-8">
-            These frameworks help you identify what needs fixing. A formal Assessment takes the next step by auditing your actual infrastructure, benchmarking it against industry standards for your revenue stage, and producing a sequenced 90-day remediation roadmap with defined milestones and resource requirements.
+            To answer "How do we fix it?"—book an Assessment. We audit your infrastructure, benchmark against peers, and design a 90-day roadmap with implementation sequence.
           </p>
           <ConversionOptimizedButton
             to="/assessment"
