@@ -88,6 +88,16 @@ img {
 
     --radius: 0.375rem;
 
+    /* Sidebar tokens */
+    --sidebar-background: var(--gray-very-light);
+    --sidebar-foreground: var(--deep-black);
+    --sidebar-primary: var(--burgundy);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--teal);
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: var(--muted-gray);
+    --sidebar-ring: var(--burgundy);
+
   /* Console Design Elements */
   --console-grid: linear-gradient(90deg, hsl(var(--border-gray)) 1px, transparent 1px),
                   linear-gradient(hsl(var(--border-gray)) 1px, transparent 1px);
@@ -185,6 +195,16 @@ img {
     --border: var(--muted-gray);
     --input: var(--forest);
     --ring: var(--burgundy);
+
+    /* Sidebar dark mode */
+    --sidebar-background: var(--forest);
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: var(--burgundy);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--teal);
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: var(--muted-gray);
+    --sidebar-ring: var(--burgundy);
   }
 }
 

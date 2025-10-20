@@ -74,7 +74,7 @@ const Navigation = () => {
                 Solutions
                 <ChevronDown size={14} className="!text-white" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 bg-authority border-white/20">
+              <DropdownMenuContent align="start" className="w-56 bg-authority border-white/20 z-[100]">
                 {solutionsLinks.map((link, index) => (
                   <div key={link.href}>
                     {link.separator && index > 0 && <div className="h-px bg-white/10 my-1" />}
