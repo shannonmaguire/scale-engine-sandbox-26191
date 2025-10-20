@@ -196,9 +196,9 @@ PERSONA ANGLES:
                             </h4>
                             <ul className="space-y-2">
                               {objection.fullFramework.discovery.map((question, idx) => (
-                                <li key={idx} className="flex gap-3 text-sm">
-                                  <span className="text-accent-data font-semibold">{idx + 1}.</span>
-                                  <span>{question}</span>
+                                <li key={idx} className="flex items-start gap-3 text-sm">
+                                  <span className="text-accent-data font-semibold flex-shrink-0">{idx + 1}.</span>
+                                  <span className="flex-1">{question}</span>
                                 </li>
                               ))}
                             </ul>
@@ -211,9 +211,9 @@ PERSONA ANGLES:
                             </h4>
                             <ul className="space-y-2">
                               {objection.fullFramework.proofPoints.map((point, idx) => (
-                                <li key={idx} className="flex gap-3 text-sm">
-                                  <span className="text-accent-data">•</span>
-                                  <span>{point}</span>
+                                <li key={idx} className="flex items-start gap-3 text-sm">
+                                  <span className="text-accent-data flex-shrink-0">•</span>
+                                  <span className="flex-1">{point}</span>
                                 </li>
                               ))}
                             </ul>
