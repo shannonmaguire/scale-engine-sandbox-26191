@@ -713,26 +713,21 @@ const SampleReport = () => {
       </div>
 
       {/* Document Footer Bar - Sticky */}
-      <div className="sticky bottom-0 bg-background/95 backdrop-blur-sm border-t border-border z-20">
-        <div className="max-w-5xl mx-auto px-8 py-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <Button 
-              variant="ghost" 
-              asChild 
-              className="font-mono text-muted-foreground hover:text-foreground"
-            >
-              <Link to="/" className="flex items-center gap-2">
+      <div className="sticky bottom-0 bg-background border-t-2 border-border shadow-lg z-20">
+        <div className="max-w-5xl mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <Button variant="outline" asChild className="font-mono w-full md:w-auto">
+              <Link to="/" className="flex items-center justify-center gap-2">
                 <ArrowLeft className="w-4 h-4" />
                 Back to CWT Studio
               </Link>
             </Button>
-            
-            <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
-              <p className="text-sm text-muted-foreground max-w-md">
-                Want a customized assessment for your organization?
+            <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+              <p className="text-sm text-muted-foreground font-mono text-center md:text-right">
+                To receive a customized report for your organization
               </p>
-              <Button asChild size="lg" className="font-mono px-8">
-                <Link to="/assessment">Get Your Free Assessment</Link>
+              <Button asChild size="lg" className="font-mono w-full md:w-auto whitespace-nowrap">
+                <Link to="/assessment">Get Your Assessment</Link>
               </Button>
             </div>
           </div>
