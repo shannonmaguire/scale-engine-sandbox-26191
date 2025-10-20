@@ -83,8 +83,8 @@ const Home = () => {
       />
       
       {/* Hero */}
-      <Section>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <Section className="min-h-[calc(100vh-4rem)] flex items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div>
             <h1 className="heading-page mb-4">
               The Competitive Advantage Is the Backend
@@ -121,41 +121,43 @@ const Home = () => {
       </Section>
 
       {/* Services */}
-      <Section variant="muted">
-        <h2 className="heading-section mb-8 text-left">How We Work</h2>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="border-l-4 border-primary pl-6 flex flex-col">
-              <div className="font-mono text-sm text-muted-foreground mb-2">{String(index + 1).padStart(2, '0')}</div>
-              <h3 className="heading-subsection mb-2">{service.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
-              
-              <div className="space-y-1 mb-4">
-                {service.timeline && (
+      <Section variant="muted" className="min-h-screen flex items-center">
+        <div className="w-full">
+          <h2 className="heading-section mb-8 text-left">How We Work</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="border-l-4 border-primary pl-6 flex flex-col">
+                <div className="font-mono text-sm text-muted-foreground mb-2">{String(index + 1).padStart(2, '0')}</div>
+                <h3 className="heading-subsection mb-2">{service.title}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+                
+                <div className="space-y-1 mb-4">
+                  {service.timeline && (
+                    <div className="text-sm font-mono">
+                      <span className="text-muted-foreground">Timeline: </span>
+                      <span>{service.timeline}</span>
+                    </div>
+                  )}
                   <div className="text-sm font-mono">
-                    <span className="text-muted-foreground">Timeline: </span>
-                    <span>{service.timeline}</span>
+                    <span className="text-muted-foreground">Price: </span>
+                    <span className="text-primary">{service.price}</span>
                   </div>
-                )}
-                <div className="text-sm font-mono">
-                  <span className="text-muted-foreground">Price: </span>
-                  <span className="text-primary">{service.price}</span>
                 </div>
+                
+                <div className="flex-grow" />
+                
+                <Button asChild className="w-full" size="sm">
+                  <Link to={service.link}>{service.cta}</Link>
+                </Button>
               </div>
-              
-              <div className="flex-grow" />
-              
-              <Button asChild className="w-full" size="sm">
-                <Link to={service.link}>{service.cta}</Link>
-              </Button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Section>
 
       {/* Assessment Details */}
-      <Section>
+      <Section className="min-h-screen flex items-center">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-6">Assessment Deliverables</h2>
           
@@ -179,39 +181,41 @@ const Home = () => {
       </Section>
 
       {/* Proof */}
-      <Section variant="muted">
-        <h2 className="heading-section mb-8">By the Numbers</h2>
-        
-        <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">2</div>
-            <div className="text-sm text-muted-foreground">Case Studies</div>
+      <Section variant="muted" className="min-h-screen flex items-center">
+        <div className="w-full">
+          <h2 className="heading-section mb-8">By the Numbers</h2>
+          
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <div className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">2</div>
+              <div className="text-sm text-muted-foreground">Case Studies</div>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">&gt;40%</div>
+              <div className="text-sm text-muted-foreground">Open Rates</div>
+              <div className="text-xs text-muted-foreground">vs 15-25% avg</div>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">90</div>
+              <div className="text-sm text-muted-foreground">Day Foundation</div>
+            </div>
+            
+            <div className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">100%</div>
+              <div className="text-sm text-muted-foreground">Documentation</div>
+            </div>
           </div>
           
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">&gt;40%</div>
-            <div className="text-sm text-muted-foreground">Open Rates</div>
-            <div className="text-xs text-muted-foreground">vs 15-25% avg</div>
-          </div>
-          
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">90</div>
-            <div className="text-sm text-muted-foreground">Day Foundation</div>
-          </div>
-          
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">100%</div>
-            <div className="text-sm text-muted-foreground">Documentation</div>
-          </div>
+          <ConversionOptimizedButton
+            to="/proof"
+            ctaName="By Numbers - See Proof"
+            location="By Numbers Section"
+          >
+            See Full Case Studies
+          </ConversionOptimizedButton>
         </div>
-        
-        <ConversionOptimizedButton
-          to="/proof"
-          ctaName="By Numbers - See Proof"
-          location="By Numbers Section"
-        >
-          See Full Case Studies
-        </ConversionOptimizedButton>
       </Section>
 
       {/* Exit Intent Popup */}
