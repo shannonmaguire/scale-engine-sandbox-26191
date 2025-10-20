@@ -8,9 +8,6 @@ import { Download, FileText, Calculator, CheckSquare, Map, FileQuestion, ArrowRi
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { trackEvent } from "@/hooks/usePageTracking";
 import { ResourceDownloadModal } from "@/components/ResourceDownloadModal";
-import { InteractiveChecklist } from "@/components/checklist/InteractiveChecklist";
-import { websiteReadinessChecklist } from "@/data/checklists";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Resource {
   id: string;
@@ -130,75 +127,46 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Main Content - Tabs */}
+      {/* Resource Grid */}
       <section className="section-spacing px-6">
         <div className="max-w-7xl mx-auto">
-          <Tabs defaultValue="downloads" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-              <TabsTrigger value="downloads">PDF Downloads</TabsTrigger>
-              <TabsTrigger value="checklist">Interactive Checklist</TabsTrigger>
-            </TabsList>
-
-            {/* PDF Downloads Tab */}
-            <TabsContent value="downloads">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gutter-standard">
-                {resources.map((resource) => {
-                  const Icon = resource.icon;
-                  const downloadName =
-                    resource.downloadUrl.split("/").pop() ?? `${resource.id}.pdf`;
-                  return (
-                    <StandardCard key={resource.id} className="flex flex-col h-full">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-6 h-6 text-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <div className="text-xs font-mono text-muted-foreground uppercase tracking-wide mb-1">
-                            {resource.category}
-                          </div>
-                          <h3 className="font-mono font-bold text-lg text-foreground">
-                            {resource.title}
-                          </h3>
-                        </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gutter-standard">
+            {resources.map((resource) => {
+              const Icon = resource.icon;
+              const downloadName =
+                resource.downloadUrl.split("/").pop() ?? `${resource.id}.pdf`;
+              return (
+                <StandardCard key={resource.id} className="flex flex-col h-full">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-xs font-mono text-muted-foreground uppercase tracking-wide mb-1">
+                        {resource.category}
                       </div>
-                      
-                      <p className="text-sm text-muted-foreground mb-4 flex-1">
-                        {resource.description}
-                      </p>
-                      
-                      <Button 
-                        className="w-full" 
-                        variant="outline"
-                        onClick={() => handleDownloadClick(resource)}
-                      >
-                        <Download className="mr-2 h-4 w-4" />
-                        Download Resource
-                      </Button>
-                    </StandardCard>
-                  );
-                })}
-              </div>
-            </TabsContent>
-
-            {/* Interactive Checklist Tab */}
-            <TabsContent value="checklist">
-              <div className="max-w-4xl mx-auto">
-                <InteractiveChecklist
-                  checklistId="website-readiness"
-                  title="Website Readiness Checklist"
-                  description="Evaluate your readiness for a website rebuild. Track your progress across content, design, technical infrastructure, integrations, and stakeholder alignment."
-                  categories={websiteReadinessChecklist}
-                  onComplete={(score) => {
-                    trackEvent('checklist_completed', { 
-                      checklistId: 'website-readiness', 
-                      score,
-                      location: 'resources_page'
-                    });
-                  }}
-                />
-              </div>
-            </TabsContent>
-          </Tabs>
+                      <h3 className="font-mono font-bold text-lg text-foreground">
+                        {resource.title}
+                      </h3>
+                    </div>
+                  </div>
+                  
+                  <p className="text-sm text-muted-foreground mb-4 flex-1">
+                    {resource.description}
+                  </p>
+                  
+                  <Button 
+                    className="w-full" 
+                    variant="outline"
+                    onClick={() => handleDownloadClick(resource)}
+                  >
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Resource
+                  </Button>
+                </StandardCard>
+              );
+            })}
+          </div>
         </div>
       </section>
 
