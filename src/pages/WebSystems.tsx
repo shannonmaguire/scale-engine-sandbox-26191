@@ -129,17 +129,36 @@ const WebSystems = () => {
         
         {/* Hero */}
         <div className="max-w-3xl mb-16">
-          <div className="flex mb-6">
+          <div className="flex items-center gap-4 mb-6">
             <div className="system-status">
               WEB DEVELOPMENT
             </div>
+            <span className="text-xs font-mono text-muted-foreground">
+              BUILT FROM SCRATCH • NO WEBFLOW • NO WORDPRESS
+            </span>
           </div>
           <h1 className="heading-page mb-4">
-            Web Systems
+            Your Website Shouldn't Need IT Every Time You Fix a Typo
           </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            Websites you can own and update. CRM-wired, documented, and fast.
+          <p className="text-xl text-muted-foreground mb-6">
+            Custom-built sites that integrate with your CRM, run fast, and come with everything your team needs to make updates without calling a developer.
           </p>
+          
+          <div className="grid grid-cols-3 gap-6 mb-8 py-6 border-y border-border">
+            <div>
+              <div className="font-mono text-2xl font-bold text-primary mb-1">Sub-1s</div>
+              <div className="text-xs text-muted-foreground">Load time on key pages</div>
+            </div>
+            <div>
+              <div className="font-mono text-2xl font-bold text-primary mb-1">30 Days</div>
+              <div className="text-xs text-muted-foreground">Post-launch support</div>
+            </div>
+            <div>
+              <div className="font-mono text-2xl font-bold text-primary mb-1">100%</div>
+              <div className="text-xs text-muted-foreground">Ownership transfer</div>
+            </div>
+          </div>
+
           <div className="flex gap-4">
             <ConversionOptimizedButton
               to="/contact?interest=web&source_page=web-systems"
@@ -156,7 +175,10 @@ const WebSystems = () => {
 
         {/* What You Get */}
         <div className="mb-16">
-          <h2 className="heading-section mb-6">What You Get</h2>
+          <h2 className="heading-section mb-4">What's Included</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            We build custom sites from scratch using React, TypeScript, and Tailwind. No drag-and-drop builders. No WordPress plugins. Just clean code your team can own and update.
+          </p>
           <ul className="space-y-3 max-w-2xl">
             {deliverables.map((item, index) => (
               <li key={index} className="flex items-start gap-3">
@@ -169,9 +191,12 @@ const WebSystems = () => {
 
         {/* Ownership */}
         <div className="mb-16 max-w-3xl">
-          <h2 className="heading-section mb-4">You Own It</h2>
-          <p className="text-muted-foreground leading-relaxed">
-            You get the repo, the docs, and the deployment keys. Update it yourself, hire your own team, or come back to us. Your call. No logo in the footer. No lock-in.
+          <h2 className="heading-section mb-4">Full Ownership Transfer</h2>
+          <p className="text-muted-foreground leading-relaxed mb-4">
+            At handoff, you receive the GitHub repository, deployment credentials, and a clear owner guide. Make updates in-house, hire your own developer, or keep us on retainer. The codebase is yours. No vendor lock-in. No ongoing licensing. No logo in the footer.
+          </p>
+          <p className="text-sm text-muted-foreground font-mono">
+            This is not a template. This is not a managed service. You own the code.
           </p>
         </div>
 
@@ -204,7 +229,10 @@ const WebSystems = () => {
 
         {/* Process */}
         <div className="mb-16">
-          <h2 className="heading-section mb-8">Process</h2>
+          <h2 className="heading-section mb-4">Build Process</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Timeline varies by package scope. Typical turnaround: 3-6 weeks from deposit to live site.
+          </p>
           
           <div className="space-y-6 max-w-2xl">
             {process.map((step, index) => (
@@ -270,22 +298,26 @@ const WebSystems = () => {
           </div>
         </div>
 
-        {/* Standard */}
+        {/* Performance Benchmarks */}
         <div className="mb-16">
-          <h2 className="heading-section mb-6">Standard</h2>
+          <h2 className="heading-section mb-4">Performance You Can Measure</h2>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            This site loads in under a second. That's the baseline we build to. Fast sites convert better, rank higher, and cost less to run.
+          </p>
           <div className="space-y-4 max-w-2xl">
             <div className="border-l-4 border-primary pl-6">
               <div className="font-mono text-2xl font-bold text-primary mb-1">Sub-1s LCP</div>
-              <p className="text-sm text-muted-foreground">on key pages</p>
+              <p className="text-sm text-muted-foreground">Largest Contentful Paint on key pages</p>
+            </div>
+            <div className="border-l-4 border-primary pl-6">
+              <div className="font-mono text-2xl font-bold text-primary mb-1">90+ Score</div>
+              <p className="text-sm text-muted-foreground">Google PageSpeed on mobile</p>
             </div>
             <div className="border-l-4 border-primary pl-6">
               <div className="font-mono text-2xl font-bold text-primary mb-1">Hours → Minutes</div>
-              <p className="text-sm text-muted-foreground">edit time reduction</p>
+              <p className="text-sm text-muted-foreground">Time to make content updates</p>
             </div>
           </div>
-          <p className="text-muted-foreground mt-6 max-w-2xl">
-            If you like our site, that's the standard we build to.
-          </p>
         </div>
 
         {/* FAQ */}
@@ -310,9 +342,9 @@ const WebSystems = () => {
 
         {/* Final CTA */}
         <div className="max-w-2xl">
-          <h2 className="heading-section mb-4">Ready?</h2>
+          <h2 className="heading-section mb-4">Start With a Consultation</h2>
           <p className="text-muted-foreground mb-6">
-            Schedule a consultation. We'll send a project brief within 24 hours.
+            Book a 45-minute scoping call. We'll send a project brief and fixed-price quote within 24 hours. If you proceed, any assessment fee credits toward the build.
           </p>
           <ConversionOptimizedButton to="/contact?interest=web&source_page=web-systems" ctaName="Web Systems Final CTA" location="web-systems-footer">
             Request Consultation
