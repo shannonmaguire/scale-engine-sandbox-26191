@@ -122,7 +122,7 @@ const Home = () => {
 
       {/* Services */}
       <Section variant="muted">
-        <h2 className="heading-section mb-8">How We Work</h2>
+        <h2 className="heading-section mb-8 text-left">How We Work</h2>
         
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
