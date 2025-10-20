@@ -17,8 +17,8 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Navigation Grid - 5 equal columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-10 pb-12 border-b border-white/10">
+        {/* Navigation Grid - 6 equal columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 pb-12 border-b border-white/10">
           {/* Services */}
           <div>
             <h4 className="font-mono font-semibold text-sm uppercase tracking-wider mb-4 text-white">
@@ -82,9 +82,28 @@ const Footer = () => {
                   Resource Library
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* For Account Executives */}
+          <div>
+            <h4 className="font-mono font-semibold text-sm uppercase tracking-wider mb-4 text-white">
+              For Account Executives
+            </h4>
+            <ul className="space-y-2">
               <li>
                 <Link to="/ae-hub" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
                   AE Hub
+                </Link>
+              </li>
+              <li>
+                <Link to="/ae-technical-support" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                  Technical Support
+                </Link>
+              </li>
+              <li>
+                <Link to="/ae-objection-library" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                  Objection Library
                 </Link>
               </li>
             </ul>

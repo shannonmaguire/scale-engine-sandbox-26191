@@ -62,6 +62,13 @@ export default function AEHub() {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Everything you need to sell <span className="text-accent font-semibold">Salesforce services</span> with confidence. Tools, support, and proven frameworks to close more deals.
           </p>
+          <div className="flex flex-wrap gap-4 justify-center mt-6">
+            <Button asChild variant="outline" size="lg" className="border-accent-data/30 text-accent-data hover:bg-accent-data/10">
+              <Link to="/salesforce/partners">
+                View Deal Playbook
+              </Link>
+            </Button>
+          </div>
         </div>
       </Section>
 

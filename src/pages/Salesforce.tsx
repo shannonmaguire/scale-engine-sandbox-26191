@@ -296,33 +296,6 @@ const Salesforce = () => {
         </div>
       </Section>
 
-      {/* AE Resources CTA */}
-      <Section variant="muted">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono mb-6">
-            <Shield className="w-4 h-4" />
-            FOR ACCOUNT EXECUTIVES
-          </div>
-          <h2 className="text-3xl font-bold mb-4">Technical Support for Salesforce Deals</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Unblock technical debt, shorten sales cycles, and get 48-hour turnaround on complex deals
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/ae-hub">
-                AE Hub & Resources
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <Link to="/ae-technical-support" className="hover:border-accent hover:text-accent transition-colors">
-                Get AE Support
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </Section>
-
     </div>
   );
 };
