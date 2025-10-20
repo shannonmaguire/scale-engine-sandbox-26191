@@ -24,6 +24,7 @@ const Sprint = lazy(() => import("@/pages/Sprint"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const SelfAssessment = lazy(() => import("@/pages/SelfAssessment"));
+const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
 const SalesforcePartners = lazy(() => import("@/pages/SalesforcePartners"));
@@ -92,6 +93,7 @@ const AppContent = () => {
             <Route path="/systems" element={<Navigate to="/" replace />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/self-assessment" element={<SelfAssessment />} />
+            <Route path="/assessment-results" element={<AssessmentResults />} />
             <Route path="/sprint" element={<Sprint />} />
             <Route path="/salesforce" element={<Salesforce />} />
             <Route path="/salesforce/partners" element={<SalesforcePartners />} />

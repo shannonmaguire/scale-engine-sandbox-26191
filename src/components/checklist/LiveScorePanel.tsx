@@ -3,10 +3,10 @@ import { ChecklistCategory } from "./InteractiveChecklist";
 import { useChecklist } from "./ChecklistContext";
 import { ScoreGauge } from "./ScoreGauge";
 import { Button } from "@/components/ui/button";
-import { Download, RotateCcw, CheckCircle2, AlertCircle, TrendingUp } from "lucide-react";
+import { FileText, RotateCcw, CheckCircle2, AlertCircle, TrendingUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
-import { generateAssessmentPDF } from "@/lib/pdf-generator";
+import { useNavigate } from "react-router-dom";
 import { trackEvent } from "@/hooks/usePageTracking";
 
 interface LiveScorePanelProps {
@@ -21,6 +21,7 @@ export const LiveScorePanel = ({
   categories
 }: LiveScorePanelProps) => {
   const { checklistState, getProgress, resetChecklist, getUnansweredCount, getAnswerCounts } = useChecklist();
+  const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
 
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
@@ -37,21 +38,19 @@ export const LiveScorePanel = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDownloadPDF = async () => {
-    try {
-      await generateAssessmentPDF({
-        title,
+  const handleViewResults = () => {
+    trackEvent("assessment_results_view", { checklistId, score: overallProgress });
+    
+    navigate('/assessment-results', {
+      state: {
         checklistId,
+        title,
         categories,
         checklistState,
-        overallProgress
-      });
-      toast.success("PDF downloaded successfully");
-      trackEvent("assessment_pdf_download", { checklistId, score: overallProgress });
-    } catch (error) {
-      console.error("PDF generation failed:", error);
-      toast.error("Failed to generate PDF");
-    }
+        overallProgress,
+        answerCounts
+      }
+    });
   };
 
   const handleReset = () => {
@@ -150,14 +149,14 @@ export const LiveScorePanel = ({
         {/* Actions */}
         <div className="pt-3 border-t border-border space-y-2">
           <Button
-            onClick={handleDownloadPDF}
+            onClick={handleViewResults}
             variant="default"
             size="lg"
             className="w-full"
             disabled={answeredItems === 0}
           >
-            <Download className="w-4 h-4 mr-2" />
-            Download Report
+            <FileText className="w-4 h-4 mr-2" />
+            View Results
           </Button>
           {unansweredCount > 0 && answeredItems > 0 && (
             <p className="text-xs text-center text-muted-foreground">
