@@ -105,9 +105,8 @@ const WebSystems = () => {
     trackCTAClick(`Website Support ${packageName}`, 'web-systems-support', '/contact?interest=website-support&source_page=web-systems');
   };
   return <div className="min-h-screen">
-      <SEOHead title="Web Infrastructure for High-Trust Brands | CWT Studio" description="Websites that run like systems — update-friendly, CRM-wired, and built to compound." keywords={['web infrastructure', 'operator-led web development', 'CRM-integrated websites', 'ownership-first web systems', 'compounding web assets']} canonicalUrl="/web-systems" />
+      <SEOHead title="Web Systems | CWT Studio" description="Websites you can own and update. CRM-wired, documented, and fast." keywords={['web systems', 'CRM website', 'website ownership', 'performance web development']} canonicalUrl="/web-systems" />
       
-      {/* Structured Data for SEO */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -117,25 +116,9 @@ const WebSystems = () => {
             "@type": "Organization",
             "name": "CWT Studio"
           },
-          "serviceType": "Web Infrastructure Development",
-          "description": "Websites that run like systems — wired to your CRM, optimized for ownership, and engineered to compound.",
-          "areaServed": "Worldwide",
-          "offers": [{
-            "@type": "Offer",
-            "name": "Essentials Package",
-            "description": "5 to 7 pages using 1 to 3 templates",
-            "priceRange": "$6,000-$10,000"
-          }, {
-            "@type": "Offer",
-            "name": "Core Package",
-            "description": "8 to 12 pages and a small design system",
-            "priceRange": "$12,000-$20,000"
-          }, {
-            "@type": "Offer",
-            "name": "Scale Package",
-            "description": "Component library and custom flows",
-            "priceRange": "$20,000-$40,000"
-          }]
+          "serviceType": "Web Development",
+          "description": "Websites you can own and update. CRM-wired, documented, and fast.",
+          "areaServed": "Worldwide"
         })}
       </script>
       
@@ -145,259 +128,190 @@ const WebSystems = () => {
         <BackButton to="/services">Back to All Services</BackButton>
         
         {/* Hero */}
-        <div className="text-center mb-20 max-w-3xl mx-auto">
-          <div className="system-status mb-6">
-            OPERATOR ENGINES
-          </div>
-          <h1 className="heading-page mb-6">
-            Web Infrastructure for High-Trust Brands
+        <div className="max-w-3xl mb-16">
+          <h1 className="heading-page mb-4">
+            Web Systems
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            We build websites that run like systems — wired to your CRM, optimized for ownership, and engineered to compound.
+          <p className="text-xl text-muted-foreground mb-8">
+            Websites you can own and update. CRM-wired, documented, and fast.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex gap-4">
             <ConversionOptimizedButton
-              size="lg"
               to="/contact?interest=web&source_page=web-systems"
               ctaName="Web Systems Hero CTA"
               location="web-systems-hero"
             >
               Request Consultation
             </ConversionOptimizedButton>
-            <Button size="lg" variant="outline" asChild>
-              <a href="#packages">See Package Details</a>
+            <Button variant="outline" asChild>
+              <a href="#packages">See Packages</a>
             </Button>
           </div>
         </div>
 
-        {/* The Quiet Operators Promise */}
-        <div className="py-16">
-          <div className="max-w-4xl mx-auto text-center border border-border rounded-lg p-8">
-            <h2 className="heading-section mb-6">Our Commitment to Your Ownership</h2>
-            <p className="text-description leading-relaxed max-w-3xl mx-auto">
-              When we hand off your website, you receive complete ownership—not just access. We transfer the full repository, comprehensive documentation, and deployment credentials so your team has everything needed to maintain and evolve the site independently. Every component is documented. Every integration is mapped. Every CRM event is explained. Whether you work with your own developers, bring on a new agency, or return to us for updates, you'll never be locked in or stuck waiting on a dev ticket. We don't put our logo in your footer or require attribution. If you later want to share your experience as a case study, we'd welcome it. If not, that's perfectly fine. Our role is to build infrastructure you own, document it thoroughly, and step back so your team can move forward with confidence.
-            </p>
-          </div>
+        {/* What You Get */}
+        <div className="mb-16">
+          <h2 className="heading-section mb-6">What You Get</h2>
+          <ul className="space-y-3 max-w-2xl">
+            {deliverables.map((item, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <item.icon size={ICON_SIZES.medium} strokeWidth={ICON_STROKE.default} className="text-primary mt-1 flex-shrink-0" />
+                <span className="text-foreground">{item.text}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* What We Ship */}
-        <div className="spacing-subsection">
-          <h2 className="heading-section mb-12 text-center">What We Ship</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {deliverables.map((item, index) => <div key={index} className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <item.icon size={ICON_SIZES.medium} strokeWidth={ICON_STROKE.default} className="text-primary" />
-                </div>
-                <div>
-                  <p className="text-foreground font-medium">{item.text}</p>
-                </div>
-              </div>)}
-          </div>
-        </div>
-
-        {/* Why This Exists */}
-        <div className="spacing-subsection">
-          <div className="max-w-4xl mx-auto">
-            <StandardCard variant="muted">
-              <StandardCardContent className="p-8">
-                <h2 className="heading-subsection mb-4">Why This Exists</h2>
-                <p className="text-description leading-relaxed">
-                  Many sites look good and stall revenue because they are hard to update, slow to load, and disconnected from pipeline. Web Systems fixes that with a simple sprint, a clean handoff, and ownership on day one.
-                </p>
-              </StandardCardContent>
-            </StandardCard>
-          </div>
+        {/* Ownership */}
+        <div className="mb-16 max-w-3xl">
+          <h2 className="heading-section mb-4">You Own It</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            You get the repo, the docs, and the deployment keys. Update it yourself, hire your own team, or come back to us. Your call. No logo in the footer. No lock-in.
+          </p>
         </div>
 
         {/* Packages */}
-        <div className="spacing-subsection" id="packages">
-          <h2 className="heading-section mb-12 text-center">Packages</h2>
+        <div className="mb-16" id="packages">
+          <h2 className="heading-section mb-8">Packages</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
-            {packages.map((pkg, index) => <StandardCard key={index} variant="bordered" equalHeight>
-                <StandardCardHeader>
-                  <StandardCardTitle>{pkg.name}</StandardCardTitle>
-                </StandardCardHeader>
-                <StandardCardContent className="flex flex-col h-full">
-                  <ul className="space-y-3 mb-6">
-                    {pkg.items.map((item, idx) => <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle size={ICON_SIZES.small} className="text-primary mt-1 flex-shrink-0" strokeWidth={ICON_STROKE.default} />
-                        <span className="text-sm text-muted-foreground">{item}</span>
-                      </li>)}
-                  </ul>
-                  
-                  <div className="flex-grow" />
-                  
-                  <div className="pt-6 border-t border-border">
-                    <p className="text-2xl font-bold text-primary tabular-nums">
-                      {pkg.investment}
-                    </p>
-                  </div>
-                </StandardCardContent>
-              </StandardCard>)}
+          <div className="space-y-6 max-w-3xl">
+            {packages.map((pkg, index) => (
+              <div key={index} className="border-l-4 border-primary pl-6">
+                <h3 className="font-mono font-bold text-lg mb-2">{pkg.name}</h3>
+                <ul className="space-y-2 mb-3">
+                  {pkg.items.map((item, idx) => (
+                    <li key={idx} className="text-sm text-muted-foreground">
+                      • {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xl font-bold text-primary tabular-nums">
+                  {pkg.investment}
+                </p>
+              </div>
+            ))}
           </div>
           
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground font-mono max-w-2xl mx-auto mb-3">
-              Final scope and investment confirmed after a 45-minute call. Any paid assessment is credited toward build.
-            </p>
-            <a href="#faq" className="text-sm text-primary hover:underline inline-block font-mono">
-              Questions about scope? See FAQ below →
-            </a>
-          </div>
+          <p className="text-sm text-muted-foreground font-mono max-w-2xl mt-6">
+            Scope confirmed after a 45-minute call. Assessment fees credit toward build.
+          </p>
         </div>
 
         {/* Process */}
-        <div className="spacing-subsection">
-          <h2 className="heading-section mb-12 text-center">Process</h2>
+        <div className="mb-16">
+          <h2 className="heading-section mb-8">Process</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            {process.map((step, index) => <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-mono font-bold text-primary">{step.number}</span>
-                </div>
-                <h3 className="heading-subsection mb-2">{step.title}</h3>
+          <div className="space-y-6 max-w-2xl">
+            {process.map((step, index) => (
+              <div key={index} className="border-l-4 border-border pl-6">
+                <div className="font-mono text-sm text-muted-foreground mb-1">{step.number}</div>
+                <h3 className="font-bold mb-1">{step.title}</h3>
                 <p className="text-sm text-muted-foreground">{step.description}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Support Blocks Section */}
-        <div className="spacing-subsection" id="support">
-          <div className="text-center mb-12">
-            <h2 className="heading-section mb-4">Built for Independence. Here When You Need Us.</h2>
-            <p className="text-description max-w-2xl mx-auto">
-              Every Web Systems engagement includes an owner guide designed for your team to manage independently. 
-              But when priorities shift or you'd rather focus on your business, we're available for ongoing updates on your terms.
-            </p>
+        {/* Support */}
+        <div className="mb-16" id="support">
+          <h2 className="heading-section mb-4">Support Blocks</h2>
+          <p className="text-muted-foreground max-w-2xl mb-8">
+            Built for your team to run independently. When you need us, we're here.
+          </p>
+
+          <div className="space-y-6 max-w-3xl">
+            {supportPackages.map((pkg, index) => (
+              <div key={index} className="border-l-4 border-primary pl-6">
+                <h3 className="font-mono font-bold text-lg mb-1">{pkg.hours} Hours — {pkg.price}</h3>
+                <p className="text-sm text-muted-foreground mb-3">{pkg.rate} • {pkg.subtitle}</p>
+                <ul className="space-y-1 text-sm text-muted-foreground mb-4">
+                  {pkg.features.map((feature, idx) => (
+                    <li key={idx}>• {feature}</li>
+                  ))}
+                </ul>
+                <ConversionOptimizedButton
+                  variant="outline"
+                  size="sm"
+                  to="/contact?interest=website-support&source_page=web-systems"
+                  ctaName={`Website Support ${pkg.hours}-hour`}
+                  location="web-systems-support"
+                  showArrow={false}
+                >
+                  Get Started
+                </ConversionOptimizedButton>
+              </div>
+            ))}
           </div>
 
-          {/* Support Packages Grid */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {supportPackages.map((pkg, index) => <StandardCard key={index} variant="bordered" equalHeight>
-              <StandardCardHeader>
-                  <Package size={ICON_SIZES.large} strokeWidth={ICON_STROKE.default} className="text-primary mb-3" />
-                  <StandardCardTitle>{pkg.hours}-Hour Block</StandardCardTitle>
-                  <StandardCardDescription>{pkg.subtitle}</StandardCardDescription>
-                </StandardCardHeader>
-                <StandardCardContent className="flex flex-col h-full">
-                  <div className="mb-6">
-                    <p className="text-3xl font-bold text-primary tabular-nums mb-1">{pkg.price}</p>
-                    <p className="text-sm text-muted-foreground font-mono">{pkg.rate}</p>
-                  </div>
-                  <ul className="space-y-2 text-sm mb-6">
-                    {pkg.features.map((feature, idx) => <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>)}
-                  </ul>
-                  <div className="flex-grow" />
-                  <ConversionOptimizedButton
-                    size="sm"
-                    variant="outline"
-                    className="w-full mt-auto"
-                    to="/contact?interest=website-support&source_page=web-systems"
-                    ctaName={`Website Support ${pkg.hours}-hour`}
-                    location="web-systems-support"
-                    showArrow={false}
-                  >
-                    Get Started
-                  </ConversionOptimizedButton>
-                </StandardCardContent>
-              </StandardCard>)}
-          </div>
-
-          {/* What's Included / Not Included */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-mono font-bold mb-4 flex items-center gap-2">
-                <CheckCircle size={ICON_SIZES.medium} strokeWidth={ICON_STROKE.default} className="text-primary" />
-                What's Included
-              </h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• Content updates and page edits</li>
-                <li>• Component modifications</li>
-                <li>• Form and CRM event adjustments</li>
-                <li>• Performance optimization</li>
-                <li>• Mobile/browser compatibility fixes</li>
-                <li>• Analytics troubleshooting</li>
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mt-8">
+            <div>
+              <h3 className="font-mono font-bold mb-3 text-sm">Included</h3>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li>• Content updates</li>
+                <li>• Component mods</li>
+                <li>• CRM adjustments</li>
+                <li>• Performance fixes</li>
+                <li>• Analytics help</li>
               </ul>
             </div>
-            <div className="bg-card border border-border rounded-lg p-6">
-              <h3 className="font-mono font-bold mb-4">Not Included</h3>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>• New feature development (requires separate scoping)</li>
-                <li>• Complete redesigns (requires new Web Systems engagement)</li>
-                <li>• Backend/CRM infrastructure (requires Fractional Ops or Sprint)</li>
+            <div>
+              <h3 className="font-mono font-bold mb-3 text-sm">Not Included</h3>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li>• New features (requires scoping)</li>
+                <li>• Complete redesigns</li>
+                <li>• Backend work</li>
               </ul>
-              <p className="text-xs text-muted-foreground mt-4 pt-4 border-t border-border">
-                Hours expire 6 months from purchase. Response SLA: 48 business hours.
-              </p>
             </div>
           </div>
         </div>
 
-        {/* Proof Snippet */}
-        <div className="spacing-subsection">
-          <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background border-2 border-primary rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-6">
-              <Gauge size={ICON_SIZES.large} strokeWidth={ICON_STROKE.default} className="text-primary" />
-              <h2 className="heading-subsection text-primary">Performance Standard</h2>
+        {/* Standard */}
+        <div className="mb-16">
+          <h2 className="heading-section mb-6">Standard</h2>
+          <div className="space-y-4 max-w-2xl">
+            <div className="border-l-4 border-primary pl-6">
+              <div className="font-mono text-2xl font-bold text-primary mb-1">Sub-1s LCP</div>
+              <p className="text-sm text-muted-foreground">on key pages</p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
-              <div className="border-l-4 border-primary pl-6">
-                <div className="text-3xl font-bold text-primary mb-2 font-mono">Sub-1s LCP</div>
-                <p className="text-muted-foreground">on key pages</p>
-              </div>
-              
-              <div className="border-l-4 border-primary pl-6">
-                <div className="text-3xl font-bold text-primary mb-2 font-mono">Hours → Minutes</div>
-                <p className="text-muted-foreground">edit time reduction</p>
-              </div>
+            <div className="border-l-4 border-primary pl-6">
+              <div className="font-mono text-2xl font-bold text-primary mb-1">Hours → Minutes</div>
+              <p className="text-sm text-muted-foreground">edit time reduction</p>
             </div>
-            
-            <p className="text-foreground font-medium">
-              If you like our site, that is the standard we build to.
-            </p>
           </div>
+          <p className="text-muted-foreground mt-6 max-w-2xl">
+            If you like our site, that's the standard we build to.
+          </p>
         </div>
 
         {/* FAQ */}
-        <div className="spacing-subsection" id="faq">
-          <h2 className="heading-section mb-12 text-center">Frequently Asked Questions</h2>
+        <div className="mb-16" id="faq">
+          <h2 className="heading-section mb-8">FAQ</h2>
           
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-2xl">
             <Accordion type="single" collapsible className="w-full">
-              {faqs.map((faq, index) => <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left font-mono">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left font-mono text-sm">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
+                  <AccordionContent className="text-muted-foreground text-sm">
                     {faq.answer}
                   </AccordionContent>
-                </AccordionItem>)}
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
 
         {/* Final CTA */}
-        <div className="spacing-subsection">
-          <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background border-2 border-primary rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-            <h2 className="heading-section mb-4">Ready when you are</h2>
-            <p className="text-description mb-8">
-              Schedule a consultation and we'll send a custom project brief within 24 hours.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <ConversionOptimizedButton to="/contact?interest=web&source_page=web-systems" ctaName="Web Systems Final CTA" location="web-systems-footer" size="lg">
-                Request Consultation
-              </ConversionOptimizedButton>
-              <Button size="lg" variant="outline" asChild>
-                <a href="#support">View Support Options</a>
-              </Button>
-            </div>
-          </div>
+        <div className="max-w-2xl">
+          <h2 className="heading-section mb-4">Ready?</h2>
+          <p className="text-muted-foreground mb-6">
+            Schedule a consultation. We'll send a project brief within 24 hours.
+          </p>
+          <ConversionOptimizedButton to="/contact?interest=web&source_page=web-systems" ctaName="Web Systems Final CTA" location="web-systems-footer">
+            Request Consultation
+          </ConversionOptimizedButton>
         </div>
       </Section>
     </div>;
