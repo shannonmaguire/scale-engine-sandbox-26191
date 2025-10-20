@@ -21,10 +21,10 @@ const buttonVariants = cva(
         teal: "bg-accent text-white hover:bg-[hsl(var(--accent-hover))] hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5",
       },
       size: {
-        // Standard: 32px padding horizontal, 16px vertical
-        default: "px-8 py-4",
-        sm: "px-6 py-3 text-xs",
-        lg: "px-10 py-5 text-base",
+        // Mobile-first: Minimum 44px touch targets for accessibility
+        default: "h-11 px-8 py-4 sm:h-12",
+        sm: "h-10 px-6 py-3 text-xs",
+        lg: "h-12 px-10 py-5 text-base sm:h-14",
         icon: "w-11 h-11 p-0",
       },
     },

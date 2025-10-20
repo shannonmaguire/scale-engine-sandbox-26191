@@ -306,46 +306,46 @@ img {
   }
   
   /* ===== STRICT TYPOGRAPHY SCALE - EDITORIAL GRADE ===== */
-  /* Desktop First (1200px+) */
+  /* Mobile First - Base sizes */
   .heading-page {
     @apply font-mono font-bold;
-    font-size: 64px;
+    font-size: 36px;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
   
   .heading-section {
     @apply font-mono font-bold;
-    font-size: 48px;
+    font-size: 28px;
     line-height: 1.2;
     letter-spacing: -0.015em;
   }
   
   .heading-subsection {
     @apply font-mono font-semibold;
-    font-size: 32px;
+    font-size: 20px;
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
   
   .text-description {
     @apply font-sans text-foreground;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
-    font-weight: 500;              /* Upgraded from 400 for better readability */
-    max-width: 70ch;               /* Optimal reading length */
-    text-wrap: pretty;             /* Better line breaks */
+    font-weight: 500;
+    max-width: 70ch;
+    text-wrap: pretty;
   }
   
   .text-label {
     @apply font-mono uppercase tracking-wider text-foreground;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.4;
-    font-weight: 600;              /* Upgraded from 500 for hierarchy */
+    font-weight: 600;
   }
   
-  /* Tablet (768px) - Proportional scaling */
-  @media (max-width: 1199px) and (min-width: 768px) {
+  /* Tablet (768px+) - Proportional scaling */
+  @media (min-width: 768px) {
     .heading-page {
       font-size: 48px;
     }
@@ -357,26 +357,39 @@ img {
     .heading-subsection {
       font-size: 24px;
     }
+    
+    .text-description {
+      font-size: 17px;
+    }
+    
+    .text-label {
+      font-size: 13px;
+    }
   }
   
-  /* Mobile (375px-767px) - Optimized scaling */
-  @media (max-width: 767px) {
+  /* Desktop (1200px+) - Full scale */
+  @media (min-width: 1200px) {
     .heading-page {
-      font-size: 40px;               /* Increased from 36px for impact */
+      font-size: 64px;
     }
     
     .heading-section {
-      font-size: 28px;
+      font-size: 48px;
     }
     
     .heading-subsection {
-      font-size: 20px;
+      font-size: 32px;
     }
     
     .text-description {
-      font-size: 17px;               /* Increased from 16px for readability */
+      font-size: 18px;
+    }
+    
+    .text-label {
+      font-size: 14px;
     }
   }
+  
   
   code, pre, .font-mono {
     font-family: var(--font-mono);

@@ -94,7 +94,7 @@ const Home = () => {
               Install revenue infrastructure that compounds through documented systems and repeatable execution, delivering measurable outcomes in 90 days.
             </p>
             
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <ConversionOptimizedButton
                 to="/assessment"
                 ctaName="Hero - Start Your Assessment"
