@@ -85,51 +85,44 @@ const Assessment = () => {
       
       <Section>
         {/* Hero */}
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono mb-6">
-            <Clock size={16} />
-            ONLY 3 SLOTS LEFT THIS MONTH
-          </div>
-          <h1 className="heading-page mb-4">Find the $40K You're Wasting on Broken Systems</h1>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="system-status mb-6">FIXED SCOPE • FIXED PRICE</div>
+          <h1 className="heading-page mb-6">Technical Infrastructure Assessment</h1>
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            2-week audit finds exactly where your Salesforce, CRM, and outbound stack are bleeding money. You get a fix-it roadmap. <span className="text-foreground font-semibold">100% of the fee credits to implementation.</span>
+            2-week diagnostic to map your backend revenue systems, baseline KPIs, and deliver prioritized recommendations.
           </p>
-
-          {/* Proof Bar */}
-          <div className="grid grid-cols-3 gap-4 mb-8 p-6 bg-primary/5 border-2 border-primary/20 rounded-lg">
-            <div className="text-center">
-              <div className="text-3xl font-bold font-mono text-primary mb-1">$40K</div>
-              <div className="text-xs text-muted-foreground">Avg waste found</div>
+          
+          {/* Key Info Pills */}
+          <div className="flex flex-wrap justify-center gap-3 text-sm mb-8">
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <Clock size={16} className="text-primary" />
+              <span className="font-mono">2 weeks</span>
             </div>
-            <div className="text-center border-x border-border">
-              <div className="text-3xl font-bold font-mono text-primary mb-1">2 weeks</div>
-              <div className="text-xs text-muted-foreground">Full audit delivered</div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <DollarSign size={16} className="text-primary" />
+              <span className="font-mono">$1.5–2.5K</span>
             </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold font-mono text-primary mb-1">100%</div>
-              <div className="text-xs text-muted-foreground">Fee credits to fix</div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <CheckCircle2 size={16} className="text-primary" />
+              <span className="font-mono">Full credit to Sprint</span>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <Button size="lg" asChild>
-              <a href="#request-form">Book Assessment (3 Left)</a>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
               <a href="/sample-report">View Sample Report</a>
             </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="#request-form">Request Assessment</a>
+            </Button>
           </div>
-
-          <p className="text-sm text-muted-foreground mb-6">
-            <span className="font-mono">$1,500–$2,500</span> · 24-hour response · No credit card required
-          </p>
 
           <Link 
             to="/self-assessment"
             className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors group"
           >
             <ClipboardCheck className="w-4 h-4 mr-2" />
-            <span>Not ready? <span className="underline group-hover:no-underline">Try the free 5-minute self-assessment</span></span>
+            <span>Not ready yet? <span className="underline group-hover:no-underline">Try free self-assessment</span></span>
             <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>

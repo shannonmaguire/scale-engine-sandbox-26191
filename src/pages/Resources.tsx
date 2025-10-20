@@ -62,10 +62,10 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "FREE download, no email required. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents $15K+ in scope creep.",
+    description: "FREE interactive checklist, no email required. 47 points covering content, assets, integrations, and stakeholder alignment. Prevents $15K+ in scope creep. Export results to PDF.",
     icon: CheckSquare,
     category: "Planning",
-    downloadUrl: "/pdfs/website-readiness-checklist.pdf"
+    downloadUrl: "/website-readiness-checklist"
   },
   {
     id: "vendor-handoff-sop",
@@ -82,10 +82,10 @@ const Resources = () => {
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
 
   const handleDownloadClick = (resource: Resource) => {
-    // Free download - no email required
+    // Free interactive checklist - navigate to page
     if (resource.id === 'website-readiness-checklist') {
-      window.open(resource.downloadUrl, '_blank');
-      trackEvent('free_resource_downloaded', {
+      window.location.href = '/website-readiness-checklist';
+      trackEvent('free_resource_accessed', {
         resourceId: resource.id,
         resourceTitle: resource.title,
         location: 'resources_page',
@@ -182,8 +182,17 @@ const Resources = () => {
                     variant={isFree ? "default" : "outline"}
                     onClick={() => handleDownloadClick(resource)}
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    {isFree ? "Download Free" : "Get Resource"}
+                    {isFree ? (
+                      <>
+                        <CheckCircle className="mr-2 h-4 w-4" />
+                        Start Checklist
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Get Resource
+                      </>
+                    )}
                   </Button>
                 </StandardCard>
               );

@@ -131,31 +131,13 @@ const Proof = () => {
       
       <Breadcrumbs />
       
-      {/* Hero with Social Proof */}
+      {/* Minimal Hero */}
       <Section noPadding className="border-b">
         <div className="section-spacing-half">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-mono mb-4">
-            <CheckCircle className="w-3 h-3" />
-            VERIFIED CLIENT RESULTS
-          </div>
-          <h1 className="heading-page mb-4">$500K+ Pipeline. 107% Revenue Growth. 90 Days.</h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mb-6">
-            Real companies. Real systems. Real outcomes—not projections.
+          <h1 className="heading-page mb-3">Proof of Execution</h1>
+          <p className="text-lg text-muted-foreground font-mono">
+            Systems deployed under documented conditions with measured outcomes.
           </p>
-          <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-primary" />
-              <span>5 systems deployed across 4 industries</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-primary" />
-              <span>100% documentation included</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-primary" />
-              <span>Every metric third-party verified</span>
-            </div>
-          </div>
         </div>
       </Section>
 
@@ -256,53 +238,25 @@ const Proof = () => {
         </div>
       </Section>
 
-      {/* Testimonial Section */}
-      <Section variant="muted">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-card border-2 border-primary/20 rounded-lg p-8">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <CheckCircle className="w-8 h-8 text-primary" />
-              </div>
-              <div className="flex-1">
-                <p className="text-lg text-foreground mb-4 leading-relaxed">
-                  "We spent $85K with a top-tier agency who kept recommending new tools. CWT Studio audited what we already had, found $40K in wasted spend, and built a system that actually works. ROI positive in 6 weeks."
-                </p>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="font-bold text-foreground">VP of Revenue Operations</div>
-                    <div className="text-sm text-muted-foreground">B2B SaaS, Series B</div>
-                  </div>
-                  <div className="text-2xl font-mono font-bold text-primary">$40K saved</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* CTA Section */}
-      <Section className="section-spacing-half bg-gradient-to-b from-background to-primary/5">
+      <Section className="section-spacing-half">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono mb-6">
+          <div className="inline-flex items-center gap-2 mb-6">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-            ONLY 3 ASSESSMENT SLOTS AVAILABLE THIS MONTH
+            <span className="font-mono text-xs uppercase tracking-wider text-primary">
+              Ready for Similar Results?
+            </span>
           </div>
-          <h2 className="heading-section mb-4">
-            Get The Same System Audit
+          <h2 className="heading-section mb-6">
+            Build Your System
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            2-week deep-dive into your infrastructure. Find the $40K+ in wasted spend. Build a 90-day fix-it roadmap. <span className="text-foreground font-semibold">100% of assessment fee credits to implementation.</span>
+          <p className="text-description mb-8 max-w-2xl mx-auto">
+            Every system begins with a deep assessment—auditing infrastructure, identifying gaps, and designing a 90-day roadmap based on what the analysis reveals.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
-              Book Assessment (3 Slots Left)
-            </ConversionOptimizedButton>
-            <ConversionOptimizedButton to="/sample-report" ctaName="Proof Page - View Sample" location="Proof Page CTA" variant="outline" size="lg" showArrow={false}>
-              View Sample Report
-            </ConversionOptimizedButton>
-          </div>
-          <p className="text-xs text-muted-foreground font-mono">$1,500–$2,500 · 24-hour response · Full credit to Sprint</p>
+          <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
+            Start Assessment
+          </ConversionOptimizedButton>
+          <p className="text-xs text-muted-foreground mt-4 font-mono">24-hour response · 100% assessment fee credits to Sprint</p>
         </div>
       </Section>
     </div>;
