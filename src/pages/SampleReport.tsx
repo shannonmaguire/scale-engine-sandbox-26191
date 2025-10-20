@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { StandardCard, StandardCardContent, StandardCardHeader, StandardCardTitle } from "@/components/ui/standard-card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { AlertTriangle, CheckCircle, TrendingUp, TrendingDown, DollarSign, Clock, Database, Zap, Shield, ArrowLeft, ArrowRight, FileDown } from "lucide-react";
+import { AlertTriangle, CheckCircle, TrendingUp, TrendingDown, DollarSign, Clock, Database, Zap, Shield, ArrowLeft, FileDown } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import cwtLogo from "@/assets/cwt-logo-mark.svg";
 const SampleReport = () => {
@@ -712,41 +712,27 @@ const SampleReport = () => {
         </div>
       </div>
 
-      {/* Footer CTA - Conversion optimized */}
-      <div className="sticky bottom-0 bg-[hsl(var(--burgundy))] border-t border-white/10 shadow-2xl z-20">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Back navigation - minimal, non-competing */}
+      {/* Document Footer Bar - Sticky */}
+      <div className="sticky bottom-0 bg-background/95 backdrop-blur-sm border-t border-border z-20">
+        <div className="max-w-5xl mx-auto px-8 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <Button 
               variant="ghost" 
               asChild 
-              className="font-mono text-white/60 hover:text-white hover:bg-white/10 order-2 md:order-1"
+              className="font-mono text-muted-foreground hover:text-foreground"
             >
               <Link to="/" className="flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4" />
-                Back to Home
+                Back to CWT Studio
               </Link>
             </Button>
             
-            {/* Primary CTA - high contrast, clear hierarchy */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 order-1 md:order-2">
-              <div className="text-center sm:text-right">
-                <p className="font-sans font-semibold text-base text-white mb-0.5">
-                  Want this for your organization?
-                </p>
-                <p className="font-mono text-xs text-white/70">
-                  Get a custom assessment in 5 days
-                </p>
-              </div>
-              <Button 
-                asChild 
-                size="lg" 
-                className="bg-white text-[hsl(var(--burgundy))] hover:bg-white/90 font-mono font-bold uppercase tracking-wide shadow-lg hover:shadow-xl transition-all w-full sm:w-auto min-w-[240px]"
-              >
-                <Link to="/assessment" className="flex items-center justify-center gap-2">
-                  Get Your Assessment
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+            <div className="flex flex-col items-center md:items-end gap-3 text-center md:text-right">
+              <p className="text-sm text-muted-foreground max-w-md">
+                Want a customized assessment for your organization?
+              </p>
+              <Button asChild size="lg" className="font-mono px-8">
+                <Link to="/assessment">Get Your Free Assessment</Link>
               </Button>
             </div>
           </div>
