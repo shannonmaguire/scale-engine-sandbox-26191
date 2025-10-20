@@ -105,9 +105,29 @@ const Proof = () => {
     growth: "Foundation",
     outcomes: ["Subscription economics validated: Profitable tier structure with clear usage caps and attorney compensation aligned to growth", "Atlanta pilot delivered data: Validated messaging, targeting, and acquisition economics for replication", "Real-time visibility: Live dashboards track subscribers, usage patterns, and churn risk indicators", "Attorney leverage achieved: Onboarding automation freed $500/hr partner time for client service", "Partner time reclaimed: Growth logistics shifted from manual execution to strategic oversight", "**12-month projection:** Proven subscription framework ready for geographic expansion and partnership activation"],
     whyItWorked: "Subscription model required economic validation before scale. Atlanta pilot proved unit economics, automation removed friction, and dashboards enabled data-driven expansion decisions."
+  }, {
+    id: 5,
+    industry: "E-Commerce",
+    vertical: "Peer-to-Peer Resale",
+    size: "Independent seller",
+    timeline: "6 months",
+    challenge: "Independent seller operating in a peer-to-peer resale channel sought to convert casual sales into a repeatable, data-driven revenue system. All growth organic—no ads, no paid traffic. CWT Studio systemized the operation to test how far structure alone can scale a single-operator storefront without brand spend or ad budget.",
+    pullQuote: "Listing velocity was the growth driver — not inventory volume",
+    system: ["Listing Engine: 127 active listings built on strict taxonomy (category, color, condition, price tier)", "Daily listing cadence with fixed image framework and controlled copy templates", "Engagement Engine: Message macros, timed offer triggers, 15-minute response standardization", "Retention Engine: Physical print insert in every shipment—part art, part brand artifact", "Dashboard + iteration rules for predictable performance tracking"],
+    beforeMetric: {
+      label: "Previous 6 months",
+      value: "$1.1K earned"
+    },
+    afterMetric: {
+      label: "Systemized 6 months",
+      value: "$2.3K (+107%)"
+    },
+    growth: "107% Revenue Growth",
+    outcomes: ["Earnings: $2.3K (+107% vs previous 6 months)", "Sales: 108 orders (+177%)", "Listings Created: 692 (+585%)", "Views: 41.5K in 7 days (+58% from boosting)", "Sales from Boosting: 176 total", "Average Rating: 5 stars from 134 reviews", "**Pattern validated:** Listing velocity outperformed inventory volume as primary growth driver", "Standardized copy and photo framing increased conversion predictability", "Insert program lifted repeat purchases within 30 days by double-digit margin"],
+    whyItWorked: "System discipline created enterprise-grade results inside a consumer marketplace. Structure outperformed intuition. Boosting only worked when paired with daily new listings. No brand spend, no ad budget—only infrastructure."
   }];
   return <div className="min-h-screen bg-background">
-      <SEOHead title="Revenue System Case Studies | Federal Compliance & Legal Firms" description="Deployed systems for creator platforms, financial intelligence SaaS, compliance advisory, and subscription legal. Real infrastructure, measured outcomes, documented proof." keywords={['revenue system case studies', 'backend infrastructure results', 'Salesforce optimization proof', 'compliance outbound engine', 'legal subscription pipeline']} canonicalUrl="/proof" />
+      <SEOHead title="Revenue System Case Studies | E-Commerce, Compliance & Legal Firms" description="Deployed systems for creator platforms, e-commerce resale, financial intelligence SaaS, compliance advisory, and subscription legal. Real infrastructure, measured outcomes, documented proof." keywords={['revenue system case studies', 'backend infrastructure results', 'e-commerce systemization', 'peer-to-peer resale optimization', 'compliance outbound engine', 'legal subscription pipeline']} canonicalUrl="/proof" />
       
       <Breadcrumbs />
       
@@ -130,7 +150,7 @@ const Proof = () => {
       <Section variant="muted" className="py-16">
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">4</div>
+            <div className="text-3xl font-mono font-bold text-primary mb-1">5</div>
             <div className="text-xs text-muted-foreground">Systems Deployed</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
@@ -140,8 +160,8 @@ const Proof = () => {
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">100+</div>
-            <div className="text-xs text-muted-foreground">User Signups</div>
+            <div className="text-3xl font-mono font-bold text-primary mb-1">107%</div>
+            <div className="text-xs text-muted-foreground">Peak Growth Rate</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
