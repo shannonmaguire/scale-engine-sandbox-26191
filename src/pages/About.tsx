@@ -52,7 +52,7 @@ const About = () => {
               location="About Hero" 
               size="lg"
             >
-              Start $1,800 Assessment
+              Start Your Assessment
             </ConversionOptimizedButton>
             <ConversionOptimizedButton 
               to="/proof" 
@@ -366,7 +366,7 @@ const About = () => {
               location="About CTA Section"
               size="lg"
             >
-              Start $1,800 Assessment
+              Start Your Assessment
             </ConversionOptimizedButton>
             <ConversionOptimizedButton 
               to="/proof" 
