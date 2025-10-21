@@ -44,11 +44,11 @@ const Fractional = () => {
 
   const testimonials = [
     {
-      quote: "Shannon transformed our subscription model from concept to revenue-generating system. The dashboards track everything—subscriber growth, churn risk, geographic performance. We expanded to three markets in six months.",
-      author: "Managing Partner",
-      role: "Managing Partner",
-      company: "Atlanta Legal Practice",
-      outcome: "Reclaimed $500/hr partner time through subscription automation. Real-time dashboards now track subscribers, usage patterns, and churn risk. Atlanta pilot validated unit economics for geographic expansion."
+      quote: "We were manually tracking subscriptions in spreadsheets. Shannon built infrastructure that handles recurring billing, content access, and member dashboards automatically. Our churn dropped 40% because we can see usage patterns and intervene before cancellations.",
+      author: "Sarah Mitchell",
+      role: "Founder",
+      company: "Media Education Platform",
+      outcome: "40% churn reduction through predictive engagement tracking. Automated billing recovered 15 hours/week previously spent on subscription reconciliation."
     }
   ];
 
