@@ -84,7 +84,7 @@ const WebSystems = () => {
     answer: "Yes. You receive an owner guide, components, and page templates that your team can edit."
   }, {
     question: "Do I need an Infrastructure Assessment first?",
-    answer: "Not required. Web Systems is standalone. However, if you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, consider starting with our $1,200 Infrastructure Assessment. That fee credits fully toward Web Systems if you proceed."
+    answer: "Web Systems is standalone and does not require prior assessment. If you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our $1,200 Infrastructure Assessment provides clarity before build. That fee credits fully toward Web Systems if you proceed."
   }, {
     question: "Do you offer ongoing website maintenance?",
     answer: "Yes. We offer on-demand support blocks (10, 20, or 40 hours) for updates, fixes, and optimizations. Hours are valid for 6 months and include content updates, component modifications, performance optimization, and more. New feature development requires separate scoping."

@@ -186,8 +186,8 @@ const CookiePolicy = memo(() => {
                 <h2 className="text-2xl font-semibold mb-4">8. Do Not Track Signals</h2>
                 <p className="mb-4">
                   Some browsers support "Do Not Track" (DNT) signals. Currently, there is no industry standard for 
-                  responding to DNT signals. We do not currently respond to DNT signals, but we honor the cookie 
-                  preferences you set through our cookie banner.
+                  responding to DNT signals. We honor the cookie preferences you set through our cookie banner. 
+                  DNT signal response is not currently supported, though your banner preferences remain enforced.
                 </p>
               </section>
 

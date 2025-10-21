@@ -106,7 +106,7 @@ const PrivacyPolicy = memo(() => {
                 <h2 className="text-2xl font-semibold mb-4">7. Data Security</h2>
                 <p className="mb-4">
                   We implement appropriate technical and organizational measures to protect your personal data against 
-                  unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over 
+                  unauthorized access, alteration, disclosure, or destruction. No method of transmission over 
                   the internet is 100% secure.
                 </p>
               </section>
