@@ -11,7 +11,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Target, Zap, Clock, Palette, Linkedin } from "lucide-react";
+import { Target, Zap, Clock, Palette, Linkedin, Shield } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { useState } from "react";
 import shannonPhoto from "@/assets/shannon-founder.png";
@@ -132,6 +132,104 @@ const About = () => {
           </div>
         </div>
 
+      </Section>
+
+      {/* Why CWT Studio */}
+      <Section>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="heading-section mb-6">Why CWT Studio</h2>
+            <p className="text-description text-lg max-w-2xl mx-auto">
+              The precision of Fortune 500 consultancies. The speed and accessibility of a freelancer. None of the overhead.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Fortune 500 Depth */}
+            <div className="bg-card border-2 border-border rounded-lg p-8 hover:border-primary/30 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="heading-subsection mb-4 text-primary">Enterprise Depth</h3>
+              <ul className="space-y-3 text-muted-foreground text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Proven frameworks tested at scale</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Salesforce-certified expertise</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Enterprise-grade documentation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Strategic executive partnership</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Micro-Consultancy Model */}
+            <div className="bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary rounded-lg p-8">
+              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="heading-subsection mb-4 text-primary">Micro-Consultancy</h3>
+              <ul className="space-y-3 text-foreground text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><strong>No layers</strong> between you and execution</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><strong>No junior teams</strong> learning on your systems</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><strong>No bloated overhead</strong> inflating your costs</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span><strong>Direct access</strong> to strategic architect</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Freelancer Agility */}
+            <div className="bg-card border-2 border-border rounded-lg p-8 hover:border-primary/30 transition-all">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+                <Zap className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="heading-subsection mb-4 text-primary">Freelancer Agility</h3>
+              <ul className="space-y-3 text-muted-foreground text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>24-hour response times</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>90-day delivery cycles</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Fixed pricing, no change orders</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Flexible engagement models</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center">
+            <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
+              <strong className="text-primary">The Result:</strong> You get the strategic rigor and proven methodologies of a $2M consultancy engagement—without the six-figure price tag, eighteen-month timeline, or junior associate execution risk. Direct access to senior expertise. Systems installed in weeks, not quarters.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* Values */}
