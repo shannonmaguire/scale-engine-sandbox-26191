@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight, BarChart3, Clock, Zap, Target, Shield } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Testimonials } from "@/components/Testimonials";
 
 const Salesforce = () => {
   const services = [
@@ -293,6 +294,30 @@ const Salesforce = () => {
               </Link>
             </Button>
           </div>
+        </div>
+      </Section>
+
+      {/* Client Testimonials */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="heading-subsection mb-8 text-center">Client Results</h2>
+          <Testimonials 
+            variant="compact"
+            testimonials={[
+              {
+                quote: "Shannon cleaned up five years of Salesforce technical debt in 8 weeks. Our forecast accuracy improved 25% and deal cycles are 30% faster.",
+                author: "VP Revenue Operations",
+                role: "VP Revenue Operations",
+                company: "B2B SaaS"
+              },
+              {
+                quote: "The assessment identified exactly where our revenue systems were breaking. Implementation was fast and our team adoption went from 60% to 92%.",
+                author: "Head of Sales",
+                role: "Head of Sales",
+                company: "Professional Services"
+              }
+            ]}
+          />
         </div>
       </Section>
 

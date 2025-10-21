@@ -3,9 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import Navigation from "@/components/Navigation";
-import LoadingScreen from "@/components/LoadingScreen";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -134,32 +133,13 @@ const AppContent = () => {
 };
 
 const App = () => {
-  const [showLoadingScreen, setShowLoadingScreen] = useState(false);
-
   useEffect(() => {
     // Initialize analytics
     analytics.initialize();
     
-    // Check if intro has been seen this session
-    const introSeen = sessionStorage.getItem('cwtIntroSeen');
-    if (!introSeen) {
-      setShowLoadingScreen(true);
-    }
-
     // Report web vitals
     reportWebVitals();
   }, []);
-
-  const handleLoadingComplete = () => {
-    sessionStorage.setItem('cwtIntroSeen', 'true');
-    setShowLoadingScreen(false);
-    
-    // Return focus to main content
-    const mainElement = document.querySelector('main');
-    if (mainElement) {
-      mainElement.focus();
-    }
-  };
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -167,7 +147,6 @@ const App = () => {
         <ErrorBoundary>
           <Toaster />
           <Sonner />
-          {showLoadingScreen && <LoadingScreen onComplete={handleLoadingComplete} />}
           <BrowserRouter
             future={{
               v7_startTransition: true,

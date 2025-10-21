@@ -8,6 +8,7 @@ import { ICON_SIZES } from "@/lib/icon-config";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BackButton } from "@/components/BackButton";
+import { Testimonials } from "@/components/Testimonials";
 
 const Sprint = () => {
   const whatYouGet = [
@@ -179,6 +180,22 @@ const Sprint = () => {
               </div>
             </StandardCardContent>
           </StandardCard>
+        </div>
+
+        {/* Client Testimonials */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="heading-subsection mb-8">Client Results</h2>
+          <Testimonials 
+            testimonials={[
+              {
+                quote: "CWT Studio built our entire subscription pipeline in 8 weeks. The outbound engine, automated workflows, and real-time dashboards transformed how we track revenue. Our pipeline velocity tripled in the first 90 days.",
+                author: "Founding Partner",
+                role: "Founding Partner",
+                company: "Legal Boutique",
+                outcome: "Multi-touch outbound engine installed. Automated workflows eliminated manual tracking. Pipeline velocity increased 3x in first 90 days."
+              }
+            ]}
+          />
         </div>
 
         {/* CTA */}
