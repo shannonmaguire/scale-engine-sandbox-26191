@@ -11,7 +11,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Target, Zap, Clock, Palette, Linkedin, Shield } from "lucide-react";
+import { Target, Zap, Linkedin, Shield } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { useState } from "react";
 import shannonPhoto from "@/assets/shannon-founder.png";
@@ -25,23 +25,6 @@ const About = () => {
     enabled: true,
     onExitIntent: () => setShowExitPopup(true)
   });
-  const values = [{
-    icon: Target,
-    title: "Precision",
-    description: "We diagnose before we build because every recommendation must be backed by evidence, not assumption. Data determines direction."
-  }, {
-    icon: Zap,
-    title: "Ownership",
-    description: "We own outcomes because deliverables without results are documentation exercises. Your revenue determines whether our work succeeded."
-  }, {
-    icon: Clock,
-    title: "Speed",
-    description: "Revenue systems cannot wait for perfection. We ship working infrastructure quickly, then iterate based on what the system reveals under load."
-  }, {
-    icon: Palette,
-    title: "Craft",
-    description: "Elegant systems work better because precision and power reinforce each other. Infrastructure that looks clean performs reliably."
-  }];
   return <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead title="About CWT Studio | Backend Revenue Systems Architects" description="We install revenue infrastructure for high-trust industries. Documented systems. Repeatable execution. No 18-month transformations—just 90-day installs." keywords={['about CWT Studio', 'backend revenue systems', 'revenue infrastructure architects', 'Salesforce optimization experts', 'high-trust industries']} />
@@ -59,7 +42,7 @@ const About = () => {
             We Install Backend Revenue Systems
           </h1>
           <p className="text-description text-lg max-w-2xl mx-auto mb-10">
-            Infrastructure designed to compound—systems that make revenue growth reliable and repeatable through documented execution. We install working systems in 90 days because revenue infrastructure cannot wait for transformation roadmaps.
+            Revenue infrastructure that compounds through documented systems and repeatable execution. Working systems installed in 90 days because infrastructure determines whether growth compounds or collapses under its own weight.
           </p>
           
           <div className="flex gap-4 justify-center">
@@ -101,11 +84,11 @@ const About = () => {
                 
                 <div className="space-y-5 mb-8">
                   <p className="text-foreground leading-relaxed text-base">
-                Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure means revenue loss. She builds documented systems that enable founders to scale without breaking what already works.
+                Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure directly translates to revenue loss. Documented systems enable founders to scale without breaking what already functions.
                   </p>
                   
                   <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Salesforce Expert</span>
+                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Salesforce Certified</span>
                     <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Systems Integration</span>
                     <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Revenue Operations</span>
                   </div>
@@ -141,7 +124,7 @@ const About = () => {
           <div className="text-center mb-12">
             <h2 className="heading-section mb-6">Why CWT Studio</h2>
             <p className="text-description text-lg max-w-2xl mx-auto">
-              The precision of Fortune 500 consultancies. The speed and accessibility of a freelancer. None of the overhead.
+              Fortune 500 precision delivered at freelancer speed, stripped of the overhead that inflates cost and delays execution.
             </p>
           </div>
 
@@ -181,19 +164,19 @@ const About = () => {
               <ul className="space-y-3 text-foreground text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span><strong>No layers</strong> between you and execution</span>
+                  <span>Direct line between you and execution—zero intermediary layers</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span><strong>No junior teams</strong> learning on your systems</span>
+                  <span>Senior architect builds your systems, eliminating junior team learning curves</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span><strong>No bloated overhead</strong> inflating your costs</span>
+                  <span>Fixed pricing removes the overhead that consultancies pass to clients</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-primary mt-1">•</span>
-                  <span><strong>Direct access</strong> to strategic architect</span>
+                  <span>Strategic decisions made by the person implementing them</span>
                 </li>
               </ul>
             </div>
@@ -227,39 +210,12 @@ const About = () => {
 
           <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center">
             <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
-              <strong className="text-primary">The Result:</strong> You get the strategic rigor and proven methodologies of a $2M consultancy engagement—without the six-figure price tag, eighteen-month timeline, or junior associate execution risk. Direct access to senior expertise. Systems installed in weeks, not quarters.
+              Strategic rigor and proven methodologies of enterprise consultancies delivered at $12K–$18K over 90 days instead of six figures over eighteen months. Senior expertise executes directly rather than delegating to junior associates. Systems go live in weeks because the architect building them makes the strategic decisions.
             </p>
           </div>
         </div>
       </Section>
 
-      {/* Values */}
-      <Section variant="muted">
-        <div className="text-center mb-16">
-          <h2 className="heading-section mb-6">How We Work</h2>
-          	<p className="text-description text-lg max-w-2xl mx-auto">
-            Four principles that govern every engagement.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {values.map((value, index) => (
-            <StandardCard key={index} className="hover:shadow-xl hover:border-primary/30 transition-all">
-              <div>
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center flex-shrink-0 border border-primary/20">
-                    <value.icon className="w-7 h-7 text-primary" aria-hidden="true" />
-                  </div>
-                  <div>
-                    <h3 className="heading-subsection mb-4 text-primary">{value.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-                  </div>
-                </div>
-              </div>
-            </StandardCard>
-          ))}
-        </div>
-      </Section>
 
       {/* Who We're For + Working with Us */}
       <Section>
@@ -335,84 +291,50 @@ const About = () => {
             <div className="bg-gradient-to-br from-card to-card/50 border-2 border-border rounded-xl p-10 shadow-lg">
               <h2 className="heading-section mb-10 text-foreground">Working with Us</h2>
               
-              {/* Meet You Where You Are */}
-              <div className="mb-10 p-8 bg-accent/10 border-2 border-accent/30 rounded-xl">
-                <h3 className="font-mono font-bold text-lg mb-5 text-primary">We Meet You Where You Are</h3>
-                <p className="text-foreground leading-relaxed mb-6">
-                  Every company operates under different constraints—stage, timeline, existing infrastructure. We work with what you have because forcing wholesale replacement creates more problems than it solves. Improvements must function within your reality, which means adapting our methods to your operations rather than demanding you rebuild around our preferences.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-4 bg-card/50 rounded-lg border border-border">
-                    <p className="text-base font-semibold mb-2 text-foreground">Flexible</p>
-                    <p className="text-sm text-muted-foreground">Virtual or in-person. Sprint or assessment only. You choose.</p>
-                  </div>
-                  <div className="p-4 bg-card/50 rounded-lg border border-border">
-                    <p className="text-base font-semibold mb-2 text-foreground">Industry Agnostic</p>
-                    <p className="text-sm text-muted-foreground">SaaS, services, manufacturing. Revenue patterns are universal.</p>
-                  </div>
-                </div>
-              </div>
+              <p className="text-foreground leading-relaxed mb-8 text-lg">
+                Every company operates under different constraints regarding stage, timeline, and existing infrastructure. Forcing wholesale replacement creates more problems than it solves, which means improvements must function within your current reality. Our methods adapt to your operations rather than demanding you rebuild around a standardized framework.
+              </p>
               
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                 <h3 className="font-mono font-bold text-base mb-5 text-foreground">What We Do</h3>
-                  <ul className="space-y-3 text-foreground">
+                  <ul className="space-y-3 text-foreground text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Assess current state</span>
+                      <span>Assess current infrastructure and diagnose where systems break under load</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Diagnose gaps</span>
+                      <span>Work within existing tools rather than forcing platform migrations</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Work with existing tools</span>
+                      <span>Install fixes in 90-day cycles that deliver measurable results</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary">•</span>
-                      <span>Install fixes fast</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
-                      <span>Adapt to timeline</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
-                      <span>Optimize continuously</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
-                      <span>Partner at exec level</span>
+                      <span>Partner at executive level to align technical decisions with revenue goals</span>
                     </li>
                   </ul>
                 </div>
                 <div>
                 <h3 className="font-mono font-bold text-base mb-5 text-foreground">What We Don't Do</h3>
-                  <ul className="space-y-3 text-foreground">
+                  <ul className="space-y-3 text-foreground text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-muted-foreground">•</span>
-                      <span>Force overhauls</span>
+                      <span>Force overhauls when targeted fixes would deliver faster ROI</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-muted-foreground">•</span>
-                      <span>Discovery without execution</span>
+                      <span>Deliver discovery reports without implementation plans</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-muted-foreground">•</span>
-                      <span>Generic frameworks</span>
+                      <span>Apply generic frameworks that ignore company-specific constraints</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-muted-foreground">•</span>
-                      <span>Drop docs and disappear</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-muted-foreground">•</span>
-                      <span>Over-architect early</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-muted-foreground">•</span>
-                      <span>Evaluate without context</span>
+                      <span>Over-architect solutions before validating assumptions under real load</span>
                     </li>
                   </ul>
                 </div>
@@ -435,7 +357,7 @@ const About = () => {
           </div>
           <h2 className="heading-section mb-8">Install Infrastructure That Scales</h2>
           <p className="text-description text-lg mb-10">
-            Revenue systems that compound—built to carry growth without breaking under load.
+            Revenue systems built to carry growth without breaking under load, designed to compound rather than require constant intervention.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton 
