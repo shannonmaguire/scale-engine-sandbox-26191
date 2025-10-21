@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Clock, CheckCircle, TrendingUp, Users, FileText, Calendar } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Testimonials } from "@/components/Testimonials";
+
 import {
   Accordion,
   AccordionContent,
@@ -42,15 +42,6 @@ const Fractional = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      quote: "We were manually tracking subscriptions in spreadsheets. Shannon built infrastructure that handles recurring billing, content access, and member dashboards automatically. Our churn dropped 40% because we can see usage patterns and intervene before cancellations.",
-      author: "Sarah Mitchell",
-      role: "Founder",
-      company: "Media Education Platform",
-      outcome: "40% churn reduction through predictive engagement tracking. Automated billing recovered 15 hours/week previously spent on subscription reconciliation."
-    }
-  ];
 
   const faqs = [
     {
@@ -79,17 +70,6 @@ const Fractional = () => {
     }
   ];
 
-  const caseStudy = {
-    company: "Subscription Legal Practice",
-    challenge: "Managing partner spending 15+ hours per week on subscription tracking, billing reconciliation, and usage reporting. No visibility into churn risk or expansion opportunities.",
-    solution: "Built end-to-end subscription management system with automated billing workflows, real-time usage dashboards, and predictive churn scoring. Integrated Stripe, Salesforce, and custom legal practice management software.",
-    results: [
-      "Reclaimed $500/hr partner time through complete automation",
-      "Live dashboards tracking subscribers, usage patterns, and churn risk",
-      "Atlanta pilot validated unit economics for geographic expansion",
-      "Expanded to three markets in six months with same operational overhead"
-    ]
-  };
 
   return (
     <div className="min-h-screen">
@@ -134,42 +114,6 @@ const Fractional = () => {
           </div>
         </div>
 
-        {/* Case Study */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-8">Case Study</h2>
-          <StandardCard variant="bordered" className="border-accent/30">
-            <StandardCardContent className="p-8">
-              <div className="mb-6">
-                <p className="text-sm font-mono text-accent mb-2">CLIENT</p>
-                <h3 className="text-2xl font-bold">{caseStudy.company}</h3>
-              </div>
-              
-              <div className="space-y-6">
-                <div>
-                  <p className="text-sm font-mono text-muted-foreground mb-2">CHALLENGE</p>
-                  <p className="text-foreground">{caseStudy.challenge}</p>
-                </div>
-                
-                <div>
-                  <p className="text-sm font-mono text-muted-foreground mb-2">SOLUTION</p>
-                  <p className="text-foreground">{caseStudy.solution}</p>
-                </div>
-                
-                <div>
-                  <p className="text-sm font-mono text-muted-foreground mb-3">RESULTS</p>
-                  <div className="grid sm:grid-cols-2 gap-3">
-                    {caseStudy.results.map((result, index) => (
-                      <div key={index} className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-foreground">{result}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </StandardCardContent>
-          </StandardCard>
-        </div>
 
         {/* How It Works */}
         <div className="max-w-3xl mx-auto mb-16">
@@ -196,11 +140,6 @@ const Fractional = () => {
           </div>
         </div>
 
-        {/* Client Testimonials */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-8">Client Results</h2>
-          <Testimonials testimonials={testimonials} />
-        </div>
 
         {/* FAQ */}
         <div className="max-w-3xl mx-auto mb-16">
