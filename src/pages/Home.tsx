@@ -105,7 +105,7 @@ const Home = () => {
                 location="Homepage Hero"
                 size="lg"
               >
-                Start With $1,800 Assessment
+                Start Your Assessment
               </ConversionOptimizedButton>
               <ConversionOptimizedButton
                 to="/sample-report"
@@ -180,7 +180,7 @@ const Home = () => {
               ctaName="Assessment - Start Now"
               location="Assessment Deliverables Section"
             >
-              Start $1,800 Assessment
+              Start Your Assessment
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
               to="/sample-report"
