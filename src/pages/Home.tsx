@@ -54,14 +54,18 @@ const Home = () => {
     link: "/fractional"
   }];
   const proofStats = [{
-    number: "60 → 30",
-    label: "Cut cycle time days"
+    number: "5",
+    label: "Systems Deployed"
   }, {
-    number: "4x",
-    label: "Lifted outbound reply rate"
+    number: ">40%",
+    label: "Open Rates",
+    subLabel: "vs 15-25% avg"
   }, {
-    number: "100%",
-    label: "Single source of truth adoption"
+    number: "107%",
+    label: "Peak Growth Rate"
+  }, {
+    number: "$500K+",
+    label: "Pipeline Activated"
   }];
   const beforeAfter = {
     before: ["Founder-led sales chaos", "Disconnected tooling", "Unreliable pipeline data"],
@@ -183,26 +187,15 @@ const Home = () => {
         <h2 className="heading-section mb-8">By the Numbers</h2>
         
         <div className="grid md:grid-cols-4 gap-6 mb-8">
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">2</div>
-            <div className="text-sm text-muted-foreground">Case Studies</div>
-          </div>
-          
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">&gt;40%</div>
-            <div className="text-sm text-muted-foreground">Open Rates</div>
-            <div className="text-xs text-muted-foreground">vs 15-25% avg</div>
-          </div>
-          
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">90</div>
-            <div className="text-sm text-muted-foreground">Day Foundation</div>
-          </div>
-          
-          <div className="border-l-4 border-primary pl-6">
-            <div className="text-3xl font-bold font-mono text-primary mb-1">100%</div>
-            <div className="text-sm text-muted-foreground">Documentation</div>
-          </div>
+          {proofStats.map((stat, index) => (
+            <div key={index} className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">{stat.number}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              {stat.subLabel && (
+                <div className="text-xs text-muted-foreground">{stat.subLabel}</div>
+              )}
+            </div>
+          ))}
         </div>
         
         <ConversionOptimizedButton
