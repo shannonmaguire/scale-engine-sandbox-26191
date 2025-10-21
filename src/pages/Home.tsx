@@ -90,7 +90,7 @@ const Home = () => {
       <Section className="min-h-[85vh] flex items-center">
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div>
-            <h1 className="heading-page mb-4">
+            <h1 className="heading-page mb-4 leading-[1.15] max-w-[18ch]">
               Your Revenue Is Growing. Your Infrastructure Is Breaking.
             </h1>
             
