@@ -132,8 +132,10 @@ const Blog = () => {
       <section className="bg-gradient-to-br from-background via-muted/5 to-background border-b border-border/50">
         <div className="container mx-auto px-6 py-16 md:py-20">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="system-status mb-6">
-              DIGITAL EDITION
+            <div className="inline-block mb-6">
+              <Badge variant="outline" className="font-mono text-sm uppercase tracking-widest border-primary/30 text-primary px-4 py-1.5">
+                Digital Edition
+              </Badge>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-mono font-black text-foreground tracking-tight mb-6 animate-fade-in">
