@@ -17,7 +17,7 @@ const Fractional = () => {
   ];
 
   return <div className="min-h-screen">
-      <SEOHead title="Fractional Revenue Operations | CWT Studio" description="Ongoing operations support for teams that need their systems maintained, optimized, and performance-driven." keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'Salesforce managed services']} canonicalUrl="/fractional" />
+      <SEOHead title="Fractional Revenue Operations | CWT Studio" description="Ongoing operations support for teams that need their systems maintained, optimized, and performance-driven. Starting at $6K/month with six-month minimum." keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'Salesforce managed services']} canonicalUrl="/fractional" />
       
       <Breadcrumbs />
       
@@ -75,7 +75,7 @@ const Fractional = () => {
             <StandardCardContent className="p-8 text-center">
               <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="heading-subsection mb-2">Monthly Investment</h2>
-              <p className="text-3xl font-bold text-primary mb-2 tabular-nums">$4.5–10K/month</p>
+              <p className="text-3xl font-bold text-primary mb-2 tabular-nums">From $6K/month</p>
               <p className="text-sm text-muted-foreground mb-6">Six-month minimum commitment</p>
               <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-left">
                 <p className="text-xs font-mono font-bold text-accent mb-2">RECENT OUTCOME</p>
@@ -116,7 +116,7 @@ const Fractional = () => {
         <div className="max-w-2xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/10 to-background border-2 border-primary rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-4">Ready to Scale Your Systems?</h3>
-            <p className="text-muted-foreground mb-6">Six-month minimum • $4.5–10K/month</p>
+            <p className="text-muted-foreground mb-6">Six-month minimum • From $6K/month</p>
             <Button size="lg" asChild>
               <Link to="/contact?interest=fractional&source_page=fractional">
                 Apply for Fractional Ops

@@ -75,8 +75,8 @@ const Assessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Revenue Infrastructure Assessment ($1.5–2.5K) | CWT Studio"
-        description="2-week diagnostic to baseline your backend revenue systems, identify gaps, and deliver a prioritized 90-day roadmap. Full credit toward implementation."
+        title="Revenue Infrastructure Assessment ($1,800) | CWT Studio"
+        description="2-week diagnostic to baseline your backend revenue systems, identify gaps, and deliver a prioritized 90-day roadmap. Fixed scope, fixed price—$1,800 fully credits toward implementation."
         keywords={['revenue infrastructure assessment', 'technical debt audit', '90-day roadmap', 'backend systems assessment']}
         canonicalUrl="/assessment"
       />
@@ -87,9 +87,9 @@ const Assessment = () => {
         {/* Hero */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="system-status mb-6">FIXED SCOPE • FIXED PRICE</div>
-          <h1 className="heading-page mb-6">Technical Infrastructure Assessment</h1>
+          <h1 className="heading-page mb-6">Infrastructure Assessment</h1>
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            2-week diagnostic to map your backend revenue systems, baseline KPIs, and deliver prioritized recommendations.
+            2-week diagnostic to map your backend revenue systems, baseline KPIs, and deliver prioritized recommendations. Fixed scope, fixed price—no surprises.
           </p>
           
           {/* Key Info Pills */}
@@ -100,11 +100,11 @@ const Assessment = () => {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <DollarSign size={16} className="text-primary" />
-              <span className="font-mono">$1.5–2.5K</span>
+              <span className="font-mono font-bold">$1,800 USD</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono">Full credit to Sprint</span>
+              <span className="font-mono">100% credits to Sprint</span>
             </div>
           </div>
           

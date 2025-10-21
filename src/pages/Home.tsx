@@ -35,21 +35,21 @@ const Home = () => {
   const services = [{
     title: "Assessment",
     description: "2-week diagnostic to map backend revenue systems with baseline KPIs and prioritized recommendations for stable growth.",
-    price: "$1,500–$2,500 USD",
-    note: "2-week diagnostic",
+    price: "$1,800 USD",
+    note: "Fixed scope, fixed price",
     cta: "Start Assessment",
     link: "/assessment"
   }, {
     title: "Sprint",
     description: "8–12-week implementation sprint where we install the infrastructure that compounds: CRM, RevOps architecture, automation, and documentation.",
     timeline: "8-12 weeks",
-    price: "$9–18K USD",
+    price: "From $12K USD",
     cta: "Start Your Sprint",
     link: "/sprint"
   }, {
     title: "Fractional Ops",
     description: "Ongoing fractional operations support for teams that need their systems maintained, optimized, and performance-driven.",
-    price: "$4.5–10K/month USD",
+    price: "From $6K/month USD",
     cta: "Apply Now",
     link: "/fractional"
   }];
@@ -91,11 +91,11 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div>
             <h1 className="heading-page mb-4">
-              The Competitive Advantage Is the Backend
+              Your Revenue Is Growing.<br />Your Infrastructure Is Breaking.
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8">
-              Install revenue infrastructure that compounds through documented systems and repeatable execution, delivering measurable outcomes in 90 days.
+              Install backend systems that scale without founder dependency. Documented infrastructure, repeatable execution, measurable outcomes in 90 days.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -103,8 +103,9 @@ const Home = () => {
                 to="/assessment"
                 ctaName="Hero - Start Your Assessment"
                 location="Homepage Hero"
+                size="lg"
               >
-                Start Assessment
+                Start With $1,800 Assessment
               </ConversionOptimizedButton>
               <ConversionOptimizedButton
                 to="/sample-report"
@@ -112,6 +113,7 @@ const Home = () => {
                 location="Homepage Hero"
                 variant="outline"
                 showArrow={false}
+                size="lg"
               >
                 Sample Report
               </ConversionOptimizedButton>
@@ -172,13 +174,24 @@ const Home = () => {
             ))}
           </ul>
           
-          <ConversionOptimizedButton
-            to="/sample-report"
-            ctaName="Assessment - View Sample Report"
-            location="Assessment Deliverables Section"
-          >
-            View Sample Report
-          </ConversionOptimizedButton>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <ConversionOptimizedButton
+              to="/assessment"
+              ctaName="Assessment - Start Now"
+              location="Assessment Deliverables Section"
+            >
+              Start $1,800 Assessment
+            </ConversionOptimizedButton>
+            <ConversionOptimizedButton
+              to="/sample-report"
+              ctaName="Assessment - View Sample Report"
+              location="Assessment Deliverables Section"
+              variant="outline"
+              showArrow={false}
+            >
+              Sample Report
+            </ConversionOptimizedButton>
+          </div>
         </div>
       </Section>
 

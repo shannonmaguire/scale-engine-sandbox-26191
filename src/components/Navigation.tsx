@@ -22,19 +22,21 @@ const Navigation = () => {
     href: "/about"
   }];
   const solutionsLinks = [{
-    label: "Assessment · $1.5–2.5K",
-    href: "/assessment"
+    label: "Assessment · $1,800 (Start Here)",
+    href: "/assessment",
+    highlight: true
   }, {
-    label: "Sprint · $9–18K",
+    label: "Sprint · From $12K",
     href: "/sprint"
   }, {
-    label: "Fractional Ops · $4.5–10K/mo",
+    label: "Fractional Ops · From $6K/mo",
     href: "/fractional"
   }, {
     label: "Web Systems · $6–40K",
-    href: "/web-systems"
+    href: "/web-systems",
+    separator: true
   }, {
-    label: "Salesforce · Varies",
+    label: "Salesforce · Custom",
     href: "/salesforce"
   }, {
     label: "Resources",
@@ -79,7 +81,12 @@ const Navigation = () => {
                   <div key={link.href}>
                     {link.separator && index > 0 && <div className="h-px bg-white/10 my-1" />}
                     <DropdownMenuItem asChild>
-                      <Link to={link.href} className="w-full font-mono text-sm font-medium !text-white transition-colors">
+                      <Link 
+                        to={link.href} 
+                        className={`w-full font-mono text-sm font-medium !text-white transition-colors ${
+                          link.highlight ? 'bg-primary/20 font-bold' : ''
+                        }`}
+                      >
                         {link.label}
                       </Link>
                     </DropdownMenuItem>
@@ -122,7 +129,13 @@ const Navigation = () => {
                 {solutionsLinks.map((link, index) => (
                   <div key={link.href}>
                     {link.separator && index > 0 && <div className="h-px bg-white/10 my-2 mx-3" />}
-                    <Link to={link.href} className={`block px-4 py-2 text-sm font-mono font-medium rounded-md bg-white/5 shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${isActive(link.href) ? "!text-white" : "!text-white/80"}`} onClick={() => setIsOpen(false)}>
+                    <Link 
+                      to={link.href} 
+                      className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
+                        isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
+                      } ${link.highlight ? 'bg-primary/20 !text-white font-bold' : ''}`} 
+                      onClick={() => setIsOpen(false)}
+                    >
                       {link.label}
                     </Link>
                   </div>

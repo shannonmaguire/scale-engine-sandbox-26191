@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { StandardCard, StandardCardContent, StandardCardHeader, StandardCardTitle } from "@/components/ui/standard-card";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
-import { Zap, Target, BarChart3, Settings, Shield, Monitor, CheckCircle, Clock, DollarSign, Search, RotateCcw, ArrowRight } from "lucide-react";
+import { Zap, Target, BarChart3, Settings, Shield, Monitor, CheckCircle, CheckCircle2, Clock, DollarSign, Search, RotateCcw, ArrowRight } from "lucide-react";
 import { ICON_SIZES } from "@/lib/icon-config";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -51,7 +51,7 @@ const Sprint = () => {
     <div className="min-h-screen">
       <SEOHead
         title="90-Day Revenue System Sprint | CWT Studio"
-        description="8–12-week implementation sprint to install complete revenue infrastructure: CRM, automation, dashboards, and documentation."
+        description="8–12-week implementation sprint to install complete revenue infrastructure: CRM, automation, dashboards, and documentation. Starting at $12K."
         keywords={[
           '90-day system installation',
           'revenue infrastructure sprint',
@@ -80,7 +80,11 @@ const Sprint = () => {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <DollarSign size={16} className="text-primary" />
-              <span className="font-mono">$9–18K</span>
+              <span className="font-mono font-bold">From $12K USD</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <CheckCircle2 size={16} className="text-primary" />
+              <span className="font-mono text-xs">Final scope after Assessment</span>
             </div>
           </div>
           
@@ -151,8 +155,8 @@ const Sprint = () => {
             <StandardCardContent className="p-8 text-center">
               <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="heading-subsection mb-2">Sprint Investment</h2>
-              <p className="text-3xl font-bold text-primary mb-2 tabular-nums">$9–18K</p>
-              <p className="text-sm text-muted-foreground mb-6">Assessment fee fully applied to engagement</p>
+              <p className="text-3xl font-bold text-primary mb-2 tabular-nums">From $12K</p>
+              <p className="text-sm text-muted-foreground mb-6">$1,800 Assessment fee fully applied to Sprint engagement</p>
               <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-left">
                 <p className="text-xs font-mono font-bold text-accent mb-2">RECENT OUTCOME</p>
                 <p className="text-sm text-muted-foreground">
@@ -169,7 +173,7 @@ const Sprint = () => {
         <div className="max-w-2xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/10 to-background border-2 border-primary rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-4">Ready to Install Your Infrastructure?</h3>
-            <p className="text-muted-foreground mb-6">8-12 weeks • $9–18K • Requires completed Assessment</p>
+            <p className="text-muted-foreground mb-6">8-12 weeks • From $12K • Requires completed Assessment</p>
             <Button size="lg" asChild>
               <Link to="/contact?interest=sprint&source_page=sprint">Start Your Sprint</Link>
             </Button>
