@@ -176,7 +176,7 @@ const Footer = () => {
           <p className="text-white/40 font-mono text-xs order-2 md:order-1">
             © {currentYear} CWT Studio. All rights reserved.
           </p>
-          <span className="text-white/30 font-mono text-xs uppercase tracking-wider order-1 md:order-2">
+          <span className="text-white/30 font-mono text-xs uppercase tracking-wider order-1 md:order-2 md:text-right">
             Backend Systems • Predictable Revenue • Operational Excellence
           </span>
         </div>
