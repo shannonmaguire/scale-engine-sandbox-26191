@@ -254,7 +254,7 @@ const Proof = () => {
             Every system begins with a deep assessment—auditing infrastructure, identifying gaps, and designing a 90-day roadmap based on what the analysis reveals.
           </p>
           <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
-            Start $1,800 Assessment
+            Start Your Assessment
           </ConversionOptimizedButton>
           <p className="text-xs text-muted-foreground mt-4 font-mono">Fixed scope, fixed price · $1,800 fully credits to Sprint</p>
         </div>
