@@ -133,7 +133,7 @@ const Blog = () => {
         <div className="container mx-auto px-6 py-16 md:py-20">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block mb-6">
-              <Badge variant="outline" className="font-mono text-sm uppercase tracking-widest border-primary/30 text-primary px-4 py-1.5">
+              <Badge variant="outline">
                 Digital Edition
               </Badge>
             </div>
