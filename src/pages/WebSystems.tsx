@@ -138,7 +138,7 @@ const WebSystems = () => {
             </span>
           </div>
           <h1 className="heading-page mb-4">
-            Your Website Shouldn't Need IT Every Time You Fix a Typo
+            Revenue-Ready Websites With Full Ownership
           </h1>
           <p className="text-xl text-muted-foreground mb-6">
             Custom-built sites that integrate with your CRM, run fast, and come with everything your team needs to make updates without calling a developer.
