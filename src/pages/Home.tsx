@@ -91,7 +91,7 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
           <div>
             <h1 className="heading-page mb-4">
-              Your Revenue Is Growing.<br />Your Infrastructure Is Breaking.
+              The Competitive Advantage Is the Backend
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8">
