@@ -115,16 +115,17 @@ const About = () => {
                   asChild 
                   variant="outline" 
                   size="default" 
-                  className="hover:bg-primary hover:text-primary-foreground transition-all hover:shadow-md"
+                  className="group transition-all hover:shadow-md"
                 >
                   <a 
                     href="https://www.linkedin.com/in/shanmag/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     aria-label="Connect with Shannon Maguire on LinkedIn"
+                    className="flex items-center"
                   >
                     <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" aria-hidden="true" />
-                    Connect on LinkedIn
+                    <span>Connect on LinkedIn</span>
                   </a>
                 </Button>
               </div>
