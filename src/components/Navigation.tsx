@@ -15,6 +15,9 @@ const Navigation = () => {
     label: "Proof",
     href: "/proof"
   }, {
+    label: "Resources",
+    href: "/resources"
+  }, {
     label: "Blog",
     href: "/blog"
   }, {
@@ -38,10 +41,6 @@ const Navigation = () => {
   }, {
     label: "Salesforce · Custom",
     href: "/salesforce"
-  }, {
-    label: "Resources",
-    href: "/resources",
-    separator: true
   }];
 
   const isActive = (href: string) => location.pathname === href;
