@@ -77,13 +77,16 @@ const Home = () => {
       <CookieBanner />
       <SEOHead
         title="Backend Revenue Systems | CWT Studio"
-        description="Install backend revenue systems. Salesforce optimization, outbound engines, pipeline governance in 90 days."
+        description="Install backend systems that scale without founder dependency. 90-day implementation for legal, compliance, cybersecurity, and B2B SaaS."
         keywords={[
           'backend revenue systems',
           'revenue infrastructure',
           'Salesforce optimization',
-          '90-day system installation'
+          '90-day system installation',
+          'RevOps consulting',
+          'high-trust industries'
         ]}
+        canonicalUrl="/"
       />
       
       {/* Hero */}

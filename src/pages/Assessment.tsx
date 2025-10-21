@@ -75,10 +75,35 @@ const Assessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Revenue Infrastructure Assessment ($1,800) | CWT Studio"
-        description="2-week diagnostic to baseline your backend revenue systems, identify gaps, and deliver a prioritized 90-day roadmap. Fixed scope, fixed price—$1,800 fully credits toward implementation."
-        keywords={['revenue infrastructure assessment', 'technical debt audit', '90-day roadmap', 'backend systems assessment']}
+        title="Revenue Infrastructure Assessment | CWT Studio"
+        description="2-week diagnostic of your backend revenue systems. Get a complete audit, 90-day roadmap, and executive presentation for $1,800 USD."
+        keywords={['revenue infrastructure assessment', 'Salesforce audit', 'backend systems diagnostic', 'RevOps assessment', '90-day roadmap']}
         canonicalUrl="/assessment"
+        type="service"
+        serviceSchema={{
+          name: 'Revenue Infrastructure Assessment',
+          description: '2-week diagnostic to map backend revenue systems, baseline KPIs, and deliver prioritized recommendations with a 90-day roadmap.',
+          provider: 'CWT Studio',
+          offers: {
+            price: '1800',
+            priceCurrency: 'USD',
+            description: 'Fixed scope, fixed price. 100% credits toward Sprint implementation.'
+          }
+        }}
+        faqSchema={[
+          {
+            question: 'What does the assessment include?',
+            answer: 'Complete infrastructure audit covering Salesforce, integrations, and automation, a prioritized 90-day roadmap with quick wins, and an executive presentation with ROI projections.'
+          },
+          {
+            question: 'How long does the assessment take?',
+            answer: 'The assessment takes 2 weeks from kickoff to final delivery, including discovery call, technical review, report preparation, and executive readout.'
+          },
+          {
+            question: 'Does the $1,800 credit toward the Sprint?',
+            answer: 'Yes, 100% of the assessment fee credits toward Sprint implementation if you choose to proceed.'
+          }
+        ]}
       />
       
       <Breadcrumbs />

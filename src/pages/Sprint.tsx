@@ -51,14 +51,26 @@ const Sprint = () => {
     <div className="min-h-screen">
       <SEOHead
         title="90-Day Revenue System Sprint | CWT Studio"
-        description="8–12-week implementation sprint to install complete revenue infrastructure: CRM, automation, dashboards, and documentation. Starting at $12K."
+        description="8-12 week implementation sprint: install CRM infrastructure, automation, dashboards, and documentation. Complete revenue systems from $12K."
         keywords={[
           '90-day system installation',
           'revenue infrastructure sprint',
-          'Salesforce optimization sprint',
-          'backend systems implementation'
+          'Salesforce implementation',
+          'backend systems deployment',
+          'RevOps automation'
         ]}
         canonicalUrl="/sprint"
+        type="service"
+        serviceSchema={{
+          name: 'Revenue System Sprint',
+          description: '8-12 week implementation sprint to install complete revenue infrastructure including CRM optimization, automation, dashboards, and full documentation.',
+          provider: 'CWT Studio',
+          offers: {
+            price: '12000',
+            priceCurrency: 'USD',
+            description: 'Starting price. Final scope determined after Assessment.'
+          }
+        }}
       />
       
       <Breadcrumbs />

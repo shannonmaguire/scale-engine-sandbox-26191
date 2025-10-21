@@ -127,7 +127,19 @@ const Proof = () => {
     whyItWorked: "System discipline created enterprise-grade results inside a consumer marketplace. Structure outperformed intuition. Boosting only worked when paired with daily new listings. No brand spend, no ad budget—only infrastructure."
   }];
   return <div className="min-h-screen bg-background">
-      <SEOHead title="Revenue System Case Studies | E-Commerce, Compliance & Legal Firms" description="Deployed systems for creator platforms, e-commerce resale, financial intelligence SaaS, compliance advisory, and subscription legal. Real infrastructure, measured outcomes, documented proof." keywords={['revenue system case studies', 'backend infrastructure results', 'e-commerce systemization', 'peer-to-peer resale optimization', 'compliance outbound engine', 'legal subscription pipeline']} canonicalUrl="/proof" />
+      <SEOHead 
+        title="Revenue System Case Studies | Real Results & Proof | CWT Studio" 
+        description="5 systems deployed across e-commerce, compliance, legal, and creator tech. $500K+ pipeline activated, 107% growth, documented results." 
+        keywords={[
+          'revenue system case studies', 
+          'backend infrastructure results', 
+          'Salesforce optimization proof',
+          'e-commerce systemization', 
+          'compliance outbound engine', 
+          'legal subscription pipeline'
+        ]} 
+        canonicalUrl="/proof" 
+      />
       
       <Breadcrumbs />
       

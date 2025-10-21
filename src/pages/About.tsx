@@ -27,7 +27,18 @@ const About = () => {
   });
   return <div className="min-h-screen">
       <EngagementTracker />
-      <SEOHead title="About CWT Studio | Backend Revenue Systems Architects" description="We install revenue infrastructure for high-trust industries. Documented systems. Repeatable execution. No 18-month transformations—just 90-day installs." keywords={['about CWT Studio', 'backend revenue systems', 'revenue infrastructure architects', 'Salesforce optimization experts', 'high-trust industries']} />
+      <SEOHead 
+        title="About CWT Studio | Backend Revenue Systems Architects" 
+        description="We install revenue infrastructure for high-trust industries. 90-day implementations with documented systems and measurable outcomes." 
+        keywords={[
+          'about CWT Studio', 
+          'backend revenue systems', 
+          'revenue infrastructure architects', 
+          'Salesforce optimization experts', 
+          'high-trust industries',
+          'Shannon Maguire'
+        ]} 
+      />
       
       <Breadcrumbs />
       
