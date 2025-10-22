@@ -295,7 +295,7 @@ const Blog = () => {
                           </div>
                           
                           <div className="flex flex-wrap gap-2">
-                            {post.tags.slice(0, 3).map(tag => <span key={tag} className="text-xs font-mono text-muted-foreground uppercase tracking-wider whitespace-nowrap bg-muted/50 px-2 py-1 rounded hover:bg-primary/10 hover:text-primary transition-colors">
+                            {post.tags.slice(0, 3).map(tag => <span key={tag} className="text-xs font-mono text-muted-foreground uppercase tracking-wider whitespace-nowrap bg-muted/50 px-2 py-1 rounded">
                                 #{tag}
                               </span>)}
                           </div>
