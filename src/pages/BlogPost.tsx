@@ -191,15 +191,29 @@ const BlogPost = () => {
         <div className="max-w-4xl mx-auto">
           {/* Article Header */}
           <header className="mb-20 max-w-3xl">
-            <div className="flex flex-wrap gap-3 mb-10">
-              <Badge variant="outline" className="font-mono border-2 border-primary text-primary px-4 py-1.5 text-sm">
-                {post.category}
-              </Badge>
-              {post.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="font-mono text-xs px-3 py-1.5">
-                  #{tag}
+            <div className="bg-muted/40 border border-border/60 rounded-lg p-6 mb-10">
+              <h3 className="font-mono text-xs uppercase tracking-wider text-muted-foreground mb-4 font-semibold">
+                Topics Covered
+              </h3>
+              <div className="flex flex-wrap gap-2.5">
+                <Badge variant="outline" className="font-mono border-2 border-primary text-primary px-4 py-1.5 text-sm">
+                  {post.category}
                 </Badge>
-              ))}
+                {post.tags.map((tag) => (
+                  <Link 
+                    key={tag} 
+                    to={`/blog?tag=${encodeURIComponent(tag)}`}
+                    className="inline-block"
+                  >
+                    <Badge 
+                      variant="secondary" 
+                      className="font-mono text-xs px-3 py-1.5 transition-all hover:bg-primary hover:text-primary-foreground hover:scale-105 cursor-pointer"
+                    >
+                      #{tag}
+                    </Badge>
+                  </Link>
+                ))}
+              </div>
             </div>
             
             <h1 className="font-mono font-bold text-foreground mb-10 leading-[1.1]"
