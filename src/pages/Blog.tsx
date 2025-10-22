@@ -152,15 +152,15 @@ const Blog = () => {
                 <span className="font-mono text-sm font-semibold text-foreground">Filter:</span>
               </div>
               <div className="flex flex-wrap gap-2">
-                {categories.map(category => <Button key={category} variant={selectedCategory === category ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(category)} className={`font-mono text-xs uppercase tracking-wide transition-all ${selectedCategory === category ? 'shadow-md scale-105' : 'hover:scale-105'}`}>
+                {categories.map(category => <Button key={category} variant={selectedCategory === category ? "default" : "outline"} size="sm" onClick={() => setSelectedCategory(category)} className="font-mono text-xs uppercase tracking-wide">
                     {category}
                   </Button>)}
               </div>
             </div>
             
             <div className="relative w-full lg:w-auto">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground transition-colors" aria-hidden="true" />
-              <Input type="text" placeholder="Search by title, content, or tags..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="pl-10 w-full lg:w-96 font-mono text-sm bg-background/50 backdrop-blur-sm border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-lg transition-all" aria-label="Search blog articles" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <Input type="text" placeholder="Search articles..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="pl-10 w-full lg:w-80 font-mono text-sm" aria-label="Search blog articles" />
             </div>
           </div>
         </div>
