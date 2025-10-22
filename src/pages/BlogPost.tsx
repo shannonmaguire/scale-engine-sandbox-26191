@@ -237,14 +237,11 @@ const BlogPost = () => {
             {renderBlogContent()}
           </div>
 
-          {/* Article Footer - Enhanced */}
+          {/* Article Footer */}
           <footer className="mt-24 max-w-3xl">
             {/* Main CTA Section */}
-            <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/3 border border-border rounded-lg p-10 sm:p-12">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/5 rounded-full blur-2xl"></div>
-              
-              <div className="relative flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
+            <div className="border border-border rounded-lg p-10 sm:p-12">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8">
                 <div className="flex-1">
                   <h3 className="font-mono font-bold text-2xl sm:text-3xl text-foreground mb-4 leading-tight">
                     Have questions about this framework?
@@ -254,7 +251,7 @@ const BlogPost = () => {
                   </p>
                 </div>
                 
-                <Button asChild size="lg" className="flex-shrink-0 h-12 px-8 shadow-lg hover:shadow-xl transition-all">
+                <Button asChild size="lg" className="flex-shrink-0 h-12 px-8">
                   <Link to="/contact">
                     Discuss This Topic
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -283,73 +280,58 @@ const BlogPost = () => {
       </article>
 
       {/* Related Articles */}
-      <section className="border-t border-border/30 overflow-hidden">
+      <section className="border-t border-border">
         <div className="container mx-auto px-6 py-20">
           <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-block mb-4 px-4 py-2 bg-primary/5 rounded-full">
-                <span className="text-sm font-mono uppercase tracking-wider text-primary font-semibold">Continue Reading</span>
-              </div>
-              <h2 className="font-mono font-bold text-foreground mb-3"
-                  style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', letterSpacing: '-0.015em' }}>
+            <div className="mb-12">
+              <h2 className="font-mono font-bold text-foreground text-3xl mb-3">
                 More Revenue Systems Insights
               </h2>
             </div>
 
-            {/* Scrolling Article Carousel */}
-            <div className="relative mb-12">
-              <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide hover:scrollbar-default -mx-6 px-6">
-                {blogPosts
-                  .filter(p => p.slug !== slug)
-                  .map((article) => (
-                    <Link
-                      key={article.id}
-                      to={`/blog/${article.slug}`}
-                      className="group flex-shrink-0 w-[400px] snap-start bg-background border border-border rounded-lg p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300"
-                    >
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        <Badge variant="outline" className="font-mono border-primary/50 text-primary text-xs">
-                          {article.category}
-                        </Badge>
-                        <span className="text-xs text-muted-foreground font-mono">
-                          {article.readTime}
-                        </span>
-                      </div>
-                      
-                      <h3 className="font-mono font-bold text-foreground text-xl mb-3 group-hover:text-primary transition-colors leading-tight">
-                        {article.title}
-                      </h3>
-                      
-                      <p className="text-foreground/70 text-base leading-relaxed mb-4 line-clamp-3">
-                        {article.excerpt}
-                      </p>
-                      
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
-                        <Calendar className="h-4 w-4" />
-                        <time>{new Date(article.publishedAt).toLocaleDateString('en-US', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}</time>
-                      </div>
-                      
-                      <div className="mt-6 flex items-center gap-2 text-primary font-mono text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                        Read Article
-                        <ArrowRight className="h-4 w-4" />
-                      </div>
-                    </Link>
-                  ))}
-              </div>
-              
-              {/* Scroll indicator */}
-              <div className="text-center text-xs text-muted-foreground font-mono mt-2">
-                Scroll to explore →
-              </div>
+            {/* Articles Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {blogPosts
+                .filter(p => p.slug !== slug)
+                .slice(0, 3)
+                .map((article) => (
+                  <Link
+                    key={article.id}
+                    to={`/blog/${article.slug}`}
+                    className="group bg-background border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-lg transition-all"
+                  >
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      <Badge variant="outline" className="font-mono text-xs">
+                        {article.category}
+                      </Badge>
+                      <span className="text-xs text-muted-foreground font-mono">
+                        {article.readTime}
+                      </span>
+                    </div>
+                    
+                    <h3 className="font-mono font-bold text-foreground text-xl mb-3 group-hover:text-primary transition-colors leading-tight">
+                      {article.title}
+                    </h3>
+                    
+                    <p className="text-foreground/70 text-sm leading-relaxed mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
+                      <Calendar className="h-4 w-4" />
+                      <time>{new Date(article.publishedAt).toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                      })}</time>
+                    </div>
+                  </Link>
+                ))}
             </div>
 
             {/* View All CTA */}
             <div className="text-center">
-              <Button asChild variant="outline" size="lg" className="border-2 px-8 h-12 hover:bg-primary/5 transition-all">
+              <Button asChild variant="outline" size="lg" className="px-8 h-12">
                 <Link to="/blog">
                   View All Articles
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -360,16 +342,9 @@ const BlogPost = () => {
         </div>
       </section>
 
-      {/* Book Assessment CTA - Premium */}
-      <section className="relative overflow-hidden border-t border-border/30 bg-gradient-to-br from-primary/5 via-background to-primary/3">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(var(--primary)/0.08),_transparent_60%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_hsl(var(--accent)/0.05),_transparent_60%)]"></div>
-        
-        {/* Decorative elements */}
-        <div className="absolute top-10 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-56 h-56 bg-accent/5 rounded-full blur-3xl"></div>
-        
-        <div className="container mx-auto px-6 py-24 relative">
+      {/* Book Assessment CTA */}
+      <section className="border-t border-border bg-muted/30">
+        <div className="container mx-auto px-6 py-24">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block mb-6 px-5 py-2 bg-primary/10 border border-primary/20 rounded-full">
               <span className="text-sm font-mono uppercase tracking-wider text-primary font-bold">Next Step</span>

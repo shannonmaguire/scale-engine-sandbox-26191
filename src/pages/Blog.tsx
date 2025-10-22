@@ -128,36 +128,14 @@ const Blog = () => {
       {/* Coming Soon Banner */}
       
       
-      {/* Streamlined Masthead */}
-      <section className="bg-gradient-to-br from-background via-muted/5 to-background border-b border-border/50">
-        <div className="container mx-auto px-6 py-16 md:py-20">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block mb-6">
-              <Badge variant="outline" className="font-mono text-sm uppercase tracking-widest border-primary/30 text-primary px-4 py-1.5">
-                Digital Edition
-              </Badge>
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-mono font-black text-foreground tracking-tight mb-6 animate-fade-in">
-              THE CWT STANDARD
+      {/* Page Header */}
+      <section className="border-b border-border">
+        <div className="container mx-auto px-6 py-12">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-mono font-bold text-foreground mb-4">
+              Revenue Systems Insights
             </h1>
-            
-            <div className="flex items-center justify-center gap-4 mb-8 text-sm font-mono text-muted-foreground">
-              <time className="uppercase tracking-wide">{new Date().toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
-              })}</time>
-              <span className="text-primary">•</span>
-              <span className="uppercase tracking-wide">Volume 1</span>
-              <span className="text-primary">•</span>
-              <span className="flex items-center gap-2">
-                <TrendingUp className="h-4 w-4" />
-                {blogPosts.length} Articles
-              </span>
-            </div>
-            
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Technical frameworks for revenue infrastructure deployment, documented from real deployment records and field implementation.
             </p>
           </div>
@@ -190,23 +168,19 @@ const Blog = () => {
 
       {/* Featured Article */}
       {featuredPost && selectedCategory === "All" && !searchTerm && <section className="container mx-auto px-6 py-16">
-          <div className="mb-12 animate-fade-in">
-            <div className="flex items-center gap-6 mb-6">
-              <div className="h-1 bg-gradient-to-r from-primary/60 to-primary flex-1 rounded-full"></div>
-              <Badge variant="default" className="font-mono text-sm uppercase tracking-widest px-6 py-2 shadow-lg shadow-primary/20">
-                Featured Story
-              </Badge>
-              <div className="h-1 bg-gradient-to-l from-primary/60 to-primary flex-1 rounded-full"></div>
-            </div>
+          <div className="mb-8">
+            <Badge variant="default" className="font-mono text-sm uppercase tracking-wide px-4 py-1.5">
+              Featured Article
+            </Badge>
           </div>
           
-          <StandardCard variant="bordered" className="max-w-6xl mx-auto p-8 md:p-12 hover:shadow-2xl transition-all duration-500 border-primary/20 hover:border-primary/40 bg-gradient-to-br from-background to-muted/5">
+          <StandardCard variant="bordered" className="max-w-6xl mx-auto p-8 md:p-12 hover:shadow-lg transition-shadow border-primary/20">
             <article>
               <div className="grid lg:grid-cols-5 gap-10">
                 <div className="lg:col-span-3">
                   <header className="mb-8">
                     <div className="flex items-center gap-3 mb-6">
-                      <Badge variant="secondary" className="font-mono text-sm uppercase tracking-wide px-3 py-1.5 bg-primary/10 text-primary border-primary/20">
+                      <Badge variant="secondary" className="font-mono text-sm uppercase tracking-wide px-3 py-1.5">
                         {featuredPost.category}
                       </Badge>
                       <span className="text-sm text-muted-foreground">•</span>
@@ -220,7 +194,7 @@ const Blog = () => {
                     </div>
                     
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-foreground leading-tight mb-6 hover:text-primary transition-colors cursor-pointer">
-                      <Link to={`/blog/${featuredPost.slug}`} className="hover-scale inline-block">
+                      <Link to={`/blog/${featuredPost.slug}`}>
                         {featuredPost.title}
                       </Link>
                     </h2>
@@ -238,7 +212,7 @@ const Blog = () => {
                       </div>
                     </div>
                     
-                    <Button asChild size="lg" className="font-mono group hover:shadow-lg transition-all">
+                    <Button asChild size="lg" className="font-mono group">
                       <Link to={`/blog/${featuredPost.slug}`} className="flex items-center gap-2">
                         Read Full Article
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
@@ -247,25 +221,15 @@ const Blog = () => {
                   </header>
                 </div>
                 
-                <aside className="lg:col-span-2 space-y-6">
-                  <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-background p-8 rounded-2xl border-2 border-primary/30 shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="w-1 h-10 bg-primary rounded-full"></div>
-                      <h3 className="font-mono text-lg font-bold text-foreground">
-                        Topics Covered
-                      </h3>
-                    </div>
-                    <div className="flex flex-wrap gap-3">
-                      {featuredPost.tags.map((tag, index) => <Badge key={tag} variant="outline" className={`text-sm font-medium px-4 py-2.5 bg-background/80 backdrop-blur-sm border-2 border-primary/30 text-foreground hover:border-primary hover:bg-primary/10 hover:shadow-md transition-all cursor-pointer group animate-fade-in`} style={{ animationDelay: `${index * 100}ms` }}>
-                          <span className="group-hover:text-primary transition-colors">
-                            #{tag}
-                          </span>
+                <aside className="lg:col-span-2">
+                  <div className="border border-border p-6 rounded-lg">
+                    <h3 className="font-mono text-lg font-bold text-foreground mb-4">
+                      Topics Covered
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {featuredPost.tags.map((tag) => <Badge key={tag} variant="outline" className="text-sm font-medium px-3 py-2">
+                          #{tag}
                         </Badge>)}
-                    </div>
-                    <div className="mt-6 pt-6 border-t border-primary/20">
-                      <p className="text-sm text-muted-foreground">
-                        Deep technical analysis of these frameworks
-                      </p>
                     </div>
                   </div>
                 </aside>
@@ -294,10 +258,10 @@ const Blog = () => {
                 </div>
               </div>
               
-              {/* Articles in Newspaper Column Layout */}
+              {/* Articles Grid */}
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {categoryPosts.map((post, index) => <Link key={post.id} to={`/blog/${post.slug}`} className="group block animate-fade-in" style={{ animationDelay: `${index * 50}ms` }}>
-                    <StandardCard equalHeight variant="default" className="h-full transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:-translate-y-2 bg-gradient-to-br from-background to-muted/5">
+                {categoryPosts.map((post) => <Link key={post.id} to={`/blog/${post.slug}`} className="group block">
+                    <StandardCard equalHeight variant="default" className="h-full transition-all hover:shadow-lg hover:border-primary/50">
                       <article className="h-full flex flex-col">
                         <header className="flex-1">
                           <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/30">
