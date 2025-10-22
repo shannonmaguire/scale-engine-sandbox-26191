@@ -1,5 +1,4 @@
 import { ArrowRight, CheckCircle2, XCircle } from 'lucide-react';
-import { BlueprintDivider } from './BlueprintDivider';
 import { Button } from '@/components/ui/button';
 
 export const SalesforceTechnicalDebtArticle = () => {
@@ -8,8 +7,6 @@ export const SalesforceTechnicalDebtArticle = () => {
       <p>
         Salesforce orgs accumulate configuration layers through operational evolution: duplicate workflows, deprecated fields, and conflicting validation rules represent historical business responses rather than implementation failures. This technical debt encodes decision patterns and market adaptations that occurred during rapid development cycles. The accumulated complexity contains extractable intelligence about business evolution when analyzed through appropriate frameworks.
       </p>
-
-      <BlueprintDivider label="Understanding the Debt" />
 
       <h2 id="why-debt-exists">Why Technical Debt Exists</h2>
       
@@ -22,8 +19,6 @@ export const SalesforceTechnicalDebtArticle = () => {
       <p>
         Market conditions reward functional implementation over architectural perfection. Velocity-focused development produces working solutions that address immediate business requirements. Volume scaling exposes architectural limitations when transaction counts increase by orders of magnitude. Manual processes that functioned at lower volumes create operational bottlenecks under increased load. This performance degradation triggers strategic value in systematic debt remediation.
       </p>
-
-      <BlueprintDivider label="Hidden Value" />
 
       <h2 id="hidden-value">The Hidden Value in Your Debt</h2>
       
@@ -53,8 +48,6 @@ export const SalesforceTechnicalDebtArticle = () => {
       <p>
         One audit revealed 47 lead status values accumulated across organizational growth phases. Chronological mapping exposed go-to-market evolution: initial simple statuses expanded through market segmentation, channel partnership development, and conference participation. Pattern extraction identified source-dependent qualification processes that informed subsequent lead routing system architecture rather than simple status consolidation.
       </p>
-
-      <BlueprintDivider label="The Framework" />
 
       <h2 id="cleanup-framework">The Technical Debt Cleanup Framework</h2>
       
@@ -130,8 +123,6 @@ export const SalesforceTechnicalDebtArticle = () => {
       <p><strong>Deliverable:</strong> Governance framework that keeps your org 
       clean as it scales.</p>
 
-      <BlueprintDivider label="Competitive Advantage" />
-
       <h2 id="competitive-moat">How Technical Debt Becomes a Moat</h2>
       
       <p>
@@ -161,8 +152,6 @@ export const SalesforceTechnicalDebtArticle = () => {
       <p>
         Employee departures transfer documented operational knowledge through formalized systems rather than individual memory loss. Intelligence reports, refactored infrastructure, and process documentation maintain organizational continuity independent of personnel changes.
       </p>
-
-      <BlueprintDivider label="Decision Framework" />
 
       <h2 id="decision-matrix">When to Clean Up vs. When to Keep Debt</h2>
       
@@ -217,8 +206,6 @@ export const SalesforceTechnicalDebtArticle = () => {
           <p className="m-0">You don't have the bandwidth to manage the cleanup project properly</p>
         </div>
       </div>
-
-      <BlueprintDivider label="" />
 
       <h2 id="bottom-line">The Bottom Line</h2>
       

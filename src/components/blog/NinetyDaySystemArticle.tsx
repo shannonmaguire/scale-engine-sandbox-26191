@@ -1,5 +1,4 @@
 import { ArrowRight } from 'lucide-react';
-import { BlueprintDivider } from './BlueprintDivider';
 import { Button } from '@/components/ui/button';
 
 export const NinetyDaySystemArticle = () => {
@@ -8,8 +7,6 @@ export const NinetyDaySystemArticle = () => {
       <p>
         Salesforce implementations extending beyond six months typically indicate scope expansion rather than technical complexity. The 90-day revenue system installation operates as a deployment framework with fixed deliverables: documented processes, configured infrastructure, and operator training. Engagement completion occurs when systems achieve operational independence from external support.
       </p>
-
-      <BlueprintDivider label="Framework Overview" />
 
       <h2 id="what-gets-installed">What Gets Installed</h2>
       
@@ -42,8 +39,6 @@ export const NinetyDaySystemArticle = () => {
       <p>
         Extended implementation timelines create opportunity for scope expansion, organizational resistance, and stakeholder fatigue. The 90-day constraint enforces prioritization discipline by limiting deployment to revenue-critical infrastructure. Secondary features deploy in subsequent phases after primary system validation confirms operational stability.
       </p>
-
-      <BlueprintDivider label="Deployment Phases" />
 
       <h2 id="deployment-phases">The Four-Phase Deployment Model</h2>
       
@@ -137,8 +132,6 @@ export const NinetyDaySystemArticle = () => {
         <li>System Health Metrics: KPIs to monitor ongoing performance</li>
       </ul>
 
-      <BlueprintDivider label="Operational Readiness" />
-
       <h2 id="after-day-90">What Happens After Day 90?</h2>
       
       <p>
@@ -149,8 +142,6 @@ export const NinetyDaySystemArticle = () => {
       <p>
         Fractional support arrangements provide ongoing optimization and operational capacity when internal resources remain limited. Standard engagement allocates 10-20 monthly hours while maintaining system independence from support continuation.
       </p>
-
-      <BlueprintDivider label="Technical Standards" />
 
       <h2 id="ideal-fit">Who This Framework Works For</h2>
       
@@ -172,8 +163,6 @@ export const NinetyDaySystemArticle = () => {
         <li>You're pre-revenue or still validating product-market fit</li>
         <li>You need enterprise CPQ, complex billing logic, or multi-currency global ops (different scope)</li>
       </ul>
-
-      <BlueprintDivider label="" />
 
       <p>
         Deployed systems achieve performance stability under increased transaction volume without requiring continuous optimization cycles after initial installation completion.
