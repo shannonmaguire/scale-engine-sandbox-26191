@@ -196,9 +196,11 @@ const BlogPost = () => {
                 {post.category}
               </Badge>
               {post.tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="font-mono text-xs px-3 py-1.5">
-                  #{tag}
-                </Badge>
+                <Link key={tag} to={`/blog?search=${encodeURIComponent(tag)}`}>
+                  <Badge variant="secondary" className="font-mono text-xs px-3 py-1.5 cursor-pointer hover:bg-secondary/80 hover:border-primary/30 transition-all">
+                    #{tag}
+                  </Badge>
+                </Link>
               ))}
             </div>
             
