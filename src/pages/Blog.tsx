@@ -1,5 +1,5 @@
-import { useState, useMemo, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -109,17 +109,8 @@ const blogPosts = [{
 const categories = ["All", "Revenue Infrastructure", "System Installation", "Fractional Ops", "Salesforce Ecosystem"];
 const Blog = () => {
   useScrollDepth();
-  const [searchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  
-  // Pre-populate search from URL parameter
-  useEffect(() => {
-    const searchParam = searchParams.get('search');
-    if (searchParam) {
-      setSearchTerm(searchParam);
-    }
-  }, [searchParams]);
   
   const filteredPosts = useMemo(() => {
     return blogPosts.filter(post => {
@@ -304,13 +295,9 @@ const Blog = () => {
                           </div>
                           
                           <div className="flex flex-wrap gap-2">
-                            {post.tags.slice(0, 3).map(tag => (
-                              <Link key={tag} to={`/blog?search=${encodeURIComponent(tag)}`}>
-                                <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider whitespace-nowrap bg-muted/50 px-2 py-1 rounded hover:bg-primary/10 hover:text-primary transition-colors cursor-pointer">
-                                  #{tag}
-                                </span>
-                              </Link>
-                            ))}
+                            {post.tags.slice(0, 3).map(tag => <span key={tag} className="text-xs font-mono text-muted-foreground uppercase tracking-wider whitespace-nowrap bg-muted/50 px-2 py-1 rounded hover:bg-primary/10 hover:text-primary transition-colors">
+                                #{tag}
+                              </span>)}
                           </div>
                           
                           <div className="flex items-center gap-2 text-sm font-mono font-semibold text-primary opacity-0 group-hover:opacity-100 transition-all whitespace-nowrap mt-2">
