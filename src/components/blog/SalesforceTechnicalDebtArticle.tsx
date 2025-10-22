@@ -227,7 +227,7 @@ export const SalesforceTechnicalDebtArticle = () => {
       </p>
 
       <div className="mt-16 pt-8 border-t border-border">
-        <Button asChild size="lg" variant="teal">
+        <Button asChild size="lg">
           <a href="/assessment">
             Start Technical Assessment
             <ArrowRight className="ml-2 h-4 w-4" />
