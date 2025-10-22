@@ -131,14 +131,12 @@ const Blog = () => {
       {/* Page Header */}
       <section className="border-b border-border">
         <div className="container mx-auto px-6 py-12">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="heading-page mb-4">
-              The CWT Standard
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Technical frameworks for revenue infrastructure deployment, documented from real deployment records and field implementation.
-            </p>
-          </div>
+          <h1 className="heading-page mb-4">
+            The CWT Standard
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Technical frameworks for revenue infrastructure deployment, documented from real deployment records and field implementation.
+          </p>
         </div>
       </section>
 
