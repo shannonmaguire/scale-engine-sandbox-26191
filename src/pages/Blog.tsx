@@ -123,7 +123,7 @@ const Blog = () => {
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = filteredPosts.filter(post => !post.featured);
   return <div className="min-h-screen bg-background">
-      <SEOHead title="Revenue System Insights | CWT Studio" description="Documented systems. Proven frameworks. Zero abstractions. Learn how to install backend revenue systems for high-trust industries." keywords={['revenue systems blog', 'backend infrastructure insights', 'Salesforce optimization frameworks', 'system installation guides', 'revenue operations insights']} />
+      <SEOHead title="The CWT Standard | CWT Studio" description="Documented systems. Proven frameworks. Zero abstractions. Learn how to install backend revenue systems for high-trust industries." keywords={['revenue systems blog', 'backend infrastructure insights', 'Salesforce optimization frameworks', 'system installation guides', 'revenue operations insights']} />
       
       {/* Coming Soon Banner */}
       
@@ -133,7 +133,7 @@ const Blog = () => {
         <div className="container mx-auto px-6 py-12">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-mono font-bold text-foreground mb-4">
-              Revenue Systems Insights
+              The CWT Standard
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Technical frameworks for revenue infrastructure deployment, documented from real deployment records and field implementation.
