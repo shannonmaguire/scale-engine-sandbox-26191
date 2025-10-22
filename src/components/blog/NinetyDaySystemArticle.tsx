@@ -18,20 +18,17 @@ export const NinetyDaySystemArticle = () => {
       
       <p><strong>Layer 1: Data Infrastructure</strong></p>
       <p>
-        Salesforce configuration, integration architecture, and data flow design. This is where 
-        leads enter, opportunities progress, and revenue gets tracked.
+        Salesforce configuration, integration architecture, and data flow design establish the foundation where leads enter systems, opportunities progress through qualification stages, and revenue tracking maintains operational visibility.
       </p>
 
       <p><strong>Layer 2: Process Documentation</strong></p>
       <p>
-        SOPs, playbooks, and handoff protocols. Every action is documented. Every decision point 
-        has a framework. No tribal knowledge.
+        SOPs, playbooks, and handoff protocols document every operational action and decision framework, eliminating tribal knowledge dependencies through formalized procedure capture.
       </p>
 
       <p><strong>Layer 3: Operator Training</strong></p>
       <p>
-        Your team (or your fractional resources) get hands-on training. They don't just learn 
-        the system—they run it independently by day 90.
+        Team members receive hands-on training that progresses from system familiarization through independent operation capability, achieving autonomous system management by day 90 without external support requirements.
       </p>
 
       <h3>Why 90 Days?</h3>
@@ -153,15 +150,15 @@ export const NinetyDaySystemArticle = () => {
         <li>You have an existing Salesforce org (or are ready to launch one)</li>
         <li>You're doing $1M-$50M ARR and need operational leverage</li>
         <li>You have (or are hiring) SDRs, AEs, or ops people who will use the system</li>
-        <li>You want to own your revenue infrastructure, not rent it from consultants</li>
+        <li>Revenue infrastructure ownership provides long-term operational independence beyond consultant dependency</li>
       </ul>
 
       <h3>Not a Fit</h3>
       
       <ul>
-        <li>You want ongoing managed services (we build systems, not run them for you)</li>
-        <li>You're pre-revenue or still validating product-market fit</li>
-        <li>You need enterprise CPQ, complex billing logic, or multi-currency global ops (different scope)</li>
+        <li>Ongoing managed services fall outside scope parameters since systems require operational independence rather than continuous external management</li>
+        <li>Pre-revenue organizations or companies validating product-market fit lack sufficient operational complexity to justify revenue system infrastructure</li>
+        <li>Enterprise CPQ, complex billing logic, or multi-currency global operations require expanded engagement scope beyond standard 90-day deployment parameters</li>
       </ul>
 
       <p>

@@ -28,20 +28,13 @@ export const SalesforceTechnicalDebtArticle = () => {
       
       <h3>What Technical Debt Encodes</h3>
       
-      <p><strong>Market experiments:</strong> See a custom object for a feature 
-      that never shipped? That tells us what didn't work—valuable information for 
-      future planning.</p>
+      <p><strong>Market experiments:</strong> Custom objects for features that never shipped document tested hypotheses and market validation failures, providing valuable planning intelligence for future development prioritization.</p>
       
-      <p><strong>Customer behavior patterns:</strong> Validation rules and 
-      automation logic reveal edge cases your customers created. That's product 
-      insight hiding in your CRM.</p>
+      <p><strong>Customer behavior patterns:</strong> Validation rules and automation logic preserve edge cases created through actual customer interactions, encoding product insights within CRM configuration that inform feature development decisions.</p>
       
-      <p><strong>Process evolution:</strong> Multiple workflows for the same 
-      process show how your operations matured. Understanding that progression 
-      helps us design better systems.</p>
+      <p><strong>Process evolution:</strong> Multiple workflows addressing identical processes document operational maturation stages, with progression analysis enabling superior system design through historical pattern recognition.</p>
       
-      <p><strong>Team knowledge gaps:</strong> Where debt accumulates shows where 
-      your team lacks expertise or resources. That informs training and hiring.</p>
+      <p><strong>Team knowledge gaps:</strong> Debt accumulation locations identify expertise deficiencies and resource constraints within operational teams, directly informing training program development and hiring strategy.</p>
 
       <h3>Example: The 47 Lead Status Values</h3>
       
@@ -69,8 +62,7 @@ export const SalesforceTechnicalDebtArticle = () => {
         <li>User behavior analysis: what features actually get used</li>
       </ul>
       
-      <p><strong>Deliverable:</strong> Complete system map with usage data. We 
-      know what's active, what's dormant, and what's breaking.</p>
+      <p><strong>Deliverable:</strong> Complete system map with usage data documenting active features, dormant configurations, and failure points across the entire infrastructure.</p>
 
       <h3>Phase 2: Extract Intelligence</h3>
       
@@ -86,8 +78,7 @@ export const SalesforceTechnicalDebtArticle = () => {
         <li>Pattern identification: find recurring themes across different debt areas</li>
       </ul>
       
-      <p><strong>Deliverable:</strong> Intelligence report that translates technical 
-      debt into business insights. This informs strategy, not just cleanup.</p>
+      <p><strong>Deliverable:</strong> Intelligence report translating technical debt patterns into business insights that inform strategic decisions beyond cleanup activities.</p>
 
       <h3>Phase 3: Refactor & Consolidate</h3>
       
@@ -187,7 +178,7 @@ export const SalesforceTechnicalDebtArticle = () => {
       <div className="my-8 space-y-3">
         <div className="flex items-start gap-3">
           <XCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
-          <p className="m-0">It's not actively causing problems—don't fix what's not broken</p>
+          <p className="m-0">Inactive debt without operational impact requires no remediation under the principle that functional systems need no correction</p>
         </div>
         <div className="flex items-start gap-3">
           <XCircle className="h-5 w-5 text-muted-foreground flex-shrink-0 mt-0.5" />
