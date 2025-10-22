@@ -132,7 +132,7 @@ const Blog = () => {
       <section className="border-b border-border bg-muted/30">
         <div className="container mx-auto px-6 py-16">
           <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground mb-6 tracking-widest uppercase">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground mb-6 uppercase" style={{ wordSpacing: '0.5em' }}>
               THE CWT STANDARD
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
