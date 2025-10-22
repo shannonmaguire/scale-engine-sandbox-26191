@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -111,15 +111,6 @@ const Blog = () => {
   useScrollDepth();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  
-  // Check URL params for tag filter
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const tagParam = urlParams.get('tag');
-    if (tagParam) {
-      setSearchTerm(tagParam);
-    }
-  }, []);
   
   const filteredPosts = useMemo(() => {
     return blogPosts.filter(post => {
