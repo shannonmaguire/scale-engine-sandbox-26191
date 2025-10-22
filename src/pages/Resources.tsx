@@ -22,7 +22,7 @@ const resources: Resource[] = [
   {
     id: "service-selection-guide",
     title: "Service Selection Guide",
-    description: "Which $9-18K engagement prevents $200K in wasted spend? Match your revenue maturity stage to the right CWT Studio service—Assessment, Sprint, or Fractional Ops.",
+    description: "Match your revenue maturity stage to the right CWT Studio service—Assessment, Sprint, or Fractional Ops. Clear decision framework for choosing your next engagement.",
     icon: Map,
     category: "Planning",
     downloadUrl: "/pdfs/service-selection-guide.pdf"
@@ -30,7 +30,7 @@ const resources: Resource[] = [
   {
     id: "roi-calculator",
     title: "ROI Calculator",
-    description: "See exactly how $47K in Salesforce cleanup saves $340K in pipeline risk over 12 months. Input your current metrics, get projected ROI with cost/benefit breakdown.",
+    description: "Calculate how Salesforce cleanup saves pipeline risk over 12 months. Input your current metrics, get projected ROI with cost/benefit breakdown.",
     icon: Calculator,
     category: "Financial",
     downloadUrl: "/pdfs/roi-calculator.pdf"
@@ -38,7 +38,7 @@ const resources: Resource[] = [
   {
     id: "technical-assessment-framework",
     title: "Technical Assessment Framework",
-    description: "The same 6-dimension audit framework (Data Quality, Automation, Integration, Governance, Reporting, Adoption) we use in $1.5K paid assessments. Self-score in 15 minutes.",
+    description: "Our 6-dimension audit framework (Data Quality, Automation, Integration, Governance, Reporting, Adoption) for revenue system assessments. Self-score in 15 minutes.",
     icon: CheckSquare,
     category: "Assessment",
     downloadUrl: "/pdfs/technical-assessment-framework.pdf"
@@ -54,7 +54,7 @@ const resources: Resource[] = [
   {
     id: "discovery-questions-library",
     title: "Discovery Questions Library",
-    description: "30+ proven questions that uncover technical debt in prospect deals. Organized by deal stage and objection type—helps AEs qualify $50K+ Salesforce opportunities.",
+    description: "30+ proven questions that uncover technical debt in prospect deals. Organized by deal stage and objection type—helps AEs qualify Salesforce opportunities.",
     icon: FileQuestion,
     category: "Sales Enablement",
     downloadUrl: "/pdfs/discovery-questions-library.pdf"
@@ -62,7 +62,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "FREE download, no email required. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents $15K+ in scope creep.",
+    description: "FREE download, no email required. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -134,7 +134,7 @@ const Resources = () => {
             Battle-Tested Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl mb-4">
-            The same tools we use in $1.5K assessments and $18K sprint engagements. One resource is completely free—no email required. The rest unlock with your email and arrive instantly.
+            The same tools we use in our revenue operations assessments and sprint engagements. One resource is completely free—no email required. The rest unlock with your email and arrive instantly.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
             <CheckCircle className="w-4 h-4 text-primary" />
@@ -205,7 +205,7 @@ const Resources = () => {
               <div className="w-1 h-full bg-primary rounded-full flex-shrink-0" />
               <div>
                 <p className="text-lg text-foreground mb-4 italic">
-                  "The Technical Assessment Framework caught 3 critical Salesforce gaps our $400/hr consultant missed. Saved us from a $60K mistake before we even started the project."
+                  "The Technical Assessment Framework caught 3 critical Salesforce gaps our consultant missed. Saved us from a major mistake before we even started the project."
                 </p>
                 <div className="text-sm font-mono text-muted-foreground">
                   <div className="font-bold text-foreground">Director of Revenue Operations</div>
@@ -256,7 +256,7 @@ const Resources = () => {
             Start Assessment
           </ConversionOptimizedButton>
           <p className="text-xs text-center text-muted-foreground mt-3 font-mono">
-            $1,500–$2,500 • 2-week turnaround • 100% fee credits to Sprint
+            2-week turnaround • 100% fee credits to Sprint
           </p>
         </div>
       </section>
