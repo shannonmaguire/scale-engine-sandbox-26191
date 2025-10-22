@@ -62,7 +62,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "FREE resource. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
+    description: "47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -123,7 +123,7 @@ const Resources = () => {
             Battle-Tested Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl mb-4">
-            The same tools we use in our revenue operations assessments and sprint engagements. One resource is completely free. All resources unlock instantly with your email.
+            The same tools we use in our revenue operations assessments and sprint engagements. All resources unlock instantly with your email.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
             <CheckCircle className="w-4 h-4 text-primary" />
@@ -138,7 +138,6 @@ const Resources = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gutter-standard">
             {resources.map((resource) => {
               const Icon = resource.icon;
-              const isFree = resource.id === 'website-readiness-checklist';
               return (
                 <StandardCard key={resource.id} className="flex flex-col h-full">
                   <div className="flex items-start gap-4 mb-4">
@@ -146,15 +145,8 @@ const Resources = () => {
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="text-xs font-mono text-muted-foreground uppercase tracking-wide">
-                          {resource.category}
-                        </div>
-                        {isFree && (
-                          <div className="text-xs font-mono font-bold text-primary bg-primary/10 px-2 py-0.5 rounded">
-                            FREE
-                          </div>
-                        )}
+                      <div className="text-xs font-mono text-muted-foreground uppercase tracking-wide mb-1">
+                        {resource.category}
                       </div>
                       <h3 className="font-mono font-bold text-lg text-foreground">
                         {resource.title}
@@ -168,11 +160,11 @@ const Resources = () => {
                   
                   <Button 
                     className="w-full" 
-                    variant={isFree ? "default" : "outline"}
+                    variant="outline"
                     onClick={() => handleDownloadClick(resource)}
                   >
                     <Download className="mr-2 h-4 w-4" />
-                    {isFree ? "Download Free" : "Get Resource"}
+                    Get Resource
                   </Button>
                 </StandardCard>
               );
