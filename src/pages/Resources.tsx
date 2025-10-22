@@ -62,7 +62,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "FREE download, no email required. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
+    description: "FREE resource. 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -82,18 +82,7 @@ const Resources = () => {
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
 
   const handleDownloadClick = (resource: Resource) => {
-    // Free download - no email required
-    if (resource.id === 'website-readiness-checklist') {
-      window.open(resource.downloadUrl, '_blank');
-      trackEvent('free_resource_downloaded', {
-        resourceId: resource.id,
-        resourceTitle: resource.title,
-        location: 'resources_page',
-      });
-      return;
-    }
-    
-    // Email-gated resources
+    // All resources now require email
     trackEvent('resource_modal_opened', {
       resourceId: resource.id,
       resourceTitle: resource.title,
@@ -134,7 +123,7 @@ const Resources = () => {
             Battle-Tested Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl mb-4">
-            The same tools we use in our revenue operations assessments and sprint engagements. One resource is completely free—no email required. The rest unlock with your email and arrive instantly.
+            The same tools we use in our revenue operations assessments and sprint engagements. One resource is completely free. All resources unlock instantly with your email.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
             <CheckCircle className="w-4 h-4 text-primary" />
