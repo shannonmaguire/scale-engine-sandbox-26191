@@ -93,21 +93,15 @@ const Home = () => {
       <Section className="min-h-[90vh] flex items-center py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div>
-            <div className="inline-block mb-4 px-4 py-1.5 bg-primary/10 border border-primary/20 rounded-full">
-              <span className="text-xs font-mono font-medium text-primary uppercase tracking-wider">
-                90-Day System Installation
-              </span>
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="heading-page mb-4">
               The Competitive Advantage Is the Backend
             </h1>
             
-            <p className="text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8">
               Install backend systems that scale without founder dependency. Documented infrastructure, repeatable execution, measurable outcomes in 90 days.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-4">
               <ConversionOptimizedButton
                 to="/assessment"
                 ctaName="Hero - Start Your Assessment"
@@ -127,21 +121,6 @@ const Home = () => {
                 Sample Report
               </ConversionOptimizedButton>
             </div>
-            
-            <div className="flex items-center gap-6 text-sm text-muted-foreground font-mono">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>Fixed scope</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>2-week delivery</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-primary" />
-                <span>$1,800 USD</span>
-              </div>
-            </div>
           </div>
           
           <div>
@@ -151,46 +130,34 @@ const Home = () => {
       </Section>
 
       {/* Who This Is For */}
-      <Section variant="muted">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Built for High-Trust Industries</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Legal, compliance, cybersecurity, and B2B SaaS teams who need backend infrastructure 
-              that scales without founder dependency.
-            </p>
-          </div>
+      <Section>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="heading-section mb-6">Built for High-Trust Industries</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Legal, compliance, cybersecurity, and B2B SaaS teams who need backend infrastructure 
+            that scales without founder dependency.
+          </p>
           
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-background border-2 border-destructive/20 rounded-lg p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-destructive/10 flex items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-destructive" />
-                </div>
-                <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-destructive">Before</h3>
-              </div>
-              <ul className="space-y-4">
+          <div className="grid md:grid-cols-2 gap-8 text-left">
+            <div>
+              <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground mb-4">Before</h3>
+              <ul className="space-y-3">
                 {beforeAfter.before.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-muted-foreground">{item}</span>
+                    <span className="text-sm">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="bg-background border-2 border-primary/30 rounded-lg p-8">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                </div>
-                <h3 className="font-mono text-sm font-semibold uppercase tracking-wider text-primary">After</h3>
-              </div>
-              <ul className="space-y-4">
+            <div>
+              <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground mb-4">After</h3>
+              <ul className="space-y-3">
                 {beforeAfter.after.map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="font-medium">{item}</span>
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -270,16 +237,13 @@ const Home = () => {
 
       {/* Proof */}
       <Section variant="muted">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">By the Numbers</h2>
-          <p className="text-lg text-muted-foreground">Real outcomes from backend system installations</p>
-        </div>
+        <h2 className="heading-section mb-8">By the Numbers</h2>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
           {proofStats.map((stat, index) => (
-            <div key={index} className="bg-background border-2 border-primary/20 rounded-lg p-6 text-center hover:border-primary/40 transition-colors">
-              <div className="text-4xl sm:text-5xl font-bold font-mono text-primary mb-2">{stat.number}</div>
-              <div className="text-sm font-medium text-foreground mb-1">{stat.label}</div>
+            <div key={index} className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">{stat.number}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
               {stat.subLabel && (
                 <div className="text-xs text-muted-foreground">{stat.subLabel}</div>
               )}
@@ -287,16 +251,13 @@ const Home = () => {
           ))}
         </div>
         
-        <div className="text-center">
-          <ConversionOptimizedButton
-            to="/proof"
-            ctaName="By Numbers - See Proof"
-            location="By Numbers Section"
-            size="lg"
-          >
-            See Full Case Studies
-          </ConversionOptimizedButton>
-        </div>
+        <ConversionOptimizedButton
+          to="/proof"
+          ctaName="By Numbers - See Proof"
+          location="By Numbers Section"
+        >
+          See Full Case Studies
+        </ConversionOptimizedButton>
       </Section>
 
       {/* Exit Intent Popup */}
