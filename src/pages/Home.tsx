@@ -90,8 +90,8 @@ const Home = () => {
       />
       
       {/* Hero */}
-      <Section className="min-h-[85vh] flex items-center">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+      <Section className="min-h-[90vh] flex items-center py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div>
             <h1 className="heading-page mb-4">
               The Competitive Advantage Is the Backend
@@ -125,6 +125,43 @@ const Home = () => {
           
           <div>
             <SystemDiagram />
+          </div>
+        </div>
+      </Section>
+
+      {/* Who This Is For */}
+      <Section>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="heading-section mb-6">Built for High-Trust Industries</h2>
+          <p className="text-lg text-muted-foreground mb-8">
+            Legal, compliance, cybersecurity, and B2B SaaS teams who need backend infrastructure 
+            that scales without founder dependency.
+          </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 text-left">
+            <div>
+              <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground mb-4">Before</h3>
+              <ul className="space-y-3">
+                {beforeAfter.before.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground mb-4">After</h3>
+              <ul className="space-y-3">
+                {beforeAfter.after.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </Section>
