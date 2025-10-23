@@ -18,9 +18,6 @@ const Navigation = () => {
     label: "Resources",
     href: "/resources"
   }, {
-    label: "Blog",
-    href: "/blog"
-  }, {
     label: "About",
     href: "/about"
   }];
