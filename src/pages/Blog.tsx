@@ -220,12 +220,12 @@ const Blog = () => {
                 </div>
                 
                 <aside className="lg:col-span-2">
-                  <div className="border border-border p-6 rounded-lg">
-                    <h3 className="font-mono text-lg font-bold text-foreground mb-4">
+                  <div className="bg-muted/30 p-8 rounded-lg">
+                    <h3 className="font-mono text-sm font-bold text-muted-foreground uppercase tracking-wider mb-5">
                       Topics Covered
                     </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {featuredPost.tags.map((tag) => <Badge key={tag} variant="outline" className="text-sm font-medium px-3 py-2">
+                    <div className="flex flex-wrap gap-2.5">
+                      {featuredPost.tags.map((tag) => <Badge key={tag} variant="data" className="text-sm font-medium px-4 py-2 hover:bg-accent transition-colors">
                           #{tag}
                         </Badge>)}
                     </div>
