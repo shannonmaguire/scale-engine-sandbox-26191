@@ -131,33 +131,47 @@ const Home = () => {
 
       {/* Who This Is For */}
       <Section>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-section mb-6">Built for High-Trust Industries</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Legal, compliance, cybersecurity, and B2B SaaS teams who need backend infrastructure 
-            that scales without founder dependency.
-          </p>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="heading-section mb-6">Built for High-Trust Industries</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Legal, compliance, cybersecurity, and B2B SaaS teams who need backend infrastructure 
+              that scales without founder dependency.
+            </p>
+          </div>
           
-          <div className="grid md:grid-cols-2 gap-8 text-left">
-            <div>
-              <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground mb-4">Before</h3>
-              <ul className="space-y-3">
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Before Card */}
+            <div className="relative border-2 border-destructive/20 bg-card rounded-lg p-8">
+              <div className="absolute -top-3 left-6 bg-background px-3 py-1 border border-destructive/20 rounded-md">
+                <span className="font-mono text-xs uppercase tracking-wider text-destructive">Before</span>
+              </div>
+              
+              <ul className="space-y-4 mt-4">
                 {beforeAfter.before.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-destructive mt-2 flex-shrink-0" />
-                    <span className="text-sm">{item}</span>
+                  <li key={index} className="flex items-start gap-3 group">
+                    <div className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-2 h-2 rounded-full bg-destructive" />
+                    </div>
+                    <span className="text-base text-foreground/80">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div>
-              <h3 className="font-mono text-sm uppercase tracking-wider text-muted-foreground mb-4">After</h3>
-              <ul className="space-y-3">
+            {/* After Card */}
+            <div className="relative border-2 border-primary/30 bg-card rounded-lg p-8">
+              <div className="absolute -top-3 left-6 bg-background px-3 py-1 border border-primary/30 rounded-md">
+                <span className="font-mono text-xs uppercase tracking-wider text-primary">After</span>
+              </div>
+              
+              <ul className="space-y-4 mt-4">
                 {beforeAfter.after.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm font-medium">{item}</span>
+                  <li key={index} className="flex items-start gap-3 group">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <CheckCircle className="w-4 h-4 text-primary" strokeWidth={2.5} />
+                    </div>
+                    <span className="text-base font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
