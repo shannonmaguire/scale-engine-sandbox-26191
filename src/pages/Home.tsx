@@ -149,11 +149,11 @@ const Home = () => {
               
               <ul className="space-y-4 mt-4">
                 {beforeAfter.before.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3 group">
-                    <div className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <li key={index} className="flex items-center gap-3 group">
+                    <div className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
                       <div className="w-2 h-2 rounded-full bg-destructive" />
                     </div>
-                    <span className="text-base text-foreground/80">{item}</span>
+                    <span className="text-base text-foreground/80 leading-5">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -167,11 +167,11 @@ const Home = () => {
               
               <ul className="space-y-4 mt-4">
                 {beforeAfter.after.map((item, index) => (
-                  <li key={index} className="flex items-start gap-3 group">
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <li key={index} className="flex items-center gap-3 group">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <CheckCircle className="w-4 h-4 text-primary" strokeWidth={2.5} />
                     </div>
-                    <span className="text-base font-medium">{item}</span>
+                    <span className="text-base font-medium leading-5">{item}</span>
                   </li>
                 ))}
               </ul>
