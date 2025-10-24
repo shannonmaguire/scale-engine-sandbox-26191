@@ -146,21 +146,21 @@ const About = () => {
                 <Shield className="w-6 h-6 text-primary" />
               </div>
               <h3 className="heading-subsection mb-4 text-primary">Enterprise Depth</h3>
-              <ul className="space-y-3 text-muted-foreground text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+              <ul className="space-y-3 text-muted-foreground text-sm leading-6">
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Proven frameworks tested at scale</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Salesforce-certified expertise</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Enterprise-grade documentation</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Strategic executive partnership</span>
                 </li>
               </ul>
@@ -172,21 +172,21 @@ const About = () => {
                 <Target className="w-6 h-6 text-primary" />
               </div>
               <h3 className="heading-subsection mb-4 text-primary">Micro-Consultancy</h3>
-              <ul className="space-y-3 text-foreground text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+              <ul className="space-y-3 text-foreground text-sm leading-6">
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Direct line between you and execution—zero intermediary layers</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Senior architect builds your systems, eliminating junior team learning curves</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Fixed pricing removes the overhead that consultancies pass to clients</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Strategic decisions made by the person implementing them</span>
                 </li>
               </ul>
@@ -198,21 +198,21 @@ const About = () => {
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <h3 className="heading-subsection mb-4 text-primary">Freelancer Agility</h3>
-              <ul className="space-y-3 text-muted-foreground text-sm">
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+              <ul className="space-y-3 text-muted-foreground text-sm leading-6">
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>24-hour response times</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>90-day delivery cycles</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Fixed pricing, no change orders</span>
                 </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-primary mt-1">•</span>
+                <li className="flex items-center gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                   <span>Flexible engagement models</span>
                 </li>
               </ul>
@@ -309,42 +309,42 @@ const About = () => {
               <div className="grid md:grid-cols-2 gap-10">
                 <div>
                 <h3 className="font-mono font-bold text-base mb-5 text-foreground">What We Do</h3>
-                  <ul className="space-y-3 text-foreground text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
+                  <ul className="space-y-3 text-foreground text-sm leading-6">
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                       <span>Assess current infrastructure and diagnose where systems break under load</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                       <span>Work within existing tools rather than forcing platform migrations</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                       <span>Install fixes in 90-day cycles that deliver measurable results</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary">•</span>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
                       <span>Partner at executive level to align technical decisions with revenue goals</span>
                     </li>
                   </ul>
                 </div>
                 <div>
                 <h3 className="font-mono font-bold text-base mb-5 text-foreground">What We Don't Do</h3>
-                  <ul className="space-y-3 text-foreground text-sm">
-                    <li className="flex items-start gap-2">
-                      <span className="text-muted-foreground">•</span>
+                  <ul className="space-y-3 text-foreground text-sm leading-6">
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
                       <span>Force overhauls when targeted fixes would deliver faster ROI</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-muted-foreground">•</span>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
                       <span>Deliver discovery reports without implementation plans</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-muted-foreground">•</span>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
                       <span>Apply generic frameworks that ignore company-specific constraints</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-muted-foreground">•</span>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
                       <span>Over-architect solutions before validating assumptions under real load</span>
                     </li>
                   </ul>
