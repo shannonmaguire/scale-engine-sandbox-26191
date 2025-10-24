@@ -24,13 +24,7 @@ export default async function handler(req, res) {
         ? JSON.parse(req.body || "{}")
         : req.body || {};
 
-    const requiredFields = [
-      "fullName",
-      "email",
-      "company",
-      "serviceInterest",
-      "challenge",
-    ];
+    const requiredFields = ["fullName", "email", "servicesInterested", "timeline", "message"];
     const missing = requiredFields.filter((field) => !payload[field]);
 
     if (missing.length > 0) {
@@ -39,8 +33,16 @@ export default async function handler(req, res) {
       });
     }
 
+    // Validate servicesInterested is an array
+    if (!Array.isArray(payload.servicesInterested) || payload.servicesInterested.length === 0) {
+      return res.status(400).json({
+        error: "At least one service must be selected",
+      });
+    }
+
     const html = buildHtml(payload);
-    const subject = `New Contact: ${payload.fullName} · ${payload.company}`;
+    const servicesLabel = payload.servicesInterested.join(", ");
+    const subject = `New Lead: ${payload.fullName}${payload.company ? ` · ${payload.company}` : ""} · ${servicesLabel}`;
 
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -84,16 +86,41 @@ const escapeHtml = (value = "") =>
     .replace(/'/g, "&#39;");
 
 const buildHtml = (payload) => {
-  const rows = Object.entries(payload)
-    .map(([key, val]) => {
-      const displayValue =
-        typeof val === "boolean" ? (val ? "Yes" : "No") : String(val ?? "");
+  // Format services array
+  const formatValue = (key, val) => {
+    if (key === "servicesInterested" && Array.isArray(val)) {
+      return val.join(", ");
+    }
+    if (typeof val === "boolean") {
+      return val ? "Yes" : "No";
+    }
+    return String(val ?? "—");
+  };
+
+  // Order and label fields
+  const fieldOrder = [
+    { key: "fullName", label: "Full Name" },
+    { key: "email", label: "Email" },
+    { key: "company", label: "Company" },
+    { key: "servicesInterested", label: "Services Interested" },
+    { key: "timeline", label: "Timeline" },
+    { key: "budgetRange", label: "Budget Range" },
+    { key: "currentSetup", label: "Current Setup" },
+    { key: "message", label: "Project Details" },
+  ];
+
+  const rows = fieldOrder
+    .filter(({ key }) => payload[key] && payload[key] !== "")
+    .map(({ key, label }) => {
+      const displayValue = formatValue(key, payload[key]);
+      const isMessage = key === "message";
+      
       return `
         <tr>
-          <td style="padding:8px 12px;border:1px solid #e5e7eb;font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:0.05em;">${escapeHtml(
-            key
+          <td style="padding:12px;border:1px solid #e5e7eb;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:0.05em;background:#f9fafb;vertical-align:top;width:140px;">${escapeHtml(
+            label
           )}</td>
-          <td style="padding:8px 12px;border:1px solid #e5e7eb;font-size:14px;">${escapeHtml(
+          <td style="padding:12px;border:1px solid #e5e7eb;font-size:14px;${isMessage ? 'white-space:pre-wrap;' : ''}">${escapeHtml(
             displayValue
           )}</td>
         </tr>
@@ -101,15 +128,24 @@ const buildHtml = (payload) => {
     })
     .join("");
 
+  // Priority indicator based on timeline
+  const isPriority = payload.timeline === "urgent" || payload.timeline === "soon";
+  const priorityBadge = isPriority 
+    ? `<span style="display:inline-block;padding:4px 12px;background:#dc2626;color:#fff;font-size:11px;font-weight:700;border-radius:4px;text-transform:uppercase;letter-spacing:0.05em;">High Priority</span>` 
+    : "";
+
   return `
-    <div style="font-family:Inter,Segoe UI,system-ui,-apple-system,sans-serif;color:#111827;">
-      <h2 style="font-size:20px;margin-bottom:16px;">New CWT Studio Contact Request</h2>
-      <p style="margin-bottom:24px;color:#374151;">A new lead has submitted the contact form. Review the intake details below.</p>
-      <table style="border-collapse:collapse;width:100%;max-width:640px;background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
+    <div style="font-family:Inter,Segoe UI,system-ui,-apple-system,sans-serif;color:#111827;padding:20px;">
+      <div style="max-width:700px;">
+        <h2 style="font-size:22px;margin-bottom:8px;font-weight:700;">New CWT Studio Lead ${priorityBadge}</h2>
+        <p style="margin-bottom:24px;color:#6b7280;font-size:14px;">Review the qualification details below and respond within 24 hours.</p>
+      <table style="border-collapse:collapse;width:100%;background:#ffffff;border:1px solid #e5e7eb;border-radius:8px;overflow:hidden;">
         <tbody>
           ${rows}
         </tbody>
       </table>
+      <p style="margin-top:24px;font-size:13px;color:#6b7280;">Reply directly to this email to respond to ${escapeHtml(payload.fullName)}.</p>
+      </div>
     </div>
   `;
 };

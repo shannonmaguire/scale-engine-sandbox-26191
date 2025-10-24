@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { StandardCard, StandardCardContent } from "@/components/ui/standard-card";
 import { Section } from "@/components/ui/section";
 import SEOHead from "@/components/SEOHead";
@@ -12,23 +15,54 @@ import { trackEvent } from "@/hooks/usePageTracking";
 import { Mail, ArrowRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { callJsonFunction } from "@/lib/serverless";
 
+const services = [
+  { id: "salesforce", label: "Salesforce Optimization", param: "salesforce" },
+  { id: "web", label: "Web Systems", param: "web" },
+  { id: "sprint", label: "Sprint Delivery", param: "sprint" },
+  { id: "fractional", label: "Fractional CTO", param: "fractional" },
+];
+
 const initialFormState = {
   fullName: "",
   email: "",
+  company: "",
+  servicesInterested: [] as string[],
+  timeline: "",
+  budgetRange: "",
+  currentSetup: "",
   message: "",
   privacyConsent: false,
 };
 
 const Contact = () => {
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState(initialFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
-  const validateField = (field: string, value: string | boolean): string => {
+  // Pre-populate service based on URL params
+  useEffect(() => {
+    const interest = searchParams.get("interest");
+    if (interest) {
+      const matchingService = services.find(s => s.param === interest);
+      if (matchingService) {
+        setFormData(prev => ({
+          ...prev,
+          servicesInterested: [matchingService.id]
+        }));
+      }
+    }
+  }, [searchParams]);
+
+  const validateField = (field: string, value: string | boolean | string[]): string => {
     if (typeof value === 'boolean') {
       return value ? "" : "Required";
+    }
+    
+    if (Array.isArray(value)) {
+      return value.length > 0 ? "" : "Select at least one service";
     }
     
     switch (field) {
@@ -36,6 +70,8 @@ const Contact = () => {
         return value.trim().length > 0 ? "" : "Name required";
       case "email":
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? "" : "Valid email required";
+      case "timeline":
+        return value ? "" : "Timeline required";
       case "message":
         return value.trim().length > 0 ? "" : "Message required";
       default:
@@ -49,7 +85,7 @@ const Contact = () => {
     const newErrors: Record<string, string> = {};
     Object.keys(formData).forEach(key => {
       const value = formData[key as keyof typeof formData];
-      const error = validateField(key, typeof value === 'boolean' ? value : value);
+      const error = validateField(key, value);
       if (error) newErrors[key] = error;
     });
     
@@ -99,13 +135,22 @@ const Contact = () => {
     }
   };
 
-  const handleInputChange = (field: string, value: string | boolean) => {
+  const handleInputChange = (field: string, value: string | boolean | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     
     if (touched[field]) {
       const error = validateField(field, value);
       setErrors(prev => ({ ...prev, [field]: error }));
     }
+  };
+
+  const handleServiceToggle = (serviceId: string) => {
+    const currentServices = formData.servicesInterested;
+    const newServices = currentServices.includes(serviceId)
+      ? currentServices.filter(s => s !== serviceId)
+      : [...currentServices, serviceId];
+    
+    handleInputChange("servicesInterested", newServices);
   };
 
   const handleBlur = (field: string) => {
@@ -141,7 +186,7 @@ const Contact = () => {
               Let's Talk
             </h1>
             <p className="text-description text-lg max-w-2xl mx-auto">
-              Tell us what you need. We'll respond in 24 hours.
+              Tell us about your project. We'll send a detailed response within 24 hours with next steps and pricing.
             </p>
           </div>
 
@@ -153,7 +198,164 @@ const Contact = () => {
                   Send a Message
                 </h2>
                 
-                <form onSubmit={handleSubmit} className="space-y-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Name & Email Row */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="fullName" className="font-mono text-sm font-medium mb-2 block">
+                          Name *
+                        </Label>
+                        <Input
+                          id="fullName"
+                          value={formData.fullName}
+                          onChange={(e) => handleInputChange("fullName", e.target.value)}
+                          onBlur={() => handleBlur("fullName")}
+                          placeholder="Your full name"
+                          required
+                          className={`font-mono ${errors.fullName && touched.fullName ? 'border-destructive' : ''}`}
+                        />
+                        {errors.fullName && touched.fullName && (
+                          <p className="text-xs text-destructive mt-1">{errors.fullName}</p>
+                        )}
+                      </div>
+
+                      <div>
+                        <Label htmlFor="email" className="font-mono text-sm font-medium mb-2 block">
+                          Email *
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          onBlur={() => handleBlur("email")}
+                          placeholder="you@company.com"
+                          required
+                          className={`font-mono ${errors.email && touched.email ? 'border-destructive' : ''}`}
+                        />
+                        {errors.email && touched.email && (
+                          <p className="text-xs text-destructive mt-1">{errors.email}</p>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Company */}
+                    <div>
+                      <Label htmlFor="company" className="font-mono text-sm font-medium mb-2 block">
+                        Company
+                      </Label>
+                      <Input
+                        id="company"
+                        value={formData.company}
+                        onChange={(e) => handleInputChange("company", e.target.value)}
+                        placeholder="Your company name"
+                        className="font-mono"
+                      />
+                    </div>
+
+                    {/* Services Interested */}
+                    <div>
+                      <Label className="font-mono text-sm font-medium mb-3 block">
+                        Services You're Interested In *
+                      </Label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {services.map((service) => (
+                          <div
+                            key={service.id}
+                            className={`relative flex items-center gap-3 p-4 border-2 rounded-lg cursor-pointer transition-all ${
+                              formData.servicesInterested.includes(service.id)
+                                ? 'border-primary bg-primary/5'
+                                : 'border-border hover:border-primary/40'
+                            }`}
+                            onClick={() => handleServiceToggle(service.id)}
+                          >
+                            <Checkbox
+                              id={service.id}
+                              checked={formData.servicesInterested.includes(service.id)}
+                              onCheckedChange={() => handleServiceToggle(service.id)}
+                              className="pointer-events-none"
+                            />
+                            <Label
+                              htmlFor={service.id}
+                              className="text-sm font-medium cursor-pointer flex-1"
+                            >
+                              {service.label}
+                            </Label>
+                          </div>
+                        ))}
+                      </div>
+                      {errors.servicesInterested && touched.servicesInterested && (
+                        <p className="text-xs text-destructive mt-2">{errors.servicesInterested}</p>
+                      )}
+                    </div>
+
+                    {/* Timeline & Budget Row */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <Label htmlFor="timeline" className="font-mono text-sm font-medium mb-2 block">
+                          Timeline *
+                        </Label>
+                        <Select
+                          value={formData.timeline}
+                          onValueChange={(value) => handleInputChange("timeline", value)}
+                        >
+                          <SelectTrigger className={`font-mono ${errors.timeline && touched.timeline ? 'border-destructive' : ''}`}>
+                            <SelectValue placeholder="When do you need this?" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="urgent">ASAP (within 2 weeks)</SelectItem>
+                            <SelectItem value="soon">Soon (within 30 days)</SelectItem>
+                            <SelectItem value="planning">Planning (30-90 days)</SelectItem>
+                            <SelectItem value="exploring">Exploring options</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        {errors.timeline && touched.timeline && (
+                          <p className="text-xs text-destructive mt-1">{errors.timeline}</p>
+                        )}
+                      </div>
+
+                      <div>
+                        <Label htmlFor="budgetRange" className="font-mono text-sm font-medium mb-2 block">
+                          Budget Range
+                        </Label>
+                        <Select
+                          value={formData.budgetRange}
+                          onValueChange={(value) => handleInputChange("budgetRange", value)}
+                        >
+                          <SelectTrigger className="font-mono">
+                            <SelectValue placeholder="Select budget (optional)" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="under-10k">Under $10K</SelectItem>
+                            <SelectItem value="10k-25k">$10K - $25K</SelectItem>
+                            <SelectItem value="25k-50k">$25K - $50K</SelectItem>
+                            <SelectItem value="50k-plus">$50K+</SelectItem>
+                            <SelectItem value="not-sure">Not sure yet</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+
+                    {/* Current Setup (conditional) */}
+                    {formData.servicesInterested.includes("salesforce") && (
+                      <div>
+                        <Label htmlFor="currentSetup" className="font-mono text-sm font-medium mb-2 block">
+                          Current Salesforce Setup
+                        </Label>
+                        <Input
+                          id="currentSetup"
+                          value={formData.currentSetup}
+                          onChange={(e) => handleInputChange("currentSetup", e.target.value)}
+                          placeholder="e.g., Sales Cloud, Service Cloud, custom objects..."
+                          className="font-mono"
+                        />
+                        <p className="text-xs text-muted-foreground mt-1">
+                          Help us understand your current Salesforce implementation
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Message */}
                     <div>
                       <Label htmlFor="fullName" className="font-mono text-sm font-medium mb-2 block">
                         Name *
@@ -193,24 +395,24 @@ const Contact = () => {
 
                     <div>
                       <Label htmlFor="message" className="font-mono text-sm font-medium mb-2 block">
-                        What do you need? *
+                        Project Details *
                       </Label>
                       <Textarea
                         id="message"
                         value={formData.message}
                         onChange={(e) => handleInputChange("message", e.target.value)}
                         onBlur={() => handleBlur("message")}
-                        placeholder="Tell us about your project, challenge, or question..."
+                        placeholder="What challenges are you facing? What outcomes do you need?"
                         required
                         className={`font-mono resize-none ${errors.message && touched.message ? 'border-destructive' : ''}`}
-                        rows={6}
+                        rows={5}
                       />
                       {errors.message && touched.message && (
                         <p className="text-xs text-destructive mt-1">{errors.message}</p>
                       )}
                     </div>
 
-                    <div className="flex items-start gap-3 pt-6 border-t border-border/50">
+                    <div className="flex items-start gap-3 pt-4 border-t border-border/50">
                       <Checkbox
                         id="privacyConsent"
                         checked={formData.privacyConsent}
@@ -295,6 +497,26 @@ const Contact = () => {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-6">
+                  <h3 className="font-mono text-sm font-bold text-primary mb-3 uppercase tracking-wider">
+                    What Happens Next?
+                  </h3>
+                  <ul className="space-y-3 text-sm text-foreground leading-6">
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                      <span>We review your project (within 24 hours)</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                      <span>You get detailed next steps + pricing</span>
+                    </li>
+                    <li className="flex items-center gap-3">
+                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
+                      <span>Schedule a call if it's a fit</span>
+                    </li>
+                  </ul>
                 </div>
 
                 <div className="bg-muted/30 border border-border/50 rounded-lg p-6">
