@@ -357,43 +357,6 @@ const Contact = () => {
 
                     {/* Message */}
                     <div>
-                      <Label htmlFor="fullName" className="font-mono text-sm font-medium mb-2 block">
-                        Name *
-                      </Label>
-                      <Input
-                        id="fullName"
-                        value={formData.fullName}
-                        onChange={(e) => handleInputChange("fullName", e.target.value)}
-                        onBlur={() => handleBlur("fullName")}
-                        placeholder="Your full name"
-                        required
-                        className={`font-mono ${errors.fullName && touched.fullName ? 'border-destructive' : ''}`}
-                      />
-                      {errors.fullName && touched.fullName && (
-                        <p className="text-xs text-destructive mt-1">{errors.fullName}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <Label htmlFor="email" className="font-mono text-sm font-medium mb-2 block">
-                        Email *
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => handleInputChange("email", e.target.value)}
-                        onBlur={() => handleBlur("email")}
-                        placeholder="you@company.com"
-                        required
-                        className={`font-mono ${errors.email && touched.email ? 'border-destructive' : ''}`}
-                      />
-                      {errors.email && touched.email && (
-                        <p className="text-xs text-destructive mt-1">{errors.email}</p>
-                      )}
-                    </div>
-
-                    <div>
                       <Label htmlFor="message" className="font-mono text-sm font-medium mb-2 block">
                         Project Details *
                       </Label>
