@@ -16,11 +16,11 @@ import { Mail, ArrowRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-rea
 import { callJsonFunction } from "@/lib/serverless";
 
 const services = [
-  { id: "assessment", label: "Assessment · $1,800", param: "assessment" },
-  { id: "sprint", label: "Sprint · From $12K", param: "sprint" },
-  { id: "fractional", label: "Fractional Ops · From $6K/mo", param: "fractional" },
-  { id: "web", label: "Web Systems · $6–40K", param: "web-systems" },
-  { id: "salesforce", label: "Salesforce · Custom", param: "salesforce" },
+  { id: "assessment", label: "Assessment", param: "assessment" },
+  { id: "sprint", label: "Sprint", param: "sprint" },
+  { id: "fractional", label: "Fractional Ops", param: "fractional" },
+  { id: "web", label: "Web Systems", param: "web-systems" },
+  { id: "salesforce", label: "Salesforce", param: "salesforce" },
 ];
 
 const initialFormState = {
