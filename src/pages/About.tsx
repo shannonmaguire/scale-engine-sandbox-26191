@@ -129,91 +129,58 @@ const About = () => {
 
       </Section>
 
-      {/* Why CWT Studio */}
       <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="heading-section mb-6">Why CWT Studio</h2>
             <p className="text-description text-lg max-w-2xl mx-auto">
-              Fortune 500 precision delivered at freelancer speed, stripped of the overhead that inflates cost and delays execution.
+              Enterprise-grade systems without enterprise overhead. Senior architect executes directly—no layers, no juniors, no drawn-out timelines.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {/* Fortune 500 Depth */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* What You Get */}
             <div className="bg-card border-2 border-border rounded-lg p-8 hover:border-primary/30 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="heading-subsection mb-4 text-primary">Enterprise Depth</h3>
-              <ul className="space-y-3 text-muted-foreground text-sm leading-6">
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Proven frameworks tested at scale</span>
+              <h3 className="heading-subsection mb-6 text-primary">What You Get</h3>
+              <ul className="space-y-4 text-foreground">
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                  <span>Proven frameworks tested at enterprise scale</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Salesforce-certified expertise</span>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                  <span>Salesforce-certified expertise with documented methodologies</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Enterprise-grade documentation</span>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                  <span>Strategic executive partnership on revenue decisions</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Strategic executive partnership</span>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                  <span>90-day delivery cycles with fixed pricing</span>
                 </li>
               </ul>
             </div>
 
-            {/* Micro-Consultancy Model */}
-            <div className="bg-gradient-to-br from-primary/5 to-primary/10 border-2 border-primary rounded-lg p-8">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 flex items-center justify-center mb-6">
-                <Target className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="heading-subsection mb-4 text-primary">Micro-Consultancy</h3>
-              <ul className="space-y-3 text-foreground text-sm leading-6">
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Direct line between you and execution—zero intermediary layers</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Senior architect builds your systems, eliminating junior team learning curves</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Fixed pricing removes the overhead that consultancies pass to clients</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Strategic decisions made by the person implementing them</span>
-                </li>
-              </ul>
-            </div>
-
-            {/* Freelancer Agility */}
+            {/* What You Avoid */}
             <div className="bg-card border-2 border-border rounded-lg p-8 hover:border-primary/30 transition-all">
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="heading-subsection mb-4 text-primary">Freelancer Agility</h3>
-              <ul className="space-y-3 text-muted-foreground text-sm leading-6">
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>24-hour response times</span>
+              <h3 className="heading-subsection mb-6 text-muted-foreground">What You Avoid</h3>
+              <ul className="space-y-4 text-muted-foreground">
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
+                  <span>Junior associates learning on your budget</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>90-day delivery cycles</span>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
+                  <span>Account managers creating communication layers</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Fixed pricing, no change orders</span>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
+                  <span>Six-figure engagements stretched over 18 months</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                  <span>Flexible engagement models</span>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
+                  <span>Strategic decisions disconnected from execution</span>
                 </li>
               </ul>
             </div>
@@ -221,7 +188,7 @@ const About = () => {
 
           <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center">
             <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
-              Strategic rigor and proven methodologies of enterprise consultancies delivered in 90-day cycles instead of eighteen-month transformations. Senior expertise executes directly rather than delegating to junior associates. Systems go live in weeks because the architect building them makes the strategic decisions.
+              The person making strategic decisions is the same person building your systems. No translation layers. No delegation to juniors. Systems go live in weeks because the architect executes directly.
             </p>
           </div>
         </div>
