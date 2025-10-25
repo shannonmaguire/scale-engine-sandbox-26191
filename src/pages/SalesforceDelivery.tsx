@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Settings, Users, Shield, Clock, CheckCircle, Target, Zap } from "lucide-react";
+import { Settings, Users, Shield, Clock, CheckCircle, Target, Zap } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
@@ -117,14 +117,6 @@ const SalesforceDelivery = () => {
       />
       <Breadcrumbs />
       <main className="container mx-auto px-4 section-spacing">
-        {/* Navigation */}
-        <div className="mb-8">
-          <Link to="/salesforce" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Salesforce Solutions
-          </Link>
-        </div>
-
         {/* Hero Section */}
         <section className="section-spacing-half text-center">
           <div className="system-status border-accent mb-6">
