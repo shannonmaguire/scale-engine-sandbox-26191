@@ -76,19 +76,14 @@ const Assessment = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Revenue Infrastructure Assessment | CWT Studio"
-        description="2-week diagnostic of your backend revenue systems. Get a complete audit, 90-day roadmap, and executive presentation for $1,800 USD."
+        description="2-week diagnostic of your backend revenue systems. Get a complete audit, 90-day roadmap, and executive presentation."
         keywords={['revenue infrastructure assessment', 'Salesforce audit', 'backend systems diagnostic', 'RevOps assessment', '90-day roadmap']}
         canonicalUrl="/assessment"
         type="service"
         serviceSchema={{
           name: 'Revenue Infrastructure Assessment',
           description: '2-week diagnostic to map backend revenue systems, baseline KPIs, and deliver prioritized recommendations with a 90-day roadmap.',
-          provider: 'CWT Studio',
-          offers: {
-            price: '1800',
-            priceCurrency: 'USD',
-            description: 'Fixed scope, fixed price. 100% credits toward Sprint implementation.'
-          }
+          provider: 'CWT Studio'
         }}
         faqSchema={[
           {
@@ -100,8 +95,8 @@ const Assessment = () => {
             answer: 'The assessment takes 2 weeks from kickoff to final delivery, including discovery call, technical review, report preparation, and executive readout.'
           },
           {
-            question: 'Does the $1,800 credit toward the Sprint?',
-            answer: 'Yes, 100% of the assessment fee credits toward Sprint implementation if you choose to proceed.'
+            question: 'Does the assessment credit toward the Sprint?',
+            answer: 'Yes, the assessment fee credits toward Sprint implementation if you choose to proceed.'
           }
         ]}
       />
@@ -124,12 +119,12 @@ const Assessment = () => {
               <span className="font-mono">2 weeks</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
-              <DollarSign size={16} className="text-primary" />
-              <span className="font-mono font-bold">$1,800 USD</span>
+              <CheckCircle2 size={16} className="text-primary" />
+              <span className="font-mono">Fixed scope, fixed price</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono">100% credits to Sprint</span>
+              <span className="font-mono">Credits to Sprint</span>
             </div>
           </div>
           

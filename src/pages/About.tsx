@@ -221,7 +221,7 @@ const About = () => {
 
           <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center">
             <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
-              Strategic rigor and proven methodologies of enterprise consultancies delivered at $12K–$18K over 90 days instead of six figures over eighteen months. Senior expertise executes directly rather than delegating to junior associates. Systems go live in weeks because the architect building them makes the strategic decisions.
+              Strategic rigor and proven methodologies of enterprise consultancies delivered in 90-day cycles instead of eighteen-month transformations. Senior expertise executes directly rather than delegating to junior associates. Systems go live in weeks because the architect building them makes the strategic decisions.
             </p>
           </div>
         </div>

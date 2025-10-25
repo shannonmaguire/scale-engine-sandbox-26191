@@ -35,7 +35,7 @@ const Home = () => {
   const services = [{
     title: "Assessment",
     description: "2-week diagnostic to map backend revenue systems with baseline KPIs and prioritized recommendations for stable growth.",
-    price: "$1,800 USD",
+    timeline: "2 weeks",
     note: "Fixed scope, fixed price",
     cta: "Start Assessment",
     link: "/assessment"
@@ -43,13 +43,14 @@ const Home = () => {
     title: "Sprint",
     description: "8–12-week implementation sprint where we install the infrastructure that compounds: CRM, RevOps architecture, automation, and documentation.",
     timeline: "8-12 weeks",
-    price: "From $12K USD",
+    note: "Custom pricing after Assessment",
     cta: "Start Your Sprint",
     link: "/sprint"
   }, {
     title: "Fractional Ops",
     description: "Ongoing fractional operations support for teams that need their systems maintained, optimized, and performance-driven.",
-    price: "From $6K/month USD",
+    timeline: "6+ months",
+    note: "Custom engagement pricing",
     cta: "Apply Now",
     link: "/fractional"
   }];
@@ -192,16 +193,15 @@ const Home = () => {
               <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
               
               <div className="space-y-1 mb-4">
-                {service.timeline && (
+                <div className="text-sm font-mono">
+                  <span className="text-muted-foreground">Timeline: </span>
+                  <span>{service.timeline}</span>
+                </div>
+                {service.note && (
                   <div className="text-sm font-mono">
-                    <span className="text-muted-foreground">Timeline: </span>
-                    <span>{service.timeline}</span>
+                    <span className="text-muted-foreground">{service.note}</span>
                   </div>
                 )}
-                <div className="text-sm font-mono">
-                  <span className="text-muted-foreground">Price: </span>
-                  <span className="text-primary">{service.price}</span>
-                </div>
               </div>
               
               <div className="flex-grow" />

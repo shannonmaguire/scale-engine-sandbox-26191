@@ -22,21 +22,21 @@ const Navigation = () => {
     href: "/about"
   }];
   const solutionsLinks = [{
-    label: "Assessment · $1,800 (Start Here)",
+    label: "Assessment (Start Here)",
     href: "/assessment",
     highlight: true
   }, {
-    label: "Sprint · From $12K",
+    label: "Sprint",
     href: "/sprint"
   }, {
-    label: "Fractional Ops · From $6K/mo",
+    label: "Fractional Ops",
     href: "/fractional"
   }, {
-    label: "Web Systems · $6–40K",
+    label: "Web Systems",
     href: "/web-systems",
     separator: true
   }, {
-    label: "Salesforce · Custom",
+    label: "Salesforce",
     href: "/salesforce"
   }];
 

@@ -317,20 +317,19 @@ const Contact = () => {
 
                       <div>
                         <Label htmlFor="budgetRange" className="font-mono text-sm font-medium mb-2 block">
-                          Budget Range
+                          Project Readiness
                         </Label>
                         <Select
                           value={formData.budgetRange}
                           onValueChange={(value) => handleInputChange("budgetRange", value)}
                         >
                           <SelectTrigger className="font-mono">
-                            <SelectValue placeholder="Select budget (optional)" />
+                            <SelectValue placeholder="Select readiness (optional)" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="under-10k">Under $10K</SelectItem>
-                            <SelectItem value="10k-25k">$10K - $25K</SelectItem>
-                            <SelectItem value="25k-50k">$25K - $50K</SelectItem>
-                            <SelectItem value="50k-plus">$50K+</SelectItem>
+                            <SelectItem value="exploratory">Exploratory - learning options</SelectItem>
+                            <SelectItem value="budgeted">Budgeted - ready to move</SelectItem>
+                            <SelectItem value="urgent">Urgent - immediate need</SelectItem>
                             <SelectItem value="not-sure">Not sure yet</SelectItem>
                           </SelectContent>
                         </Select>

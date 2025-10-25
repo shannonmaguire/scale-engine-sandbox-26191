@@ -52,7 +52,7 @@ const Sprint = () => {
     <div className="min-h-screen">
       <SEOHead
         title="90-Day Revenue System Sprint | CWT Studio"
-        description="8-12 week implementation sprint: install CRM infrastructure, automation, dashboards, and documentation. Complete revenue systems from $12K."
+        description="8-12 week implementation sprint: install CRM infrastructure, automation, dashboards, and documentation. Complete revenue systems."
         keywords={[
           '90-day system installation',
           'revenue infrastructure sprint',
@@ -65,12 +65,7 @@ const Sprint = () => {
         serviceSchema={{
           name: 'Revenue System Sprint',
           description: '8-12 week implementation sprint to install complete revenue infrastructure including CRM optimization, automation, dashboards, and full documentation.',
-          provider: 'CWT Studio',
-          offers: {
-            price: '12000',
-            priceCurrency: 'USD',
-            description: 'Starting price. Final scope determined after Assessment.'
-          }
+          provider: 'CWT Studio'
         }}
       />
       
@@ -92,12 +87,12 @@ const Sprint = () => {
               <span className="font-mono">8-12 weeks</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
-              <DollarSign size={16} className="text-primary" />
-              <span className="font-mono font-bold">From $12K USD</span>
+              <CheckCircle2 size={16} className="text-primary" />
+              <span className="font-mono">Custom pricing</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono text-xs">Final scope after Assessment</span>
+              <span className="font-mono text-xs">Requires Assessment</span>
             </div>
           </div>
           
@@ -162,14 +157,13 @@ const Sprint = () => {
           </div>
         </div>
 
-        {/* Pricing */}
+        {/* Investment Approach */}
         <div className="max-w-3xl mx-auto mb-16">
           <StandardCard variant="bordered" className="border-primary/30">
             <StandardCardContent className="p-8 text-center">
               <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h2 className="heading-subsection mb-2">Sprint Investment</h2>
-              <p className="text-3xl font-bold text-primary mb-2 tabular-nums">From $12K</p>
-              <p className="text-sm text-muted-foreground mb-6">$1,800 Assessment fee fully applied to Sprint engagement</p>
+              <h2 className="heading-subsection mb-2">Custom Pricing</h2>
+              <p className="text-muted-foreground mb-6">Pricing determined after Assessment phase. Assessment fee fully applied to Sprint engagement.</p>
               <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-left">
                 <p className="text-xs font-mono font-bold text-accent mb-2">RECENT OUTCOME</p>
                 <p className="text-sm text-muted-foreground">
@@ -202,7 +196,7 @@ const Sprint = () => {
         <div className="max-w-2xl mx-auto text-center">
           <div className="bg-gradient-to-br from-primary/10 to-background border-2 border-primary rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-4">Ready to Install Your Infrastructure?</h3>
-            <p className="text-muted-foreground mb-6">8-12 weeks • From $12K • Requires completed Assessment</p>
+            <p className="text-muted-foreground mb-6">8-12 weeks • Custom pricing • Requires completed Assessment</p>
             <Button size="lg" asChild>
               <Link to="/contact?interest=sprint&source_page=sprint">Start Your Sprint</Link>
             </Button>

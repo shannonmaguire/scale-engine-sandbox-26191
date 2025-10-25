@@ -32,16 +32,13 @@ const WebSystems = () => {
   }];
   const packages = [{
     name: "Essentials",
-    items: ["5 to 7 pages using 1 to 3 templates", "Repo, CMS or file-based content, owner guide", "Base CRM and analytics wiring"],
-    investment: "$6K–10K"
+    items: ["5 to 7 pages using 1 to 3 templates", "Repo, CMS or file-based content, owner guide", "Base CRM and analytics wiring"]
   }, {
     name: "Core",
-    items: ["8 to 12 pages and a small design system", "Gated asset or lead magnet flow", "Deeper CRM events and dashboards"],
-    investment: "$12K–20K"
+    items: ["8 to 12 pages and a small design system", "Gated asset or lead magnet flow", "Deeper CRM events and dashboards"]
   }, {
     name: "Scale",
-    items: ["Component library and custom flows", "Advanced performance and testing", "Multi-brand or multi-region readiness"],
-    investment: "$20K–40K"
+    items: ["Component library and custom flows", "Advanced performance and testing", "Multi-brand or multi-region readiness"]
   }];
   const process = [{
     number: "01",
@@ -62,20 +59,14 @@ const WebSystems = () => {
   }];
   const supportPackages = [{
     hours: 10,
-    price: "$2,000",
-    rate: "$200/hour",
     subtitle: "Quick fixes & updates",
     features: ["Ideal for occasional updates", "48-hour response time", "6-month expiration", "No minimum per request"]
   }, {
     hours: 20,
-    price: "$3,500",
-    rate: "$175/hour",
     subtitle: "Ongoing maintenance",
     features: ["Best value for regular updates", "48-hour response time", "6-month expiration", "Priority scheduling"]
   }, {
     hours: 40,
-    price: "$6,000",
-    rate: "$150/hour",
     subtitle: "Extended support",
     features: ["Major updates & optimization", "24-hour response time", "6-month expiration", "Dedicated support contact"]
   }];
@@ -208,22 +199,19 @@ const WebSystems = () => {
             {packages.map((pkg, index) => (
               <div key={index} className="border-l-4 border-primary pl-6">
                 <h3 className="font-mono font-bold text-lg mb-2">{pkg.name}</h3>
-                <ul className="space-y-2 mb-3">
+                <ul className="space-y-2">
                   {pkg.items.map((item, idx) => (
                     <li key={idx} className="text-sm text-muted-foreground">
                       • {item}
                     </li>
                   ))}
                 </ul>
-                <p className="text-xl font-bold text-primary tabular-nums">
-                  {pkg.investment}
-                </p>
               </div>
             ))}
           </div>
           
           <p className="text-sm text-muted-foreground font-mono max-w-2xl mt-6">
-            Scope confirmed after a 45-minute call. Assessment fees credit toward build.
+            Custom pricing determined after 45-minute scoping call. Assessment fees credit toward build.
           </p>
         </div>
 
@@ -255,8 +243,8 @@ const WebSystems = () => {
           <div className="space-y-6 max-w-3xl">
             {supportPackages.map((pkg, index) => (
               <div key={index} className="border-l-4 border-primary pl-6">
-                <h3 className="font-mono font-bold text-lg mb-1">{pkg.hours} Hours — {pkg.price}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{pkg.rate} • {pkg.subtitle}</p>
+                <h3 className="font-mono font-bold text-lg mb-1">{pkg.hours} Hours Support Block</h3>
+                <p className="text-sm text-muted-foreground mb-3">{pkg.subtitle}</p>
                 <ul className="space-y-1 text-sm text-muted-foreground mb-4">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx}>• {feature}</li>
@@ -270,7 +258,7 @@ const WebSystems = () => {
                   location="web-systems-support"
                   showArrow={false}
                 >
-                  Get Started
+                  Request Quote
                 </ConversionOptimizedButton>
               </div>
             ))}
