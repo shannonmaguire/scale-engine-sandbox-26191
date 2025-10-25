@@ -268,7 +268,6 @@ const Proof = () => {
           <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
             Start Your Assessment
           </ConversionOptimizedButton>
-          <p className="text-xs text-muted-foreground mt-4 font-mono">Fixed scope, fixed price · $1,800 fully credits to Sprint</p>
         </div>
       </Section>
     </div>;
