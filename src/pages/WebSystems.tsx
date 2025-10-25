@@ -129,16 +129,16 @@ const WebSystems = () => {
             </span>
           </div>
           <h1 className="heading-page mb-4">
-            Revenue-Ready Websites With Full Ownership
+            Custom Websites You Own
           </h1>
           <p className="text-xl text-muted-foreground mb-6">
-            Custom-built sites that integrate with your CRM, run fast, and come with everything your team needs to make updates without calling a developer.
+            React, TypeScript, and Tailwind sites with CRM integration, full source code, and deployment credentials. Update in-house or hire your own developer—no vendor lock-in.
           </p>
           
           <div className="grid grid-cols-3 gap-6 mb-8 py-6 border-y border-border">
             <div>
               <div className="font-mono text-2xl font-bold text-primary mb-1">Sub-1s</div>
-              <div className="text-xs text-muted-foreground">Load time on key pages</div>
+              <div className="text-xs text-muted-foreground">Page load time</div>
             </div>
             <div>
               <div className="font-mono text-2xl font-bold text-primary mb-1">30 Days</div>
@@ -146,7 +146,7 @@ const WebSystems = () => {
             </div>
             <div>
               <div className="font-mono text-2xl font-bold text-primary mb-1">100%</div>
-              <div className="text-xs text-muted-foreground">Ownership transfer</div>
+              <div className="text-xs text-muted-foreground">Code ownership</div>
             </div>
           </div>
 
@@ -182,12 +182,12 @@ const WebSystems = () => {
 
         {/* Ownership */}
         <div className="mb-16 max-w-3xl">
-          <h2 className="heading-section mb-4">Full Ownership Transfer</h2>
+          <h2 className="heading-section mb-4">Full Code Transfer</h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
-            At handoff, you receive the GitHub repository, deployment credentials, and a clear owner guide. Make updates in-house, hire your own developer, or keep us on retainer. The codebase is yours. No vendor lock-in. No ongoing licensing. No logo in the footer.
+            You receive the GitHub repository, deployment credentials, and documentation. Update yourself, hire a developer, or keep us on retainer. No ongoing licensing. No vendor lock-in.
           </p>
           <p className="text-sm text-muted-foreground font-mono">
-            This is not a template. This is not a managed service. You own the code.
+            Custom build. Full source code. Your infrastructure.
           </p>
         </div>
 
@@ -288,22 +288,22 @@ const WebSystems = () => {
 
         {/* Performance Benchmarks */}
         <div className="mb-16">
-          <h2 className="heading-section mb-4">Performance You Can Measure</h2>
+          <h2 className="heading-section mb-4">Performance Targets</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl">
-            This site loads in under a second. That's the baseline we build to. Fast sites convert better, rank higher, and cost less to run.
+            Fast sites rank higher and convert better. These are the benchmarks we build to.
           </p>
           <div className="space-y-4 max-w-2xl">
             <div className="border-l-4 border-primary pl-6">
               <div className="font-mono text-2xl font-bold text-primary mb-1">Sub-1s LCP</div>
-              <p className="text-sm text-muted-foreground">Largest Contentful Paint on key pages</p>
+              <p className="text-sm text-muted-foreground">Largest Contentful Paint</p>
             </div>
             <div className="border-l-4 border-primary pl-6">
               <div className="font-mono text-2xl font-bold text-primary mb-1">90+ Score</div>
-              <p className="text-sm text-muted-foreground">Google PageSpeed on mobile</p>
+              <p className="text-sm text-muted-foreground">Google PageSpeed mobile</p>
             </div>
             <div className="border-l-4 border-primary pl-6">
-              <div className="font-mono text-2xl font-bold text-primary mb-1">Hours → Minutes</div>
-              <p className="text-sm text-muted-foreground">Time to make content updates</p>
+              <div className="font-mono text-2xl font-bold text-primary mb-1">Direct Edit</div>
+              <p className="text-sm text-muted-foreground">Content updates without dev handoff</p>
             </div>
           </div>
         </div>
@@ -330,9 +330,9 @@ const WebSystems = () => {
 
         {/* Final CTA */}
         <div className="max-w-2xl">
-          <h2 className="heading-section mb-4">Start With a Consultation</h2>
+          <h2 className="heading-section mb-4">Start With Scoping Call</h2>
           <p className="text-muted-foreground mb-6">
-            Book a 45-minute scoping call. We'll send a project brief and fixed-price quote within 24 hours. If you proceed, any assessment fee credits toward the build.
+            45-minute call to review requirements. Fixed-price quote within 24 hours. Assessment fees credit toward build.
           </p>
           <ConversionOptimizedButton to="/contact?interest=web&source_page=web-systems" ctaName="Web Systems Final CTA" location="web-systems-footer">
             Request Consultation
