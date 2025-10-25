@@ -141,7 +141,10 @@ const Contact = () => {
     
     if (touched[field]) {
       const error = validateField(field, value);
-      setErrors(prev => ({ ...prev, [field]: error }));
+      setErrors(prev => {
+        if (prev[field] === error) return prev;
+        return { ...prev, [field]: error };
+      });
     }
   };
 
