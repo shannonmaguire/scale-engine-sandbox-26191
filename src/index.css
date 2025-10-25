@@ -17,7 +17,7 @@ img {
     /* Every color has a strategic purpose */
     
     /* Core Brand Colors */
-    --burgundy: 327 82% 31%;             /* #681038 - Primary/Conversion CTAs */
+    --burgundy: 0 0% 25%;                /* #404040 - Charcoal for Primary/Conversion CTAs */
     --forest: 135 27% 15%;               /* #1B3022 - Authority/Navigation */
     --deep-black: 0 0% 0%;               /* #010400 - All Text */
     
@@ -48,7 +48,7 @@ img {
     /* Primary Actions - Burgundy for conversion */
     --primary: var(--burgundy);
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 327 82% 38%;        /* Standardized hover state */
+    --primary-hover: 0 0% 20%;          /* Darker charcoal hover state */
 
     /* Secondary Actions - Muted Gray for supporting */
     --secondary: var(--muted-gray);
