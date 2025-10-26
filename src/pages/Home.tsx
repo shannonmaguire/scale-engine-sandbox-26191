@@ -95,27 +95,14 @@ const Home = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div>
             <h1 className="heading-page mb-4">
-              Your Revenue System Broke at 50 Customers. Fix It in 90 Days.
+              The Competitive Advantage Is the Backend
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-6">
-              Stop losing deals to operational chaos. Install backend systems that scale without founder dependency—documented infrastructure, repeatable execution, measurable outcomes.
+            <p className="text-xl text-muted-foreground mb-8">
+              Install backend systems that scale without founder dependency. Documented infrastructure, repeatable execution, measurable outcomes in 90 days.
             </p>
             
-            {/* Pricing & urgency */}
-            <div className="mb-6 p-4 border border-primary/30 rounded-lg bg-primary/5">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                <div>
-                  <p className="text-sm font-mono text-muted-foreground mb-1">2-Week Assessment</p>
-                  <p className="text-3xl font-bold font-mono text-primary">$1,200</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-mono text-muted-foreground">Assessment fee fully credited to Sprint if you proceed</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="flex flex-col sm:flex-row gap-4">
               <ConversionOptimizedButton
                 to="/assessment"
                 ctaName="Hero - Start Your Assessment"
@@ -125,26 +112,15 @@ const Home = () => {
                 Start Your Assessment
               </ConversionOptimizedButton>
               <ConversionOptimizedButton
-                to="/proof"
-                ctaName="Hero - See Results"
+                to="/sample-report"
+                ctaName="Hero - View Sample Report"
                 location="Homepage Hero"
                 variant="outline"
+                showArrow={false}
                 size="lg"
               >
-                See Client Results
+                Sample Report
               </ConversionOptimizedButton>
-            </div>
-            
-            {/* Social proof */}
-            <div className="flex flex-wrap items-center gap-6 text-sm font-mono text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-primary" />
-                <span>$500K+ pipeline activated</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-primary" />
-                <span>107% peak growth rate</span>
-              </div>
             </div>
           </div>
           
@@ -154,59 +130,8 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Why Now? Section */}
-      <Section>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="heading-section mb-6">5 Signs Your Backend Is About to Collapse</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              You've hit $2-5M in revenue. Growth is stalling. The systems that got you here won't get you there.
-            </p>
-          </div>
-          
-          {/* Signs grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            <div className="border-l-4 border-destructive pl-6">
-              <div className="font-mono text-sm text-destructive mb-2 uppercase tracking-wide">Sign #1</div>
-              <h3 className="text-lg font-semibold mb-2">Founder-Led Sales Chaos</h3>
-              <p className="text-sm text-muted-foreground">Every deal still requires your personal attention. Team can't close without you.</p>
-            </div>
-            
-            <div className="border-l-4 border-destructive pl-6">
-              <div className="font-mono text-sm text-destructive mb-2 uppercase tracking-wide">Sign #2</div>
-              <h3 className="text-lg font-semibold mb-2">Unreliable Pipeline Data</h3>
-              <p className="text-sm text-muted-foreground">You can't defend your forecast. Revenue numbers are guesswork, not projections.</p>
-            </div>
-            
-            <div className="border-l-4 border-destructive pl-6">
-              <div className="font-mono text-sm text-destructive mb-2 uppercase tracking-wide">Sign #3</div>
-              <h3 className="text-lg font-semibold mb-2">Disconnected Tooling</h3>
-              <p className="text-sm text-muted-foreground">Data lives in spreadsheets, Slack, and someone's memory. Nothing syncs.</p>
-            </div>
-            
-            <div className="border-l-4 border-destructive pl-6">
-              <div className="font-mono text-sm text-destructive mb-2 uppercase tracking-wide">Sign #4</div>
-              <h3 className="text-lg font-semibold mb-2">Manual Everything</h3>
-              <p className="text-sm text-muted-foreground">Proposals, follow-ups, reporting—all copy-paste. Hours wasted on repetitive tasks.</p>
-            </div>
-            
-            <div className="border-l-4 border-destructive pl-6">
-              <div className="font-mono text-sm text-destructive mb-2 uppercase tracking-wide">Sign #5</div>
-              <h3 className="text-lg font-semibold mb-2">Team Bottlenecks</h3>
-              <p className="text-sm text-muted-foreground">New hires take months to ramp. Processes exist only in your head.</p>
-            </div>
-            
-            <div className="border-l-4 border-primary pl-6 bg-primary/5 p-4 -ml-6">
-              <div className="font-mono text-sm text-primary mb-2 uppercase tracking-wide">The Fix</div>
-              <h3 className="text-lg font-semibold mb-2">Backend Revenue System</h3>
-              <p className="text-sm text-muted-foreground">Predictable pipeline. Documented processes. Scalable execution.</p>
-            </div>
-          </div>
-        </div>
-      </Section>
-
       {/* Who This Is For */}
-      <Section variant="muted">
+      <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="heading-section mb-6">Built for High-Trust Industries</h2>
@@ -252,60 +177,6 @@ const Home = () => {
                 ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Featured Case Study */}
-      <Section>
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-8">
-            <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/30 rounded-md mb-4">
-              <span className="text-sm font-mono text-primary uppercase tracking-wide">Featured Result</span>
-            </div>
-            <h2 className="heading-section mb-4">Compliance Advisory: $500K+ Pipeline Activated</h2>
-          </div>
-          
-          <div className="border border-primary/30 rounded-lg p-8 bg-card">
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold font-mono text-primary mb-2">8 weeks</div>
-                <div className="text-sm text-muted-foreground">Implementation Time</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold font-mono text-primary mb-2">$500K+</div>
-                <div className="text-sm text-muted-foreground">Pipeline Activated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold font-mono text-primary mb-2">107%</div>
-                <div className="text-sm text-muted-foreground">Peak Growth Rate</div>
-              </div>
-            </div>
-            
-            <div className="space-y-4 mb-6">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Challenge</h3>
-                <p className="text-sm text-muted-foreground">Cybersecurity compliance firm with founder-dependent sales. Pipeline visibility was zero. No forecasting capability.</p>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Solution</h3>
-                <p className="text-sm text-muted-foreground">Built Salesforce Revenue Cloud with automated outbound sequences, HubSpot integration, and executive dashboards.</p>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Outcome</h3>
-                <p className="text-sm text-muted-foreground">Outbound engine running autonomously. Team closing deals without founder intervention. Reliable 90-day forecast.</p>
-              </div>
-            </div>
-            
-            <ConversionOptimizedButton
-              to="/proof"
-              ctaName="Featured Case Study - See More"
-              location="Featured Case Study Section"
-            >
-              See All Case Studies
-            </ConversionOptimizedButton>
           </div>
         </div>
       </Section>

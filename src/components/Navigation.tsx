@@ -12,10 +12,6 @@ const Navigation = () => {
     label: "Home",
     href: "/"
   }, {
-    label: "Assessment",
-    href: "/assessment",
-    highlight: true
-  }, {
     label: "Proof",
     href: "/proof"
   }, {
@@ -29,22 +25,22 @@ const Navigation = () => {
     href: "/about"
   }];
   const solutionsLinks = [{
+    label: "Assessment (Start Here)",
+    href: "/assessment",
+    highlight: true
+  }, {
     label: "Sprint",
-    href: "/sprint",
-    highlight: false
+    href: "/sprint"
   }, {
     label: "Fractional Ops",
-    href: "/fractional",
-    highlight: false
+    href: "/fractional"
   }, {
     label: "Web Systems",
     href: "/web-systems",
-    separator: true,
-    highlight: false
+    separator: true
   }, {
     label: "Salesforce",
-    href: "/salesforce",
-    highlight: false
+    href: "/salesforce"
   }];
 
   const isActive = (href: string) => location.pathname === href;
@@ -67,18 +63,16 @@ const Navigation = () => {
             {navLinks.map(link => <Link 
                 key={link.href} 
                 to={link.href} 
-                className={`text-sm font-mono font-medium transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-authority rounded px-2 py-1 ${
-                  isActive(link.href) ? "!text-white font-semibold" : "!text-white"
-                } ${link.highlight ? "bg-primary/20 px-3" : ""}`}
+                className={`text-sm font-mono font-medium transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-authority rounded px-2 py-1 ${isActive(link.href) ? "!text-white font-semibold" : "!text-white"}`}
                 aria-current={isActive(link.href) ? "page" : undefined}
               >
                 {link.label}
               </Link>)}
             
-            {/* Services Dropdown */}
+            {/* Solutions Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className={`text-sm font-mono font-medium transition-colors hover:text-accent flex items-center gap-1 ${isSolutionsActive() ? "!text-white font-semibold" : "!text-white"}`}>
-                Services
+                Solutions
                 <ChevronDown size={14} className="!text-white" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56 bg-authority border-white/20 z-[100]">
@@ -128,9 +122,9 @@ const Navigation = () => {
                   {link.label}
                 </Link>)}
               
-              {/* Services section in mobile */}
+              {/* Solutions section in mobile */}
               <div className="px-1 py-2 space-y-2">
-                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Services</div>
+                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Solutions</div>
                 {solutionsLinks.map((link, index) => (
                   <div key={link.href}>
                     {link.separator && index > 0 && <div className="h-px bg-white/10 my-2 mx-3" />}
