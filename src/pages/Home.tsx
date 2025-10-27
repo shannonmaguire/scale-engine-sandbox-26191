@@ -69,8 +69,18 @@ const Home = () => {
     label: "Pipeline Activated"
   }];
   const beforeAfter = {
-    before: ["Founder-led sales chaos", "Disconnected tooling", "Unreliable pipeline data"],
-    after: ["Backend Revenue System", "Predictable pipeline", "Forecast you can defend"]
+    before: [
+      "Manual pipeline updates consuming 20+ hrs/week",
+      "One founder owns all sales ops knowledge",
+      "Forecast built from memory and best-guess spreadsheets",
+      "Custom workflows that break when people leave"
+    ],
+    after: [
+      "Automated pipeline tracking—real-time visibility",
+      "Documented systems anyone on the team can run",
+      "Board-ready forecast with confidence intervals",
+      "Repeatable workflows that compound over time"
+    ]
   };
   const assessmentDeliverables = ["Revenue Infrastructure Scorecard—tech, ops, pipeline", "Industry benchmarks and peer comparisons", "Prioritized 90-day roadmap with implementation sequence", "Executive presentation with leadership alignment"];
   return <div className="min-h-screen">
@@ -134,10 +144,10 @@ const Home = () => {
       <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="heading-section mb-6">Built for High-Trust Industries</h2>
+            <h2 className="heading-section mb-6">You Hit $2-5M ARR. Then Everything Broke.</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Legal, compliance, cybersecurity, and B2B SaaS teams who need backend infrastructure 
-              that scales without founder dependency.
+              You're spending 20+ hours a week manually managing pipeline, sales ops is held together by one founder, 
+              and your forecast is a best-guess spreadsheet. Here's what changes.
             </p>
           </div>
           
