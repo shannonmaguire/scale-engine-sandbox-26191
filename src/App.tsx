@@ -46,7 +46,6 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const DesignSystem = lazy(() => import("@/pages/DesignSystem"));
 const Auth = lazy(() => import("@/pages/Auth"));
-const Thesis = lazy(() => import("@/pages/Thesis"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -107,7 +106,6 @@ const AppContent = () => {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
-            <Route path="/thesis" element={<Thesis />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-hub" element={<AEHub />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
