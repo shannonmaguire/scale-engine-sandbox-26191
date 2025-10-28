@@ -291,19 +291,90 @@ const Salesforce = () => {
               <strong>The Result:</strong> Operator-led revenue systems with certified Salesforce expertise. 
               We deliver the speed and pragmatism of a consultancy with enterprise-grade technical authority.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="teal" asChild>
-                <Link to="/assessment">
-                  Start Your Project
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link to="/salesforce/delivery">
-                  See Our Delivery Model
-                </Link>
-              </Button>
+            <Button size="lg" variant="teal" asChild>
+              <Link to="/assessment">
+                Start Your Project
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* Partnership & Delivery Model */}
+      <Section>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-mono mb-6">
+              <Target className="w-4 h-4" />
+              PARTNERSHIP MODEL
             </div>
+            <h2 className="heading-section mb-4">How We Deliver: CWT + CloudRoute</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Strategic collaboration combining revenue operations expertise with enterprise-grade technical implementation
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gutter-content spacing-subsection">
+            <StandardCard variant="bordered" equalHeight className="p-8 border-2 border-accent/50">
+              <StandardCardHeader>
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-accent" />
+                </div>
+                <StandardCardTitle className="text-xl">CWT Studio</StandardCardTitle>
+                <p className="text-sm text-accent font-semibold">Strategy & Optimization</p>
+              </StandardCardHeader>
+              <StandardCardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Revenue operations expertise</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Business process design</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Performance analysis</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Ongoing optimization</span>
+                  </li>
+                </ul>
+              </StandardCardContent>
+            </StandardCard>
+
+            <StandardCard variant="bordered" equalHeight className="p-8 border-2 border-accent/50">
+              <StandardCardHeader>
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-accent" />
+                </div>
+                <StandardCardTitle className="text-xl">CloudRoute</StandardCardTitle>
+                <p className="text-sm text-accent font-semibold">Technical Implementation</p>
+              </StandardCardHeader>
+              <StandardCardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Salesforce development</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">System integrations</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Technical architecture</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                    <span className="text-sm">Platform maintenance</span>
+                  </li>
+                </ul>
+              </StandardCardContent>
+            </StandardCard>
           </div>
         </div>
       </Section>

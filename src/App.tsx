@@ -27,7 +27,6 @@ const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
 const SalesforcePartners = lazy(() => import("@/pages/SalesforcePartners"));
-const SalesforceDelivery = lazy(() => import("@/pages/SalesforceDelivery"));
 const Fractional = lazy(() => import("@/pages/Fractional"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const WebSystems = lazy(() => import("@/pages/WebSystems"));
@@ -96,7 +95,7 @@ const AppContent = () => {
             <Route path="/sprint" element={<Sprint />} />
             <Route path="/salesforce" element={<Salesforce />} />
             <Route path="/salesforce/partners" element={<SalesforcePartners />} />
-            <Route path="/salesforce/delivery" element={<SalesforceDelivery />} />
+            <Route path="/salesforce/delivery" element={<Navigate to="/salesforce" replace />} />
             <Route path="/fractional" element={<Fractional />} />
             <Route path="/web-systems" element={<WebSystems />} />
             <Route path="/web" element={<WebSystems />} />

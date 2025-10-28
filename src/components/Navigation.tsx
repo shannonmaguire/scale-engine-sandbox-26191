@@ -36,11 +36,8 @@ const Navigation = () => {
     href: "/web-systems",
     separator: true
   }, {
-    label: "Salesforce (Overview)",
+    label: "Salesforce",
     href: "/salesforce"
-  }, {
-    label: "Salesforce Delivery Model",
-    href: "/salesforce/delivery"
   }];
 
   const isActive = (href: string) => location.pathname === href;
