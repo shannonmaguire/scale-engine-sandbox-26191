@@ -13,6 +13,7 @@ import { ChatWidget } from "@/components/ChatWidget";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
+import { FeaturedCaseStudy } from "@/components/FeaturedCaseStudy";
 import { ArrowRight, CheckCircle, BarChart3, Target, Award, TrendingUp, Shield } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { useState } from "react";
@@ -188,6 +189,13 @@ const Home = () => {
               </ul>
             </div>
           </div>
+        </div>
+      </Section>
+
+      {/* Featured Case Study */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <FeaturedCaseStudy />
         </div>
       </Section>
 
