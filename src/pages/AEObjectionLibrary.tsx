@@ -9,30 +9,24 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import SEOHead from "@/components/SEOHead";
 import { objections, categoryLabels, type Objection } from "@/data/objections";
-
 const AEObjectionLibrary = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<Objection['category'] | 'all'>('all');
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const filteredObjections = objections.filter(obj => {
-    const matchesSearch = searchQuery === "" || 
-      obj.objection.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      obj.responseScript.toLowerCase().includes(searchQuery.toLowerCase());
-    
+    const matchesSearch = searchQuery === "" || obj.objection.toLowerCase().includes(searchQuery.toLowerCase()) || obj.responseScript.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || obj.category === selectedCategory;
-    
     return matchesSearch && matchesCategory;
   });
-
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text);
     toast({
       title: "Copied!",
-      description: `${type} copied to clipboard`,
+      description: `${type} copied to clipboard`
     });
   };
-
   const copyFullFramework = (objection: Objection) => {
     const fullText = `
 OBJECTION: ${objection.objection}
@@ -56,38 +50,38 @@ PERSONA ANGLES:
 • Executive: ${objection.fullFramework.personaAngles.executive}
 ` : ''}
     `.trim();
-
     copyToClipboard(fullText, "Full framework");
   };
-
-  const categories: Array<{ value: Objection['category'] | 'all'; label: string }> = [
-    { value: 'all', label: 'All Objections' },
-    { value: 'budget', label: categoryLabels.budget },
-    { value: 'internal', label: categoryLabels.internal },
-    { value: 'timing', label: categoryLabels.timing },
-    { value: 'technical', label: categoryLabels.technical },
-    { value: 'trust', label: categoryLabels.trust },
-  ];
-
-  return (
-    <>
-      <SEOHead
-        title="Complete Objection Response Library | AE Hub"
-        description="Battle-tested objection responses for Salesforce technical sales. 15+ scenarios with discovery questions, proof points, and next steps for closing complex deals."
-        keywords="sales objections, technical sales, salesforce objections, objection handling, sales responses"
-      />
+  const categories: Array<{
+    value: Objection['category'] | 'all';
+    label: string;
+  }> = [{
+    value: 'all',
+    label: 'All Objections'
+  }, {
+    value: 'budget',
+    label: categoryLabels.budget
+  }, {
+    value: 'internal',
+    label: categoryLabels.internal
+  }, {
+    value: 'timing',
+    label: categoryLabels.timing
+  }, {
+    value: 'technical',
+    label: categoryLabels.technical
+  }, {
+    value: 'trust',
+    label: categoryLabels.trust
+  }];
+  return <>
+      <SEOHead title="Complete Objection Response Library | AE Hub" description="Battle-tested objection responses for Salesforce technical sales. 15+ scenarios with discovery questions, proof points, and next steps for closing complex deals." keywords="sales objections, technical sales, salesforce objections, objection handling, sales responses" />
 
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
         <section className="py-16 md:py-20 border-b border-border">
           <div className="container mx-auto px-4 max-w-5xl">
-            <Link 
-              to="/ae-hub" 
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-accent-data mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to AE Hub
-            </Link>
+            
 
             <div className="space-y-6">
               <div className="system-status">OBJECTION LIBRARY</div>
@@ -102,26 +96,13 @@ PERSONA ANGLES:
               <div className="pt-6 space-y-4">
                 <div className="relative">
                   <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <Input
-                    placeholder="Search objections..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 h-12"
-                  />
+                  <Input placeholder="Search objections..." value={searchQuery} onChange={e => setSearchQuery(e.target.value)} className="pl-10 h-12" />
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {categories.map(cat => (
-                    <Button
-                      key={cat.value}
-                      variant={selectedCategory === cat.value ? "default" : "outline"}
-                      onClick={() => setSelectedCategory(cat.value)}
-                      size="sm"
-                      className={selectedCategory === cat.value ? "bg-accent-data hover:bg-accent-data/90" : "border-accent-data/30 text-accent-data hover:bg-accent-data/10"}
-                    >
+                  {categories.map(cat => <Button key={cat.value} variant={selectedCategory === cat.value ? "default" : "outline"} onClick={() => setSelectedCategory(cat.value)} size="sm" className={selectedCategory === cat.value ? "bg-accent-data hover:bg-accent-data/90" : "border-accent-data/30 text-accent-data hover:bg-accent-data/10"}>
                       {cat.label}
-                    </Button>
-                  ))}
+                    </Button>)}
                 </div>
               </div>
             </div>
@@ -132,13 +113,9 @@ PERSONA ANGLES:
         <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-4">
-              {filteredObjections.length === 0 ? (
-                <Card className="p-12 text-center border-accent-data/30">
+              {filteredObjections.length === 0 ? <Card className="p-12 text-center border-accent-data/30">
                   <p className="text-muted-foreground">No objections found matching your search.</p>
-                </Card>
-              ) : (
-                filteredObjections.map((objection) => (
-                  <Card key={objection.id} className="border-l-4 border-l-accent-data hover:border-accent-data/50 transition-colors">
+                </Card> : filteredObjections.map(objection => <Card key={objection.id} className="border-l-4 border-l-accent-data hover:border-accent-data/50 transition-colors">
                     <CardHeader>
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1">
@@ -149,12 +126,7 @@ PERSONA ANGLES:
                           </div>
                           <CardTitle className="text-xl">{objection.objection}</CardTitle>
                         </div>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => copyFullFramework(objection)}
-                          className="border-accent-data/30 text-accent-data hover:bg-accent-data/10"
-                        >
+                        <Button variant="outline" size="sm" onClick={() => copyFullFramework(objection)} className="border-accent-data/30 text-accent-data hover:bg-accent-data/10">
                           <Copy className="w-4 h-4 mr-2" />
                           Copy
                         </Button>
@@ -168,12 +140,7 @@ PERSONA ANGLES:
                           <h4 className="font-semibold text-sm uppercase tracking-wide text-accent-data">
                             Response Script
                           </h4>
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => copyToClipboard(objection.responseScript, "Response script")}
-                            className="hover:bg-accent-data/10"
-                          >
+                          <Button variant="ghost" size="sm" onClick={() => copyToClipboard(objection.responseScript, "Response script")} className="hover:bg-accent-data/10">
                             <Copy className="w-4 h-4" />
                           </Button>
                         </div>
@@ -195,12 +162,10 @@ PERSONA ANGLES:
                               Discovery Questions
                             </h4>
                             <ul className="space-y-2">
-                              {objection.fullFramework.discovery.map((question, idx) => (
-                                <li key={idx} className="flex items-start gap-3 text-sm">
+                              {objection.fullFramework.discovery.map((question, idx) => <li key={idx} className="flex items-start gap-3 text-sm">
                                   <span className="text-accent-data font-semibold flex-shrink-0">{idx + 1}.</span>
                                   <span className="flex-1">{question}</span>
-                                </li>
-                              ))}
+                                </li>)}
                             </ul>
                           </div>
 
@@ -210,12 +175,10 @@ PERSONA ANGLES:
                               Proof Points
                             </h4>
                             <ul className="space-y-2">
-                              {objection.fullFramework.proofPoints.map((point, idx) => (
-                                <li key={idx} className="flex items-start gap-3 text-sm">
+                              {objection.fullFramework.proofPoints.map((point, idx) => <li key={idx} className="flex items-start gap-3 text-sm">
                                   <span className="text-accent-data flex-shrink-0">•</span>
                                   <span className="flex-1">{point}</span>
-                                </li>
-                              ))}
+                                </li>)}
                             </ul>
                           </div>
 
@@ -230,8 +193,7 @@ PERSONA ANGLES:
                           </div>
 
                           {/* Persona Angles */}
-                          {objection.fullFramework.personaAngles && (
-                            <div>
+                          {objection.fullFramework.personaAngles && <div>
                               <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
                                 Persona-Specific Angles
                               </h4>
@@ -249,14 +211,11 @@ PERSONA ANGLES:
                                   <p className="text-sm">{objection.fullFramework.personaAngles.executive}</p>
                                 </div>
                               </div>
-                            </div>
-                          )}
+                            </div>}
                         </CollapsibleContent>
                       </Collapsible>
                     </CardContent>
-                  </Card>
-                ))
-              )}
+                  </Card>)}
             </div>
           </div>
         </section>
@@ -289,8 +248,6 @@ PERSONA ANGLES:
           </div>
         </section>
       </div>
-    </>
-  );
+    </>;
 };
-
 export default AEObjectionLibrary;
