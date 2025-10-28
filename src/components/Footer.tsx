@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 import cwtLogo from "@/assets/cwt-logo-white.svg";
 import { memo } from "react";
 const Footer = () => {
@@ -157,10 +157,19 @@ const Footer = () => {
             <h4 className="font-mono font-semibold text-sm uppercase tracking-wider mb-4 text-white">
               Contact
             </h4>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a href="mailto:hello@cwtstudio.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-mono text-sm">
                 <Mail className="h-3.5 w-3.5" />
-              hello@thecwtstudio.com
+                hello@thecwtstudio.com
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/cwt-studio/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-mono text-sm"
+              >
+                <Linkedin className="h-3.5 w-3.5" />
+                Follow on LinkedIn
               </a>
               <Button asChild size="sm" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
                 <Link to="/contact">
