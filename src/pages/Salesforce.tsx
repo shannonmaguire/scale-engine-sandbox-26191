@@ -96,6 +96,10 @@ const Salesforce = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Salesforce investment into predictable revenue. Assessment, sprint, optimization.
             </p>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm mb-6">
+              <Shield className="w-4 h-4 text-accent" />
+              <span className="text-muted-foreground">In partnership with <strong className="text-foreground">CloudRoute</strong> for enterprise-grade technical delivery</span>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
                 <Link to="/assessment">
@@ -210,9 +214,9 @@ const Salesforce = () => {
               <Shield className="w-4 h-4" />
               SALESFORCE EXPERTISE
             </div>
-            <h2 className="heading-section mb-6">Enterprise-Grade Salesforce Implementation</h2>
+            <h2 className="heading-section mb-6">Strategic Partnership Model</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We bring certified Salesforce expertise and proven frameworks to optimize your revenue operations
+              CWT Studio leads strategy and discovery. CloudRoute delivers certified Salesforce technical implementation. Together, we bring operator expertise with enterprise-grade technical authority.
             </p>
           </div>
 
@@ -227,7 +231,7 @@ const Salesforce = () => {
                     Certified Platform Knowledge
                   </h3>
                   <p className="text-muted-foreground">
-                    Deep Salesforce expertise with access to partner-level resources and enterprise support channels
+                    CloudRoute's certified Salesforce partnership brings enterprise-grade technical delivery with partner-level resources and support channels
                   </p>
                 </div>
               </div>
@@ -287,12 +291,19 @@ const Salesforce = () => {
               <strong>The Result:</strong> Operator-led revenue systems with certified Salesforce expertise. 
               We deliver the speed and pragmatism of a consultancy with enterprise-grade technical authority.
             </p>
-            <Button size="lg" variant="teal" asChild>
-              <Link to="/assessment">
-                Start Your Project
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="teal" asChild>
+                <Link to="/assessment">
+                  Start Your Project
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/salesforce/delivery">
+                  See Our Delivery Model
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </Section>

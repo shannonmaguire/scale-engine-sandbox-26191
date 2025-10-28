@@ -222,7 +222,7 @@ const SalesforcePartners = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span><strong>Ecosystem Credibility:</strong> Certified Salesforce Partner backing via CloudRoute</span>
+                  <span><strong>Ecosystem Credibility:</strong> Enterprise-grade delivery via our CloudRoute partnership (Certified Salesforce Partner with proven enterprise implementations)</span>
                 </li>
               </ul>
             </div>
