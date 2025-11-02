@@ -6,9 +6,6 @@ import SystemDiagram from "@/components/SystemDiagram";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
-import { useExitIntent } from "@/hooks/useExitIntent";
-import { ExitIntentPopup } from "@/components/ExitIntentPopup";
-import { SocialProof } from "@/components/SocialProof";
 import { ChatWidget } from "@/components/ChatWidget";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
@@ -16,7 +13,6 @@ import CookieBanner from "@/components/CookieBanner";
 import { FeaturedCaseStudy } from "@/components/FeaturedCaseStudy";
 import { ArrowRight, CheckCircle, BarChart3, Target, Award, TrendingUp, Shield } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
-import { useState } from "react";
 
 const Home = () => {
   // Performance monitoring
@@ -24,14 +20,6 @@ const Home = () => {
   
   // Track scroll depth for engagement
   useScrollDepth();
-  
-  // Exit intent popup state
-  const [showExitPopup, setShowExitPopup] = useState(false);
-  
-  useExitIntent({
-    enabled: true,
-    onExitIntent: () => setShowExitPopup(true),
-  });
 
   const services = [{
     title: "Assessment",
@@ -317,18 +305,6 @@ const Home = () => {
         </ConversionOptimizedButton>
       </Section>
 
-      {/* Exit Intent Popup */}
-      <ExitIntentPopup
-        isOpen={showExitPopup}
-        onClose={() => setShowExitPopup(false)}
-        title="Wait! Get Our Free Guide"
-        description="Join friends and clients getting our comprehensive revenue operations assessment framework."
-        ctaText="Send Me The Guide"
-      />
-      
-      {/* Social Proof Notifications */}
-      <SocialProof />
-      
       {/* Chat Widget */}
       <ChatWidget />
     </div>;
