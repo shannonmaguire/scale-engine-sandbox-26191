@@ -5,26 +5,14 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
-import { useExitIntent } from "@/hooks/useExitIntent";
-import { ExitIntentPopup } from "@/components/ExitIntentPopup";
-import { TrustBar } from "@/components/TrustBar";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Target, Zap, Linkedin, Shield } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
-import { useState } from "react";
-import shannonPhoto from "@/assets/shannon-founder.png";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 const About = () => {
-  // Performance monitoring
   usePerformanceMonitoring();
   useScrollDepth();
-  const [showExitPopup, setShowExitPopup] = useState(false);
-  useExitIntent({
-    enabled: true,
-    onExitIntent: () => setShowExitPopup(true)
-  });
   return <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead 
@@ -44,82 +32,34 @@ const About = () => {
       
       <Section>
         {/* Hero */}
-        <div className="text-center mb-20 max-w-3xl mx-auto">
-          <div className="system-status mb-8">
-            REVENUE LEADERSHIP
-          </div>
-          
-          <h1 className="heading-page mb-8">
-            We Install Backend Revenue Systems
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <h1 className="heading-page mb-6">
+            Backend Revenue Systems
           </h1>
-          <p className="text-description text-lg max-w-2xl mx-auto mb-10">
-            Revenue infrastructure that compounds through documented systems and repeatable execution. Working systems installed in 90 days because infrastructure determines whether growth compounds or collapses under its own weight.
+          <p className="text-lg text-muted-foreground mb-8">
+            We install revenue infrastructure for companies where broken systems cost real money. Fixed-scope implementations, working systems in 90 days.
           </p>
-          
-          <div className="flex gap-4 justify-center">
-            <ConversionOptimizedButton 
-              to="/assessment" 
-              ctaName="About Hero - Start Assessment" 
-              location="About Hero" 
-              size="lg"
-            >
-              Start Your Assessment
-            </ConversionOptimizedButton>
-            <ConversionOptimizedButton 
-              to="/proof" 
-              ctaName="About Hero - View Case Studies" 
-              location="About Hero" 
-              size="lg"
-              variant="outline"
-            >
-              View Case Studies
-            </ConversionOptimizedButton>
-          </div>
         </div>
 
-        {/* Shannon's Bio */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-br from-card to-card/50 border border-border rounded-xl p-12 shadow-lg hover:shadow-xl transition-shadow">
-            <div className="mb-6">
-              <h2 className="heading-subsection mb-2 text-foreground">Shannon Maguire</h2>
-              <p className="text-primary font-mono text-base font-semibold mb-4">Founder & Systems Architect</p>
-            </div>
+        {/* Shannon */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <div className="border border-border rounded-lg p-8">
+            <h2 className="text-2xl font-mono font-bold mb-2">Shannon Maguire</h2>
+            <p className="text-primary font-mono mb-6">Founder</p>
             
-            {/* Why I Built This */}
-            <div className="bg-warm/10 border-l-4 border-warm p-6 rounded-r-lg mb-8">
-              <h3 className="font-mono font-semibold text-sm uppercase tracking-wide text-warm mb-3">Why I Built This</h3>
-              <p className="text-foreground leading-relaxed text-sm">
-                After years watching brilliant founders get buried under broken infrastructure, the pattern became obvious: growth stalls when backend systems can't keep pace. Most consultancies sell strategy decks. We install working systems. The business exists because infrastructure determines whether revenue compounds or collapses.
-              </p>
-            </div>
+            <p className="text-foreground leading-relaxed mb-6">
+              Salesforce-certified architect specializing in revenue systems for legal, compliance, cybersecurity, and B2B SaaS. Builds infrastructure that scales without breaking.
+            </p>
             
-            <div className="space-y-5 mb-8">
-              <p className="text-foreground leading-relaxed text-base">
-                Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure directly translates to revenue loss. Documented systems enable founders to scale without breaking what already functions.
-              </p>
-              
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Salesforce Certified</span>
-                <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Systems Integration</span>
-                <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Revenue Operations</span>
-              </div>
-            </div>
-            
-            <Button 
-              asChild 
-              variant="outline" 
-              size="default" 
-              className="group transition-all hover:shadow-md"
-            >
+            <Button asChild variant="outline" size="sm">
               <a 
                 href="https://www.linkedin.com/in/shanmag/" 
                 target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Connect with Shannon Maguire on LinkedIn"
+                rel="noopener noreferrer"
                 className="flex items-center"
               >
-                <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" aria-hidden="true" />
-                <span>Connect on LinkedIn</span>
+                <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" />
+                LinkedIn
               </a>
             </Button>
           </div>
@@ -128,204 +68,94 @@ const About = () => {
       </Section>
 
       <Section>
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="heading-section mb-6">Why CWT Studio</h2>
-            <p className="text-description text-lg max-w-2xl mx-auto">
-              Enterprise-grade systems without enterprise overhead. Senior architect executes directly—no layers, no juniors, no drawn-out timelines.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* What You Get */}
-            <div className="bg-card border-2 border-border rounded-lg p-8 hover:border-primary/30 transition-all">
-              <h3 className="heading-subsection mb-6 text-primary">What You Get</h3>
-              <ul className="space-y-4 text-foreground">
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
-                  <span>Proven frameworks tested at enterprise scale</span>
+        {/* How We Work */}
+        <div className="max-w-3xl mx-auto">
+          <h2 className="heading-subsection mb-6">How We Work</h2>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="border border-border rounded-lg p-6">
+              <h3 className="font-mono font-semibold mb-4">What We Do</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Audit current systems and find what breaks under load</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
-                  <span>Salesforce-certified expertise with documented methodologies</span>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Install fixes in 90-day cycles with measurable outcomes</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
-                  <span>Strategic executive partnership on revenue decisions</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
-                  <span>90-day delivery cycles with fixed pricing</span>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Work directly with founders—no account managers</span>
                 </li>
               </ul>
             </div>
-
-            {/* What You Avoid */}
-            <div className="bg-card border-2 border-border rounded-lg p-8 hover:border-primary/30 transition-all">
-              <h3 className="heading-subsection mb-6 text-muted-foreground">What You Avoid</h3>
-              <ul className="space-y-4 text-muted-foreground">
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
-                  <span>Junior associates learning on your budget</span>
+            
+            <div className="border border-border rounded-lg p-6">
+              <h3 className="font-mono font-semibold mb-4">What We Don't Do</h3>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-muted-foreground mt-1">•</span>
+                  <span>18-month transformation roadmaps</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
-                  <span>Account managers creating communication layers</span>
+                <li className="flex items-start gap-2">
+                  <span className="text-muted-foreground mt-1">•</span>
+                  <span>Strategy decks without implementation</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
-                  <span>Six-figure engagements stretched over 18 months</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0 mt-2"></span>
-                  <span>Strategic decisions disconnected from execution</span>
+                <li className="flex items-start gap-2">
+                  <span className="text-muted-foreground mt-1">•</span>
+                  <span>Generic frameworks that ignore your constraints</span>
                 </li>
               </ul>
             </div>
           </div>
-
-          <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center">
-            <p className="text-lg text-foreground leading-relaxed max-w-3xl mx-auto">
-              The person making strategic decisions is the same person building your systems. No translation layers. No delegation to juniors. Systems go live in weeks because the architect executes directly.
-            </p>
-          </div>
         </div>
       </Section>
 
-
-      {/* Who We're For + Working with Us */}
-      <Section>
-        <div className="max-w-5xl mx-auto space-y-20">
-          {/* Who We're For */}
-          <div>
-            <div className="text-center mb-12">
-              <h2 className="heading-section mb-6 text-foreground">Who We're For</h2>
-                <p className="text-description text-lg max-w-2xl mx-auto">
-                  We work with operators who need systems installed within weeks, where execution determines value.
-                </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <StandardCard className="bg-gradient-to-br from-card to-card/50 border-2 hover:border-primary/30 transition-all">
-                <div className="space-y-6">
-                  <h3 className="heading-subsection text-primary">You're a Fit If</h3>
-                  <ul className="space-y-4 text-foreground">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <span>Revenue is growing but infrastructure is breaking</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <span>You need fixes in weeks, not quarters</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <span>Salesforce exists but isn't delivering leverage</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                      <span>You value execution over presentations</span>
-                    </li>
-                  </ul>
-                </div>
-              </StandardCard>
-              
-              <StandardCard className="border-2 hover:border-muted transition-all">
-                <div className="space-y-6">
-                  <h3 className="heading-subsection text-muted-foreground">You're Not a Fit If</h3>
-                  <ul className="space-y-4 text-muted-foreground">
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                      <span>You need 18-month transformation roadmaps</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                      <span>You want strategy consulting without implementation</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                      <span>Systems are working — you're just optimizing</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-                      <span>You need a full-time employee, not a sprint partner</span>
-                    </li>
-                  </ul>
-                </div>
-              </StandardCard>
-            </div>
-            
-            <div className="mt-10 text-center">
-              <p className="text-muted-foreground font-mono text-sm">
-                Still not sure? Check our <Link to="/proof" className="text-primary hover:underline font-semibold">case studies</Link> to see if your situation matches.
-              </p>
-            </div>
-          </div>
-
-          {/* Working with Us */}
-          <div>
-            <div className="bg-gradient-to-br from-card to-card/50 border-2 border-border rounded-xl p-10 shadow-lg">
-              <h2 className="heading-section mb-10 text-foreground">Working with Us</h2>
-              
-              <p className="text-foreground leading-relaxed mb-8 text-lg">
-                Every company operates under different constraints regarding stage, timeline, and existing infrastructure. Forcing wholesale replacement creates more problems than it solves, which means improvements must function within your current reality. Our methods adapt to your operations rather than demanding you rebuild around a standardized framework.
-              </p>
-              
-              <div className="grid md:grid-cols-2 gap-10">
-                <div>
-                <h3 className="font-mono font-bold text-base mb-5 text-foreground">What We Do</h3>
-                  <ul className="space-y-3 text-foreground text-sm leading-6">
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>Assess current infrastructure and diagnose where systems break under load</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>Work within existing tools rather than forcing platform migrations</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>Install fixes in 90-day cycles that deliver measurable results</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>Partner at executive level to align technical decisions with revenue goals</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                <h3 className="font-mono font-bold text-base mb-5 text-foreground">What We Don't Do</h3>
-                  <ul className="space-y-3 text-foreground text-sm leading-6">
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
-                      <span>Force overhauls when targeted fixes would deliver faster ROI</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
-                      <span>Deliver discovery reports without implementation plans</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
-                      <span>Apply generic frameworks that ignore company-specific constraints</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-muted-foreground flex-shrink-0"></span>
-                      <span>Over-architect solutions before validating assumptions under real load</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-      
-      {/* Trust Bar */}
+      {/* Who This Is For */}
       <Section variant="muted">
-        <TrustBar />
+        <div className="max-w-3xl mx-auto">
+          <h2 className="heading-subsection mb-8 text-center">You're a Fit If</h2>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="border-l-4 border-primary bg-card rounded-r-lg p-6">
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Revenue growing but systems breaking</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Need fixes in weeks, not quarters</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Salesforce exists but isn't delivering value</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="border-l-4 border-muted-foreground bg-card rounded-r-lg p-6">
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1">✗</span>
+                  <span>Want 18-month transformation plans</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1">✗</span>
+                  <span>Need strategy consulting only</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1">✗</span>
+                  <span>Systems working—just optimizing</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </Section>
       
-      {/* CTA Section */}
+      {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
           <div className="system-status mb-6">
@@ -356,9 +186,6 @@ const About = () => {
           </div>
         </div>
       </Section>
-      
-      {/* Exit Intent Popup */}
-      <ExitIntentPopup isOpen={showExitPopup} onClose={() => setShowExitPopup(false)} title="Get Our Operating Principles Guide" description="See real-world applications of Precision, Ownership, Speed, and Craft in Revenue Infrastructure implementations." />
     </div>;
 };
 export default About;
