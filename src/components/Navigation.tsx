@@ -12,8 +12,14 @@ const Navigation = () => {
     label: "Home",
     href: "/"
   }, {
+    label: "Assessment",
+    href: "/assessment"
+  }, {
     label: "Proof",
     href: "/proof"
+  }, {
+    label: "Blog",
+    href: "/blog"
   }, {
     label: "Resources",
     href: "/resources"
@@ -22,10 +28,6 @@ const Navigation = () => {
     href: "/about"
   }];
   const solutionsLinks = [{
-    label: "Assessment (Start Here)",
-    href: "/assessment",
-    highlight: true
-  }, {
     label: "Sprint",
     href: "/sprint"
   }, {
@@ -79,9 +81,7 @@ const Navigation = () => {
                     <DropdownMenuItem asChild>
                       <Link 
                         to={link.href} 
-                        className={`w-full font-mono text-sm font-medium !text-white transition-colors ${
-                          link.highlight ? 'bg-primary/20 font-bold' : ''
-                        }`}
+                        className="w-full font-mono text-sm font-medium !text-white transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -95,7 +95,7 @@ const Navigation = () => {
           {/* Primary CTA - Console Button */}
           <div className="hidden lg:block">
             <Button asChild className="btn-console">
-              <Link to="/contact">Get Started</Link>
+              <Link to="/assessment">Book Assessment</Link>
             </Button>
           </div>
 
@@ -129,7 +129,7 @@ const Navigation = () => {
                       to={link.href} 
                       className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
                         isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
-                      } ${link.highlight ? 'bg-primary/20 !text-white font-bold' : ''}`} 
+                      }`} 
                       onClick={() => setIsOpen(false)}
                     >
                       {link.label}
@@ -140,7 +140,7 @@ const Navigation = () => {
               
               <div className="px-1 pt-2">
                 <Button asChild className="btn-console w-full">
-                  <Link to="/contact">Get Started</Link>
+                  <Link to="/assessment">Book Assessment</Link>
                 </Button>
               </div>
             </div>

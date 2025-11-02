@@ -92,6 +92,14 @@ const AppContent = () => {
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/self-assessment" element={<SelfAssessment />} />
             <Route path="/assessment-results" element={<AssessmentResults />} />
+            
+            {/* Common typo redirects */}
+            <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
+            <Route path="/salesforce-partner" element={<Navigate to="/salesforce/partners" replace />} />
+            <Route path="/salesforce-partners" element={<Navigate to="/salesforce/partners" replace />} />
+            <Route path="/fractional-ops" element={<Navigate to="/fractional" replace />} />
+            <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
+            
             <Route path="/sprint" element={<Sprint />} />
             <Route path="/salesforce" element={<Salesforce />} />
             <Route path="/salesforce/partners" element={<SalesforcePartners />} />

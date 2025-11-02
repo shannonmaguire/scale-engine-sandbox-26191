@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { StandardCard } from "@/components/ui/standard-card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Download, FileText, Calculator, CheckSquare, Map, FileQuestion, ArrowRight, CheckCircle } from "lucide-react";
@@ -80,6 +81,7 @@ const resources: Resource[] = [
 const Resources = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const handleDownloadClick = (resource: Resource) => {
     // All resources now require email
@@ -91,6 +93,14 @@ const Resources = () => {
     setSelectedResource(resource);
     setModalOpen(true);
   };
+
+  // Get unique categories
+  const categories = ["all", ...Array.from(new Set(resources.map(r => r.category)))];
+  
+  // Filter resources by category
+  const filteredResources = selectedCategory === "all" 
+    ? resources 
+    : resources.filter(r => r.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-background">
@@ -132,11 +142,26 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Resource Grid */}
+      {/* Resource Grid with Category Tabs */}
       <section className="section-spacing px-6">
         <div className="max-w-7xl mx-auto">
+          {/* Category Tabs */}
+          <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-8">
+            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-muted/30 p-2">
+              {categories.map((category) => (
+                <TabsTrigger 
+                  key={category} 
+                  value={category}
+                  className="font-mono text-sm capitalize data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
+                  {category === "all" ? "All Resources" : category}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </Tabs>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gutter-standard">
-            {resources.map((resource) => {
+            {filteredResources.map((resource) => {
               const Icon = resource.icon;
               return (
                 <StandardCard key={resource.id} className="flex flex-col h-full">

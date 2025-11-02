@@ -142,7 +142,7 @@ const Assessment = () => {
             className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors group"
           >
             <ClipboardCheck className="w-4 h-4 mr-2" />
-            <span>Not ready yet? <span className="underline group-hover:no-underline">Try free self-assessment</span></span>
+            <span>Want to self-assess first? <span className="underline group-hover:no-underline">Try our free 5-minute technical maturity checklist</span></span>
             <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
           </Link>
         </div>
