@@ -80,50 +80,40 @@ const About = () => {
         {/* Shannon's Bio */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-card to-card/50 border border-border rounded-xl p-12 shadow-lg hover:shadow-xl transition-shadow">
-            <div className="flex flex-col md:flex-row gap-12 items-start">
-              <div className="flex-shrink-0 mx-auto md:mx-0">
-                <Avatar className="w-44 h-44 border-4 border-primary/20 shadow-lg ring-4 ring-primary/5">
-                  <AvatarImage src={shannonPhoto} alt="Shannon Maguire, Founder and Systems Architect" />
-                  <AvatarFallback>SM</AvatarFallback>
-                </Avatar>
-              </div>
-              <div className="flex-1">
-                <div className="mb-6">
-                  <h2 className="heading-subsection mb-2 text-foreground">Shannon Maguire</h2>
-                  <p className="text-primary font-mono text-base font-semibold mb-4">Founder & Systems Architect</p>
-                </div>
-                
-                <div className="space-y-5 mb-8">
-                  <p className="text-foreground leading-relaxed text-base">
+            <div className="mb-6">
+              <h2 className="heading-subsection mb-2 text-foreground">Shannon Maguire</h2>
+              <p className="text-primary font-mono text-base font-semibold mb-4">Founder & Systems Architect</p>
+            </div>
+            
+            <div className="space-y-5 mb-8">
+              <p className="text-foreground leading-relaxed text-base">
                 Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure directly translates to revenue loss. Documented systems enable founders to scale without breaking what already functions.
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Salesforce Certified</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Systems Integration</span>
-                    <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Revenue Operations</span>
-                  </div>
-                </div>
-                
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  size="default" 
-                  className="group transition-all hover:shadow-md"
-                >
-                  <a 
-                    href="https://www.linkedin.com/in/shanmag/" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="Connect with Shannon Maguire on LinkedIn"
-                    className="flex items-center"
-                  >
-                    <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" aria-hidden="true" />
-                    <span>Connect on LinkedIn</span>
-                  </a>
-                </Button>
+              </p>
+              
+              <div className="flex flex-wrap gap-3">
+                <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Salesforce Certified</span>
+                <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Systems Integration</span>
+                <span className="px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-full border border-primary/20">Revenue Operations</span>
               </div>
             </div>
+            
+            <Button 
+              asChild 
+              variant="outline" 
+              size="default" 
+              className="group transition-all hover:shadow-md"
+            >
+              <a 
+                href="https://www.linkedin.com/in/shanmag/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Connect with Shannon Maguire on LinkedIn"
+                className="flex items-center"
+              >
+                <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" aria-hidden="true" />
+                <span>Connect on LinkedIn</span>
+              </a>
+            </Button>
           </div>
         </div>
 
