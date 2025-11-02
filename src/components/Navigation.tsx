@@ -66,10 +66,10 @@ const Navigation = () => {
                 {link.label}
               </Link>)}
             
-            {/* Solutions Dropdown */}
+            {/* Services Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className={`text-sm font-mono font-medium transition-colors hover:text-accent flex items-center gap-1 ${isSolutionsActive() ? "!text-white font-semibold" : "!text-white"}`}>
-                Solutions
+                Services
                 <ChevronDown size={14} className="!text-white" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56 bg-authority border-white/20 z-[100]">
@@ -121,7 +121,7 @@ const Navigation = () => {
               
               {/* Solutions section in mobile */}
               <div className="px-1 py-2 space-y-2">
-                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Solutions</div>
+                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Services</div>
                 {solutionsLinks.map((link, index) => (
                   <div key={link.href}>
                     {link.separator && index > 0 && <div className="h-px bg-white/10 my-2 mx-3" />}

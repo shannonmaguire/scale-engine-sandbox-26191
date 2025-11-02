@@ -105,6 +105,13 @@ const Home = () => {
       <Section className="min-h-[90vh] flex items-center py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div>
+            {/* Stat Line - Immediate Proof */}
+            <div className="inline-flex items-center gap-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+              <span className="font-mono text-sm text-primary font-semibold">42 systems delivered</span>
+              <span className="w-1 h-1 bg-primary/40 rounded-full"></span>
+              <span className="font-mono text-sm text-primary font-semibold">90-day average</span>
+            </div>
+            
             <h1 className="heading-page mb-4">
               The Competitive Advantage Is the Backend
             </h1>
@@ -113,7 +120,8 @@ const Home = () => {
               Install backend systems that scale without founder dependency. Documented infrastructure, repeatable execution, measurable outcomes in 90 days.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* CTA Hierarchy - Start Assessment is Primary */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <ConversionOptimizedButton
                 to="/assessment"
                 ctaName="Hero - Start Your Assessment"
@@ -123,15 +131,25 @@ const Home = () => {
                 Start Your Assessment
               </ConversionOptimizedButton>
               <ConversionOptimizedButton
-                to="/sample-report"
-                ctaName="Hero - View Sample Report"
+                to="/proof"
+                ctaName="Hero - View Proof"
                 location="Homepage Hero"
                 variant="outline"
                 showArrow={false}
                 size="lg"
               >
-                Sample Report
+                View Proof
               </ConversionOptimizedButton>
+            </div>
+            
+            {/* Social Proof Bar - Rotating Client Quotes */}
+            <div className="border-l-2 border-primary/30 pl-4 py-2">
+              <p className="text-sm text-muted-foreground italic mb-2">
+                "Revenue infrastructure built in 8 weeks. Manual pipeline updates went from 20 hours to zero."
+              </p>
+              <p className="text-xs text-primary font-mono font-semibold">
+                — VP Revenue, Cybersecurity SaaS ($4.2M ARR)
+              </p>
             </div>
           </div>
           
@@ -201,7 +219,14 @@ const Home = () => {
 
       {/* Services */}
       <Section variant="muted">
-        <h2 className="heading-section mb-8 text-left">How We Work</h2>
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="heading-section text-left">How We Work</h2>
+          <Button asChild variant="ghost" size="sm">
+            <Link to="/resources" className="font-mono text-sm text-primary hover:text-primary/80">
+              Browse Resources →
+            </Link>
+          </Button>
+        </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
@@ -224,7 +249,7 @@ const Home = () => {
               
               <div className="flex-grow" />
               
-              <Button asChild className="w-full" size="sm">
+              <Button asChild className="w-full" size="sm" variant={index === 0 ? "default" : "outline"}>
                 <Link to={service.link}>{service.cta}</Link>
               </Button>
             </div>

@@ -85,6 +85,14 @@ const About = () => {
               <p className="text-primary font-mono text-base font-semibold mb-4">Founder & Systems Architect</p>
             </div>
             
+            {/* Why I Built This */}
+            <div className="bg-warm/10 border-l-4 border-warm p-6 rounded-r-lg mb-8">
+              <h3 className="font-mono font-semibold text-sm uppercase tracking-wide text-warm mb-3">Why I Built This</h3>
+              <p className="text-foreground leading-relaxed text-sm">
+                After years watching brilliant founders get buried under broken infrastructure, the pattern became obvious: growth stalls when backend systems can't keep pace. Most consultancies sell strategy decks. We install working systems. The business exists because infrastructure determines whether revenue compounds or collapses.
+              </p>
+            </div>
+            
             <div className="space-y-5 mb-8">
               <p className="text-foreground leading-relaxed text-base">
                 Shannon architects backend revenue systems for high-trust industries where precision determines outcomes. Her work spans legal, compliance, cybersecurity, and B2B SaaS—sectors where infrastructure failure directly translates to revenue loss. Documented systems enable founders to scale without breaking what already functions.
