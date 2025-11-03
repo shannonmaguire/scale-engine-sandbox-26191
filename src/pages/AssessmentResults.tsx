@@ -1,11 +1,12 @@
 import { useLocation, useNavigate, Navigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { CheckCircle2, AlertCircle, XCircle, Printer, ArrowLeft, Download } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Badge } from "@/components/ui/badge";
+import { supabase } from "@/integrations/supabase/client";
 
 interface CategoryData {
   id: string;
@@ -20,19 +21,21 @@ interface ResultsData {
   checklistState: Record<string, Record<string, "yes" | "partial" | "no" | null>>;
   overallProgress: number;
   answerCounts: { yes: number; partial: number; no: number; unanswered: number };
+  email?: string;
 }
 
 const AssessmentResults = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const resultsData = location.state as ResultsData;
+  const [saved, setSaved] = useState(false);
 
   // Redirect if no data
   if (!resultsData) {
     return <Navigate to="/self-assessment" replace />;
   }
 
-  const { checklistId, title, categories, checklistState, overallProgress, answerCounts } = resultsData;
+  const { checklistId, title, categories, checklistState, overallProgress, answerCounts, email } = resultsData;
 
   useEffect(() => {
     // Track page view
@@ -43,7 +46,35 @@ const AssessmentResults = () => {
         page_path: window.location.pathname,
       });
     }
-  }, []);
+
+    // Save to database if email provided and not already saved
+    const saveAssessment = async () => {
+      if (email && !saved) {
+        try {
+          const { error } = await supabase.from('assessments').insert({
+            email,
+            checklist_id: checklistId,
+            checklist_title: title,
+            overall_score: overallProgress,
+            answer_counts: answerCounts,
+            checklist_state: checklistState,
+            user_agent: navigator.userAgent,
+            referrer: document.referrer
+          });
+
+          if (error) {
+            console.error('Error saving assessment:', error);
+          } else {
+            setSaved(true);
+          }
+        } catch (error) {
+          console.error('Error saving assessment:', error);
+        }
+      }
+    };
+
+    saveAssessment();
+  }, [email, saved, checklistId, title, overallProgress, answerCounts, checklistState]);
 
   const handlePrint = () => {
     window.print();

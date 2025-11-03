@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 import { trackEvent } from "@/hooks/usePageTracking";
+import { EmailCaptureModal } from "./EmailCaptureModal";
 
 interface LiveScorePanelProps {
   checklistId: string;
@@ -20,15 +21,32 @@ export const LiveScorePanel = ({
   title,
   categories
 }: LiveScorePanelProps) => {
-  const { checklistState, getProgress, resetChecklist, getUnansweredCount, getAnswerCounts } = useChecklist();
+  const { checklistState, getProgress, resetChecklist, getUnansweredCount, getAnswerCounts, setEmail, getEmail } = useChecklist();
   const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const [emailCaptured, setEmailCaptured] = useState(false);
 
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
   const overallProgress = getProgress(checklistId, totalItems);
   const unansweredCount = getUnansweredCount(checklistId, totalItems);
   const answerCounts = getAnswerCounts(checklistId);
   const answeredItems = totalItems - unansweredCount;
+
+  // Check if email is already captured
+  useEffect(() => {
+    const existingEmail = getEmail(checklistId);
+    if (existingEmail) {
+      setEmailCaptured(true);
+    }
+  }, [checklistId, getEmail]);
+
+  // Show email modal after 10 questions answered
+  useEffect(() => {
+    if (answeredItems >= 10 && !emailCaptured && !getEmail(checklistId)) {
+      setShowEmailModal(true);
+    }
+  }, [answeredItems, emailCaptured, checklistId, getEmail]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +55,20 @@ export const LiveScorePanel = ({
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleEmailSubmit = (email: string) => {
+    setEmail(checklistId, email);
+    setEmailCaptured(true);
+    setShowEmailModal(false);
+    toast.success("Email saved! Continue your assessment.");
+    trackEvent('assessment_email_captured', { checklistId, email });
+  };
+
+  const handleEmailSkip = () => {
+    setShowEmailModal(false);
+    toast.info("You can still complete the assessment.");
+    trackEvent('assessment_email_skipped', { checklistId });
+  };
 
   const handleViewResults = () => {
     trackEvent("assessment_results_view", { checklistId, score: overallProgress });
@@ -48,7 +80,8 @@ export const LiveScorePanel = ({
         categories,
         checklistState,
         overallProgress,
-        answerCounts
+        answerCounts,
+        email: getEmail(checklistId)
       }
     });
   };
@@ -56,6 +89,7 @@ export const LiveScorePanel = ({
   const handleReset = () => {
     if (confirm("Are you sure you want to reset your assessment? This cannot be undone.")) {
       resetChecklist(checklistId);
+      setEmailCaptured(false);
       toast.success("Assessment reset");
       trackEvent("assessment_reset", { checklistId });
     }
@@ -96,13 +130,20 @@ export const LiveScorePanel = ({
   const Icon = insight.icon;
 
   return (
-    <div
-      className={cn(
-        "transition-all duration-200",
-        isSticky && "lg:sticky lg:top-6"
-      )}
-    >
-      <div className="bg-card border-2 border-border rounded-lg p-6 space-y-4">
+    <>
+      <EmailCaptureModal
+        open={showEmailModal}
+        onEmailSubmit={handleEmailSubmit}
+        onSkip={handleEmailSkip}
+      />
+      
+      <div
+        className={cn(
+          "transition-all duration-200",
+          isSticky && "lg:sticky lg:top-6"
+        )}
+      >
+        <div className="bg-card border-2 border-border rounded-lg p-6 space-y-4">
         {/* Header */}
         <div className="text-center space-y-2">
           <div className="text-xs font-mono uppercase tracking-wider text-muted-foreground">
@@ -173,7 +214,8 @@ export const LiveScorePanel = ({
             </p>
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };

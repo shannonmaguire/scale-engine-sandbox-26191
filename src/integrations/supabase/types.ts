@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessments: {
+        Row: {
+          answer_counts: Json
+          checklist_id: string
+          checklist_state: Json
+          checklist_title: string
+          completed_at: string
+          email: string
+          id: string
+          overall_score: number
+          referrer: string | null
+          user_agent: string | null
+        }
+        Insert: {
+          answer_counts: Json
+          checklist_id: string
+          checklist_state: Json
+          checklist_title: string
+          completed_at?: string
+          email: string
+          id?: string
+          overall_score: number
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Update: {
+          answer_counts?: Json
+          checklist_id?: string
+          checklist_state?: Json
+          checklist_title?: string
+          completed_at?: string
+          email?: string
+          id?: string
+          overall_score?: number
+          referrer?: string | null
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

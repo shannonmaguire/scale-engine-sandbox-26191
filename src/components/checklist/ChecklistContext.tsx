@@ -8,9 +8,16 @@ interface ChecklistState {
   };
 }
 
+interface ChecklistEmails {
+  [checklistId: string]: string;
+}
+
 interface ChecklistContextType {
   checklistState: ChecklistState;
+  checklistEmails: ChecklistEmails;
   setAnswer: (checklistId: string, itemId: string, value: AssessmentAnswer) => void;
+  setEmail: (checklistId: string, email: string) => void;
+  getEmail: (checklistId: string) => string | null;
   toggleItem: (checklistId: string, itemId: string) => void; // Deprecated, kept for backwards compatibility
   resetChecklist: (checklistId: string) => void;
   getProgress: (checklistId: string, totalItems: number) => number;
@@ -26,6 +33,11 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
     return saved ? JSON.parse(saved) : {};
   });
 
+  const [checklistEmails, setChecklistEmails] = useState<ChecklistEmails>(() => {
+    const saved = localStorage.getItem('cwt-checklist-emails');
+    return saved ? JSON.parse(saved) : {};
+  });
+
   useEffect(() => {
     const handler = setTimeout(() => {
       localStorage.setItem('cwt-checklists', JSON.stringify(checklistState));
@@ -33,6 +45,14 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     return () => clearTimeout(handler);
   }, [checklistState]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      localStorage.setItem('cwt-checklist-emails', JSON.stringify(checklistEmails));
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [checklistEmails]);
 
   const setAnswer = (checklistId: string, itemId: string, value: AssessmentAnswer) => {
     setChecklistState(prev => ({
@@ -42,6 +62,17 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
         [itemId]: value
       }
     }));
+  };
+
+  const setEmail = (checklistId: string, email: string) => {
+    setChecklistEmails(prev => ({
+      ...prev,
+      [checklistId]: email
+    }));
+  };
+
+  const getEmail = (checklistId: string): string | null => {
+    return checklistEmails[checklistId] || null;
   };
 
   // Deprecated: kept for backwards compatibility with old checkbox-based checklists
@@ -61,6 +92,11 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
 
   const resetChecklist = (checklistId: string) => {
     setChecklistState(prev => {
+      const newState = { ...prev };
+      delete newState[checklistId];
+      return newState;
+    });
+    setChecklistEmails(prev => {
       const newState = { ...prev };
       delete newState[checklistId];
       return newState;
@@ -96,8 +132,11 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <ChecklistContext.Provider value={{ 
-      checklistState, 
+      checklistState,
+      checklistEmails,
       setAnswer,
+      setEmail,
+      getEmail,
       toggleItem, 
       resetChecklist, 
       getProgress, 
