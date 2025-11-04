@@ -23,7 +23,7 @@ const resources: Resource[] = [
   {
     id: "service-selection-guide",
     title: "Service Selection Guide",
-    description: "Match your revenue maturity stage to the right CWT Studio service—Assessment, Sprint, or Fractional Ops. Clear decision framework for choosing your next engagement.",
+    description: "Revenue maturity mapping to CWT Studio service tier: Assessment, Sprint, Fractional Ops. Decision framework for engagement selection.",
     icon: Map,
     category: "Planning",
     downloadUrl: "/pdfs/service-selection-guide.pdf"
@@ -31,7 +31,7 @@ const resources: Resource[] = [
   {
     id: "roi-calculator",
     title: "ROI Calculator",
-    description: "Calculate how Salesforce cleanup saves pipeline risk over 12 months. Input your current metrics, get projected ROI with cost/benefit breakdown.",
+    description: "Salesforce remediation ROI projection over 12 months. Metric input produces cost/benefit analysis.",
     icon: Calculator,
     category: "Financial",
     downloadUrl: "/pdfs/roi-calculator.pdf"
@@ -39,7 +39,7 @@ const resources: Resource[] = [
   {
     id: "technical-assessment-framework",
     title: "Technical Assessment Framework",
-    description: "Our 6-dimension audit framework (Data Quality, Automation, Integration, Governance, Reporting, Adoption) for revenue system assessments. Self-score in 15 minutes.",
+    description: "6-dimension audit framework: Data Quality, Automation, Integration, Governance, Reporting, Adoption. 15-minute self-assessment protocol.",
     icon: CheckSquare,
     category: "Assessment",
     downloadUrl: "/pdfs/technical-assessment-framework.pdf"
@@ -47,7 +47,7 @@ const resources: Resource[] = [
   {
     id: "90-day-roadmap-template",
     title: "90-Day Roadmap Template",
-    description: "Turn assessment findings into executable sprints. Break system installation into weekly milestones with clear deliverables, dependencies, and go/no-go decision points.",
+    description: "Assessment findings structured into sprint execution. System installation decomposed to weekly milestones with deliverables, dependencies, decision checkpoints.",
     icon: FileText,
     category: "Planning",
     downloadUrl: "/pdfs/90-day-roadmap-template.pdf"
@@ -55,7 +55,7 @@ const resources: Resource[] = [
   {
     id: "discovery-questions-library",
     title: "Discovery Questions Library",
-    description: "30+ proven questions that uncover technical debt in prospect deals. Organized by deal stage and objection type—helps AEs qualify Salesforce opportunities.",
+    description: "30+ technical debt discovery questions for prospect qualification. Organized by deal stage and objection type for Salesforce opportunity assessment.",
     icon: FileQuestion,
     category: "Sales Enablement",
     downloadUrl: "/pdfs/discovery-questions-library.pdf"
@@ -63,7 +63,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
+    description: "47-point pre-project audit: content, assets, integrations, stakeholder alignment. Scope boundary enforcement protocol.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -71,7 +71,7 @@ const resources: Resource[] = [
   {
     id: "vendor-handoff-sop",
     title: "Vendor Handoff SOP",
-    description: "Take full ownership of your web infrastructure from any vendor. Step-by-step SOP for domain, hosting, CMS, analytics, and CRM transfer—eliminate ongoing vendor dependency.",
+    description: "Web infrastructure ownership transfer protocol. SOP covers domain, hosting, CMS, analytics, CRM migration for vendor independence.",
     icon: FileText,
     category: "Operations",
     downloadUrl: "/pdfs/vendor-handoff-sop.pdf"
@@ -130,14 +130,14 @@ const Resources = () => {
             </div>
           </div>
           <h1 className="heading-page text-primary mb-6">
-            Battle-Tested Frameworks
+            Production Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl mb-4">
-            The same tools we use in our revenue operations assessments and sprint engagements. All resources unlock instantly with your email.
+            Frameworks deployed in revenue operations assessments and sprint engagements. Email-gated access.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Used by RevOps teams at 100+ B2B companies</span>
+            <span>Deployed across 100+ B2B revenue organizations</span>
           </div>
         </div>
       </section>
@@ -203,7 +203,7 @@ const Resources = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="heading-subsection text-foreground mb-4">
-              Used By Revenue Leaders Who Demand Results
+              Deployed in Production Revenue Operations
             </h2>
           </div>
           <div className="bg-card border-2 border-primary/20 rounded-lg p-8">
@@ -230,10 +230,10 @@ const Resources = () => {
             FOR ACCOUNT EXECUTIVES
           </div>
           <h2 className="heading-section text-foreground mb-6">
-            Selling Salesforce Services?
+            Salesforce Services Sales Enablement
           </h2>
           <p className="text-description text-muted-foreground mb-8">
-            If you're an AE working Salesforce deals, we have dedicated tools, playbooks, and technical support in the AE Hub.
+            AE-specific tools, playbooks, and technical support for Salesforce deal qualification available in AE Hub.
           </p>
           <Button asChild size="lg">
             <Link to="/ae-hub">
@@ -248,10 +248,10 @@ const Resources = () => {
       <section className="section-spacing px-6 bg-card">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="heading-section text-foreground mb-6">
-            These Resources Answer "What's Broken?"
+            Resource Function: Gap Identification
           </h2>
           <p className="text-description text-muted-foreground mb-8">
-            To answer "How do we fix it?"—book an Assessment. We audit your infrastructure, benchmark against peers, and design a 90-day roadmap with implementation sequence.
+            Assessment Function: Remediation Protocol. Infrastructure audit, peer benchmarking, 90-day roadmap design with implementation sequencing.
           </p>
           <ConversionOptimizedButton
             to="/assessment"
