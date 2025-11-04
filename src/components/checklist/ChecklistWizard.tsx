@@ -10,7 +10,6 @@ import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
 import { Card } from "@/components/ui/card";
 import { ScoreGauge } from "./ScoreGauge";
-import { EmailCaptureModal } from "./EmailCaptureModal";
 
 interface ChecklistWizardProps {
   checklistId: string;
@@ -20,10 +19,8 @@ interface ChecklistWizardProps {
 
 export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const { checklistState, setAnswer, resetChecklist, getProgress, getAnswerCounts, setEmail, getEmail } = useChecklist();
+  const { checklistState, setAnswer, resetChecklist, getProgress, getAnswerCounts, getEmail } = useChecklist();
   const navigate = useNavigate();
-  const [showEmailModal, setShowEmailModal] = useState(false);
-  const [emailCaptured, setEmailCaptured] = useState(false);
 
   const currentCategory = categories[currentStep];
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
@@ -35,35 +32,6 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
   useEffect(() => {
     trackEvent('assessment_wizard_started', { checklistId });
   }, [checklistId]);
-
-  // Check if email is already captured
-  useEffect(() => {
-    const existingEmail = getEmail(checklistId);
-    if (existingEmail) {
-      setEmailCaptured(true);
-    }
-  }, [checklistId, getEmail]);
-
-  // Show email modal after 10 questions answered
-  useEffect(() => {
-    if (answeredItems >= 10 && !emailCaptured && !getEmail(checklistId)) {
-      setShowEmailModal(true);
-    }
-  }, [answeredItems, emailCaptured, checklistId, getEmail]);
-
-  const handleEmailSubmit = (email: string) => {
-    setEmail(checklistId, email);
-    setEmailCaptured(true);
-    setShowEmailModal(false);
-    toast.success("Email saved! Continue your assessment.");
-    trackEvent('assessment_email_captured', { checklistId, email });
-  };
-
-  const handleEmailSkip = () => {
-    setShowEmailModal(false);
-    toast.info("You can still complete the assessment.");
-    trackEvent('assessment_email_skipped', { checklistId });
-  };
 
   const handleNext = () => {
     if (currentStep < categories.length - 1) {
@@ -101,7 +69,6 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
     if (confirm("Are you sure you want to start over? This will clear all your answers.")) {
       resetChecklist(checklistId);
       setCurrentStep(0);
-      setEmailCaptured(false);
       toast.success("Assessment reset");
       trackEvent("assessment_reset", { checklistId });
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -134,12 +101,6 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
 
   return (
     <>
-      <EmailCaptureModal
-        open={showEmailModal}
-        onEmailSubmit={handleEmailSubmit}
-        onSkip={handleEmailSkip}
-      />
-
       <div className="space-y-8">
         {/* Compact Score Header */}
         <Card className="p-4 md:p-6">
