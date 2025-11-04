@@ -59,7 +59,6 @@ export const AssessmentModal = ({
             checklistId={checklistId}
             title={title}
             categories={categories}
-            onComplete={handleComplete}
           />
         </div>
       </DialogContent>

@@ -40,17 +40,16 @@ export const AssessmentItem = ({
   return (
     <div
       className={cn(
-        "group relative p-4 rounded-md border-l-4 transition-all bg-card",
+        "group relative p-5 md:p-6 rounded-lg border-2 transition-all duration-200",
         getBorderColor(),
-        getBackgroundColor(),
-        !value && "border hover:bg-accent/30",
+        value ? "bg-card shadow-sm" : "bg-card border-border hover:border-primary/30 hover:shadow-sm",
         disabled && "opacity-50 cursor-not-allowed"
       )}
     >
-      <div className="space-y-3">
+      <div className="space-y-4">
         {/* Question Label */}
         <div className="flex items-start justify-between gap-3">
-          <label htmlFor={id} className="text-sm font-medium text-foreground leading-relaxed flex-1">
+          <label htmlFor={id} className="text-base font-semibold text-foreground leading-relaxed flex-1">
             {label}
           </label>
           {helpText && (
@@ -62,11 +61,11 @@ export const AssessmentItem = ({
                     className="flex-shrink-0 text-muted-foreground hover:text-foreground transition-colors"
                     aria-label="Help"
                   >
-                    <HelpCircle className="w-4 h-4" />
+                    <HelpCircle className="w-5 h-5" />
                   </button>
                 </TooltipTrigger>
                 <TooltipContent side="left" className="max-w-xs">
-                  <p className="text-xs">{helpText}</p>
+                  <p className="text-sm">{helpText}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -75,7 +74,7 @@ export const AssessmentItem = ({
 
         {/* Description */}
         {description && (
-          <p className="text-xs text-muted-foreground leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             {description}
           </p>
         )}
@@ -85,40 +84,40 @@ export const AssessmentItem = ({
           value={value || ""}
           onValueChange={(v) => onChange(v as AssessmentAnswer)}
           disabled={disabled}
-          className="flex gap-4"
+          className="flex flex-col sm:flex-row gap-3 pt-2"
         >
           {/* Yes Option */}
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="yes" id={`${id}-yes`} />
+          <div className="flex items-center space-x-3 flex-1">
+            <RadioGroupItem value="yes" id={`${id}-yes`} className="w-5 h-5" />
             <Label 
               htmlFor={`${id}-yes`}
-              className="text-sm font-normal cursor-pointer flex items-center gap-1.5"
+              className="text-base font-medium cursor-pointer flex items-center gap-2 flex-1"
             >
-              <CheckCircle2 className="w-3.5 h-3.5 text-green-600" />
+              <CheckCircle2 className="w-5 h-5 text-green-600" />
               <span>Yes</span>
             </Label>
           </div>
 
           {/* Partial Option */}
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="partial" id={`${id}-partial`} />
+          <div className="flex items-center space-x-3 flex-1">
+            <RadioGroupItem value="partial" id={`${id}-partial`} className="w-5 h-5" />
             <Label 
               htmlFor={`${id}-partial`}
-              className="text-sm font-normal cursor-pointer flex items-center gap-1.5"
+              className="text-base font-medium cursor-pointer flex items-center gap-2 flex-1"
             >
-              <MinusCircle className="w-3.5 h-3.5 text-yellow-600" />
+              <MinusCircle className="w-5 h-5 text-yellow-600" />
               <span>Partially</span>
             </Label>
           </div>
 
           {/* No Option */}
-          <div className="flex items-center space-x-2">
-            <RadioGroupItem value="no" id={`${id}-no`} />
+          <div className="flex items-center space-x-3 flex-1">
+            <RadioGroupItem value="no" id={`${id}-no`} className="w-5 h-5" />
             <Label 
               htmlFor={`${id}-no`}
-              className="text-sm font-normal cursor-pointer flex items-center gap-1.5"
+              className="text-base font-medium cursor-pointer flex items-center gap-2 flex-1"
             >
-              <AlertCircle className="w-3.5 h-3.5 text-red-600" />
+              <AlertCircle className="w-5 h-5 text-red-600" />
               <span>No</span>
             </Label>
           </div>
