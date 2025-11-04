@@ -143,7 +143,7 @@ const Resources = () => {
       </section>
 
       {/* Resource Grid with Category Tabs */}
-      <section className="section-spacing px-6">
+      <section className="pt-6 md:pt-10 pb-20 px-6">
         <div className="max-w-7xl mx-auto">
           {/* Category Tabs */}
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-8">
