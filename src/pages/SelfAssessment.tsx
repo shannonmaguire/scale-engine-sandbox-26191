@@ -1,26 +1,14 @@
 import { ChecklistWizard } from "@/components/checklist/ChecklistWizard";
 import { checklists } from "@/data/checklists";
 import SEOHead from "@/components/SEOHead";
-import { Button } from "@/components/ui/button";
-import { useChecklist } from "@/components/checklist/ChecklistContext";
-import { AlertCircle, Clock, FileText, RotateCcw } from "lucide-react";
+import { AlertCircle, Clock, FileText } from "lucide-react";
 
 const SelfAssessment = () => {
   const technicalMaturityChecklist = checklists.find(c => c.id === 'technical-maturity');
-  const { checklistState, resetChecklist } = useChecklist();
-  const hasExistingProgress = technicalMaturityChecklist && 
-    Object.keys(checklistState[technicalMaturityChecklist.id] || {}).length > 0;
 
   if (!technicalMaturityChecklist) {
     return <div>Checklist not found</div>;
   }
-
-  const handleStartFresh = () => {
-    if (confirm("This will clear all your current answers. Are you sure?")) {
-      resetChecklist(technicalMaturityChecklist.id);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -60,15 +48,6 @@ const SelfAssessment = () => {
               <span>Instant results</span>
             </div>
           </div>
-
-          {hasExistingProgress && (
-            <div className="mt-4">
-              <Button variant="ghost" size="sm" onClick={handleStartFresh} className="text-xs">
-                <RotateCcw className="w-3 h-3 mr-1" />
-                Start Fresh
-              </Button>
-            </div>
-          )}
         </div>
 
         {/* Wizard */}
