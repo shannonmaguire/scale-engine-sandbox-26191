@@ -154,8 +154,10 @@ const Proof = () => {
       </Section>
 
       {/* Case Studies Carousel - Primary Content */}
-      <Section>
-        <CaseStudyCarousel caseStudies={caseStudies} />
+      <Section noPadding>
+        <div className="spacing-content">
+          <CaseStudyCarousel caseStudies={caseStudies} />
+        </div>
       </Section>
 
       {/* Quick Metrics Bar */}
