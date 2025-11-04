@@ -110,6 +110,11 @@ const AssessmentResults = () => {
         {/* Screen Header with Actions */}
         <div className="print:hidden border-b bg-card">
           <div className="container mx-auto px-4 py-6">
+            {email && (
+              <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-sm text-green-800 dark:bg-green-950/20 dark:border-green-900 dark:text-green-400">
+                ✓ Report will be emailed to <strong>{email}</strong>
+              </div>
+            )}
             <div className="flex items-center justify-between">
               <div>
                 <Button

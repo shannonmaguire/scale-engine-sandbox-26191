@@ -3,7 +3,7 @@ import { checklists } from "@/data/checklists";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { useChecklist } from "@/components/checklist/ChecklistContext";
-import { AlertCircle, Clock, FileText } from "lucide-react";
+import { AlertCircle, Clock, FileText, RotateCcw } from "lucide-react";
 
 const SelfAssessment = () => {
   const technicalMaturityChecklist = checklists.find(c => c.id === 'technical-maturity');
@@ -62,14 +62,9 @@ const SelfAssessment = () => {
           </div>
 
           {hasExistingProgress && (
-            <div className="mt-6 p-4 bg-accent/10 border border-accent rounded-lg">
-              <p className="text-sm font-medium text-foreground mb-2">
-                Continue where you left off?
-              </p>
-              <p className="text-xs text-muted-foreground mb-3">
-                We found your previous progress. You can continue or start fresh.
-              </p>
-              <Button variant="outline" size="sm" onClick={handleStartFresh}>
+            <div className="mt-4">
+              <Button variant="ghost" size="sm" onClick={handleStartFresh} className="text-xs">
+                <RotateCcw className="w-3 h-3 mr-1" />
                 Start Fresh
               </Button>
             </div>

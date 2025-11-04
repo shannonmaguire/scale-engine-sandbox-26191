@@ -5,11 +5,13 @@ import { useChecklist } from "./ChecklistContext";
 import { AssessmentItem, AssessmentAnswer } from "./AssessmentItem";
 import { ProgressStepper } from "./ProgressStepper";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, RotateCcw, FileText } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, FileText, CheckCircle } from "lucide-react";
 import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
 import { Card } from "@/components/ui/card";
 import { ScoreGauge } from "./ScoreGauge";
+import { EmailCaptureModal } from "./EmailCaptureModal";
+import { Badge } from "@/components/ui/badge";
 
 interface ChecklistWizardProps {
   checklistId: string;
@@ -19,7 +21,8 @@ interface ChecklistWizardProps {
 
 export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const { checklistState, setAnswer, resetChecklist, getProgress, getAnswerCounts, getEmail } = useChecklist();
+  const [showEmailModal, setShowEmailModal] = useState(false);
+  const { checklistState, setAnswer, resetChecklist, getProgress, getAnswerCounts, getEmail, setEmail } = useChecklist();
   const navigate = useNavigate();
 
   const currentCategory = categories[currentStep];
@@ -50,7 +53,19 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
   };
 
   const handleViewResults = () => {
-    trackEvent("assessment_results_view", { checklistId, score: overallProgress });
+    // Check if email already exists
+    const existingEmail = getEmail(checklistId);
+    if (existingEmail) {
+      // Already have email, go straight to results
+      navigateToResults(existingEmail);
+    } else {
+      // Show email capture modal
+      setShowEmailModal(true);
+    }
+  };
+
+  const navigateToResults = (email?: string) => {
+    trackEvent("assessment_results_view", { checklistId, score: overallProgress, hasEmail: !!email });
     
     navigate('/assessment-results', {
       state: {
@@ -60,9 +75,24 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
         checklistState,
         overallProgress,
         answerCounts,
-        email: getEmail(checklistId)
+        email
       }
     });
+  };
+
+  const handleEmailSubmit = (email: string) => {
+    setEmail(checklistId, email);
+    setShowEmailModal(false);
+    toast.success("We'll email you a copy of your report!");
+    trackEvent('assessment_email_captured', { checklistId });
+    navigateToResults(email);
+  };
+
+  const handleEmailSkip = () => {
+    setShowEmailModal(false);
+    toast.info("Viewing results without email copy");
+    trackEvent('assessment_email_skipped', { checklistId });
+    navigateToResults();
   };
 
   const handleReset = () => {
@@ -99,9 +129,26 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
     };
   });
 
+  const allQuestionsAnswered = answeredItems === totalItems;
+
   return (
     <>
+      <EmailCaptureModal
+        open={showEmailModal}
+        onEmailSubmit={handleEmailSubmit}
+        onSkip={handleEmailSkip}
+      />
       <div className="space-y-8">
+        {/* Completion Badge */}
+        {allQuestionsAnswered && (
+          <Card className="p-4 bg-green-50 border-green-200 dark:bg-green-950/20 dark:border-green-900">
+            <div className="flex items-center justify-center gap-2 text-green-700 dark:text-green-400">
+              <CheckCircle className="w-5 h-5" />
+              <span className="font-medium">All questions answered! Click "View Results" to see your full report.</span>
+            </div>
+          </Card>
+        )}
+
         {/* Compact Score Header */}
         <Card className="p-4 md:p-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -124,10 +171,11 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
                 Start Over
               </Button>
               <Button 
-                variant="default" 
+                variant={allQuestionsAnswered ? "default" : "secondary"}
                 size="sm" 
                 onClick={handleViewResults}
                 disabled={answeredItems === 0}
+                className={allQuestionsAnswered ? "shadow-lg" : ""}
               >
                 <FileText className="w-4 h-4 mr-2" />
                 View Results
@@ -208,10 +256,11 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
             </Button>
           ) : (
             <Button
-              variant="default"
+              variant={allQuestionsAnswered ? "default" : "secondary"}
               size="lg"
               onClick={handleViewResults}
               disabled={answeredItems === 0}
+              className={allQuestionsAnswered ? "shadow-lg" : ""}
             >
               <FileText className="w-4 h-4 mr-2" />
               View Results

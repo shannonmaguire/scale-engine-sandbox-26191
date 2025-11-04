@@ -36,10 +36,10 @@ export const EmailCaptureModal = ({ open, onEmailSubmit, onSkip }: EmailCaptureM
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <Mail className="w-5 h-5 text-primary" />
-            Get Your Full Assessment Report
+            Get Your Technical Maturity Report
           </DialogTitle>
           <DialogDescription>
-            Enter your email to continue and receive your personalized technical maturity report with detailed recommendations.
+            We'll email you a copy of your full report with personalized recommendations. Save your results for future reference.
           </DialogDescription>
         </DialogHeader>
         
@@ -63,7 +63,7 @@ export const EmailCaptureModal = ({ open, onEmailSubmit, onSkip }: EmailCaptureM
 
           <div className="flex gap-2">
             <Button type="submit" className="flex-1">
-              Continue Assessment
+              View My Results
             </Button>
             {onSkip && (
               <Button type="button" variant="outline" onClick={onSkip}>
@@ -73,7 +73,7 @@ export const EmailCaptureModal = ({ open, onEmailSubmit, onSkip }: EmailCaptureM
           </div>
 
           <p className="text-xs text-muted-foreground text-center">
-            We'll email you the full report. No spam, unsubscribe anytime.
+            No spam, unsubscribe anytime. You can still view results if you skip.
           </p>
         </form>
       </DialogContent>
