@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, Building2, Target, CheckCircle, TrendingUp, Clock, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Building2, Target, CheckCircle, TrendingUp, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StandardCard } from "@/components/ui/standard-card";
-import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 interface CaseStudy {
   id: number;
   industry: string;
@@ -76,7 +75,7 @@ export const CaseStudyCarousel = ({
       {/* Case Study Card */}
       <StandardCard variant="bordered" className="overflow-hidden">
         {/* Case Study Header */}
-        <div className="flex flex-wrap items-center gap-3 spacing-element border-b">
+        <div className="flex flex-wrap items-center gap-3 pb-5 mb-6 border-b">
           <div className="flex items-center gap-2">
             <Building2 className="w-4 h-4 text-primary" />
             <span className="font-mono text-sm text-primary font-semibold">
@@ -96,131 +95,108 @@ export const CaseStudyCarousel = ({
           </div>
         </div>
 
-        {/* Pull Quote - Featured */}
-        <div className="bg-primary/5 border-l-4 border-primary px-6 py-4 spacing-element">
-          <p className="text-lg font-medium italic text-foreground">
-            "{currentStudy.pullQuote}"
-          </p>
-        </div>
-
         {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-[2fr_1fr] gutter-standard">
+        <div className="grid lg:grid-cols-[2fr_1fr] gap-8">
           {/* Left Column - Context & Details */}
           <div className="space-y-6">
             {/* Challenge */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground spacing-tight">Challenge</h3>
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">Challenge</h3>
               <p className="text-sm leading-relaxed">
                 {currentStudy.challenge}
               </p>
             </div>
 
             {/* System & Outcomes - Side by Side */}
-            <div className="grid md:grid-cols-2 gutter-standard">
+            <div className="grid md:grid-cols-2 gap-6">
               {/* System Installed */}
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground spacing-tight">System Installed</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">System Installed</h3>
                 <ul className="space-y-2">
-                  {currentStudy.system.map((item, idx) => <li key={idx} className="flex items-start gap-2">
+                  {currentStudy.system.slice(0, 5).map((item, idx) => <li key={idx} className="flex items-start gap-2">
                       <Target className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-sm leading-snug">{item}</span>
                     </li>)}
+                  {currentStudy.system.length > 5 && <li className="text-xs text-muted-foreground ml-6">
+                      +{currentStudy.system.length - 5} more
+                    </li>}
                 </ul>
               </div>
 
               {/* Outcomes */}
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground spacing-tight">Outcomes</h3>
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">Outcomes</h3>
                 <ul className="space-y-2">
-                  {currentStudy.outcomes.map((outcome, idx) => <li key={idx} className="flex items-start gap-2">
+                  {currentStudy.outcomes.slice(0, 5).map((outcome, idx) => <li key={idx} className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                       <span className="text-sm leading-snug">
                         {outcome.replace(/\*\*/g, '')}
                       </span>
                     </li>)}
+                  {currentStudy.outcomes.length > 5 && <li className="text-xs text-muted-foreground ml-6">
+                      +{currentStudy.outcomes.length - 5} more
+                    </li>}
                 </ul>
               </div>
             </div>
 
             {/* Why It Worked */}
-            {currentStudy.whyItWorked && <div className="pt-6 border-t">
+            {currentStudy.whyItWorked && <div className="pt-5 border-t">
                 <p className="text-sm italic text-muted-foreground">
                   "{currentStudy.whyItWorked}"
                 </p>
               </div>}
-
-            {/* CTA Button */}
-            <div className="pt-6 border-t">
-              <ConversionOptimizedButton 
-                to="/assessment" 
-                ctaName={`Proof Page - Case Study ${currentIndex + 1}`}
-                location="Case Study Card"
-                className="w-full sm:w-auto"
-              >
-                Get Similar Results
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </ConversionOptimizedButton>
-            </div>
           </div>
 
           {/* Right Column - Metrics (Sticky) */}
           <div className="lg:sticky lg:top-24 self-start">
-            <StandardCard variant="muted" className="shadow-lg">
-              {/* Before/After - Enhanced */}
-              <div className="spacing-element border-b">
-                <div className="text-center spacing-tight">
+            <StandardCard variant="muted" className="space-y-5 shadow-lg">
+              {/* Before/After - Inline */}
+              <div>
+                <div className="text-center mb-3">
                   <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                    Transformation
+                    Before → After
                   </span>
                 </div>
-                <div className="space-y-3">
-                  {/* Before State */}
-                  <div className="bg-background/50 rounded-lg p-4 border border-border/50">
-                    <div className="text-xs font-mono text-muted-foreground uppercase tracking-wide mb-1">
-                      Before
-                    </div>
-                    <div className="text-sm font-mono text-muted-foreground">
-                      {currentStudy.beforeMetric.value}
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between text-xs p-2 bg-background rounded">
+                    <span className="font-mono text-muted-foreground uppercase">
                       {currentStudy.beforeMetric.label}
-                    </div>
+                    </span>
+                    <span className="font-mono text-muted-foreground">
+                      {currentStudy.beforeMetric.value}
+                    </span>
                   </div>
-                  
-                  {/* After State - Emphasized */}
-                  <div className="bg-primary/10 rounded-lg p-4 border-2 border-primary/30">
-                    <div className="text-xs font-mono text-primary uppercase tracking-wide mb-1">
-                      After
-                    </div>
-                    <div className="text-2xl font-mono font-bold text-primary">
-                      {currentStudy.afterMetric.value}
-                    </div>
-                    <div className="text-xs text-primary/80 mt-1">
+                  <div className="flex items-center justify-between text-xs p-2 bg-primary/5 rounded border border-primary/20">
+                    <span className="font-mono text-primary uppercase">
                       {currentStudy.afterMetric.label}
-                    </div>
+                    </span>
+                    <span className="font-mono font-bold text-primary">
+                      {currentStudy.afterMetric.value}
+                    </span>
                   </div>
                 </div>
               </div>
 
-              {/* Growth Rate - Enhanced */}
-              <div className="text-center spacing-element bg-gradient-to-br from-primary/5 to-primary/10 rounded-lg border border-primary/20 py-6">
-                <div className="flex items-center justify-center gap-2 spacing-tight">
-                  <TrendingUp className="w-5 h-5 text-primary" />
-                  <span className="text-3xl font-mono font-bold text-primary">
+              {/* Growth Rate - Compact */}
+              <div className="text-center py-3 bg-primary/5 rounded border border-primary/20">
+                <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                  <TrendingUp className="w-3.5 h-3.5 text-primary" />
+                  <span className="text-xl font-mono font-bold text-primary">
                     {currentStudy.growth}
                   </span>
                 </div>
-                <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
-                  Impact Level
+                <div className="text-xs font-mono text-muted-foreground uppercase">
+                  Growth Stage
                 </div>
               </div>
 
-              {/* Client Size */}
-              <div className="text-center pt-4 border-t">
-                <div className="text-xs font-mono text-muted-foreground uppercase spacing-tight">
+              {/* Client Size - Compact */}
+              <div className="text-center pt-3 border-t">
+                <div className="text-xs font-mono text-muted-foreground uppercase mb-1">
                   Client Size
                 </div>
-                <div className="text-sm font-mono text-foreground">{currentStudy.size}</div>
+                <div className="text-xs font-mono text-foreground">{currentStudy.size}</div>
               </div>
             </StandardCard>
           </div>
