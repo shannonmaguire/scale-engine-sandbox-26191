@@ -101,11 +101,11 @@ const Home = () => {
             </div>
             
             <h1 className="heading-page mb-4">
-              The Competitive Advantage Is the Backend
+              Revenue Infrastructure Determines Competitive Position
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8">
-              Install backend systems that scale without founder dependency. Documented infrastructure, repeatable execution, measurable outcomes in 90 days.
+              Backend systems installed in 90-day cycles. Fixed scope, documented handoff, measured against baseline performance data.
             </p>
             
             {/* CTA Hierarchy - Start Assessment is Primary */}
@@ -133,7 +133,7 @@ const Home = () => {
             {/* Social Proof Bar - Rotating Client Quotes */}
             <div className="border-l-2 border-primary/30 pl-4 py-2">
               <p className="text-sm text-muted-foreground italic mb-2">
-                "Revenue infrastructure built in 8 weeks. Manual pipeline updates went from 20 hours to zero."
+                "Revenue infrastructure deployed in 8 weeks. Pipeline administration reduced from 20 hours weekly to automated execution."
               </p>
               <p className="text-xs text-primary font-mono font-semibold">
                 — VP Revenue, Cybersecurity SaaS ($4.2M ARR)
@@ -151,10 +151,9 @@ const Home = () => {
       <Section>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="heading-section mb-6">You Hit $2-5M ARR. Then Everything Broke.</h2>
+            <h2 className="heading-section mb-6">Operational State: $2-5M ARR</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              You're spending 20+ hours a week manually managing pipeline, sales ops is held together by one founder, 
-              and your forecast is a best-guess spreadsheet. Here's what changes.
+              Pipeline administration consumes 20+ hours weekly. Revenue operations concentrated in single-founder knowledge. Forecasting derived from spreadsheet extrapolation rather than system data.
             </p>
           </div>
           

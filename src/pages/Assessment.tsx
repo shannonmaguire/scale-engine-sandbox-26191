@@ -109,7 +109,7 @@ const Assessment = () => {
           <div className="system-status mb-6">FIXED SCOPE • FIXED PRICE</div>
           <h1 className="heading-page mb-6">Infrastructure Assessment</h1>
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            2-week diagnostic to map your backend revenue systems, baseline KPIs, and deliver prioritized recommendations. Fixed scope, fixed price—no surprises.
+            2-week diagnostic to map backend revenue systems, establish performance baselines, deliver sequenced recommendations. Fixed scope, fixed price.
           </p>
           
           {/* Key Info Pills */}
@@ -175,16 +175,16 @@ const Assessment = () => {
 
         {/* Why Assessment */}
         <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">Why Start With an Assessment?</h2>
+          <h2 className="heading-subsection mb-6">Assessment Function</h2>
           <div className="space-y-4">
             <p className="text-muted-foreground leading-relaxed">
-              Most companies waste 30-40% of their RevOps budget fixing symptoms instead of root causes. Assessment determines which priorities actually move revenue metrics.
+              30-40% of operations budgets address symptoms rather than structural failures. Assessment identifies root causes affecting revenue system performance.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Assessments typically reveal 3-5 high-impact fixes that can be implemented immediately, often recovering more than the assessment cost.
+              Diagnostic phase typically surfaces 3-5 high-leverage corrections executable within immediate deployment window.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              The roadmap provides a clear, prioritized plan based on your actual data, independent of who implements it.
+              Roadmap output: sequenced implementation plan derived from system data, implementation-agnostic.
             </p>
           </div>
         </div>

@@ -31,7 +31,7 @@ export const NinetyDaySystemArticle = () => {
         Team members receive hands-on training that progresses from system familiarization through independent operation capability, achieving autonomous system management by day 90 without external support requirements.
       </p>
 
-      <h3>Why 90 Days?</h3>
+      <h3>90-Day Constraint Rationale</h3>
       
       <p>
         Extended implementation timelines create opportunity for scope expansion, organizational resistance, and stakeholder fatigue. The 90-day constraint enforces prioritization discipline by limiting deployment to revenue-critical infrastructure. Secondary features deploy in subsequent phases after primary system validation confirms operational stability.

@@ -15,7 +15,7 @@ export const FeaturedCaseStudy = () => {
         </div>
 
         <blockquote className="text-lg font-medium mb-6 leading-relaxed">
-          "We went from 20+ hours a week manually updating pipeline to automated tracking with real-time visibility. The documented systems meant we could finally scale without founder dependency."
+          "Pipeline administration reduced from 20+ hours weekly to automated execution. Infrastructure handoff enabled scaling independent of founder operational involvement."
         </blockquote>
 
         <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -23,7 +23,7 @@ export const FeaturedCaseStudy = () => {
           <div className="space-y-2">
             <div className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Before</div>
             <p className="text-sm text-muted-foreground">
-              Manual pipeline, 20+ hrs/week founder time, forecast from memory
+              Manual pipeline administration, 20+ hours weekly founder allocation, memory-based forecasting
             </p>
           </div>
 
@@ -31,7 +31,7 @@ export const FeaturedCaseStudy = () => {
           <div className="space-y-2">
             <div className="text-xs font-mono text-primary uppercase tracking-wider">After</div>
             <p className="text-sm font-medium">
-              Automated tracking, $500K+ pipeline activated, board-ready forecast
+              Automated tracking, $500K+ pipeline activated, forecast derived from system data
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ export const FeaturedCaseStudy = () => {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs font-mono text-muted-foreground mb-1">Outcome</p>
-              <p className="text-sm font-medium">107% growth in 12 months, systems that compound</p>
+              <p className="text-sm font-medium">107% growth over 12 months, compounding system performance</p>
             </div>
             <Link 
               to="/proof" 

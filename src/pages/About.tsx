@@ -37,7 +37,7 @@ const About = () => {
             Backend Revenue Systems
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
-            We install revenue infrastructure for companies where broken systems cost real money. Fixed-scope implementations, working systems in 90 days.
+            Revenue infrastructure for regulated industries where system failures carry direct financial and compliance consequences. Fixed-scope implementations, 90-day delivery cycles.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ const About = () => {
             <p className="text-primary font-mono mb-6">Founder</p>
             
             <p className="text-foreground leading-relaxed mb-6">
-              Salesforce-certified architect specializing in revenue systems for legal, compliance, cybersecurity, and B2B SaaS. Builds infrastructure that scales without breaking.
+              Salesforce-certified architect specializing in revenue systems for legal, compliance, cybersecurity, and B2B SaaS. Designs infrastructure for load tolerance and documented handoff.
             </p>
             
             <Button asChild variant="outline" size="sm">
@@ -158,9 +158,9 @@ const About = () => {
           <div className="system-status mb-6">
             READY TO START
           </div>
-          <h2 className="heading-section mb-8">Install Infrastructure That Scales</h2>
+          <h2 className="heading-section mb-8">Infrastructure Implementation</h2>
           <p className="text-description text-lg mb-10">
-            Revenue systems built to carry growth without breaking under load, designed to compound rather than require constant intervention.
+            Revenue systems engineered for load tolerance and operational continuity. Documented for transfer, measured against performance baselines.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton 

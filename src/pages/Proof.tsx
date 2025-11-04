@@ -187,7 +187,7 @@ const Proof = () => {
       <Section>
         <div className="max-w-4xl mx-auto">
           <h2 className="heading-section mb-8 text-center">
-            What Makes Systems Work
+            System Performance Conditions
           </h2>
 
           <div className="grid md:grid-cols-2 gap-4">
@@ -211,9 +211,9 @@ const Proof = () => {
                   <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-sm">Process Debt Kills Growth</h3>
+                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-sm">Manual Execution Consumes Strategic Capacity</h3>
                   <p className="text-xs text-muted-foreground">
-                    Manual workflows consume founder capacity that strong products cannot overcome. Systems restore time allocation to strategic decisions.
+                    Administrative workflows occupy founder time regardless of product performance. Automation shifts capacity allocation from execution to decision architecture.
                   </p>
                 </div>
               </div>
@@ -260,10 +260,10 @@ const Proof = () => {
             </span>
           </div>
           <h2 className="heading-section mb-6">
-            Build Your System
+            System Implementation
           </h2>
           <p className="text-description mb-8 max-w-2xl mx-auto">
-            Every system begins with a deep assessment—auditing infrastructure, identifying gaps, and designing a 90-day roadmap based on what the analysis reveals.
+            Implementation begins with infrastructure assessment: current state audit, gap analysis, sequenced 90-day deployment roadmap.
           </p>
           <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
             Start Your Assessment

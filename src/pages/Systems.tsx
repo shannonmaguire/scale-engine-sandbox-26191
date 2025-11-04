@@ -65,8 +65,7 @@ const Systems = () => {
               Production-ready automation systems
             </h1>
             <p className="text-description mb-8 max-w-3xl mx-auto">
-              Battle-tested automation engines installed during Revenue Sprints. No custom development. 
-              Hand-off ready with runbooks and monitoring.
+              Production automation engines deployed during implementation sprints. Standard configuration, documented for operational handoff.
             </p>
           </div>
         </div>
@@ -85,15 +84,15 @@ const Systems = () => {
                   Outbound Automation v1
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 font-mono">
-                  Import. Clean. Send. Book.
+                  Lead ingestion → validation → outbound execution → response capture.
                 </p>
                 <p className="text-muted-foreground mb-8 leading-relaxed">
-                  We wired an outbound engine that removes manual work and keeps everything in one place. 
-                  Leads land in a Google Sheet, get cleaned, deduped, and assigned a unique ID. Only net-new, 
-                  valid leads move to Instantly through the API. Replies flow back through webhooks, get auto-tagged, 
-                  and fire Slack alerts when someone is interested. Calendly bookings are written back to the sheet 
-                  and broadcast to Slack. Every morning at 9 ET a digest posts new leads, queued sends, reply mix, 
-                  bookings, and any errors. It is repeatable, observable, and easy to hand off.
+                  Outbound automation consolidates lead management in single-source Google Sheet infrastructure. 
+                  Incoming leads undergo deduplication, validation, unique ID assignment. Validated records transmit 
+                  to Instantly via API integration. Response webhooks trigger auto-classification and Slack notification 
+                  routing. Calendly booking events write back to source sheet with parallel Slack broadcast. 
+                  Daily digest at 09:00 ET reports: new lead volume, queued sends, reply distribution, bookings, error log. 
+                  Complete documentation enables operational transfer without founder dependency.
                 </p>
 
                 <div className="mb-8">
