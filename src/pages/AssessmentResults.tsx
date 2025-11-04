@@ -6,7 +6,6 @@ import { Progress } from "@/components/ui/progress";
 import { CheckCircle2, AlertCircle, XCircle, Printer, ArrowLeft, Calendar, Phone } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Badge } from "@/components/ui/badge";
-import { supabase } from "@/integrations/supabase/client";
 import { InlineEmailCapture } from "@/components/InlineEmailCapture";
 import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
@@ -34,6 +33,12 @@ const AssessmentResults = () => {
   const [saved, setSaved] = useState(false);
   const [email, setEmail] = useState<string | undefined>();
 
+  // Check if backend is available
+  const hasBackend = Boolean(
+    import.meta.env.VITE_SUPABASE_URL && 
+    import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
+  );
+
   // Redirect if no data
   if (!resultsData) {
     return <Navigate to="/self-assessment" replace />;
@@ -56,7 +61,14 @@ const AssessmentResults = () => {
   }, [checklistId, overallProgress]);
 
   const handleEmailSubmit = async (submittedEmail: string) => {
+    if (!hasBackend) {
+      console.info("Backend not configured; skipping email save");
+      toast.error("Unable to save results at this time. You can still view and print them.");
+      return;
+    }
+
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
       const { error } = await supabase.from('assessments').insert({
         email: submittedEmail,
         checklist_id: checklistId,
@@ -68,16 +80,15 @@ const AssessmentResults = () => {
         referrer: document.referrer
       });
 
-      if (error) {
-        console.error('Error saving assessment:', error);
-        throw error;
-      }
+      if (error) throw error;
       
       setEmail(submittedEmail);
       setSaved(true);
+      toast.success("Report will be emailed to you.");
+      trackEvent("email_captured_inline", { checklistId, score: overallProgress });
     } catch (error) {
-      console.error('Error saving assessment:', error);
-      throw error;
+      console.warn("Email save failed:", error);
+      toast.error("We couldn't email your report right now. You can still view and print your results.");
     }
   };
 
@@ -150,7 +161,7 @@ const AssessmentResults = () => {
         {/* Main Content */}
         <div className="container mx-auto px-4 py-8 max-w-5xl">
           {/* Email Capture CTA #1 */}
-          {!email && (
+          {hasBackend && !email && (
             <div className="mb-8 print:hidden">
               <InlineEmailCapture
                 onEmailSubmit={handleEmailSubmit}
@@ -366,7 +377,7 @@ const AssessmentResults = () => {
           </section>
 
           {/* Secondary Email Capture #3 - Bottom of Page */}
-          {!email && (
+          {hasBackend && !email && (
             <section className="my-12 print:hidden">
               <InlineEmailCapture
                 onEmailSubmit={handleEmailSubmit}
