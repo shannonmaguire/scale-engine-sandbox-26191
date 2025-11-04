@@ -42,7 +42,7 @@ const About = () => {
         </div>
 
         {/* Shannon */}
-        <div className="max-w-3xl mx-auto mb-16">
+        <div className="max-w-3xl mx-auto mb-12">
           <div className="border border-border rounded-lg p-8">
             <h2 className="text-2xl font-mono font-bold mb-2">Shannon Maguire</h2>
             <p className="text-primary font-mono mb-6">Founder</p>
@@ -65,9 +65,6 @@ const About = () => {
           </div>
         </div>
 
-      </Section>
-
-      <Section>
         {/* How We Work */}
         <div className="max-w-3xl mx-auto">
           <h2 className="heading-subsection mb-6">How We Work</h2>
