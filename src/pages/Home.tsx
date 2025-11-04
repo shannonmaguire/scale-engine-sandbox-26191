@@ -90,7 +90,7 @@ const Home = () => {
       />
       
       {/* Hero */}
-      <Section className="min-h-[90vh] flex items-center">
+      <Section className="min-h-[90vh] flex items-center py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div>
             {/* Stat Line - Immediate Proof */}

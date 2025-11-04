@@ -95,10 +95,10 @@ const Fractional = () => {
         {/* What You Get - Expanded */}
         <div className="max-w-4xl mx-auto mb-16">
           <h2 className="heading-subsection mb-8">What You Get</h2>
-          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+          <div className="grid md:grid-cols-2 gap-6">
             {whatYouGet.map((item, index) => (
-              <StandardCard key={index} variant="bordered" className="border-primary/20" equalHeight>
-                <StandardCardContent className="p-6 flex-1">
+              <StandardCard key={index} variant="bordered" className="border-primary/20">
+                <StandardCardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-5 h-5 text-primary" />

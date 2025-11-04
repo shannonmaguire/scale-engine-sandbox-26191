@@ -159,7 +159,7 @@ const Proof = () => {
       </Section>
 
       {/* Quick Metrics Bar */}
-      <Section variant="muted">
+      <Section variant="muted" className="py-16">
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
             <div className="text-3xl font-mono font-bold text-primary mb-1">5</div>
