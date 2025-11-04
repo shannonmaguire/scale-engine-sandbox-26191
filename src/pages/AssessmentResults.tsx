@@ -3,10 +3,13 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle2, AlertCircle, XCircle, Printer, ArrowLeft, Download } from "lucide-react";
+import { CheckCircle2, AlertCircle, XCircle, Printer, ArrowLeft, Calendar, Phone } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Badge } from "@/components/ui/badge";
 import { supabase } from "@/integrations/supabase/client";
+import { InlineEmailCapture } from "@/components/InlineEmailCapture";
+import { trackEvent } from "@/hooks/usePageTracking";
+import { toast } from "sonner";
 
 interface CategoryData {
   id: string;
@@ -21,7 +24,7 @@ interface ResultsData {
   checklistState: Record<string, Record<string, "yes" | "partial" | "no" | null>>;
   overallProgress: number;
   answerCounts: { yes: number; partial: number; no: number; unanswered: number };
-  email?: string;
+  
 }
 
 const AssessmentResults = () => {
@@ -29,13 +32,14 @@ const AssessmentResults = () => {
   const navigate = useNavigate();
   const resultsData = location.state as ResultsData;
   const [saved, setSaved] = useState(false);
+  const [email, setEmail] = useState<string | undefined>();
 
   // Redirect if no data
   if (!resultsData) {
     return <Navigate to="/self-assessment" replace />;
   }
 
-  const { checklistId, title, categories, checklistState, overallProgress, answerCounts, email } = resultsData;
+  const { checklistId, title, categories, checklistState, overallProgress, answerCounts } = resultsData;
 
   useEffect(() => {
     // Track page view
@@ -47,34 +51,45 @@ const AssessmentResults = () => {
       });
     }
 
-    // Save to database if email provided and not already saved
-    const saveAssessment = async () => {
-      if (email && !saved) {
-        try {
-          const { error } = await supabase.from('assessments').insert({
-            email,
-            checklist_id: checklistId,
-            checklist_title: title,
-            overall_score: overallProgress,
-            answer_counts: answerCounts,
-            checklist_state: checklistState,
-            user_agent: navigator.userAgent,
-            referrer: document.referrer
-          });
+    // Track page view
+    trackEvent("results_page_viewed", { checklistId, score: overallProgress });
+  }, [checklistId, overallProgress]);
 
-          if (error) {
-            console.error('Error saving assessment:', error);
-          } else {
-            setSaved(true);
-          }
-        } catch (error) {
-          console.error('Error saving assessment:', error);
-        }
+  const handleEmailSubmit = async (submittedEmail: string) => {
+    try {
+      const { error } = await supabase.from('assessments').insert({
+        email: submittedEmail,
+        checklist_id: checklistId,
+        checklist_title: title,
+        overall_score: overallProgress,
+        answer_counts: answerCounts,
+        checklist_state: checklistState,
+        user_agent: navigator.userAgent,
+        referrer: document.referrer
+      });
+
+      if (error) {
+        console.error('Error saving assessment:', error);
+        throw error;
       }
-    };
+      
+      setEmail(submittedEmail);
+      setSaved(true);
+    } catch (error) {
+      console.error('Error saving assessment:', error);
+      throw error;
+    }
+  };
 
-    saveAssessment();
-  }, [email, saved, checklistId, title, overallProgress, answerCounts, checklistState]);
+  const handleBookingClick = () => {
+    trackEvent("booking_cta_clicked", { checklistId, score: overallProgress, location: "results_page" });
+    navigate('/contact', { 
+      state: { 
+        service: "Assessment",
+        message: `I just completed the technical maturity assessment and scored ${overallProgress}%. I'd like to discuss next steps.`
+      }
+    });
+  };
 
   const handlePrint = () => {
     window.print();
@@ -110,11 +125,6 @@ const AssessmentResults = () => {
         {/* Screen Header with Actions */}
         <div className="print:hidden border-b bg-card">
           <div className="container mx-auto px-4 py-6">
-            {email && (
-              <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg text-sm text-green-800 dark:bg-green-950/20 dark:border-green-900 dark:text-green-400">
-                ✓ Report will be emailed to <strong>{email}</strong>
-              </div>
-            )}
             <div className="flex items-center justify-between">
               <div>
                 <Button
@@ -139,6 +149,28 @@ const AssessmentResults = () => {
 
         {/* Main Content */}
         <div className="container mx-auto px-4 py-8 max-w-5xl">
+          {/* Email Capture CTA #1 */}
+          {!email && (
+            <div className="mb-8 print:hidden">
+              <InlineEmailCapture
+                onEmailSubmit={handleEmailSubmit}
+                title="Want this report in your inbox?"
+                subtitle="Get a copy of your results plus actionable improvement tips"
+                ctaText="Email Report"
+                variant="primary"
+              />
+            </div>
+          )}
+
+          {email && (
+            <Card className="mb-8 p-4 bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900 print:hidden">
+              <div className="flex items-center gap-2 text-green-800 dark:text-green-400">
+                <CheckCircle2 className="h-5 w-5" />
+                <span className="font-medium">Report will be emailed to {email}</span>
+              </div>
+            </Card>
+          )}
+
           {/* Overall Score Section */}
           <Card className="p-8 mb-8">
             <div className="text-center">
@@ -230,6 +262,35 @@ const AssessmentResults = () => {
             </div>
           </section>
 
+          {/* Booking CTA #2 - Primary Conversion */}
+          <section className="my-12 print:hidden">
+            <Card className="p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background border-primary/20">
+              <div className="text-center max-w-2xl mx-auto">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <Calendar className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Ready to Improve Your Score?</h3>
+                <p className="text-muted-foreground mb-6">
+                  Book a free 30-minute technical assessment call with our team. We'll review your results 
+                  and create a customized roadmap to address your highest-impact improvement opportunities.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button size="lg" onClick={handleBookingClick} className="shadow-lg">
+                    <Phone className="h-5 w-5 mr-2" />
+                    Book Free Assessment Call
+                  </Button>
+                  <Button size="lg" variant="outline" onClick={handlePrint}>
+                    <Printer className="h-5 w-5 mr-2" />
+                    Save Report as PDF
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground mt-4">
+                  No commitment required • Typically results in 2-3 quick wins within 30 days
+                </p>
+              </div>
+            </Card>
+          </section>
+
           {/* Detailed Criteria */}
           <section className="mb-8">
             <h2 className="text-2xl font-bold mb-4">Assessment Criteria</h2>
@@ -303,6 +364,19 @@ const AssessmentResults = () => {
               ))}
             </div>
           </section>
+
+          {/* Secondary Email Capture #3 - Bottom of Page */}
+          {!email && (
+            <section className="my-12 print:hidden">
+              <InlineEmailCapture
+                onEmailSubmit={handleEmailSubmit}
+                title="Save These Results for Later"
+                subtitle="We'll email you this report so you can reference it anytime"
+                ctaText="Save Results"
+                variant="secondary"
+              />
+            </section>
+          )}
 
           {/* Footer Info */}
           <div className="text-center text-sm text-muted-foreground py-8 border-t print:mt-8">
