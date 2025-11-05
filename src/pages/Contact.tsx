@@ -173,6 +173,7 @@ const Contact = () => {
           'Salesforce consulting contact',
           'business automation inquiry'
         ]}
+        canonicalUrl="/contact"
       />
       
       <Breadcrumbs />

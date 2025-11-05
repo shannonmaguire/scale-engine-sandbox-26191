@@ -95,7 +95,7 @@ const Navigation = () => {
           {/* Primary CTA - Console Button */}
           <div className="hidden lg:block">
             <Button asChild className="btn-console">
-              <Link to="/assessment">Book Assessment</Link>
+              <Link to="/assessment">Start Assessment</Link>
             </Button>
           </div>
 
@@ -140,7 +140,7 @@ const Navigation = () => {
               
               <div className="px-1 pt-2">
                 <Button asChild className="btn-console w-full">
-                  <Link to="/assessment">Book Assessment</Link>
+                  <Link to="/assessment">Start Assessment</Link>
                 </Button>
               </div>
             </div>

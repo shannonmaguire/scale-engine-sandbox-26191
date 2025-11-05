@@ -26,9 +26,6 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                
-              </li>
-              <li>
                 <Link to="/assessment" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
                   Assessment
                 </Link>
@@ -160,7 +157,7 @@ const Footer = () => {
             <div className="space-y-3">
               <a href="mailto:hello@cwtstudio.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-mono text-sm">
                 <Mail className="h-3.5 w-3.5" />
-                hello@thecwtstudio.com
+                hello@cwtstudio.com
               </a>
               <a 
                 href="https://www.linkedin.com/company/cwt-studio/" 
@@ -172,8 +169,8 @@ const Footer = () => {
                 Follow on LinkedIn
               </a>
               <Button asChild size="sm" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
-                <Link to="/contact">
-                  Book Assessment
+                <Link to="/assessment">
+                  Start Assessment
                 </Link>
               </Button>
             </div>

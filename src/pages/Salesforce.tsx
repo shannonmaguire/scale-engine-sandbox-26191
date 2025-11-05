@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight, BarChart3, Clock, Zap, Target, Shield } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Testimonials } from "@/components/Testimonials";
 
 const Salesforce = () => {
   const services = [
