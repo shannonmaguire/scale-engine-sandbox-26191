@@ -48,7 +48,7 @@ const About = () => {
             <p className="text-primary font-mono mb-6">Founder</p>
             
             <p className="text-foreground leading-relaxed mb-6">
-              Salesforce-certified architect specializing in revenue systems for legal, compliance, cybersecurity, and B2B SaaS. Designs infrastructure for load tolerance and documented handoff.
+              Revenue systems architect specializing in legal, compliance, cybersecurity, and B2B SaaS. Designs infrastructure for load tolerance and documented handoff.
             </p>
             
             <Button asChild variant="outline" size="sm">
