@@ -190,8 +190,8 @@ const Proof = () => {
             System Performance Conditions
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-card border rounded-lg p-5">
+          <div className="grid md:grid-cols-2 gap-4 items-stretch">
+            <div className="bg-card border rounded-lg p-5 h-full">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle className="w-4 h-4 text-primary" />
@@ -205,7 +205,7 @@ const Proof = () => {
               </div>
             </div>
 
-            <div className="bg-card border rounded-lg p-5">
+            <div className="bg-card border rounded-lg p-5 h-full">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle className="w-4 h-4 text-primary" />
@@ -219,7 +219,7 @@ const Proof = () => {
               </div>
             </div>
 
-            <div className="bg-card border rounded-lg p-5">
+            <div className="bg-card border rounded-lg p-5 h-full">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle className="w-4 h-4 text-primary" />
@@ -233,7 +233,7 @@ const Proof = () => {
               </div>
             </div>
 
-            <div className="bg-card border rounded-lg p-5">
+            <div className="bg-card border rounded-lg p-5 h-full">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <CheckCircle className="w-4 h-4 text-primary" />
