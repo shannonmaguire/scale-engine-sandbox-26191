@@ -190,7 +190,7 @@ const Proof = () => {
             System Performance Conditions
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-4 items-stretch">
+          <div className="grid md:grid-cols-2 gap-4 grid-auto-rows-1fr">
             <div className="bg-card border rounded-lg p-5 h-full">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
