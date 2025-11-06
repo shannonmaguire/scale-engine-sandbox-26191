@@ -182,6 +182,18 @@ PERSONA ANGLES:
                             </ul>
                           </div>
 
+                          {/* Competitive Positioning (if exists) */}
+                          {objection.fullFramework.competitivePositioning && (
+                            <div>
+                              <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
+                                Competitive Positioning
+                              </h4>
+                              <p className="text-sm bg-accent-process/5 p-4 rounded-lg border border-accent-process/20">
+                                {objection.fullFramework.competitivePositioning}
+                              </p>
+                            </div>
+                          )}
+
                           {/* Next Steps */}
                           <div>
                             <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
