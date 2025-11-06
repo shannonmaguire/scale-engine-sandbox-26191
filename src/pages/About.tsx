@@ -16,11 +16,11 @@ const About = () => {
   return <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead 
-        title="About CWT Studio | Backend Revenue Systems Architects" 
+        title="About CWT Studio | Revenue Infrastructure Architects" 
         description="We install revenue infrastructure for high-trust industries. 90-day implementations with documented systems and measurable outcomes." 
         keywords={[
           'about CWT Studio', 
-          'backend revenue systems', 
+          'revenue infrastructure', 
           'revenue infrastructure architects', 
           'Salesforce optimization experts', 
           'high-trust industries',
@@ -34,7 +34,7 @@ const About = () => {
         {/* Hero */}
         <div className="text-center mb-16 max-w-2xl mx-auto">
           <h1 className="heading-page mb-6">
-            Backend Revenue Systems
+            Revenue Infrastructure
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
             Revenue infrastructure for regulated industries where system failures carry direct financial and compliance consequences. Fixed-scope implementations, 90-day delivery cycles.

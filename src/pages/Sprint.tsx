@@ -88,7 +88,7 @@ const Sprint = () => {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono">Custom pricing</span>
+              <span className="font-mono">Custom pricing*</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
@@ -163,7 +163,7 @@ const Sprint = () => {
             <StandardCardContent className="p-8 text-center">
               <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="heading-subsection mb-2">Custom Pricing</h2>
-              <p className="text-muted-foreground mb-6">Pricing determined after Assessment phase. Assessment fee fully applied to Sprint engagement.</p>
+              <p className="text-muted-foreground mb-6">Pricing determined after Assessment phase. <strong>Assessment fee ($4,500+) credits 100% toward Sprint.</strong></p>
               <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-left">
                 <p className="text-xs font-mono font-bold text-accent mb-2">RECENT OUTCOME</p>
                 <p className="text-sm text-muted-foreground">

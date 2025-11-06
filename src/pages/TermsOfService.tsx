@@ -39,7 +39,7 @@ const TermsOfService = memo(() => {
                   CWT Studio provides revenue infrastructure installation and optimization services. Our Services include:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Assessment: Deep diagnostic of backend revenue systems with 90-day roadmaps</li>
+                  <li>Assessment: Deep diagnostic of revenue infrastructure with 90-day roadmaps</li>
                   <li>Sprint: 8-12 week implementation of CRM, automation, and pipeline infrastructure</li>
                   <li>Fractional Ops: Ongoing revenue operations support and optimization</li>
                   <li>Web Systems: Custom web application development and optimization</li>

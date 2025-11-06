@@ -69,7 +69,7 @@ const Salesforce = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Salesforce Optimization Services | CWT Studio Revenue Systems"
-        description="Transform Salesforce investment into predictable revenue. Assessment, sprint, optimization for backend revenue systems. Built for high-trust industries."
+        description="Transform Salesforce investment into predictable revenue. Assessment, sprint, optimization for revenue infrastructure. Built for high-trust industries."
         keywords={[
           'Salesforce optimization services',
           'Salesforce revenue systems',
@@ -93,7 +93,7 @@ const Salesforce = () => {
               Salesforce Systems That Scale
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Salesforce investment into predictable revenue. Assessment, sprint, optimization.
+              Transform Salesforce investment into predictable revenue. Assessment, sprint, optimization.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm mb-6">
               <Shield className="w-4 h-4 text-accent" />

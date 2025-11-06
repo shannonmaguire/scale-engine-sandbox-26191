@@ -23,7 +23,7 @@ const Home = () => {
 
   const services = [{
     title: "Assessment",
-    description: "2-week diagnostic to map backend revenue systems with baseline KPIs and prioritized recommendations for stable growth.",
+    description: "2-week diagnostic to map revenue infrastructure with baseline KPIs and prioritized recommendations for stable growth.",
     timeline: "2 weeks",
     note: "Fixed scope, fixed price",
     cta: "Start Assessment",
@@ -76,11 +76,11 @@ const Home = () => {
       <EngagementTracker />
       <CookieBanner />
       <SEOHead
-        title="Backend Revenue Systems | CWT Studio"
+        title="Revenue Infrastructure | CWT Studio"
         description="Install backend systems that scale without founder dependency. 90-day implementation for legal, compliance, cybersecurity, and B2B SaaS."
         keywords={[
-          'backend revenue systems',
           'revenue infrastructure',
+          'revenue operations systems',
           'Salesforce optimization',
           '90-day system installation',
           'RevOps consulting',

@@ -76,13 +76,13 @@ const Assessment = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Revenue Infrastructure Assessment | CWT Studio"
-        description="2-week diagnostic of your backend revenue systems. Get a complete audit, 90-day roadmap, and executive presentation."
+        description="2-week diagnostic of your revenue infrastructure. Get a complete audit, 90-day roadmap, and executive presentation."
         keywords={['revenue infrastructure assessment', 'Salesforce audit', 'backend systems diagnostic', 'RevOps assessment', '90-day roadmap']}
         canonicalUrl="/assessment"
         type="service"
         serviceSchema={{
           name: 'Revenue Infrastructure Assessment',
-          description: '2-week diagnostic to map backend revenue systems, baseline KPIs, and deliver prioritized recommendations with a 90-day roadmap.',
+          description: '2-week diagnostic to map revenue infrastructure, baseline KPIs, and deliver prioritized recommendations with a 90-day roadmap.',
           provider: 'CWT Studio'
         }}
         faqSchema={[
@@ -109,7 +109,7 @@ const Assessment = () => {
           <div className="system-status mb-6">FIXED SCOPE • FIXED PRICE</div>
           <h1 className="heading-page mb-6">Infrastructure Assessment</h1>
           <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            2-week diagnostic to map backend revenue systems, establish performance baselines, deliver sequenced recommendations. Fixed scope, fixed price.
+            2-week diagnostic to map revenue infrastructure, establish performance baselines, deliver sequenced recommendations. Fixed scope, fixed price.
           </p>
           
           {/* Key Info Pills */}
@@ -120,11 +120,11 @@ const Assessment = () => {
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono">Fixed scope, fixed price</span>
+              <span className="font-mono">Starting at $4,500</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
               <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono">Credits to Sprint</span>
+              <span className="font-mono text-xs">100% credits to Sprint</span>
             </div>
           </div>
           

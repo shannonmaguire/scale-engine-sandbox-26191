@@ -75,7 +75,7 @@ const WebSystems = () => {
     answer: "Yes. You receive an owner guide, components, and page templates that your team can edit."
   }, {
     question: "Do I need an Infrastructure Assessment first?",
-    answer: "Web Systems is standalone and does not require prior assessment. If you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our $1,200 Infrastructure Assessment provides clarity before build. That fee credits fully toward Web Systems if you proceed."
+    answer: "Web Systems is standalone and does not require prior assessment. If you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our Infrastructure Assessment (starting at $4,500) provides clarity before build. That fee credits fully toward Web Systems if you proceed."
   }, {
     question: "Do you offer ongoing website maintenance?",
     answer: "Yes. We offer on-demand support blocks (10, 20, or 40 hours) for updates, fixes, and optimizations. Hours are valid for 6 months and include content updates, component modifications, performance optimization, and more. New feature development requires separate scoping."
@@ -211,7 +211,7 @@ const WebSystems = () => {
           </div>
           
           <p className="text-sm text-muted-foreground font-mono max-w-2xl mt-6">
-            Custom pricing determined after 45-minute scoping call. Assessment fees credit toward build.
+            Custom pricing determined after 45-minute scoping call. <strong>Assessment fees ($4,500+) credit 100% toward build.</strong>
           </p>
         </div>
 
