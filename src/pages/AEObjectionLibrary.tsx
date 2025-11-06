@@ -133,9 +133,9 @@ PERSONA ANGLES:
                       </div>
                     </CardHeader>
 
-                    <CardContent className="space-y-4">
+                    <CardContent className="space-y-6">
                       {/* Quick Response */}
-                      <div className="bg-accent-data/5 rounded-lg p-5 border border-accent-data/20">
+                      <div className="bg-accent-data/5 rounded-lg p-6 border border-accent-data/20">
                         <div className="flex items-center justify-between mb-3">
                           <h4 className="font-semibold text-sm uppercase tracking-wide text-accent-data">
                             Response Script
@@ -155,13 +155,13 @@ PERSONA ANGLES:
                             <ChevronDown className="w-4 h-4" />
                           </Button>
                         </CollapsibleTrigger>
-                        <CollapsibleContent className="mt-4 space-y-4">
+                        <CollapsibleContent className="mt-6 space-y-6">
                           {/* Discovery Questions */}
                           <div>
                             <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
                               Discovery Questions
                             </h4>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2 pl-1">
                               {objection.fullFramework.discovery.map((question, idx) => <li key={idx} className="flex items-start gap-3 text-sm">
                                   <span className="text-accent-data font-semibold flex-shrink-0">{idx + 1}.</span>
                                   <span className="flex-1">{question}</span>
@@ -174,7 +174,7 @@ PERSONA ANGLES:
                             <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
                               Proof Points
                             </h4>
-                            <ul className="space-y-2">
+                            <ul className="space-y-2 pl-1">
                               {objection.fullFramework.proofPoints.map((point, idx) => <li key={idx} className="flex items-start gap-3 text-sm">
                                   <span className="text-accent-data flex-shrink-0">•</span>
                                   <span className="flex-1">{point}</span>
