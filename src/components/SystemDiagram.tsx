@@ -23,7 +23,7 @@ const SystemDiagram = () => {
     items: ["Ongoing maintenance", "Performance monitoring"],
     delay: "[animation-delay:300ms]"
   }];
-  return <div className="w-full bg-card border border-border rounded-2xl console-card font-mono overflow-hidden group" role="img" aria-label="Backend revenue system architecture diagram showing assessment, build, and operate phases">
+  return <div className="w-full bg-card border border-border rounded-2xl font-mono overflow-hidden cursor-default" role="img" aria-label="Backend revenue system architecture diagram showing assessment, build, and operate phases">
       {/* Console Header */}
       <div className="border-b border-border p-3 bg-muted/5">
         <div className="flex items-center justify-between ">
