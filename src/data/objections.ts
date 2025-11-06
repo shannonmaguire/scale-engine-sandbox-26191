@@ -21,7 +21,7 @@ export const objections: Objection[] = [
     id: "budget-1",
     category: "budget",
     objection: "We don't have budget right now",
-    responseScript: "Most teams don't budget for technical assessment. This costs $4,500 and typically prevents $50K in mistakes. If we find 2-3 issues before your next implementation, you've already saved 10x the cost.",
+    responseScript: "Most technical issues that derail deals cost far more than preventing them. Early technical validation typically prevents significant downstream costs. If we identify 2-3 issues before implementation, you've already created substantial value.",
     fullFramework: {
       discovery: [
         "What's your typical project budget range?",
@@ -29,13 +29,13 @@ export const objections: Objection[] = [
         "Have you had implementations go over budget before?"
       ],
       proofPoints: [
-        "Average client saves $47K on their first project after assessment",
-        "87% of assessments identify at least 3 deal-blocking issues",
-        "ROI calculator shows 12:1 average return"
+        "Early technical validation typically prevents significant project overruns",
+        "Most technical reviews identify at least 3 deal-blocking issues",
+        "ROI calculators show strong returns on upfront technical diligence"
       ],
-      nextSteps: "Share the ROI calculator. Offer to present findings to their manager with you.",
+      nextSteps: "Share ROI frameworks. Offer to present technical validation approach to their manager.",
       personaAngles: {
-        technical: "Frame as technical debt prevention—$4,500 vs weeks of rework",
+        technical: "Frame as technical debt prevention vs weeks of rework",
         business: "Show revenue impact: deals won faster = quota attainment",
         executive: "Position as risk mitigation for upcoming growth targets"
       }
@@ -45,7 +45,7 @@ export const objections: Objection[] = [
     id: "budget-2",
     category: "budget",
     objection: "How do I justify this to my manager?",
-    responseScript: "Tell your manager you found a $4,500 service that flags deal-blocking technical issues before they cost opportunities. We've helped 200+ AEs close technical deals faster. Can we test it on your next two deals? I'll hop on the call with you if it helps.",
+    responseScript: "Frame it as technical risk mitigation that flags deal-blocking issues before they cost opportunities. Technical validation has helped hundreds of AEs close complex deals faster. I can help you build the business case and join the conversation if helpful.",
     fullFramework: {
       discovery: [
         "What metrics does your manager care about most?",
@@ -53,9 +53,9 @@ export const objections: Objection[] = [
         "What's your average deal size?"
       ],
       proofPoints: [
-        "Average sales cycle reduction: 22 days",
-        "Win rate improvement on technical deals: 34%",
-        "Used by AEs at Salesforce, Mulesoft, Tableau partners"
+        "Technical validation typically reduces sales cycles significantly",
+        "Win rates improve substantially on technically complex deals",
+        "Used by AEs at leading Salesforce partners"
       ],
       nextSteps: "Provide one-page ROI summary. Offer to join manager call.",
       personaAngles: {
@@ -69,7 +69,7 @@ export const objections: Objection[] = [
     id: "budget-3",
     category: "budget",
     objection: "Can we start with something smaller/cheaper?",
-    responseScript: "Technical assessments have a fixed cost because we review the entire org to spot integration risks and data issues. You can't assess part of a system and catch everything. We do offer a free 15-minute triage call to confirm if a full assessment makes sense for your deal.",
+    responseScript: "Comprehensive technical reviews are valuable because they examine the entire system to spot integration risks and data issues. Partial reviews often miss critical dependencies. A quick triage call can help determine if a full technical review makes sense for your specific situation.",
     fullFramework: {
       discovery: [
         "What size deal would make this worth it for you?",
@@ -77,14 +77,14 @@ export const objections: Objection[] = [
         "Have you lost deals due to technical objections before?"
       ],
       proofPoints: [
-        "Average assessment identifies 7-9 issues (can't find all with partial review)",
-        "83% of clients say full assessment was necessary to close deal",
-        "Free triage call available to qualify fit"
+        "Comprehensive reviews typically identify 7-9 issues that partial reviews miss",
+        "Most teams find thorough technical validation necessary to close complex deals",
+        "Quick triage calls available to qualify fit"
       ],
-      nextSteps: "Offer free 15-minute triage call. Schedule for their next hot deal.",
+      nextSteps: "Offer brief triage call. Schedule for their next complex deal.",
       personaAngles: {
         technical: "Explain why partial technical reviews miss integration issues",
-        business: "Compare to cost of lost deal ($47K average)",
+        business: "Compare to cost of lost deals",
         executive: "Position as standard practice for high-value technical deals"
       }
     }
@@ -93,7 +93,7 @@ export const objections: Objection[] = [
     id: "budget-4",
     category: "budget",
     objection: "What's the ROI proof?",
-    responseScript: "Here's what we track: average client saves $47K on their first project (typically 5-7 hours of rework avoided), deals close 22 days faster on average, and 87% of assessments find at least 3 issues that would've blocked the deal. I can share a simple calculator that shows ROI based on your deal size and average sales cycle.",
+    responseScript: "Technical validation typically delivers strong returns: teams avoid significant rework costs, deals close faster, and most technical reviews find multiple issues that would've blocked deals. I can share frameworks that help calculate ROI based on your specific deal size and sales cycle.",
     fullFramework: {
       discovery: [
         "What would good ROI look like for you?",
@@ -101,11 +101,11 @@ export const objections: Objection[] = [
         "How do you typically calculate opportunity cost?"
       ],
       proofPoints: [
-        "Documented case studies with Fortune 500 clients",
-        "Average ROI: 12:1 within first 90 days",
-        "Typical savings: 5-7 hours of rework per project"
+        "Documented case studies with enterprise clients",
+        "Technical validation typically shows strong ROI within 90 days",
+        "Typical savings: significant reduction in rework hours per project"
       ],
-      nextSteps: "Share ROI calculator and 2-3 relevant case studies. Offer reference call.",
+      nextSteps: "Share ROI frameworks and relevant case studies. Offer reference call.",
       personaAngles: {
         technical: "Show time-to-resolution improvements (hours saved)",
         business: "Focus on revenue impact (faster close = more deals)",
@@ -119,7 +119,7 @@ export const objections: Objection[] = [
     id: "internal-1",
     category: "internal",
     objection: "We have an internal team that can handle this",
-    responseScript: "Having internal expertise is valuable. Your team is already handling BAU and implementations. When a hot deal needs answers in 24 hours and they can't drop everything, we're the technical overflow. We provide instant validation without pulling your architects off their roadmap. Most clients use us alongside their team to handle surge capacity.",
+    responseScript: "Internal expertise is valuable. Teams typically handle BAU and implementations. When urgent deals need answers in 24 hours and internal resources can't drop everything, external technical support provides rapid validation without pulling architects off roadmap. Many use external support alongside internal teams for surge capacity.",
     fullFramework: {
       discovery: [
         "How long does it typically take your team to turn around technical reviews?",
@@ -127,11 +127,11 @@ export const objections: Objection[] = [
         "How do you prioritize internal resources across deals?"
       ],
       proofPoints: [
-        "4-hour response SLA for critical deal support",
-        "We've partnered with internal teams at 85% of clients",
-        "Average internal team saves 12 hours per month using us for overflow"
+        "Rapid response SLAs for critical deal support",
+        "External support commonly partners with internal teams",
+        "Internal teams typically save significant hours monthly using overflow support"
       ],
-      nextSteps: "Offer pilot on their next hot deal. Position as 'technical insurance' not replacement.",
+      nextSteps: "Offer pilot on their next urgent deal. Position as 'technical insurance' not replacement.",
       personaAngles: {
         technical: "Frame as reducing burden on already-stretched architects",
         business: "Show how it prevents deals from stalling while waiting on internal resources",
@@ -143,7 +143,7 @@ export const objections: Objection[] = [
     id: "internal-2",
     category: "internal",
     objection: "Our Salesforce admin can handle this",
-    responseScript: "Your admin likely keeps the org running well. Pre-sales technical validation is a different skillset than admin work. We're not replacing your admin; we answer the prospect questions your admin shouldn't have to field while managing 50 users. We serve as your 'AE technical co-pilot' for complex deals.",
+    responseScript: "Admins excel at keeping orgs running smoothly. Pre-sales technical validation is a different skillset than admin operations. External support answers prospect questions that admins shouldn't handle while managing day-to-day operations. It serves as 'AE technical co-pilot' for complex deals.",
     fullFramework: {
       discovery: [
         "What's your admin currently focused on?",
@@ -151,11 +151,11 @@ export const objections: Objection[] = [
         "Have deals ever stalled waiting for internal technical answers?"
       ],
       proofPoints: [
-        "We specialize in pre-sales validation (not admin work)",
-        "Average response time: 4 hours (vs 2-5 days for internal)",
-        "92% of clients keep using us even with great admins"
+        "Specialization in pre-sales validation (not admin work)",
+        "Rapid response times vs typical internal response delays",
+        "Most teams maintain external support even with excellent admins"
       ],
-      nextSteps: "Clarify scope: we handle prospect-facing technical validation, admin handles operations.",
+      nextSteps: "Clarify scope: external support handles prospect-facing validation, admin handles operations.",
       personaAngles: {
         technical: "Explain difference between admin operations and sales engineering",
         business: "Show impact of fast technical responses on close rates",
@@ -167,7 +167,7 @@ export const objections: Objection[] = [
     id: "internal-3",
     category: "internal",
     objection: "We already have a consultant",
-    responseScript: "You understand the value of outside expertise. We're built for speed. Your consultant is great for implementations, but when you need answers in hours instead of days, that's where we come in. Many clients use their consultant for execution and us for rapid deal support. We're complementary to their work.",
+    responseScript: "External expertise is valuable. Speed-focused support complements implementation consultants. When you need answers in hours instead of days for deal acceleration, rapid response fills that gap. Many use consultants for execution and rapid support for time-sensitive deals. The approaches are complementary.",
     fullFramework: {
       discovery: [
         "What does your consultant typically help with?",
@@ -175,8 +175,8 @@ export const objections: Objection[] = [
         "Do they handle pre-sales technical validation?"
       ],
       proofPoints: [
-        "We work alongside consultants at 40% of clients",
-        "4-hour response SLA (vs typical 2-3 day consultant turnaround)",
+        "Rapid support commonly works alongside consultants",
+        "Hours-based response SLA vs typical multi-day consultant turnaround",
         "Specialized in pre-sales, not implementation"
       ],
       nextSteps: "Offer to coordinate with their consultant. Position as 'deal acceleration' not replacement.",
@@ -193,21 +193,21 @@ export const objections: Objection[] = [
     id: "timing-1",
     category: "timing",
     objection: "We're not ready yet",
-    responseScript: "Most AEs call us after losing a deal or getting stuck in a 3-month technical back-and-forth. The ones who close faster call us at the first sign of complexity. What would make you feel ready? I can revisit when you hit your next technical snag.",
+    responseScript: "Most AEs reach out after losing a deal or getting stuck in lengthy technical discussions. The ones who close faster seek technical guidance at the first sign of complexity. What would make you feel ready? I can circle back when you encounter your next technical challenge.",
     fullFramework: {
       discovery: [
         "What would 'ready' look like for you?",
         "Have you had deals stall on technical concerns before?",
-        "What's your typical trigger for bringing in outside help?"
+        "What's your typical trigger for seeking technical support?"
       ],
       proofPoints: [
-        "78% of clients say they wish they'd called us sooner",
-        "Average 'stuck deal' wastes 3-4 weeks before getting help",
-        "Early assessment prevents scope creep 82% of the time"
+        "Most teams wish they'd sought technical guidance earlier",
+        "Stuck deals typically waste weeks before getting proper support",
+        "Early technical validation prevents scope creep in most cases"
       ],
       nextSteps: "Schedule follow-up for 30 days. Offer to stay top-of-mind for next technical deal.",
       personaAngles: {
-        technical: "Explain why early assessment prevents rework",
+        technical: "Explain why early technical review prevents rework",
         business: "Show cost of waiting (lost deals, extended cycles)",
         executive: "Frame as proactive vs reactive risk management"
       }
@@ -217,7 +217,7 @@ export const objections: Objection[] = [
     id: "timing-2",
     category: "timing",
     objection: "We need this done faster than you can deliver",
-    responseScript: "We turn around critical issues in 4 hours, full assessments in 24 hours. If you've got a demo tomorrow and need validation today, that's what we do. Most services take 2-3 days. We're built for deals that can't wait.",
+    responseScript: "Technical support for critical issues can often be provided within hours, with comprehensive reviews typically completed within 24 hours. If you need rapid validation for an imminent demo or call, that's exactly the kind of time-sensitive situation this support is designed for.",
     fullFramework: {
       discovery: [
         "What's your timeline?",
@@ -225,13 +225,13 @@ export const objections: Objection[] = [
         "What happens if you don't get answers in time?"
       ],
       proofPoints: [
-        "4-hour critical response SLA (guaranteed)",
-        "94% of urgent requests delivered same-day",
-        "Built for pre-sales speed (not implementation pace)"
+        "Critical response SLAs measured in hours, not days",
+        "Majority of urgent requests delivered same-day",
+        "Built for pre-sales speed, not implementation timelines"
       ],
       nextSteps: "Confirm their timeline. Escalate internally if needed. Commit to specific delivery time.",
       personaAngles: {
-        technical: "Detail our rapid response process and expertise",
+        technical: "Detail rapid response process and expertise",
         business: "Show how speed maintains deal momentum",
         executive: "Frame as competitive advantage in time-sensitive deals"
       }
@@ -241,7 +241,7 @@ export const objections: Objection[] = [
     id: "timing-3",
     category: "timing",
     objection: "Can we revisit this next quarter?",
-    responseScript: "We're not going anywhere. What changes next quarter? Usually when AEs say this, it's either budget timing or they don't have a hot deal right now. If it's budget, I can send over ROI docs to help with planning. If it's deal flow, let's set a reminder for when you land your next complex opp.",
+    responseScript: "Absolutely. What changes next quarter? Usually this means either budget timing or current deal flow. If it's budget, I can send planning materials. If it's deal flow, let's set a reminder for when you land your next complex opportunity.",
     fullFramework: {
       discovery: [
         "What's different next quarter?",
@@ -249,11 +249,11 @@ export const objections: Objection[] = [
         "What would make this urgent for you?"
       ],
       proofPoints: [
-        "Average client wishes they started 2 months earlier",
-        "Q1 vs Q4: same service, same pricing",
-        "Flexible start dates—can begin anytime"
+        "Most teams wish they'd engaged earlier",
+        "Technical support available year-round",
+        "Flexible engagement—can begin anytime"
       ],
-      nextSteps: "Schedule calendar reminder for next quarter. Offer to send ROI docs for planning.",
+      nextSteps: "Schedule calendar reminder for next quarter. Offer to send planning materials.",
       personaAngles: {
         technical: "Keep door open for technical emergencies",
         business: "Provide planning materials for budget conversations",
@@ -267,7 +267,7 @@ export const objections: Objection[] = [
     id: "technical-1",
     category: "technical",
     objection: "Our org is too complex/customized",
-    responseScript: "Complexity is why most clients hire us. Simple orgs are straightforward. Heavily customized, 10-year-old orgs with unusual integrations need expert eyes. We've assessed hundreds of Salesforce orgs across every size and configuration. The question is whether you can afford not to validate before your next big move.",
+    responseScript: "Complexity is exactly why technical guidance matters most. Simple systems are straightforward. Heavily customized, legacy orgs with unusual integrations benefit most from expert review. Experience with hundreds of Salesforce orgs across every configuration means complex environments are familiar territory.",
     fullFramework: {
       discovery: [
         "What makes your org complex? (custom code, integrations, data volume?)",
@@ -275,11 +275,11 @@ export const objections: Objection[] = [
         "What's your biggest concern about technical validation?"
       ],
       proofPoints: [
-        "Average client has 1,200+ custom fields (we've seen it all)",
+        "Experience with highly customized orgs (1,200+ custom fields typical)",
         "Handled orgs with 50+ integrations",
         "Specialized in legacy org modernization"
       ],
-      nextSteps: "Offer 15-minute complexity triage call. Show similar case study.",
+      nextSteps: "Offer brief complexity triage call. Show similar case study.",
       personaAngles: {
         technical: "Detail experience with complex architectures",
         business: "Frame complexity as reason to validate, not avoid",
@@ -291,7 +291,7 @@ export const objections: Objection[] = [
     id: "technical-2",
     category: "technical",
     objection: "We're mid-implementation already",
-    responseScript: "Most implementations fail in weeks 4-8 when hidden issues surface. A mid-flight assessment spots those problems before they blow up your timeline. We've saved dozens of projects that were 60% done but headed toward disaster.",
+    responseScript: "Many implementations encounter issues in weeks 4-8 when hidden problems surface. A mid-flight technical review can spot those problems before they impact timelines. Experience shows projects that seemed on track can benefit from external perspective before issues become critical.",
     fullFramework: {
       discovery: [
         "How far into the implementation are you?",
@@ -299,11 +299,11 @@ export const objections: Objection[] = [
         "What's your deadline and risk tolerance?"
       ],
       proofPoints: [
-        "42% of implementations encounter major issues after week 4",
-        "Mid-flight assessments reduce rework by 67%",
-        "Average mid-flight check finds 4-5 issues before they become critical"
+        "Significant portion of implementations encounter major issues mid-stream",
+        "Mid-flight reviews substantially reduce rework",
+        "Typical mid-flight review finds 4-5 issues before they become critical"
       ],
-      nextSteps: "Offer rapid mid-implementation audit (24-hour turnaround).",
+      nextSteps: "Offer rapid mid-implementation review (24-hour turnaround).",
       personaAngles: {
         technical: "Frame as risk mitigation during critical phase",
         business: "Show cost savings of catching issues early vs late",
@@ -315,7 +315,7 @@ export const objections: Objection[] = [
     id: "technical-3",
     category: "technical",
     objection: "Integration concerns with [specific system]",
-    responseScript: "Integrations are where most deals get stuck. We've done [system] integrations dozens of times. The key things we validate: data flow, sync frequency, error handling, and what breaks if [system] goes down. Most prospects don't think to ask about those until after they've signed. Want me to put together a quick integration validation checklist specific to [system]?",
+    responseScript: "Integrations are where most deals get stuck. Experience with [system] integrations includes understanding key validation points: data flow, sync frequency, error handling, and failure scenarios. Most prospects don't think to ask about these until after commitment. A custom integration validation checklist for [system] can help address concerns proactively.",
     fullFramework: {
       discovery: [
         "What's the integration supposed to do?",
@@ -323,9 +323,9 @@ export const objections: Objection[] = [
         "Have you handled [system] integrations before?"
       ],
       proofPoints: [
-        "Validated 200+ integrations across 50+ systems",
+        "Experience validating hundreds of integrations across dozens of systems",
         "Integration validation typically finds 3-4 deal-blocking issues",
-        "Maintain library of integration-specific checklists"
+        "Library of integration-specific checklists available"
       ],
       nextSteps: "Create custom integration validation checklist. Offer to join technical call with prospect.",
       personaAngles: {
@@ -365,7 +365,7 @@ export const objections: Objection[] = [
     id: "trust-2",
     category: "trust",
     objection: "We've been burned by consultants before",
-    responseScript: "I'm sorry to hear that—unfortunately you're not alone. Here's how we're different: we're not consultants trying to sell you a 6-month engagement. We're a rapid-response technical validation service. In and out in 24-48 hours. No scope creep, no upselling. Fixed price, clear deliverables. Most clients start with one assessment to test us out. Low risk, high upside.",
+    responseScript: "That's understandable—many have had that experience. Technical advisory is different from traditional consulting: rapid turnarounds (24-48 hours), fixed scope with clear deliverables, no scope creep or upselling. Many start with a pilot engagement to build trust. Low risk, high potential value.",
     fullFramework: {
       discovery: [
         "What happened with the previous consultant?",
@@ -373,14 +373,14 @@ export const objections: Objection[] = [
         "What's your biggest concern about working with us?"
       ],
       proofPoints: [
-        "Fixed-price model (no scope creep)",
-        "24-48 hour turnaround (no dragging out projects)",
-        "94% client satisfaction score"
+        "Fixed-scope engagement model",
+        "Rapid turnarounds (24-48 hours typical)",
+        "High client satisfaction scores"
       ],
-      nextSteps: "Offer single-assessment pilot. Provide testimonials from skeptical-turned-happy clients.",
+      nextSteps: "Offer pilot engagement. Provide testimonials from initially skeptical clients.",
       personaAngles: {
-        technical: "Detail our transparent process and fixed scope",
-        business: "Show financial protection (fixed price, clear ROI)",
+        technical: "Detail transparent process and fixed scope",
+        business: "Show financial protection (clear pricing, defined ROI)",
         executive: "Offer low-risk pilot to build trust"
       }
     }
@@ -389,7 +389,7 @@ export const objections: Objection[] = [
     id: "trust-3",
     category: "trust",
     objection: "Can you show me similar projects?",
-    responseScript: "Absolutely—we have case studies from [similar company size/industry]. The one that's most relevant to your situation is [specific example]. They had [similar challenge], we validated [specific technical concern], and the deal closed [X days] faster than their average. Happy to share the full write-up and even intro you to the AE if you want to hear directly from them.",
+    responseScript: "Absolutely—case studies from similar company sizes and industries are available. The most relevant example would be [specific case]. They had [similar challenge], technical concerns were validated, and the deal closed significantly faster than average. Full write-ups and reference calls with similar clients can be arranged.",
     fullFramework: {
       discovery: [
         "What type of project are you working on?",
@@ -397,7 +397,7 @@ export const objections: Objection[] = [
         "Would a reference call be helpful?"
       ],
       proofPoints: [
-        "500+ completed assessments",
+        "Hundreds of completed technical reviews",
         "Case studies across industries, company sizes, and use cases",
         "Reference calls available with similar clients"
       ],

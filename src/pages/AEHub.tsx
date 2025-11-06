@@ -37,8 +37,8 @@ export default function AEHub() {
   }];
   const quickWins = [{
     scenario: "Prospect mentions data quality issues",
-    action: "Offer complimentary 1-hour assessment to surface quick wins",
-    result: "3-5 immediate improvements identified, converts to paid assessment"
+    action: "Request technical analysis to surface quick wins",
+    result: "3-5 immediate improvements identified, builds credibility"
   }, {
     scenario: "Deal stalled on technical objections",
     action: "Request support to join prospect call as technical advisor",
@@ -62,7 +62,7 @@ export default function AEHub() {
           <div className="system-status">ACCOUNT EXECUTIVE RESOURCES</div>
           <h1 className="heading-page">AE Resource Hub</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Resources to qualify technical deals, handle objections, and accelerate Salesforce sales cycles.
+            Technical resources to qualify complex deals, handle objections, and accelerate sales cycles.
           </p>
         </div>
       </Section>
@@ -111,9 +111,9 @@ export default function AEHub() {
               <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto mb-4">
                 <ClipboardCheck className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Assessment Framework</h3>
+              <h3 className="text-lg font-semibold mb-2">Qualification Framework</h3>
               <p className="text-sm text-muted-foreground">
-                15-minute qualification guide
+                15-minute technical discovery guide
               </p>
             </Card>
 
@@ -221,9 +221,9 @@ export default function AEHub() {
           <div className="grid sm:grid-cols-2 gap-6">
             <Card className="p-8 border-accent-data/30 hover:border-accent-data transition-all hover-scale group">
               <FileText className="w-12 h-12 text-accent-data mx-auto mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-semibold mb-2">Deal Playbook</h3>
+              <h3 className="text-xl font-semibold mb-2">Technical Playbook</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Technical collaboration framework and positioning guides
+                Discovery frameworks and technical qualification guides
               </p>
               <Button asChild variant="outline" className="w-full border-accent-data text-accent-data hover:bg-accent-data/10">
                 <Link to="/salesforce/partners">View Playbook</Link>
@@ -244,7 +244,7 @@ export default function AEHub() {
         </div>
       </Section>
 
-      <ResourceDownloadModal isOpen={isResourceModalOpen} onClose={() => setIsResourceModalOpen(false)} resourceTitle="AE Resource Bundle" resourceDescription="Assessment Framework, ROI Calculator, Discovery Questions, and Battle Cards." downloadUrl="/pdfs/technical-assessment-framework.pdf" />
+      <ResourceDownloadModal isOpen={isResourceModalOpen} onClose={() => setIsResourceModalOpen(false)} resourceTitle="AE Resource Bundle" resourceDescription="Qualification Framework, ROI Calculator, Discovery Questions, and Battle Cards." downloadUrl="/pdfs/technical-assessment-framework.pdf" />
     </div>;
 }
 ;

@@ -295,7 +295,7 @@ const AETechnicalSupport = () => {
                     
                     <div>
                       <Label htmlFor="supportNeeded">What support do you need? *</Label>
-                      <Textarea id="supportNeeded" value={formData.supportNeeded} onChange={e => handleChange("supportNeeded", e.target.value)} placeholder="e.g., Join discovery call, validate technical approach, scope assessment" rows={3} className={errors.supportNeeded ? "border-destructive" : ""} />
+                      <Textarea id="supportNeeded" value={formData.supportNeeded} onChange={e => handleChange("supportNeeded", e.target.value)} placeholder="e.g., Join discovery call, validate technical approach, review technical requirements" rows={3} className={errors.supportNeeded ? "border-destructive" : ""} />
                       {errors.supportNeeded && <p className="text-xs text-destructive mt-1">{errors.supportNeeded}</p>}
                     </div>
 
