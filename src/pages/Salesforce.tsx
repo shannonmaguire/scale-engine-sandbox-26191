@@ -300,6 +300,45 @@ const Salesforce = () => {
         </div>
       </Section>
 
+      {/* Getting Started */}
+      <Section variant="muted">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="heading-section mb-4">Getting Started</h2>
+          <p className="text-lg text-muted-foreground mb-6">
+            Every Salesforce engagement begins with our Infrastructure Assessment. This 2-week diagnostic maps your current state, identifies optimization opportunities, and delivers a prioritized 90-day roadmap.
+          </p>
+          
+          <div className="bg-card border-2 border-primary/30 rounded-lg p-6 mb-6 text-left">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                <CheckCircle className="w-5 h-5 text-primary" />
+              </div>
+              <div>
+                <h3 className="font-semibold mb-2">Assessment First</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Starting at $4,500 | 2 weeks | 100% credits toward Sprint implementation
+                </p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Revenue Infrastructure Scorecard</li>
+                  <li>• System analysis and baseline metrics</li>
+                  <li>• Prioritized 90-day roadmap</li>
+                  <li>• Executive presentation with leadership alignment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link to="/assessment">Start Assessment</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/contact?interest=salesforce">Discuss Your Project</Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
       {/* Partnership & Delivery Model */}
       <Section>
         <div className="max-w-6xl mx-auto">

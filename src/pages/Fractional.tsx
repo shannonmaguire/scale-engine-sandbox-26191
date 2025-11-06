@@ -177,7 +177,10 @@ const Fractional = () => {
               <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
               <h2 className="heading-subsection mb-2">Monthly Investment</h2>
               <p className="text-3xl font-bold text-primary mb-2 tabular-nums">From $6K/month</p>
-              <p className="text-sm text-muted-foreground">Six-month minimum commitment</p>
+              <p className="text-sm text-muted-foreground mb-4">Six-month minimum commitment</p>
+              <p className="text-xs text-muted-foreground font-mono">
+                * Requires completed Assessment ($4,500+) and Sprint implementation
+              </p>
             </StandardCardContent>
           </StandardCard>
         </div>

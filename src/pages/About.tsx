@@ -17,7 +17,7 @@ const About = () => {
       <EngagementTracker />
       <SEOHead 
         title="About CWT Studio | Revenue Infrastructure Architects" 
-        description="We install revenue infrastructure for high-trust industries. 90-day implementations with documented systems and measurable outcomes." 
+        description="We install revenue infrastructure for regulated and high-trust industries. 90-day implementations with documented systems and measurable outcomes." 
         keywords={[
           'about CWT Studio', 
           'revenue infrastructure', 
@@ -37,7 +37,7 @@ const About = () => {
             Revenue Infrastructure
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
-            Revenue infrastructure for regulated industries where system failures carry direct financial and compliance consequences. Fixed-scope implementations, 90-day delivery cycles.
+            Revenue infrastructure for regulated and high-trust industries where system failures carry direct financial and compliance consequences. Fixed-scope implementations, 90-day delivery cycles.
           </p>
         </div>
 
@@ -105,6 +105,16 @@ const About = () => {
                 </li>
               </ul>
             </div>
+          </div>
+          
+          {/* CloudRoute Partnership */}
+          <div className="mt-8 bg-accent/5 border border-accent/20 rounded-lg p-6">
+            <h3 className="font-mono font-semibold mb-3 text-accent">Salesforce Partnership with CloudRoute</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              For Salesforce implementations, we partner with <strong className="text-foreground">CloudRoute</strong>, a certified Salesforce partner. 
+              CWT Studio leads strategy, discovery, and operational design. CloudRoute delivers enterprise-grade technical implementation with certified expertise. 
+              This model combines operational pragmatism with platform-certified technical delivery.
+            </p>
           </div>
         </div>
       </Section>
