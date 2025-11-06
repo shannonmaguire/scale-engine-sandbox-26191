@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { StandardCard } from "@/components/ui/standard-card";
 import SEOHead from "@/components/SEOHead";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
-import { Search, Clock, ArrowRight, TrendingUp, Filter } from "lucide-react";
+import { Search, Clock, ArrowRight, TrendingUp, Filter, CheckCircle } from "lucide-react";
 
 // Sample blog posts data - Real content structure
 const blogPosts = [{
@@ -125,8 +125,17 @@ const Blog = () => {
   return <div className="min-h-screen bg-background">
       <SEOHead title="The CWT Standard | CWT Studio" description="Documented systems. Proven frameworks. Zero abstractions. Learn how to install revenue infrastructure for high-trust industries." keywords={['revenue systems blog', 'infrastructure insights', 'Salesforce optimization frameworks', 'system installation guides', 'revenue operations insights']} />
       
-      {/* Coming Soon Banner */}
-      
+      {/* Framework Library Notice */}
+      <section className="bg-accent/5 border-b border-accent/20">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-center gap-3">
+            <CheckCircle className="h-5 w-5 text-accent" />
+            <p className="text-sm font-mono text-muted-foreground">
+              <strong className="text-foreground">Framework Library:</strong> Implementation guides and documented deployment patterns from production systems
+            </p>
+          </div>
+        </div>
+      </section>
       
       {/* Page Header */}
       <section className="border-b border-border">

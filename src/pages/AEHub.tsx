@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Download, Calculator, Target, Clock, CheckCircle2, MessageSquare, Mail, User, TrendingUp, Users, AlertCircle, Zap, FileText, ClipboardCheck } from "lucide-react";
+import { Download, Calculator, Target, Clock, CheckCircle2, MessageSquare, Mail, User, TrendingUp, Users, AlertCircle, Zap, FileText, ClipboardCheck, ArrowLeft } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
@@ -10,6 +10,7 @@ import { ResourceDownloadModal } from "@/components/ResourceDownloadModal";
 import { InteractiveChecklist } from "@/components/checklist/InteractiveChecklist";
 import { aeQualificationChecklist } from "@/data/checklists";
 import { trackEvent } from "@/hooks/usePageTracking";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 export default function AEHub() {
   const [isResourceModalOpen, setIsResourceModalOpen] = useState(false);
   const navigate = useNavigate();
@@ -49,6 +50,21 @@ export default function AEHub() {
   }];
   return <div className="min-h-screen">
       <SEOHead title="AE Resource Hub - Technical Support for Salesforce Deals | CWT Studio" description="Technical backstop for Account Executives selling Salesforce services. Request support, download tools, and access deal playbooks." canonicalUrl="https://coalescentwebtech.com/ae-hub" />
+
+      <Breadcrumbs />
+      
+      {/* Back to Resources Link */}
+      <Section variant="standard" className="pt-8 pb-0">
+        <div className="max-w-4xl mx-auto">
+          <Link 
+            to="/resources" 
+            className="inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Resources
+          </Link>
+        </div>
+      </Section>
 
       {/* Hero */}
       <Section variant="standard" className="pt-20 pb-12">

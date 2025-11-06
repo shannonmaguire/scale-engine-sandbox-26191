@@ -244,6 +244,28 @@ const Resources = () => {
         </div>
       </section>
 
+      {/* AE Hub Cross-Link */}
+      <section className="section-spacing px-6 bg-accent/5 border-y border-accent/20">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h2 className="text-2xl font-bold text-foreground mb-2">
+                Selling Salesforce Services?
+              </h2>
+              <p className="text-muted-foreground">
+                Access our AE Hub with objection frameworks, discovery questions, and deal qualification tools designed specifically for Account Executives.
+              </p>
+            </div>
+            <Button asChild size="lg" variant="outline" className="flex-shrink-0">
+              <Link to="/ae-hub">
+                Visit AE Hub
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="section-spacing px-6 bg-card">
         <div className="max-w-4xl mx-auto text-center">
