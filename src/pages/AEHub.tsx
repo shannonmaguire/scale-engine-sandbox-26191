@@ -54,17 +54,7 @@ export default function AEHub() {
       <Breadcrumbs />
       
       {/* Back to Resources Link */}
-      <Section variant="standard" className="pt-8 pb-0">
-        <div className="max-w-4xl mx-auto">
-          <Link 
-            to="/resources" 
-            className="inline-flex items-center gap-2 text-sm font-mono text-muted-foreground hover:text-primary transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Resources
-          </Link>
-        </div>
-      </Section>
+      
 
       {/* Hero */}
       <Section variant="standard" className="pt-20 pb-12">
@@ -85,8 +75,7 @@ export default function AEHub() {
           <Card className="border-accent-data/30">
             <CardContent className="p-0">
               <div className="divide-y divide-border">
-                {supportTiers.map((tier, index) => (
-                  <div key={tier.tier} className="flex items-center justify-between p-6 hover:bg-accent-data/5 transition-colors">
+                {supportTiers.map((tier, index) => <div key={tier.tier} className="flex items-center justify-between p-6 hover:bg-accent-data/5 transition-colors">
                     <div className="flex items-center gap-4">
                       <div className="text-2xl">
                         {index === 0 ? '🔴' : index === 1 ? '🟠' : index === 2 ? '🟡' : '⚪'}
@@ -99,8 +88,7 @@ export default function AEHub() {
                     <div className="text-right">
                       <p className="text-lg font-semibold text-accent-data">{tier.responseTime}</p>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </CardContent>
           </Card>
@@ -256,13 +244,7 @@ export default function AEHub() {
         </div>
       </Section>
 
-      <ResourceDownloadModal 
-        isOpen={isResourceModalOpen} 
-        onClose={() => setIsResourceModalOpen(false)} 
-        resourceTitle="AE Resource Bundle" 
-        resourceDescription="Assessment Framework, ROI Calculator, Discovery Questions, and Battle Cards." 
-        downloadUrl="/pdfs/technical-assessment-framework.pdf" 
-      />
+      <ResourceDownloadModal isOpen={isResourceModalOpen} onClose={() => setIsResourceModalOpen(false)} resourceTitle="AE Resource Bundle" resourceDescription="Assessment Framework, ROI Calculator, Discovery Questions, and Battle Cards." downloadUrl="/pdfs/technical-assessment-framework.pdf" />
     </div>;
 }
 ;
