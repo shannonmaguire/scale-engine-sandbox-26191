@@ -9,6 +9,7 @@ import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BackButton } from "@/components/BackButton";
 import { Testimonials } from "@/components/Testimonials";
+import { ServiceJourneyFlow } from "@/components/ServiceJourneyFlow";
 
 const Sprint = () => {
   const whatYouGet = [
@@ -101,6 +102,17 @@ const Sprint = () => {
               <Link to="/contact?interest=sprint&source_page=sprint">Start Your Sprint</Link>
             </Button>
           </div>
+        </div>
+
+        {/* Service Journey Flow */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <ServiceJourneyFlow 
+            steps={[
+              { name: "Assessment", href: "/assessment", completed: true },
+              { name: "Sprint", href: "/sprint", current: true },
+              { name: "Fractional Ops", href: "/fractional" }
+            ]}
+          />
         </div>
 
         {/* What You Get */}

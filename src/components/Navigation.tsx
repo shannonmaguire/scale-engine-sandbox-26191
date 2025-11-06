@@ -27,7 +27,10 @@ const Navigation = () => {
     label: "About",
     href: "/about"
   }];
-  const solutionsLinks = [{
+  const coreServices = [{
+    label: "Assessment",
+    href: "/assessment"
+  }, {
     label: "Sprint",
     href: "/sprint"
   }, {
@@ -35,15 +38,18 @@ const Navigation = () => {
     href: "/fractional"
   }, {
     label: "Web Systems",
-    href: "/web-systems",
-    separator: true
-  }, {
-    label: "Salesforce",
+    href: "/web-systems"
+  }];
+
+  const platformExpertise = [{
+    label: "Salesforce Solutions",
     href: "/salesforce"
   }];
 
+  const allServicesLinks = [...coreServices, ...platformExpertise];
+
   const isActive = (href: string) => location.pathname === href;
-  const isSolutionsActive = () => solutionsLinks.some(link => isActive(link.href));
+  const isSolutionsActive = () => allServicesLinks.some(link => isActive(link.href));
   return <nav className="sticky top-0 z-50 bg-authority backdrop-blur border-b border-white/10">
       <div className="mx-auto w-full max-w-full px-3 sm:px-6">
         <div className="flex items-center justify-between h-20 sm:h-20">
@@ -75,10 +81,12 @@ const Navigation = () => {
                 <ChevronDown size={14} className="!text-white" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56 bg-authority border-white/20 z-[100]">
-                {solutionsLinks.map((link, index) => (
-                  <div key={link.href}>
-                    {link.separator && index > 0 && <div className="h-px bg-white/10 my-1" />}
-                    <DropdownMenuItem asChild>
+                <div className="px-2 py-1.5">
+                  <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider mb-1">
+                    Core Services
+                  </div>
+                  {coreServices.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
                       <Link 
                         to={link.href} 
                         className="w-full font-mono text-sm font-medium !text-white transition-colors"
@@ -86,8 +94,26 @@ const Navigation = () => {
                         {link.label}
                       </Link>
                     </DropdownMenuItem>
+                  ))}
+                </div>
+                
+                <div className="h-px bg-white/10 my-1" />
+                
+                <div className="px-2 py-1.5">
+                  <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider mb-1">
+                    Platform Expertise
                   </div>
-                ))}
+                  {platformExpertise.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link 
+                        to={link.href} 
+                        className="w-full font-mono text-sm font-medium !text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </div>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -119,22 +145,36 @@ const Navigation = () => {
                   {link.label}
                 </Link>)}
               
-              {/* Solutions section in mobile */}
+              {/* Services section in mobile */}
               <div className="px-1 py-2 space-y-2">
-                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Services</div>
-                {solutionsLinks.map((link, index) => (
-                  <div key={link.href}>
-                    {link.separator && index > 0 && <div className="h-px bg-white/10 my-2 mx-3" />}
-                    <Link 
-                      to={link.href} 
-                      className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
-                        isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
-                      }`} 
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  </div>
+                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Core Services</div>
+                {coreServices.map((link) => (
+                  <Link 
+                    key={link.href}
+                    to={link.href} 
+                    className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
+                      isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
+                    }`} 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                
+                <div className="h-px bg-white/10 my-2 mx-3" />
+                
+                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Platform Expertise</div>
+                {platformExpertise.map((link) => (
+                  <Link 
+                    key={link.href}
+                    to={link.href} 
+                    className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
+                      isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
+                    }`} 
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
                 ))}
               </div>
               

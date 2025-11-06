@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { Clock, CheckCircle, TrendingUp, Users, FileText, Calendar } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ServiceJourneyFlow } from "@/components/ServiceJourneyFlow";
 
 import {
   Accordion,
@@ -90,6 +91,17 @@ const Fractional = () => {
           <p className="text-xl text-muted-foreground leading-relaxed">
             Your infrastructure is installed. Fractional ops keeps it optimized, maintained, and compounding performance through a monthly operating rhythm.
           </p>
+        </div>
+
+        {/* Service Journey Flow */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <ServiceJourneyFlow 
+            steps={[
+              { name: "Assessment", href: "/assessment", completed: true },
+              { name: "Sprint", href: "/sprint", completed: true },
+              { name: "Fractional Ops", href: "/fractional", current: true }
+            ]}
+          />
         </div>
 
         {/* What You Get - Expanded */}

@@ -160,6 +160,14 @@ const Proof = () => {
 
       {/* Quick Metrics Bar */}
       <Section variant="muted" className="py-16">
+        <div className="text-center mb-8">
+          <h2 className="text-sm font-mono font-bold text-muted-foreground uppercase tracking-wider mb-1">
+            Featured Case Studies
+          </h2>
+          <p className="text-xs text-muted-foreground">
+            From 42+ total deployments
+          </p>
+        </div>
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
             <div className="text-3xl font-mono font-bold text-primary mb-1">5</div>
