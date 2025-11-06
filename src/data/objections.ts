@@ -21,7 +21,7 @@ export const objections: Objection[] = [
     id: "budget-1",
     category: "budget",
     objection: "We don't have budget right now",
-    responseScript: "Most teams don't budget for technical assessment. This costs $1,200 and typically prevents $50K in mistakes. If we find 2-3 issues before your next implementation, you've already saved 10x the cost.",
+    responseScript: "Most teams don't budget for technical assessment. This costs $4,500 and typically prevents $50K in mistakes. If we find 2-3 issues before your next implementation, you've already saved 10x the cost.",
     fullFramework: {
       discovery: [
         "What's your typical project budget range?",
@@ -35,7 +35,7 @@ export const objections: Objection[] = [
       ],
       nextSteps: "Share the ROI calculator. Offer to present findings to their manager with you.",
       personaAngles: {
-        technical: "Frame as technical debt prevention—$1,200 vs weeks of rework",
+        technical: "Frame as technical debt prevention—$4,500 vs weeks of rework",
         business: "Show revenue impact: deals won faster = quota attainment",
         executive: "Position as risk mitigation for upcoming growth targets"
       }
@@ -45,7 +45,7 @@ export const objections: Objection[] = [
     id: "budget-2",
     category: "budget",
     objection: "How do I justify this to my manager?",
-    responseScript: "Tell your manager you found a $1,200 service that flags deal-blocking technical issues before they cost opportunities. We've helped 200+ AEs close technical deals faster. Can we test it on your next two deals? I'll hop on the call with you if it helps.",
+    responseScript: "Tell your manager you found a $4,500 service that flags deal-blocking technical issues before they cost opportunities. We've helped 200+ AEs close technical deals faster. Can we test it on your next two deals? I'll hop on the call with you if it helps.",
     fullFramework: {
       discovery: [
         "What metrics does your manager care about most?",
