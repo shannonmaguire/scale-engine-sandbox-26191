@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { FormField } from "@/components/FormField";
 import { Button } from "@/components/ui/button";
@@ -6,17 +6,17 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import analytics from "@/lib/analytics";
 import { formRateLimiter } from "@/lib/formRateLimit";
+import { supabase } from "@/integrations/supabase/client";
 import { Lock } from "lucide-react";
 
 interface DealRegistrationModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }
-
-const PARTNER_PASSWORD = "operator2025"; // In production, this would be a secure backend check
 
 const dealSchema = z.object({
   companyName: z.string().trim().min(2, "Company name is required").max(100),
@@ -32,8 +32,9 @@ const dealSchema = z.object({
 
 export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationModalProps) => {
   const { toast } = useToast();
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const [isPartner, setIsPartner] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [dealData, setDealData] = useState({
@@ -48,22 +49,45 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
     technicalRequirements: "",
   });
 
-  const handlePasswordSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (password === PARTNER_PASSWORD) {
-      setIsAuthenticated(true);
-      analytics.trackEvent("deal_registration_access", {
-        event_category: "Partner",
-        event_label: "Success",
-      });
-    } else {
-      toast({
-        variant: "destructive",
-        title: "Invalid Password",
-        description: "Please contact your partner manager for access.",
-      });
-    }
-  };
+  // Check if user is authenticated and has partner role
+  useEffect(() => {
+    const checkPartnerAccess = async () => {
+      if (!open) return;
+      
+      setIsLoading(true);
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        
+        if (!session) {
+          setIsPartner(false);
+          setIsLoading(false);
+          return;
+        }
+
+        // Check if user has partner role
+        const { data: roles, error } = await supabase
+          .from("user_roles")
+          .select("role")
+          .eq("user_id", session.user.id)
+          .eq("role", "partner")
+          .maybeSingle();
+
+        if (error) {
+          console.error("Error checking partner role:", error);
+          setIsPartner(false);
+        } else {
+          setIsPartner(!!roles);
+        }
+      } catch (error) {
+        console.error("Error checking authentication:", error);
+        setIsPartner(false);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkPartnerAccess();
+  }, [open]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,10 +120,35 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
     setIsSubmitting(true);
 
     try {
-      const registrationData = {
-        ...dealData,
-        submittedAt: new Date().toISOString(),
-      };
+      // Get current user
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        toast({
+          variant: "destructive",
+          title: "Authentication Required",
+          description: "Please sign in to register deals.",
+        });
+        navigate("/auth");
+        return;
+      }
+
+      // Insert deal into database
+      const { error: insertError } = await supabase
+        .from("deals")
+        .insert({
+          partner_id: session.user.id,
+          client_name: dealData.contactName,
+          client_email: dealData.contactEmail,
+          client_phone: dealData.contactPhone,
+          company_name: dealData.companyName,
+          industry: dealData.serviceType,
+          deal_size: dealData.estimatedValue,
+          timeline: dealData.expectedCloseDate,
+          services_interested: dealData.serviceType,
+          current_challenge: dealData.projectDescription + (dealData.technicalRequirements ? `\n\nTechnical: ${dealData.technicalRequirements}` : ''),
+        });
+
+      if (insertError) throw insertError;
 
       // Analytics tracking
       analytics.trackEvent("deal_registered", {
@@ -107,18 +156,6 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
         event_label: dealData.serviceType,
         value: parseInt(dealData.estimatedValue.replace(/\D/g, "") || "0"),
       });
-
-      // Placeholder: Send to HubSpot/Airtable
-      const hubspotUrl = "https://api.hsforms.com/submissions/v3/integration/submit/PORTAL_ID/DEAL_FORM_GUID";
-      const airtableUrl = "https://api.airtable.com/v0/BASE_ID/Deal%20Registrations";
-
-      // In production, make actual API calls here
-      console.log("Deal Registration Data:", registrationData);
-      console.log("Would POST to:", hubspotUrl);
-      console.log("Would POST to:", airtableUrl);
-
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
 
       // Record rate limit attempt
       formRateLimiter.recordAttempt("deal-registration");
@@ -131,8 +168,6 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
       // Close modal and reset form
       onOpenChange(false);
       setTimeout(() => {
-        setIsAuthenticated(false);
-        setPassword("");
         setDealData({
           companyName: "",
           contactName: "",
@@ -146,12 +181,12 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
         });
       }, 300);
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("Deal registration error:", error);
       toast({
         variant: "destructive",
         title: "Submission Failed",
-        description: "There was an error registering your deal. Please try again.",
+        description: error.message || "There was an error registering your deal. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -167,36 +202,49 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
             Partner Deal Registration
           </DialogTitle>
           <DialogDescription className="font-mono text-muted-foreground">
-            {isAuthenticated 
-              ? "Register a new deal to protect your commission and get support."
-              : "This portal is for approved partners only."}
+            {isLoading 
+              ? "Checking access..."
+              : isPartner
+                ? "Register a new deal to protect your commission and get support."
+                : "This portal is for approved partners only."}
           </DialogDescription>
         </DialogHeader>
 
-        {!isAuthenticated ? (
-          <form onSubmit={handlePasswordSubmit} className="space-y-4 mt-4">
-            <div className="space-y-2">
-              <Label htmlFor="password" className="font-mono text-sm font-medium flex items-center gap-2">
-                Partner Password
-                <span className="text-destructive">*</span>
-              </Label>
-              <Input
-                id="password"
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your partner password"
-                className="font-mono"
-              />
+        {isLoading ? (
+          <div className="py-8 text-center">
+            <p className="text-muted-foreground font-mono">Loading...</p>
+          </div>
+        ) : !isPartner ? (
+          <div className="space-y-6 mt-4">
+            <div className="space-y-4">
+              <p className="text-muted-foreground font-mono">
+                You need a partner account to register deals.
+              </p>
+              <p className="text-sm text-muted-foreground font-mono">
+                Please sign in with a partner account or contact us to become a partner.
+              </p>
             </div>
-            <Button type="submit" className="w-full font-mono">
-              Access Deal Registration
-            </Button>
-            <p className="text-xs text-muted-foreground font-mono text-center">
-              Don't have a password? Contact your partner manager.
-            </p>
-          </form>
+            <div className="flex gap-4">
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={() => onOpenChange(false)}
+                className="flex-1 font-mono"
+              >
+                Cancel
+              </Button>
+              <Button 
+                type="button"
+                onClick={() => {
+                  onOpenChange(false);
+                  navigate("/auth");
+                }}
+                className="flex-1 font-mono"
+              >
+                Sign In
+              </Button>
+            </div>
+          </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6 mt-4">
             <div className="space-y-4">
