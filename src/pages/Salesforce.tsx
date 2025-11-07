@@ -97,7 +97,7 @@ const Salesforce = () => {
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm mb-6">
               <Shield className="w-4 h-4 text-accent" />
-              <span className="text-muted-foreground">In partnership with <strong className="text-foreground">CloudRoute</strong> for enterprise-grade technical delivery</span>
+              <span className="text-muted-foreground">In partnership with <strong className="text-foreground">CloudRoute</strong> — Salesforce ISV & OEM Partner with 100+ certifications and exclusive Salesforce-only focus</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
@@ -213,9 +213,9 @@ const Salesforce = () => {
               <Shield className="w-4 h-4" />
               SALESFORCE EXPERTISE
             </div>
-            <h2 className="heading-section mb-6">Strategic Partnership Model</h2>
+            <h2 className="heading-section mb-6">Salesforce-Only Expertise That Scales Globally</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              CWT Studio leads strategy and discovery. CloudRoute delivers certified Salesforce technical implementation. Together, we bring operator expertise with enterprise-grade technical authority.
+              CWT Studio leads strategy and discovery. CloudRoute—a family-owned Salesforce ISV & OEM Partner with 100+ certifications—delivers pure Salesforce technical implementation with global reach and enterprise-grade authority.
             </p>
           </div>
 
@@ -227,10 +227,26 @@ const Salesforce = () => {
                 </div>
                 <div>
                   <h3 className="font-mono font-bold text-lg text-foreground mb-2">
-                    Certified Platform Knowledge
+                    100+ Salesforce Certifications
                   </h3>
                   <p className="text-muted-foreground">
-                    CloudRoute's certified Salesforce partnership brings enterprise-grade technical delivery with partner-level resources and support channels
+                    CloudRoute's team holds over 100 Salesforce certifications across all clouds and specializations, bringing deep platform expertise to every implementation
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card p-7 rounded-lg border-2 border-accent/50 hover:border-accent transition-colors">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-accent" />
+                </div>
+                <div>
+                  <h3 className="font-mono font-bold text-lg text-foreground mb-2">
+                    ISV & OEM Partner Status
+                  </h3>
+                  <p className="text-muted-foreground">
+                    CloudRoute's ISV & OEM partnership with Salesforce provides direct access to platform resources, beta features, and priority support channels—ensuring cutting-edge implementation capabilities
                   </p>
                 </div>
               </div>
@@ -287,8 +303,8 @@ const Salesforce = () => {
 
           <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center mt-16">
             <p className="text-lg text-foreground mb-6">
-              <strong>The Result:</strong> Operator-led revenue systems with certified Salesforce expertise. 
-              We deliver the speed and pragmatism of a consultancy with enterprise-grade technical authority.
+              <strong>The Result:</strong> Operator-led revenue systems backed by a Salesforce-only ISV & OEM Partner with 100+ certifications and global delivery capabilities. 
+              We deliver the speed and pragmatism of a consultancy with the technical authority of a family-owned Salesforce specialist.
             </p>
             <Button size="lg" variant="teal" asChild>
               <Link to="/contact">
@@ -411,6 +427,11 @@ const Salesforce = () => {
                     <span className="text-sm">Platform maintenance</span>
                   </li>
                 </ul>
+                <div className="mt-4 p-3 bg-accent/10 rounded-lg border border-accent/20">
+                  <p className="text-xs text-muted-foreground">
+                    <strong className="text-accent">Salesforce-Only Focus:</strong> CloudRoute specializes exclusively in Salesforce, ensuring every team member brings deep platform expertise without dilution across multiple technologies.
+                  </p>
+                </div>
               </StandardCardContent>
             </StandardCard>
           </div>
