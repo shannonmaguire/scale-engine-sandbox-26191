@@ -128,11 +128,8 @@ const Salesforce = () => {
             {services.map((service, index) => (
               <StandardCard key={index} variant="bordered" equalHeight className="p-8 hover:border-accent transition-all">
                 <StandardCardHeader>
-                  <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
-                    <service.icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <StandardCardTitle className="text-xl">{service.title}</StandardCardTitle>
-                  <div className="flex items-center gap-2 text-sm text-accent">
+                  <StandardCardTitle className="text-xl mb-2">{service.title}</StandardCardTitle>
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
                     <Clock className="w-4 h-4" />
                     {service.duration}
                   </div>
@@ -220,84 +217,49 @@ const Salesforce = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gutter-content spacing-subsection">
-            <div className="bg-card p-7 rounded-lg border-2 border-accent/50 hover:border-accent transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-mono font-bold text-lg text-foreground mb-2">
-                    100+ Salesforce Certifications
-                  </h3>
-                  <p className="text-muted-foreground">
-                    CloudRoute's team holds over 100 Salesforce certifications across all clouds and specializations, bringing deep platform expertise to every implementation
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                100+ Salesforce Certifications
+              </h3>
+              <p className="text-muted-foreground">
+                CloudRoute's team holds over 100 Salesforce certifications across all clouds and specializations, bringing deep platform expertise to every implementation
+              </p>
             </div>
 
-            <div className="bg-card p-7 rounded-lg border-2 border-accent/50 hover:border-accent transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-mono font-bold text-lg text-foreground mb-2">
-                    ISV & OEM Partner Status
-                  </h3>
-                  <p className="text-muted-foreground">
-                    CloudRoute's ISV & OEM partnership with Salesforce provides direct access to platform resources, beta features, and priority support channels—ensuring cutting-edge implementation capabilities
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                ISV & OEM Partner Status
+              </h3>
+              <p className="text-muted-foreground">
+                CloudRoute's ISV & OEM partnership with Salesforce provides direct access to platform resources, beta features, and priority support channels—ensuring cutting-edge implementation capabilities
+              </p>
             </div>
 
-            <div className="bg-card p-7 rounded-lg border-2 border-accent/50 hover:border-accent transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <Zap className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-mono font-bold text-lg text-foreground mb-2">
-                    Rapid Implementation
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Faster deployment timelines without sacrificing quality or enterprise-grade standards
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                Rapid Implementation
+              </h3>
+              <p className="text-muted-foreground">
+                Faster deployment timelines without sacrificing quality or enterprise-grade standards
+              </p>
             </div>
 
-            <div className="bg-card p-7 rounded-lg border-2 border-accent/50 hover:border-accent transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <Target className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-mono font-bold text-lg text-foreground mb-2">
-                    Technical Debt Resolution
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Proven frameworks to clean up legacy implementations and accelerate your deal cycles by 30%
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                Technical Debt Resolution
+              </h3>
+              <p className="text-muted-foreground">
+                Proven frameworks to clean up legacy implementations and accelerate your deal cycles by 30%
+              </p>
             </div>
 
-            <div className="bg-card p-7 rounded-lg border-2 border-accent/50 hover:border-accent transition-colors">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                  <BarChart3 className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-mono font-bold text-lg text-foreground mb-2">
-                    Measurable ROI
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Every engagement includes documented outcomes, adoption metrics, and 12-month growth projections
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                Measurable ROI
+              </h3>
+              <p className="text-muted-foreground">
+                Every engagement includes documented outcomes, adoption metrics, and 12-month growth projections
+              </p>
             </div>
           </div>
 
@@ -324,13 +286,9 @@ const Salesforce = () => {
             Every Salesforce engagement begins with a discovery consultation where we assess your current setup and identify the highest-impact optimizations for your revenue operations.
           </p>
           
-          <div className="bg-card border-2 border-accent/30 rounded-lg p-6 mb-6 text-left">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                <Shield className="w-5 h-5 text-accent" />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Discovery & Scoping</h3>
+          <div className="bg-card border-l-4 border-accent rounded-lg p-6 mb-6 text-left">
+            <div>
+              <h3 className="font-semibold mb-2 text-lg">Discovery & Scoping</h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   Complimentary consultation to understand your needs and scope the right solution
                 </p>
@@ -340,7 +298,6 @@ const Salesforce = () => {
                   <li>• Define project scope and timeline</li>
                   <li>• Custom proposal with clear deliverables</li>
                 </ul>
-              </div>
             </div>
           </div>
           
@@ -370,13 +327,10 @@ const Salesforce = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gutter-content spacing-subsection">
-            <StandardCard variant="bordered" equalHeight className="p-8 border-2 border-accent/50">
+            <StandardCard variant="bordered" equalHeight className="p-8 border-l-4 border-accent">
               <StandardCardHeader>
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
-                  <Target className="w-6 h-6 text-accent" />
-                </div>
-                <StandardCardTitle className="text-xl">CWT Studio</StandardCardTitle>
-                <p className="text-sm text-accent font-semibold">Strategy & Optimization</p>
+                <StandardCardTitle className="text-xl mb-1">CWT Studio</StandardCardTitle>
+                <p className="text-sm text-accent font-semibold mb-6">Strategy & Optimization</p>
               </StandardCardHeader>
               <StandardCardContent>
                 <ul className="space-y-3">
@@ -400,13 +354,10 @@ const Salesforce = () => {
               </StandardCardContent>
             </StandardCard>
 
-            <StandardCard variant="bordered" equalHeight className="p-8 border-2 border-accent/50">
+            <StandardCard variant="bordered" equalHeight className="p-8 border-l-4 border-accent">
               <StandardCardHeader>
-                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-accent" />
-                </div>
-                <StandardCardTitle className="text-xl">CloudRoute</StandardCardTitle>
-                <p className="text-sm text-accent font-semibold">Technical Implementation</p>
+                <StandardCardTitle className="text-xl mb-1">CloudRoute</StandardCardTitle>
+                <p className="text-sm text-accent font-semibold mb-6">Technical Implementation</p>
               </StandardCardHeader>
               <StandardCardContent>
                 <ul className="space-y-3">
