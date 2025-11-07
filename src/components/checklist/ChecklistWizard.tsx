@@ -3,15 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { ChecklistCategory } from "./InteractiveChecklist";
 import { useChecklist } from "./ChecklistContext";
 import { AssessmentItem, AssessmentAnswer } from "./AssessmentItem";
-import { ProgressStepper } from "./ProgressStepper";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight, RotateCcw, FileText, CheckCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, FileText } from "lucide-react";
 import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
-import { Card } from "@/components/ui/card";
-import { ScoreGauge } from "./ScoreGauge";
-import { Badge } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
 
 interface ChecklistWizardProps {
   checklistId: string;
@@ -81,124 +76,85 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
     trackEvent('assessment_answer_changed', { checklistId, itemId, value });
   };
 
-  const categoryAnsweredCount = currentCategory.items.filter(item => {
-    const answer = checklistState[checklistId]?.[item.id];
-    return answer !== null && answer !== undefined;
-  }).length;
-
-  const categoryProgress = Math.round((categoryAnsweredCount / currentCategory.items.length) * 100);
-
-  const steps = categories.map(cat => {
-    const catAnswered = cat.items.filter(item => {
-      const answer = checklistState[checklistId]?.[item.id];
-      return answer !== null && answer !== undefined;
-    }).length;
-    return {
-      id: cat.id,
-      title: cat.title,
-      completed: catAnswered === cat.items.length
-    };
-  });
-
   const allQuestionsAnswered = answeredItems === totalItems;
 
   return (
-    <div className="space-y-0">
-        {/* Completion Badge */}
-        {allQuestionsAnswered && (
-          <div className="mb-6 p-4 bg-accent/10 border border-accent/20 rounded-lg animate-fade-in">
-            <div className="flex items-center justify-center gap-2 text-accent-foreground">
-              <CheckCircle className="w-5 h-5" />
-              <span className="font-mono text-sm">✓ Saved — All questions answered</span>
-            </div>
-          </div>
-        )}
+    <div className="bg-white rounded-lg shadow-sm border border-black/5 p-6 md:p-10">
+      {/* Header */}
+      <div className="mb-8 text-center">
+        <h1 className="font-mono text-3xl md:text-4xl font-semibold mb-3 text-foreground">
+          {title}
+        </h1>
+        <p className="font-sans text-sm text-muted-foreground">
+          Step {currentStep + 1} of {categories.length} · {answeredItems}/{totalItems} questions answered
+        </p>
+      </div>
 
-        {/* Progress Stepper */}
-        <ProgressStepper 
-          steps={steps} 
-          currentStep={currentStep}
-          totalItems={totalItems}
-          onStepClick={(step) => {
-            setCurrentStep(step);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-          }}
-        />
-
-        {/* Category Content */}
-        <div className="py-8 space-y-8 animate-fade-in">
-          {/* Category Header */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <h2 className="font-mono text-2xl md:text-3xl font-semibold text-foreground">
-                {currentCategory.title}
-              </h2>
-              <span className="font-mono text-sm text-muted-foreground">
-                {categoryAnsweredCount}/{currentCategory.items.length}
-              </span>
-            </div>
-            {currentCategory.description && (
-              <p className="font-sans text-[15px] text-muted-foreground leading-relaxed max-w-3xl">
-                {currentCategory.description}
-              </p>
-            )}
-          </div>
-
-          {/* Questions - No extra spacing, items have their own borders */}
-          <div>
-            {currentCategory.items.map((item) => (
-              <AssessmentItem
-                key={item.id}
-                id={item.id}
-                label={item.label}
-                description={item.description}
-                helpText={item.helpText}
-                value={checklistState[checklistId]?.[item.id] || null}
-                onChange={(value) => handleAnswerChange(item.id, value)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Navigation Buttons */}
-        <div className="flex justify-between items-center pt-8 pb-4 border-t border-black/5 sticky bottom-0 bg-[#FAFAFA]">
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={handleBack}
-            disabled={currentStep === 0}
-            className={cn(
-              "font-mono border-black/20 bg-white hover:bg-black/5",
-              currentStep === 0 && "opacity-40"
-            )}
-          >
-            <ChevronLeft className="w-4 h-4 mr-2" />
-            Previous
-          </Button>
-
-          {currentStep < categories.length - 1 ? (
-            <Button
-              variant="default"
-              size="lg"
-              onClick={handleNext}
-              className="font-mono"
-            >
-              Next
-              <ChevronRight className="w-4 h-4 ml-2" />
-            </Button>
-          ) : (
-            <Button
-              variant="default"
-              size="lg"
-              onClick={handleViewResults}
-              disabled={answeredItems === 0}
-              className="font-mono"
-            >
-              <FileText className="w-4 h-4 mr-2" />
-              View Results
-            </Button>
-          )}
+      {/* Progress Bar */}
+      <div className="mb-8">
+        <div className="h-2 bg-black/5 rounded-full overflow-hidden">
+          <div
+            className="h-full bg-primary transition-all duration-300"
+            style={{ width: `${(answeredItems / totalItems) * 100}%` }}
+          />
         </div>
       </div>
+
+      {/* Category */}
+      <div className="mb-8">
+        <h2 className="font-mono text-xl font-semibold mb-6 text-foreground">
+          {currentCategory.title}
+        </h2>
+        
+        <div className="space-y-1">
+          {currentCategory.items.map((item) => (
+            <AssessmentItem
+              key={item.id}
+              id={item.id}
+              label={item.label}
+              description={item.description}
+              helpText={item.helpText}
+              value={checklistState[checklistId]?.[item.id] || null}
+              onChange={(value) => handleAnswerChange(item.id, value)}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <div className="flex items-center justify-between gap-4 pt-6 border-t border-black/5">
+        <div className="flex gap-2">
+          <Button
+            variant="outline"
+            onClick={handleBack}
+            disabled={currentStep === 0}
+          >
+            <ChevronLeft className="w-4 h-4 mr-1" />
+            Back
+          </Button>
+          
+          <Button
+            variant="outline"
+            onClick={handleReset}
+            size="icon"
+            title="Start Over"
+          >
+            <RotateCcw className="w-4 h-4" />
+          </Button>
+        </div>
+
+        {currentStep < categories.length - 1 ? (
+          <Button onClick={handleNext}>
+            Next
+            <ChevronRight className="w-4 h-4 ml-1" />
+          </Button>
+        ) : (
+          <Button onClick={handleViewResults} disabled={answeredItems === 0}>
+            <FileText className="w-4 h-4 mr-2" />
+            View Results
+          </Button>
+        )}
+      </div>
+    </div>
   );
 };
