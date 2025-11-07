@@ -10,8 +10,8 @@ import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
 import { Card } from "@/components/ui/card";
 import { ScoreGauge } from "./ScoreGauge";
-
 import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 interface ChecklistWizardProps {
   checklistId: string;
@@ -161,13 +161,16 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center pt-8 pb-4 border-t border-black/5 sticky bottom-0 bg-background">
+        <div className="flex justify-between items-center pt-8 pb-4 border-t border-black/5 sticky bottom-0 bg-[#FAFAFA]">
           <Button
             variant="outline"
             size="lg"
             onClick={handleBack}
             disabled={currentStep === 0}
-            className="font-mono"
+            className={cn(
+              "font-mono border-black/20 bg-white hover:bg-black/5",
+              currentStep === 0 && "opacity-40"
+            )}
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
             Previous
