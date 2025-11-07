@@ -103,56 +103,22 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
   const allQuestionsAnswered = answeredItems === totalItems;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-0">
         {/* Completion Badge */}
         {allQuestionsAnswered && (
-          <Card className="p-4 bg-green-50 border-green-200 dark:bg-green-950/20 dark:border-green-900">
-            <div className="flex items-center justify-center gap-2 text-green-700 dark:text-green-400">
+          <div className="mb-6 p-4 bg-accent/10 border border-accent/20 rounded-lg animate-fade-in">
+            <div className="flex items-center justify-center gap-2 text-accent-foreground">
               <CheckCircle className="w-5 h-5" />
-              <span className="font-medium">All questions answered! Click "View Results" to see your full report.</span>
-            </div>
-          </Card>
-        )}
-
-        {/* Compact Score Header */}
-        <Card className="p-4 md:p-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <ScoreGauge score={overallProgress} size="sm" showLabel={false} animated={false} />
-              <div className="text-center md:text-left">
-                <div className="text-sm font-mono text-muted-foreground">
-                  {answeredItems} / {totalItems} answered
-                </div>
-                <div className="flex gap-3 text-xs mt-1">
-                  <span className="text-green-600 font-mono">{answerCounts.yes} Yes</span>
-                  <span className="text-yellow-600 font-mono">{answerCounts.partial} Partial</span>
-                  <span className="text-red-600 font-mono">{answerCounts.no} No</span>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm" onClick={handleReset}>
-                <RotateCcw className="w-4 h-4 mr-2" />
-                Start Over
-              </Button>
-              <Button 
-                variant={allQuestionsAnswered ? "default" : "secondary"}
-                size="sm" 
-                onClick={handleViewResults}
-                disabled={answeredItems === 0}
-                className={allQuestionsAnswered ? "shadow-lg" : ""}
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                View Results
-              </Button>
+              <span className="font-mono text-sm">✓ Saved — All questions answered</span>
             </div>
           </div>
-        </Card>
+        )}
 
         {/* Progress Stepper */}
         <ProgressStepper 
           steps={steps} 
           currentStep={currentStep}
+          totalItems={totalItems}
           onStepClick={(step) => {
             setCurrentStep(step);
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -160,30 +126,26 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
         />
 
         {/* Category Content */}
-        <div className="space-y-6">
+        <div className="py-8 space-y-8 animate-fade-in">
           {/* Category Header */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+              <h2 className="font-mono text-2xl md:text-3xl font-semibold text-foreground">
                 {currentCategory.title}
               </h2>
-              <span className="text-sm font-mono text-muted-foreground">
-                {categoryAnsweredCount} / {currentCategory.items.length}
+              <span className="font-mono text-sm text-muted-foreground">
+                {categoryAnsweredCount}/{currentCategory.items.length}
               </span>
             </div>
-            <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-              {currentCategory.description}
-            </p>
-            <div className="h-2 bg-muted rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-primary transition-all duration-300"
-                style={{ width: `${categoryProgress}%` }}
-              />
-            </div>
+            {currentCategory.description && (
+              <p className="font-sans text-[15px] text-muted-foreground leading-relaxed max-w-3xl">
+                {currentCategory.description}
+              </p>
+            )}
           </div>
 
-          {/* Questions */}
-          <div className="space-y-4">
+          {/* Questions - No extra spacing, items have their own borders */}
+          <div>
             {currentCategory.items.map((item) => (
               <AssessmentItem
                 key={item.id}
@@ -199,12 +161,13 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-between items-center pt-6 border-t border-border sticky bottom-0 bg-background py-4 z-10">
+        <div className="flex justify-between items-center pt-8 pb-4 border-t border-black/5 sticky bottom-0 bg-background">
           <Button
             variant="outline"
             size="lg"
             onClick={handleBack}
             disabled={currentStep === 0}
+            className="font-mono"
           >
             <ChevronLeft className="w-4 h-4 mr-2" />
             Previous
@@ -215,17 +178,18 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
               variant="default"
               size="lg"
               onClick={handleNext}
+              className="font-mono"
             >
               Next
               <ChevronRight className="w-4 h-4 ml-2" />
             </Button>
           ) : (
             <Button
-              variant={allQuestionsAnswered ? "default" : "secondary"}
+              variant="default"
               size="lg"
               onClick={handleViewResults}
               disabled={answeredItems === 0}
-              className={allQuestionsAnswered ? "shadow-lg" : ""}
+              className="font-mono"
             >
               <FileText className="w-4 h-4 mr-2" />
               View Results

@@ -11,7 +11,7 @@ const SelfAssessment = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#FAFAFA]">
       <SEOHead
         title="Free Technical Maturity Self-Assessment | CWT Studio"
         description="Assess your Salesforce and revenue systems maturity in 5 minutes. Get instant scoring, personalized recommendations, and a downloadable PDF report."
@@ -25,39 +25,32 @@ const SelfAssessment = () => {
         canonicalUrl="/self-assessment"
       />
       
-      <div className="container-standard py-8 md:py-12">
+      <div className="container-standard py-12 md:py-16">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-8 md:mb-12">
-          <h1 className="heading-page mb-4 md:mb-6">Technical Maturity Assessment</h1>
-          <p className="text-description mb-6">
-            Evaluate your revenue systems through 42 questions across 7 categories. Get instant scoring, personalized recommendations, and a downloadable report.
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h1 className="font-mono text-4xl md:text-5xl font-semibold mb-4 text-foreground">
+            Technical Maturity Assessment
+          </h1>
+          <p className="font-sans text-[16px] text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Diagnostic framework for revenue system infrastructure. Answer 42 questions to receive a structured assessment of current state and optimization opportunities.
           </p>
-          
-          {/* Quick Stats */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Clock className="w-4 h-4" />
-              <span>~5 minutes</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <FileText className="w-4 h-4" />
-              <span>42 questions</span>
-            </div>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <AlertCircle className="w-4 h-4" />
-              <span>Instant results</span>
-            </div>
-          </div>
         </div>
 
         {/* Wizard */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm border border-black/5 p-8 md:p-12">
           <ChecklistWizard
             checklistId={technicalMaturityChecklist.id}
             title={technicalMaturityChecklist.title}
             categories={technicalMaturityChecklist.categories}
           />
         </div>
+        
+        {/* Simple Footer */}
+        <footer className="mt-12 text-center">
+          <p className="font-sans text-xs text-muted-foreground">
+            © 2025 CWT Studio · Infrastructure that compounds.
+          </p>
+        </footer>
       </div>
     </div>
   );

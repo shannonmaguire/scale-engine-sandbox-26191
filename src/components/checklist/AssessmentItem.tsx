@@ -1,8 +1,6 @@
 import * as React from "react";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-import { CheckCircle2, AlertCircle, MinusCircle, HelpCircle } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export type AssessmentAnswer = "yes" | "partial" | "no" | null;
@@ -17,6 +15,12 @@ interface AssessmentItemProps {
   disabled?: boolean;
 }
 
+const systemTips = {
+  yes: "System stability improves when data quality rules are enforced.",
+  partial: "Incremental implementation reduces technical debt over time.",
+  no: "Foundation gaps create compounding operational friction."
+};
+
 export const AssessmentItem = ({
   id,
   label,
@@ -26,30 +30,12 @@ export const AssessmentItem = ({
   onChange,
   disabled = false
 }: AssessmentItemProps) => {
-  const getBorderColor = () => {
-    if (!value) return "border-l-transparent";
-    if (value === "yes") return "border-l-green-500";
-    if (value === "partial") return "border-l-yellow-500";
-    return "border-l-red-500";
-  };
-
-  const getBackgroundColor = () => {
-    return "bg-card";
-  };
-
   return (
-    <div
-      className={cn(
-        "group relative p-5 md:p-6 rounded-lg border-2 transition-all duration-200",
-        getBorderColor(),
-        value ? "bg-card shadow-sm" : "bg-card border-border hover:border-primary/30 hover:shadow-sm",
-        disabled && "opacity-50 cursor-not-allowed"
-      )}
-    >
-      <div className="space-y-4">
+    <div className="py-7 border-b border-black/5 last:border-0 transition-all duration-200">
+      <div className="space-y-5">
         {/* Question Label */}
         <div className="flex items-start justify-between gap-3">
-          <label htmlFor={id} className="text-base font-semibold text-foreground leading-relaxed flex-1">
+          <label htmlFor={id} className="font-mono text-[15px] font-medium text-foreground leading-relaxed flex-1">
             {label}
           </label>
           {helpText && (
@@ -61,11 +47,11 @@ export const AssessmentItem = ({
                     className="flex-shrink-0 text-muted-foreground hover:text-foreground transition-colors"
                     aria-label="Help"
                   >
-                    <HelpCircle className="w-5 h-5" />
+                    <HelpCircle className="w-4 h-4" />
                   </button>
                 </TooltipTrigger>
                 <TooltipContent side="left" className="max-w-xs">
-                  <p className="text-sm">{helpText}</p>
+                  <p className="text-sm font-sans">{helpText}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -74,54 +60,68 @@ export const AssessmentItem = ({
 
         {/* Description */}
         {description && (
-          <p className="text-sm text-muted-foreground leading-relaxed">
+          <p className="font-sans text-[15px] text-muted-foreground leading-relaxed">
             {description}
           </p>
         )}
 
-        {/* Radio Group */}
-        <RadioGroup
-          value={value || ""}
-          onValueChange={(v) => onChange(v as AssessmentAnswer)}
-          disabled={disabled}
-          className="flex flex-col sm:flex-row gap-3 pt-2"
-        >
-          {/* Yes Option */}
-          <div className="flex items-center space-x-3 flex-1">
-            <RadioGroupItem value="yes" id={`${id}-yes`} className="w-5 h-5" />
-            <Label 
-              htmlFor={`${id}-yes`}
-              className="text-base font-medium cursor-pointer flex items-center gap-2 flex-1"
-            >
-              <CheckCircle2 className="w-5 h-5 text-green-600" />
-              <span>Yes</span>
-            </Label>
-          </div>
+        {/* Pill Button Options */}
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => !disabled && onChange("yes")}
+            disabled={disabled}
+            className={cn(
+              "px-5 py-2 rounded-full font-sans text-[14px] font-medium transition-all duration-200",
+              "border border-black/10",
+              value === "yes" 
+                ? "bg-primary text-primary-foreground shadow-sm" 
+                : "bg-white hover:bg-[#F8F8F8] text-foreground",
+              disabled && "opacity-50 cursor-not-allowed"
+            )}
+          >
+            Yes
+          </button>
+          
+          <button
+            type="button"
+            onClick={() => !disabled && onChange("partial")}
+            disabled={disabled}
+            className={cn(
+              "px-5 py-2 rounded-full font-sans text-[14px] font-medium transition-all duration-200",
+              "border border-black/10",
+              value === "partial" 
+                ? "bg-primary text-primary-foreground shadow-sm" 
+                : "bg-white hover:bg-[#F8F8F8] text-foreground",
+              disabled && "opacity-50 cursor-not-allowed"
+            )}
+          >
+            Partially
+          </button>
+          
+          <button
+            type="button"
+            onClick={() => !disabled && onChange("no")}
+            disabled={disabled}
+            className={cn(
+              "px-5 py-2 rounded-full font-sans text-[14px] font-medium transition-all duration-200",
+              "border border-black/10",
+              value === "no" 
+                ? "bg-primary text-primary-foreground shadow-sm" 
+                : "bg-white hover:bg-[#F8F8F8] text-foreground",
+              disabled && "opacity-50 cursor-not-allowed"
+            )}
+          >
+            No
+          </button>
+        </div>
 
-          {/* Partial Option */}
-          <div className="flex items-center space-x-3 flex-1">
-            <RadioGroupItem value="partial" id={`${id}-partial`} className="w-5 h-5" />
-            <Label 
-              htmlFor={`${id}-partial`}
-              className="text-base font-medium cursor-pointer flex items-center gap-2 flex-1"
-            >
-              <MinusCircle className="w-5 h-5 text-yellow-600" />
-              <span>Partially</span>
-            </Label>
-          </div>
-
-          {/* No Option */}
-          <div className="flex items-center space-x-3 flex-1">
-            <RadioGroupItem value="no" id={`${id}-no`} className="w-5 h-5" />
-            <Label 
-              htmlFor={`${id}-no`}
-              className="text-base font-medium cursor-pointer flex items-center gap-2 flex-1"
-            >
-              <AlertCircle className="w-5 h-5 text-red-600" />
-              <span>No</span>
-            </Label>
-          </div>
-        </RadioGroup>
+        {/* System Tip - Shows when answer is selected */}
+        {value && (
+          <p className="font-mono text-[13px] text-[#666] italic animate-fade-in">
+            {systemTips[value]}
+          </p>
+        )}
       </div>
     </div>
   );
