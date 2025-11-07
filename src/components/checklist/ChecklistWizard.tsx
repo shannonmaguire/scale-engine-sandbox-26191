@@ -123,7 +123,7 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
 
       {/* Navigation */}
       <div className="flex items-center justify-between gap-4 pt-6 border-t border-black/5">
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2">
           <Button
             variant="outline"
             onClick={handleBack}
@@ -136,7 +136,6 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
           <Button
             variant="outline"
             onClick={handleReset}
-            size="icon"
             title="Start Over"
           >
             <RotateCcw className="w-4 h-4" />
