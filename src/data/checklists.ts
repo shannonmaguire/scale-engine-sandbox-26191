@@ -300,29 +300,9 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         helpText: "Example: You can't save a new customer without entering their phone number or email"
       },
       {
-        id: "data-standards",
-        label: "Team follows consistent data entry guidelines",
-        helpText: "Example: Everyone enters phone numbers the same way (555-123-4567) instead of random formats"
-      },
-      {
         id: "data-cleanup",
         label: "We regularly clean up old or incorrect data",
         helpText: "Example: Monthly check to update or remove outdated customer information"
-      },
-      {
-        id: "picklist-management",
-        label: "Dropdown options are organized and up-to-date",
-        helpText: "Example: Industry dropdowns don't have 50 random options that mean the same thing"
-      },
-      {
-        id: "record-ownership",
-        label: "Clear ownership of who manages each customer/record",
-        helpText: "Example: Everyone knows which sales rep owns which accounts"
-      },
-      {
-        id: "historical-data",
-        label: "Old data is saved and easy to find when needed",
-        helpText: "Example: You can still look up customer interactions from last year"
       }
     ]
   },
@@ -344,26 +324,6 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         id: "process-builder",
         label: "Multi-step processes run without manual work",
         helpText: "Example: New customer gets added → welcome email sent → task created for onboarding → manager notified"
-      },
-      {
-        id: "approval-processes",
-        label: "Approvals happen through the system (not email)",
-        helpText: "Example: Discount requests automatically go to the right manager for approval"
-      },
-      {
-        id: "email-alerts",
-        label: "System sends email notifications automatically",
-        helpText: "Example: Sales rep gets emailed when their lead fills out a form"
-      },
-      {
-        id: "scheduled-jobs",
-        label: "System runs regular maintenance automatically",
-        helpText: "Example: Reports are generated and sent every Monday morning without you doing anything"
-      },
-      {
-        id: "flow-optimization",
-        label: "Automations work smoothly even with lots of data",
-        helpText: "Example: Bulk uploads and mass updates don't crash or slow down the system"
       }
     ]
   },
@@ -377,11 +337,6 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         helpText: "Example: You know what connects to what (email tool → CRM → accounting software)"
       },
       {
-        id: "api-monitoring",
-        label: "We check that connections are working properly",
-        helpText: "Example: You get notified if data stops flowing between your website and CRM"
-      },
-      {
         id: "error-handling",
         label: "We know when syncing fails between systems",
         helpText: "Example: Alert pops up if customer info doesn't transfer from your forms to the database"
@@ -390,16 +345,6 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         id: "data-sync",
         label: "Data stays consistent across different systems",
         helpText: "Example: Customer's email is the same in your CRM, email tool, and billing system"
-      },
-      {
-        id: "middleware",
-        label: "We use connection tools (like Zapier) when needed",
-        helpText: "Example: Using Zapier to automatically add new customers from one app to another"
-      },
-      {
-        id: "api-versioning",
-        label: "We have a plan for when systems get updated",
-        helpText: "Example: You know what to do when Salesforce releases a new version"
       }
     ]
   },
@@ -413,16 +358,6 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         helpText: "Example: Sales reps see their accounts, managers see their team's accounts, executives see everything"
       },
       {
-        id: "permission-sets",
-        label: "We control what each person can do in the system",
-        helpText: "Example: Some people can only view data, others can edit, and only admins can delete"
-      },
-      {
-        id: "sharing-rules",
-        label: "We've documented who can access what",
-        helpText: "Example: You have clear rules about which teams can see customer pricing"
-      },
-      {
         id: "field-security",
         label: "Sensitive information has restricted access",
         helpText: "Example: Only certain people can view salary info or customer credit card data"
@@ -431,16 +366,6 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         id: "audit-trail",
         label: "We can see who changed what and when",
         helpText: "Example: You can look up who updated a customer's address last Tuesday"
-      },
-      {
-        id: "compliance-checks",
-        label: "We follow required privacy regulations",
-        helpText: "Example: You handle customer data according to GDPR or HIPAA requirements"
-      },
-      {
-        id: "security-review",
-        label: "We regularly review who has access to what",
-        helpText: "Example: Quarterly check to remove access for people who left or changed roles"
       }
     ]
   },
@@ -459,29 +384,9 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         helpText: "Example: You monitor monthly revenue, conversion rates, or customer satisfaction scores"
       },
       {
-        id: "report-folder",
-        label: "Reports are organized and easy to find",
-        helpText: "Example: Sales reports in one folder, marketing in another—not a messy pile"
-      },
-      {
-        id: "scheduled-reports",
-        label: "Reports are sent automatically on schedule",
-        helpText: "Example: Sales team gets their weekly pipeline report emailed every Monday morning"
-      },
-      {
         id: "forecast-accuracy",
         label: "Our sales forecasts are usually accurate",
         helpText: "Example: When you predict closing $100K this month, you actually close close to that"
-      },
-      {
-        id: "custom-reports",
-        label: "We can create reports for specific questions",
-        helpText: "Example: You can quickly answer 'Which customers bought X product in the last 6 months?'"
-      },
-      {
-        id: "einstein-analytics",
-        label: "We use advanced analytics tools",
-        helpText: "Example: Using Einstein Analytics, Tableau, or similar for deep data analysis"
       }
     ]
   },
@@ -501,24 +406,9 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
         helpText: "Example: New hires get a walkthrough during their first week"
       },
       {
-        id: "help-resources",
-        label: "Team has access to help guides",
-        helpText: "Example: Written instructions or videos people can reference when stuck"
-      },
-      {
         id: "super-users",
         label: "We have go-to people who know the system well",
         helpText: "Example: A few team members are experts others can ask for help"
-      },
-      {
-        id: "feedback-loop",
-        label: "We regularly ask the team for improvement ideas",
-        helpText: "Example: Quarterly surveys or meetings to gather feedback on what's working or not"
-      },
-      {
-        id: "satisfaction-score",
-        label: "We measure if the team likes using the system",
-        helpText: "Example: You track whether people find it helpful or frustrating"
       }
     ]
   }

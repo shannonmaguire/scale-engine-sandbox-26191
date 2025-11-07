@@ -32,7 +32,7 @@ export const ProgressStepper = ({ steps, currentStep, totalItems, onStepClick }:
       {/* Info Line */}
       <div className="flex items-center justify-between text-[13px]">
         <span className="font-mono text-muted-foreground">
-          {totalItems} questions · {steps.length} categories · ~5 min
+          {totalItems} questions · {steps.length} categories · ~3 min
         </span>
         <span className="font-mono font-medium text-foreground">
           Step {currentStep + 1}/{steps.length}
