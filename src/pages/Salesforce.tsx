@@ -326,64 +326,59 @@ const Salesforce = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gutter-content spacing-subsection">
-            <StandardCard variant="bordered" equalHeight className="p-8 border-l-4 border-accent">
-              <StandardCardHeader>
-                <StandardCardTitle className="text-xl mb-1">CWT Studio</StandardCardTitle>
-                <p className="text-sm text-accent font-semibold mb-6">Strategy & Optimization</p>
-              </StandardCardHeader>
-              <StandardCardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Revenue operations expertise</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Business process design</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Performance analysis</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Ongoing optimization</span>
-                  </li>
-                </ul>
-              </StandardCardContent>
+          <div className="grid md:grid-cols-2 gutter-content">
+            <StandardCard variant="bordered" className="p-8">
+              <h3 className="text-2xl font-bold mb-2">CWT Studio</h3>
+              <p className="text-muted-foreground font-medium mb-8">Strategy & Optimization</p>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Revenue operations expertise</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Business process design</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Performance analysis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Ongoing optimization</span>
+                </li>
+              </ul>
             </StandardCard>
 
-            <StandardCard variant="bordered" equalHeight className="p-8 border-l-4 border-accent">
-              <StandardCardHeader>
-                <StandardCardTitle className="text-xl mb-1">CloudRoute</StandardCardTitle>
-                <p className="text-sm text-accent font-semibold mb-6">Technical Implementation</p>
-              </StandardCardHeader>
-              <StandardCardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Salesforce development</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">System integrations</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Technical architecture</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
-                    <span className="text-sm">Platform maintenance</span>
-                  </li>
-                </ul>
-                <div className="mt-4 p-3 bg-accent/10 rounded-lg border border-accent/20">
-                  <p className="text-xs text-muted-foreground">
-                    <strong className="text-accent">Salesforce-Only Focus:</strong> CloudRoute specializes exclusively in Salesforce, ensuring every team member brings deep platform expertise without dilution across multiple technologies.
-                  </p>
-                </div>
-              </StandardCardContent>
+            <StandardCard variant="bordered" className="p-8">
+              <h3 className="text-2xl font-bold mb-2">CloudRoute</h3>
+              <p className="text-muted-foreground font-medium mb-8">Technical Implementation</p>
+              
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Salesforce development</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>System integrations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Technical architecture</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <span>Platform maintenance</span>
+                </li>
+              </ul>
+              
+              <div className="mt-8 pt-6 border-t border-border">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-semibold text-foreground">Salesforce-Only Focus:</span> CloudRoute specializes exclusively in Salesforce, ensuring deep platform expertise without dilution.
+                </p>
+              </div>
             </StandardCard>
           </div>
         </div>
