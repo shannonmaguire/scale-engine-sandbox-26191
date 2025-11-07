@@ -101,8 +101,8 @@ const Salesforce = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
-                <Link to="/contact">
-                  Start Assessment
+                <Link to="/contact?interest=salesforce">
+                  Schedule Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -330,7 +330,7 @@ const Salesforce = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/assessment">Start Assessment</Link>
+              <Link to="/contact?interest=salesforce">Schedule Discovery Call</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <Link to="/contact?interest=salesforce">Discuss Your Project</Link>
