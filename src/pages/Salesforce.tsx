@@ -305,35 +305,35 @@ const Salesforce = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-4">Getting Started</h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Every Salesforce engagement begins with our Infrastructure Assessment. This 2-week diagnostic maps your current state, identifies optimization opportunities, and delivers a prioritized 90-day roadmap.
+            Every Salesforce engagement begins with a discovery consultation where we assess your current setup and identify the highest-impact optimizations for your revenue operations.
           </p>
           
-          <div className="bg-card border-2 border-primary/30 rounded-lg p-6 mb-6 text-left">
+          <div className="bg-card border-2 border-accent/30 rounded-lg p-6 mb-6 text-left">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <CheckCircle className="w-5 h-5 text-primary" />
+              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                <Shield className="w-5 h-5 text-accent" />
               </div>
               <div>
-                <h3 className="font-semibold mb-2">Assessment First</h3>
+                <h3 className="font-semibold mb-2">Discovery & Scoping</h3>
                 <p className="text-sm text-muted-foreground mb-3">
-                  Starting at $4,500 | 2 weeks | 100% credits toward Sprint implementation
+                  Complimentary consultation to understand your needs and scope the right solution
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Revenue Infrastructure Scorecard</li>
-                  <li>• System analysis and baseline metrics</li>
-                  <li>• Prioritized 90-day roadmap</li>
-                  <li>• Executive presentation with leadership alignment</li>
+                  <li>• Review current Salesforce configuration</li>
+                  <li>• Identify pain points and opportunities</li>
+                  <li>• Define project scope and timeline</li>
+                  <li>• Custom proposal with clear deliverables</li>
                 </ul>
               </div>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
+            <Button size="lg" variant="teal" asChild>
               <Link to="/contact?interest=salesforce">Schedule Discovery Call</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/contact?interest=salesforce">Discuss Your Project</Link>
+              <Link to="/contact?interest=salesforce">Ask Questions</Link>
             </Button>
           </div>
         </div>
