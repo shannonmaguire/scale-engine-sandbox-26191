@@ -6,6 +6,7 @@ export interface Objection {
   fullFramework: {
     discovery: string[];
     proofPoints: string[];
+    competitivePositioning?: string;
     nextSteps: string;
     personaAngles?: {
       technical: string;

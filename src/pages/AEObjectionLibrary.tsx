@@ -161,7 +161,7 @@ PERSONA ANGLES:
                             <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
                               Discovery Questions
                             </h4>
-                            <ul className="space-y-2 pl-1">
+                            <ul className="space-y-2 pl-0">
                               {objection.fullFramework.discovery.map((question, idx) => <li key={idx} className="flex items-start gap-3 text-sm">
                                   <span className="text-accent-data font-semibold flex-shrink-0">{idx + 1}.</span>
                                   <span className="flex-1">{question}</span>
@@ -174,7 +174,7 @@ PERSONA ANGLES:
                             <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
                               Proof Points
                             </h4>
-                            <ul className="space-y-2 pl-1">
+                            <ul className="space-y-2 pl-0">
                               {objection.fullFramework.proofPoints.map((point, idx) => <li key={idx} className="flex items-start gap-3 text-sm">
                                   <span className="text-accent-data flex-shrink-0">•</span>
                                   <span className="flex-1">{point}</span>
