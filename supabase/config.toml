@@ -1,1 +1,4 @@
 project_id = "efivymqchdnirblhpnoa"
+
+[functions.email-nurture-sequence]
+verify_jwt = false
