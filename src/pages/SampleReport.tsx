@@ -265,7 +265,7 @@ export default function SampleReport() {
             {/* CTA */}
             <div className="flex gap-4 pt-8 border-t-2 border-border mt-16">
               <Button asChild size="lg" className="flex-1">
-                <Link to="/self-assessment">Get Your Assessment</Link>
+                <Link to="/assessment">Get Your Assessment</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="flex-1">
                 <Link to="/contact">Talk to an Expert</Link>
