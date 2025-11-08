@@ -125,6 +125,46 @@ const Proof = () => {
     growth: "107% Revenue Growth",
     outcomes: ["Earnings: $2.3K (+107% vs previous 6 months)", "Sales: 108 orders (+177%)", "Listings Created: 692 (+585%)", "Views: 41.5K in 7 days (+58% from boosting)", "Sales from Boosting: 176 total", "Average Rating: 5 stars from 134 reviews", "**Pattern validated:** Listing velocity outperformed inventory volume as primary growth driver", "Standardized copy and photo framing increased conversion predictability", "Insert program lifted repeat purchases within 30 days by double-digit margin"],
     whyItWorked: "System discipline created enterprise-grade results inside a consumer marketplace. Structure outperformed intuition. Boosting only worked when paired with daily new listings. No brand spend, no ad budget—only infrastructure."
+  }, {
+    id: 6,
+    industry: "B2B SaaS (Composite)",
+    vertical: "Project Management Platform",
+    size: "$4.2M ARR, Series A",
+    timeline: "90 Days",
+    challenge: "Product-led growth generating high-volume signups but sales team drowning in noise. 800+ trial starts per month, but only 6% converting to paid. No signal detection—reps calling cold trials with zero product usage. Gap: trial behavior invisible to sales workflow.",
+    pullQuote: "Product usage signals transformed trial chaos into qualified pipeline",
+    system: ["Product usage tracking integrated with Salesforce via API", "PQL scoring model based on feature adoption thresholds", "Automated lead routing triggered by usage milestones", "Sales playbooks customized by usage pattern (power user vs. evaluator)", "Real-time usage dashboard for rep prioritization", "Automated email sequences for low-engagement trials"],
+    beforeMetric: {
+      label: "Trial volume",
+      value: "800/mo, 6% convert"
+    },
+    afterMetric: {
+      label: "Qualified pipeline",
+      value: "150 PQLs, 24% convert"
+    },
+    growth: "4x Conversion Rate",
+    outcomes: ["Trial-to-paid conversion increased from 6% to 24% through behavior-based targeting", "Sales team capacity freed by 60%—stopped calling unqualified cold trials", "Average sales cycle reduced by 32% through better timing and context", "Rep win rate improved 3.5x by focusing on users demonstrating product value", "Expansion revenue surfaced through usage pattern analysis (identified upsell signals)", "**Pattern validated:** Product usage signals are the strongest predictor of purchase intent in PLG motion"],
+    whyItWorked: "Reps stopped interrupting evaluators and started helping buyers. Usage data transformed spray-and-pray outreach into contextual, timely conversations with users already experiencing product value."
+  }, {
+    id: 7,
+    industry: "Professional Services (Composite)",
+    vertical: "Marketing Agency",
+    size: "$2.8M annual revenue, 12 employees",
+    timeline: "90 Days",
+    challenge: "Project delivery chaos—client work spread across email threads, Slack, Google Drive, Trello. Account managers spending 15+ hours/week hunting for project status. Client escalations caused by missed deliverables and unclear timelines. Gap: no unified system of record.",
+    pullQuote: "Project chaos eliminated through unified delivery infrastructure",
+    system: ["Centralized project management with ClickUp (standardized board templates)", "Automated client reporting via dashboard with live project status", "SOP library for repeatable deliverable workflows (content, design, ad ops)", "Resource capacity planning dashboard for allocation visibility", "Client communication hub replacing scattered email/Slack threads", "Automated task assignment based on project type and team capacity"],
+    beforeMetric: {
+      label: "Admin overhead",
+      value: "15hrs/week hunting status"
+    },
+    afterMetric: {
+      label: "Unified delivery",
+      value: "2hrs/week + real-time visibility"
+    },
+    growth: "87% Time Reclaimed",
+    outcomes: ["Account manager admin time reduced from 15 hours to 2 hours per week", "Client escalations dropped 73% through proactive status visibility", "Project delivery time decreased 18% via standardized workflows", "Team capacity increased 22% through better resource allocation", "Client retention improved—NPS score rose from 6.8 to 8.9", "**Expansion enabled:** Time reclaimed allowed agency to take on 4 new clients without additional hires"],
+    whyItWorked: "Unified system of record replaced memory-based project tracking. Clients gained self-service visibility, account managers shifted from status reporting to strategic work, and standardized SOPs ensured consistent delivery quality."
   }];
   return <div className="min-h-screen bg-background">
       <SEOHead 
@@ -170,7 +210,7 @@ const Proof = () => {
         </div>
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">5</div>
+            <div className="text-3xl font-mono font-bold text-primary mb-1">7</div>
             <div className="text-xs text-muted-foreground">Systems Deployed</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />

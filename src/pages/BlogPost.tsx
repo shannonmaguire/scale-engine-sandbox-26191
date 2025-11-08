@@ -5,6 +5,7 @@ import { ArrowLeft, Share2, Calendar, User, ArrowRight, BookOpen } from "lucide-
 import SEOHead from "@/components/SEOHead";
 import { NinetyDaySystemArticle } from "@/components/blog/NinetyDaySystemArticle";
 import { SalesforceTechnicalDebtArticle } from "@/components/blog/SalesforceTechnicalDebtArticle";
+import { BreakagePointsArticle } from "@/components/blog/BreakagePointsArticle";
 
 // Sample blog posts data (in production, this would come from a CMS or API)
 const blogPosts = [
@@ -34,18 +35,30 @@ const blogPosts = [
   },
   {
     id: 3,
+    slug: "breaking-points-2-5m-arr",
+    title: "What Breaks First in $2-5M ARR Companies",
+    excerpt: "Between $2M and $5M ARR, every SaaS company hits the same breaking points. Not because they're bad at execution—because manual processes that worked at $500K become systemic bottlenecks at scale.",
+    author: "Shannon Maguire",
+    publishedAt: "2024-01-08",
+    readTime: "14 min read",
+    category: "Revenue Operations",
+    tags: ["scaling", "breaking points", "infrastructure", "operations"],
+    featured: false
+  },
+  {
+    id: 4,
     slug: "revenue-operations-automation-playbook",
     title: "The Revenue Operations Automation Playbook",
     excerpt: "Stop treating automation like a nice-to-have. Learn how to build automated revenue operations that scale with your business and deliver predictable outcomes.",
     author: "Shannon Maguire",
-    publishedAt: "2024-01-08",
+    publishedAt: "2024-01-06",
     readTime: "15 min read",
     category: "Revenue Operations",
     tags: ["automation", "RevOps", "scalability", "playbook"],
     featured: false
   },
   {
-    id: 4,
+    id: 5,
     slug: "data-migration-without-chaos",
     title: "Data Migration Without the Chaos: A Structured Approach",
     excerpt: "Data migrations fail because teams skip the infrastructure work. Here's how to move data between systems without losing weekends or your sanity.",
@@ -57,7 +70,7 @@ const blogPosts = [
     featured: false
   },
   {
-    id: 5,
+    id: 6,
     slug: "fractional-cto-when-and-why",
     title: "Fractional CTO: When Your Business Needs Strategic Tech Leadership",
     excerpt: "You don't need a full-time CTO to solve technical debt and build systems. Here's when fractional technical leadership makes sense and how to make it work.",
@@ -69,7 +82,7 @@ const blogPosts = [
     featured: false
   },
   {
-    id: 6,
+    id: 7,
     slug: "api-integration-patterns-that-scale",
     title: "API Integration Patterns That Actually Scale",
     excerpt: "Most API integrations break under load. Learn the architectural patterns that keep your integrations running smoothly as you grow from dozens to millions of requests.",
@@ -81,7 +94,7 @@ const blogPosts = [
     featured: false
   },
   {
-    id: 7,
+    id: 8,
     slug: "salesforce-implementation-mistakes",
     title: "The 5 Most Expensive Salesforce Implementation Mistakes",
     excerpt: "Years of cleanup work traces back to five preventable mistakes made during implementation. Here's what they are and how to avoid them.",
@@ -93,7 +106,7 @@ const blogPosts = [
     featured: false
   },
   {
-    id: 8,
+    id: 9,
     slug: "building-business-intelligence-infrastructure",
     title: "Building Business Intelligence That People Actually Use",
     excerpt: "BI dashboards fail when they're built backward. Start with the decisions you need to make, then build the data pipeline to support them.",
@@ -122,6 +135,10 @@ const BlogPost = () => {
     
     if (slug === "salesforce-technical-debt-competitive-advantage") {
       return <SalesforceTechnicalDebtArticle />;
+    }
+
+    if (slug === "breaking-points-2-5m-arr") {
+      return <BreakagePointsArticle />;
     }
     
     // Default fallback for other posts
