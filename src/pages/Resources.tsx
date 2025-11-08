@@ -130,7 +130,7 @@ const Resources = () => {
             </div>
           </div>
           <h1 className="heading-page text-primary mb-6">
-            Battle-Tested Frameworks
+            Proven Revenue Operations Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl mb-4">
             The same tools we use in our revenue operations assessments and sprint engagements. All resources unlock instantly with your email.
