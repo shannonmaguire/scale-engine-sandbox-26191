@@ -30,6 +30,7 @@ const SalesforcePartners = lazy(() => import("@/pages/SalesforcePartners"));
 const Fractional = lazy(() => import("@/pages/Fractional"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const WebSystems = lazy(() => import("@/pages/WebSystems"));
+const StartHere = lazy(() => import("@/pages/StartHere"));
 
 const PartnerDashboard = lazy(() => import("@/pages/PartnerDashboard"));
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
@@ -89,6 +90,7 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/systems" element={<Navigate to="/" replace />} />
+            <Route path="/start-here" element={<StartHere />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/self-assessment" element={<SelfAssessment />} />
             <Route path="/assessment-results" element={<AssessmentResults />} />
