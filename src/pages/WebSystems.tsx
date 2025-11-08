@@ -71,23 +71,26 @@ const WebSystems = () => {
     features: ["Major updates & optimization", "24-hour response time", "6-month expiration", "Dedicated support contact"]
   }];
   const faqs = [{
+    question: "How does this differ from hiring an agency or freelancer?",
+    answer: "Most web projects focus on design aesthetics without connecting to revenue operations. We build sites as infrastructure—CRM-wired, conversion-tracked, and documented for ownership transfer. You're not paying for pixels; you're paying for a system that captures and routes demand."
+  }, {
     question: "Can my team update pages without a developer?",
-    answer: "Yes. You receive an owner guide, components, and page templates that your team can edit."
+    answer: "Yes. You receive an owner guide, components, and page templates that your team can edit. Content updates, layout changes, and new pages using existing templates don't require developer involvement."
   }, {
     question: "Do I need an Infrastructure Assessment first?",
-    answer: "Web Systems is standalone and does not require prior assessment. If you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our Infrastructure Assessment (starting at $4,500) provides clarity before build. That fee credits fully toward Web Systems if you proceed."
+    answer: "No. Web Systems is standalone and does not require prior assessment. However, if you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our Infrastructure Assessment (starting at $4,500) provides clarity before build. That fee credits fully toward Web Systems if you proceed."
+  }, {
+    question: "What CRM platforms do you integrate with?",
+    answer: "We work with your existing stack—HubSpot, Salesforce, Pipedrive, ActiveCampaign, or custom solutions. Integration includes form routing, event tracking, and conversion dashboards. If you don't have a CRM yet, we'll recommend options based on your business model."
   }, {
     question: "Do you offer ongoing website maintenance?",
     answer: "Yes. We offer on-demand support blocks (10, 20, or 40 hours) for updates, fixes, and optimizations. Hours are valid for 6 months and include content updates, component modifications, performance optimization, and more. New feature development requires separate scoping."
   }, {
     question: "Do you take over my hosting?",
-    answer: "No. We set up a clean deployment on your provider and hand you the keys."
+    answer: "No. We set up a clean deployment on your provider (Vercel, Netlify, AWS, etc.) and hand you the keys. You maintain control over infrastructure, billing, and access."
   }, {
-    question: "Will you work with my current CRM?",
-    answer: "Yes. We connect forms, events, and dashboards to your stack."
-  }, {
-    question: "Do you put your logo in my footer?",
-    answer: "No. Ownership is yours."
+    question: "What happens if I want to switch developers later?",
+    answer: "That's the point. You own the repository, deployment credentials, and documentation. Hire any React developer to continue building. No vendor lock-in, no proprietary systems."
   }];
   const handleCTAClick = (location: string) => {
     trackCTAClick(`Web Systems ${location} CTA`, `web-systems-${location}`, '/contact?interest=web&source_page=web-systems');
@@ -96,20 +99,42 @@ const WebSystems = () => {
     trackCTAClick(`Website Support ${packageName}`, 'web-systems-support', '/contact?interest=website-support&source_page=web-systems');
   };
   return <div className="min-h-screen">
-      <SEOHead title="Web Systems | CWT Studio" description="Websites you can own and update. CRM-wired, documented, and fast." keywords={['web systems', 'CRM website', 'website ownership', 'performance web development']} canonicalUrl="/web-systems" />
+      <SEOHead title="Web Systems | Revenue Infrastructure You Own | CWT Studio" description="Performance-driven websites integrated into your revenue operations. CRM-wired, conversion-tracked, fully documented. React, TypeScript, zero vendor lock-in." keywords={['revenue infrastructure', 'CRM website integration', 'lead capture automation', 'performance web development', 'website ownership', 'conversion tracking']} canonicalUrl="/web-systems" />
       
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Service",
-          "name": "Web Systems",
+          "name": "Web Systems - Revenue Infrastructure",
           "provider": {
             "@type": "Organization",
             "name": "CWT Studio"
           },
-          "serviceType": "Web Development",
-          "description": "Websites you can own and update. CRM-wired, documented, and fast.",
-          "areaServed": "Worldwide"
+          "serviceType": "Web Development & Revenue Operations Integration",
+          "description": "Performance-driven websites integrated into revenue operations. CRM-wired, conversion-tracked, fully documented for ownership transfer.",
+          "areaServed": "Worldwide",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "offerCount": "3",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Essentials Package",
+                "description": "5-7 pages with base CRM integration and conversion tracking"
+              },
+              {
+                "@type": "Offer",
+                "name": "Core Package",
+                "description": "8-12 pages with gated assets and advanced CRM workflows"
+              },
+              {
+                "@type": "Offer",
+                "name": "Scale Package",
+                "description": "Full component library with multi-brand architecture"
+              }
+            ]
+          }
         })}
       </script>
       
@@ -129,10 +154,10 @@ const WebSystems = () => {
             </span>
           </div>
           <h1 className="heading-page mb-4">
-            Custom Websites You Own
+            Web as Revenue Infrastructure
           </h1>
           <p className="text-xl text-muted-foreground mb-6">
-            React, TypeScript, and Tailwind sites with CRM integration, full source code, and deployment credentials. Update in-house or hire your own developer—no vendor lock-in.
+            Your website should capture demand, qualify prospects, and route leads—not just look good. We build performance-driven sites that integrate directly into your revenue system, with full source code and zero vendor lock-in.
           </p>
           
           <div className="grid grid-cols-3 gap-6 mb-8 py-6 border-y border-border">
@@ -164,20 +189,130 @@ const WebSystems = () => {
           </div>
         </div>
 
-        {/* What You Get */}
+        {/* Deliverable Sequence */}
         <div className="mb-16">
-          <h2 className="heading-section mb-4">What's Included</h2>
-          <p className="text-muted-foreground mb-6 max-w-2xl">
-            We build custom sites from scratch using React, TypeScript, and Tailwind. No drag-and-drop builders. No WordPress plugins. Just clean code your team can own and update.
+          <h2 className="heading-section mb-4">What You Receive</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Every web system follows a documented deployment sequence designed for operational transfer, not perpetual dependency.
           </p>
-          <ul className="space-y-3 max-w-2xl">
-            {deliverables.map((item, index) => (
-              <li key={index} className="flex items-start gap-3">
-                <item.icon size={ICON_SIZES.medium} strokeWidth={ICON_STROKE.default} className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-foreground">{item.text}</span>
-              </li>
-            ))}
-          </ul>
+          
+          <div className="max-w-3xl space-y-6">
+            <div className="border-l-4 border-primary pl-6">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="font-mono text-sm text-primary font-bold">PHASE 1</div>
+                <ArrowRight size={16} className="text-muted-foreground" />
+                <h3 className="font-mono font-bold text-lg">Site Architecture</h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                Page structure, routing map, CRM event tracking, and analytics wiring. Every form submission, button click, and conversion path documented and connected to your pipeline.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li>• Lead capture flow with CRM routing</li>
+                <li>• Conversion event tracking (form fills, downloads, call bookings)</li>
+                <li>• Page performance optimization (sub-1s load times)</li>
+                <li>• SEO foundation (meta tags, structured data, sitemap)</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-primary pl-6">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="font-mono text-sm text-primary font-bold">PHASE 2</div>
+                <ArrowRight size={16} className="text-muted-foreground" />
+                <h3 className="font-mono font-bold text-lg">Component Library</h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                Reusable UI components, page templates, and design system. Your team edits content and layouts without rebuilding from scratch every time.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li>• Editable page templates (landing pages, resources, case studies)</li>
+                <li>• UI component library (buttons, forms, cards, navigation)</li>
+                <li>• Design tokens (colors, typography, spacing)</li>
+                <li>• React + TypeScript + Tailwind codebase</li>
+              </ul>
+            </div>
+
+            <div className="border-l-4 border-primary pl-6">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="font-mono text-sm text-primary font-bold">PHASE 3</div>
+                <ArrowRight size={16} className="text-muted-foreground" />
+                <h3 className="font-mono font-bold text-lg">Handoff SOP</h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-3">
+                Complete documentation for ownership transfer: GitHub repo, deployment credentials, CMS access, analytics dashboards, and update procedures.
+              </p>
+              <ul className="space-y-1 text-sm text-muted-foreground">
+                <li>• GitHub repository with full source code access</li>
+                <li>• Deployment guide (hosting, DNS, SSL configuration)</li>
+                <li>• Content update procedures (no developer required)</li>
+                <li>• 30-day post-launch support window</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 p-6 bg-muted/30 border border-border rounded-lg max-w-3xl">
+            <p className="text-sm text-foreground font-mono">
+              <strong>No ongoing licensing. No vendor lock-in.</strong> Update in-house, hire your own developer, or keep us on retainer—your choice.
+            </p>
+          </div>
+        </div>
+
+        {/* Mini-Proof Case Study */}
+        <div className="mb-16">
+          <div className="bg-card border border-border rounded-lg p-8 max-w-3xl">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-2 h-2 bg-primary rounded-full" />
+              <span className="font-mono text-xs uppercase tracking-wider text-primary font-bold">Mini-Proof</span>
+            </div>
+            
+            <h3 className="font-mono font-bold text-xl mb-4">
+              Legal Services: Site Rebuild → Faster Intake → Better Routing
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div>
+                <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider mb-2">Before</div>
+                <ul className="space-y-2 text-sm text-foreground">
+                  <li>• Contact form with no qualification logic</li>
+                  <li>• Manual email triage by paralegal staff</li>
+                  <li>• 18-24 hour response time for intake</li>
+                  <li>• No visibility into lead source or practice area fit</li>
+                </ul>
+              </div>
+              <div>
+                <div className="text-sm font-mono text-muted-foreground uppercase tracking-wider mb-2">After</div>
+                <ul className="space-y-2 text-sm text-foreground">
+                  <li>• Multi-step intake form with practice area routing</li>
+                  <li>• Auto-assignment to appropriate attorney via CRM</li>
+                  <li>• 2-hour response time (business hours)</li>
+                  <li>• Real-time dashboard tracking intake → consult → engagement</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="border-t border-border pt-6">
+              <div className="grid grid-cols-3 gap-6 mb-4">
+                <div>
+                  <div className="font-mono text-2xl font-bold text-primary mb-1">89%</div>
+                  <div className="text-xs text-muted-foreground">Intake completion rate</div>
+                </div>
+                <div>
+                  <div className="font-mono text-2xl font-bold text-primary mb-1">2 Hours</div>
+                  <div className="text-xs text-muted-foreground">Response time (from 18hrs)</div>
+                </div>
+                <div>
+                  <div className="font-mono text-2xl font-bold text-primary mb-1">$127K</div>
+                  <div className="text-xs text-muted-foreground">Additional ARR captured</div>
+                </div>
+              </div>
+              
+              <p className="text-sm text-muted-foreground italic">
+                "The new site doesn't just look better—it works like part of our operations team. Qualified leads route directly to the right attorney. We stopped losing prospects to slow follow-up."
+              </p>
+              <p className="text-xs text-muted-foreground mt-2">
+                — Managing Partner, Boutique Legal Practice
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Ownership */}
@@ -194,20 +329,58 @@ const WebSystems = () => {
         {/* Packages */}
         <div className="mb-16" id="packages">
           <h2 className="heading-section mb-8">Packages</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl">
+            Scoped to revenue impact, not just page count. Each tier connects to your CRM, tracks conversions, and transfers ownership.
+          </p>
           
           <div className="space-y-6 max-w-3xl">
-            {packages.map((pkg, index) => (
-              <div key={index} className="border-l-4 border-primary pl-6">
-                <h3 className="font-mono font-bold text-lg mb-2">{pkg.name}</h3>
-                <ul className="space-y-2">
-                  {pkg.items.map((item, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground">
-                      • {item}
-                    </li>
-                  ))}
-                </ul>
+            <div className="border-l-4 border-primary pl-6">
+              <h3 className="font-mono font-bold text-lg mb-2">Essentials</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                For businesses that need clean infrastructure and baseline conversion tracking.
+              </p>
+              <ul className="space-y-2 mb-4">
+                <li className="text-sm text-muted-foreground">• 5-7 pages using 1-3 templates</li>
+                <li className="text-sm text-muted-foreground">• Base CRM integration (form routing, lead capture)</li>
+                <li className="text-sm text-muted-foreground">• Analytics wiring (GA4, conversion events)</li>
+                <li className="text-sm text-muted-foreground">• Repository + deployment guide + 30-day support</li>
+              </ul>
+              <div className="text-xs text-muted-foreground font-mono">
+                <strong>Revenue outcome:</strong> Capture inbound demand without manual intake bottlenecks
               </div>
-            ))}
+            </div>
+
+            <div className="border-l-4 border-primary pl-6">
+              <h3 className="font-mono font-bold text-lg mb-2">Core</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                For businesses ready to scale lead generation and test nurture sequences.
+              </p>
+              <ul className="space-y-2 mb-4">
+                <li className="text-sm text-muted-foreground">• 8-12 pages with modular design system</li>
+                <li className="text-sm text-muted-foreground">• Gated asset flow (resource downloads, email capture)</li>
+                <li className="text-sm text-muted-foreground">• Advanced CRM events (multi-stage forms, intent signals)</li>
+                <li className="text-sm text-muted-foreground">• Conversion dashboards + lead scoring integration</li>
+              </ul>
+              <div className="text-xs text-muted-foreground font-mono">
+                <strong>Revenue outcome:</strong> Build predictable pipeline through gated content and qualification workflows
+              </div>
+            </div>
+
+            <div className="border-l-4 border-primary pl-6">
+              <h3 className="font-mono font-bold text-lg mb-2">Scale</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                For businesses with complex funnels, multiple brands, or regional variations.
+              </p>
+              <ul className="space-y-2 mb-4">
+                <li className="text-sm text-muted-foreground">• Full component library for long-term extensibility</li>
+                <li className="text-sm text-muted-foreground">• Custom conversion flows (calculators, configurators, quoting)</li>
+                <li className="text-sm text-muted-foreground">• Multi-brand or multi-region architecture</li>
+                <li className="text-sm text-muted-foreground">• Performance optimization + A/B testing setup</li>
+              </ul>
+              <div className="text-xs text-muted-foreground font-mono">
+                <strong>Revenue outcome:</strong> Support complex GTM motions with infrastructure that scales without rebuilding
+              </div>
+            </div>
           </div>
           
           <p className="text-sm text-muted-foreground font-mono max-w-2xl mt-6">
