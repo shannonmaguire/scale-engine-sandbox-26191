@@ -5,19 +5,20 @@
 
 // Analytics configuration
 const ANALYTICS_CONFIG = {
-  GA4_MEASUREMENT_ID: 'G-3TCBNNN6PE', // Add your GA4 ID: G-XXXXXXXXXX
-  CLARITY_PROJECT_ID: 'tkis36g9ug', // Add your Clarity ID
+  GA4_MEASUREMENT_ID: (import.meta.env.VITE_GA4_MEASUREMENT_ID ?? "").trim(),
+  CLARITY_PROJECT_ID: (import.meta.env.VITE_CLARITY_PROJECT_ID ?? "").trim(),
   DEBUG_MODE: import.meta.env.DEV,
 };
 
 // Initialize Google Analytics 4
-export const initializeGA4 = (measurementId: string) => {
-  if (typeof window === 'undefined' || !measurementId) return;
+export const initializeGA4 = (measurementId?: string) => {
+  const sanitizedId = measurementId?.trim();
+  if (typeof window === 'undefined' || !sanitizedId) return;
 
   // Load gtag script
   const script = document.createElement('script');
   script.async = true;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${sanitizedId}`;
   document.head.appendChild(script);
 
   // Initialize dataLayer
@@ -29,7 +30,7 @@ export const initializeGA4 = (measurementId: string) => {
   window.gtag = gtag;
 
   gtag('js', new Date());
-  gtag('config', measurementId, {
+  gtag('config', sanitizedId, {
     send_page_view: false, // We'll send manually for SPA
     cookie_flags: 'SameSite=None;Secure',
   });
@@ -40,8 +41,9 @@ export const initializeGA4 = (measurementId: string) => {
 // Initialize Microsoft Clarity
 type ClarityFunction = ((...args: unknown[]) => void) & { q?: unknown[][] };
 
-export const initializeClarity = (projectId: string) => {
-  if (typeof window === 'undefined' || !projectId) return;
+export const initializeClarity = (projectId?: string) => {
+  const sanitizedId = projectId?.trim();
+  if (typeof window === 'undefined' || !sanitizedId) return;
 
   const clarityWindow = window as Window & { clarity?: ClarityFunction };
 
@@ -53,7 +55,7 @@ export const initializeClarity = (projectId: string) => {
   }
 
   const existingScript = document.querySelector<HTMLScriptElement>(
-    `script[data-clarity="${projectId}"]`,
+    `script[data-clarity="${sanitizedId}"]`,
   );
   if (existingScript) {
     console.log('ℹ️ Microsoft Clarity already initialized');
@@ -62,8 +64,8 @@ export const initializeClarity = (projectId: string) => {
 
   const scriptElement = document.createElement('script');
   scriptElement.async = true;
-  scriptElement.src = `https://www.clarity.ms/tag/${projectId}`;
-  scriptElement.dataset.clarity = projectId;
+  scriptElement.src = `https://www.clarity.ms/tag/${sanitizedId}`;
+  scriptElement.dataset.clarity = sanitizedId;
 
   const firstScript = document.getElementsByTagName('script')[0];
   firstScript?.parentNode?.insertBefore(scriptElement, firstScript);
@@ -241,7 +243,7 @@ export const trackPerformanceMetric = (
 
 // Identify user (for authenticated users)
 export const identifyUser = (userId: string, traits?: Record<string, unknown>) => {
-  if (window.gtag) {
+  if (window.gtag && ANALYTICS_CONFIG.GA4_MEASUREMENT_ID) {
     window.gtag('config', ANALYTICS_CONFIG.GA4_MEASUREMENT_ID, {
       user_id: userId,
     });

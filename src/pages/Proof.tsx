@@ -53,7 +53,7 @@ const Proof = () => {
     timeline: "6 months",
     challenge: "Creators tracked brand deals, UGC, affiliate payouts, course sales manually across PayPal, Stripe, Shopify, Google Sheets. No unified intelligence layer. Gap: fragmented income data prevented visibility into earnings patterns, timing, source analysis, and opportunity identification.",
     pullQuote: "Fragmented income data consolidated into single intelligence layer",
-    system: ["Bubble.io MVP with income logging, categorization, and goal tracking", "600 qualified creator leads enriched via Apollo.io", "Cold outbound via Instantly.ai with lane-specific sequences", "ActiveCampaign nurture and segmentation with automated lead scoring", "Meta Ads testing + Typeform/Webflow waitlist capture", "Momentum Newsletter (30-32% open rates) for thought leadership + feedback loop", "Landing page design on Lovable, migrated to Bubble for live functionality"],
+    system: ["Bubble.io MVP with income logging, categorization, and goal tracking", "600 qualified creator leads enriched via Apollo.io", "Cold outbound via Instantly.ai with lane-specific sequences", "ActiveCampaign nurture and segmentation with automated lead scoring", "Meta Ads testing + Typeform/Webflow waitlist capture", "Momentum Newsletter (30-32% open rates) for thought leadership + feedback loop", "Landing page design refined in-house, migrated to Bubble for live functionality"],
     beforeMetric: {
       label: "Scattered data",
       value: "Manual tracking"
