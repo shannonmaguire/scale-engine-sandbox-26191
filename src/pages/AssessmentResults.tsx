@@ -29,7 +29,7 @@ interface ResultsData {
 const AssessmentResults = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const resultsData = location.state as ResultsData;
+  const resultsData = location.state as ResultsData | undefined;
   const [saved, setSaved] = useState(false);
   const [email, setEmail] = useState<string | undefined>();
 
@@ -39,14 +39,9 @@ const AssessmentResults = () => {
     import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
   );
 
-  // Redirect if no data
-  if (!resultsData) {
-    return <Navigate to="/self-assessment" replace />;
-  }
-
-  const { checklistId, title, categories, checklistState, overallProgress, answerCounts } = resultsData;
-
   useEffect(() => {
+    if (!resultsData) return;
+
     // Track page view
     if (window.gtag) {
       window.gtag('event', 'page_view', {
@@ -56,9 +51,15 @@ const AssessmentResults = () => {
       });
     }
 
-    // Track page view
-    trackEvent("results_page_viewed", { checklistId, score: overallProgress });
-  }, [checklistId, overallProgress]);
+    trackEvent("results_page_viewed", { checklistId: resultsData.checklistId, score: resultsData.overallProgress });
+  }, [resultsData]);
+
+  // Redirect if no data
+  if (!resultsData) {
+    return <Navigate to="/self-assessment" replace />;
+  }
+
+  const { checklistId, title, categories, checklistState, overallProgress, answerCounts } = resultsData;
 
   const handleEmailSubmit = async (submittedEmail: string) => {
     if (!hasBackend) {

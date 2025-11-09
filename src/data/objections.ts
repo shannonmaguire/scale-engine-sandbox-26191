@@ -17,7 +17,7 @@ export interface Objection {
 }
 
 export const objections: Objection[] = [
-  // BUDGET & ROI
+  
   {
     id: "budget-1",
     category: "budget",

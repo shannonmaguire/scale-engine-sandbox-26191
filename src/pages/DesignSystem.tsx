@@ -1,7 +1,7 @@
 import { Section } from "@/components/ui/section";
 import { StandardCard, StandardCardContent, StandardCardHeader, StandardCardTitle } from "@/components/ui/standard-card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, type ButtonProps } from "@/components/ui/button";
 import SEOHead from "@/components/SEOHead";
 
 /**
@@ -64,7 +64,8 @@ const DesignSystem = () => {
     { token: "--spacing-gutter", value: "1.5rem (24px)", usage: "Grid gutter width" },
   ];
 
-  const buttonVariants = [
+  type ButtonVariantName = NonNullable<ButtonProps["variant"]>;
+  const buttonVariantShowcase: Array<{ variant: ButtonVariantName; class: string; usage: string }> = [
     { variant: "default", class: "bg-primary", usage: "Primary conversion actions" },
     { variant: "outline", class: "border-2 border-muted-foreground", usage: "Secondary actions" },
     { variant: "ghost", class: "hover:bg-accent/10", usage: "Tertiary, inline actions" },
@@ -224,11 +225,11 @@ const DesignSystem = () => {
           <div>
             <h3 className="heading-subsection mb-6">Variants</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              {buttonVariants.map((btn) => (
+              {buttonVariantShowcase.map((btn) => (
                 <StandardCard key={btn.variant}>
                   <StandardCardContent className="p-6">
                     <div className="mb-6">
-                      <Button variant={btn.variant as any} className="w-full mb-3">
+                      <Button variant={btn.variant} className="w-full mb-3">
                         {btn.variant} Button
                       </Button>
                       <code className="font-mono text-xs text-muted-foreground">{btn.class}</code>

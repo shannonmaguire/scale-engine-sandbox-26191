@@ -109,10 +109,11 @@ const Auth = () => {
         
         // Navigation handled by useEffect
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'An error occurred during authentication';
       toast({
         title: 'Error',
-        description: error.message || 'An error occurred during authentication',
+        description: message,
         variant: 'destructive',
       });
     } finally {

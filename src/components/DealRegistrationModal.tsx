@@ -181,12 +181,16 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
         });
       }, 300);
 
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Deal registration error:", error);
+      const message =
+        error instanceof Error
+          ? error.message
+          : "There was an error registering your deal. Please try again.";
       toast({
         variant: "destructive",
         title: "Submission Failed",
-        description: error.message || "There was an error registering your deal. Please try again.",
+        description: message,
       });
     } finally {
       setIsSubmitting(false);

@@ -19,14 +19,14 @@ export const AnimatedSection = ({
   animation = "fade-in-up",
   delay = 0
 }: AnimatedSectionProps) => {
-  const { ref, isVisible } = useIntersectionObserver({
+  const { ref, isVisible } = useIntersectionObserver<HTMLElement>({
     threshold: 0.1,
     triggerOnce: true,
   });
 
   return (
     <section
-      ref={ref as any}
+      ref={ref}
       className={cn(
         "opacity-0 transition-all duration-600",
         isVisible && `${animation} opacity-100`,

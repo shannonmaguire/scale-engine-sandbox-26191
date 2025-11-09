@@ -138,12 +138,13 @@ const handler = async (req: Request): Promise<Response> => {
         },
       }
     );
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error in email-nurture-sequence function:", error);
+    const message = error instanceof Error ? error.message : "Failed to initiate nurture sequence";
     return new Response(
       JSON.stringify({ 
-        error: error.message || "Failed to initiate nurture sequence",
-        details: error.toString(),
+        error: message,
+        details: error instanceof Error ? error.stack : String(error),
       }),
       {
         status: 500,

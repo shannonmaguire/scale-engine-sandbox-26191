@@ -10,12 +10,12 @@ interface UseIntersectionObserverProps {
  * Hook to detect when an element enters the viewport
  * Useful for lazy loading and scroll animations
  */
-export const useIntersectionObserver = ({
+export const useIntersectionObserver = <T extends HTMLElement = HTMLElement>({
   threshold = 0.1,
   rootMargin = '0px',
   triggerOnce = true,
 }: UseIntersectionObserverProps = {}) => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<T | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

@@ -22,8 +22,9 @@ export const initializeGA4 = (measurementId: string) => {
 
   // Initialize dataLayer
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: any[]) {
-    window.dataLayer.push(args);
+  const dataLayer = window.dataLayer;
+  function gtag(...args: unknown[]) {
+    dataLayer.push(args);
   }
   window.gtag = gtag;
 
@@ -37,19 +38,35 @@ export const initializeGA4 = (measurementId: string) => {
 };
 
 // Initialize Microsoft Clarity
+type ClarityFunction = ((...args: unknown[]) => void) & { q?: unknown[][] };
+
 export const initializeClarity = (projectId: string) => {
   if (typeof window === 'undefined' || !projectId) return;
 
-  (function(c: any, l: any, a: string, r: string, i: string, t?: any, y?: any) {
-    c[a] = c[a] || function() {
-      (c[a].q = c[a].q || []).push(arguments);
+  const clarityWindow = window as Window & { clarity?: ClarityFunction };
+
+  if (!clarityWindow.clarity) {
+    const clarityFn: ClarityFunction = (...args) => {
+      (clarityFn.q = clarityFn.q || []).push(args);
     };
-    t = l.createElement(r);
-    t.async = 1;
-    t.src = "https://www.clarity.ms/tag/" + i;
-    y = l.getElementsByTagName(r)[0];
-    y.parentNode.insertBefore(t, y);
-  })(window, document, "clarity", "script", projectId);
+    clarityWindow.clarity = clarityFn;
+  }
+
+  const existingScript = document.querySelector<HTMLScriptElement>(
+    `script[data-clarity="${projectId}"]`,
+  );
+  if (existingScript) {
+    console.log('ℹ️ Microsoft Clarity already initialized');
+    return;
+  }
+
+  const scriptElement = document.createElement('script');
+  scriptElement.async = true;
+  scriptElement.src = `https://www.clarity.ms/tag/${projectId}`;
+  scriptElement.dataset.clarity = projectId;
+
+  const firstScript = document.getElementsByTagName('script')[0];
+  firstScript?.parentNode?.insertBefore(scriptElement, firstScript);
 
   console.log('✅ Microsoft Clarity initialized');
 };
@@ -78,11 +95,11 @@ export const trackPageView = (path: string, title?: string) => {
 // Track custom event
 export const trackAnalyticsEvent = (
   eventName: string,
-  properties?: Record<string, any>
+  properties?: Record<string, unknown>
 ) => {
   // Google Analytics 4
   if (window.gtag) {
-    window.gtag('event', eventName, properties);
+    window.gtag('event', eventName, properties ?? {});
   }
 
   // Microsoft Clarity
@@ -101,12 +118,12 @@ export const trackConversion = (
   value?: number,
   currency: string = 'USD'
 ) => {
-  const conversionData: any = {
+  const conversionData: Record<string, unknown> = {
     event_category: 'conversion',
     event_label: conversionName,
   };
 
-  if (value) {
+  if (typeof value === 'number') {
     conversionData.value = value;
     conversionData.currency = currency;
   }
@@ -133,12 +150,12 @@ export const trackCTAClick = (
 // Track form submission
 export const trackFormSubmission = (
   formName: string,
-  formData?: Record<string, any>
+  formData?: Record<string, unknown>
 ) => {
   trackAnalyticsEvent('form_submission', {
     form_name: formName,
     event_category: 'lead_generation',
-    ...formData,
+    ...(formData ?? {}),
   });
 };
 
@@ -223,7 +240,7 @@ export const trackPerformanceMetric = (
 };
 
 // Identify user (for authenticated users)
-export const identifyUser = (userId: string, traits?: Record<string, any>) => {
+export const identifyUser = (userId: string, traits?: Record<string, unknown>) => {
   if (window.gtag) {
     window.gtag('config', ANALYTICS_CONFIG.GA4_MEASUREMENT_ID, {
       user_id: userId,
@@ -267,9 +284,9 @@ export const initializeAnalytics = () => {
 // TypeScript declarations
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
-    clarity?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+    clarity?: ClarityFunction;
   }
 }
 

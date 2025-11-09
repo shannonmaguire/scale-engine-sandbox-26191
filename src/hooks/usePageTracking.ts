@@ -18,7 +18,7 @@ export const usePageTracking = () => {
 /**
  * Track custom events with enhanced data
  */
-export const trackEvent = (eventName: string, properties?: Record<string, any>) => {
+export const trackEvent = (eventName: string, properties?: Record<string, unknown>) => {
   analytics.trackEvent(eventName, {
     ...properties,
     url: window.location.href,

@@ -1,4 +1,11 @@
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
+import type { PluginCreator } from "tailwindcss/types/config";
+
+const motionPreferencePlugin: PluginCreator = ({ addVariant }) => {
+  addVariant('motion-reduce', '@media (prefers-reduced-motion: reduce)');
+  addVariant('motion-safe', '@media (prefers-reduced-motion: no-preference)');
+};
 
 export default {
   darkMode: ["class"],
@@ -141,11 +148,8 @@ export default {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
+    tailwindcssAnimate,
     // Disable animations for users who prefer reduced motion
-    function({ addVariant }: any) {
-      addVariant('motion-reduce', '@media (prefers-reduced-motion: reduce)');
-      addVariant('motion-safe', '@media (prefers-reduced-motion: no-preference)');
-    }
+    motionPreferencePlugin,
   ],
 } satisfies Config;

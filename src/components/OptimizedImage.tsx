@@ -25,7 +25,7 @@ export const OptimizedImage = ({
   priority = false,
   objectFit = "cover",
 }: OptimizedImageProps) => {
-  const { ref, isVisible } = useIntersectionObserver({
+  const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.1,
     rootMargin: "50px",
     triggerOnce: true,
@@ -49,7 +49,7 @@ export const OptimizedImage = ({
   if (hasError) {
     return (
       <div
-        ref={ref as any}
+        ref={ref}
         className={cn(
           "bg-muted flex items-center justify-center",
           className
@@ -67,7 +67,7 @@ export const OptimizedImage = ({
 
   return (
     <div
-      ref={ref as any}
+      ref={ref}
       className={cn("relative overflow-hidden", className)}
       style={{ width, height }}
     >

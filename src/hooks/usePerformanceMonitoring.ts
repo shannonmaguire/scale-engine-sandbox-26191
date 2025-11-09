@@ -50,8 +50,8 @@ export const usePerformanceMonitoring = () => {
 
         // First Input Delay (FID) - Target: < 100ms
         const fidObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          entries.forEach((entry: any) => {
+          const entries = list.getEntries() as PerformanceEventTiming[];
+          entries.forEach((entry) => {
             const value = entry.processingStart - entry.startTime;
             const rating = getPerformanceRating('FID', value);
             sendMetric('FID', value, rating);
@@ -62,8 +62,8 @@ export const usePerformanceMonitoring = () => {
         // Cumulative Layout Shift (CLS) - Target: < 0.1
         let clsScore = 0;
         const clsObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          entries.forEach((entry: any) => {
+          const entries = list.getEntries() as LayoutShift[];
+          entries.forEach((entry) => {
             if (!entry.hadRecentInput) {
               clsScore += entry.value;
             }

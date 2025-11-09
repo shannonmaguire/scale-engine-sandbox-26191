@@ -9,6 +9,14 @@ interface SocialProofNotification {
   timestamp: Date;
 }
 
+const NOTIFICATION_DEFINITIONS: Array<Omit<SocialProofNotification, "id" | "timestamp">> = [
+  { message: "Someone just booked an assessment from San Francisco", icon: "check" },
+  { message: "3 companies reviewed our sample report today", icon: "users" },
+  { message: "New client onboarded in the healthcare sector", icon: "trending" },
+  { message: "Assessment completed for a Series B SaaS company", icon: "check" },
+  { message: "5 downloads of our revenue ops guide this hour", icon: "users" },
+];
+
 /**
  * Social proof notification component
  * Displays real-time activity to build trust and urgency
@@ -17,18 +25,11 @@ export const SocialProof = () => {
   const [notification, setNotification] = useState<SocialProofNotification | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const notifications: Omit<SocialProofNotification, "id" | "timestamp">[] = [
-    { message: "Someone just booked an assessment from San Francisco", icon: "check" },
-    { message: "3 companies reviewed our sample report today", icon: "users" },
-    { message: "New client onboarded in the healthcare sector", icon: "trending" },
-    { message: "Assessment completed for a Series B SaaS company", icon: "check" },
-    { message: "5 downloads of our revenue ops guide this hour", icon: "users" },
-  ];
-
   useEffect(() => {
     const showNotification = () => {
       // Random notification
-      const randomNotif = notifications[Math.floor(Math.random() * notifications.length)];
+      const randomNotif =
+        NOTIFICATION_DEFINITIONS[Math.floor(Math.random() * NOTIFICATION_DEFINITIONS.length)];
       
       setNotification({
         ...randomNotif,

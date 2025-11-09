@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { trackEvent } from './usePageTracking';
 import analytics from '@/lib/analytics';
 
 export interface ErrorInfo {
@@ -29,9 +28,13 @@ export const useErrorTracking = () => {
 
     // Promise rejection handler
     const handleRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason;
+      const rejectionMessage =
+        reason instanceof Error ? reason.message : `Unhandled Promise Rejection: ${String(reason)}`;
+
       trackError({
-        message: `Unhandled Promise Rejection: ${event.reason}`,
-        stack: event.reason?.stack,
+        message: rejectionMessage,
+        stack: reason instanceof Error ? reason.stack : undefined,
         page: window.location.pathname,
         userAgent: navigator.userAgent,
         timestamp: new Date().toISOString(),
@@ -53,7 +56,7 @@ export const useErrorTracking = () => {
 /**
  * Track error with full context
  */
-const trackError = (error: ErrorInfo) => {
+const trackError = (error: ErrorInfo & Record<string, unknown>) => {
   // Log in development
   if (import.meta.env.DEV) {
     console.error('🚨 Error Tracked:', error);
@@ -78,7 +81,7 @@ const trackError = (error: ErrorInfo) => {
 /**
  * Track custom errors manually
  */
-export const trackCustomError = (message: string, context?: Record<string, any>) => {
+export const trackCustomError = (message: string, context?: Record<string, unknown>) => {
   trackError({
     message,
     page: window.location.pathname,
@@ -93,7 +96,7 @@ export const trackCustomError = (message: string, context?: Record<string, any>)
  */
 export const getStoredErrors = (): ErrorInfo[] => {
   const stored = localStorage.getItem('error_log');
-  return stored ? JSON.parse(stored) : [];
+  return stored ? (JSON.parse(stored) as ErrorInfo[]) : [];
 };
 
 /**

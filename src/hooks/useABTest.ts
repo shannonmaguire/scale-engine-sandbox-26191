@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { trackEvent } from './usePageTracking';
 import analytics from '@/lib/analytics';
 
-interface ABTestVariant<T = any> {
+interface ABTestVariant<T = unknown> {
   name: string;
   weight?: number;
   value: T;
@@ -20,7 +20,7 @@ interface UseABTestOptions<T> {
  * Randomly assigns users to variants and tracks results
  * Persists variant selection in sessionStorage
  */
-export const useABTest = <T = any>({
+export const useABTest = <T = unknown>({
   testName,
   variants,
   storageKey,
