@@ -6,7 +6,8 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CWT Studio - Revenue System Infrastructure</title>
-  <meta name="description" content="Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.">
+  <meta name="description"
+    content="Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.">
   <meta name="author" content="CWT Studio" />
   <link rel="canonical" href="https://cwtstudio.com" />
 
@@ -35,21 +36,42 @@
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1B3022">
 
-  
-  
+  <!-- Google tag (gtag.js) -->
+  <script>
+    (function () {
+      const measurementId = "%VITE_GA4_MEASUREMENT_ID%";
+      if (!measurementId || measurementId === "undefined" || measurementId === "") return;
+
+      const gtagScript = document.createElement("script");
+      gtagScript.async = true;
+      gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      document.head.appendChild(gtagScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', measurementId);
+    })();
+  </script>
+
+
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cwtstudio.com" />
   <meta property="og:image" content="https://cwtstudio.com/og-image.jpg">
 
   <meta name="twitter:card" content="summary_large_image" />
-  
-  
+
+
   <meta name="twitter:site" content="@cwtstudio" />
   <meta name="twitter:image" content="https://cwtstudio.com/og-image.jpg">
   <meta property="og:title" content="CWT Studio | Backend Revenue Systems & Infrastructure">
   <meta name="twitter:title" content="CWT Studio | Backend Revenue Systems & Infrastructure">
-  <meta property="og:description" content="Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.">
-  <meta name="twitter:description" content="Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.">
+  <meta property="og:description"
+    content="Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.">
+  <meta name="twitter:description"
+    content="Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.">
 </head>
 
 <body>
