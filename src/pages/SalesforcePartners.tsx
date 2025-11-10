@@ -78,7 +78,7 @@ const SalesforcePartners = () => {
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               We unblock technical debt, shorten sales cycles, and provide 48-hour turnaround on complex 
-              Salesforce deals. No 18-month transformation projects. Just quick wins that build momentum.
+              Salesforce deals through quick wins that build momentum toward sustainable infrastructure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
@@ -105,15 +105,19 @@ const SalesforcePartners = () => {
               <h2 className="text-3xl font-bold mb-6 font-mono">Hey AEs,</h2>
               <div className="prose prose-lg max-w-none text-foreground">
                 <p className="text-lg leading-relaxed mb-4">
-                  "Our Salesforce org is a mess." You hear it on every discovery call. 
-                  It's killing deal velocity, but most consultants just make it worse with 18-month "transformation" roadmaps.
+                  Every discovery call surfaces the same pattern: Salesforce orgs accumulating 15+ years of technical 
+                  debt that kills deal velocity while most consultants propose 18-month transformation roadmaps that 
+                  compound the problem. The technical debt blocking your deals requires focused remediation that delivers 
+                  measurable outcomes within the first sprint cycle.
                 </p>
                 <p className="text-lg leading-relaxed mb-4">
-                  <strong>We're different.</strong> We fix the technical debt that's actually blocking deals — fast. 
-                  15+ years of legacy customizations? We've cleaned up worse. And we get quick wins within the first sprint.
+                  Our methodology addresses the specific technical barriers preventing deal closure through rapid assessment 
+                  and targeted fixes. Legacy customizations become tractable problems when approached through systematic 
+                  decomposition rather than comprehensive overhaul.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Below: What we do, the technical expertise we provide, and exactly when to bring us into deals.
+                  Below: Our technical capabilities, the expertise we provide at each deal stage, and the specific scenarios 
+                  where our involvement accelerates outcomes.
                 </p>
               </div>
             </div>
@@ -141,8 +145,10 @@ const SalesforcePartners = () => {
             </div>
             <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-lg">
               <p className="text-sm text-primary">
-                <strong>Reality:</strong> These are all fixable problems. The key is showing them quick wins 
-                first, then building momentum for bigger changes. We've handled orgs way messier than theirs.
+                <strong>These objections map to specific technical remediation patterns.</strong> Initial quick wins 
+                establish credibility and create internal champions who advocate for expanded scope. The messiest orgs 
+                we've encountered follow predictable decomposition paths once the assessment framework identifies the 
+                highest-impact intervention points.
               </p>
             </div>
           </div>
@@ -155,8 +161,9 @@ const SalesforcePartners = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Deal Accelerators: Turn Technical Debt Into Opportunities</h2>
             <p className="text-muted-foreground mb-6">
-              When you hear these "red flags" during discovery, they're actually <strong>expansion opportunities</strong>. 
-              Here's how we turn objections into momentum:
+              Discovery calls that surface these patterns indicate <strong>expansion opportunities</strong> where 
+              technical complexity becomes the foundation for broader engagement. Each scenario follows a conversion 
+              path from initial objection to momentum-building intervention:
             </p>
             <div className="space-y-4 mb-8">
               {dealAccelerators.map((item, index) => <div key={index} className="bg-card border-2 border-primary/20 rounded-lg p-6">
@@ -187,9 +194,10 @@ const SalesforcePartners = () => {
       <section className="section-spacing-half bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6">Quick Wins Framework: No 18-Month Projects</h2>
+            <h2 className="text-2xl font-bold mb-6">Quick Wins Framework</h2>
             <p className="text-muted-foreground mb-8">
-              We build momentum through rapid, measurable wins — not roadmaps that never ship.
+              Momentum builds through rapid, measurable wins that establish credibility and create internal champions 
+              who advocate for expanded scope.
             </p>
             <div className="grid md:grid-cols-4 gap-6 mb-8">
               <div className="bg-card border-2 border-border p-6 rounded-lg">
@@ -199,7 +207,8 @@ const SalesforcePartners = () => {
                 <h3 className="font-semibold mb-2">Week 1-2</h3>
                 <div className="text-xs font-mono text-accent uppercase tracking-wide mb-3">Assessment</div>
                 <p className="text-sm text-muted-foreground">
-                  No-cost technical audit. Identify 3-4 highest-impact fixes. Non-binding, just practical recommendations.
+                  No-cost technical audit identifies 3-4 highest-impact fixes through systematic evaluation of 
+                  existing infrastructure, delivering practical recommendations without binding commitments.
                 </p>
               </div>
 
@@ -210,7 +219,8 @@ const SalesforcePartners = () => {
                 <h3 className="font-semibold mb-2">Week 3-4</h3>
                 <div className="text-xs font-mono text-accent uppercase tracking-wide mb-3">Quick Win ID</div>
                 <p className="text-sm text-muted-foreground">
-                  Fix most painful issue first: data quality, broken automation, or reports. Build trust with visible results.
+                  Initial remediation targets the most painful issue whether data quality, broken automation, or report 
+                  performance, establishing trust through visible results that create internal champions.
                 </p>
               </div>
 
@@ -221,7 +231,8 @@ const SalesforcePartners = () => {
                 <h3 className="font-semibold mb-2">Week 5-8</h3>
                 <div className="text-xs font-mono text-accent uppercase tracking-wide mb-3">Sprint Deploy</div>
                 <p className="text-sm text-muted-foreground">
-                  First sprint deployment. Workflow optimization, integration fixes, dashboard cleanup — all documented.
+                  First sprint deployment delivers workflow optimization, integration fixes, and dashboard cleanup 
+                  with complete documentation that enables knowledge transfer and ongoing maintenance.
                 </p>
               </div>
 
@@ -232,7 +243,9 @@ const SalesforcePartners = () => {
                 <h3 className="font-semibold mb-2">Month 3+</h3>
                 <div className="text-xs font-mono text-accent uppercase tracking-wide mb-3">Expand Scope</div>
                 <p className="text-sm text-muted-foreground">
-                  Once results are visible, expand to platform unification, governance framework, ongoing ops support.
+                  Visible results create the foundation for expanding into platform unification, governance framework 
+                  implementation, and ongoing operational support as the engagement evolves from tactical fixes to 
+                  strategic infrastructure development.
                 </p>
               </div>
             </div>
@@ -243,8 +256,10 @@ const SalesforcePartners = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Why This Works</h3>
                   <p className="text-sm text-muted-foreground">
-                    Quick wins prove capability and build internal champions. By month 3, we're not selling anymore — 
-                    we're expanding based on proven results. Average deal expands 2-3x from initial scope.
+                    Quick wins establish capability and build internal champions who advocate for expanded engagement. 
+                    By month 3, proven results drive scope expansion as stakeholders recognize the compounding value of 
+                    systematic infrastructure improvement. Average deals expand 2-3x from initial scope through this 
+                    momentum-building approach.
                   </p>
                 </div>
               </div>
@@ -259,8 +274,8 @@ const SalesforcePartners = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Resources for Your Deals</h2>
             <p className="text-muted-foreground mb-6">
-              Download frameworks, calculators, and assessment tools to accelerate technical conversations. 
-              All resources are gated by email.
+              Frameworks, calculators, and assessment tools accelerate technical conversations by providing structured 
+              evaluation methods and quantifiable ROI projections. Email-gated access ensures qualified distribution.
             </p>
             <div className="space-y-4 mb-8">
               {aeResources.map((resource, index) => <Card key={index} className="bg-card border-border hover-lift">
@@ -312,16 +327,19 @@ const SalesforcePartners = () => {
             <h2 className="text-2xl font-bold mb-6">Technical Collaboration Process</h2>
             <div className="prose prose-lg max-w-none text-foreground mb-8">
               <p className="text-base leading-relaxed mb-4">
-                <strong>Initial Consultation:</strong> When you encounter complex technical requirements during a deal, 
-                reach out and we'll provide a technical assessment within 48 hours.
+                <strong>Initial Consultation:</strong> Complex technical requirements encountered during deal progression 
+                trigger our 48-hour assessment cycle, delivering structured evaluation of infrastructure complexity and 
+                recommended intervention approach.
               </p>
               <p className="text-base leading-relaxed mb-4">
-                <strong>Technical Support:</strong> We can join calls to address technical questions, provide 
-                architectural guidance, and help scope implementation requirements.
+                <strong>Technical Support:</strong> Call participation provides architectural guidance and implementation 
+                scoping that addresses technical questions while maintaining deal momentum through clear communication of 
+                complexity factors and timeline requirements.
               </p>
               <p className="text-base leading-relaxed mb-4">
-                <strong>Implementation Partnership:</strong> If the deal moves forward, we work directly with 
-                your client to deliver the technical solution while keeping you informed of progress.
+                <strong>Implementation Partnership:</strong> Deal progression activates direct client engagement for 
+                technical solution delivery with continuous progress reporting that maintains your visibility into 
+                implementation status and emerging scope opportunities.
               </p>
             </div>
             
