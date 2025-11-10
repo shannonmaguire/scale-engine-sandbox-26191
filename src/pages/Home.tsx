@@ -6,7 +6,6 @@ import SystemDiagram from "@/components/SystemDiagram";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
-import { ChatWidget } from "@/components/ChatWidget";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
@@ -303,9 +302,6 @@ const Home = () => {
           See Full Case Studies
         </ConversionOptimizedButton>
       </Section>
-
-      {/* Chat Widget */}
-      <ChatWidget />
     </div>;
 };
 export default Home;
