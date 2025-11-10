@@ -43,7 +43,7 @@ const Home = () => {
     link: "/fractional"
   }];
   const proofStats = [{
-    number: "5",
+    number: "42",
     label: "Systems Deployed"
   }, {
     number: ">40%",
