@@ -61,7 +61,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
+          <div className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
             {navLinks.map(link => <Link 
                 key={link.href} 
                 to={link.href} 
@@ -116,7 +116,7 @@ const Navigation = () => {
           </div>
 
           {/* Primary CTA - Console Button */}
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <Button asChild className="btn-console">
               <Link to="/assessment">Start Assessment</Link>
             </Button>
@@ -124,7 +124,7 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <button 
-            className="lg:hidden p-2 text-white focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 focus:ring-offset-authority rounded transition-transform duration-200 data-[open=true]:rotate-90" 
+            className="md:hidden p-2 text-white focus:outline-none focus:ring-2 focus:ring-success focus:ring-offset-2 focus:ring-offset-authority rounded transition-transform duration-200 data-[open=true]:rotate-90"
             onClick={() => setIsOpen(!isOpen)} 
             aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={isOpen}
@@ -136,7 +136,7 @@ const Navigation = () => {
         </div>
 
           {/* Mobile Navigation */}
-        {isOpen && <div id="mobile-navigation" className="lg:hidden border-t border-white/20 bg-authority animate-mobile-menu">
+        {isOpen && <div id="mobile-navigation" className="md:hidden border-t border-white/20 bg-authority animate-mobile-menu">
             <div className="px-3 pt-3 pb-5 space-y-2" role="navigation" aria-label="Mobile navigation">
               {navLinks.map(link => <Link key={link.href} to={link.href} className={`block px-4 py-2 text-base font-mono font-medium rounded-md bg-white/5 shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${isActive(link.href) ? "!text-white" : "!text-white/80"}`} onClick={() => setIsOpen(false)}>
                   {link.label}
