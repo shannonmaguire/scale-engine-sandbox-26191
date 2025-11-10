@@ -12,7 +12,6 @@ import { usePageTracking } from "@/hooks/usePageTracking";
 import { usePerformanceMonitoring, reportWebVitals } from "@/hooks/usePerformanceMonitoring";
 import { useServiceWorker } from "@/hooks/useServiceWorker";
 import { useErrorTracking } from "@/hooks/useErrorTracking";
-import InstallPrompt from "@/components/InstallPrompt";
 import NetworkStatusBanner from "@/components/NetworkStatusBanner";
 import analytics from "@/lib/analytics";
 
@@ -134,7 +133,6 @@ const AppContent = () => {
       </main>
       {!isDocumentMode && <Footer />}
       {!isDocumentMode && <CookieBanner />}
-      <InstallPrompt />
     </>
   );
 };
