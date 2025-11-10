@@ -6,7 +6,6 @@ import { CheckCircle, Download, AlertTriangle, ArrowRight, TrendingUp, Clock, Do
 import SEOHead from "@/components/SEOHead";
 import { ResourceDownloadModal } from "@/components/ResourceDownloadModal";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-
 const SalesforcePartners = () => {
   const [selectedResource, setSelectedResource] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,7 +15,7 @@ const SalesforcePartners = () => {
     description: "When prospects say their org is a 'Frankenstein build' with too many customizations to fix"
   }, {
     icon: Clock,
-    scenario: "Timeline Concerns", 
+    scenario: "Timeline Concerns",
     description: "IT says any changes will take 6+ months and they can't afford the downtime"
   }, {
     icon: DollarSign,
@@ -27,34 +26,25 @@ const SalesforcePartners = () => {
     scenario: "Adoption Resistance",
     description: "Sales team pushes back on any workflow changes, even if they'll save time"
   }];
-
-  const dealAccelerators = [
-    {
-      scenario: "15+ years of technical debt",
-      opportunity: "Quick wins in data cleanup show immediate ROI and build momentum for larger scope"
-    },
-    {
-      scenario: "Multiple disconnected instances",
-      opportunity: "Integration consolidation becomes the hero project that unblocks their entire roadmap"
-    },
-    {
-      scenario: "Custom objects nobody understands",
-      opportunity: "Documentation and governance framework prevents future chaos — becomes ongoing engagement"
-    },
-    {
-      scenario: "Broken automations causing issues",
-      opportunity: "Fix the pain first, then expand to workflow optimization across the org"
-    },
-    {
-      scenario: "Reports taking 2+ hours to run",
-      opportunity: "Performance optimization delivers instant credibility, opens door to dashboard overhaul"
-    },
-    {
-      scenario: "Marketing/Sales Cloud disconnects",
-      opportunity: "Integration fix becomes proof of concept for broader platform unification"
-    }
-  ];
-
+  const dealAccelerators = [{
+    scenario: "15+ years of technical debt",
+    opportunity: "Quick wins in data cleanup show immediate ROI and build momentum for larger scope"
+  }, {
+    scenario: "Multiple disconnected instances",
+    opportunity: "Integration consolidation becomes the hero project that unblocks their entire roadmap"
+  }, {
+    scenario: "Custom objects nobody understands",
+    opportunity: "Documentation and governance framework prevents future chaos — becomes ongoing engagement"
+  }, {
+    scenario: "Broken automations causing issues",
+    opportunity: "Fix the pain first, then expand to workflow optimization across the org"
+  }, {
+    scenario: "Reports taking 2+ hours to run",
+    opportunity: "Performance optimization delivers instant credibility, opens door to dashboard overhaul"
+  }, {
+    scenario: "Marketing/Sales Cloud disconnects",
+    opportunity: "Integration fix becomes proof of concept for broader platform unification"
+  }];
   const aeResources = [{
     title: "Technical Assessment Framework",
     description: "Systematic approach to evaluating Salesforce technical debt",
@@ -72,21 +62,8 @@ const SalesforcePartners = () => {
     description: "Technical prerequisites and preparation checklist",
     type: "Reference"
   }];
-
-  return (
-    <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Salesforce Partner Resources | CWT Studio Automations for AEs"
-        description="Equip your team with Creator Wealth Tools playbooks to solve Salesforce technical debt, accelerate automation, and win web and mobile modernisation deals."
-        keywords={[
-          'Salesforce partner resources',
-          'business automation enablement',
-          'Creator Wealth Tools for AEs',
-          'technical debt objection handling',
-          'Salesforce deal support'
-        ]}
-        canonicalUrl="/salesforce/partners"
-      />
+  return <div className="min-h-screen bg-background">
+      <SEOHead title="Salesforce Partner Resources | CWT Studio Automations for AEs" description="Equip your team with Creator Wealth Tools playbooks to solve Salesforce technical debt, accelerate automation, and win web and mobile modernisation deals." keywords={['Salesforce partner resources', 'business automation enablement', 'Creator Wealth Tools for AEs', 'technical debt objection handling', 'Salesforce deal support']} canonicalUrl="/salesforce/partners" />
       <Breadcrumbs />
 
       {/* Hero Section */}
@@ -150,8 +127,7 @@ const SalesforcePartners = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-6">Objections You're Probably Hearing</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              {objectionScenarios.map((objection, index) => (
-                <Card key={index} className="bg-card border-border">
+              {objectionScenarios.map((objection, index) => <Card key={index} className="bg-card border-border">
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <objection.icon className="w-6 h-6 text-destructive mt-1 flex-shrink-0" />
@@ -161,8 +137,7 @@ const SalesforcePartners = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
             <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-lg">
               <p className="text-sm text-primary">
@@ -184,8 +159,7 @@ const SalesforcePartners = () => {
               Here's how we turn objections into momentum:
             </p>
             <div className="space-y-4 mb-8">
-              {dealAccelerators.map((item, index) => (
-                <div key={index} className="bg-card border-2 border-primary/20 rounded-lg p-6">
+              {dealAccelerators.map((item, index) => <div key={index} className="bg-card border-2 border-primary/20 rounded-lg p-6">
                   <div className="flex items-start gap-4">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                       <Zap className="w-4 h-4 text-primary" />
@@ -202,30 +176,9 @@ const SalesforcePartners = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
-            <div className="bg-accent p-6 rounded-lg text-white [&_*]:text-white">
-              <h3 className="font-semibold mb-3">Our Technical Collaboration Benefits</h3>
-              <ul className="text-sm space-y-2">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span><strong>48-Hour Assessment:</strong> Rapid technical evaluation with actionable recommendations</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span><strong>Deal Support:</strong> Join calls to address technical objections and scope complexity</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span><strong>Risk Mitigation:</strong> Identify technical landmines before they kill momentum</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                  <span><strong>Ecosystem Credibility:</strong> Enterprise-grade delivery via our CloudRoute partnership (Certified Salesforce Partner with proven enterprise implementations)</span>
-                </li>
-              </ul>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -310,8 +263,7 @@ const SalesforcePartners = () => {
               All resources are gated by email.
             </p>
             <div className="space-y-4 mb-8">
-              {aeResources.map((resource, index) => (
-                <Card key={index} className="bg-card border-border hover-lift">
+              {aeResources.map((resource, index) => <Card key={index} className="bg-card border-border hover-lift">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between">
                       <div className="flex-1">
@@ -322,22 +274,17 @@ const SalesforcePartners = () => {
                         <span className="text-xs bg-accent/10 text-accent px-2 py-1 rounded font-mono">
                           {resource.type}
                         </span>
-                        <Button 
-                          size="sm" 
-                          variant="outline"
-                          onClick={() => {
-                            setSelectedResource(resource.title);
-                            setIsModalOpen(true);
-                          }}
-                        >
+                        <Button size="sm" variant="outline" onClick={() => {
+                      setSelectedResource(resource.title);
+                      setIsModalOpen(true);
+                    }}>
                           <Download className="w-3 h-3 mr-1" />
                           Get
                         </Button>
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
             
             <div className="text-center">
@@ -353,17 +300,10 @@ const SalesforcePartners = () => {
       </section>
 
       {/* Resource Download Modal */}
-      {selectedResource && (
-        <ResourceDownloadModal
-          isOpen={isModalOpen}
-          onClose={() => {
-            setIsModalOpen(false);
-            setSelectedResource(null);
-          }}
-          resourceTitle={selectedResource}
-          resourceDescription={`Get instant access to our ${selectedResource}. Enter your email to download.`}
-        />
-      )}
+      {selectedResource && <ResourceDownloadModal isOpen={isModalOpen} onClose={() => {
+      setIsModalOpen(false);
+      setSelectedResource(null);
+    }} resourceTitle={selectedResource} resourceDescription={`Get instant access to our ${selectedResource}. Enter your email to download.`} />}
 
       {/* Technical Collaboration Process */}
       <section className="section-spacing-half">
@@ -401,8 +341,6 @@ const SalesforcePartners = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default SalesforcePartners;
