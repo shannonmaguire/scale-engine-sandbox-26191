@@ -36,13 +36,11 @@ const Proof = lazy(() => import("@/pages/Proof"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
-const AssessmentTools = lazy(() => import("@/pages/AssessmentTools"));
 const AEHub = lazy(() => import("@/pages/AEHub"));
 const AEObjectionLibrary = lazy(() => import("@/pages/AEObjectionLibrary"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
-const DesignSystem = lazy(() => import("@/pages/DesignSystem"));
 const Auth = lazy(() => import("@/pages/Auth"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -87,7 +85,6 @@ const AppContent = () => {
         }>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/systems" element={<Navigate to="/" replace />} />
             <Route path="/start-here" element={<StartHere />} />
             <Route path="/assessment" element={<Assessment />} />
             <Route path="/self-assessment" element={<SelfAssessment />} />
@@ -119,12 +116,10 @@ const AppContent = () => {
             <Route path="/ae-objection-library" element={<AEObjectionLibrary />} />
             <Route path="/ae-hub/objections" element={<Navigate to="/ae-objection-library" replace />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
-            <Route path="/assessment-tools" element={<Navigate to="/ae-hub#resources" replace />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/design-system" element={<DesignSystem />} />
             <Route path="/auth" element={<Auth />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
