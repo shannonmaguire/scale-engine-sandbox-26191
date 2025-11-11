@@ -302,7 +302,10 @@ const Contact = () => {
                         </Label>
                         <Select
                           value={formData.timeline}
-                          onValueChange={(value) => handleInputChange("timeline", value)}
+                          onValueChange={(value) => {
+                            handleInputChange("timeline", value);
+                            handleBlur("timeline");
+                          }}
                         >
                           <SelectTrigger className={`font-mono ${errors.timeline && touched.timeline ? 'border-destructive' : ''}`}>
                             <SelectValue placeholder="When do you need this?" />
@@ -325,7 +328,9 @@ const Contact = () => {
                         </Label>
                         <Select
                           value={formData.budgetRange}
-                          onValueChange={(value) => handleInputChange("budgetRange", value)}
+                          onValueChange={(value) => {
+                            handleInputChange("budgetRange", value);
+                          }}
                         >
                           <SelectTrigger className="font-mono">
                             <SelectValue placeholder="Select readiness (optional)" />
