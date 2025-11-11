@@ -211,7 +211,7 @@ const Proof = () => {
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
             <div className="text-3xl font-mono font-bold text-primary mb-1">7</div>
-            <div className="text-xs text-muted-foreground">Systems Deployed</div>
+            <div className="text-xs text-muted-foreground">Featured Case Studies</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
