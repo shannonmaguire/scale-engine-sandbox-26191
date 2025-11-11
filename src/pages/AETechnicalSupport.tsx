@@ -183,13 +183,13 @@ const AETechnicalSupport = () => {
           <div className="lg:col-span-2">
             <StandardCard>
               <StandardCardHeader>
-                <StandardCardTitle>Support Request Details</StandardCardTitle>
-                <StandardCardDescription>
+                <StandardCardTitle className="text-lg md:text-xl">Support Request Details</StandardCardTitle>
+                <StandardCardDescription className="text-sm">
                   Provide as much context as possible to help us respond effectively.
                 </StandardCardDescription>
               </StandardCardHeader>
               <StandardCardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   {/* AE Information */}
                   <div className="space-y-4">
                     <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
@@ -282,7 +282,7 @@ const AETechnicalSupport = () => {
 
                     <div>
                       <Label htmlFor="timeline">Deal Timeline *</Label>
-                      <Input id="timeline" value={formData.timeline} onChange={e => handleChange("timeline", e.target.value)} placeholder="e.g., Close expected in 2 weeks, demo scheduled for Friday" className={errors.timeline ? "border-destructive" : ""} />
+                      <Input id="timeline" value={formData.timeline} onChange={e => handleChange("timeline", e.target.value)} placeholder="e.g., Close in 2 weeks" className={errors.timeline ? "border-destructive" : ""} />
                       {errors.timeline && <p className="text-xs text-destructive mt-1">{errors.timeline}</p>}
                     </div>
                   </div>
@@ -295,13 +295,13 @@ const AETechnicalSupport = () => {
                     
                     <div>
                       <Label htmlFor="supportNeeded">What support do you need? *</Label>
-                      <Textarea id="supportNeeded" value={formData.supportNeeded} onChange={e => handleChange("supportNeeded", e.target.value)} placeholder="e.g., Join discovery call, validate technical approach, review technical requirements" rows={3} className={errors.supportNeeded ? "border-destructive" : ""} />
+                      <Textarea id="supportNeeded" value={formData.supportNeeded} onChange={e => handleChange("supportNeeded", e.target.value)} placeholder="e.g., Join discovery call, validate approach" rows={3} className={errors.supportNeeded ? "border-destructive" : ""} />
                       {errors.supportNeeded && <p className="text-xs text-destructive mt-1">{errors.supportNeeded}</p>}
                     </div>
 
                     <div>
                       <Label htmlFor="technicalChallenges">Technical Challenges / Context *</Label>
-                      <Textarea id="technicalChallenges" value={formData.technicalChallenges} onChange={e => handleChange("technicalChallenges", e.target.value)} placeholder="What technical issues or concerns has the prospect mentioned? Include system details, pain points, and any specific requirements." rows={5} className={errors.technicalChallenges ? "border-destructive" : ""} />
+                      <Textarea id="technicalChallenges" value={formData.technicalChallenges} onChange={e => handleChange("technicalChallenges", e.target.value)} placeholder="Describe technical issues, system details, pain points, and requirements..." rows={5} className={errors.technicalChallenges ? "border-destructive" : ""} />
                       {errors.technicalChallenges && <p className="text-xs text-destructive mt-1">{errors.technicalChallenges}</p>}
                       <p className="text-xs text-muted-foreground mt-1">
                         {formData.technicalChallenges.length} / 1000 characters (min 50)
