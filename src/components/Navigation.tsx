@@ -18,9 +18,6 @@ const Navigation = () => {
     label: "Proof",
     href: "/proof"
   }, {
-    label: "Resources",
-    href: "/resources"
-  }, {
     label: "About",
     href: "/about"
   }];
