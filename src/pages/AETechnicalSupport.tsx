@@ -162,23 +162,23 @@ const AETechnicalSupport = () => {
       <SEOHead title="Request Technical Support | AE Hub | CWT Studio" description="Get expert technical support on Salesforce deals. Our team provides rapid response based on urgency level." canonicalUrl="https://coalescentwebtech.com/ae-support" />
 
       {/* Header */}
-      <Section noPadding className="pt-20 pb-12 border-b border-border">
+      <Section noPadding className="pt-16 md:pt-20 pb-8 md:pb-12 border-b border-border">
         
 
-        <div className="system-status mb-8">TECHNICAL SUPPORT REQUEST</div>
+        <div className="system-status mb-6 md:mb-8">TECHNICAL SUPPORT REQUEST</div>
         
-        <h1 className="heading-page mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
           Request Technical Support
         </h1>
         
-        <p className="text-description max-w-3xl">
+        <p className="text-description max-w-3xl text-base md:text-lg">
           Submit your request using the form below. Response times range from 4 hours for critical deals to 3-5 days for general questions.
         </p>
       </Section>
 
       {/* Main Form */}
-      <Section className="pt-12">
-        <div className="grid lg:grid-cols-3 gap-8">
+      <Section className="pt-8 md:pt-12">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
           {/* Form Column */}
           <div className="lg:col-span-2">
             <StandardCard>
@@ -192,7 +192,7 @@ const AETechnicalSupport = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* AE Information */}
                   <div className="space-y-4">
-                    <div className="text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Your Information
                     </div>
                     
@@ -219,7 +219,7 @@ const AETechnicalSupport = () => {
 
                   {/* Prospect Information */}
                   <div className="space-y-4 pt-4 border-t border-border">
-                    <div className="text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Prospect Details
                     </div>
                     
@@ -240,7 +240,7 @@ const AETechnicalSupport = () => {
 
                   {/* Deal Details */}
                   <div className="space-y-4 pt-4 border-t border-border">
-                    <div className="text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Deal Information
                     </div>
                     
@@ -289,7 +289,7 @@ const AETechnicalSupport = () => {
 
                   {/* Technical Details */}
                   <div className="space-y-4 pt-4 border-t border-border">
-                    <div className="text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Technical Details
                     </div>
                     
