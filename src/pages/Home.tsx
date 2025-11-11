@@ -205,14 +205,7 @@ const Home = () => {
 
       {/* Services */}
       <Section variant="muted">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="heading-section text-left">How We Work</h2>
-          <Button asChild variant="ghost" size="sm">
-            <Link to="/resources" className="font-mono text-sm text-primary hover:text-primary/80">
-              Browse Resources →
-            </Link>
-          </Button>
-        </div>
+        <h2 className="heading-section mb-8">How We Work</h2>
         
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((service, index) => (
