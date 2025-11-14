@@ -49,7 +49,7 @@ const SystemDiagram = () => {
             
             
 
-            {processes.map((process, index) => <div key={index} className={`space-y-2 p-3 rounded-lg bg-muted/5 border border-transparent hover:border-primary/20 hover:bg-muted/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-lg hover:shadow-primary/5 animate-fade-in ${process.delay}`}>
+            {processes.map((process, index) => <div key={index} className={`space-y-2 p-3 rounded-lg bg-muted/5 border border-transparent hover:border-primary/20 hover:bg-muted/10 transition-all duration-300 cursor-pointer hover:shadow-lg hover:shadow-primary/5 animate-fade-in ${process.delay}`}>
                 <div className="text-primary font-bold flex items-center gap-2">
                   <span className="text-xs opacity-60">{process.step}</span>
                   <span>{process.title}</span>
