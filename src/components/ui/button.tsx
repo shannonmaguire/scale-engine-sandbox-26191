@@ -5,20 +5,20 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium font-mono uppercase tracking-wide ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium font-mono uppercase tracking-wide ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         // CRITICAL: bg-primary MUST always pair with text-primary-foreground (white)
         // Never use black text on burgundy backgrounds
-        default: "bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-hover))] hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5",
+        default: "bg-primary text-primary-foreground hover:bg-[hsl(var(--primary-hover))] hover:shadow-lg hover:shadow-primary/20",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 hover:shadow-md",
-        outline: "border-2 border-muted-foreground bg-transparent text-foreground hover:bg-primary/10 hover:border-primary hover:text-primary hover:shadow-md hover:-translate-y-0.5",
+        outline: "border-2 border-muted-foreground bg-transparent text-foreground hover:bg-primary/10 hover:border-primary hover:text-primary hover:shadow-md",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:shadow-md",
-        ghost: "hover:bg-primary/10 text-foreground hover:text-primary hover:scale-[1.02]",
+        ghost: "hover:bg-primary/10 text-foreground hover:text-primary",
         link: "text-foreground underline-offset-4 hover:underline normal-case hover:text-primary",
         warm: "border-2 border-warm bg-transparent text-foreground hover:bg-warm/20 hover:border-warm hover:shadow-md",
-        teal: "bg-accent text-white hover:bg-[hsl(var(--accent-hover))] hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5",
+        teal: "bg-accent text-white hover:bg-[hsl(var(--accent-hover))] hover:shadow-lg hover:shadow-accent/20",
       },
       size: {
         // Mobile-first: Minimum 44px touch targets for accessibility

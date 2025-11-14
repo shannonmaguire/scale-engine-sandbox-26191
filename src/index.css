@@ -440,11 +440,11 @@ img {
   
   /* Micro-interactions - Optimized timing (150-200ms standard) */
   .hover-lift {
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    transition: box-shadow 0.2s ease-out;
   }
   
   .hover-lift:hover {
-    @apply -translate-y-1 shadow-lg;
+    @apply shadow-lg;
   }
   
   .hover-glow {
