@@ -6,7 +6,6 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { StandardCard, StandardCardContent } from "@/components/ui/standard-card";
 import { Section } from "@/components/ui/section";
 import SEOHead from "@/components/SEOHead";
@@ -300,24 +299,26 @@ const Contact = () => {
                         <Label htmlFor="timeline" className="font-mono text-sm font-medium mb-2 block">
                           Timeline *
                         </Label>
-                        <Select
-                          key="timeline-select"
+                        <select
+                          id="timeline"
+                          name="timeline"
                           value={formData.timeline}
-                          onValueChange={(value) => {
-                            handleInputChange("timeline", value);
+                          onChange={(e) => {
+                            handleInputChange("timeline", e.target.value);
                             handleBlur("timeline");
                           }}
+                          className={`flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm font-mono ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
+                            errors.timeline && touched.timeline ? "border-destructive" : ""
+                          }`}
                         >
-                          <SelectTrigger className={`font-mono ${errors.timeline && touched.timeline ? 'border-destructive' : ''}`}>
-                            <SelectValue placeholder="When do you need this?" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="urgent">ASAP (within 2 weeks)</SelectItem>
-                            <SelectItem value="soon">Soon (within 30 days)</SelectItem>
-                            <SelectItem value="planning">Planning (30-90 days)</SelectItem>
-                            <SelectItem value="exploring">Exploring options</SelectItem>
-                          </SelectContent>
-                        </Select>
+                          <option value="" disabled>
+                            When do you need this?
+                          </option>
+                          <option value="urgent">ASAP (within 2 weeks)</option>
+                          <option value="soon">Soon (within 30 days)</option>
+                          <option value="planning">Planning (30-90 days)</option>
+                          <option value="exploring">Exploring options</option>
+                        </select>
                         {errors.timeline && touched.timeline && (
                           <p className="text-xs text-destructive mt-1">{errors.timeline}</p>
                         )}
@@ -327,23 +328,23 @@ const Contact = () => {
                         <Label htmlFor="budgetRange" className="font-mono text-sm font-medium mb-2 block">
                           Project Readiness
                         </Label>
-                        <Select
-                          key="budget-select"
+                        <select
+                          id="budgetRange"
+                          name="budgetRange"
                           value={formData.budgetRange}
-                          onValueChange={(value) => {
-                            handleInputChange("budgetRange", value);
+                          onChange={(e) => {
+                            handleInputChange("budgetRange", e.target.value);
                           }}
+                          className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm font-mono ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                          <SelectTrigger className="font-mono">
-                            <SelectValue placeholder="Select readiness (optional)" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="exploratory">Exploratory - learning options</SelectItem>
-                            <SelectItem value="budgeted">Budgeted - ready to move</SelectItem>
-                            <SelectItem value="urgent">Urgent - immediate need</SelectItem>
-                            <SelectItem value="not-sure">Not sure yet</SelectItem>
-                          </SelectContent>
-                        </Select>
+                          <option value="" disabled>
+                            Select readiness (optional)
+                          </option>
+                          <option value="exploratory">Exploratory - learning options</option>
+                          <option value="budgeted">Budgeted - ready to move</option>
+                          <option value="urgent">Urgent - immediate need</option>
+                          <option value="not-sure">Not sure yet</option>
+                        </select>
                       </div>
                     </div>
 
