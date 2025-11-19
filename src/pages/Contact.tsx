@@ -301,6 +301,7 @@ const Contact = () => {
                           Timeline *
                         </Label>
                         <Select
+                          key="timeline-select"
                           value={formData.timeline}
                           onValueChange={(value) => {
                             handleInputChange("timeline", value);
@@ -327,6 +328,7 @@ const Contact = () => {
                           Project Readiness
                         </Label>
                         <Select
+                          key="budget-select"
                           value={formData.budgetRange}
                           onValueChange={(value) => {
                             handleInputChange("budgetRange", value);
