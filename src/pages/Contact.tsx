@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { StandardCard, StandardCardContent } from "@/components/ui/standard-card";
 import { Section } from "@/components/ui/section";
@@ -273,12 +272,13 @@ const Contact = () => {
                             }`}
                             onClick={() => handleServiceToggle(service.id)}
                           >
-                            <Checkbox
-                              id={service.id}
-                              checked={formData.servicesInterested.includes(service.id)}
-                              onCheckedChange={() => handleServiceToggle(service.id)}
-                              className="pointer-events-none"
-                            />
+                          <input
+                            type="checkbox"
+                            id={service.id}
+                            checked={formData.servicesInterested.includes(service.id)}
+                            onChange={() => {}}
+                            className="h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground pointer-events-none accent-primary"
+                          />
                             <Label
                               htmlFor={service.id}
                               className="text-sm font-medium cursor-pointer flex-1"
@@ -388,11 +388,12 @@ const Contact = () => {
                     </div>
 
                     <div className="flex items-start gap-3 pt-4 border-t border-border/50">
-                      <Checkbox
+                      <input
+                        type="checkbox"
                         id="privacyConsent"
                         checked={formData.privacyConsent}
-                        onCheckedChange={(checked) => handleInputChange("privacyConsent", checked as boolean)}
-                        className={`mt-0.5 ${errors.privacyConsent && touched.privacyConsent ? 'border-destructive' : ''}`}
+                        onChange={(e) => handleInputChange("privacyConsent", e.target.checked)}
+                        className={`h-4 w-4 shrink-0 rounded-sm border ring-offset-background mt-0.5 accent-primary cursor-pointer ${errors.privacyConsent && touched.privacyConsent ? 'border-destructive' : 'border-primary'}`}
                       />
                       <Label htmlFor="privacyConsent" className="text-sm leading-relaxed cursor-pointer text-muted-foreground">
                         I agree to the{" "}
