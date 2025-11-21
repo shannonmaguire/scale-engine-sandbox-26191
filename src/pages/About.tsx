@@ -10,6 +10,7 @@ import { EngagementTracker } from "@/components/EngagementTracker";
 import { Linkedin } from "lucide-react";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import shannonHeadshot from "@/assets/shannon-headshot.jpg";
 const About = () => {
   usePerformanceMonitoring();
   useScrollDepth();
@@ -44,24 +45,36 @@ const About = () => {
         {/* Shannon */}
         <div className="max-w-3xl mx-auto mb-12">
           <div className="border border-border rounded-lg p-8">
-            <h2 className="text-2xl font-mono font-bold mb-2">Shannon Maguire</h2>
-            <p className="text-primary font-mono mb-6">Founder</p>
-            
-            <p className="text-foreground leading-relaxed mb-6">
-              Revenue systems architect specializing in legal, compliance, cybersecurity, healthcare, and B2B SaaS. Builds infrastructure engineered for scale, load tolerance, and documented handoff.
-            </p>
-            
-            <Button asChild variant="outline" size="sm">
-              <a 
-                href="https://www.linkedin.com/in/shanmag/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center"
-              >
-                <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" />
-                LinkedIn
-              </a>
-            </Button>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="flex-shrink-0">
+                <img 
+                  src={shannonHeadshot} 
+                  alt="Shannon Maguire, Founder of CWT Studio" 
+                  className="w-48 h-48 rounded-lg object-cover"
+                />
+              </div>
+              
+              <div className="flex-1">
+                <h2 className="text-2xl font-mono font-bold mb-2">Shannon Maguire</h2>
+                <p className="text-primary font-mono mb-6">Founder</p>
+                
+                <p className="text-foreground leading-relaxed mb-6">
+                  Revenue systems architect specializing in legal, compliance, cybersecurity, healthcare, and B2B SaaS. Builds infrastructure engineered for scale, load tolerance, and documented handoff.
+                </p>
+                
+                <Button asChild variant="outline" size="sm">
+                  <a 
+                    href="https://www.linkedin.com/in/shanmag/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <Linkedin size={ICON_SIZES.small} strokeWidth={ICON_STROKE.default} className="mr-2" />
+                    LinkedIn
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
 
