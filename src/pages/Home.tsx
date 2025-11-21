@@ -60,17 +60,15 @@ const Home = () => {
     before: [
       "Manual pipeline updates consuming 20+ hrs/week",
       "One founder owns all sales ops knowledge",
-      "Forecast built from memory and best-guess spreadsheets",
-      "Custom workflows that break when people leave"
+      "Forecast built from memory and spreadsheets"
     ],
     after: [
       "Automated pipeline tracking—real-time visibility",
-      "Documented systems anyone on the team can run",
-      "Board-ready forecast with confidence intervals",
-      "Repeatable workflows that compound over time"
+      "Documented systems anyone can run",
+      "Board-ready forecast with confidence intervals"
     ]
   };
-  const assessmentDeliverables = ["Revenue Infrastructure Scorecard—tech, ops, pipeline", "Industry benchmarks and peer comparisons", "Prioritized 90-day roadmap with implementation sequence", "Executive presentation with leadership alignment"];
+  const assessmentDeliverables = ["Revenue Infrastructure Scorecard—tech, ops, pipeline", "Industry benchmarks and peer comparisons", "Prioritized 90-day roadmap with implementation sequence"];
   return <div className="min-h-screen">
       <EngagementTracker />
       <CookieBanner />
