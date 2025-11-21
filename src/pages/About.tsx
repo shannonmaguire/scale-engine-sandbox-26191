@@ -50,7 +50,7 @@ const About = () => {
                 <img 
                   src={shannonHeadshot} 
                   alt="Shannon Maguire, Founder of CWT Studio" 
-                  className="w-48 h-48 rounded-lg object-cover"
+                  className="w-48 h-64 rounded-lg object-cover object-top"
                 />
               </div>
               
