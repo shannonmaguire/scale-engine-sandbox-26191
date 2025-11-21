@@ -121,20 +121,20 @@ const Resources = () => {
       {/* New Here Section */}
       <section className="section-spacing-half px-6 bg-primary/5 border-b-2 border-primary/20">
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div>
+          <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex-1">
               <div className="text-xs font-mono text-primary uppercase tracking-wide mb-2">
                 New Here?
               </div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                 Not sure which resource you need?
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Take 30 seconds to identify your path: Breaking, Planning, or Selling Salesforce.
               </p>
             </div>
-            <Button asChild size="lg" variant="outline" className="flex-shrink-0">
-              <Link to="/start-here">
+            <Button asChild size="lg" variant="outline" className="flex-shrink-0 w-full sm:w-auto">
+              <Link to="/start-here" className="flex items-center justify-center">
                 Find Your Path
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -172,12 +172,12 @@ const Resources = () => {
         <div className="max-w-7xl mx-auto">
           {/* Category Tabs */}
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-8">
-            <TabsList className="w-full justify-start overflow-x-auto flex-wrap h-auto gap-2 bg-muted/30 p-2">
+            <TabsList className="w-full justify-start overflow-x-auto flex-nowrap h-auto gap-1 sm:gap-2 bg-muted/30 p-2 scrollbar-hide">
               {categories.map((category) => (
                 <TabsTrigger 
                   key={category} 
                   value={category}
-                  className="font-mono text-sm capitalize data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                  className="font-mono text-xs sm:text-sm capitalize whitespace-nowrap data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shrink-0"
                 >
                   {category === "all" ? "All Resources" : category}
                 </TabsTrigger>
@@ -185,26 +185,26 @@ const Resources = () => {
             </TabsList>
           </Tabs>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gutter-standard">
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filteredResources.map((resource) => {
               const Icon = resource.icon;
               return (
                 <StandardCard key={resource.id} className="flex flex-col h-full">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-6 h-6 text-primary" />
+                  <div className="flex items-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="text-xs font-mono text-muted-foreground uppercase tracking-wide mb-1">
                         {resource.category}
                       </div>
-                      <h3 className="font-mono font-bold text-lg text-foreground">
+                      <h3 className="font-mono font-bold text-base sm:text-lg text-foreground leading-tight">
                         {resource.title}
                       </h3>
                     </div>
                   </div>
                   
-                  <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  <p className="text-sm text-muted-foreground mb-4 flex-1 leading-relaxed">
                     {resource.description}
                   </p>
                   
@@ -274,17 +274,17 @@ const Resources = () => {
       {/* AE Hub Cross-Link */}
       <section className="section-spacing px-6 bg-accent/5 border-y border-accent/20">
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-2">
+          <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex-1">
+              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                 Selling Salesforce Services?
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Access our AE Hub with objection frameworks, discovery questions, and deal qualification tools designed specifically for Account Executives.
               </p>
             </div>
-            <Button asChild size="lg" variant="outline" className="flex-shrink-0">
-              <Link to="/ae-hub">
+            <Button asChild size="lg" variant="outline" className="flex-shrink-0 w-full sm:w-auto">
+              <Link to="/ae-hub" className="flex items-center justify-center">
                 Visit AE Hub
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

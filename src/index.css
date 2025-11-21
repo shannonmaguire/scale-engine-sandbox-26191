@@ -312,31 +312,31 @@ img {
   }
   
   /* ===== STRICT TYPOGRAPHY SCALE - EDITORIAL GRADE ===== */
-  /* Mobile First - Base sizes */
+  /* Mobile First - Base sizes (< 640px) */
   .heading-page {
     @apply font-mono font-bold;
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.1;
     letter-spacing: -0.02em;
   }
   
   .heading-section {
     @apply font-mono font-bold;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.2;
     letter-spacing: -0.015em;
   }
   
   .heading-subsection {
     @apply font-mono font-semibold;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
   
   .text-description {
     @apply font-sans text-foreground;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
     font-weight: 500;
     max-width: 70ch;
@@ -345,23 +345,46 @@ img {
   
   .text-label {
     @apply font-mono uppercase tracking-wider text-foreground;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.4;
     font-weight: 600;
   }
   
-  /* Tablet (768px+) - Proportional scaling */
+  /* Small phones (640px+) - Slightly larger */
+  @media (min-width: 640px) {
+    .heading-page {
+      font-size: 40px;
+    }
+    
+    .heading-section {
+      font-size: 28px;
+    }
+    
+    .heading-subsection {
+      font-size: 20px;
+    }
+    
+    .text-description {
+      font-size: 16px;
+    }
+    
+    .text-label {
+      font-size: 12px;
+    }
+  }
+  
+  /* Tablet (768px+) - Intermediate scaling */
   @media (min-width: 768px) {
     .heading-page {
       font-size: 48px;
     }
     
     .heading-section {
-      font-size: 36px;
+      font-size: 32px;
     }
     
     .heading-subsection {
-      font-size: 24px;
+      font-size: 22px;
     }
     
     .text-description {
@@ -370,6 +393,25 @@ img {
     
     .text-label {
       font-size: 13px;
+    }
+  }
+  
+  /* Large tablet/small desktop (1024px+) */
+  @media (min-width: 1024px) {
+    .heading-page {
+      font-size: 56px;
+    }
+    
+    .heading-section {
+      font-size: 40px;
+    }
+    
+    .heading-subsection {
+      font-size: 28px;
+    }
+    
+    .text-description {
+      font-size: 18px;
     }
   }
   

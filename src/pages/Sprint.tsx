@@ -118,11 +118,11 @@ const Sprint = () => {
         {/* What You Get */}
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="heading-subsection mb-6">What You Get</h2>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {whatYouGet.map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-foreground">{item}</span>
+              <div key={index} className="flex items-start gap-3 py-1">
+                <CheckCircle size={18} className="text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-foreground text-sm sm:text-base leading-relaxed">{item}</span>
               </div>
             ))}
           </div>
@@ -131,16 +131,16 @@ const Sprint = () => {
         {/* Timeline */}
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="heading-subsection mb-6">Timeline</h2>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {timeline.map((phase, index) => (
-              <div key={index} className="border-l-4 border-primary pl-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-bold text-lg">{phase.title}</h3>
-                  <Badge variant="outline" className="text-xs font-mono">
+              <div key={index} className="border-l-2 sm:border-l-4 border-primary pl-4 sm:pl-6 py-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                  <h3 className="font-bold text-base sm:text-lg">{phase.title}</h3>
+                  <Badge variant="outline" className="text-xs font-mono self-start sm:self-auto">
                     {phase.week}
                   </Badge>
                 </div>
-                <p className="text-muted-foreground">{phase.outputs}</p>
+                <p className="text-muted-foreground text-sm sm:text-base">{phase.outputs}</p>
               </div>
             ))}
           </div>
@@ -149,22 +149,22 @@ const Sprint = () => {
         {/* Prerequisites */}
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="heading-subsection mb-6">Prerequisites</h2>
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Completed Assessment</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Completed Assessment</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Executive commitment</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Executive commitment</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Cross-team stakeholders</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Cross-team stakeholders</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">System admin access</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">System admin access</span>
             </div>
           </div>
         </div>
