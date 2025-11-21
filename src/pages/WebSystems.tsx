@@ -71,26 +71,20 @@ const WebSystems = () => {
     features: ["Major updates & optimization", "24-hour response time", "6-month expiration", "Dedicated support contact"]
   }];
   const faqs = [{
-    question: "How does this differ from hiring an agency or freelancer?",
-    answer: "Most web projects focus on design aesthetics without connecting to revenue operations. We build sites as infrastructure—CRM-wired, conversion-tracked, and documented for ownership transfer. You're not paying for pixels; you're paying for a system that captures and routes demand."
+    question: "How does this differ from hiring an agency?",
+    answer: "We build sites as infrastructure—CRM-wired, conversion-tracked, and documented for ownership transfer. You're paying for a system that captures and routes demand, not just design."
   }, {
     question: "Can my team update pages without a developer?",
-    answer: "Yes. You receive an owner guide, components, and page templates that your team can edit. Content updates, layout changes, and new pages using existing templates don't require developer involvement."
-  }, {
-    question: "Do I need an Infrastructure Assessment first?",
-    answer: "No. Web Systems is standalone and does not require prior assessment. However, if you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our Infrastructure Assessment (starting at $4,500) provides clarity before build. That fee credits fully toward Web Systems if you proceed."
+    answer: "Yes. You receive an owner guide, components, and page templates for content updates and layout changes without developer involvement."
   }, {
     question: "What CRM platforms do you integrate with?",
-    answer: "We work with your existing stack—HubSpot, Salesforce, Pipedrive, ActiveCampaign, or custom solutions. Integration includes form routing, event tracking, and conversion dashboards. If you don't have a CRM yet, we'll recommend options based on your business model."
+    answer: "We work with your existing stack—HubSpot, Salesforce, Pipedrive, ActiveCampaign, or custom solutions. If you don't have a CRM, we'll recommend options based on your business model."
   }, {
     question: "Do you offer ongoing website maintenance?",
-    answer: "Yes. We offer on-demand support blocks (10, 20, or 40 hours) for updates, fixes, and optimizations. Hours are valid for 6 months and include content updates, component modifications, performance optimization, and more. New feature development requires separate scoping."
-  }, {
-    question: "Do you take over my hosting?",
-    answer: "No. We set up a clean deployment on your provider (Vercel, Netlify, AWS, etc.) and hand you the keys. You maintain control over infrastructure, billing, and access."
+    answer: "Yes. On-demand support blocks (10, 20, or 40 hours) for updates and optimizations. Hours valid for 6 months."
   }, {
     question: "What happens if I want to switch developers later?",
-    answer: "That's the point. You own the repository, deployment credentials, and documentation. Hire any React developer to continue building. No vendor lock-in, no proprietary systems."
+    answer: "You own the repository, deployment credentials, and documentation. Hire any React developer to continue building. No vendor lock-in."
   }];
   const handleCTAClick = (location: string) => {
     trackCTAClick(`Web Systems ${location} CTA`, `web-systems-${location}`, '/contact?interest=web&source_page=web-systems');

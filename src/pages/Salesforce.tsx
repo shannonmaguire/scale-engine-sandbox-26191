@@ -41,26 +41,20 @@ const Salesforce = () => {
   const process = [
     {
       step: "01",
-      title: "Discovery & Assessment", 
-      description: "We analyze your current setup, identify pain points, and map out optimization opportunities.",
-      timeline: "Week 1-2"
+      title: "Discovery & Strategy", 
+      description: "Analyze current setup, identify optimization opportunities, and create implementation roadmap.",
+      timeline: "Week 1-3"
     },
     {
-      step: "02",
-      title: "Strategy & Planning",
-      description: "Create a detailed implementation roadmap with clear priorities and expected outcomes.",
-      timeline: "Week 3"
-    },
-    {
-      step: "03", 
-      title: "Implementation",
-      description: "Build and deploy optimizations with minimal disruption to your daily operations.",
+      step: "02", 
+      title: "Build & Deploy",
+      description: "Implement optimizations with minimal operational disruption.",
       timeline: "Week 4-8"
     },
     {
-      step: "04",
-      title: "Training & Support",
-      description: "Ensure your team knows how to use the new systems and processes effectively.",
+      step: "03",
+      title: "Training & Handoff",
+      description: "Transfer knowledge and ensure team adoption.",
       timeline: "Week 8-10"
     }
   ];
@@ -181,7 +175,7 @@ const Salesforce = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gutter-standard relative">
+          <div className="grid lg:grid-cols-3 gutter-standard relative">
             {/* Teal pipeline connector */}
             <div className="hidden lg:block absolute top-6 left-0 right-0 h-0.5 bg-accent/40" style={{ zIndex: 0 }} />
             
@@ -216,65 +210,35 @@ const Salesforce = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gutter-content spacing-subsection">
+          <div className="grid md:grid-cols-3 gutter-content spacing-subsection">
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
               <h3 className="font-mono font-bold text-lg text-foreground mb-3">
                 100+ Salesforce Certifications
               </h3>
               <p className="text-muted-foreground">
-                CloudRoute's team holds over 100 Salesforce certifications across all clouds and specializations, bringing deep platform expertise to every implementation
+                Deep platform expertise across all Salesforce clouds and specializations
               </p>
             </div>
 
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
               <h3 className="font-mono font-bold text-lg text-foreground mb-3">
-                ISV & OEM Partner Status
+                ISV & OEM Partner
               </h3>
               <p className="text-muted-foreground">
-                CloudRoute's ISV & OEM partnership with Salesforce provides direct access to platform resources, beta features, and priority support channels—ensuring cutting-edge implementation capabilities
+                Direct access to platform resources, beta features, and priority support channels
               </p>
             </div>
 
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
               <h3 className="font-mono font-bold text-lg text-foreground mb-3">
-                Rapid Implementation
+                Measurable Outcomes
               </h3>
               <p className="text-muted-foreground">
-                Faster deployment timelines without sacrificing quality or enterprise-grade standards
-              </p>
-            </div>
-
-            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
-                Technical Debt Resolution
-              </h3>
-              <p className="text-muted-foreground">
-                Proven frameworks to clean up legacy implementations and accelerate your deal cycles by 30%
-              </p>
-            </div>
-
-            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
-                Measurable ROI
-              </h3>
-              <p className="text-muted-foreground">
-                Every engagement includes documented outcomes, adoption metrics, and 12-month growth projections
+                Documented results, adoption metrics, and 12-month growth projections
               </p>
             </div>
           </div>
 
-          <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center mt-16">
-            <p className="text-lg text-foreground mb-6">
-              <strong>The Result:</strong> Operator-led revenue systems backed by a Salesforce-only ISV & OEM Partner with 100+ certifications and global delivery capabilities. 
-              We deliver the speed and pragmatism of a consultancy with the technical authority of a family-owned Salesforce specialist.
-            </p>
-            <Button size="lg" variant="teal" asChild>
-              <Link to="/contact">
-                Start Your Project
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
         </div>
       </Section>
 
@@ -282,24 +246,9 @@ const Salesforce = () => {
       <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-4">Getting Started</h2>
-          <p className="text-lg text-muted-foreground mb-6">
-            Every Salesforce engagement begins with a discovery consultation where we assess your current setup and identify the highest-impact optimizations for your revenue operations.
+          <p className="text-lg text-muted-foreground mb-8">
+            Schedule a discovery consultation to assess your Salesforce configuration and identify high-impact optimizations.
           </p>
-          
-          <div className="bg-card border-l-4 border-accent rounded-lg p-6 mb-6 text-left">
-            <div>
-              <h3 className="font-semibold mb-2 text-lg">Discovery & Scoping</h3>
-                <p className="text-sm text-muted-foreground mb-3">
-                  Complimentary consultation to understand your needs and scope the right solution
-                </p>
-                <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Review current Salesforce configuration</li>
-                  <li>• Identify pain points and opportunities</li>
-                  <li>• Define project scope and timeline</li>
-                  <li>• Custom proposal with clear deliverables</li>
-                </ul>
-            </div>
-          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="teal" asChild>
