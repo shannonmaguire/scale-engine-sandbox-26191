@@ -107,17 +107,17 @@ const Fractional = () => {
         {/* What You Get - Expanded */}
         <div className="max-w-4xl mx-auto mb-16">
           <h2 className="heading-subsection mb-8">What You Get</h2>
-          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 items-stretch">
             {whatYouGet.map((item, index) => (
               <StandardCard key={index} variant="bordered" className="border-primary/20" equalHeight>
-                <StandardCardContent className="p-6 flex-1">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-5 h-5 text-primary" />
+                <StandardCardContent className="p-4 sm:p-6 flex-1">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm">{item.description}</p>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2">{item.title}</h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 </StandardCardContent>
@@ -130,22 +130,22 @@ const Fractional = () => {
         {/* How It Works */}
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="heading-subsection mb-6">How It Works</h2>
-          <div className="space-y-6">
-            <div className="border-l-4 border-primary pl-6">
-              <h3 className="font-bold text-lg mb-2">Month 1: Baseline & Strategic Planning</h3>
-              <p className="text-muted-foreground">
+          <div className="space-y-4">
+            <div className="border-l-2 sm:border-l-4 border-primary pl-4 sm:pl-6 py-2">
+              <h3 className="font-bold text-base sm:text-lg mb-2">Month 1: Baseline & Strategic Planning</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Current state assessment, priority alignment, stakeholder onboarding
               </p>
             </div>
-            <div className="border-l-4 border-primary/60 pl-6">
-              <h3 className="font-bold text-lg mb-2">Months 2-3: Infrastructure Optimization</h3>
-              <p className="text-muted-foreground">
+            <div className="border-l-2 sm:border-l-4 border-primary/60 pl-4 sm:pl-6 py-2">
+              <h3 className="font-bold text-base sm:text-lg mb-2">Months 2-3: Infrastructure Optimization</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
                 System enhancements, process refinement, training deployment
               </p>
             </div>
-            <div className="border-l-4 border-primary/30 pl-6">
-              <h3 className="font-bold text-lg mb-2">Month 4+: Scale Enablement</h3>
-              <p className="text-muted-foreground">
+            <div className="border-l-2 sm:border-l-4 border-primary/30 pl-4 sm:pl-6 py-2">
+              <h3 className="font-bold text-base sm:text-lg mb-2">Month 4+: Scale Enablement</h3>
+              <p className="text-muted-foreground text-sm sm:text-base">
                 Growth preparation, advanced automation, strategic executive partnership
               </p>
             </div>
@@ -188,22 +188,22 @@ const Fractional = () => {
         {/* Requirements */}
         <div className="max-w-3xl mx-auto mb-16">
           <h2 className="heading-subsection mb-6">Requirements</h2>
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Completed Sprint or equivalent</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Completed Sprint or equivalent</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Infrastructure in production</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Infrastructure in production</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Internal stakeholder</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Internal stakeholder</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full" />
-              <span className="text-muted-foreground">Six-month commitment</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Six-month commitment</span>
             </div>
           </div>
         </div>
