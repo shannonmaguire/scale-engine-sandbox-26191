@@ -18,6 +18,7 @@ import analytics from "@/lib/analytics";
 // Lazy load route components for better performance
 const Home = lazy(() => import("@/pages/Home"));
 const Sprint = lazy(() => import("@/pages/Sprint"));
+const HowItWorks = lazy(() => import("@/pages/HowItWorks"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const SelfAssessment = lazy(() => import("@/pages/SelfAssessment"));
@@ -98,6 +99,7 @@ const AppContent = () => {
             <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
             
             <Route path="/sprint" element={<Sprint />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/salesforce" element={<Salesforce />} />
             <Route path="/salesforce/partners" element={<SalesforcePartners />} />
             <Route path="/salesforce/delivery" element={<Navigate to="/salesforce" replace />} />
