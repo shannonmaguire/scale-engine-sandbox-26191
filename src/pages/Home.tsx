@@ -73,13 +73,13 @@ const Home = () => {
       <EngagementTracker />
       <CookieBanner />
       <SEOHead
-        title="90-Day Revenue Sprint | CWT Studio"
-        description="Install backend systems that compound. Systems architecture, outbound engine, CRM remediation, operational framework, pipeline governance, founder-level reporting, documentation, performance baselines."
+        title="Revenue Infrastructure | CWT Studio"
+        description="Install backend systems that scale without founder dependency. 90-day implementation for legal, compliance, cybersecurity, and B2B SaaS."
         keywords={[
-          '90-day revenue sprint',
           'revenue infrastructure',
           'revenue operations systems',
           'Salesforce optimization',
+          '90-day system installation',
           'RevOps consulting',
           'high-trust industries'
         ]}
@@ -90,52 +90,44 @@ const Home = () => {
       <Section className="min-h-[90vh] flex items-center py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
           <div>
-            {/* Product Badge */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
-              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              <span className="font-mono text-sm text-primary font-semibold">CWT Studio Flagship Product</span>
+            {/* Stat Line - Immediate Proof */}
+            <div className="inline-flex items-center gap-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+              <span className="font-mono text-sm text-primary font-semibold">42 systems delivered</span>
+              <span className="w-1 h-1 bg-primary/40 rounded-full"></span>
+              <span className="font-mono text-sm text-primary font-semibold">90-day average</span>
             </div>
             
             <h1 className="heading-page mb-4">
-              90-Day Revenue Sprint: Install Backend Systems That Compound
+              Revenue Infrastructure Determines Competitive Position
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-6">
-              Systems architecture. Outbound engine. CRM remediation. Operational framework. Pipeline governance. Founder-level reporting. Documentation. Performance baselines.
+            <p className="text-xl text-muted-foreground mb-8">
+              Backend systems installed in 90-day cycles. Fixed scope, documented handoff, measured against baseline performance data.
             </p>
             
-            <div className="bg-muted/30 border-l-4 border-primary rounded-r-lg p-4 mb-8">
-              <p className="text-sm text-foreground font-mono">
-                <strong>One product. Fixed 90-day deployment.</strong> Assessment scopes your Sprint. Sprint delivers 8 core systems. Fractional Ops maintains performance.
-              </p>
-            </div>
-            
-            {/* CTA Hierarchy - Start Sprint via Assessment */}
+            {/* CTA Hierarchy - Start Assessment is Primary */}
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <ConversionOptimizedButton
                 to="/assessment"
-                ctaName="Hero - Start Your Sprint"
+                ctaName="Hero - Start Your Assessment"
                 location="Homepage Hero"
                 size="lg"
               >
-                Start Your Sprint
+                Start Your Assessment
               </ConversionOptimizedButton>
               <ConversionOptimizedButton
-                to="/how-it-works"
-                ctaName="Hero - How It Works"
+                to="/proof"
+                ctaName="Hero - View Proof"
                 location="Homepage Hero"
                 variant="outline"
+                showArrow={false}
                 size="lg"
               >
-                How It Works
+                View Proof
               </ConversionOptimizedButton>
             </div>
             
-            <p className="text-xs text-muted-foreground font-mono mb-6">
-              2-week Assessment • $4,500+ • 100% credits to Sprint
-            </p>
-            
-            {/* Social Proof */}
+            {/* Social Proof Bar - Rotating Client Quotes */}
             <div className="border-l-2 border-primary/30 pl-4 py-2">
               <p className="text-sm text-muted-foreground italic mb-2">
                 "Revenue infrastructure deployed in 8 weeks. Pipeline administration reduced from 20 hours weekly to automated execution."

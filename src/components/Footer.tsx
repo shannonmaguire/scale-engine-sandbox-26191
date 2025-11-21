@@ -19,54 +19,35 @@ const Footer = () => {
 
         {/* Navigation Grid - 6 equal columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-10 pb-12 border-b border-white/10">
-          {/* The Sprint */}
+          {/* Services */}
           <div>
             <h4 className="font-mono font-semibold text-sm uppercase tracking-wider mb-4 text-white">
-              The Sprint
+              Services
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/sprint" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  90-Day Revenue Sprint
-                </Link>
-              </li>
-              <li>
-                <Link to="/how-it-works" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  How It Works
-                </Link>
-              </li>
-              <li>
                 <Link to="/assessment" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Start Assessment
+                  Assessment
+                </Link>
+              </li>
+              <li>
+                <Link to="/sprint" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                  Revenue Sprint
                 </Link>
               </li>
               <li>
                 <Link to="/fractional" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Post-Sprint Support
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Capabilities */}
-          <div>
-            <h4 className="font-mono font-semibold text-sm uppercase tracking-wider mb-4 text-white">
-              Capabilities
-            </h4>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/salesforce" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Salesforce Expertise
+                  Fractional Ops
                 </Link>
               </li>
               <li>
                 <Link to="/web-systems" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Web Infrastructure
+                  Web Systems
                 </Link>
               </li>
               <li>
-                <Link to="/proof" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  View All Proof
+                <Link to="/salesforce" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                  Salesforce
                 </Link>
               </li>
             </ul>
@@ -189,7 +170,7 @@ const Footer = () => {
               </a>
               <Button asChild size="sm" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
                 <Link to="/assessment">
-                  Start Your Sprint
+                  Start Assessment
                 </Link>
               </Button>
             </div>
