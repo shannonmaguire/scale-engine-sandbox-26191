@@ -116,11 +116,11 @@ const Sprint = () => {
         </div>
 
         {/* What You Get */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">What You Get</h2>
-          <div className="space-y-2">
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="heading-subsection mb-8">What You Get</h2>
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 items-stretch">
             {whatYouGet.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 py-1">
+              <div key={index} className="flex items-start gap-3 p-4 sm:p-6 border border-border rounded-lg bg-card">
                 <CheckCircle size={18} className="text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-foreground text-sm sm:text-base leading-relaxed">{item}</span>
               </div>
