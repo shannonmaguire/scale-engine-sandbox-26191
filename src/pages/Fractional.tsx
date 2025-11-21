@@ -110,7 +110,7 @@ const Fractional = () => {
           <div className="grid gap-4 sm:gap-6 md:grid-cols-2 items-stretch">
             {whatYouGet.map((item, index) => (
               <StandardCard key={index} variant="bordered" className="border-primary/20" equalHeight>
-                <StandardCardContent className="p-4 sm:p-6 flex-1">
+                <StandardCardContent className="p-4 sm:p-6">
                   <div className="flex items-start gap-3 sm:gap-4">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
