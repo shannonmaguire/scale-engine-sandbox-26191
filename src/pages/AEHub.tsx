@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Download, Calculator, Target, Clock, CheckCircle2, MessageSquare, Mail, User, TrendingUp, Users, AlertCircle, Zap, FileText, ClipboardCheck, ArrowLeft } from "lucide-react";
+import { Download, Calculator, Target, Clock, CheckCircle2, Mail, User, TrendingUp, Users, AlertCircle, Zap, FileText, ClipboardCheck, ArrowLeft } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { Card, CardContent } from "@/components/ui/card";
-import ObjectionFramework from "@/components/ObjectionFramework";
 import { ResourceDownloadModal } from "@/components/ResourceDownloadModal";
 import { InteractiveChecklist } from "@/components/checklist/InteractiveChecklist";
 import { aeQualificationChecklist } from "@/data/checklists";
@@ -218,29 +217,16 @@ export default function AEHub() {
       <Section variant="standard">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-3xl font-bold">Additional Resources</h2>
-          <div className="grid sm:grid-cols-2 gap-6">
-            <Card className="p-8 border-accent-data/30 hover:border-accent-data transition-all hover-scale group">
-              <FileText className="w-12 h-12 text-accent-data mx-auto mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-semibold mb-2">Technical Playbook</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                Discovery frameworks and technical qualification guides
-              </p>
-              <Button asChild variant="outline" className="w-full border-accent-data text-accent-data hover:bg-accent-data/10">
-                <Link to="/salesforce/partners">View Playbook</Link>
-              </Button>
-            </Card>
-
-            <Card className="p-8 border-accent-data/30 hover:border-accent-data transition-all hover-scale group">
-              <MessageSquare className="w-12 h-12 text-accent-data mx-auto mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-xl font-semibold mb-2">Objection Library</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                500+ tested responses with discovery frameworks
-              </p>
-              <Button asChild variant="outline" className="w-full border-accent-data text-accent-data hover:bg-accent-data/10">
-                <Link to="/ae-objection-library">Browse Objections</Link>
-              </Button>
-            </Card>
-          </div>
+          <Card className="p-8 max-w-md mx-auto border-accent-data/30 hover:border-accent-data transition-all hover-scale group">
+            <FileText className="w-12 h-12 text-accent-data mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <h3 className="text-xl font-semibold mb-2">Technical Playbook</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              Discovery frameworks and technical qualification guides
+            </p>
+            <Button asChild variant="outline" className="w-full border-accent-data text-accent-data hover:bg-accent-data/10">
+              <Link to="/salesforce/partners">View Playbook</Link>
+            </Button>
+          </Card>
         </div>
       </Section>
 
