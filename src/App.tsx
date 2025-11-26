@@ -37,7 +37,6 @@ const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
 const AEHub = lazy(() => import("@/pages/AEHub"));
-const AEObjectionLibrary = lazy(() => import("@/pages/AEObjectionLibrary"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
@@ -113,8 +112,6 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-hub" element={<AEHub />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
-            <Route path="/ae-objection-library" element={<AEObjectionLibrary />} />
-            <Route path="/ae-hub/objections" element={<Navigate to="/ae-objection-library" replace />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

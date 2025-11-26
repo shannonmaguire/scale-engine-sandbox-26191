@@ -98,11 +98,6 @@ const Footer = () => {
                   Technical Support
                 </Link>
               </li>
-              <li>
-                <Link to="/ae-objection-library" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Objection Library
-                </Link>
-              </li>
             </ul>
           </div>
 
