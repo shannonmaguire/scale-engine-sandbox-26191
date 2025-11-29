@@ -11,21 +11,21 @@ const Salesforce = () => {
     {
       icon: BarChart3,
       title: "Revenue Systems Assessment",
-      description: "Complete assessment of your Salesforce configuration and revenue infrastructure",
+      description: "Salesforce configuration and revenue infrastructure audit",
       duration: "2 weeks",
       deliverables: ["Revenue Infrastructure Scorecard", "System analysis", "90-day roadmap"]
     },
     {
       icon: Zap,
       title: "Automation & Integration",
-      description: "Connect your existing tools and automate manual processes to increase efficiency",
+      description: "Tool integration. Manual process automation.",
       duration: "4-8 weeks",
       deliverables: ["Custom integrations", "Workflow automation", "Data synchronization"]
     },
     {
       icon: Target,
       title: "Performance Optimization",
-      description: "Fine-tune your Salesforce configuration for maximum team adoption and results",
+      description: "Salesforce configuration tuned for adoption and performance",
       duration: "3-6 weeks",
       deliverables: ["Custom fields & objects", "Reporting dashboards", "User training"]
     }
@@ -42,19 +42,19 @@ const Salesforce = () => {
     {
       step: "01",
       title: "Discovery & Strategy", 
-      description: "Analyze current setup, identify optimization opportunities, and create implementation roadmap.",
+      description: "Current setup analysis. Optimization identification. Implementation roadmap.",
       timeline: "Week 1-3"
     },
     {
       step: "02", 
       title: "Build & Deploy",
-      description: "Implement optimizations with minimal operational disruption.",
+      description: "Optimization implementation. Minimal disruption.",
       timeline: "Week 4-8"
     },
     {
       step: "03",
       title: "Training & Handoff",
-      description: "Transfer knowledge and ensure team adoption.",
+      description: "Knowledge transfer. Team adoption.",
       timeline: "Week 8-10"
     }
   ];
@@ -84,10 +84,10 @@ const Salesforce = () => {
               <span className="text-accent">PLATFORM OPTIMIZATION</span>
             </div>
             <h1 className="heading-page mb-6">
-              Salesforce Built for Revenue Predictability
+              Salesforce Revenue Infrastructure
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Transform fragmented systems into scalable revenue infrastructure. Assessment-driven implementations backed by ISV & OEM partner expertise.
+              Assessment-driven implementations backed by ISV & OEM partner expertise. Fragmented systems rebuilt as scalable revenue infrastructure.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm mb-6">
               <Shield className="w-4 h-4 text-accent" />
@@ -112,9 +112,9 @@ const Salesforce = () => {
       {/* Services */}
       <Section>
         <div className="text-center mb-12">
-            <h2 className="heading-section mb-4 text-foreground">Revenue Systems for Salesforce</h2>
+            <h2 className="heading-section mb-4 text-foreground">Salesforce Revenue Systems</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Assessment-driven implementations that make Salesforce work harder for your revenue team
+              Assessment-driven implementations. Measured outcomes.
             </p>
           </div>
           

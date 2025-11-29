@@ -72,19 +72,19 @@ const WebSystems = () => {
   }];
   const faqs = [{
     question: "How does this differ from hiring an agency?",
-    answer: "We build sites as infrastructure—CRM-wired, conversion-tracked, and documented for ownership transfer. You're paying for a system that captures and routes demand, not just design."
+    answer: "Infrastructure sites. CRM-wired, conversion-tracked, documented for ownership transfer. Demand capture and routing system."
   }, {
     question: "Can my team update pages without a developer?",
-    answer: "Yes. You receive an owner guide, components, and page templates for content updates and layout changes without developer involvement."
+    answer: "Yes. Owner guide, components, page templates. Content updates and layout changes. No developer required."
   }, {
     question: "What CRM platforms do you integrate with?",
-    answer: "We work with your existing stack—HubSpot, Salesforce, Pipedrive, ActiveCampaign, or custom solutions. If you don't have a CRM, we'll recommend options based on your business model."
+    answer: "Existing stack. HubSpot, Salesforce, Pipedrive, ActiveCampaign, custom. CRM recommendations available."
   }, {
     question: "Do you offer ongoing website maintenance?",
-    answer: "Yes. On-demand support blocks (10, 20, or 40 hours) for updates and optimizations. Hours valid for 6 months."
+    answer: "On-demand support blocks. 10, 20, or 40 hours. Updates and optimizations. 6-month validity."
   }, {
     question: "What happens if I want to switch developers later?",
-    answer: "You own the repository, deployment credentials, and documentation. Hire any React developer to continue building. No vendor lock-in."
+    answer: "Full ownership. Repository, deployment credentials, documentation. Any React developer can continue. No lock-in."
   }];
   const handleCTAClick = (location: string) => {
     trackCTAClick(`Web Systems ${location} CTA`, `web-systems-${location}`, '/contact?interest=web&source_page=web-systems');
@@ -187,7 +187,7 @@ const WebSystems = () => {
         <div className="mb-16">
           <h2 className="heading-section mb-4">What You Receive</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
-            Every web system follows a documented deployment sequence designed for operational transfer, not perpetual dependency.
+            Documented deployment sequence. Operational transfer, not perpetual dependency.
           </p>
           
           <div className="max-w-3xl space-y-6">
@@ -198,7 +198,7 @@ const WebSystems = () => {
                 <h3 className="font-mono font-bold text-lg">Site Architecture</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
-                Page structure, routing map, CRM event tracking, and analytics wiring. Every form submission, button click, and conversion path documented and connected to your pipeline.
+                Page structure, routing, CRM events, analytics. Form submissions, clicks, conversion paths documented and pipeline-connected.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Lead capture flow with CRM routing</li>
@@ -215,7 +215,7 @@ const WebSystems = () => {
                 <h3 className="font-mono font-bold text-lg">Component Library</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
-                Reusable UI components, page templates, and design system. Your team edits content and layouts without rebuilding from scratch every time.
+                Reusable components, page templates, design system. Content and layout editing without rebuild cycles.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Editable page templates (landing pages, resources, case studies)</li>
@@ -232,7 +232,7 @@ const WebSystems = () => {
                 <h3 className="font-mono font-bold text-lg">Handoff SOP</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
-                Complete documentation for ownership transfer: GitHub repo, deployment credentials, CMS access, analytics dashboards, and update procedures.
+                Ownership transfer documentation. GitHub repo, deployment credentials, CMS access, analytics, update procedures.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• GitHub repository with full source code access</li>
@@ -245,7 +245,7 @@ const WebSystems = () => {
 
           <div className="mt-8 p-6 bg-muted/30 border border-border rounded-lg max-w-3xl">
             <p className="text-sm text-foreground font-mono">
-              <strong>No ongoing licensing. No vendor lock-in.</strong> Update in-house, hire your own developer, or keep us on retainer—your choice.
+              No licensing. No lock-in. In-house updates, hire developers, or retainer—operator choice.
             </p>
           </div>
         </div>
