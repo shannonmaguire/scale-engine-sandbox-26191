@@ -93,44 +93,32 @@ const WebSystems = () => {
     trackCTAClick(`Website Support ${packageName}`, 'web-systems-support', '/contact?interest=website-support&source_page=web-systems');
   };
   return <div className="min-h-screen">
-      <SEOHead title="Web Systems | Revenue Infrastructure You Own | CWT Studio" description="Performance-driven websites integrated into your revenue operations. CRM-wired, conversion-tracked, fully documented. React, TypeScript, zero vendor lock-in." keywords={['revenue infrastructure', 'CRM website integration', 'lead capture automation', 'performance web development', 'website ownership', 'conversion tracking']} canonicalUrl="/web-systems" />
-      
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "Web Systems - Revenue Infrastructure",
-          "provider": {
-            "@type": "Organization",
-            "name": "CWT Studio"
-          },
-          "serviceType": "Web Development & Revenue Operations Integration",
-          "description": "Performance-driven websites integrated into revenue operations. CRM-wired, conversion-tracked, fully documented for ownership transfer.",
-          "areaServed": "Worldwide",
-          "offers": {
-            "@type": "AggregateOffer",
-            "priceCurrency": "USD",
-            "offerCount": "3",
-            "offers": [
-              {
-                "@type": "Offer",
-                "name": "Essentials Package",
-                "description": "5-7 pages with base CRM integration and conversion tracking"
-              },
-              {
-                "@type": "Offer",
-                "name": "Core Package",
-                "description": "8-12 pages with gated assets and advanced CRM workflows"
-              },
-              {
-                "@type": "Offer",
-                "name": "Scale Package",
-                "description": "Full component library with multi-brand architecture"
-              }
-            ]
-          }
-        })}
-      </script>
+      <SEOHead 
+        title="Web Systems | Revenue Infrastructure You Own | CWT Studio" 
+        description="Performance-driven websites integrated into your revenue operations. CRM-wired, conversion-tracked, fully documented. React, TypeScript, zero vendor lock-in." 
+        keywords={['revenue infrastructure', 'CRM website integration', 'lead capture automation', 'performance web development', 'website ownership', 'conversion tracking']} 
+        canonicalUrl="/web-systems"
+        serviceSchema={{
+          name: 'Web Systems - Revenue Infrastructure',
+          description: 'Performance-driven websites integrated into revenue operations. CRM-wired, conversion-tracked, fully documented for ownership transfer.',
+          areaServed: ['Worldwide'],
+          offers: [
+            {
+              name: 'Essentials Package',
+              description: '5-7 pages with base CRM integration and conversion tracking'
+            },
+            {
+              name: 'Core Package',
+              description: '8-12 pages with gated assets and advanced CRM workflows'
+            },
+            {
+              name: 'Scale Package',
+              description: 'Full component library with multi-brand architecture'
+            }
+          ]
+        }}
+        faqSchema={faqs}
+      />
       
       <Breadcrumbs />
       

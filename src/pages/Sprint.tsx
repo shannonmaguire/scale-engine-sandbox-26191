@@ -73,9 +73,22 @@ const Sprint = () => {
         canonicalUrl="/sprint"
         type="service"
         serviceSchema={{
-          name: 'Revenue System Sprint',
+          name: '90-Day Revenue System Sprint',
           description: '8-12 week implementation sprint to install complete revenue infrastructure including CRM optimization, automation, dashboards, and full documentation.',
-          provider: 'CWT Studio'
+          offers: [
+            {
+              name: 'Foundation Phase',
+              description: 'System audit, data model design, baseline measurement, technical requirements'
+            },
+            {
+              name: 'Build Phase',
+              description: 'Workflow configuration, automation logic, integration architecture, dashboard framework'
+            },
+            {
+              name: 'Validation & Deployment',
+              description: 'System testing, production rollout, team onboarding, process documentation'
+            }
+          ]
         }}
       />
       
