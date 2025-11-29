@@ -140,7 +140,7 @@ const Assessment = () => {
                 <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
                   {item.title}
                 </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>

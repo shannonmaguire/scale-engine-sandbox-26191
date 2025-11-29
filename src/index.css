@@ -56,7 +56,13 @@ img {
 
     /* Muted Elements */
     --muted: var(--muted-gray);
-    --muted-foreground: 0 0% 35%;  /* Improved contrast: was deep-black, now darker gray for AA compliance */
+    --muted-foreground: 0 0% 25%;  /* Darkened for WCAG AA compliance: 7:1 contrast ratio */
+    
+    /* Surface Colors */
+    --surface-muted: 40 10% 94%;   /* Lighter muted section background for better contrast */
+    
+    /* Subtle Text - Intentional de-emphasis */
+    --foreground-subtle: 0 0% 35%; /* For secondary text that needs less prominence */
 
     /* Accent - Teal for data/interaction */
     --accent: var(--teal);
