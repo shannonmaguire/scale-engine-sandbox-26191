@@ -150,20 +150,13 @@ const Resources = () => {
             <div className="system-status">
               Resource Library
             </div>
-            <div className="text-xs font-mono text-muted-foreground">
-              2,847 downloads · Updated weekly
-            </div>
           </div>
           <h1 className="heading-page text-primary mb-6">
             Proven Revenue Operations Frameworks
           </h1>
-          <p className="text-description text-muted-foreground max-w-3xl mb-4">
+          <p className="text-description text-muted-foreground max-w-3xl">
             The same tools we use in our revenue operations assessments and sprint engagements. All resources unlock instantly with your email.
           </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
-            <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Used by RevOps teams at 100+ B2B companies</span>
-          </div>
         </div>
       </section>
 
@@ -263,28 +256,6 @@ const Resources = () => {
             </p>
             <Button asChild size="lg">
               <Link to="/ae-hub">
-                Visit AE Hub
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* AE Hub Cross-Link */}
-      <section className="section-spacing px-6 bg-accent/5 border-y border-accent/20">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="flex-1">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                Selling Salesforce Services?
-              </h2>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Access our AE Hub with objection frameworks, discovery questions, and deal qualification tools designed specifically for Account Executives.
-              </p>
-            </div>
-            <Button asChild size="lg" variant="outline" className="flex-shrink-0 w-full sm:w-auto">
-              <Link to="/ae-hub" className="flex items-center justify-center">
                 Visit AE Hub
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

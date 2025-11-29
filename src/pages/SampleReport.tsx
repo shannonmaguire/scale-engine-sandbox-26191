@@ -128,7 +128,7 @@ export default function SampleReport() {
                 Salesforce Health Check & Infrastructure Assessment
               </p>
               <div className="text-sm text-muted-foreground">
-                Report Date: March 2025
+                Report Date: November 2025
               </div>
             </div>
             {/* Executive Summary */}
