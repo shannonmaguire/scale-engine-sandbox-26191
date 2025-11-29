@@ -27,16 +27,16 @@ const Assessment = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const deliverables = [
-    "Complete infrastructure audit (Salesforce, integrations, automation)",
-    "90-day prioritized roadmap with quick wins",
-    "Executive presentation with ROI projections"
+    { title: "Infrastructure Audit", description: "System architecture review covering CRM, automation logic, data flow, and integration points." },
+    { title: "Gap Analysis", description: "Baseline measurement against operational benchmarks—manual effort, data quality, pipeline velocity." },
+    { title: "Prioritized Roadmap", description: "Sequenced 90-day implementation plan with effort estimates and expected performance improvements." },
+    { title: "Executive-Ready Presentation", description: "Technical findings translated to business impact—ROI projections, risk mitigation, capacity gains." }
   ];
 
-  const timeline = [
-    { title: "Discovery Call", description: "90-minute session to understand your systems and objectives" },
-    { title: "Technical Review", description: "1-week deep-dive into CRM, integrations, and data quality" },
-    { title: "Report Delivery", description: "Complete assessment with findings and sequenced roadmap" },
-    { title: "Executive Readout", description: "60-minute presentation to leadership with recommendations" }
+  const triggers = [
+    { label: "Manual ops exceed 20 hours/week", description: "Revenue operations team spends majority of time on manual data entry, list building, or report generation." },
+    { label: "Memory-based forecasting", description: "Pipeline visibility depends on rep recall rather than system-generated data." },
+    { label: "CRM fragmentation", description: "Salesforce exists alongside spreadsheets, Slack threads, and email chains as equal sources of truth." }
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -103,96 +103,88 @@ const Assessment = () => {
       
       <Breadcrumbs />
       
-      <Section>
+      <Section className="border-b border-border">
         {/* Hero */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="system-status mb-6">FIXED SCOPE • FIXED PRICE</div>
-          <h1 className="heading-page mb-6">Infrastructure Assessment</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-            2-week diagnostic to map revenue infrastructure, establish performance baselines, deliver sequenced recommendations. Fixed scope, fixed price.
-          </p>
-          
-          {/* Key Info Pills */}
-          <div className="flex flex-wrap justify-center gap-3 text-sm mb-8">
-            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
-              <Clock size={16} className="text-primary" />
-              <span className="font-mono">2 weeks</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
-              <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono">Starting at $4,500</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
-              <CheckCircle2 size={16} className="text-primary" />
-              <span className="font-mono text-xs">100% credits to Sprint</span>
-            </div>
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h1 className="heading-section">Infrastructure Assessment</h1>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" asChild>
+          <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
+            Map baselines. Identify structural failures. Produce a sequenced 90-day implementation plan.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" variant="outline" asChild>
+              <a href="#request-form">Request Assessment Proposal</a>
+            </Button>
+            <Button size="lg" variant="ghost" asChild>
               <a href="/sample-report">View Sample Report</a>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="#request-form">Request Assessment</a>
-            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* What You Get */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">What You Get</h2>
           </div>
 
-          <Link 
-            to="/self-assessment"
-            className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors group"
-          >
-            <ClipboardCheck className="w-4 h-4 mr-2" />
-            <span>Want to self-assess first? <span className="underline group-hover:no-underline">Try our free 5-minute technical maturity checklist</span></span>
-            <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
-          </Link>
-        </div>
-
-        {/* What You Get */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">What You Get</h2>
-          <div className="space-y-3">
+          <div className="grid sm:grid-cols-2 gap-6">
             {deliverables.map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle2 size={20} className="text-primary mt-1 flex-shrink-0" />
-                <span className="text-foreground">{item}</span>
+              <div key={index} className="border border-border bg-card p-6">
+                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
+                  {item.title}
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
+      </Section>
 
-        {/* Process */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">Assessment Process</h2>
+      {/* Why It Works */}
+      <Section className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Why It Works</h2>
+          </div>
+
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
+            Assessment performs triage on revenue infrastructure—identifying load-bearing failures before they manifest as missed targets or operational breakage.
+          </p>
+
           <div className="space-y-6">
-            {timeline.map((step, index) => (
-              <div key={index} className="border-l-4 border-primary pl-6">
-                <h3 className="font-bold text-lg mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
+            {triggers.map((trigger, index) => (
+              <div key={index} className="border-l-2 border-primary/50 pl-6">
+                <div className="font-mono text-sm font-semibold text-foreground mb-2">
+                  {trigger.label}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {trigger.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
+      </Section>
 
-        {/* Why Assessment */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">Assessment Function</h2>
-          <div className="space-y-4">
-            <p className="text-muted-foreground leading-relaxed">
-              30-40% of operations budgets address symptoms rather than structural failures. Assessment identifies root causes affecting revenue system performance.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Diagnostic phase typically surfaces 3-5 high-leverage corrections executable within immediate deployment window.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Roadmap output: sequenced implementation plan derived from system data, implementation-agnostic.
-            </p>
-          </div>
-        </div>
-
-        {/* Form */}
+      {/* Form */}
+      <Section variant="muted">
         <div className="max-w-2xl mx-auto" id="request-form">
-          <div className="bg-card border border-border rounded-lg p-8">
-            <h2 className="heading-subsection mb-6">Request Assessment</h2>
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Request Assessment Proposal</h2>
+          </div>
+          
+          <div className="bg-card border border-border p-8">
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-4">
@@ -288,7 +280,7 @@ const Assessment = () => {
               </div>
 
               <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Request Assessment Proposal"}
+                {isSubmitting ? "Submitting..." : "Request Assessment Proposal"}
               </Button>
             </form>
           </div>
