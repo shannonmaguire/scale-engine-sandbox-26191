@@ -157,21 +157,21 @@ export const CaseStudyCarousel = ({
               {/* Before/After - Inline */}
               <div>
                 <div className="text-center mb-3">
-                  <span className="text-xs font-mono text-muted-foreground uppercase tracking-wider">
+                  <span className="text-xs font-mono text-foreground uppercase tracking-wider font-semibold">
                     Before → After
                   </span>
                 </div>
                 <div className="space-y-2.5">
-                  <div className="flex items-center justify-between text-xs p-2 bg-background rounded border border-border">
-                    <span className="font-mono text-foreground uppercase">
+                  <div className="flex items-center justify-between text-xs p-3 bg-background rounded border border-border">
+                    <span className="font-mono text-foreground uppercase font-semibold">
                       {currentStudy.beforeMetric.label}
                     </span>
-                    <span className="font-mono text-foreground font-semibold">
+                    <span className="font-mono text-foreground font-bold">
                       {currentStudy.beforeMetric.value}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-xs p-2 bg-primary/5 rounded border border-primary/20">
-                    <span className="font-mono text-primary uppercase">
+                  <div className="flex items-center justify-between text-xs p-3 bg-primary/10 rounded border border-primary/30">
+                    <span className="font-mono text-primary uppercase font-semibold">
                       {currentStudy.afterMetric.label}
                     </span>
                     <span className="font-mono font-bold text-primary">
@@ -182,24 +182,24 @@ export const CaseStudyCarousel = ({
               </div>
 
               {/* Growth Rate - Compact */}
-              <div className="text-center py-3 bg-primary/5 rounded border border-primary/20">
-                <div className="flex items-center justify-center gap-1.5 mb-0.5">
-                  <TrendingUp className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-xl font-mono font-bold text-primary">
+              <div className="text-center py-4 bg-primary/10 rounded border border-primary/30">
+                <div className="flex items-center justify-center gap-1.5 mb-1">
+                  <TrendingUp className="w-4 h-4 text-primary" />
+                  <span className="text-2xl font-mono font-bold text-primary">
                     {currentStudy.growth}
                   </span>
                 </div>
-                <div className="text-xs font-mono text-foreground uppercase">
+                <div className="text-xs font-mono text-foreground uppercase font-semibold">
                   Growth Stage
                 </div>
               </div>
 
               {/* Client Size - Compact */}
-              <div className="text-center pt-3 border-t">
-                <div className="text-xs font-mono text-foreground uppercase mb-1">
+              <div className="text-center pt-4 border-t border-border">
+                <div className="text-xs font-mono text-foreground uppercase mb-1.5 font-semibold">
                   Client Size
                 </div>
-                <div className="text-xs font-mono text-foreground font-semibold">{currentStudy.size}</div>
+                <div className="text-sm font-mono text-foreground font-bold">{currentStudy.size}</div>
               </div>
             </StandardCard>
           </div>
