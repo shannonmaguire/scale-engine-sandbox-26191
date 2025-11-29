@@ -25,13 +25,9 @@ const AssessmentPreview = lazy(() => import("@/pages/AssessmentPreview"));
 const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
-const SalesforcePartners = lazy(() => import("@/pages/SalesforcePartners"));
 const Fractional = lazy(() => import("@/pages/Fractional"));
 const Resources = lazy(() => import("@/pages/Resources"));
 const WebSystems = lazy(() => import("@/pages/WebSystems"));
-const StartHere = lazy(() => import("@/pages/StartHere"));
-
-const PartnerDashboard = lazy(() => import("@/pages/PartnerDashboard"));
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
 const Proof = lazy(() => import("@/pages/Proof"));
 const Blog = lazy(() => import("@/pages/Blog"));
@@ -84,26 +80,21 @@ const AppContent = () => {
         }>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/start-here" element={<StartHere />} />
-          <Route path="/self-assessment" element={<SelfAssessment />} />
-          <Route path="/assessment-preview" element={<AssessmentPreview />} />
-          <Route path="/assessment-results" element={<AssessmentResults />} />
+            <Route path="/self-assessment" element={<SelfAssessment />} />
+            <Route path="/assessment-preview" element={<AssessmentPreview />} />
+            <Route path="/assessment-results" element={<AssessmentResults />} />
             
             {/* Common typo redirects */}
             <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
-            <Route path="/salesforce-partner" element={<Navigate to="/salesforce/partners" replace />} />
-            <Route path="/salesforce-partners" element={<Navigate to="/salesforce/partners" replace />} />
             <Route path="/fractional-ops" element={<Navigate to="/fractional" replace />} />
             <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
             
             <Route path="/sprint" element={<Sprint />} />
             <Route path="/salesforce" element={<Salesforce />} />
-            <Route path="/salesforce/partners" element={<SalesforcePartners />} />
             <Route path="/salesforce/delivery" element={<Navigate to="/salesforce" replace />} />
             <Route path="/fractional" element={<Fractional />} />
             <Route path="/web-systems" element={<WebSystems />} />
             <Route path="/web" element={<WebSystems />} />
-            <Route path="/partner-dashboard" element={<PartnerDashboard />} />
             <Route path="/sample-report" element={<SampleReport />} />
             <Route path="/proof" element={<Proof />} />
             <Route path="/blog" element={<Blog />} />
