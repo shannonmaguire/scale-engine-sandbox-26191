@@ -8,6 +8,7 @@ import { EngagementTracker } from "@/components/EngagementTracker";
 import { Linkedin, CheckCircle, X } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import shannonHeadshot from "@/assets/shannon-headshot.jpg";
+import { CTA, ROUTES } from "@/lib/canonical-constants";
 
 const About = () => {
   usePerformanceMonitoring();
@@ -271,22 +272,22 @@ const About = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton 
-              to="/assessment" 
+              to={ROUTES.assessment}
               ctaName="About - Start Assessment" 
               location="About CTA Section"
               size="lg"
             >
-              Start Assessment
+              {CTA.startAssessment}
             </ConversionOptimizedButton>
             <ConversionOptimizedButton 
-              to="/proof" 
+              to={ROUTES.proof}
               ctaName="About - View Proof" 
               location="About CTA Section" 
               variant="outline"
               showArrow={false}
               size="lg"
             >
-              View Proof
+              {CTA.seeProof}
             </ConversionOptimizedButton>
           </div>
         </div>

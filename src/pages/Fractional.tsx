@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { CTA, ROUTES } from "@/lib/canonical-constants";
 
 const Fractional = () => {
   const operatingCadence = [

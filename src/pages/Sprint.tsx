@@ -10,6 +10,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BackButton } from "@/components/BackButton";
 import { Testimonials } from "@/components/Testimonials";
 import { ServiceJourneyFlow } from "@/components/ServiceJourneyFlow";
+import { CTA, ROUTES, TIMELINES, METRICS } from "@/lib/canonical-constants";
 
 const Sprint = () => {
   const phases = [
@@ -103,15 +104,15 @@ const Sprint = () => {
           </div>
           
           <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
-            Deployment cycle to install revenue infrastructure—workflows, automation, dashboards, documentation. Fixed timeline, measurable outcomes, documented handoff.
+            {TIMELINES.sprint} deployment cycle to install revenue infrastructure—workflows, automation, dashboards, documentation. Fixed timeline, measurable outcomes, documented handoff. Assessment required before engagement. {METRICS.feeCredit}.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
-              <Link to="/contact?interest=sprint&source_page=sprint">Start Your Sprint</Link>
+              <Link to="/contact?interest=sprint&source_page=sprint">{CTA.startSprint}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/assessment">View Assessment</Link>
+              <Link to={ROUTES.assessment}>{CTA.startAssessment}</Link>
             </Button>
           </div>
         </div>
@@ -195,20 +196,20 @@ const Sprint = () => {
             <span className="text-primary font-semibold">Ready to Deploy</span>
           </div>
 
-          <h2 className="heading-section mb-6">Start Your Sprint</h2>
+          <h2 className="heading-section mb-6">{CTA.startSprint}</h2>
           <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            90-day deployment cycle. Assessment required. Fixed scope, documented handoff, operational infrastructure.
+            {TIMELINES.sprint} deployment cycle. Assessment required. Fixed scope, documented handoff, operational infrastructure.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
               <Link to="/contact?interest=sprint&source_page=sprint">
-                Start Your Sprint
+                {CTA.startSprint}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to="/assessment">Request Assessment</Link>
+              <Link to={ROUTES.assessment}>{CTA.startAssessment}</Link>
             </Button>
           </div>
         </div>

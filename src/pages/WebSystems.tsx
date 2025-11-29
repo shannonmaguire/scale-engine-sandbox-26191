@@ -11,6 +11,7 @@ import { BackButton } from "@/components/BackButton";
 import { trackEvent, trackCTAClick } from "@/hooks/usePageTracking";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
+import { CTA, ROUTES } from "@/lib/canonical-constants";
 const WebSystems = () => {
   useEffect(() => {
     trackEvent('websystems_view', {
@@ -163,7 +164,7 @@ const WebSystems = () => {
               ctaName="Web Systems Hero CTA"
               location="web-systems-hero"
             >
-              Request Consultation
+              {CTA.scheduleConsultation}
             </ConversionOptimizedButton>
             <Button variant="outline" asChild>
               <a href="#packages">See Packages</a>

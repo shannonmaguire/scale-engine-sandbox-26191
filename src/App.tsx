@@ -85,7 +85,6 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/start-here" element={<StartHere />} />
-            <Route path="/assessment" element={<Assessment />} />
           <Route path="/self-assessment" element={<SelfAssessment />} />
           <Route path="/assessment-preview" element={<AssessmentPreview />} />
           <Route path="/assessment-results" element={<AssessmentResults />} />
