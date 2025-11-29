@@ -23,7 +23,7 @@ const resources: Resource[] = [
   {
     id: "service-selection-guide",
     title: "Service Selection Guide",
-    description: "Match your revenue maturity stage to the right CWT Studio service—Assessment, Sprint, or Fractional Ops. Clear decision framework for choosing your next engagement.",
+    description: "Service selection based on revenue maturity. Assessment, Sprint, or Fractional Ops.",
     icon: Map,
     category: "Planning",
     downloadUrl: "/pdfs/service-selection-guide.pdf"
@@ -31,7 +31,7 @@ const resources: Resource[] = [
   {
     id: "roi-calculator",
     title: "ROI Calculator",
-    description: "Calculate how Salesforce cleanup saves pipeline risk over 12 months. Input your current metrics, get projected ROI with cost/benefit breakdown.",
+    description: "Salesforce cleanup ROI calculation. 12-month projection. Cost/benefit analysis.",
     icon: Calculator,
     category: "Financial",
     downloadUrl: "/pdfs/roi-calculator.pdf"
@@ -39,7 +39,7 @@ const resources: Resource[] = [
   {
     id: "technical-assessment-framework",
     title: "Technical Assessment Framework",
-    description: "Our 6-dimension audit framework (Data Quality, Automation, Integration, Governance, Reporting, Adoption) for revenue system assessments. Self-score in 15 minutes.",
+    description: "6-dimension audit framework. Data Quality, Automation, Integration, Governance, Reporting, Adoption. 15-minute self-score.",
     icon: CheckSquare,
     category: "Assessment",
     downloadUrl: "/pdfs/technical-assessment-framework.pdf"
@@ -47,7 +47,7 @@ const resources: Resource[] = [
   {
     id: "90-day-roadmap-template",
     title: "90-Day Roadmap Template",
-    description: "Turn assessment findings into executable sprints. Break system installation into weekly milestones with clear deliverables, dependencies, and go/no-go decision points.",
+    description: "Assessment findings converted to executable sprints. Weekly milestones. Deliverables, dependencies, decision points.",
     icon: FileText,
     category: "Planning",
     downloadUrl: "/pdfs/90-day-roadmap-template.pdf"
@@ -55,7 +55,7 @@ const resources: Resource[] = [
   {
     id: "discovery-questions-library",
     title: "Discovery Questions Library",
-    description: "30+ proven questions that uncover technical debt in prospect deals. Organized by deal stage and objection type—helps AEs qualify Salesforce opportunities.",
+    description: "30+ discovery questions exposing technical debt. Organized by deal stage and objection type. AE qualification tool.",
     icon: FileQuestion,
     category: "Sales Enablement",
     downloadUrl: "/pdfs/discovery-questions-library.pdf"
@@ -63,7 +63,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
+    description: "47-point pre-project checklist. Content, assets, integrations, stakeholder alignment. Prevents scope creep.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -71,7 +71,7 @@ const resources: Resource[] = [
   {
     id: "vendor-handoff-sop",
     title: "Vendor Handoff SOP",
-    description: "Take full ownership of your web infrastructure from any vendor. Step-by-step SOP for domain, hosting, CMS, analytics, and CRM transfer—eliminate ongoing vendor dependency.",
+    description: "Web infrastructure ownership transfer protocol. Domain, hosting, CMS, analytics, CRM. Eliminates vendor dependency.",
     icon: FileText,
     category: "Operations",
     downloadUrl: "/pdfs/vendor-handoff-sop.pdf"
