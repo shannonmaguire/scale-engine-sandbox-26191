@@ -32,7 +32,7 @@ export const BlogCallout = ({ type = 'info', title, children }: BlogCalloutProps
           {title && (
             <h4 className="font-mono font-bold text-lg mb-3">{title}</h4>
           )}
-          <div className="text-foreground/90 leading-relaxed space-y-2">
+          <div className="text-foreground leading-relaxed space-y-2">
             {children}
           </div>
         </div>

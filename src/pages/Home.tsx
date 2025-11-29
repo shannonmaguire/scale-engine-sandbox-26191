@@ -156,7 +156,7 @@ const Home = () => {
             {infrastructureFailures.map((failure, index) => (
               <div key={index} className="flex items-start gap-4 p-4 border-l-2 border-destructive/30 bg-card/50">
                 <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-sm text-foreground/90 leading-relaxed">{failure}</p>
+                <p className="text-sm text-foreground leading-relaxed">{failure}</p>
               </div>
             ))}
           </div>
@@ -177,7 +177,7 @@ const Home = () => {
                 <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
                   {trigger.label}
                 </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {trigger.description}
                 </p>
               </div>
@@ -214,7 +214,7 @@ const Home = () => {
                     <div className="font-mono text-xs uppercase tracking-widest text-destructive mb-3 font-semibold">
                       Before
                     </div>
-                    <p className="text-sm text-foreground/70">
+                    <p className="text-sm text-[hsl(var(--foreground-subtle))]">
                       {snapshot.before}
                     </p>
                   </div>

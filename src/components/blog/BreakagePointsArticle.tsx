@@ -6,7 +6,7 @@ import { PullQuote } from './PullQuote';
 export const BreakagePointsArticle = () => {
   return (
     <article className="prose-custom">
-      <p className="text-xl leading-relaxed text-foreground/90 border-l-4 border-primary pl-6 my-12">
+      <p className="text-xl leading-relaxed text-foreground border-l-4 border-primary pl-6 my-12">
         Between $2M and $5M ARR, every SaaS company hits the same breaking points. Not because they're bad at execution—because manual processes that worked at $500K become systemic bottlenecks at scale.
       </p>
 
