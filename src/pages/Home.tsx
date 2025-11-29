@@ -8,6 +8,7 @@ import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
 import { CheckCircle, ArrowRight, AlertCircle, Database, Zap, FileText, BarChart3 } from "lucide-react";
+import { CTA, ROUTES, METRICS } from "@/lib/canonical-constants";
 
 const Home = () => {
   usePerformanceMonitoring();
@@ -105,7 +106,7 @@ const Home = () => {
           <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
             <span className="text-primary font-semibold">Systems Operational</span>
-            <span className="text-muted-foreground">42 Deployments</span>
+            <span className="text-muted-foreground">{METRICS.deployments}</span>
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
@@ -119,22 +120,22 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <ConversionOptimizedButton
-              to="/self-assessment"
+              to={ROUTES.assessment}
               ctaName="Hero - Run Infrastructure Assessment"
               location="Homepage Hero"
               size="lg"
             >
-              Run Infrastructure Assessment
+              {CTA.startAssessment}
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
-              to="/proof"
+              to={ROUTES.proof}
               ctaName="Hero - See Proof"
               location="Homepage Hero"
               variant="outline"
               showArrow={false}
               size="lg"
             >
-              See Proof
+              {CTA.seeProof}
             </ConversionOptimizedButton>
           </div>
         </div>

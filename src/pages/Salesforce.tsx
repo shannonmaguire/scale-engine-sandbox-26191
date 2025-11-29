@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight, BarChart3, Clock, Zap, Target, Shield } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { CTA, ROUTES } from "@/lib/canonical-constants";
 
 const Salesforce = () => {
   const services = [
@@ -114,13 +115,13 @@ const Salesforce = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
                 <Link to="/contact?interest=salesforce">
-                  Schedule Consultation
+                  {CTA.scheduleConsultation}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/proof">
-                  See Proof
+                <Link to={ROUTES.proof}>
+                  {CTA.seeProof}
                 </Link>
               </Button>
             </div>
