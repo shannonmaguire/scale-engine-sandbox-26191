@@ -84,12 +84,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/ae-hub" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  AE Hub
-                </Link>
-              </li>
-              <li>
-                <Link to="/ae-technical-support" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                <Link to="/ae-support" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
                   Technical Support
                 </Link>
               </li>

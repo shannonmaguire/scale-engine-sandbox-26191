@@ -142,8 +142,8 @@ const AETechnicalSupport = () => {
         timeline: ""
       });
 
-      // Navigate back to AE Hub after 2 seconds
-      setTimeout(() => navigate("/ae-hub"), 2000);
+      // Form submitted successfully - stay on page or navigate to home
+      setTimeout(() => navigate("/"), 2000);
     } catch (error) {
       console.error("Form submission error:", error);
       analytics.trackEvent('ae_support_form_error', {

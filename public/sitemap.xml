@@ -56,12 +56,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cwtstudio.com/ae-hub</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://cwtstudio.com/ae-technical-support</loc>
+    <loc>https://cwtstudio.com/ae-support</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
