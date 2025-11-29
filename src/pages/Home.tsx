@@ -119,7 +119,7 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <ConversionOptimizedButton
-              to="/assessment"
+              to="/self-assessment"
               ctaName="Hero - Run Infrastructure Assessment"
               location="Homepage Hero"
               size="lg"
@@ -306,7 +306,7 @@ const Home = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton
-              to="/assessment"
+              to="/self-assessment"
               ctaName="Final CTA - Start Assessment"
               location="Final CTA Section"
               size="lg"

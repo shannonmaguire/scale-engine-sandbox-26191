@@ -21,6 +21,7 @@ const Sprint = lazy(() => import("@/pages/Sprint"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const SelfAssessment = lazy(() => import("@/pages/SelfAssessment"));
+const AssessmentPreview = lazy(() => import("@/pages/AssessmentPreview"));
 const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
@@ -85,8 +86,9 @@ const AppContent = () => {
             <Route path="/" element={<Home />} />
             <Route path="/start-here" element={<StartHere />} />
             <Route path="/assessment" element={<Assessment />} />
-            <Route path="/self-assessment" element={<SelfAssessment />} />
-            <Route path="/assessment-results" element={<AssessmentResults />} />
+          <Route path="/self-assessment" element={<SelfAssessment />} />
+          <Route path="/assessment-preview" element={<AssessmentPreview />} />
+          <Route path="/assessment-results" element={<AssessmentResults />} />
             
             {/* Common typo redirects */}
             <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
