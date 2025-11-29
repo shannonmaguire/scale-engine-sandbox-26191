@@ -2,6 +2,7 @@ import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
+import { RevenueArchitectureDiagram } from "@/components/RevenueArchitectureDiagram";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
@@ -25,14 +26,6 @@ const Home = () => {
     { label: "Manual Operations", description: "Weekly pipeline updates consume 15+ hours of administrative overhead." },
     { label: "Founder Dependency", description: "Revenue operations knowledge concentrated in one person's head." },
     { label: "CRM Underperforming", description: "Salesforce exists but doesn't reflect how deals actually move." }
-  ];
-
-  const architectureComponents = [
-    { label: "CRM Core", description: "Salesforce configured to revenue model—custom objects, fields, validation rules." },
-    { label: "Automation Layer", description: "Flow-based routing, lead assignment, opportunity progression, alert triggers." },
-    { label: "Routing Engine", description: "Lead-to-AE assignment logic based on territory, product, and capacity rules." },
-    { label: "Reporting Infrastructure", description: "Board-ready dashboards with pipeline health, conversion rates, velocity metrics." },
-    { label: "Documentation System", description: "Process SOPs, field definitions, handoff protocols—documented for transfer." }
   ];
 
   const proofSnapshots = [
@@ -193,39 +186,10 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* 90-Day Architecture */}
+      {/* Technical Architecture Diagram */}
       <Section variant="muted" className="border-t border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">90-Day Architecture</h2>
-          </div>
-
-          <div className="relative">
-            {/* Connection lines */}
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/20" />
-
-            <div className="space-y-8">
-              {architectureComponents.map((component, index) => (
-                <div key={index} className="relative flex items-start gap-6">
-                  {/* Node indicator */}
-                  <div className="relative z-10 w-12 h-12 border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
-                    <span className="font-mono text-xs font-bold text-primary">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <div className="flex-1 pt-2">
-                    <h3 className="heading-subsection mb-2">{component.label}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                      {component.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="max-w-5xl">
+          <RevenueArchitectureDiagram />
         </div>
       </Section>
 
