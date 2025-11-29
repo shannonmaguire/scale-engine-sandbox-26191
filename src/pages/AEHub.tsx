@@ -130,9 +130,9 @@ export default function AEHub() {
               <div className="w-16 h-16 rounded-lg bg-accent-data flex items-center justify-center mx-auto mb-4">
                 <FileText className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-semibold mb-2">Battle Cards</h3>
+              <h3 className="text-lg font-semibold mb-2">Discovery Questions</h3>
               <p className="text-sm text-muted-foreground">
-                Objection response templates
+                Technical qualification frameworks
               </p>
             </Card>
           </div>

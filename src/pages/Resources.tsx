@@ -21,6 +21,14 @@ interface Resource {
 
 const resources: Resource[] = [
   {
+    id: "self-assessment",
+    title: "Technical Maturity Self-Assessment",
+    description: "Interactive 5-minute checklist. Instant scoring across 6 dimensions. Free, no commitment.",
+    icon: CheckSquare,
+    category: "Assessment",
+    downloadUrl: "/self-assessment"
+  },
+  {
     id: "service-selection-guide",
     title: "Service Selection Guide",
     description: "Service selection based on revenue maturity. Assessment, Sprint, or Fractional Ops.",
@@ -84,7 +92,12 @@ const Resources = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const handleDownloadClick = (resource: Resource) => {
-    // All resources now require email
+    // Self-assessment navigates directly, others require email
+    if (resource.id === "self-assessment") {
+      window.location.href = resource.downloadUrl;
+      return;
+    }
+    
     trackEvent('resource_modal_opened', {
       resourceId: resource.id,
       resourceTitle: resource.title,
@@ -206,8 +219,17 @@ const Resources = () => {
                     variant="outline"
                     onClick={() => handleDownloadClick(resource)}
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    Get Resource
+                    {resource.id === "self-assessment" ? (
+                      <>
+                        <ArrowRight className="mr-2 h-4 w-4" />
+                        Start Assessment
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Get Resource
+                      </>
+                    )}
                   </Button>
                 </StandardCard>
               );
