@@ -72,6 +72,24 @@ const Salesforce = () => {
           'revenue infrastructure Salesforce'
         ]}
         canonicalUrl="/salesforce"
+        serviceSchema={{
+          name: 'Salesforce Revenue Infrastructure',
+          description: 'Assessment-driven Salesforce implementations backed by ISV & OEM partner expertise. Transform fragmented systems into scalable revenue infrastructure.',
+          offers: [
+            {
+              name: 'Revenue Systems Assessment',
+              description: 'Salesforce configuration and revenue infrastructure audit with 90-day roadmap'
+            },
+            {
+              name: 'Automation & Integration',
+              description: 'Tool integration and manual process automation for Salesforce'
+            },
+            {
+              name: 'Performance Optimization',
+              description: 'Salesforce configuration tuned for adoption and performance'
+            }
+          ]
+        }}
       />
       <Breadcrumbs />
       {/* Hero Section */}

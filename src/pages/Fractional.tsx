@@ -41,7 +41,25 @@ const Fractional = () => {
         title="Fractional Revenue Operations | CWT Studio" 
         description="Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount." 
         keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'monthly operating cadence']} 
-        canonicalUrl="/fractional" 
+        canonicalUrl="/fractional"
+        serviceSchema={{
+          name: 'Fractional Revenue Operations',
+          description: 'Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount.',
+          offers: [
+            {
+              name: 'Monthly Review',
+              description: 'System health audit tracking automation execution, data quality, and workflow performance'
+            },
+            {
+              name: 'Quarter Planning',
+              description: 'Forward-looking roadmap session aligning system enhancements to business objectives'
+            },
+            {
+              name: 'System Tuning',
+              description: 'Performance optimization based on usage patterns and workflow refinement'
+            }
+          ]
+        }}
       />
       
       <Breadcrumbs />

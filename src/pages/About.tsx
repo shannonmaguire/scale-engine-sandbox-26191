@@ -54,7 +54,15 @@ const About = () => {
           'system architect', 
           'Shannon Maguire',
           'regulated industries'
-        ]} 
+        ]}
+        includeOrganizationSchema={true}
+        personSchema={{
+          name: 'Shannon Maguire',
+          jobTitle: 'Founder & Revenue Systems Architect',
+          description: 'Revenue systems architect specializing in legal, compliance, cybersecurity, healthcare, and B2B SaaS. Fixed-scope implementations, 90-day cycles, documented handoffs.',
+          sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
+          image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
+        }}
       />
       
       <Breadcrumbs />
