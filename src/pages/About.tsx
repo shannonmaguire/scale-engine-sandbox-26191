@@ -85,15 +85,15 @@ const About = () => {
               {/* Credential Badges */}
               <div className="mt-6 space-y-3">
                 <div className="flex items-center justify-between px-3 py-2 bg-primary/5 border border-primary/20 rounded">
-                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">Deployments</span>
-                  <span className="font-mono text-sm font-bold text-primary">42+</span>
+                  <span className="font-mono text-sm uppercase tracking-wider text-foreground">Deployments</span>
+                  <span className="font-mono text-base font-bold text-primary">42+</span>
                 </div>
                 <div className="flex items-center justify-between px-3 py-2 bg-primary/5 border border-primary/20 rounded">
-                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">Experience</span>
-                  <span className="font-mono text-sm font-bold text-primary">8+ Years</span>
+                  <span className="font-mono text-sm uppercase tracking-wider text-foreground">Experience</span>
+                  <span className="font-mono text-base font-bold text-primary">8+ Years</span>
                 </div>
                 <div className="px-3 py-2 bg-primary/5 border border-primary/20 rounded text-center">
-                  <span className="font-mono text-xs uppercase tracking-wider text-primary font-semibold">Regulated Industries</span>
+                  <span className="font-mono text-sm uppercase tracking-wider text-primary font-semibold">Regulated Industries</span>
                 </div>
               </div>
 
@@ -106,7 +106,7 @@ const About = () => {
                   className="flex items-center justify-center gap-2"
                 >
                   <Linkedin className="w-4 h-4" strokeWidth={2} />
-                  <span className="font-mono text-xs">Connect on LinkedIn</span>
+                  <span className="font-mono text-sm">Connect on LinkedIn</span>
                 </a>
               </Button>
             </div>
@@ -124,14 +124,14 @@ const About = () => {
 
               {/* Specializations as Tags */}
               <div className="flex flex-wrap gap-2 mb-6">
-                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Legal</span>
-                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Compliance</span>
-                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Cybersecurity</span>
-                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Healthcare</span>
-                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">B2B SaaS</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-sm text-foreground">Legal</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-sm text-foreground">Compliance</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-sm text-foreground">Cybersecurity</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-sm text-foreground">Healthcare</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-sm text-foreground">B2B SaaS</span>
               </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed border-l-2 border-primary pl-4 italic">
+              <p className="text-base text-muted-foreground leading-relaxed border-l-2 border-primary pl-4 italic">
                 "Fixed-scope implementations. 90-day cycles. Documented handoffs. No ongoing dependencies."
               </p>
             </div>
@@ -154,7 +154,7 @@ const About = () => {
                 {whatWeDo.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <p className="text-sm text-foreground/90 leading-relaxed">{item}</p>
+                    <p className="text-base text-foreground/90 leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -171,7 +171,7 @@ const About = () => {
                 {whatWeDont.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item}</p>
+                    <p className="text-base text-muted-foreground leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -195,10 +195,10 @@ const About = () => {
           <div className="grid sm:grid-cols-3 gap-6">
             {principlePoints.map((point, index) => (
               <div key={index} className="border border-border p-6">
-                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-4 font-semibold">
+                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4 font-semibold">
                   {point.label}
                 </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-base text-foreground/80 leading-relaxed">
                   {point.description}
                 </p>
               </div>
@@ -219,10 +219,10 @@ const About = () => {
             <div className="grid md:grid-cols-[1fr,auto,1fr] gap-8 items-start">
               {/* CWT Studio */}
               <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-4 font-semibold">
+                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4 font-semibold">
                   CWT Studio
                 </div>
-                <div className="space-y-2 text-sm text-foreground/90">
+                <div className="space-y-2 text-base text-foreground/90">
                   <div>• Revenue operations strategy</div>
                   <div>• Process design and documentation</div>
                   <div>• Automation architecture</div>
@@ -235,10 +235,10 @@ const About = () => {
 
               {/* CloudRoute */}
               <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-accent mb-4 font-semibold">
+                <div className="font-mono text-sm uppercase tracking-widest text-accent mb-4 font-semibold">
                   CloudRoute (Salesforce Partner)
                 </div>
-                <div className="space-y-2 text-sm text-foreground/90">
+                <div className="space-y-2 text-base text-foreground/90">
                   <div>• Platform configuration and build</div>
                   <div>• Certified technical implementation</div>
                   <div>• Integration engineering</div>
@@ -248,7 +248,7 @@ const About = () => {
             </div>
 
             <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 This model combines operational pragmatism with platform-certified technical delivery. CWT Studio leads strategy and design. CloudRoute executes enterprise-grade Salesforce implementation. Single contract, unified accountability.
               </p>
             </div>
@@ -259,7 +259,7 @@ const About = () => {
       {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
             <span className="text-primary font-semibold">Ready to Start</span>
           </div>

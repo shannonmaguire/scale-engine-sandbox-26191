@@ -102,7 +102,7 @@ const Home = () => {
         
         <div className="relative z-10 max-w-4xl">
           {/* Status indicator */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
             <span className="text-primary font-semibold">Systems Operational</span>
             <span className="text-muted-foreground">42 Deployments</span>
@@ -156,7 +156,7 @@ const Home = () => {
             {infrastructureFailures.map((failure, index) => (
               <div key={index} className="flex items-start gap-4 p-4 border-l-2 border-destructive/30 bg-card/50">
                 <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-sm text-foreground leading-relaxed">{failure}</p>
+                <p className="text-base text-foreground leading-relaxed">{failure}</p>
               </div>
             ))}
           </div>
@@ -174,10 +174,10 @@ const Home = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             {icpTriggers.map((trigger, index) => (
               <div key={index} className="border border-border p-6 hover:border-primary/50 transition-colors">
-                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
+                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
                   {trigger.label}
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {trigger.description}
                 </p>
               </div>
@@ -204,17 +204,17 @@ const Home = () => {
           <div className="grid gap-8">
             {proofSnapshots.map((snapshot, index) => (
               <div key={index} className="border border-border p-8">
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
+                <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-6">
                   {snapshot.client}
                 </div>
 
                 <div className="grid md:grid-cols-[1fr,auto,1fr] gap-6 items-center">
                   {/* Before */}
                   <div>
-                    <div className="font-mono text-xs uppercase tracking-widest text-destructive mb-3 font-semibold">
+                    <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3 font-semibold">
                       Before
                     </div>
-                    <p className="text-sm text-[hsl(var(--foreground-subtle))]">
+                    <p className="text-base text-[hsl(var(--foreground-subtle))]">
                       {snapshot.before}
                     </p>
                   </div>
@@ -224,10 +224,10 @@ const Home = () => {
 
                   {/* After */}
                   <div>
-                    <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
+                    <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
                       After
                     </div>
-                    <p className="text-sm font-medium text-foreground">
+                    <p className="text-base font-medium text-foreground">
                       {snapshot.after}
                     </p>
                   </div>
@@ -235,7 +235,7 @@ const Home = () => {
 
                 {/* Metric */}
                 <div className="mt-6 pt-6 border-t border-border">
-                  <div className="font-mono text-lg font-bold text-primary">
+                  <div className="font-mono text-xl font-bold text-primary">
                     {snapshot.metric}
                   </div>
                 </div>
@@ -275,16 +275,16 @@ const Home = () => {
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
                       <h3 className="heading-subsection">{phase.title}</h3>
-                      <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                      <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
                         {phase.duration}
                       </div>
                     </div>
 
-                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+                    <p className="text-base text-muted-foreground mb-4 leading-relaxed">
                       {phase.description}
                     </p>
 
-                    <div className="flex items-center gap-2 text-xs font-mono text-primary">
+                    <div className="flex items-center gap-2 text-base font-mono text-primary">
                       <CheckCircle className="w-4 h-4" strokeWidth={2} />
                       <span className="font-semibold">{phase.output}</span>
                     </div>

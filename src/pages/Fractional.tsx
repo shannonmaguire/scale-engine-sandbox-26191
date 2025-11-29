@@ -104,10 +104,10 @@ const Fractional = () => {
           <div className="space-y-6">
             {operatingCadence.map((item, index) => (
               <div key={index} className="border-l-2 border-primary/50 pl-6">
-                <div className="font-mono text-sm font-semibold text-foreground mb-2">
+                <div className="font-mono text-base font-semibold text-foreground mb-2">
                   {item.component}
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -131,10 +131,10 @@ const Fractional = () => {
           <div className="grid sm:grid-cols-3 gap-6">
             {compoundingOutcomes.map((outcome, index) => (
               <div key={index} className="border border-border bg-card p-6">
-                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
+                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
                   {outcome.label}
                 </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-base text-foreground/80 leading-relaxed">
                   {outcome.description}
                 </p>
               </div>
@@ -155,29 +155,29 @@ const Fractional = () => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <div className="font-mono text-sm font-semibold text-foreground mb-1">Completed Sprint</div>
-                <p className="text-sm text-muted-foreground">CWT Studio Sprint or equivalent revenue infrastructure in production.</p>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Completed Sprint</div>
+                <p className="text-base text-muted-foreground">CWT Studio Sprint or equivalent revenue infrastructure in production.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <div className="font-mono text-sm font-semibold text-foreground mb-1">Internal Stakeholder</div>
-                <p className="text-sm text-muted-foreground">Designated point person with system access and decision authority.</p>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Internal Stakeholder</div>
+                <p className="text-base text-muted-foreground">Designated point person with system access and decision authority.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <div className="font-mono text-sm font-semibold text-foreground mb-1">Six-Month Minimum</div>
-                <p className="text-sm text-muted-foreground">Initial commitment ensures continuity and strategic value compounding.</p>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Six-Month Minimum</div>
+                <p className="text-base text-muted-foreground">Initial commitment ensures continuity and strategic value compounding.</p>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <div className="font-mono text-sm font-semibold text-foreground mb-1">Monthly Investment</div>
-                <p className="text-sm text-muted-foreground">Starting at $6K/month based on system complexity and support scope.</p>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Monthly Investment</div>
+                <p className="text-base text-muted-foreground">Starting at $6K/month based on system complexity and support scope.</p>
               </div>
             </div>
           </div>
@@ -187,7 +187,7 @@ const Fractional = () => {
       {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
             <span className="text-primary font-semibold">Long-Term Partnership</span>
           </div>

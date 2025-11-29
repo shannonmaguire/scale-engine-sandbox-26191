@@ -129,14 +129,14 @@ const Sprint = () => {
             {phases.map((phase, index) => (
               <div key={index} className="border-l-2 border-primary/50 pl-6">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <div className="font-mono text-sm font-semibold text-foreground">
+                  <div className="font-mono text-base font-semibold text-foreground">
                     {phase.phase}: {phase.title}
                   </div>
-                  <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                  <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
                     {phase.duration}
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-base text-muted-foreground leading-relaxed">
                   {phase.description}
                 </p>
               </div>
@@ -157,7 +157,7 @@ const Sprint = () => {
             {deliverables.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-sm text-foreground/90 leading-relaxed">{item}</p>
+                <p className="text-base text-foreground/90 leading-relaxed">{item}</p>
               </div>
             ))}
           </div>
@@ -175,10 +175,10 @@ const Sprint = () => {
           <div className="grid sm:grid-cols-3 gap-6">
             {outcomes.map((outcome, index) => (
               <div key={index} className="border border-border bg-card p-6">
-                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3 font-semibold">
+                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
                   {outcome.label}
                 </div>
-                <p className="text-sm text-foreground/80 leading-relaxed">
+                <p className="text-base text-foreground/80 leading-relaxed">
                   {outcome.description}
                 </p>
               </div>
@@ -190,7 +190,7 @@ const Sprint = () => {
       {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
             <span className="text-primary font-semibold">Ready to Deploy</span>
           </div>

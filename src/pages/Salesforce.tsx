@@ -131,7 +131,7 @@ const Salesforce = () => {
       <Section>
         <div className="text-center mb-12">
             <h2 className="heading-section mb-4 text-foreground">Salesforce Revenue Systems</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
               Assessment-driven implementations. Measured outcomes.
             </p>
           </div>
@@ -147,11 +147,11 @@ const Salesforce = () => {
                   </div>
                 </StandardCardHeader>
                 <StandardCardContent>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
+                  <p className="text-base text-muted-foreground mb-4">{service.description}</p>
                   <div className="space-y-2">
-                    <p className="font-semibold text-sm">Key Deliverables:</p>
+                    <p className="font-semibold text-base">Key Deliverables:</p>
                     {service.deliverables.map((deliverable, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm">
+                      <div key={idx} className="flex items-center gap-2 text-base">
                         <CheckCircle className="w-3 h-3 text-accent flex-shrink-0" />
                         {deliverable}
                       </div>
@@ -177,7 +177,7 @@ const Salesforce = () => {
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3 bg-card p-6 rounded-lg border-l-4 border-accent-data">
                   <Shield className="w-6 h-6 accent-data flex-shrink-0" />
-                  <span className="text-lg">{benefit}</span>
+                  <span className="text-xl">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -207,7 +207,7 @@ const Salesforce = () => {
                   <p className="text-sm text-accent font-semibold">{step.timeline}</p>
                 </StandardCardHeader>
                 <StandardCardContent>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <p className="text-base text-muted-foreground">{step.description}</p>
                 </StandardCardContent>
               </StandardCard>
             ))}
@@ -230,28 +230,28 @@ const Salesforce = () => {
 
           <div className="grid md:grid-cols-3 gutter-content spacing-subsection">
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+              <h3 className="font-mono font-bold text-xl text-foreground mb-3">
                 100+ Salesforce Certifications
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Deep platform expertise across all Salesforce clouds and specializations
               </p>
             </div>
 
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+              <h3 className="font-mono font-bold text-xl text-foreground mb-3">
                 ISV & OEM Partner
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Direct access to platform resources, beta features, and priority support channels
               </p>
             </div>
 
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+              <h3 className="font-mono font-bold text-xl text-foreground mb-3">
                 Measurable Outcomes
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Documented results, adoption metrics, and 12-month growth projections
               </p>
             </div>
@@ -264,7 +264,7 @@ const Salesforce = () => {
       <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-4">Getting Started</h2>
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-xl text-muted-foreground mb-8">
             Schedule a discovery consultation to assess your Salesforce configuration and identify high-impact optimizations.
           </p>
           
@@ -301,19 +301,19 @@ const Salesforce = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Revenue operations expertise</span>
+                  <span className="text-base">Revenue operations expertise</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Business process design</span>
+                  <span className="text-base">Business process design</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Performance analysis</span>
+                  <span className="text-base">Performance analysis</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Ongoing optimization</span>
+                  <span className="text-base">Ongoing optimization</span>
                 </li>
               </ul>
             </StandardCard>
@@ -325,24 +325,24 @@ const Salesforce = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Salesforce development</span>
+                  <span className="text-base">Salesforce development</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>System integrations</span>
+                  <span className="text-base">System integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Technical architecture</span>
+                  <span className="text-base">Technical architecture</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span>Platform maintenance</span>
+                  <span className="text-base">Platform maintenance</span>
                 </li>
               </ul>
               
               <div className="mt-8 pt-6 border-t border-border">
-                <p className="text-sm text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   <span className="font-semibold text-foreground">Salesforce-Only Focus:</span> CloudRoute specializes exclusively in Salesforce, ensuring deep platform expertise without dilution.
                 </p>
               </div>
