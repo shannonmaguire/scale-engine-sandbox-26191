@@ -166,7 +166,7 @@ const PartnerDashboard = () => {
           'Salesforce delivery network',
           'partner revenue dashboard'
         ]}
-        noindex
+        noindex={true}
       />
 
       <div className="min-h-screen bg-background">

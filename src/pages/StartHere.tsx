@@ -36,7 +36,7 @@ const StartHere = () => {
       description: "You need technical scoping support, delivery capacity, or deal qualification tools. Access the AE Hub for discovery questions, objection frameworks, and partnership options.",
       icon: Handshake,
       ctaText: "Visit AE Hub",
-      ctaLink: "/salesforce-partners",
+      ctaLink: "/ae-hub",
       accentColor: "border-primary/30 bg-primary/5",
       iconColor: "text-primary",
     },
