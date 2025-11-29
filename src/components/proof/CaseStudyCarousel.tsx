@@ -162,11 +162,11 @@ export const CaseStudyCarousel = ({
                   </span>
                 </div>
                 <div className="space-y-2.5">
-                  <div className="flex items-center justify-between text-xs p-2 bg-background rounded">
-                    <span className="font-mono text-muted-foreground uppercase">
+                  <div className="flex items-center justify-between text-xs p-2 bg-background rounded border border-border">
+                    <span className="font-mono text-foreground uppercase">
                       {currentStudy.beforeMetric.label}
                     </span>
-                    <span className="font-mono text-muted-foreground">
+                    <span className="font-mono text-foreground font-semibold">
                       {currentStudy.beforeMetric.value}
                     </span>
                   </div>
@@ -189,17 +189,17 @@ export const CaseStudyCarousel = ({
                     {currentStudy.growth}
                   </span>
                 </div>
-                <div className="text-xs font-mono text-muted-foreground uppercase">
+                <div className="text-xs font-mono text-foreground uppercase">
                   Growth Stage
                 </div>
               </div>
 
               {/* Client Size - Compact */}
               <div className="text-center pt-3 border-t">
-                <div className="text-xs font-mono text-muted-foreground uppercase mb-1">
+                <div className="text-xs font-mono text-foreground uppercase mb-1">
                   Client Size
                 </div>
-                <div className="text-xs font-mono text-foreground">{currentStudy.size}</div>
+                <div className="text-xs font-mono text-foreground font-semibold">{currentStudy.size}</div>
               </div>
             </StandardCard>
           </div>
