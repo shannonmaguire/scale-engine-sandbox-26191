@@ -57,7 +57,7 @@ export const CaseStudyCarousel = ({
       {/* Navigation Header */}
       <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-4">
-          <span className="text-sm font-mono text-muted-foreground">
+          <span className="text-base font-mono text-muted-foreground">
             Case Study {currentIndex + 1} of {caseStudies.length}
           </span>
           <div className="flex gap-1">
@@ -80,19 +80,19 @@ export const CaseStudyCarousel = ({
         {/* Case Study Header */}
         <div className="flex flex-wrap items-center gap-3 pb-5 mb-6 border-b">
           <div className="flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-primary" />
-            <span className="font-mono text-sm text-primary font-semibold">
+            <Building2 className="w-5 h-5 text-primary" />
+            <span className="font-mono text-base text-primary font-semibold">
               {currentStudy.industry}
             </span>
           </div>
           <div className="h-4 w-px bg-border" />
-          <span className="font-mono text-sm text-muted-foreground">
+          <span className="font-mono text-base text-muted-foreground">
             {currentStudy.vertical}
           </span>
           <div className="h-4 w-px bg-border" />
           <div className="flex items-center gap-2">
-            <Clock className="w-3.5 h-3.5 text-muted-foreground" />
-            <span className="font-mono text-xs text-muted-foreground uppercase">
+            <Clock className="w-4 h-4 text-muted-foreground" />
+            <span className="font-mono text-sm text-muted-foreground uppercase">
               {currentStudy.timeline}
             </span>
           </div>
@@ -104,8 +104,8 @@ export const CaseStudyCarousel = ({
           <div className="space-y-6">
             {/* Challenge */}
             <div>
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">Challenge</h3>
-              <p className="text-sm leading-relaxed">
+              <h3 className="text-base font-semibold uppercase tracking-wide text-muted-foreground mb-3">Challenge</h3>
+              <p className="text-base leading-relaxed">
                 {currentStudy.challenge}
               </p>
             </div>
@@ -114,13 +114,13 @@ export const CaseStudyCarousel = ({
             <div className="grid md:grid-cols-2 gap-6">
               {/* System Installed */}
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">System Installed</h3>
+                <h3 className="text-base font-semibold uppercase tracking-wide text-muted-foreground mb-3">System Installed</h3>
                 <ul className="space-y-2">
                   {currentStudy.system.slice(0, 5).map((item, idx) => <li key={idx} className="flex items-start gap-2">
                       <Target className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm leading-snug">{item}</span>
+                      <span className="text-base leading-snug">{item}</span>
                     </li>)}
-                  {currentStudy.system.length > 5 && <li className="text-xs text-muted-foreground ml-6">
+                  {currentStudy.system.length > 5 && <li className="text-sm text-muted-foreground ml-6">
                       +{currentStudy.system.length - 5} more
                     </li>}
                 </ul>
@@ -128,15 +128,15 @@ export const CaseStudyCarousel = ({
 
               {/* Outcomes */}
               <div>
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground mb-3">Outcomes</h3>
+                <h3 className="text-base font-semibold uppercase tracking-wide text-muted-foreground mb-3">Outcomes</h3>
                 <ul className="space-y-2">
                   {currentStudy.outcomes.slice(0, 5).map((outcome, idx) => <li key={idx} className="flex items-start gap-2">
                       <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-sm leading-snug">
+                      <span className="text-base leading-snug">
                         {outcome.replace(/\*\*/g, '')}
                       </span>
                     </li>)}
-                  {currentStudy.outcomes.length > 5 && <li className="text-xs text-muted-foreground ml-6">
+                  {currentStudy.outcomes.length > 5 && <li className="text-sm text-muted-foreground ml-6">
                       +{currentStudy.outcomes.length - 5} more
                     </li>}
                 </ul>
@@ -145,7 +145,7 @@ export const CaseStudyCarousel = ({
 
             {/* Why It Worked */}
             {currentStudy.whyItWorked && <div className="pt-5 border-t">
-                <p className="text-sm italic text-muted-foreground">
+                <p className="text-base italic text-muted-foreground">
                   "{currentStudy.whyItWorked}"
                 </p>
               </div>}
@@ -157,12 +157,12 @@ export const CaseStudyCarousel = ({
               {/* Before/After - Inline */}
               <div>
                 <div className="text-center mb-3">
-                  <span className="text-xs font-mono text-foreground uppercase tracking-wider font-semibold">
+                  <span className="text-sm font-mono text-foreground uppercase tracking-wider font-semibold">
                     Before → After
                   </span>
                 </div>
                 <div className="space-y-2.5">
-                  <div className="flex items-center justify-between text-xs p-3 bg-background rounded border border-border">
+                  <div className="flex items-center justify-between text-sm p-3 bg-background rounded border border-border">
                     <span className="font-mono text-foreground uppercase font-semibold">
                       {currentStudy.beforeMetric.label}
                     </span>
@@ -170,7 +170,7 @@ export const CaseStudyCarousel = ({
                       {currentStudy.beforeMetric.value}
                     </span>
                   </div>
-                  <div className="flex items-center justify-between text-xs p-3 bg-primary/10 rounded border border-primary/30">
+                  <div className="flex items-center justify-between text-sm p-3 bg-primary/10 rounded border border-primary/30">
                     <span className="font-mono text-primary uppercase font-semibold">
                       {currentStudy.afterMetric.label}
                     </span>
@@ -184,22 +184,22 @@ export const CaseStudyCarousel = ({
               {/* Growth Rate - Compact */}
               <div className="text-center py-4 bg-primary/10 rounded border border-primary/30">
                 <div className="flex items-center justify-center gap-1.5 mb-1">
-                  <TrendingUp className="w-4 h-4 text-primary" />
-                  <span className="text-2xl font-mono font-bold text-primary">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                  <span className="text-3xl font-mono font-bold text-primary">
                     {currentStudy.growth}
                   </span>
                 </div>
-                <div className="text-xs font-mono text-foreground uppercase font-semibold">
+                <div className="text-sm font-mono text-foreground uppercase font-semibold">
                   Growth Stage
                 </div>
               </div>
 
               {/* Client Size - Compact */}
               <div className="text-center pt-4 border-t border-border">
-                <div className="text-xs font-mono text-foreground uppercase mb-1.5 font-semibold">
+                <div className="text-sm font-mono text-foreground uppercase mb-1.5 font-semibold">
                   Client Size
                 </div>
-                <div className="text-sm font-mono text-foreground font-bold">{currentStudy.size}</div>
+                <div className="text-base font-mono text-foreground font-bold">{currentStudy.size}</div>
               </div>
             </StandardCard>
           </div>
@@ -208,7 +208,7 @@ export const CaseStudyCarousel = ({
 
       {/* Keyboard Navigation Hint */}
       <div className="text-center mt-4">
-        <p className="text-xs text-muted-foreground font-mono">Use arrow keys to navigate</p>
+        <p className="text-sm text-muted-foreground font-mono">Use arrow keys to navigate</p>
       </div>
     </div>;
 };
