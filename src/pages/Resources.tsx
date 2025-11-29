@@ -263,29 +263,6 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* AE Resources Crosslink */}
-      <section className="section-spacing px-6 bg-primary/5 border-y-2 border-primary/20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono mb-6">
-              FOR ACCOUNT EXECUTIVES
-            </div>
-            <h2 className="heading-section text-foreground mb-6">
-              Selling Salesforce Services?
-            </h2>
-            <p className="text-description text-muted-foreground mb-8 max-w-3xl mx-auto">
-              If you're an AE working Salesforce deals, we have dedicated tools, playbooks, and technical support in the AE Hub.
-            </p>
-            <Button asChild size="lg">
-              <Link to="/ae-hub">
-                Visit AE Hub
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="section-spacing px-6 bg-card">
         <div className="max-w-4xl mx-auto text-center">
