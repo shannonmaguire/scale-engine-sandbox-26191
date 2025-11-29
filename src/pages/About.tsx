@@ -70,41 +70,69 @@ const About = () => {
       {/* Founder Section */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h1 className="heading-section">Founder</h1>
-          </div>
-
-          <div className="grid md:grid-cols-[200px,1fr] gap-10 items-start">
+          <div className="grid md:grid-cols-[280px,1fr] gap-12 items-start">
+            {/* Photo & Credentials */}
             <div>
-              <img 
-                src={shannonHeadshot} 
-                alt="Shannon Maguire, Founder" 
-                className="w-full aspect-[3/4] object-cover object-top border border-border"
-              />
-              <div className="mt-4">
-                <div className="font-mono text-sm font-semibold text-foreground">Shannon Maguire</div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mt-1">Founder</div>
-                <Button asChild variant="ghost" size="sm" className="mt-3 px-0">
-                  <a 
-                    href="https://www.linkedin.com/in/shanmag/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
-                  >
-                    <Linkedin className="w-4 h-4" strokeWidth={2} />
-                    <span className="font-mono text-xs">LinkedIn</span>
-                  </a>
-                </Button>
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary/5 -z-10 translate-x-2 translate-y-2" />
+                <img 
+                  src={shannonHeadshot} 
+                  alt="Shannon Maguire, Founder & Revenue Systems Architect" 
+                  className="w-full aspect-[3/4] object-cover object-top border-2 border-border shadow-lg relative"
+                />
               </div>
+              
+              {/* Credential Badges */}
+              <div className="mt-6 space-y-3">
+                <div className="flex items-center justify-between px-3 py-2 bg-primary/5 border border-primary/20 rounded">
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">Deployments</span>
+                  <span className="font-mono text-sm font-bold text-primary">42+</span>
+                </div>
+                <div className="flex items-center justify-between px-3 py-2 bg-primary/5 border border-primary/20 rounded">
+                  <span className="font-mono text-xs uppercase tracking-wider text-foreground">Experience</span>
+                  <span className="font-mono text-sm font-bold text-primary">8+ Years</span>
+                </div>
+                <div className="px-3 py-2 bg-primary/5 border border-primary/20 rounded text-center">
+                  <span className="font-mono text-xs uppercase tracking-wider text-primary font-semibold">Regulated Industries</span>
+                </div>
+              </div>
+
+              {/* LinkedIn Button */}
+              <Button asChild variant="outline" size="sm" className="mt-6 w-full">
+                <a 
+                  href="https://www.linkedin.com/in/shanmag/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2"
+                >
+                  <Linkedin className="w-4 h-4" strokeWidth={2} />
+                  <span className="font-mono text-xs">Connect on LinkedIn</span>
+                </a>
+              </Button>
             </div>
 
-            <div>
+            {/* Bio Content */}
+            <div className="pt-2">
+              <h1 className="heading-section mb-2">Shannon Maguire</h1>
+              <div className="font-mono text-sm uppercase tracking-widest text-primary mb-8">
+                Founder & Revenue Systems Architect
+              </div>
+
               <p className="text-description text-foreground leading-relaxed mb-6">
-                Shannon Maguire installs revenue infrastructure for regulated and high-trust industries where system failure carries financial, legal, and compliance consequences.
+                Installs revenue infrastructure for regulated and high-trust industries where system failure carries financial, legal, and compliance consequences.
               </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Specializations: Legal, compliance, cybersecurity, healthcare, B2B SaaS. Implementations focus on Salesforce architecture, RevOps automation, and process documentation for operational handoff.
+
+              {/* Specializations as Tags */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Legal</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Compliance</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Cybersecurity</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">Healthcare</span>
+                <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-xs text-foreground">B2B SaaS</span>
+              </div>
+
+              <p className="text-sm text-muted-foreground leading-relaxed border-l-2 border-primary pl-4 italic">
+                "Fixed-scope implementations. 90-day cycles. Documented handoffs. No ongoing dependencies."
               </p>
             </div>
           </div>
