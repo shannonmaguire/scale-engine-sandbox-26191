@@ -137,39 +137,39 @@ const Salesforce = () => {
           </div>
           
           <div className="grid md:grid-cols-2 gutter-content">
-            <div className="bg-card p-8 border-l-4 border-accent">
+            <div className="bg-card p-8 border-l-2 border-primary">
               <h3 className="heading-subsection mb-4">CWT Studio</h3>
               <p className="text-description text-muted-foreground mb-6">Revenue operations strategy and system design</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-description">Business process architecture</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-description">Performance analysis</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-description">Ongoing optimization</span>
                 </li>
               </ul>
             </div>
 
-            <div className="bg-card p-8 border-l-4 border-accent">
+            <div className="bg-card p-8 border-l-2 border-primary">
               <h3 className="heading-subsection mb-4">CloudRoute</h3>
               <p className="text-description text-muted-foreground mb-6">Salesforce-exclusive technical implementation</p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-description">Platform development</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-description">API integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <span className="text-description">System maintenance</span>
                 </li>
               </ul>

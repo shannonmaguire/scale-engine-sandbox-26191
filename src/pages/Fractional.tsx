@@ -80,7 +80,7 @@ const Fractional = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
               <Link to="/contact?interest=fractional&source_page=fractional">
-                Apply for Fractional Ops
+                {CTA.applyFractional}
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
@@ -201,7 +201,7 @@ const Fractional = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
               <Link to="/contact?interest=fractional&source_page=fractional">
-                Apply for Fractional Ops
+                {CTA.applyFractional}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

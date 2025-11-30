@@ -58,19 +58,6 @@ const WebSystems = () => {
     title: "Handoff",
     description: "We transfer repo and docs and support your team for 30 days."
   }];
-  const supportPackages = [{
-    hours: 10,
-    subtitle: "Quick fixes & updates",
-    features: ["Ideal for occasional updates", "48-hour response time", "6-month expiration", "No minimum per request"]
-  }, {
-    hours: 20,
-    subtitle: "Ongoing maintenance",
-    features: ["Best value for regular updates", "48-hour response time", "6-month expiration", "Priority scheduling"]
-  }, {
-    hours: 40,
-    subtitle: "Extended support",
-    features: ["Major updates & optimization", "24-hour response time", "6-month expiration", "Dedicated support contact"]
-  }];
   const faqs = [{
     question: "How does this differ from hiring an agency?",
     answer: "Infrastructure sites. CRM-wired, conversion-tracked, documented for ownership transfer. Demand capture and routing system."
@@ -81,17 +68,11 @@ const WebSystems = () => {
     question: "What CRM platforms do you integrate with?",
     answer: "Existing stack. HubSpot, Salesforce, Pipedrive, ActiveCampaign, custom. CRM recommendations available."
   }, {
-    question: "Do you offer ongoing website maintenance?",
-    answer: "On-demand support blocks. 10, 20, or 40 hours. Updates and optimizations. 6-month validity."
-  }, {
     question: "What happens if I want to switch developers later?",
     answer: "Full ownership. Repository, deployment credentials, documentation. Any React developer can continue. No lock-in."
   }];
   const handleCTAClick = (location: string) => {
     trackCTAClick(`Web Systems ${location} CTA`, `web-systems-${location}`, '/contact?interest=web&source_page=web-systems');
-  };
-  const handleSupportClick = (packageName: string) => {
-    trackCTAClick(`Website Support ${packageName}`, 'web-systems-support', '/contact?interest=website-support&source_page=web-systems');
   };
   return <div className="min-h-screen">
       <SEOHead 
@@ -124,7 +105,7 @@ const WebSystems = () => {
       <Breadcrumbs />
       
       <Section>
-        <BackButton to="/services">Back to All Services</BackButton>
+        <BackButton to="/">Back to Home</BackButton>
         
         {/* Hero */}
         <div className="max-w-3xl mb-16">
@@ -234,7 +215,7 @@ const WebSystems = () => {
 
           <div className="mt-10 p-6 bg-muted/30 border border-border max-w-3xl">
             <p className="text-description text-foreground font-mono">
-              No licensing. No lock-in. In-house updates, hire developers, or retainer—operator choice.
+              Full GitHub access. Deployment credentials. Documentation. No licensing. No lock-in. Update yourself, hire developers, or retainer—operator choice.
             </p>
           </div>
         </div>
@@ -298,16 +279,6 @@ const WebSystems = () => {
           </div>
         </div>
 
-        {/* Ownership */}
-        <div className="mb-16 max-w-3xl">
-          <h2 className="heading-section mb-6">Full Code Transfer</h2>
-          <p className="text-description text-muted-foreground leading-relaxed mb-6">
-            You receive the GitHub repository, deployment credentials, and documentation. Update yourself, hire a developer, or keep us on retainer. No ongoing licensing. No vendor lock-in.
-          </p>
-          <p className="text-description text-muted-foreground font-mono">
-            Custom build. Full source code. Your infrastructure.
-          </p>
-        </div>
 
         {/* Packages */}
         <div className="mb-16" id="packages">
@@ -386,81 +357,6 @@ const WebSystems = () => {
                 <p className="text-description text-muted-foreground">{step.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Support */}
-        <div className="mb-16" id="support">
-          <h2 className="heading-section mb-6">Support Blocks</h2>
-          <p className="text-description text-muted-foreground max-w-2xl mb-10">
-            Built for your team to run independently. When you need us, we're here.
-          </p>
-
-          <div className="space-y-8 max-w-3xl">
-            {supportPackages.map((pkg, index) => (
-              <div key={index} className="border-l-4 border-primary pl-6">
-                <h3 className="heading-subsection mb-2">{pkg.hours} Hours Support Block</h3>
-                <p className="text-description text-muted-foreground mb-4">{pkg.subtitle}</p>
-                <ul className="space-y-2 text-description text-muted-foreground mb-6">
-                  {pkg.features.map((feature, idx) => (
-                    <li key={idx}>• {feature}</li>
-                  ))}
-                </ul>
-                <ConversionOptimizedButton
-                  variant="outline"
-                  size="sm"
-                  to="/contact?interest=website-support&source_page=web-systems"
-                  ctaName={`Website Support ${pkg.hours}-hour`}
-                  location="web-systems-support"
-                  showArrow={false}
-                >
-                  Request Quote
-                </ConversionOptimizedButton>
-              </div>
-            ))}
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mt-10">
-            <div>
-              <h3 className="heading-subsection mb-4">Included</h3>
-              <ul className="space-y-2 text-description text-muted-foreground">
-                <li>• Content updates</li>
-                <li>• Component mods</li>
-                <li>• CRM adjustments</li>
-                <li>• Performance fixes</li>
-                <li>• Analytics help</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="heading-subsection mb-4">Not Included</h3>
-              <ul className="space-y-2 text-description text-muted-foreground">
-                <li>• New features (requires scoping)</li>
-                <li>• Complete redesigns</li>
-                <li>• Backend work</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Performance Benchmarks */}
-        <div className="mb-16">
-          <h2 className="heading-section mb-6">Performance Targets</h2>
-          <p className="text-description text-muted-foreground mb-8 max-w-2xl">
-            Fast sites rank higher and convert better. These are the benchmarks we build to.
-          </p>
-          <div className="space-y-6 max-w-2xl">
-            <div className="border-l-4 border-primary pl-6">
-              <div className="heading-subsection text-primary mb-2">Sub-1s LCP</div>
-              <p className="text-description text-muted-foreground">Largest Contentful Paint</p>
-            </div>
-            <div className="border-l-4 border-primary pl-6">
-              <div className="heading-subsection text-primary mb-2">90+ Score</div>
-              <p className="text-description text-muted-foreground">Google PageSpeed mobile</p>
-            </div>
-            <div className="border-l-4 border-primary pl-6">
-              <div className="heading-subsection text-primary mb-2">Direct Edit</div>
-              <p className="text-description text-muted-foreground">Content updates without dev handoff</p>
-            </div>
           </div>
         </div>
 

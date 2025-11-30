@@ -193,38 +193,8 @@ const Proof = () => {
         </div>
       </Section>
 
-      {/* Case Studies Carousel - Primary Content */}
-      <Section>
-        <CaseStudyCarousel caseStudies={caseStudies} />
-      </Section>
-
-      {/* Metrics */}
-      <Section variant="muted" className="py-12 border-t border-border">
-        <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">7</div>
-            <div className="text-description text-muted-foreground">Case Studies</div>
-          </div>
-          <div className="h-12 w-px bg-border hidden sm:block" />
-          <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">$500K+</div>
-            <div className="text-description text-muted-foreground">Pipeline Activated</div>
-          </div>
-          <div className="h-12 w-px bg-border hidden sm:block" />
-          <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">107%</div>
-            <div className="text-description text-muted-foreground">Peak Growth</div>
-          </div>
-          <div className="h-12 w-px bg-border hidden sm:block" />
-          <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">90 Days</div>
-            <div className="text-description text-muted-foreground">Fastest Deploy</div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Patterns */}
-      <Section className="border-t border-border">
+      {/* What Works */}
+      <Section className="border-b border-border">
         <div className="max-w-3xl mx-auto">
           <h2 className="heading-section mb-10">What Works</h2>
 
@@ -253,11 +223,41 @@ const Proof = () => {
             <div className="bg-card border-l-2 border-primary p-6">
               <h3 className="heading-subsection mb-3">90-Day Validation Cycles</h3>
               <p className="text-description text-muted-foreground">
-                Early wins validate system design. Documentation creates compounding momentum.
+                Rapid implementation cycles with measurable outcomes outperform extended planning phases.
               </p>
             </div>
           </div>
         </div>
+      </Section>
+
+      {/* Metrics */}
+      <Section variant="muted" className="py-12 border-t border-border">
+        <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
+          <div className="text-center">
+            <div className="heading-subsection text-primary mb-1">7</div>
+            <div className="text-description text-muted-foreground">Case Studies</div>
+          </div>
+          <div className="h-12 w-px bg-border hidden sm:block" />
+          <div className="text-center">
+            <div className="heading-subsection text-primary mb-1">$500K+</div>
+            <div className="text-description text-muted-foreground">Pipeline Activated</div>
+          </div>
+          <div className="h-12 w-px bg-border hidden sm:block" />
+          <div className="text-center">
+            <div className="heading-subsection text-primary mb-1">107%</div>
+            <div className="text-description text-muted-foreground">Peak Growth</div>
+          </div>
+          <div className="h-12 w-px bg-border hidden sm:block" />
+          <div className="text-center">
+            <div className="heading-subsection text-primary mb-1">90 Days</div>
+            <div className="text-description text-muted-foreground">Fastest Deploy</div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Case Studies Carousel */}
+      <Section className="border-t border-border">
+        <CaseStudyCarousel caseStudies={caseStudies} />
       </Section>
 
       {/* CTA */}
