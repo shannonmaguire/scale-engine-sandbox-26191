@@ -62,7 +62,7 @@ const Navigation = () => {
             {navLinks.map(link => <Link 
                 key={link.href} 
                 to={link.href} 
-                className={`text-sm font-mono font-medium transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-authority rounded px-2 py-1 ${isActive(link.href) ? "!text-white font-semibold" : "!text-white"}`}
+                className={`text-sm font-mono font-medium transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-authority rounded px-2 py-1 ${isActive(link.href) ? "text-white font-semibold" : "text-white"}`}
                 aria-current={isActive(link.href) ? "page" : undefined}
               >
                 {link.label}
@@ -70,20 +70,20 @@ const Navigation = () => {
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className={`text-sm font-mono font-medium transition-colors hover:text-accent flex items-center gap-1 ${isSolutionsActive() ? "!text-white font-semibold" : "!text-white"}`}>
+              <DropdownMenuTrigger className={`text-sm font-mono font-medium transition-colors hover:text-accent flex items-center gap-1 ${isSolutionsActive() ? "text-white font-semibold" : "text-white"}`}>
                 Services
-                <ChevronDown size={14} className="!text-white" />
+                <ChevronDown size={14} className="text-white" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-64 bg-authority border-white/20 z-[100]">
+              <DropdownMenuContent align="start" className="w-64 bg-[#1B3022] border-white/20 z-[100]">
                 <div className="px-2 py-1.5">
-                  <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider mb-1">
+                  <div className="text-xs font-mono font-semibold text-white/60 uppercase tracking-wider mb-1">
                     Core Services
                   </div>
                   {coreServices.map((link) => (
                     <DropdownMenuItem key={link.href} asChild>
                       <Link 
                         to={link.href} 
-                        className="w-full font-mono text-sm font-medium !text-white transition-colors flex justify-between items-center"
+                        className="w-full font-mono text-sm font-medium text-white hover:text-white hover:bg-white/10 transition-colors flex justify-between items-center px-2 py-2 rounded"
                       >
                         <span>{link.label}</span>
                         <span className="text-xs text-white/40">
@@ -99,14 +99,14 @@ const Navigation = () => {
                 <div className="h-px bg-white/10 my-1" />
                 
                 <div className="px-2 py-1.5">
-                  <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider mb-1">
+                  <div className="text-xs font-mono font-semibold text-white/60 uppercase tracking-wider mb-1">
                     Platform Expertise
                   </div>
                   {platformExpertise.map((link) => (
                     <DropdownMenuItem key={link.href} asChild>
                       <Link 
                         to={link.href} 
-                        className="w-full font-mono text-sm font-medium !text-white transition-colors"
+                        className="w-full font-mono text-sm font-medium text-white hover:text-white hover:bg-white/10 transition-colors px-2 py-2 rounded"
                       >
                         {link.label}
                       </Link>
@@ -138,21 +138,21 @@ const Navigation = () => {
         </div>
 
           {/* Mobile Navigation */}
-        {isOpen && <div id="mobile-navigation" className="md:hidden border-t border-white/20 bg-authority animate-mobile-menu">
+          {isOpen && <div id="mobile-navigation" className="md:hidden border-t border-white/20 bg-authority animate-mobile-menu">
             <div className="px-3 pt-3 pb-5 space-y-2" role="navigation" aria-label="Mobile navigation">
-              {navLinks.map(link => <Link key={link.href} to={link.href} className={`block px-4 py-2 text-base font-mono font-medium rounded-md bg-white/5 shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${isActive(link.href) ? "!text-white" : "!text-white/80"}`} onClick={() => setIsOpen(false)}>
+              {navLinks.map(link => <Link key={link.href} to={link.href} className={`block px-4 py-2 text-base font-mono font-medium rounded-md bg-white/5 shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${isActive(link.href) ? "text-white" : "text-white/80"}`} onClick={() => setIsOpen(false)}>
                   {link.label}
                 </Link>)}
               
               {/* Services section in mobile */}
               <div className="px-1 py-2 space-y-2">
-                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Core Services</div>
+                <div className="text-xs font-mono font-semibold text-white/60 uppercase tracking-wider px-3">Core Services</div>
                 {coreServices.map((link) => (
                   <Link 
                     key={link.href}
                     to={link.href} 
                     className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
-                      isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
+                      isActive(link.href) ? "text-white bg-white/10" : "text-white/80 bg-white/5"
                     }`} 
                     onClick={() => setIsOpen(false)}
                   >
@@ -162,13 +162,13 @@ const Navigation = () => {
                 
                 <div className="h-px bg-white/10 my-2 mx-3" />
                 
-                <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider px-3">Platform Expertise</div>
+                <div className="text-xs font-mono font-semibold text-white/60 uppercase tracking-wider px-3">Platform Expertise</div>
                 {platformExpertise.map((link) => (
                   <Link 
                     key={link.href}
                     to={link.href} 
                     className={`block px-4 py-2 text-sm font-mono font-medium rounded-md shadow-mobile-item transition-all duration-200 hover:bg-white/10 ${
-                      isActive(link.href) ? "!text-white bg-white/10" : "!text-white/80 bg-white/5"
+                      isActive(link.href) ? "text-white bg-white/10" : "text-white/80 bg-white/5"
                     }`} 
                     onClick={() => setIsOpen(false)}
                   >
