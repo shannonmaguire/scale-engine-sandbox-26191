@@ -10,17 +10,17 @@ interface ScorePreviewProps {
 
 export const ScorePreview = ({ score, categoryCount, onUnlock }: ScorePreviewProps) => {
   const getMaturityLevel = (score: number) => {
-    if (score >= 86) return { label: "Advanced", color: "text-primary", bg: "bg-primary/10", border: "border-primary/30" };
-    if (score >= 71) return { label: "Established", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-200" };
-    if (score >= 41) return { label: "Developing", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200" };
+    if (score >= 31) return { label: "Optimized", color: "text-primary", bg: "bg-primary/10", border: "border-primary/30" };
+    if (score >= 21) return { label: "Structured", color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-200" };
+    if (score >= 11) return { label: "Emerging", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-200" };
     return { label: "Foundational", color: "text-destructive", bg: "bg-destructive/10", border: "border-destructive/30" };
   };
 
   const getInsight = (score: number) => {
-    if (score >= 86) return "Your infrastructure shows advanced capabilities with minimal gaps. Focus on optimization.";
-    if (score >= 71) return "Strong foundation established. Strategic improvements will drive meaningful efficiency gains.";
-    if (score >= 41) return "Core systems in place but significant opportunities exist to reduce operational friction.";
-    return "Infrastructure gaps are creating operational bottlenecks. Prioritized improvements will yield high ROI.";
+    if (score >= 31) return "Your environment is technically mature and ready to absorb growth. The focus now shifts to scale plays: outbound programs, new verticals, and advanced experimentation across your stack.";
+    if (score >= 21) return "Your foundation is strong. Data, CRM, and execution have structure, and the main gaps sit in optimization and scale. You are ready for outbound engines, deeper analytics, and stronger automation layers.";
+    if (score >= 11) return "You have pieces in place, yet the system leaks. Data hygiene, automations, and reporting exist in pockets rather than as a connected whole. The next step is to standardize your core workflows and fix the highest-impact breaks.";
+    return "Your systems are carrying more risk than you see day to day. Data quality, pipeline structure, and execution discipline all need a clean reset before growth efforts will stick. The next step is a focused architecture review and a minimum viable operating system.";
   };
 
   const maturity = getMaturityLevel(score);
@@ -36,7 +36,7 @@ export const ScorePreview = ({ score, categoryCount, onUnlock }: ScorePreviewPro
               Technical Maturity Score
             </div>
             <div className="text-7xl font-bold text-primary mb-4">
-              {score}%
+              {score}/36
             </div>
             <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full ${maturity.bg} ${maturity.border} border`}>
               <span className={`font-mono text-sm font-semibold uppercase tracking-wider ${maturity.color}`}>

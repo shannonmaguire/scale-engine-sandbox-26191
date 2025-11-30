@@ -10,31 +10,31 @@ interface ResultsHeroProps {
 
 export const ResultsHero = ({ score, totalItems, completedItems }: ResultsHeroProps) => {
   const getScoreInsight = (score: number) => {
-    if (score >= 86) return {
+    if (score >= 31) return {
       icon: Trophy,
-      title: "Advanced",
-      message: "Your systems operate at an exceptional level with capacity for sustained growth and complexity.",
+      title: "Optimized",
+      message: "Your environment is technically mature and ready to absorb growth. The focus now shifts to scale plays: outbound programs, new verticals, and advanced experimentation across your stack.",
       color: "text-green-600",
       bg: "bg-green-500/10"
     };
-    if (score >= 71) return {
+    if (score >= 21) return {
       icon: TrendingUp,
-      title: "Established",
-      message: "Your foundation supports current operations with defined paths toward optimization.",
+      title: "Structured",
+      message: "Your foundation is strong. Data, CRM, and execution have structure, and the main gaps sit in optimization and scale. You are ready for outbound engines, deeper analytics, and stronger automation layers.",
       color: "text-blue-600",
       bg: "bg-blue-500/10"
     };
-    if (score >= 41) return {
+    if (score >= 11) return {
       icon: AlertCircle,
-      title: "Developing",
-      message: "Your systems demonstrate early structure with substantial opportunity for systematic improvement.",
+      title: "Emerging",
+      message: "You have pieces in place, yet the system leaks. Data hygiene, automations, and reporting exist in pockets rather than as a connected whole. The next step is to standardize your core workflows and fix the highest-impact breaks.",
       color: "text-yellow-600",
       bg: "bg-yellow-500/10"
     };
     return {
       icon: AlertCircle,
       title: "Foundational",
-      message: "Your systems require structural development across operational, technical, and process dimensions.",
+      message: "Your systems are carrying more risk than you see day to day. Data quality, pipeline structure, and execution discipline all need a clean reset before growth efforts will stick. The next step is a focused architecture review and a minimum viable operating system.",
       color: "text-red-600",
       bg: "bg-red-500/10"
     };
@@ -101,12 +101,12 @@ export const ResultsHero = ({ score, totalItems, completedItems }: ResultsHeroPr
       </div>
 
       {/* Comparison (Optional Enhancement) */}
-      {score < 100 && (
+      {score < 36 && (
         <div className="text-sm text-muted-foreground font-mono">
-          {score >= 86 && "Your performance places you among the top 15% of assessed organizations."}
-          {score >= 71 && score < 86 && "Your systems exceed 60% of comparable implementations."}
-          {score >= 41 && score < 71 && "Targeted improvements position you within the upper performance tier."}
-          {score < 41 && "Each improvement point correlates directly with operational efficiency gains."}
+          {score >= 31 && "Your performance places you among the top 15% of assessed organizations."}
+          {score >= 21 && score < 31 && "Your systems exceed 60% of comparable implementations."}
+          {score >= 11 && score < 21 && "Targeted improvements position you within the upper performance tier."}
+          {score < 11 && "Each improvement point correlates directly with operational efficiency gains."}
         </div>
       )}
     </div>
