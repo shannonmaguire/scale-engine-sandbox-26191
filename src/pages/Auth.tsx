@@ -167,7 +167,7 @@ const Auth = () => {
         {/* Auth card */}
         <div className="bg-card border border-border rounded-lg p-6 md:p-8 shadow-sm">
           <div className="mb-6">
-            <h1 className="font-mono text-xl md:text-2xl font-bold text-foreground mb-2">
+            <h1 className="font-mono heading-subsection text-foreground mb-2">
               {isSignUp ? 'Create Account' : 'Sign In'}
             </h1>
             <p className="font-sans text-sm text-muted-foreground">
