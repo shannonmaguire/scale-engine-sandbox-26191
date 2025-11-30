@@ -27,7 +27,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link to="/self-assessment" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Assessment
+                  Free Health Check
                 </Link>
               </li>
               <li>
@@ -155,7 +155,7 @@ const Footer = () => {
               </a>
               <Button asChild size="sm" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
                 <Link to="/self-assessment">
-                  Start Assessment
+                  Take Free Health Check
                 </Link>
               </Button>
             </div>

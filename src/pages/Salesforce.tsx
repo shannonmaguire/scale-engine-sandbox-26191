@@ -191,7 +191,7 @@ const Salesforce = () => {
               <Link to="/contact?interest=salesforce">{CTA.scheduleConsultation}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>Take Self-Assessment</Link>
+              <Link to={ROUTES.assessment}>Take Free Health Check</Link>
             </Button>
           </div>
         </div>

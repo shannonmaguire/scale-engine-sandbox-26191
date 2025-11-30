@@ -21,8 +21,13 @@ export const SERVICES = {
 
 // ===== CTA TEXT =====
 export const CTA = {
-  // Primary Assessment CTAs
+  // Free Quiz CTAs (5-minute self-check)
+  takeHealthCheck: "Take Free Health Check",
+  checkYourScore: "Check Your Score",
+  
+  // Paid Assessment CTAs (2-week diagnostic)
   startAssessment: "Start Assessment",
+  bookAssessment: "Book Infrastructure Assessment",
   
   // Service-specific CTAs
   startSprint: "Start Your Sprint",

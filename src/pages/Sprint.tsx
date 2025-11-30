@@ -121,7 +121,7 @@ const Sprint = () => {
               <Link to="/contact?interest=sprint&source_page=sprint">{CTA.startSprint}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.startAssessment}</Link>
+              <Link to={ROUTES.assessment}>{CTA.takeHealthCheck}</Link>
             </Button>
           </div>
         </div>
@@ -223,7 +223,7 @@ const Sprint = () => {
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.startAssessment}</Link>
+              <Link to={ROUTES.assessment}>{CTA.takeHealthCheck}</Link>
             </Button>
           </div>
         </div>
