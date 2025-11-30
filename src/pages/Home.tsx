@@ -303,29 +303,32 @@ const Home = () => {
       {/* Final CTA */}
       <Section className="border-t border-border text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="heading-section mb-6">Start Assessment</h2>
-          <p className="text-description text-muted-foreground mb-10">
-            2-week diagnostic to map revenue infrastructure with baseline KPIs and prioritized recommendations.
+          <h2 className="heading-section mb-6">Start With Free Health Check</h2>
+          <p className="text-description text-muted-foreground mb-4">
+            5-minute self-assessment identifies your revenue systems gaps. Then book our {TIMELINES.assessment} Infrastructure Assessment for detailed roadmap.
+          </p>
+          <p className="text-description text-muted-foreground mb-10 italic">
+            Assessment fee credits 100% toward Sprint engagement.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton
-              to="/self-assessment"
-              ctaName="Final CTA - Start Assessment"
+              to={ROUTES.assessment}
+              ctaName="Final CTA - Free Health Check"
               location="Final CTA Section"
               size="lg"
             >
-              Start Assessment
+              {CTA.takeHealthCheck}
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
-              to="/proof"
-              ctaName="Final CTA - See Proof"
+              to={ROUTES.infrastructureAssessment}
+              ctaName="Final CTA - Learn About Assessment"
               location="Final CTA Section"
               variant="outline"
               showArrow={false}
               size="lg"
             >
-              See Proof
+              Learn About Assessment
             </ConversionOptimizedButton>
           </div>
         </div>
