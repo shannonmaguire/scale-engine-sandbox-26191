@@ -5,6 +5,7 @@ import { CheckCircle, ArrowRight, FileText, BarChart3, Target, Clock, DollarSign
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA, ROUTES, TIMELINES, METRICS } from "@/lib/canonical-constants";
+import { AssessmentComparisonTable } from "@/components/AssessmentComparisonTable";
 
 const InfrastructureAssessment = () => {
   const deliverables = [
@@ -317,6 +318,22 @@ const InfrastructureAssessment = () => {
               Assessment becomes free if you proceed to Sprint within 90 days
             </p>
           </div>
+        </div>
+      </Section>
+
+      {/* Service Comparison */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Compare Your Options</h2>
+          </div>
+          
+          <p className="text-description text-muted-foreground mb-10 max-w-3xl">
+            Start with the free Health Check, upgrade to the Infrastructure Assessment for a deep-dive audit, or go straight to the Sprint for full implementation.
+          </p>
+
+          <AssessmentComparisonTable />
         </div>
       </Section>
 

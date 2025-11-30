@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, User } from "lucide-react";
 import cwtLogo from "@/assets/cwt-logo-white.svg";
 import { memo } from "react";
+import { supabase } from "@/integrations/supabase/client";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    // Check auth status
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setIsAuthenticated(!!session);
+    });
+
+    // Listen for auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsAuthenticated(!!session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
   const navLinks = [{
     label: "Home",
     href: "/"
@@ -121,11 +137,19 @@ const Navigation = () => {
             </DropdownMenu>
           </div>
 
-          {/* Primary CTA - Console Button */}
-          <div className="hidden md:block">
-            <Button asChild className="btn-console">
-              <Link to="/self-assessment">Take Free Health Check</Link>
-            </Button>
+          {/* Primary CTA - Console Button or Dashboard Link */}
+          <div className="hidden md:flex md:items-center md:gap-3">
+            {isAuthenticated ? (
+              <Button asChild variant="outline" size="icon">
+                <Link to="/dashboard" aria-label="Go to dashboard">
+                  <User size={18} />
+                </Link>
+              </Button>
+            ) : (
+              <Button asChild className="btn-console">
+                <Link to="/self-assessment">Take Free Health Check</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile menu button */}
