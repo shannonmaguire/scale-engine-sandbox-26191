@@ -265,13 +265,13 @@ const Proof = () => {
       <Section className="border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-6">
-            Start With Assessment
+            Start With Free Health Check
           </h2>
           <p className="text-description text-muted-foreground mb-10">
-            {TIMELINES.assessment} infrastructure audit. Gap analysis. 90-day deployment roadmap.
+            5-minute quiz identifies gaps. Then book {TIMELINES.assessment} Infrastructure Assessment—complete diagnostic with 90-day roadmap.
           </p>
-          <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
-            Start Assessment
+          <ConversionOptimizedButton to="/self-assessment" ctaName="Proof Page - Free Health Check" location="Proof Page CTA" size="lg">
+            Take Free Health Check
           </ConversionOptimizedButton>
         </div>
       </Section>

@@ -53,10 +53,10 @@ const Home = () => {
   const pipeline = [
     {
       phase: "01",
-      title: "Assessment",
+      title: "Infrastructure Assessment",
       duration: TIMELINES.assessment,
       output: "Revenue Infrastructure Scorecard + 90-day roadmap",
-      description: "Diagnostic audit mapping current state against industry benchmarks. Delivers prioritized implementation sequence."
+      description: "Paid diagnostic audit mapping current state against industry benchmarks. Delivers prioritized implementation sequence. (Start with free 5-min Health Check)"
     },
     {
       phase: "02", 

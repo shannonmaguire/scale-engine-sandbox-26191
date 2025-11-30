@@ -289,15 +289,19 @@ const AssessmentResults = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
                   <Calendar className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Ready to Improve Your Score?</h3>
-                <p className="text-muted-foreground mb-6">
-                  Book a free 30-minute technical assessment call with our team. We'll review your results 
-                  and create a customized roadmap to address your highest-impact improvement opportunities.
+                <h3 className="text-2xl font-bold mb-3">Book Your Infrastructure Assessment</h3>
+                <p className="text-muted-foreground mb-2">
+                  This free quiz identified your gaps. Our {" "}
+                  <strong className="text-foreground">2-week Infrastructure Assessment</strong> 
+                  {" "} delivers a complete diagnostic audit and 90-day implementation roadmap.
+                </p>
+                <p className="text-sm text-muted-foreground mb-6 italic">
+                  Assessment fee credits 100% toward Sprint engagement.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                   <Button size="lg" onClick={handleBookingClick} className="shadow-lg">
                     <Phone className="h-5 w-5 mr-2" />
-                    Book Free Assessment Call
+                    Book Infrastructure Assessment
                   </Button>
                   <Button size="lg" variant="outline" onClick={handlePrint}>
                     <Printer className="h-5 w-5 mr-2" />
@@ -305,7 +309,7 @@ const AssessmentResults = () => {
                   </Button>
                 </div>
                 <p className="text-xs text-muted-foreground mt-4">
-                  No commitment required • Typically results in 2-3 quick wins within 30 days
+                  2-week timeline • Gap analysis • 90-day deployment roadmap
                 </p>
               </div>
             </Card>

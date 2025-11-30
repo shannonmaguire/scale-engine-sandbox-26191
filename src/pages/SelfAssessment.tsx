@@ -12,14 +12,14 @@ const SelfAssessment = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Free Technical Maturity Self-Assessment | CWT Studio"
-        description="Assess your Salesforce and revenue systems maturity in 5 minutes. Get instant scoring, personalized recommendations, and a downloadable PDF report."
+        title="Free Revenue Health Check | 5-Minute Self-Assessment | CWT Studio"
+        description="Free 5-minute self-assessment: check your revenue systems maturity. Get instant scoring, category breakdown, and personalized recommendations."
         keywords={[
-          'Salesforce maturity assessment',
-          'technical maturity checklist',
-          'revenue systems assessment',
-          'free Salesforce audit',
-          'system readiness assessment'
+          'free revenue health check',
+          'technical maturity self-assessment',
+          'revenue systems quiz',
+          'free systems audit',
+          'system readiness check'
         ]}
         canonicalUrl="/self-assessment"
       />
@@ -28,12 +28,15 @@ const SelfAssessment = () => {
         <div className="max-w-4xl mx-auto">
           {/* Intro Section */}
           <div className="mb-12 text-center">
-            <h1 className="heading-page mb-6">Revenue Systems Assessment</h1>
+            <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-6 font-mono text-xs uppercase tracking-widest">
+              <span className="text-primary font-semibold">Free 5-Minute Quiz</span>
+            </div>
+            <h1 className="heading-page mb-6">Revenue Health Check</h1>
             <p className="text-description max-w-2xl mx-auto mb-4">
-              Answer 18 questions to evaluate your technical maturity across data quality, automation, integration, governance, reporting, and user adoption.
+              Quick self-assessment of your revenue systems maturity. Answer 18 questions across data quality, automation, integration, governance, reporting, and user adoption.
             </p>
             <p className="text-description max-w-2xl mx-auto text-muted-foreground">
-              Takes 5 minutes. You'll receive an instant score and detailed breakdown.
+              Takes 5 minutes. Instant score and category breakdown. No sales call required.
             </p>
           </div>
 

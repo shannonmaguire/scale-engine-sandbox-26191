@@ -115,8 +115,8 @@ const AssessmentPreview = () => {
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
       <SEOHead
-        title="Your Assessment Results | CWT Studio"
-        description="View your technical maturity assessment score and unlock detailed insights."
+        title="Your Health Check Results | CWT Studio"
+        description="View your free revenue systems health check score and unlock detailed category analysis."
         canonicalUrl="/assessment-preview"
       />
 
@@ -124,11 +124,11 @@ const AssessmentPreview = () => {
         <div className="max-w-4xl mx-auto">
           <div className="mb-12 text-center">
             <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4">
-              Assessment Complete
+              Free Health Check Complete
             </div>
-            <h1 className="heading-page mb-4">Your Technical Maturity Score</h1>
+            <h1 className="heading-page mb-4">Your Revenue Systems Score</h1>
             <p className="text-muted-foreground">
-              Enter your email below to unlock detailed category analysis and receive a PDF report.
+              Enter your email to unlock detailed category analysis and receive your full report with personalized recommendations.
             </p>
           </div>
 
