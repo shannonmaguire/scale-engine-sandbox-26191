@@ -87,8 +87,7 @@ const Navigation = () => {
                       >
                         <span className="text-white">{link.label}</span>
                         <span className="text-xs text-white/60">
-                          {link.label === "Assessment" ? "(2 weeks)" :
-                           link.label === "Sprint" ? "(90 days)" :
+                          {link.label === "Sprint" ? "(90 days)" :
                            link.label === "Fractional Ops" ? "(ongoing)" : ""}
                         </span>
                       </Link>

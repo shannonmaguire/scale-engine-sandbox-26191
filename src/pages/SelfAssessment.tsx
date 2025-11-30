@@ -26,6 +26,17 @@ const SelfAssessment = () => {
       
       <div className="container-standard py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
+          {/* Intro Section */}
+          <div className="mb-12 text-center">
+            <h1 className="heading-page mb-6">Revenue Systems Assessment</h1>
+            <p className="text-description max-w-2xl mx-auto mb-4">
+              Answer 18 questions to evaluate your technical maturity across data quality, automation, integration, governance, reporting, and user adoption.
+            </p>
+            <p className="text-description max-w-2xl mx-auto text-muted-foreground">
+              Takes 5 minutes. You'll receive an instant score and detailed breakdown.
+            </p>
+          </div>
+
           <ChecklistWizard
             checklistId={technicalMaturityChecklist.id}
             title={technicalMaturityChecklist.title}
