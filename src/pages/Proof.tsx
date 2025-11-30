@@ -183,12 +183,12 @@ const Proof = () => {
       
       <Breadcrumbs />
       
-      {/* Minimal Hero */}
-      <Section noPadding className="border-b">
+      {/* Hero */}
+      <Section noPadding className="border-b border-border">
         <div className="section-spacing-half">
-          <h1 className="heading-page mb-6">Proof of Execution</h1>
-          <p className="text-description text-muted-foreground font-mono">
-            Systems deployed under documented conditions with measured outcomes.
+          <h1 className="heading-page mb-4">Proof</h1>
+          <p className="text-description text-muted-foreground">
+            7 deployed systems with measured outcomes.
           </p>
         </div>
       </Section>
@@ -198,122 +198,79 @@ const Proof = () => {
         <CaseStudyCarousel caseStudies={caseStudies} />
       </Section>
 
-      {/* Quick Metrics Bar */}
-      <Section variant="muted" className="py-16 border-t border-border">
-        <div className="text-center mb-10">
-          <h2 className="text-label text-muted-foreground mb-2">
-            Featured Case Studies
-          </h2>
-          <p className="text-description text-muted-foreground">
-            From 42+ total deployments
-          </p>
-        </div>
-        <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
+      {/* Metrics */}
+      <Section variant="muted" className="py-12 border-t border-border">
+        <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
           <div className="text-center">
-            <div className="heading-subsection font-mono font-bold text-primary mb-2">7</div>
-            <div className="text-description text-muted-foreground">Featured Case Studies</div>
+            <div className="heading-subsection text-primary mb-1">7</div>
+            <div className="text-description text-muted-foreground">Case Studies</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection font-mono font-bold text-primary mb-2">$500K+</div>
+            <div className="heading-subsection text-primary mb-1">$500K+</div>
             <div className="text-description text-muted-foreground">Pipeline Activated</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection font-mono font-bold text-primary mb-2">107%</div>
-            <div className="text-description text-muted-foreground">Peak Growth Rate</div>
+            <div className="heading-subsection text-primary mb-1">107%</div>
+            <div className="text-description text-muted-foreground">Peak Growth</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection font-mono font-bold text-primary mb-2">90 Days</div>
+            <div className="heading-subsection text-primary mb-1">90 Days</div>
             <div className="text-description text-muted-foreground">Fastest Deploy</div>
           </div>
         </div>
       </Section>
 
-      {/* Pattern Recognition - Condensed */}
+      {/* Patterns */}
       <Section className="border-t border-border">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">System Performance Conditions</h2>
-          </div>
+        <div className="max-w-3xl mx-auto">
+          <h2 className="heading-section mb-10">What Works</h2>
 
-          <div className="grid md:grid-cols-2 gap-6 items-stretch auto-rows-fr">
-            <div className="border border-border p-6 h-full">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-primary" strokeWidth={2} />
-                </div>
-                <div>
-                  <h3 className="heading-subsection mb-3">ICP Before Infrastructure</h3>
-                  <p className="text-description text-muted-foreground">
-                    Infrastructure performs when ideal customer profiles are defined first. Automation scales what targeting validates.
-                  </p>
-                </div>
-              </div>
+          <div className="grid gap-6">
+            <div className="bg-card border-l-2 border-primary p-6">
+              <h3 className="heading-subsection mb-3">ICP Before Infrastructure</h3>
+              <p className="text-description text-muted-foreground">
+                Infrastructure performs when ideal customer profiles are defined first.
+              </p>
             </div>
 
-            <div className="border border-border p-6 h-full">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-primary" strokeWidth={2} />
-                </div>
-                <div>
-                  <h3 className="heading-subsection mb-3">Manual Execution Consumes Strategic Capacity</h3>
-                  <p className="text-description text-muted-foreground">
-                    Administrative workflows occupy founder time regardless of product performance. Automation shifts capacity allocation from execution to decision architecture.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card border-l-2 border-primary p-6">
+              <h3 className="heading-subsection mb-3">Automation Shifts Capacity</h3>
+              <p className="text-description text-muted-foreground">
+                Administrative workflows occupy founder time. Automation moves capacity from execution to strategy.
+              </p>
             </div>
 
-            <div className="border border-border p-6 h-full">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-primary" strokeWidth={2} />
-                </div>
-                <div>
-                  <h3 className="heading-subsection mb-3">Dashboards Drive Decisions</h3>
-                  <p className="text-description text-muted-foreground">
-                    Real-time visibility enables data-informed decisions without requiring retrospective analysis.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card border-l-2 border-primary p-6">
+              <h3 className="heading-subsection mb-3">Dashboards Drive Decisions</h3>
+              <p className="text-description text-muted-foreground">
+                Real-time visibility enables data-informed decisions without retrospective analysis.
+              </p>
             </div>
 
-            <div className="border border-border p-6 h-full">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-5 h-5 text-primary" strokeWidth={2} />
-                </div>
-                <div>
-                  <h3 className="heading-subsection mb-3">90-Day Validation Cycles</h3>
-                  <p className="text-description text-muted-foreground">
-                    Early wins validate system design before full deployment. Documentation creates compounding momentum.
-                  </p>
-                </div>
-              </div>
+            <div className="bg-card border-l-2 border-primary p-6">
+              <h3 className="heading-subsection mb-3">90-Day Validation Cycles</h3>
+              <p className="text-description text-muted-foreground">
+                Early wins validate system design. Documentation creates compounding momentum.
+              </p>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <Section className="border-t border-border">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
-            <span className="text-primary font-semibold">Ready for Similar Results?</span>
-          </div>
           <h2 className="heading-section mb-6">
-            System Implementation
+            Start With Assessment
           </h2>
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Implementation begins with infrastructure assessment. Current state audit, gap analysis, sequenced 90-day deployment roadmap.
+          <p className="text-description text-muted-foreground mb-10">
+            2-week infrastructure audit. Gap analysis. 90-day deployment roadmap.
           </p>
           <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
-            Start Your Assessment
+            Start Assessment
           </ConversionOptimizedButton>
         </div>
       </Section>
