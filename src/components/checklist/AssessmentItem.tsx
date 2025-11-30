@@ -59,54 +59,49 @@ export const AssessmentItem = ({
           </p>
         )}
 
-        {/* Pill Button Options */}
-        <div className="flex flex-wrap gap-2">
+        {/* Answer Buttons - Technical Style */}
+        <div className="flex flex-wrap sm:flex-nowrap gap-3">
           <button
             type="button"
             onClick={() => !disabled && onChange("yes")}
             disabled={disabled}
             className={cn(
-              "px-5 py-2 rounded-full font-sans text-[14px] font-medium transition-all duration-200",
-              "border border-black/10",
-              value === "yes" 
-                ? "bg-primary text-primary-foreground shadow-sm" 
-                : "bg-white hover:bg-[#F8F8F8] text-foreground",
+              "flex-1 px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
+              value === "yes"
+                ? "bg-primary/10 text-primary border-2 border-primary"
+                : "bg-transparent text-foreground/60 border-2 border-border hover:border-primary/40",
               disabled && "opacity-50 cursor-not-allowed"
             )}
           >
-            Yes
+            [ YES ]
           </button>
-          
           <button
             type="button"
             onClick={() => !disabled && onChange("partial")}
             disabled={disabled}
             className={cn(
-              "px-5 py-2 rounded-full font-sans text-[14px] font-medium transition-all duration-200",
-              "border border-black/10",
-              value === "partial" 
-                ? "bg-primary text-primary-foreground shadow-sm" 
-                : "bg-white hover:bg-[#F8F8F8] text-foreground",
+              "flex-1 px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
+              value === "partial"
+                ? "bg-accent/10 text-accent border-2 border-accent"
+                : "bg-transparent text-foreground/60 border-2 border-border hover:border-accent/40",
               disabled && "opacity-50 cursor-not-allowed"
             )}
           >
-            Partially
+            [ PARTIAL ]
           </button>
-          
           <button
             type="button"
             onClick={() => !disabled && onChange("no")}
             disabled={disabled}
             className={cn(
-              "px-5 py-2 rounded-full font-sans text-[14px] font-medium transition-all duration-200",
-              "border border-black/10",
-              value === "no" 
-                ? "bg-primary text-primary-foreground shadow-sm" 
-                : "bg-white hover:bg-[#F8F8F8] text-foreground",
+              "flex-1 px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
+              value === "no"
+                ? "bg-destructive/10 text-destructive border-2 border-destructive"
+                : "bg-transparent text-foreground/60 border-2 border-border hover:border-destructive/40",
               disabled && "opacity-50 cursor-not-allowed"
             )}
           >
-            No
+            [ NO ]
           </button>
         </div>
       </div>

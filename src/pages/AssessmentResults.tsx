@@ -185,17 +185,23 @@ const AssessmentResults = () => {
           )}
 
           {/* Overall Score Section */}
-          <Card className="p-8 mb-8">
+          <Card className="p-8 mb-8 border-2 border-border">
             <div className="text-center">
-              <div className="text-sm font-medium text-muted-foreground mb-2">OVERALL MATURITY SCORE</div>
-              <div className="text-6xl font-bold mb-4">{overallProgress}/36</div>
-              <Badge className={`${insight.bg} ${insight.color} border-0 mb-4`}>
+              <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-4">TECHNICAL MATURITY ASSESSMENT</div>
+              <div className="font-mono text-5xl md:text-6xl font-bold mb-4 text-foreground">
+                SCORE: {overallProgress}/36 | TIER: {insight.text.toUpperCase()}
+              </div>
+              <Badge className={`${insight.bg} ${insight.color} border-0 mb-6 font-mono`}>
                 {insight.text}
               </Badge>
-              <div className="text-sm text-muted-foreground">
-                {answerCounts.yes} Yes (2 pts each), {answerCounts.partial} Partial (1 pt each), {answerCounts.no} No (0 pts)
+              <div className="font-mono text-sm text-muted-foreground mb-6">
+                {answerCounts.yes} YES ({answerCounts.yes * 2} pts) · {answerCounts.partial} PARTIAL ({answerCounts.partial} pts) · {answerCounts.no} NO (0 pts)
               </div>
-              <Progress value={(overallProgress / 36) * 100} className="mt-6 h-2" />
+              <div className="max-w-md mx-auto">
+                <div className="font-mono text-xs text-muted-foreground mb-2">
+                  {'█'.repeat(Math.floor((overallProgress / 36) * 30))}{'░'.repeat(30 - Math.floor((overallProgress / 36) * 30))}
+                </div>
+              </div>
             </div>
           </Card>
 

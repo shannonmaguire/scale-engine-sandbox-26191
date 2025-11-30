@@ -74,7 +74,7 @@ const Navigation = () => {
                 Services
                 <ChevronDown size={14} className="!text-white" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56 bg-authority border-white/20 z-[100]">
+              <DropdownMenuContent align="start" className="w-64 bg-authority border-white/20 z-[100]">
                 <div className="px-2 py-1.5">
                   <div className="text-xs font-mono font-semibold !text-white/60 uppercase tracking-wider mb-1">
                     Core Services
@@ -83,9 +83,14 @@ const Navigation = () => {
                     <DropdownMenuItem key={link.href} asChild>
                       <Link 
                         to={link.href} 
-                        className="w-full font-mono text-sm font-medium !text-white transition-colors"
+                        className="w-full font-mono text-sm font-medium !text-white transition-colors flex justify-between items-center"
                       >
-                        {link.label}
+                        <span>{link.label}</span>
+                        <span className="text-xs text-white/40">
+                          {link.label === "Assessment" ? "(2 weeks)" :
+                           link.label === "Sprint" ? "(90 days)" :
+                           link.label === "Fractional Ops" ? "(ongoing)" : ""}
+                        </span>
                       </Link>
                     </DropdownMenuItem>
                   ))}

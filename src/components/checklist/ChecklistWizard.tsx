@@ -88,24 +88,30 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
   const allQuestionsAnswered = answeredItems === totalItems;
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-black/5 p-6 md:p-10">
+    <div className="relative border-2 border-border bg-card p-8 md:p-12">
+      {/* Corner Accents */}
+      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
+      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary" />
+      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary" />
+      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary" />
+      
       {/* Header */}
-      <div className="mb-8 text-center">
-        <h1 className="font-mono text-3xl md:text-4xl font-semibold mb-3 text-foreground">
+      <div className="mb-8">
+        <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+          TECHNICAL MATURITY ASSESSMENT | v1.0
+        </div>
+        <h1 className="font-mono text-2xl md:text-3xl font-bold mb-4 text-foreground">
           {title}
         </h1>
-        <p className="font-sans text-sm text-muted-foreground">
-          Step {currentStep + 1} of {categories.length} · {answeredItems}/{totalItems} questions answered
-        </p>
+        <div className="font-mono text-sm text-foreground/70">
+          Step {currentStep + 1} of {categories.length} | {currentCategory.title}
+        </div>
       </div>
 
-      {/* Progress Bar */}
+      {/* Progress Bar - Technical Notation */}
       <div className="mb-8">
-        <div className="h-2 bg-black/5 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-primary transition-all duration-300"
-            style={{ width: `${(answeredItems / totalItems) * 100}%` }}
-          />
+        <div className="font-mono text-xs text-muted-foreground mb-2">
+          {'█'.repeat(Math.floor((answeredItems / totalItems) * 20))}{'░'.repeat(20 - Math.floor((answeredItems / totalItems) * 20))} {answeredItems}/{totalItems} points
         </div>
       </div>
 
