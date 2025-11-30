@@ -12,9 +12,17 @@ const Navigation = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Only check auth if Supabase is configured
+    if (!import.meta.env.VITE_SUPABASE_URL) {
+      return;
+    }
+
     // Check auth status
     supabase.auth.getSession().then(({ data: { session } }) => {
       setIsAuthenticated(!!session);
+    }).catch((error) => {
+      console.error("Auth check failed:", error);
+      setIsAuthenticated(false);
     });
 
     // Listen for auth changes
