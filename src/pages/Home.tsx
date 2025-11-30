@@ -102,20 +102,23 @@ const Home = () => {
         />
         
         <div className="relative z-10 max-w-4xl">
-          {/* Status indicator */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
-            <span className="text-primary font-semibold">Systems Operational</span>
+          {/* Version badge */}
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
+            <span className="text-primary font-semibold">v2.0</span>
+            <span className="text-muted-foreground">|</span>
             <span className="text-muted-foreground">{METRICS.deployments}</span>
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
-            Revenue Infrastructure<br />
-            Installed in 90 Days
+            We build your revenue infrastructure.
           </h1>
 
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
-            Systems engineered for load tolerance, documented for handoff, measured against baselines.
+          <p className="text-description text-muted-foreground mb-6 max-w-2xl">
+            Backend systems for legal, compliance, and healthcare teams.
+          </p>
+
+          <p className="font-mono text-sm text-foreground/60 mb-10">
+            // assessment → sprint → operations
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -150,7 +153,7 @@ const Home = () => {
           </div>
 
           <p className="text-description text-muted-foreground mb-10">
-            Operational failures that occur without infrastructure:
+            Operational failures without infrastructure:
           </p>
 
           <div className="grid gap-4">
@@ -281,7 +284,7 @@ const Home = () => {
                       </div>
                     </div>
 
-                    <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+                    <p className="text-base text-foreground/80 mb-4 leading-relaxed">
                       {phase.description}
                     </p>
 

@@ -96,15 +96,24 @@ const Sprint = () => {
       <Breadcrumbs />
       
       <Section className="border-b border-border">
-        {/* Hero */}
+      {/* Hero */}
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h1 className="heading-section">90-Day Revenue Sprint</h1>
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
+            <span className="text-primary font-semibold">DEPLOYMENT MANIFEST</span>
+            <span className="text-muted-foreground">|</span>
+            <span className="text-muted-foreground">Sprint v2.0</span>
+            <span className="text-muted-foreground">|</span>
+            <span className="text-muted-foreground">Duration: 90 Days</span>
+            <span className="text-muted-foreground">|</span>
+            <span className="text-muted-foreground">Scope: Fixed</span>
           </div>
           
-          <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
-            {TIMELINES.sprint} deployment cycle to install revenue infrastructure—workflows, automation, dashboards, documentation. Fixed timeline, measurable outcomes, documented handoff. Assessment required before engagement. {METRICS.feeCredit}.
+          <h1 className="heading-page mb-6 leading-[1.1]">
+            90-Day Revenue Sprint
+          </h1>
+          
+          <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-10">
+            This is an engineering sprint. Not a creative sprint.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -118,47 +127,52 @@ const Sprint = () => {
         </div>
       </Section>
 
-      {/* 5-Phase Timeline */}
+      {/* Deployment Timeline - Blueprint Style */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Deployment Timeline</h2>
+            <h2 className="heading-section">Deployment Sequence</h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="border border-border/40 bg-card/50 p-8 font-mono text-sm leading-relaxed">
             {phases.map((phase, index) => (
-              <div key={index} className="border-l-2 border-primary/50 pl-6">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <div className="font-mono text-base font-semibold text-foreground">
-                    {phase.phase}: {phase.title}
-                  </div>
-                  <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
-                    {phase.duration}
-                  </div>
+              <div key={index} className="mb-6 last:mb-0">
+                <div className="flex items-baseline gap-3 mb-2">
+                  <span className="text-primary font-bold">├── [{String(index + 1).padStart(2, '0')}]</span>
+                  <span className="text-foreground font-bold uppercase tracking-wide">{phase.title}</span>
                 </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  {phase.description}
-                </p>
+                <div className="ml-12 space-y-1 text-foreground/70">
+                  <div>└── {phase.description}</div>
+                  <div className="text-primary/70">└── Output: {phase.phase === "Phase 1" ? "Requirements specification" : 
+                    phase.phase === "Phase 2" ? "Infrastructure deployed" : 
+                    phase.phase === "Phase 3" ? "System validated" : 
+                    phase.phase === "Phase 4" ? "Production live" : 
+                    "Operations manual"}</div>
+                </div>
               </div>
             ))}
+            
+            <div className="mt-8 pt-6 border-t border-border/40 text-xs text-muted-foreground uppercase tracking-widest">
+              FIXED SCOPE | DOCUMENTED HANDOFF | ZERO VENDOR LOCK-IN
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* Deliverables */}
+      {/* System Stack */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Core Deliverables</h2>
+            <h2 className="heading-section">System Stack</h2>
           </div>
 
           <div className="space-y-4">
             {deliverables.map((item, index) => (
               <div key={index} className="flex items-start gap-3">
                 <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-base text-foreground/90 leading-relaxed">{item}</p>
+                <p className="text-base text-foreground leading-relaxed">{item}</p>
               </div>
             ))}
           </div>

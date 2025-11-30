@@ -165,10 +165,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 grid gap-3 md:grid-cols-2 md:items-center">
           <p className="text-white/40 font-mono text-xs order-2 md:order-1">
-            © {currentYear} CWT Studio. All rights reserved.
+            © {currentYear} CWT Studio. All rights reserved. | v2.0
           </p>
           <span className="text-white/30 font-mono text-xs uppercase tracking-wider order-1 md:order-2 md:text-right">
-            Backend Systems • Predictable Revenue • Operational Excellence
+            Infrastructure that compounds.
           </span>
         </div>
       </div>

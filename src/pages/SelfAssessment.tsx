@@ -10,7 +10,7 @@ const SelfAssessment = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA]">
+    <div className="min-h-screen bg-background">
       <SEOHead
         title="Free Technical Maturity Self-Assessment | CWT Studio"
         description="Assess your Salesforce and revenue systems maturity in 5 minutes. Get instant scoring, personalized recommendations, and a downloadable PDF report."
@@ -25,7 +25,7 @@ const SelfAssessment = () => {
       />
       
       <div className="container-standard py-12 md:py-16">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <ChecklistWizard
             checklistId={technicalMaturityChecklist.id}
             title={technicalMaturityChecklist.title}
