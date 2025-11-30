@@ -8,7 +8,7 @@ import { EngagementTracker } from "@/components/EngagementTracker";
 import { Linkedin, CheckCircle } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import shannonHeadshot from "@/assets/shannon-headshot.jpg";
-import { CTA, ROUTES } from "@/lib/canonical-constants";
+import { CTA, ROUTES, TIMELINES } from "@/lib/canonical-constants";
 
 const About = () => {
   usePerformanceMonitoring();
@@ -194,7 +194,7 @@ const About = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-6">Start With Assessment</h2>
           <p className="text-description text-muted-foreground mb-10">
-            2-week diagnostic. Maps infrastructure against benchmarks. Delivers prioritized 90-day roadmap.
+            {TIMELINES.assessment} diagnostic. Maps infrastructure against benchmarks. Delivers prioritized 90-day roadmap.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

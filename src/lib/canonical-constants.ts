@@ -64,7 +64,7 @@ export const METRICS = {
 // ===== TIMELINES =====
 export const TIMELINES = {
   sprint: "90 days",
-  assessment: "1 week",
+  assessment: "2 weeks",
   fractional: "Ongoing",
   webSystems: "4-8 weeks",
 } as const;

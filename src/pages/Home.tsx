@@ -8,7 +8,7 @@ import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
 import { CheckCircle, ArrowRight, AlertCircle, Database, Zap, FileText, BarChart3 } from "lucide-react";
-import { CTA, ROUTES, METRICS } from "@/lib/canonical-constants";
+import { CTA, ROUTES, METRICS, TIMELINES } from "@/lib/canonical-constants";
 
 const Home = () => {
   usePerformanceMonitoring();
@@ -54,7 +54,7 @@ const Home = () => {
     {
       phase: "01",
       title: "Assessment",
-      duration: "2 weeks",
+      duration: TIMELINES.assessment,
       output: "Revenue Infrastructure Scorecard + 90-day roadmap",
       description: "Diagnostic audit mapping current state against industry benchmarks. Delivers prioritized implementation sequence."
     },
