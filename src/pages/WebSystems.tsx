@@ -11,7 +11,6 @@ import { BackButton } from "@/components/BackButton";
 import { trackEvent, trackCTAClick } from "@/hooks/usePageTracking";
 import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
-import { CTA, ROUTES } from "@/lib/canonical-constants";
 const WebSystems = () => {
   useEffect(() => {
     trackEvent('websystems_view', {
@@ -72,20 +71,26 @@ const WebSystems = () => {
     features: ["Major updates & optimization", "24-hour response time", "6-month expiration", "Dedicated support contact"]
   }];
   const faqs = [{
-    question: "How does this differ from hiring an agency?",
-    answer: "Infrastructure sites. CRM-wired, conversion-tracked, documented for ownership transfer. Demand capture and routing system."
+    question: "How does this differ from hiring an agency or freelancer?",
+    answer: "Most web projects focus on design aesthetics without connecting to revenue operations. We build sites as infrastructure—CRM-wired, conversion-tracked, and documented for ownership transfer. You're not paying for pixels; you're paying for a system that captures and routes demand."
   }, {
     question: "Can my team update pages without a developer?",
-    answer: "Yes. Owner guide, components, page templates. Content updates and layout changes. No developer required."
+    answer: "Yes. You receive an owner guide, components, and page templates that your team can edit. Content updates, layout changes, and new pages using existing templates don't require developer involvement."
+  }, {
+    question: "Do I need an Infrastructure Assessment first?",
+    answer: "No. Web Systems is standalone and does not require prior assessment. However, if you're unsure whether your CRM, data, and integrations are ready to support a high-performance website, our Infrastructure Assessment (starting at $4,500) provides clarity before build. That fee credits fully toward Web Systems if you proceed."
   }, {
     question: "What CRM platforms do you integrate with?",
-    answer: "Existing stack. HubSpot, Salesforce, Pipedrive, ActiveCampaign, custom. CRM recommendations available."
+    answer: "We work with your existing stack—HubSpot, Salesforce, Pipedrive, ActiveCampaign, or custom solutions. Integration includes form routing, event tracking, and conversion dashboards. If you don't have a CRM yet, we'll recommend options based on your business model."
   }, {
     question: "Do you offer ongoing website maintenance?",
-    answer: "On-demand support blocks. 10, 20, or 40 hours. Updates and optimizations. 6-month validity."
+    answer: "Yes. We offer on-demand support blocks (10, 20, or 40 hours) for updates, fixes, and optimizations. Hours are valid for 6 months and include content updates, component modifications, performance optimization, and more. New feature development requires separate scoping."
+  }, {
+    question: "Do you take over my hosting?",
+    answer: "No. We set up a clean deployment on your provider (Vercel, Netlify, AWS, etc.) and hand you the keys. You maintain control over infrastructure, billing, and access."
   }, {
     question: "What happens if I want to switch developers later?",
-    answer: "Full ownership. Repository, deployment credentials, documentation. Any React developer can continue. No lock-in."
+    answer: "That's the point. You own the repository, deployment credentials, and documentation. Hire any React developer to continue building. No vendor lock-in, no proprietary systems."
   }];
   const handleCTAClick = (location: string) => {
     trackCTAClick(`Web Systems ${location} CTA`, `web-systems-${location}`, '/contact?interest=web&source_page=web-systems');
@@ -94,32 +99,44 @@ const WebSystems = () => {
     trackCTAClick(`Website Support ${packageName}`, 'web-systems-support', '/contact?interest=website-support&source_page=web-systems');
   };
   return <div className="min-h-screen">
-      <SEOHead 
-        title="Web Systems | Revenue Infrastructure You Own | CWT Studio" 
-        description="Performance-driven websites integrated into your revenue operations. CRM-wired, conversion-tracked, fully documented. React, TypeScript, zero vendor lock-in." 
-        keywords={['revenue infrastructure', 'CRM website integration', 'lead capture automation', 'performance web development', 'website ownership', 'conversion tracking']} 
-        canonicalUrl="/web-systems"
-        serviceSchema={{
-          name: 'Web Systems - Revenue Infrastructure',
-          description: 'Performance-driven websites integrated into revenue operations. CRM-wired, conversion-tracked, fully documented for ownership transfer.',
-          areaServed: ['Worldwide'],
-          offers: [
-            {
-              name: 'Essentials Package',
-              description: '5-7 pages with base CRM integration and conversion tracking'
-            },
-            {
-              name: 'Core Package',
-              description: '8-12 pages with gated assets and advanced CRM workflows'
-            },
-            {
-              name: 'Scale Package',
-              description: 'Full component library with multi-brand architecture'
-            }
-          ]
-        }}
-        faqSchema={faqs}
-      />
+      <SEOHead title="Web Systems | Revenue Infrastructure You Own | CWT Studio" description="Performance-driven websites integrated into your revenue operations. CRM-wired, conversion-tracked, fully documented. React, TypeScript, zero vendor lock-in." keywords={['revenue infrastructure', 'CRM website integration', 'lead capture automation', 'performance web development', 'website ownership', 'conversion tracking']} canonicalUrl="/web-systems" />
+      
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "Web Systems - Revenue Infrastructure",
+          "provider": {
+            "@type": "Organization",
+            "name": "CWT Studio"
+          },
+          "serviceType": "Web Development & Revenue Operations Integration",
+          "description": "Performance-driven websites integrated into revenue operations. CRM-wired, conversion-tracked, fully documented for ownership transfer.",
+          "areaServed": "Worldwide",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "USD",
+            "offerCount": "3",
+            "offers": [
+              {
+                "@type": "Offer",
+                "name": "Essentials Package",
+                "description": "5-7 pages with base CRM integration and conversion tracking"
+              },
+              {
+                "@type": "Offer",
+                "name": "Core Package",
+                "description": "8-12 pages with gated assets and advanced CRM workflows"
+              },
+              {
+                "@type": "Offer",
+                "name": "Scale Package",
+                "description": "Full component library with multi-brand architecture"
+              }
+            ]
+          }
+        })}
+      </script>
       
       <Breadcrumbs />
       
@@ -164,7 +181,7 @@ const WebSystems = () => {
               ctaName="Web Systems Hero CTA"
               location="web-systems-hero"
             >
-              {CTA.scheduleConsultation}
+              Request Consultation
             </ConversionOptimizedButton>
             <Button variant="outline" asChild>
               <a href="#packages">See Packages</a>
@@ -176,7 +193,7 @@ const WebSystems = () => {
         <div className="mb-16">
           <h2 className="heading-section mb-4">What You Receive</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
-            Documented deployment sequence. Operational transfer, not perpetual dependency.
+            Every web system follows a documented deployment sequence designed for operational transfer, not perpetual dependency.
           </p>
           
           <div className="max-w-3xl space-y-6">
@@ -187,7 +204,7 @@ const WebSystems = () => {
                 <h3 className="font-mono font-bold text-lg">Site Architecture</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
-                Page structure, routing, CRM events, analytics. Form submissions, clicks, conversion paths documented and pipeline-connected.
+                Page structure, routing map, CRM event tracking, and analytics wiring. Every form submission, button click, and conversion path documented and connected to your pipeline.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Lead capture flow with CRM routing</li>
@@ -204,7 +221,7 @@ const WebSystems = () => {
                 <h3 className="font-mono font-bold text-lg">Component Library</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
-                Reusable components, page templates, design system. Content and layout editing without rebuild cycles.
+                Reusable UI components, page templates, and design system. Your team edits content and layouts without rebuilding from scratch every time.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Editable page templates (landing pages, resources, case studies)</li>
@@ -221,7 +238,7 @@ const WebSystems = () => {
                 <h3 className="font-mono font-bold text-lg">Handoff SOP</h3>
               </div>
               <p className="text-sm text-muted-foreground mb-3">
-                Ownership transfer documentation. GitHub repo, deployment credentials, CMS access, analytics, update procedures.
+                Complete documentation for ownership transfer: GitHub repo, deployment credentials, CMS access, analytics dashboards, and update procedures.
               </p>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• GitHub repository with full source code access</li>
@@ -234,7 +251,7 @@ const WebSystems = () => {
 
           <div className="mt-8 p-6 bg-muted/30 border border-border rounded-lg max-w-3xl">
             <p className="text-sm text-foreground font-mono">
-              No licensing. No lock-in. In-house updates, hire developers, or retainer—operator choice.
+              <strong>No ongoing licensing. No vendor lock-in.</strong> Update in-house, hire your own developer, or keep us on retainer—your choice.
             </p>
           </div>
         </div>

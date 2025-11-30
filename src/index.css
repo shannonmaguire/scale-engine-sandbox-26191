@@ -56,13 +56,7 @@ img {
 
     /* Muted Elements */
     --muted: var(--muted-gray);
-    --muted-foreground: 0 0% 25%;  /* Darkened for WCAG AA compliance: 7:1 contrast ratio */
-    
-    /* Surface Colors */
-    --surface-muted: 40 10% 94%;   /* Lighter muted section background for better contrast */
-    
-    /* Subtle Text - Intentional de-emphasis */
-    --foreground-subtle: 0 0% 35%; /* For secondary text that needs less prominence */
+    --muted-foreground: 0 0% 35%;  /* Improved contrast: was deep-black, now darker gray for AA compliance */
 
     /* Accent - Teal for data/interaction */
     --accent: var(--teal);
@@ -252,7 +246,6 @@ img {
     @apply bg-background text-foreground font-sans;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     overflow-x: hidden; /* Prevent horizontal scroll */
-    line-height: 1.7;
   }
   
   /* Enhanced focus indicators for accessibility */

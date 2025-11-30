@@ -2,15 +2,13 @@ User-agent: *
 Allow: /
 
 # Priority pages
-Allow: /assessment
-Allow: /sprint
-Allow: /fractional
+Allow: /services
 Allow: /salesforce
-Allow: /web-systems
 Allow: /proof
-Allow: /resources
-Allow: /self-assessment
+Allow: /blog
+Allow: /assessment
 Allow: /ae-hub
+Allow: /resources
 
 # Block utility pages
 Disallow: /auth

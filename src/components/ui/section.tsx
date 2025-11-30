@@ -15,7 +15,7 @@ const Section = React.forwardRef<HTMLElement, SectionProps>(({
 }, ref) => {
   const variantStyles = {
     standard: "bg-background",
-    muted: "bg-[hsl(var(--surface-muted))]"
+    muted: "bg-muted"
   };
   return <section ref={ref} className={cn(
   // Standard section spacing: 80px (py-20)

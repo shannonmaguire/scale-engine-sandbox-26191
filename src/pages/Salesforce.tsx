@@ -5,28 +5,27 @@ import { Link } from "react-router-dom";
 import { CheckCircle, ArrowRight, BarChart3, Clock, Zap, Target, Shield } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { CTA, ROUTES } from "@/lib/canonical-constants";
 
 const Salesforce = () => {
   const services = [
     {
       icon: BarChart3,
       title: "Revenue Systems Assessment",
-      description: "Salesforce configuration and revenue infrastructure audit",
+      description: "Complete assessment of your Salesforce configuration and revenue infrastructure",
       duration: "2 weeks",
       deliverables: ["Revenue Infrastructure Scorecard", "System analysis", "90-day roadmap"]
     },
     {
       icon: Zap,
       title: "Automation & Integration",
-      description: "Tool integration. Manual process automation.",
+      description: "Connect your existing tools and automate manual processes to increase efficiency",
       duration: "4-8 weeks",
       deliverables: ["Custom integrations", "Workflow automation", "Data synchronization"]
     },
     {
       icon: Target,
       title: "Performance Optimization",
-      description: "Salesforce configuration tuned for adoption and performance",
+      description: "Fine-tune your Salesforce configuration for maximum team adoption and results",
       duration: "3-6 weeks",
       deliverables: ["Custom fields & objects", "Reporting dashboards", "User training"]
     }
@@ -42,20 +41,26 @@ const Salesforce = () => {
   const process = [
     {
       step: "01",
-      title: "Discovery & Strategy", 
-      description: "Current setup analysis. Optimization identification. Implementation roadmap.",
-      timeline: "Week 1-3"
+      title: "Discovery & Assessment", 
+      description: "We analyze your current setup, identify pain points, and map out optimization opportunities.",
+      timeline: "Week 1-2"
     },
     {
-      step: "02", 
-      title: "Build & Deploy",
-      description: "Optimization implementation. Minimal disruption.",
+      step: "02",
+      title: "Strategy & Planning",
+      description: "Create a detailed implementation roadmap with clear priorities and expected outcomes.",
+      timeline: "Week 3"
+    },
+    {
+      step: "03", 
+      title: "Implementation",
+      description: "Build and deploy optimizations with minimal disruption to your daily operations.",
       timeline: "Week 4-8"
     },
     {
-      step: "03",
-      title: "Training & Handoff",
-      description: "Knowledge transfer. Team adoption.",
+      step: "04",
+      title: "Training & Support",
+      description: "Ensure your team knows how to use the new systems and processes effectively.",
       timeline: "Week 8-10"
     }
   ];
@@ -73,24 +78,6 @@ const Salesforce = () => {
           'revenue infrastructure Salesforce'
         ]}
         canonicalUrl="/salesforce"
-        serviceSchema={{
-          name: 'Salesforce Revenue Infrastructure',
-          description: 'Assessment-driven Salesforce implementations backed by ISV & OEM partner expertise. Transform fragmented systems into scalable revenue infrastructure.',
-          offers: [
-            {
-              name: 'Revenue Systems Assessment',
-              description: 'Salesforce configuration and revenue infrastructure audit with 90-day roadmap'
-            },
-            {
-              name: 'Automation & Integration',
-              description: 'Tool integration and manual process automation for Salesforce'
-            },
-            {
-              name: 'Performance Optimization',
-              description: 'Salesforce configuration tuned for adoption and performance'
-            }
-          ]
-        }}
       />
       <Breadcrumbs />
       {/* Hero Section */}
@@ -103,10 +90,10 @@ const Salesforce = () => {
               <span className="text-accent">PLATFORM OPTIMIZATION</span>
             </div>
             <h1 className="heading-page mb-6">
-              Salesforce Revenue Infrastructure
+              Salesforce Built for Revenue Predictability
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Assessment-driven implementations backed by ISV & OEM partner expertise. Fragmented systems rebuilt as scalable revenue infrastructure.
+              Transform fragmented systems into scalable revenue infrastructure. Assessment-driven implementations backed by ISV & OEM partner expertise.
             </p>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 rounded-lg text-sm mb-6">
               <Shield className="w-4 h-4 text-accent" />
@@ -115,13 +102,13 @@ const Salesforce = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
                 <Link to="/contact?interest=salesforce">
-                  {CTA.scheduleConsultation}
+                  Schedule Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to={ROUTES.proof}>
-                  {CTA.seeProof}
+                <Link to="/proof">
+                  See Proof
                 </Link>
               </Button>
             </div>
@@ -131,9 +118,9 @@ const Salesforce = () => {
       {/* Services */}
       <Section>
         <div className="text-center mb-12">
-            <h2 className="heading-section mb-4 text-foreground">Salesforce Revenue Systems</h2>
-            <p className="text-base text-muted-foreground max-w-3xl mx-auto">
-              Assessment-driven implementations. Measured outcomes.
+            <h2 className="heading-section mb-4 text-foreground">Revenue Systems for Salesforce</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Assessment-driven implementations that make Salesforce work harder for your revenue team
             </p>
           </div>
           
@@ -148,11 +135,11 @@ const Salesforce = () => {
                   </div>
                 </StandardCardHeader>
                 <StandardCardContent>
-                  <p className="text-base text-muted-foreground mb-4">{service.description}</p>
+                  <p className="text-muted-foreground mb-4">{service.description}</p>
                   <div className="space-y-2">
-                    <p className="font-semibold text-base">Key Deliverables:</p>
+                    <p className="font-semibold text-sm">Key Deliverables:</p>
                     {service.deliverables.map((deliverable, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-base">
+                      <div key={idx} className="flex items-center gap-2 text-sm">
                         <CheckCircle className="w-3 h-3 text-accent flex-shrink-0" />
                         {deliverable}
                       </div>
@@ -178,7 +165,7 @@ const Salesforce = () => {
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-center gap-3 bg-card p-6 rounded-lg border-l-4 border-accent-data">
                   <Shield className="w-6 h-6 accent-data flex-shrink-0" />
-                  <span className="text-xl">{benefit}</span>
+                  <span className="text-lg">{benefit}</span>
                 </div>
               ))}
             </div>
@@ -194,7 +181,7 @@ const Salesforce = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gutter-standard relative">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gutter-standard relative">
             {/* Teal pipeline connector */}
             <div className="hidden lg:block absolute top-6 left-0 right-0 h-0.5 bg-accent/40" style={{ zIndex: 0 }} />
             
@@ -208,7 +195,7 @@ const Salesforce = () => {
                   <p className="text-sm text-accent font-semibold">{step.timeline}</p>
                 </StandardCardHeader>
                 <StandardCardContent>
-                  <p className="text-base text-muted-foreground">{step.description}</p>
+                  <p className="text-muted-foreground">{step.description}</p>
                 </StandardCardContent>
               </StandardCard>
             ))}
@@ -229,35 +216,65 @@ const Salesforce = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gutter-content spacing-subsection">
+          <div className="grid md:grid-cols-2 gutter-content spacing-subsection">
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-xl text-foreground mb-3">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
                 100+ Salesforce Certifications
               </h3>
-              <p className="text-base text-muted-foreground">
-                Deep platform expertise across all Salesforce clouds and specializations
+              <p className="text-muted-foreground">
+                CloudRoute's team holds over 100 Salesforce certifications across all clouds and specializations, bringing deep platform expertise to every implementation
               </p>
             </div>
 
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-xl text-foreground mb-3">
-                ISV & OEM Partner
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                ISV & OEM Partner Status
               </h3>
-              <p className="text-base text-muted-foreground">
-                Direct access to platform resources, beta features, and priority support channels
+              <p className="text-muted-foreground">
+                CloudRoute's ISV & OEM partnership with Salesforce provides direct access to platform resources, beta features, and priority support channels—ensuring cutting-edge implementation capabilities
               </p>
             </div>
 
             <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="font-mono font-bold text-xl text-foreground mb-3">
-                Measurable Outcomes
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                Rapid Implementation
               </h3>
-              <p className="text-base text-muted-foreground">
-                Documented results, adoption metrics, and 12-month growth projections
+              <p className="text-muted-foreground">
+                Faster deployment timelines without sacrificing quality or enterprise-grade standards
+              </p>
+            </div>
+
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                Technical Debt Resolution
+              </h3>
+              <p className="text-muted-foreground">
+                Proven frameworks to clean up legacy implementations and accelerate your deal cycles by 30%
+              </p>
+            </div>
+
+            <div className="bg-card p-7 rounded-lg border-l-4 border-accent hover:border-l-8 transition-all">
+              <h3 className="font-mono font-bold text-lg text-foreground mb-3">
+                Measurable ROI
+              </h3>
+              <p className="text-muted-foreground">
+                Every engagement includes documented outcomes, adoption metrics, and 12-month growth projections
               </p>
             </div>
           </div>
 
+          <div className="bg-warm/20 border-2 border-warm rounded-lg p-8 text-center mt-16">
+            <p className="text-lg text-foreground mb-6">
+              <strong>The Result:</strong> Operator-led revenue systems backed by a Salesforce-only ISV & OEM Partner with 100+ certifications and global delivery capabilities. 
+              We deliver the speed and pragmatism of a consultancy with the technical authority of a family-owned Salesforce specialist.
+            </p>
+            <Button size="lg" variant="teal" asChild>
+              <Link to="/contact">
+                Start Your Project
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </Section>
 
@@ -265,9 +282,24 @@ const Salesforce = () => {
       <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-4">Getting Started</h2>
-          <p className="text-xl text-muted-foreground mb-8">
-            Schedule a discovery consultation to assess your Salesforce configuration and identify high-impact optimizations.
+          <p className="text-lg text-muted-foreground mb-6">
+            Every Salesforce engagement begins with a discovery consultation where we assess your current setup and identify the highest-impact optimizations for your revenue operations.
           </p>
+          
+          <div className="bg-card border-l-4 border-accent rounded-lg p-6 mb-6 text-left">
+            <div>
+              <h3 className="font-semibold mb-2 text-lg">Discovery & Scoping</h3>
+                <p className="text-sm text-muted-foreground mb-3">
+                  Complimentary consultation to understand your needs and scope the right solution
+                </p>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Review current Salesforce configuration</li>
+                  <li>• Identify pain points and opportunities</li>
+                  <li>• Define project scope and timeline</li>
+                  <li>• Custom proposal with clear deliverables</li>
+                </ul>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="teal" asChild>
@@ -302,19 +334,19 @@ const Salesforce = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Revenue operations expertise</span>
+                  <span>Revenue operations expertise</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Business process design</span>
+                  <span>Business process design</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Performance analysis</span>
+                  <span>Performance analysis</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Ongoing optimization</span>
+                  <span>Ongoing optimization</span>
                 </li>
               </ul>
             </StandardCard>
@@ -326,24 +358,24 @@ const Salesforce = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Salesforce development</span>
+                  <span>Salesforce development</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">System integrations</span>
+                  <span>System integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Technical architecture</span>
+                  <span>Technical architecture</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-base">Platform maintenance</span>
+                  <span>Platform maintenance</span>
                 </li>
               </ul>
               
               <div className="mt-8 pt-6 border-t border-border">
-                <p className="text-base text-muted-foreground">
+                <p className="text-sm text-muted-foreground">
                   <span className="font-semibold text-foreground">Salesforce-Only Focus:</span> CloudRoute specializes exclusively in Salesforce, ensuring deep platform expertise without dilution.
                 </p>
               </div>

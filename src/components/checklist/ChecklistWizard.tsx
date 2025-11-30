@@ -47,23 +47,16 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
   };
 
   const handleViewResults = () => {
-    const progress = getProgress(checklistId, totalItems);
+    trackEvent("assessment_results_view", { checklistId, score: overallProgress });
     
-    trackEvent('assessment_completed', {
-      checklist_id: checklistId,
-      score: progress,
-      answers: answerCounts
-    });
-    
-    // Navigate to preview page instead of directly to results
-    navigate('/assessment-preview', {
+    navigate('/assessment-results', {
       state: {
         checklistId,
-        checklistTitle: title,
-        overallScore: progress,
-        answerCounts,
+        title,
+        categories,
         checklistState,
-        categoryCount: categories.length
+        overallProgress,
+        answerCounts
       }
     });
   };

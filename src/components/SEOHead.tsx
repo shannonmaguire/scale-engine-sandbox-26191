@@ -9,15 +9,6 @@ interface SEOHeadProps {
   canonicalUrl?: string;
   noindex?: boolean;
   type?: 'website' | 'article' | 'service';
-  includeOrganizationSchema?: boolean;
-  personSchema?: {
-    name: string;
-    jobTitle: string;
-    description: string;
-    url?: string;
-    sameAs?: string[];
-    image?: string;
-  };
   article?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -31,12 +22,13 @@ interface SEOHeadProps {
   serviceSchema?: {
     name: string;
     description: string;
-    provider?: string;
+    provider: string;
     areaServed?: string[];
-    offers?: Array<{
-      name: string;
-      description: string;
-    }>;
+    offers?: {
+      price: string;
+      priceCurrency: string;
+      description?: string;
+    };
   };
 }
 
@@ -58,8 +50,6 @@ const SEOHead = ({
   canonicalUrl,
   noindex = false,
   type = 'website',
-  includeOrganizationSchema = false,
-  personSchema,
   article,
   faqSchema,
   serviceSchema
@@ -148,51 +138,6 @@ const SEOHead = ({
     ]
   } : null;
 
-  // Organization Schema
-  const organizationStructuredData = includeOrganizationSchema ? {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'CWT Studio',
-    legalName: 'Creator Wealth Tools LLC',
-    url: 'https://cwtstudio.com',
-    logo: 'https://cwtstudio.com/og-image.jpg',
-    foundingDate: '2018',
-    founder: {
-      '@type': 'Person',
-      name: 'Shannon Maguire',
-      jobTitle: 'Founder & Revenue Systems Architect'
-    },
-    description: 'Revenue systems architecture and operations consulting. Fixed-scope implementations, 90-day cycles, documented handoffs.',
-    areaServed: 'Worldwide',
-    knowsAbout: [
-      'Revenue Operations',
-      'Salesforce Implementation',
-      'Business Automation',
-      'Technical Architecture',
-      'Systems Integration',
-      'Web Development'
-    ],
-    sameAs: [
-      'https://www.linkedin.com/company/cwt-studio'
-    ]
-  } : null;
-
-  // Person Schema
-  const personStructuredData = personSchema ? {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: personSchema.name,
-    jobTitle: personSchema.jobTitle,
-    description: personSchema.description,
-    url: personSchema.url || 'https://cwtstudio.com/about',
-    worksFor: {
-      '@type': 'Organization',
-      name: 'CWT Studio'
-    },
-    ...(personSchema.image && { image: personSchema.image }),
-    ...(personSchema.sameAs && { sameAs: personSchema.sameAs })
-  } : null;
-
   // FAQ Schema
   const faqStructuredData = faqSchema ? {
     '@context': 'https://schema.org',
@@ -215,21 +160,17 @@ const SEOHead = ({
     description: serviceSchema.description,
     provider: {
       '@type': 'Organization',
-      name: serviceSchema.provider || 'CWT Studio',
+      name: 'CWT Studio',
       url: 'https://cwtstudio.com'
     },
     areaServed: serviceSchema.areaServed || ['United States', 'Canada'],
     serviceType: 'Backend Revenue Systems',
     ...(serviceSchema.offers && {
       offers: {
-        '@type': 'AggregateOffer',
-        priceCurrency: 'USD',
-        offerCount: serviceSchema.offers.length.toString(),
-        offers: serviceSchema.offers.map(offer => ({
-          '@type': 'Offer',
-          name: offer.name,
-          description: offer.description
-        }))
+        '@type': 'Offer',
+        price: serviceSchema.offers.price,
+        priceCurrency: serviceSchema.offers.priceCurrency,
+        description: serviceSchema.offers.description
       }
     })
   } : null;
@@ -279,12 +220,6 @@ const SEOHead = ({
 
       {/* Structured Data */}
       <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-      {organizationStructuredData && (
-        <script type="application/ld+json">{JSON.stringify(organizationStructuredData)}</script>
-      )}
-      {personStructuredData && (
-        <script type="application/ld+json">{JSON.stringify(personStructuredData)}</script>
-      )}
       {breadcrumbSchema && (
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       )}

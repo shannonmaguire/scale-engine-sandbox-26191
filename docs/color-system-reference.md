@@ -3,7 +3,6 @@
 ## Core Principle
 All colors reference CSS variables defined in `src/index.css`.
 **Never use hardcoded hex values or inline HSL.**
-**Never use opacity modifiers (e.g., /70, /80, /90) - use semantic tokens instead.**
 
 ## Semantic Token Usage
 
@@ -12,12 +11,6 @@ All colors reference CSS variables defined in `src/index.css`.
 - **Navigation/Authority**: `bg-authority` + `text-authority-foreground`
 - **Cards/Elevation**: `bg-card` + `text-card-foreground`
 - **Page background**: `bg-background` + `text-foreground`
-- **Muted sections**: `bg-surface-muted` + `text-foreground`
-
-### Text Colors
-- **Primary text**: `text-foreground` (full contrast)
-- **Secondary text**: `text-muted-foreground` (de-emphasized but still WCAG AA)
-- **Subtle text**: `text-foreground-subtle` (intentional de-emphasis for tertiary content)
 
 ### Interactive States
 - **Hover (primary)**: `hover:bg-[hsl(var(--primary-hover))]`
@@ -48,12 +41,6 @@ Trust the button variant system:
 ### Warmed Surface Colors
 - `--gray-very-light: 40 15% 96%` (#F9F8F5) - Warm, inviting card backgrounds
 - `--gray-light: 40 12% 91%` (#EBE9E3) - Warm foundation for page backgrounds
-- `--surface-muted: 40 10% 94%` (#F1EFE9) - Lighter muted section background for better contrast
-
-### Text Colors
-- `--foreground: 0 0% 0%` (#000000) - Primary text color
-- `--muted-foreground: 0 0% 25%` (#404040) - De-emphasized text with 7:1 contrast
-- `--foreground-subtle: 0 0% 35%` (#595959) - Subtle text for tertiary content
 
 ### Data & Interaction
 - `--teal: 184 28% 44%` (#52939C) - Increased saturation for better visibility
@@ -68,13 +55,8 @@ Trust the button variant system:
 // Button trusting variant system
 <Button variant="default" className="hover-lift hover-glow">
 
-// Section with muted background
-<Section variant="muted">
-
-// Text hierarchy using semantic tokens
-<p className="text-foreground">Primary content</p>
-<p className="text-muted-foreground">Secondary content</p>
-<p className="text-foreground-subtle">Tertiary content</p>
+// Proper hover state
+<div className="hover:bg-[hsl(var(--primary-hover))]">
 ```
 
 ### ❌ Incorrect Usage
@@ -85,11 +67,8 @@ Trust the button variant system:
 // WRONG: Hardcoding text color over button variant
 <Button className="text-foreground hover:text-foreground">
 
-// WRONG: Using opacity modifiers instead of semantic tokens
-<p className="text-foreground/70">
-
-// WRONG: Using old muted background
-<Section variant="muted" className="bg-muted">
+// WRONG: Using old hex colors
+<div style={{ backgroundColor: '#F4F4F6' }}>
 ```
 
 ## Maintenance Notes

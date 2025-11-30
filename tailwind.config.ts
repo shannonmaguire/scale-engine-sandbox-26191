@@ -33,13 +33,7 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        foreground: {
-          DEFAULT: "hsl(var(--foreground))",
-          subtle: "hsl(var(--foreground-subtle))",
-        },
-        surface: {
-          muted: "hsl(var(--surface-muted))",
-        },
+        foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

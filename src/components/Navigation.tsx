@@ -13,7 +13,7 @@ const Navigation = () => {
     href: "/"
   }, {
     label: "Assessment",
-    href: "/self-assessment"
+    href: "/assessment"
   }, {
     label: "Proof",
     href: "/proof"
@@ -23,7 +23,7 @@ const Navigation = () => {
   }];
   const coreServices = [{
     label: "Assessment",
-    href: "/self-assessment"
+    href: "/assessment"
   }, {
     label: "Sprint",
     href: "/sprint"
@@ -115,7 +115,7 @@ const Navigation = () => {
           {/* Primary CTA - Console Button */}
           <div className="hidden md:block">
             <Button asChild className="btn-console">
-              <Link to="/self-assessment">Start Assessment</Link>
+              <Link to="/assessment">Start Assessment</Link>
             </Button>
           </div>
 
@@ -174,7 +174,7 @@ const Navigation = () => {
               
               <div className="px-1 pt-2">
                 <Button asChild className="btn-console w-full">
-                  <Link to="/self-assessment">Start Assessment</Link>
+                  <Link to="/assessment">Start Assessment</Link>
                 </Button>
               </div>
             </div>

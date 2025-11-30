@@ -10,53 +10,43 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { BackButton } from "@/components/BackButton";
 import { Testimonials } from "@/components/Testimonials";
 import { ServiceJourneyFlow } from "@/components/ServiceJourneyFlow";
-import { CTA, ROUTES, TIMELINES, METRICS } from "@/lib/canonical-constants";
 
 const Sprint = () => {
-  const phases = [
+  const whatYouGet = [
+    "Outbound engine with email sequences and lead scoring",
+    "Campaign funnels with multi-touch attribution",
+    "System integrations and data synchronization",
+    "Revenue dashboards and forecasting models",
+    "Pipeline governance and data quality controls",
+    "Complete process documentation and training"
+  ];
+
+  const timeline = [
     {
-      phase: "Phase 1",
+      week: "Week 1",
       title: "Foundation",
-      duration: "Week 1-2",
-      description: "System audit, data model design, baseline measurement, technical requirements."
+      outputs: "Infrastructure audit, data cleanup, baseline metrics"
     },
     {
-      phase: "Phase 2",
+      week: "Week 2-3", 
       title: "Build",
-      duration: "Week 3-6",
-      description: "Workflow configuration, automation logic, integration architecture, dashboard framework."
+      outputs: "Process automation, dashboard architecture, integrations"
     },
     {
-      phase: "Phase 3",
-      title: "Validation",
-      duration: "Week 7-8",
-      description: "System testing, load simulation, edge case handling, performance verification."
+      week: "Week 4-5",
+      title: "Validation", 
+      outputs: "Testing, workflow optimization, training materials"
     },
     {
-      phase: "Phase 4",
+      week: "Week 6-7",
       title: "Deployment",
-      duration: "Week 9-10",
-      description: "Production rollout, team onboarding, process documentation, monitoring activation."
+      outputs: "Production launch, team onboarding, documentation"
     },
     {
-      phase: "Phase 5",
+      week: "Week 8",
       title: "Optimization",
-      duration: "Week 11-12",
-      description: "Performance tuning, feedback integration, handoff protocols, post-launch support."
+      outputs: "Performance tuning, feedback integration, handoff"
     }
-  ];
-
-  const deliverables = [
-    "Workflow automation eliminating manual handoffs and reducing operational overhead",
-    "Integration architecture connecting CRM, marketing tools, and third-party systems",
-    "Executive dashboards surfacing pipeline health, forecast accuracy, and bottleneck analysis",
-    "Process documentation covering system logic, field definitions, and escalation protocols"
-  ];
-
-  const outcomes = [
-    { label: "Load Tolerance", description: "Infrastructure scaled to handle 3-5x current pipeline volume without performance degradation." },
-    { label: "Reliable Reporting", description: "Real-time dashboards replacing manual report generation and memory-based forecasting." },
-    { label: "Founder Offload", description: "Critical revenue operations executing without founder intervention or manual override." }
   ];
 
   return (
@@ -74,142 +64,153 @@ const Sprint = () => {
         canonicalUrl="/sprint"
         type="service"
         serviceSchema={{
-          name: '90-Day Revenue System Sprint',
+          name: 'Revenue System Sprint',
           description: '8-12 week implementation sprint to install complete revenue infrastructure including CRM optimization, automation, dashboards, and full documentation.',
-          offers: [
-            {
-              name: 'Foundation Phase',
-              description: 'System audit, data model design, baseline measurement, technical requirements'
-            },
-            {
-              name: 'Build Phase',
-              description: 'Workflow configuration, automation logic, integration architecture, dashboard framework'
-            },
-            {
-              name: 'Validation & Deployment',
-              description: 'System testing, production rollout, team onboarding, process documentation'
-            }
-          ]
+          provider: 'CWT Studio'
         }}
       />
       
       <Breadcrumbs />
       
-      <Section className="border-b border-border">
+      <Section>
         {/* Hero */}
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h1 className="heading-section">90-Day Revenue Sprint</h1>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="system-status mb-6">RAPID DEPLOYMENT</div>
+          <h1 className="heading-page mb-6">Sprint</h1>
+          <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+            8–12-week implementation sprint to install complete revenue infrastructure: CRM, automation, dashboards, and documentation that powers repeatable revenue.
+          </p>
+          
+          {/* Key Info Pills */}
+          <div className="flex flex-wrap justify-center gap-3 text-sm mb-8">
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <Clock size={16} className="text-primary" />
+              <span className="font-mono">8-12 weeks</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <CheckCircle2 size={16} className="text-primary" />
+              <span className="font-mono">Custom pricing*</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg">
+              <CheckCircle2 size={16} className="text-primary" />
+              <span className="font-mono text-xs">Requires Assessment</span>
+            </div>
           </div>
           
-          <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
-            {TIMELINES.sprint} deployment cycle to install revenue infrastructure—workflows, automation, dashboards, documentation. Fixed timeline, measurable outcomes, documented handoff. Assessment required before engagement. {METRICS.feeCredit}.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" asChild>
-              <Link to="/contact?interest=sprint&source_page=sprint">{CTA.startSprint}</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.startAssessment}</Link>
-            </Button>
-          </div>
-        </div>
-      </Section>
-
-      {/* 5-Phase Timeline */}
-      <Section variant="muted" className="border-b border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Deployment Timeline</h2>
-          </div>
-
-          <div className="space-y-6">
-            {phases.map((phase, index) => (
-              <div key={index} className="border-l-2 border-primary/50 pl-6">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-                  <div className="font-mono text-base font-semibold text-foreground">
-                    {phase.phase}: {phase.title}
-                  </div>
-                  <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
-                    {phase.duration}
-                  </div>
-                </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  {phase.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Deliverables */}
-      <Section className="border-b border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Core Deliverables</h2>
-          </div>
-
-          <div className="space-y-4">
-            {deliverables.map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-base text-foreground/90 leading-relaxed">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Expected Outcomes */}
-      <Section variant="muted" className="border-b border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Expected Outcomes</h2>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-6">
-            {outcomes.map((outcome, index) => (
-              <div key={index} className="border border-border bg-card p-6">
-                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
-                  {outcome.label}
-                </div>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  {outcome.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* CTA */}
-      <Section>
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
-            <span className="text-primary font-semibold">Ready to Deploy</span>
-          </div>
-
-          <h2 className="heading-section mb-6">{CTA.startSprint}</h2>
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            {TIMELINES.sprint} deployment cycle. Assessment required. Fixed scope, documented handoff, operational infrastructure.
-          </p>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
-              <Link to="/contact?interest=sprint&source_page=sprint">
-                {CTA.startSprint}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              <Link to="/contact?interest=sprint&source_page=sprint">Start Your Sprint</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.startAssessment}</Link>
+          </div>
+        </div>
+
+        {/* Service Journey Flow */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <ServiceJourneyFlow 
+            steps={[
+              { name: "Assessment", href: "/assessment", completed: true },
+              { name: "Sprint", href: "/sprint", current: true },
+              { name: "Fractional Ops", href: "/fractional" }
+            ]}
+          />
+        </div>
+
+        {/* What You Get */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="heading-subsection mb-6">What You Get</h2>
+          <div className="space-y-2">
+            {whatYouGet.map((item, index) => (
+              <div key={index} className="flex items-start gap-3 py-1">
+                <CheckCircle size={18} className="text-primary mt-0.5 flex-shrink-0" />
+                <span className="text-foreground text-sm sm:text-base leading-relaxed">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="heading-subsection mb-6">Timeline</h2>
+          <div className="space-y-4">
+            {timeline.map((phase, index) => (
+              <div key={index} className="border-l-2 sm:border-l-4 border-primary pl-4 sm:pl-6 py-2">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                  <h3 className="font-bold text-base sm:text-lg">{phase.title}</h3>
+                  <Badge variant="outline" className="text-xs font-mono self-start sm:self-auto">
+                    {phase.week}
+                  </Badge>
+                </div>
+                <p className="text-muted-foreground text-sm sm:text-base">{phase.outputs}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Prerequisites */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="heading-subsection mb-6">Prerequisites</h2>
+          <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Completed Assessment</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Executive commitment</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">Cross-team stakeholders</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
+              <span className="text-muted-foreground text-sm sm:text-base">System admin access</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Investment Approach */}
+        <div className="max-w-3xl mx-auto mb-16">
+          <StandardCard variant="bordered" className="border-primary/30">
+            <StandardCardContent className="p-8 text-center">
+              <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h2 className="heading-subsection mb-2">Custom Pricing</h2>
+              <p className="text-muted-foreground mb-6">Pricing determined after Assessment phase. <strong>Assessment fee ($4,500+) credits 100% toward Sprint.</strong></p>
+              <div className="bg-accent/5 border border-accent/20 rounded-lg p-4 text-left">
+                <p className="text-xs font-mono font-bold text-accent mb-2">RECENT OUTCOME</p>
+                <p className="text-sm text-muted-foreground">
+                  <strong>Legal Boutique:</strong> Built complete subscription pipeline system in 8 weeks. 
+                  Installed multi-touch outbound engine, automated workflows, and real-time dashboards. 
+                  Pipeline velocity increased 3x in first 90 days.
+                </p>
+              </div>
+            </StandardCardContent>
+          </StandardCard>
+        </div>
+
+        {/* Client Testimonials */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <h2 className="heading-subsection mb-8">Client Results</h2>
+          <Testimonials 
+            testimonials={[
+              {
+                quote: "CWT Studio built our entire subscription pipeline in 8 weeks. The outbound engine, automated workflows, and real-time dashboards transformed how we track revenue. Our pipeline velocity tripled in the first 90 days.",
+                author: "Founding Partner",
+                role: "Founding Partner",
+                company: "Legal Boutique",
+                outcome: "Multi-touch outbound engine installed. Automated workflows eliminated manual tracking. Pipeline velocity increased 3x in first 90 days."
+              }
+            ]}
+          />
+        </div>
+
+        {/* CTA */}
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-primary/10 to-background border-2 border-primary rounded-lg p-8">
+            <h3 className="text-2xl font-bold mb-4">Ready to Install Your Infrastructure?</h3>
+            <p className="text-muted-foreground mb-6">8-12 weeks • Custom pricing • Requires completed Assessment</p>
+            <Button size="lg" asChild>
+              <Link to="/contact?interest=sprint&source_page=sprint">Start Your Sprint</Link>
             </Button>
           </div>
         </div>

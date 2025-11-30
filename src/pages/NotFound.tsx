@@ -49,16 +49,16 @@ const NotFound = () => {
           
           <div className="grid sm:grid-cols-3 gap-3 mt-6">
             <Button asChild variant="outline" size="sm">
-              <Link to="/assessment">
+              <Link to="/services">
                 <Search className="mr-2 h-4 w-4" aria-hidden="true" />
-                Start Assessment
+                View Services
               </Link>
             </Button>
             
             <Button asChild variant="outline" size="sm">
-              <Link to="/proof">
+              <Link to="/blog">
                 <FileText className="mr-2 h-4 w-4" aria-hidden="true" />
-                View Proof
+                Read Blog
               </Link>
             </Button>
             

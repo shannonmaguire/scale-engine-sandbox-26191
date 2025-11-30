@@ -1,334 +1,307 @@
+import { Button } from "@/components/ui/button";
+import { StandardCard, StandardCardContent, StandardCardHeader, StandardCardTitle } from "@/components/ui/standard-card";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
+import SystemDiagram from "@/components/SystemDiagram";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
-import { RevenueArchitectureDiagram } from "@/components/RevenueArchitectureDiagram";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
-import { CheckCircle, ArrowRight, AlertCircle, Database, Zap, FileText, BarChart3 } from "lucide-react";
-import { CTA, ROUTES, METRICS } from "@/lib/canonical-constants";
+import { FeaturedCaseStudy } from "@/components/FeaturedCaseStudy";
+import { ArrowRight, CheckCircle, BarChart3, Target, Award, TrendingUp, Shield } from "lucide-react";
+import { ICON_SIZES, ICON_STROKE } from "@/lib/icon-config";
 
 const Home = () => {
+  // Performance monitoring
   usePerformanceMonitoring();
+  
+  // Track scroll depth for engagement
   useScrollDepth();
 
-  const infrastructureFailures = [
-    "Revenue forecasting built from spreadsheet assumptions rather than system data",
-    "Sales operations concentrated in single-founder dependency",
-    "Pipeline administration consuming 15-20 hours weekly on manual updates",
-    "CRM underperforming due to incomplete process mapping and data fragmentation",
-    "No handoff documentation—systems knowledge exists only in individual memory"
-  ];
-
-  const icpTriggers = [
-    { label: "Forecast Blind", description: "Board asks for pipeline projections. You extrapolate from memory." },
-    { label: "Manual Operations", description: "Weekly pipeline updates consume 15+ hours of administrative overhead." },
-    { label: "Founder Dependency", description: "Revenue operations knowledge concentrated in one person's head." },
-    { label: "CRM Underperforming", description: "Salesforce exists but doesn't reflect how deals actually move." }
-  ];
-
-  const proofSnapshots = [
-    {
-      client: "Cybersecurity SaaS ($4.2M ARR)",
-      before: "20 hrs/week manual pipeline updates",
-      after: "Automated tracking—real-time visibility",
-      metric: "95% time reduction"
-    },
-    {
-      client: "Legal Tech Platform ($2.8M ARR)",
-      before: "Forecast built from spreadsheets",
-      after: "Board-ready forecast with confidence intervals",
-      metric: "3-day → 30-min reporting"
-    },
-    {
-      client: "Compliance Software ($3.5M ARR)",
-      before: "One founder owns all ops knowledge",
-      after: "Documented systems anyone can execute",
-      metric: "Zero single points of failure"
-    }
-  ];
-
-  const pipeline = [
-    {
-      phase: "01",
-      title: "Assessment",
-      duration: "2 weeks",
-      output: "Revenue Infrastructure Scorecard + 90-day roadmap",
-      description: "Diagnostic audit mapping current state against industry benchmarks. Delivers prioritized implementation sequence."
-    },
-    {
-      phase: "02", 
-      title: "Sprint",
-      duration: "8-12 weeks",
-      output: "Installed infrastructure + handoff documentation",
-      description: "Fixed-scope implementation. CRM configuration, automation build, reporting dashboards, process documentation."
-    },
-    {
-      phase: "03",
-      title: "Fractional Ops",
-      duration: "6+ months",
-      output: "Ongoing optimization + performance management",
-      description: "Post-implementation support. System maintenance, metric monitoring, continuous improvement cycles."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const services = [{
+    title: "Assessment",
+    description: "2-week diagnostic to map revenue infrastructure with baseline KPIs and prioritized recommendations for stable growth.",
+    timeline: "2 weeks",
+    note: "Fixed scope, fixed price",
+    cta: "Start Assessment",
+    link: "/assessment"
+  }, {
+    title: "Sprint",
+    description: "8–12-week implementation sprint where we install the infrastructure that compounds: CRM, RevOps architecture, automation, and documentation.",
+    timeline: "8-12 weeks",
+    note: "Custom pricing after Assessment",
+    cta: "Start Your Sprint",
+    link: "/sprint"
+  }, {
+    title: "Fractional Ops",
+    description: "Ongoing fractional operations support for teams that need their systems maintained, optimized, and performance-driven.",
+    timeline: "6+ months",
+    note: "Custom engagement pricing",
+    cta: "Apply Now",
+    link: "/fractional"
+  }];
+  const proofStats = [{
+    number: "42",
+    label: "Systems Deployed"
+  }, {
+    number: ">40%",
+    label: "Open Rates",
+    subLabel: "vs 15-25% avg"
+  }, {
+    number: "107%",
+    label: "Peak Growth Rate"
+  }, {
+    number: "$500K+",
+    label: "Pipeline Activated"
+  }];
+  const beforeAfter = {
+    before: [
+      "Manual pipeline updates consuming 20+ hrs/week",
+      "One founder owns all sales ops knowledge",
+      "Forecast built from memory and best-guess spreadsheets",
+      "Custom workflows that break when people leave"
+    ],
+    after: [
+      "Automated pipeline tracking—real-time visibility",
+      "Documented systems anyone on the team can run",
+      "Board-ready forecast with confidence intervals",
+      "Repeatable workflows that compound over time"
+    ]
+  };
+  const assessmentDeliverables = ["Revenue Infrastructure Scorecard—tech, ops, pipeline", "Industry benchmarks and peer comparisons", "Prioritized 90-day roadmap with implementation sequence", "Executive presentation with leadership alignment"];
+  return <div className="min-h-screen">
       <EngagementTracker />
       <CookieBanner />
       <SEOHead
         title="Revenue Infrastructure | CWT Studio"
-        description="Revenue infrastructure installed in 90 days. Systems engineered for load tolerance, documented for handoff, measured against baselines."
+        description="Install backend systems that scale without founder dependency. 90-day implementation for legal, compliance, cybersecurity, and B2B SaaS."
         keywords={[
           'revenue infrastructure',
-          'revenue operations',
-          'Salesforce implementation',
+          'revenue operations systems',
+          'Salesforce optimization',
           '90-day system installation',
-          'RevOps engineering'
+          'RevOps consulting',
+          'high-trust industries'
         ]}
         canonicalUrl="/"
       />
-
-      {/* Hero Section */}
-      <Section className="min-h-[85vh] flex items-center relative overflow-hidden">
-        {/* Technical grid background */}
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{
-               backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
-               backgroundSize: '24px 24px'
-             }} 
-        />
-        
-        <div className="relative z-10 max-w-4xl">
-          {/* Status indicator */}
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
-            <span className="text-primary font-semibold">Systems Operational</span>
-            <span className="text-muted-foreground">{METRICS.deployments}</span>
+      
+      {/* Hero */}
+      <Section className="min-h-[90vh] flex items-center py-20">
+        <div className="grid lg:grid-cols-2 gap-16 items-center w-full">
+          <div>
+            {/* Stat Line - Immediate Proof */}
+            <div className="inline-flex items-center gap-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+              <span className="font-mono text-sm text-primary font-semibold">42 systems delivered</span>
+              <span className="w-1 h-1 bg-primary/40 rounded-full"></span>
+              <span className="font-mono text-sm text-primary font-semibold">90-day average</span>
+            </div>
+            
+            <h1 className="heading-page mb-4">
+              Revenue Infrastructure Determines Competitive Position
+            </h1>
+            
+            <p className="text-xl text-muted-foreground mb-8">
+              Backend systems installed in 90-day cycles. Fixed scope, documented handoff, measured against baseline performance data.
+            </p>
+            
+            {/* CTA Hierarchy - Start Assessment is Primary */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <ConversionOptimizedButton
+                to="/assessment"
+                ctaName="Hero - Start Your Assessment"
+                location="Homepage Hero"
+                size="lg"
+              >
+                Start Your Assessment
+              </ConversionOptimizedButton>
+              <ConversionOptimizedButton
+                to="/proof"
+                ctaName="Hero - View Proof"
+                location="Homepage Hero"
+                variant="outline"
+                showArrow={false}
+                size="lg"
+              >
+                View Proof
+              </ConversionOptimizedButton>
+            </div>
+            
+            {/* Social Proof Bar - Rotating Client Quotes */}
+            <div className="border-l-2 border-primary/30 pl-4 py-2">
+              <p className="text-sm text-muted-foreground italic mb-2">
+                "Revenue infrastructure deployed in 8 weeks. Pipeline administration reduced from 20 hours weekly to automated execution."
+              </p>
+              <p className="text-xs text-primary font-mono font-semibold">
+                — VP Revenue, Cybersecurity SaaS ($4.2M ARR)
+              </p>
+            </div>
           </div>
+          
+          <div>
+            <SystemDiagram />
+          </div>
+        </div>
+      </Section>
 
-          <h1 className="heading-page mb-6 leading-[1.1]">
-            Revenue Infrastructure<br />
-            Installed in 90 Days
-          </h1>
+      {/* Who This Is For */}
+      <Section>
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="heading-section mb-6">Operational State: $2-5M ARR</h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Pipeline administration consumes 20+ hours weekly. Revenue operations concentrated in single-founder knowledge. Forecasting derived from spreadsheet extrapolation rather than system data.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Before Card */}
+            <div className="relative border-2 border-destructive/20 bg-card rounded-lg p-8">
+              <div className="absolute -top-3 left-6 bg-background px-3 py-1 border border-destructive/20 rounded-md">
+                <span className="font-mono text-xs uppercase tracking-wider text-destructive">Before</span>
+              </div>
+              
+              <ul className="space-y-4 mt-4">
+                {beforeAfter.before.map((item, index) => (
+                  <li key={index} className="flex items-center gap-3 group">
+                    <div className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
+                      <div className="w-2 h-2 rounded-full bg-destructive" />
+                    </div>
+                    <span className="text-base text-foreground/80 leading-5">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* After Card */}
+            <div className="relative border-2 border-primary/30 bg-card rounded-lg p-8">
+              <div className="absolute -top-3 left-6 bg-background px-3 py-1 border border-primary/30 rounded-md">
+                <span className="font-mono text-xs uppercase tracking-wider text-primary">After</span>
+              </div>
+              
+              <ul className="space-y-4 mt-4">
+                {beforeAfter.after.map((item, index) => (
+                  <li key={index} className="flex items-center gap-3 group">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <CheckCircle className="w-4 h-4 text-primary" strokeWidth={2.5} />
+                    </div>
+                    <span className="text-base font-medium leading-5">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </Section>
 
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
-            Systems engineered for load tolerance, documented for handoff, measured against baselines.
-          </p>
+      {/* Featured Case Study */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <FeaturedCaseStudy />
+        </div>
+      </Section>
 
+      {/* Services */}
+      <Section variant="muted">
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="heading-section text-left">How We Work</h2>
+          <Button asChild variant="ghost" size="sm">
+            <Link to="/resources" className="font-mono text-sm text-primary hover:text-primary/80">
+              Browse Resources →
+            </Link>
+          </Button>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="border-l-4 border-primary pl-6 flex flex-col">
+              <div className="font-mono text-sm text-muted-foreground mb-2">{String(index + 1).padStart(2, '0')}</div>
+              <h3 className="heading-subsection mb-2">{service.title}</h3>
+              <p className="text-sm text-muted-foreground mb-4">{service.description}</p>
+              
+              <div className="space-y-1 mb-4">
+                <div className="text-sm font-mono">
+                  <span className="text-muted-foreground">Timeline: </span>
+                  <span>{service.timeline}</span>
+                </div>
+                {service.note && (
+                  <div className="text-sm font-mono">
+                    <span className="text-muted-foreground">{service.note}</span>
+                  </div>
+                )}
+              </div>
+              
+              <div className="flex-grow" />
+              
+              <Button asChild className="w-full" size="sm" variant={index === 0 ? "default" : "outline"}>
+                <Link to={service.link}>{service.cta}</Link>
+              </Button>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Assessment Details */}
+      <Section>
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-6">Assessment Deliverables</h2>
+          
+          <ul className="space-y-3 mb-8">
+            {assessmentDeliverables.map((item, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <Target className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">{item}</span>
+              </li>
+            ))}
+          </ul>
+          
           <div className="flex flex-col sm:flex-row gap-4">
             <ConversionOptimizedButton
-              to={ROUTES.assessment}
-              ctaName="Hero - Run Infrastructure Assessment"
-              location="Homepage Hero"
-              size="lg"
+              to="/assessment"
+              ctaName="Assessment - Start Now"
+              location="Assessment Deliverables Section"
             >
-              {CTA.startAssessment}
+              Start Your Assessment
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
-              to={ROUTES.proof}
-              ctaName="Hero - See Proof"
-              location="Homepage Hero"
+              to="/sample-report"
+              ctaName="Assessment - View Sample Report"
+              location="Assessment Deliverables Section"
               variant="outline"
               showArrow={false}
-              size="lg"
             >
-              {CTA.seeProof}
+              Sample Report
             </ConversionOptimizedButton>
           </div>
         </div>
       </Section>
 
-      {/* Category Explanation - Why Infrastructure Precedes Growth */}
-      <Section variant="muted" className="border-t border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Why Infrastructure Precedes Growth</h2>
-          </div>
-
-          <p className="text-description text-muted-foreground mb-10">
-            Operational failures that occur without infrastructure:
-          </p>
-
-          <div className="grid gap-4">
-            {infrastructureFailures.map((failure, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 border-l-2 border-destructive/30 bg-card/50">
-                <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-base text-foreground leading-relaxed">{failure}</p>
-              </div>
-            ))}
-          </div>
+      {/* Proof */}
+      <Section variant="muted">
+        <h2 className="heading-section mb-8">By the Numbers</h2>
+        
+        <div className="grid md:grid-cols-4 gap-6 mb-8">
+          {proofStats.map((stat, index) => (
+            <div key={index} className="border-l-4 border-primary pl-6">
+              <div className="text-3xl font-bold font-mono text-primary mb-1">{stat.number}</div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              {stat.subLabel && (
+                <div className="text-xs text-muted-foreground">{stat.subLabel}</div>
+              )}
+            </div>
+          ))}
         </div>
+        
+        <ConversionOptimizedButton
+          to="/proof"
+          ctaName="By Numbers - See Proof"
+          location="By Numbers Section"
+        >
+          See Full Case Studies
+        </ConversionOptimizedButton>
       </Section>
-
-      {/* ICP Filter - You're a Fit If */}
-      <Section className="border-t border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">You're a Fit If…</h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            {icpTriggers.map((trigger, index) => (
-              <div key={index} className="border border-border p-6 hover:border-primary/50 transition-colors">
-                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
-                  {trigger.label}
-                </div>
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  {trigger.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Technical Architecture Diagram */}
-      <Section variant="muted" className="border-t border-border">
-        <div className="max-w-5xl">
-          <RevenueArchitectureDiagram />
-        </div>
-      </Section>
-
-      {/* Proof Section - Before → After Snapshots */}
-      <Section className="border-t border-border">
-        <div className="max-w-5xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Proof</h2>
-          </div>
-
-          <div className="grid gap-8">
-            {proofSnapshots.map((snapshot, index) => (
-              <div key={index} className="border border-border p-8">
-                <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-6">
-                  {snapshot.client}
-                </div>
-
-                <div className="grid md:grid-cols-[1fr,auto,1fr] gap-6 items-center">
-                  {/* Before */}
-                  <div>
-                    <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3 font-semibold">
-                      Before
-                    </div>
-                    <p className="text-base text-[hsl(var(--foreground-subtle))]">
-                      {snapshot.before}
-                    </p>
-                  </div>
-
-                  {/* Arrow */}
-                  <ArrowRight className="w-6 h-6 text-primary hidden md:block" strokeWidth={2} />
-
-                  {/* After */}
-                  <div>
-                    <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
-                      After
-                    </div>
-                    <p className="text-base font-medium text-foreground">
-                      {snapshot.after}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Metric */}
-                <div className="mt-6 pt-6 border-t border-border">
-                  <div className="font-mono text-xl font-bold text-primary">
-                    {snapshot.metric}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-10">
-            <ConversionOptimizedButton
-              to="/proof"
-              ctaName="Proof - See Full Case Studies"
-              location="Proof Section"
-            >
-              See Full Case Studies
-            </ConversionOptimizedButton>
-          </div>
-        </div>
-      </Section>
-
-      {/* Pipeline - Assessment → Sprint → Fractional Ops */}
-      <Section variant="muted" className="border-t border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Implementation Pipeline</h2>
-          </div>
-
-          <div className="space-y-6">
-            {pipeline.map((phase, index) => (
-              <div key={index} className="border border-border bg-card p-8">
-                <div className="flex items-start gap-6">
-                  {/* Phase number */}
-                  <div className="font-mono text-4xl font-bold text-primary/30 leading-none">
-                    {phase.phase}
-                  </div>
-
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">
-                      <h3 className="heading-subsection">{phase.title}</h3>
-                      <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
-                        {phase.duration}
-                      </div>
-                    </div>
-
-                    <p className="text-base text-muted-foreground mb-4 leading-relaxed">
-                      {phase.description}
-                    </p>
-
-                    <div className="flex items-center gap-2 text-base font-mono text-primary">
-                      <CheckCircle className="w-4 h-4" strokeWidth={2} />
-                      <span className="font-semibold">{phase.output}</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Final CTA */}
-      <Section className="border-t border-border text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="heading-section mb-6">Start Assessment</h2>
-          <p className="text-description text-muted-foreground mb-10">
-            2-week diagnostic to map revenue infrastructure with baseline KPIs and prioritized recommendations.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ConversionOptimizedButton
-              to="/self-assessment"
-              ctaName="Final CTA - Start Assessment"
-              location="Final CTA Section"
-              size="lg"
-            >
-              Start Assessment
-            </ConversionOptimizedButton>
-            <ConversionOptimizedButton
-              to="/proof"
-              ctaName="Final CTA - See Proof"
-              location="Final CTA Section"
-              variant="outline"
-              showArrow={false}
-              size="lg"
-            >
-              See Proof
-            </ConversionOptimizedButton>
-          </div>
-        </div>
-      </Section>
-    </div>
-  );
+    </div>;
 };
-
 export default Home;
