@@ -179,33 +179,31 @@ const Contact = () => {
       <Section>
         <div className="max-w-4xl mx-auto">
           {/* Hero */}
-          <div className="text-center mb-20">
-            <div className="flex justify-center mb-6">
-              <div className="system-status">
-                CONTACT
-              </div>
+          <div className="text-center mb-16">
+            <div className="system-status mb-8">
+              CONTACT
             </div>
             <h1 className="heading-page mb-4">
-              Let's Talk
+              Get Started
             </h1>
-            <p className="text-description text-xl max-w-2xl mx-auto">
-              Tell us about your project. We'll send a detailed response within 24 hours with next steps and pricing.
+            <p className="text-description text-muted-foreground max-w-2xl mx-auto">
+              Fill out the form. We'll respond within 24 hours with next steps.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
-            <div className="lg:col-span-3">
-              <div className="border-l-4 border-primary pl-8">
-                <h2 className="font-mono text-base font-bold text-primary mb-8 uppercase tracking-wider">
-                  Send a Message
+            <div className="lg:col-span-2">
+              <div className="border-l-2 border-primary pl-8">
+                <h2 className="heading-subsection mb-8">
+                  Project Details
                 </h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Name & Email Row */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="fullName" className="font-mono text-sm font-medium mb-2 block">
+                        <Label htmlFor="fullName" className="text-label mb-2 block">
                           Name *
                         </Label>
                         <Input
@@ -223,7 +221,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="email" className="font-mono text-sm font-medium mb-2 block">
+                        <Label htmlFor="email" className="text-label mb-2 block">
                           Email *
                         </Label>
                         <Input
@@ -244,7 +242,7 @@ const Contact = () => {
 
                     {/* Company */}
                     <div>
-                      <Label htmlFor="company" className="font-mono text-sm font-medium mb-2 block">
+                      <Label htmlFor="company" className="text-label mb-2 block">
                         Company
                       </Label>
                       <Input
@@ -258,7 +256,7 @@ const Contact = () => {
 
                     {/* Services Interested */}
                     <div>
-                      <Label className="font-mono text-sm font-medium mb-3 block">
+                      <Label className="text-label mb-3 block">
                         Services You're Interested In *
                       </Label>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -296,7 +294,7 @@ const Contact = () => {
                     {/* Timeline & Budget Row */}
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="timeline" className="font-mono text-sm font-medium mb-2 block">
+                        <Label htmlFor="timeline" className="text-label mb-2 block">
                           Timeline *
                         </Label>
                         <select
@@ -325,7 +323,7 @@ const Contact = () => {
                       </div>
 
                       <div>
-                        <Label htmlFor="budgetRange" className="font-mono text-sm font-medium mb-2 block">
+                        <Label htmlFor="budgetRange" className="text-label mb-2 block">
                           Project Readiness
                         </Label>
                         <select
@@ -351,7 +349,7 @@ const Contact = () => {
                     {/* Current Setup (conditional) */}
                     {formData.servicesInterested.includes("salesforce") && (
                       <div>
-                        <Label htmlFor="currentSetup" className="font-mono text-sm font-medium mb-2 block">
+                        <Label htmlFor="currentSetup" className="text-label mb-2 block">
                           Current Salesforce Setup
                         </Label>
                         <Input
@@ -369,7 +367,7 @@ const Contact = () => {
 
                     {/* Message */}
                     <div>
-                      <Label htmlFor="message" className="font-mono text-sm font-medium mb-2 block">
+                      <Label htmlFor="message" className="text-label mb-2 block">
                         Project Details *
                       </Label>
                       <Textarea
@@ -449,17 +447,17 @@ const Contact = () => {
             </div>
 
             {/* Sidebar Info */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="border-l-2 border-border pl-6 space-y-6">
+            <div className="lg:col-span-1">
+              <div className="border-l-2 border-border pl-6 space-y-8">
                 <div>
-                  <h3 className="font-mono text-sm font-bold text-foreground mb-4 uppercase tracking-wider">
+                  <h3 className="heading-subsection mb-4">
                     Direct Contact
                   </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <Mail className="w-5 h-5 text-primary mt-0.5" />
                       <div>
-                        <p className="font-medium text-foreground text-sm mb-1">Email</p>
+                        <p className="text-description font-medium mb-1">Email</p>
                         <a href="mailto:hello@thecwtstudio.com" className="text-sm text-muted-foreground hover:text-primary font-mono">
                           hello@thecwtstudio.com
                         </a>
@@ -468,40 +466,31 @@ const Contact = () => {
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
                       <div>
-                        <p className="font-medium text-foreground text-sm mb-1">Response Time</p>
-                        <p className="text-sm text-muted-foreground">Within 24 hours</p>
+                        <p className="text-description font-medium mb-1">Response Time</p>
+                        <p className="text-sm text-muted-foreground">24 hours</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-primary/5 border-2 border-primary/20 rounded-lg p-6">
-                  <h3 className="font-mono text-sm font-bold text-primary mb-3 uppercase tracking-wider">
-                    What Happens Next?
+                <div className="bg-card border border-border p-6">
+                  <h3 className="text-label text-primary mb-4">
+                    What Happens Next
                   </h3>
-                  <ul className="space-y-3 text-sm text-foreground leading-6">
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>We review your project (within 24 hours)</span>
+                  <ul className="space-y-3 text-description text-muted-foreground">
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                      <span>We review your project</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>You get detailed next steps + pricing</span>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                      <span>You get next steps + pricing</span>
                     </li>
-                    <li className="flex items-center gap-3">
-                      <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></span>
-                      <span>Schedule a call if it's a fit</span>
+                    <li className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0 mt-2"></span>
+                      <span>Schedule a call if it fits</span>
                     </li>
                   </ul>
-                </div>
-
-                <div className="bg-muted/30 border border-border/50 rounded-lg p-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Prefer to skip the form? Email us directly at{" "}
-                    <a href="mailto:hello@thecwtstudio.com" className="text-primary hover:underline font-medium">
-                      hello@thecwtstudio.com
-                    </a>
-                  </p>
                 </div>
               </div>
             </div>
