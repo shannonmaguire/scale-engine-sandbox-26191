@@ -15,12 +15,6 @@ interface AssessmentItemProps {
   disabled?: boolean;
 }
 
-const systemTips = {
-  yes: "System stability improves when data quality rules are enforced.",
-  partial: "Incremental implementation reduces technical debt over time.",
-  no: "Foundation gaps create compounding operational friction."
-};
-
 export const AssessmentItem = ({
   id,
   label,
@@ -115,13 +109,6 @@ export const AssessmentItem = ({
             No
           </button>
         </div>
-
-        {/* System Tip - Shows when answer is selected */}
-        {value && (
-          <p className="font-mono text-[13px] text-[#666] italic animate-fade-in">
-            {systemTips[value]}
-          </p>
-        )}
       </div>
     </div>
   );
