@@ -74,7 +74,7 @@ const Navigation = () => {
                 Services
                 <ChevronDown size={14} className="text-white" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-64 bg-[#1B3022] border-white/20 z-[100]">
+              <DropdownMenuContent align="start" className="w-64 bg-authority border-white/20 z-[100] text-white">
                 <div className="px-2 py-1.5">
                   <div className="text-xs font-mono font-semibold text-white/60 uppercase tracking-wider mb-1">
                     Core Services
@@ -83,10 +83,10 @@ const Navigation = () => {
                     <DropdownMenuItem key={link.href} asChild>
                       <Link 
                         to={link.href} 
-                        className="w-full font-mono text-sm font-medium text-white hover:text-white hover:bg-white/10 transition-colors flex justify-between items-center px-2 py-2 rounded"
+                        className="w-full font-mono text-sm font-medium hover:bg-white/10 transition-colors flex justify-between items-center px-2 py-2 rounded"
                       >
-                        <span>{link.label}</span>
-                        <span className="text-xs text-white/40">
+                        <span className="text-white">{link.label}</span>
+                        <span className="text-xs text-white/60">
                           {link.label === "Assessment" ? "(2 weeks)" :
                            link.label === "Sprint" ? "(90 days)" :
                            link.label === "Fractional Ops" ? "(ongoing)" : ""}
@@ -106,9 +106,9 @@ const Navigation = () => {
                     <DropdownMenuItem key={link.href} asChild>
                       <Link 
                         to={link.href} 
-                        className="w-full font-mono text-sm font-medium text-white hover:text-white hover:bg-white/10 transition-colors px-2 py-2 rounded"
+                        className="w-full font-mono text-sm font-medium hover:bg-white/10 transition-colors px-2 py-2 rounded"
                       >
-                        {link.label}
+                        <span className="text-white">{link.label}</span>
                       </Link>
                     </DropdownMenuItem>
                   ))}
