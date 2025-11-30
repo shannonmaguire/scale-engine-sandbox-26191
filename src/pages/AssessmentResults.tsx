@@ -187,8 +187,8 @@ const AssessmentResults = () => {
           {/* Overall Score Section */}
           <Card className="p-8 mb-8 border-2 border-border">
             <div className="text-center">
-              <div className="font-mono text-label uppercase tracking-widest text-muted-foreground mb-4">TECHNICAL MATURITY ASSESSMENT</div>
-              <div className="font-mono heading-page mb-4 text-foreground">
+              <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-4">TECHNICAL MATURITY ASSESSMENT</div>
+              <div className="font-mono text-5xl md:text-6xl font-bold mb-4 text-foreground">
                 SCORE: {overallProgress}/36 | TIER: {insight.text.toUpperCase()}
               </div>
               <Badge className={`${insight.bg} ${insight.color} border-0 mb-6 font-mono`}>

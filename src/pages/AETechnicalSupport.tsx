@@ -165,11 +165,11 @@ const AETechnicalSupport = () => {
       <Section noPadding className="pt-16 md:pt-20 pb-8 md:pb-12 border-b border-border">
         <div className="system-status mb-6 md:mb-8">TECHNICAL SUPPORT REQUEST</div>
         
-        <h1 className="heading-page mb-4 md:mb-6">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
           Request Technical Support
         </h1>
         
-        <p className="text-description max-w-3xl">
+        <p className="text-description max-w-3xl text-base md:text-lg">
           Technical support for Salesforce Account Executives. Submit your request below.
         </p>
       </Section>
@@ -177,9 +177,9 @@ const AETechnicalSupport = () => {
       {/* For Account Executives Section */}
       <Section className="bg-accent/5 border-b border-border">
         <div className="max-w-4xl mx-auto">
-          <h2 className="heading-section mb-6">For Account Executives</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">For Account Executives</h2>
           
-          <p className="text-description text-muted-foreground mb-6">
+          <p className="text-base md:text-lg text-muted-foreground mb-6">
             This support form is designed for Salesforce AEs who require:
           </p>
           
@@ -225,8 +225,8 @@ const AETechnicalSupport = () => {
           <div className="lg:col-span-2">
             <StandardCard>
               <StandardCardHeader>
-                <StandardCardTitle className="heading-subsection">Support Request Details</StandardCardTitle>
-                <StandardCardDescription className="text-description">
+                <StandardCardTitle className="text-lg md:text-xl">Support Request Details</StandardCardTitle>
+                <StandardCardDescription className="text-sm">
                   Provide as much context as possible to help us respond effectively.
                 </StandardCardDescription>
               </StandardCardHeader>
@@ -234,7 +234,7 @@ const AETechnicalSupport = () => {
                 <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                   {/* AE Information */}
                   <div className="space-y-4">
-                    <div className="text-label font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Your Information
                     </div>
                     
@@ -261,7 +261,7 @@ const AETechnicalSupport = () => {
 
                   {/* Prospect Information */}
                   <div className="space-y-4 pt-4 border-t border-border">
-                    <div className="text-label font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Prospect Details
                     </div>
                     
@@ -282,7 +282,7 @@ const AETechnicalSupport = () => {
 
                   {/* Deal Details */}
                   <div className="space-y-4 pt-4 border-t border-border">
-                    <div className="text-label font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Deal Information
                     </div>
                     
@@ -331,7 +331,7 @@ const AETechnicalSupport = () => {
 
                   {/* Technical Details */}
                   <div className="space-y-4 pt-4 border-t border-border">
-                    <div className="text-label font-mono font-semibold text-muted-foreground uppercase tracking-wider">
+                    <div className="text-xs md:text-sm font-mono font-semibold text-muted-foreground uppercase tracking-wider">
                       Technical Details
                     </div>
                     

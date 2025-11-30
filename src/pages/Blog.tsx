@@ -189,13 +189,13 @@ const Blog = () => {
                       </time>
                     </div>
                     
-                    <h2 className="heading-page font-mono text-foreground leading-tight mb-6 hover:text-primary transition-colors cursor-pointer">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-foreground leading-tight mb-6 hover:text-primary transition-colors cursor-pointer">
                       <Link to={`/blog/${featuredPost.slug}`}>
                         {featuredPost.title}
                       </Link>
                     </h2>
                     
-                    <p className="text-description text-muted-foreground leading-relaxed mb-8">
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">
                       {featuredPost.excerpt}
                     </p>
                     
@@ -244,7 +244,7 @@ const Blog = () => {
               {/* Section Header */}
               <div className="mb-10">
                 <div className="flex items-center gap-6">
-                  <h2 className="heading-section font-mono font-black text-foreground uppercase tracking-wide">
+                  <h2 className="text-3xl md:text-4xl font-mono font-black text-foreground uppercase tracking-wide">
                     {category}
                   </h2>
                   <div className="h-1 bg-gradient-to-r from-primary/50 to-transparent flex-1 rounded-full"></div>
