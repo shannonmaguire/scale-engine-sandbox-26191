@@ -24,19 +24,19 @@ const SelfAssessment = () => {
         canonicalUrl="/self-assessment"
       />
       
-      <div className="container-standard py-12 md:py-16">
-        <div className="max-w-4xl mx-auto">
+      <div className="container-standard py-8 md:py-16">
+        <div className="max-w-3xl mx-auto px-4">
           {/* Intro Section */}
-          <div className="mb-12 text-center">
-            <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-6 font-mono text-xs uppercase tracking-widest">
-              <span className="text-primary font-semibold">Free 5-Minute Quiz</span>
+          <div className="mb-8 md:mb-12">
+            <div className="text-xs md:text-sm uppercase tracking-wider text-black/60 mb-3 md:mb-4">
+              Free 5-Minute Assessment
             </div>
-            <h1 className="heading-page mb-6">Revenue Health Check</h1>
-            <p className="text-description max-w-2xl mx-auto mb-4">
-              Quick self-assessment of your revenue systems maturity. Answer 18 questions across data quality, automation, integration, governance, reporting, and user adoption.
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Revenue Health Check</h1>
+            <p className="text-base md:text-lg max-w-2xl mb-3">
+              Answer 18 questions across data quality, automation, integration, governance, reporting, and user adoption.
             </p>
-            <p className="text-description max-w-2xl mx-auto text-muted-foreground">
-              Takes 5 minutes. Instant score and category breakdown. No sales call required.
+            <p className="text-sm md:text-base text-black/70">
+              Takes 5 minutes. Instant score. No sales call required.
             </p>
           </div>
 

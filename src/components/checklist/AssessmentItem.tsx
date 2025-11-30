@@ -25,11 +25,11 @@ export const AssessmentItem = ({
   disabled = false
 }: AssessmentItemProps) => {
   return (
-    <div className="py-7 border-b border-black/5 last:border-0 transition-all duration-200">
-      <div className="space-y-5">
+    <div className="py-6 md:py-8 border-b border-black/10 last:border-0">
+      <div className="space-y-4 md:space-y-5">
         {/* Question Label */}
         <div className="flex items-start justify-between gap-3">
-          <label htmlFor={id} className="font-mono text-[15px] font-medium text-foreground leading-relaxed flex-1">
+          <label htmlFor={id} className="text-base md:text-lg font-medium text-foreground leading-relaxed flex-1">
             {label}
           </label>
           {helpText && (
@@ -38,14 +38,14 @@ export const AssessmentItem = ({
                 <TooltipTrigger asChild>
                   <button
                     type="button"
-                    className="flex-shrink-0 text-muted-foreground hover:text-foreground transition-colors"
+                    className="flex-shrink-0 text-muted-foreground hover:text-foreground transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center -mr-2"
                     aria-label="Help"
                   >
-                    <HelpCircle className="w-4 h-4" />
+                    <HelpCircle className="w-5 h-5" />
                   </button>
                 </TooltipTrigger>
                 <TooltipContent side="left" className="max-w-xs">
-                  <p className="text-sm font-sans">{helpText}</p>
+                  <p className="text-sm">{helpText}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -54,54 +54,57 @@ export const AssessmentItem = ({
 
         {/* Description */}
         {description && (
-          <p className="font-sans text-[15px] text-muted-foreground leading-relaxed">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
             {description}
           </p>
         )}
 
-        {/* Answer Buttons - Technical Style */}
-        <div className="flex flex-wrap sm:flex-nowrap gap-3">
+        {/* Answer Buttons - Minimal Black/White */}
+        <div className="flex flex-col sm:flex-row gap-2 md:gap-3">
           <button
             type="button"
             onClick={() => !disabled && onChange("yes")}
             disabled={disabled}
             className={cn(
-              "flex-1 px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
+              "flex-1 min-h-[48px] px-4 py-3 text-base md:text-lg font-medium transition-all",
+              "border-2 border-black",
               value === "yes"
-                ? "bg-primary/10 text-primary border-2 border-primary"
-                : "bg-transparent text-foreground/60 border-2 border-border hover:border-primary/40",
-              disabled && "opacity-50 cursor-not-allowed"
+                ? "bg-black text-white"
+                : "bg-white text-black hover:bg-black/5",
+              disabled && "opacity-30 cursor-not-allowed"
             )}
           >
-            [ YES ]
+            Yes
           </button>
           <button
             type="button"
             onClick={() => !disabled && onChange("partial")}
             disabled={disabled}
             className={cn(
-              "flex-1 px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
+              "flex-1 min-h-[48px] px-4 py-3 text-base md:text-lg font-medium transition-all",
+              "border-2 border-black",
               value === "partial"
-                ? "bg-accent/10 text-accent border-2 border-accent"
-                : "bg-transparent text-foreground/60 border-2 border-border hover:border-accent/40",
-              disabled && "opacity-50 cursor-not-allowed"
+                ? "bg-black text-white"
+                : "bg-white text-black hover:bg-black/5",
+              disabled && "opacity-30 cursor-not-allowed"
             )}
           >
-            [ PARTIAL ]
+            Partial
           </button>
           <button
             type="button"
             onClick={() => !disabled && onChange("no")}
             disabled={disabled}
             className={cn(
-              "flex-1 px-4 py-3 font-mono text-sm font-medium transition-all duration-200",
+              "flex-1 min-h-[48px] px-4 py-3 text-base md:text-lg font-medium transition-all",
+              "border-2 border-black",
               value === "no"
-                ? "bg-destructive/10 text-destructive border-2 border-destructive"
-                : "bg-transparent text-foreground/60 border-2 border-border hover:border-destructive/40",
-              disabled && "opacity-50 cursor-not-allowed"
+                ? "bg-black text-white"
+                : "bg-white text-black hover:bg-black/5",
+              disabled && "opacity-30 cursor-not-allowed"
             )}
           >
-            [ NO ]
+            No
           </button>
         </div>
       </div>
