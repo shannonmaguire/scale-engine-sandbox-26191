@@ -98,7 +98,7 @@ const AssessmentResults = () => {
     navigate('/contact', { 
       state: { 
         service: "Assessment",
-        message: `I just completed the technical maturity assessment and scored ${overallProgress}%. I'd like to discuss next steps.`
+        message: `I just completed the technical maturity assessment and scored ${overallProgress}/36. I'd like to discuss next steps.`
       }
     });
   };
@@ -108,9 +108,10 @@ const AssessmentResults = () => {
   };
 
   const getScoreInsight = (score: number) => {
-    if (score >= 75) return { text: "Strong Foundation", color: "text-green-600", bg: "bg-green-50" };
-    if (score >= 50) return { text: "Developing Maturity", color: "text-orange-600", bg: "bg-orange-50" };
-    return { text: "Growth Opportunity", color: "text-red-600", bg: "bg-red-50" };
+    if (score >= 31) return { text: "Optimized", color: "text-green-600", bg: "bg-green-50" };
+    if (score >= 21) return { text: "Structured", color: "text-blue-600", bg: "bg-blue-50" };
+    if (score >= 11) return { text: "Emerging", color: "text-orange-600", bg: "bg-orange-50" };
+    return { text: "Foundational", color: "text-red-600", bg: "bg-red-50" };
   };
 
   const insight = getScoreInsight(overallProgress);
@@ -187,14 +188,14 @@ const AssessmentResults = () => {
           <Card className="p-8 mb-8">
             <div className="text-center">
               <div className="text-sm font-medium text-muted-foreground mb-2">OVERALL MATURITY SCORE</div>
-              <div className="text-6xl font-bold mb-4">{overallProgress}%</div>
+              <div className="text-6xl font-bold mb-4">{overallProgress}/36</div>
               <Badge className={`${insight.bg} ${insight.color} border-0 mb-4`}>
                 {insight.text}
               </Badge>
               <div className="text-sm text-muted-foreground">
-                {answerCounts.yes} Yes, {answerCounts.partial} Partial, {answerCounts.no} No ({totalItems} total criteria)
+                {answerCounts.yes} Yes (2 pts each), {answerCounts.partial} Partial (1 pt each), {answerCounts.no} No (0 pts)
               </div>
-              <Progress value={overallProgress} className="mt-6 h-2" />
+              <Progress value={(overallProgress / 36) * 100} className="mt-6 h-2" />
             </div>
           </Card>
 
@@ -259,8 +260,9 @@ const AssessmentResults = () => {
                       </div>
                       <div className="text-right ml-4">
                         <div className={`text-2xl font-bold ${
-                          catProgress >= 75 ? 'text-green-600' : 
-                          catProgress >= 50 ? 'text-orange-600' : 
+                          catProgress >= 83 ? 'text-green-600' : 
+                          catProgress >= 58 ? 'text-blue-600' :
+                          catProgress >= 31 ? 'text-orange-600' : 
                           'text-red-600'
                         }`}>
                           {catProgress}%

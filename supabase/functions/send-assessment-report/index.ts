@@ -36,10 +36,35 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending assessment report to:", email);
 
-    const maturityLevel = 
-      overallScore >= 86 ? "Advanced" :
-      overallScore >= 71 ? "Established" :
-      overallScore >= 41 ? "Developing" : "Foundational";
+    // Determine tier based on raw score (0-36)
+    const getTierData = (score: number) => {
+      if (score >= 31) return {
+        label: "Optimized",
+        message: "Your environment is technically mature and ready to absorb growth. The focus now shifts to scale plays: outbound programs, new verticals, and advanced experimentation across your stack.",
+        cta: "Explore Expansion and New Verticals",
+        ctaUrl: "https://cwtstudio.com/contact?service=Sprint&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20want%20to%20explore%20expansion%20opportunities"
+      };
+      if (score >= 21) return {
+        label: "Structured",
+        message: "Your foundation is strong. Data, CRM, and execution have structure, and the main gaps sit in optimization and scale. You are ready for outbound engines, deeper analytics, and stronger automation layers.",
+        cta: "Design Your Revenue Engine Blueprint",
+        ctaUrl: "https://cwtstudio.com/contact?service=Sprint&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20want%20to%20design%20a%20revenue%20engine%20blueprint"
+      };
+      if (score >= 11) return {
+        label: "Emerging",
+        message: "You have pieces in place, yet the system leaks. Data hygiene, automations, and reporting exist in pockets rather than as a connected whole. The next step is to standardize your core workflows and fix the highest-impact breaks.",
+        cta: "Schedule a 90-Day Infrastructure Sprint",
+        ctaUrl: "https://cwtstudio.com/sprint"
+      };
+      return {
+        label: "Foundational",
+        message: "Your systems are carrying more risk than you see day to day. Data quality, pipeline structure, and execution discipline all need a clean reset before growth efforts will stick. The next step is a focused architecture review and a minimum viable operating system.",
+        cta: "Book a Technical Architecture Review",
+        ctaUrl: "https://cwtstudio.com/contact?service=Assessment&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20need%20an%20architecture%20review"
+      };
+    };
+
+    const tierData = getTierData(overallScore);
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -55,6 +80,7 @@ const handler = async (req: Request): Promise<Response> => {
             .metric-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #f0f0f0; }
             .metric-label { color: #666; font-size: 14px; }
             .metric-value { font-weight: 600; color: #8B0000; }
+            .insight-box { background: #FFF9E6; border-left: 4px solid #8B0000; padding: 20px; margin: 30px 0; }
             .cta { display: inline-block; background: #8B0000; color: white; padding: 16px 32px; text-decoration: none; border-radius: 4px; margin: 30px 0; font-weight: 600; }
             .footer { text-align: center; padding: 30px; color: #999; font-size: 12px; }
           </style>
@@ -63,18 +89,18 @@ const handler = async (req: Request): Promise<Response> => {
           <div class="container">
             <div class="header">
               <h1 style="margin: 0; font-size: 24px; font-weight: 600;">Technical Maturity Assessment</h1>
-              <div class="score">${overallScore}%</div>
-              <div class="badge">${maturityLevel}</div>
+              <div class="score">${overallScore}/36</div>
+              <div class="badge">${tierData.label}</div>
             </div>
             
             <div class="content">
               <h2 style="color: #8B0000; margin-top: 0;">Your ${checklistTitle}</h2>
               
-              <p>Your infrastructure assessment is complete. Here's what the data shows:</p>
+              <p>${tierData.message}</p>
               
               <div style="margin: 30px 0;">
                 <div class="metric-row">
-                  <span class="metric-label">Completed Criteria</span>
+                  <span class="metric-label">Yes (Fully Implemented)</span>
                   <span class="metric-value">${answerCounts.yes} items</span>
                 </div>
                 <div class="metric-row">
@@ -82,24 +108,22 @@ const handler = async (req: Request): Promise<Response> => {
                   <span class="metric-value">${answerCounts.partial} items</span>
                 </div>
                 <div class="metric-row">
-                  <span class="metric-label">Missing Capabilities</span>
+                  <span class="metric-label">No (Not Implemented)</span>
                   <span class="metric-value">${answerCounts.no} items</span>
                 </div>
               </div>
 
-              ${overallScore < 71 ? `
-                <div style="background: #FFF9E6; border-left: 4px solid #FFA500; padding: 20px; margin: 30px 0;">
-                  <strong style="color: #FFA500;">Infrastructure Gaps Detected</strong>
-                  <p style="margin: 10px 0 0 0; color: #666;">Your score indicates operational inefficiencies that compound over time. Prioritized system improvements typically yield 40-60% reduction in manual operations overhead.</p>
-                </div>
-              ` : ''}
+              <div class="insight-box">
+                <strong style="color: #8B0000;">Next Step</strong>
+                <p style="margin: 10px 0 0 0;">${tierData.message}</p>
+              </div>
 
-              <p style="margin-top: 30px;">For detailed category breakdown and specific recommendations, view your full report:</p>
+              <p style="margin-top: 30px;">Ready to take action?</p>
               
-              <a href="https://cwtstudio.com/assessment-results" class="cta">View Full Report</a>
+              <a href="${tierData.ctaUrl}" class="cta">${tierData.cta}</a>
 
               <p style="color: #666; font-size: 14px; margin-top: 30px;">
-                Want to discuss implementation priorities? <a href="https://cwtstudio.com/contact" style="color: #8B0000;">Schedule a technical consultation</a>.
+                View your full results with category breakdown at <a href="https://cwtstudio.com/assessment-results" style="color: #8B0000;">cwtstudio.com/assessment-results</a>
               </p>
             </div>
 
@@ -115,7 +139,7 @@ const handler = async (req: Request): Promise<Response> => {
     const emailResponse = await resend.emails.send({
       from: "CWT Studio <onboarding@resend.dev>",
       to: [email],
-      subject: `Your Technical Maturity Score: ${overallScore}% (${maturityLevel})`,
+      subject: `Your Technical Maturity Score: ${overallScore}/36 (${tierData.label})`,
       html: emailHtml,
     });
 

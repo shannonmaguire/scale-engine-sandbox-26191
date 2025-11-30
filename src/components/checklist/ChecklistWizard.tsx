@@ -16,11 +16,12 @@ interface ChecklistWizardProps {
 
 export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
-  const { checklistState, setAnswer, resetChecklist, getProgress, getAnswerCounts } = useChecklist();
+  const { checklistState, setAnswer, resetChecklist, getRawScore, getProgress, getAnswerCounts } = useChecklist();
   const navigate = useNavigate();
 
   const currentCategory = categories[currentStep];
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
+  const rawScore = getRawScore(checklistId);
   const overallProgress = getProgress(checklistId, totalItems);
   const answerCounts = getAnswerCounts(checklistId);
   const answeredItems = answerCounts.yes + answerCounts.partial + answerCounts.no;
@@ -48,10 +49,11 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
 
   const handleViewResults = () => {
     const progress = getProgress(checklistId, totalItems);
+    const rawScoreValue = getRawScore(checklistId);
     
     trackEvent('assessment_completed', {
       checklist_id: checklistId,
-      score: progress,
+      score: rawScoreValue,
       answers: answerCounts
     });
     
@@ -60,7 +62,7 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
       state: {
         checklistId,
         checklistTitle: title,
-        overallScore: progress,
+        overallScore: rawScoreValue,
         answerCounts,
         checklistState,
         categoryCount: categories.length

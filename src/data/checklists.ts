@@ -194,125 +194,106 @@ export const technicalAssessmentChecklist: ChecklistCategory[] = [
     title: "Data Quality",
     items: [
       {
-        id: "duplicate-records",
-        label: "We have a way to prevent duplicate records",
-        helpText: "Example: System stops you from creating two contacts with the same email address"
+        id: "duplicate-prevention",
+        label: "We have a clear process to prevent duplicate records.",
       },
       {
-        id: "data-completeness",
-        label: "Important information is required (not optional)",
-        helpText: "Example: You can't save a new customer without entering their phone number or email"
+        id: "required-fields",
+        label: "Required fields are enforced for key records such as leads, contacts, and opportunities.",
       },
       {
         id: "data-cleanup",
-        label: "We regularly clean up old or incorrect data",
-        helpText: "Example: Monthly check to update or remove outdated customer information"
+        label: "We regularly review and clean up outdated or incorrect data.",
       }
     ]
   },
   {
-    id: "automation",
-    title: "Automation",
+    id: "crm-pipeline",
+    title: "CRM & Pipeline",
     items: [
       {
-        id: "workflow-documented",
-        label: "We've written down how our main processes work",
-        helpText: "Example: You have a document explaining step-by-step how you handle new customer inquiries"
+        id: "pipeline-stages",
+        label: "Our pipeline stages clearly match how deals move in real life.",
       },
       {
-        id: "workflow-rules",
-        label: "The system handles routine tasks automatically",
-        helpText: "Example: When a deal closes, the system automatically creates renewal reminders"
+        id: "next-steps",
+        label: "Every active opportunity has a defined next step in the CRM.",
       },
       {
-        id: "process-builder",
-        label: "Multi-step processes run without manual work",
-        helpText: "Example: New customer gets added → welcome email sent → task created for onboarding → manager notified"
+        id: "crm-completeness",
+        label: "No major parts of the sales process live outside the CRM.",
       }
     ]
   },
   {
-    id: "integrations",
-    title: "System Connections",
+    id: "automation-integrations",
+    title: "Automation & Integrations",
     items: [
       {
-        id: "integration-map",
-        label: "We have a list of all our connected systems",
-        helpText: "Example: You know what connects to what (email tool → CRM → accounting software)"
+        id: "task-automation",
+        label: "Repetitive tasks such as follow-ups or reminders are automated.",
       },
       {
-        id: "error-handling",
-        label: "We know when syncing fails between systems",
-        helpText: "Example: Alert pops up if customer info doesn't transfer from your forms to the database"
+        id: "tool-integration",
+        label: "Our core tools (CRM, marketing, scheduling, payments) are reliably integrated.",
       },
       {
         id: "data-sync",
-        label: "Data stays consistent across different systems",
-        helpText: "Example: Customer's email is the same in your CRM, email tool, and billing system"
+        label: "Changes in one system are reflected in others without manual re-entry.",
       }
     ]
   },
   {
-    id: "security",
-    title: "Security & Privacy",
+    id: "measurement-analytics",
+    title: "Measurement & Analytics",
     items: [
       {
-        id: "role-hierarchy",
-        label: "Access levels match company structure",
-        helpText: "Example: Sales reps see their accounts, managers see their team's accounts, executives see everything"
+        id: "conversion-tracking",
+        label: "We track conversion rates at each major stage of the funnel.",
       },
       {
-        id: "field-security",
-        label: "Sensitive information has restricted access",
-        helpText: "Example: Only certain people can view salary info or customer credit card data"
+        id: "consistent-tracking",
+        label: "Our tracking (UTMs, pixels, events) is consistent across campaigns.",
       },
       {
-        id: "audit-trail",
-        label: "We can see who changed what and when",
-        helpText: "Example: You can look up who updated a customer's address last Tuesday"
+        id: "dashboard-review",
+        label: "Leadership reviews performance dashboards on a regular cadence.",
       }
     ]
   },
   {
-    id: "reporting",
-    title: "Reports & Insights",
+    id: "compliance-risk",
+    title: "Compliance & Risk",
     items: [
       {
-        id: "dashboard-adoption",
-        label: "Leadership actually uses the reports",
-        helpText: "Example: Your managers check dashboards weekly to make decisions, not just for show"
+        id: "access-control",
+        label: "Access to systems is permission-based and revoked when people leave.",
       },
       {
-        id: "kpi-tracking",
-        label: "We track our most important metrics",
-        helpText: "Example: You monitor monthly revenue, conversion rates, or customer satisfaction scores"
+        id: "regulatory-compliance",
+        label: "Customer or patient data is stored in line with our regulatory obligations.",
       },
       {
-        id: "forecast-accuracy",
-        label: "Our sales forecasts are usually accurate",
-        helpText: "Example: When you predict closing $100K this month, you actually close close to that"
+        id: "data-ownership",
+        label: "We know where sensitive data lives and who is responsible for it.",
       }
     ]
   },
   {
-    id: "adoption",
-    title: "Team Usage",
-    description: "Does your team actually use the system?",
+    id: "operating-discipline",
+    title: "Operating Discipline",
     items: [
       {
-        id: "login-frequency",
-        label: "Most of the team logs in daily",
-        helpText: "Example: At least 70% of your team uses the system every workday"
+        id: "system-owners",
+        label: "Owners are assigned to core systems and processes.",
       },
       {
-        id: "training-program",
-        label: "We train new team members on the system",
-        helpText: "Example: New hires get a walkthrough during their first week"
+        id: "review-cadence",
+        label: "There is a weekly slot where we review pipeline and system health.",
       },
       {
-        id: "super-users",
-        label: "We have go-to people who know the system well",
-        helpText: "Example: A few team members are experts others can ask for help"
+        id: "root-cause-fixes",
+        label: "When a process breaks, we fix the root cause instead of patching it once.",
       }
     ]
   }
@@ -329,7 +310,7 @@ export const checklists = [
   {
     id: 'technical-maturity',
     title: 'Technical Maturity Assessment',
-    description: 'Evaluate your Salesforce and revenue systems maturity across 6 key dimensions',
+    description: 'Assess your Salesforce and revenue systems across 6 key dimensions: Data Quality, CRM & Pipeline, Automation & Integrations, Measurement & Analytics, Compliance & Risk, and Operating Discipline.',
     categories: technicalAssessmentChecklist
   }
 ];

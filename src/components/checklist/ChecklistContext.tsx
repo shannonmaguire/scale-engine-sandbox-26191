@@ -20,6 +20,7 @@ interface ChecklistContextType {
   getEmail: (checklistId: string) => string | null;
   toggleItem: (checklistId: string, itemId: string) => void; // Deprecated, kept for backwards compatibility
   resetChecklist: (checklistId: string) => void;
+  getRawScore: (checklistId: string) => number;
   getProgress: (checklistId: string, totalItems: number) => number;
   getUnansweredCount: (checklistId: string, totalItems: number) => number;
   getAnswerCounts: (checklistId: string) => { yes: number; partial: number; no: number; unanswered: number };
@@ -103,6 +104,15 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const getRawScore = (checklistId: string) => {
+    const answers = Object.values(checklistState[checklistId] || {});
+    return answers.reduce((sum, answer) => {
+      if (answer === "yes") return sum + 2;
+      if (answer === "partial") return sum + 1;
+      return sum;
+    }, 0);
+  };
+
   const getProgress = (checklistId: string, totalItems: number) => {
     const answers = Object.values(checklistState[checklistId] || {});
     const totalScore = answers.reduce((sum, answer) => {
@@ -139,6 +149,7 @@ export const ChecklistProvider = ({ children }: { children: ReactNode }) => {
       getEmail,
       toggleItem, 
       resetChecklist, 
+      getRawScore,
       getProgress, 
       getUnansweredCount,
       getAnswerCounts 
