@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
 import { CheckCircle } from "lucide-react";
 import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
+import { CTA, ROUTES, TIMELINES } from "@/lib/canonical-constants";
 const Proof = () => {
   const caseStudies: Array<{
     id: number;
@@ -267,7 +268,7 @@ const Proof = () => {
             Start With Assessment
           </h2>
           <p className="text-description text-muted-foreground mb-10">
-            2-week infrastructure audit. Gap analysis. 90-day deployment roadmap.
+            {TIMELINES.assessment} infrastructure audit. Gap analysis. 90-day deployment roadmap.
           </p>
           <ConversionOptimizedButton to="/assessment" ctaName="Proof Page - Start Assessment" location="Proof Page CTA" size="lg">
             Start Assessment
