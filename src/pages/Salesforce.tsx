@@ -8,55 +8,24 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA, ROUTES } from "@/lib/canonical-constants";
 
 const Salesforce = () => {
-  const services = [
+  const capabilities = [
     {
       icon: BarChart3,
-      title: "Revenue Systems Assessment",
-      description: "Salesforce configuration and revenue infrastructure audit",
-      duration: "2 weeks",
-      deliverables: ["Revenue Infrastructure Scorecard", "System analysis", "90-day roadmap"]
+      title: "Assessment",
+      description: "Audit existing configuration. Identify technical debt. Map to revenue outcomes.",
+      deliverables: ["Infrastructure scorecard", "Risk analysis", "Implementation roadmap"]
     },
     {
       icon: Zap,
-      title: "Automation & Integration",
-      description: "Tool integration. Manual process automation.",
-      duration: "4-8 weeks",
-      deliverables: ["Custom integrations", "Workflow automation", "Data synchronization"]
+      title: "Implementation",
+      description: "Build integrations. Automate workflows. Deploy reporting infrastructure.",
+      deliverables: ["Custom objects & fields", "API integrations", "Dashboard architecture"]
     },
     {
       icon: Target,
-      title: "Performance Optimization",
-      description: "Salesforce configuration tuned for adoption and performance",
-      duration: "3-6 weeks",
-      deliverables: ["Custom fields & objects", "Reporting dashboards", "User training"]
-    }
-  ];
-
-  const benefits = [
-    "40% reduction in manual data entry",
-    "Improved forecast accuracy by 25%",
-    "30% faster deal cycle times",
-    "90%+ user adoption rates"
-  ];
-
-  const process = [
-    {
-      step: "01",
-      title: "Discovery & Strategy", 
-      description: "Current setup analysis. Optimization identification. Implementation roadmap.",
-      timeline: "Week 1-3"
-    },
-    {
-      step: "02", 
-      title: "Build & Deploy",
-      description: "Optimization implementation. Minimal disruption.",
-      timeline: "Week 4-8"
-    },
-    {
-      step: "03",
-      title: "Training & Handoff",
-      description: "Knowledge transfer. Team adoption.",
-      timeline: "Week 8-10"
+      title: "Optimization",
+      description: "Tune performance. Fix adoption blockers. Document handoff.",
+      deliverables: ["Process documentation", "User training", "Maintenance runbook"]
     }
   ];
 
@@ -94,24 +63,17 @@ const Salesforce = () => {
       />
       <Breadcrumbs />
       {/* Hero Section */}
-      <Section className="bg-card border-b border-border shadow-lg shadow-accent/10">
+      <Section className="bg-card border-b border-border">
         <div className="max-w-4xl mx-auto text-center">
-            <p className="text-label text-muted-foreground mb-6">
-              For Salesforce Teams and Partners
-            </p>
             <div className="system-status border-accent mb-8">
-              <span className="text-accent">PLATFORM OPTIMIZATION</span>
+              <span className="text-accent">SALESFORCE SOLUTIONS</span>
             </div>
             <h1 className="heading-page mb-6">
-              Salesforce Revenue Infrastructure
+              Salesforce Built for Revenue Predictability
             </h1>
-            <p className="text-description text-muted-foreground mb-10 max-w-3xl mx-auto">
-              Assessment-driven implementations backed by ISV & OEM partner expertise. Fragmented systems rebuilt as scalable revenue infrastructure.
+            <p className="text-description text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Transform fragmented systems into scalable revenue infrastructure. Assessment-driven implementations backed by ISV & OEM partner expertise.
             </p>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 text-description mb-8">
-              <Shield className="w-4 h-4 text-accent" />
-              <span className="text-muted-foreground">In partnership with <strong className="text-foreground">CloudRoute</strong> — Salesforce ISV & OEM Partner with 100+ certifications and exclusive Salesforce-only focus</span>
-            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="teal" asChild>
                 <Link to="/contact?interest=salesforce">
@@ -128,30 +90,26 @@ const Salesforce = () => {
         </div>
       </Section>
 
-      {/* Services */}
+      {/* Capabilities */}
       <Section>
         <div className="text-center mb-12">
-            <h2 className="heading-section mb-6 text-foreground">Salesforce Revenue Systems</h2>
-            <p className="text-description text-muted-foreground max-w-3xl mx-auto">
-              Assessment-driven implementations. Measured outcomes.
+            <h2 className="heading-section mb-6">What We Build</h2>
+            <p className="text-description text-muted-foreground max-w-2xl mx-auto">
+              Salesforce configured for revenue predictability, not feature sprawl.
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gutter-content spacing-subsection">
-            {services.map((service, index) => (
-              <StandardCard key={index} variant="bordered" equalHeight className="p-8 hover:border-accent transition-all">
+          <div className="grid lg:grid-cols-3 gutter-content">
+            {capabilities.map((item, index) => (
+              <StandardCard key={index} variant="bordered" equalHeight className="p-8">
                 <StandardCardHeader>
-                  <StandardCardTitle className="heading-subsection mb-3">{service.title}</StandardCardTitle>
-                  <div className="flex items-center gap-2 text-label text-muted-foreground mb-6">
-                    <Clock className="w-4 h-4" />
-                    {service.duration}
-                  </div>
+                  <item.icon className="w-8 h-8 text-accent mb-4" />
+                  <StandardCardTitle className="heading-subsection mb-4">{item.title}</StandardCardTitle>
                 </StandardCardHeader>
                 <StandardCardContent>
-                  <p className="text-description text-muted-foreground mb-6">{service.description}</p>
-                  <div className="space-y-3">
-                    <p className="heading-subsection">Key Deliverables:</p>
-                    {service.deliverables.map((deliverable, idx) => (
+                  <p className="text-description text-muted-foreground mb-6">{item.description}</p>
+                  <div className="space-y-2 border-t border-border pt-4">
+                    {item.deliverables.map((deliverable, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-description">
                         <CheckCircle className="w-4 h-4 text-accent flex-shrink-0" />
                         {deliverable}
@@ -164,149 +122,28 @@ const Salesforce = () => {
           </div>
       </Section>
 
-      {/* Benefits */}
-      <Section className="bg-accent/5">
+      {/* Partner Model */}
+      <Section className="bg-accent/5 border-y border-border">
         <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="heading-section mb-6">Proven Results</h2>
-              <p className="text-description text-muted-foreground">
-                Our clients typically see these improvements within 90 days
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gutter-standard">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-3 bg-card p-6 border-l-4 border-accent-data">
-                  <Shield className="w-6 h-6 accent-data flex-shrink-0" />
-                  <span className="text-description font-medium">{benefit}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-      </Section>
-
-      {/* Process */}
-      <Section>
-        <div className="text-center mb-12">
-            <h2 className="heading-section mb-6">How We Work</h2>
-            <p className="text-description text-muted-foreground">
-              A proven process that minimizes disruption while maximizing results
-            </p>
-          </div>
-          
-          <div className="grid lg:grid-cols-3 gutter-standard relative">
-            {/* Teal pipeline connector */}
-            <div className="hidden lg:block absolute top-6 left-0 right-0 h-0.5 bg-accent/40" style={{ zIndex: 0 }} />
-            
-            {process.map((step, index) => (
-              <StandardCard key={index} equalHeight className="relative" style={{ zIndex: 1 }}>
-                <StandardCardHeader>
-                  <div className="w-12 h-12 bg-accent text-white flex items-center justify-center font-bold heading-subsection mb-6 shadow-lg shadow-accent/30">
-                    {step.step}
-                  </div>
-                  <StandardCardTitle className="heading-subsection">{step.title}</StandardCardTitle>
-                  <p className="text-label text-accent font-semibold">{step.timeline}</p>
-                </StandardCardHeader>
-                <StandardCardContent>
-                  <p className="text-description text-muted-foreground">{step.description}</p>
-                </StandardCardContent>
-              </StandardCard>
-            ))}
-          </div>
-      </Section>
-
-      {/* Salesforce Expertise */}
-      <Section className="bg-accent/5 border-y-2 border-accent/20">
-        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent text-label mb-8">
-              <Shield className="w-4 h-4" />
-              SALESFORCE EXPERTISE
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20 text-label mb-6">
+              <Shield className="w-4 h-4 text-accent" />
+              PARTNER NETWORK
             </div>
-            <h2 className="heading-section mb-6">Salesforce-Only Expertise That Scales Globally</h2>
-            <p className="text-description text-muted-foreground max-w-3xl mx-auto">
-              CWT Studio leads strategy and discovery. CloudRoute—a family-owned Salesforce ISV & OEM Partner with 100+ certifications—delivers pure Salesforce technical implementation with global reach and enterprise-grade authority.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gutter-content spacing-subsection">
-            <div className="bg-card p-7 border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="heading-subsection text-foreground mb-4">
-                100+ Salesforce Certifications
-              </h3>
-              <p className="text-description text-muted-foreground">
-                Deep platform expertise across all Salesforce clouds and specializations
-              </p>
-            </div>
-
-            <div className="bg-card p-7 border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="heading-subsection text-foreground mb-4">
-                ISV & OEM Partner
-              </h3>
-              <p className="text-description text-muted-foreground">
-                Direct access to platform resources, beta features, and priority support channels
-              </p>
-            </div>
-
-            <div className="bg-card p-7 border-l-4 border-accent hover:border-l-8 transition-all">
-              <h3 className="heading-subsection text-foreground mb-4">
-                Measurable Outcomes
-              </h3>
-              <p className="text-description text-muted-foreground">
-                Documented results, adoption metrics, and 12-month growth projections
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </Section>
-
-      {/* Getting Started */}
-      <Section variant="muted">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="heading-section mb-6">Getting Started</h2>
-          <p className="text-description text-muted-foreground mb-10">
-            Schedule a discovery consultation to assess your Salesforce configuration and identify high-impact optimizations.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="teal" asChild>
-              <Link to="/contact?interest=salesforce">Schedule Discovery Call</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to="/contact?interest=salesforce">Ask Questions</Link>
-            </Button>
-          </div>
-        </div>
-      </Section>
-
-      {/* Partnership & Delivery Model */}
-      <Section>
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 text-accent text-label mb-8">
-              <Target className="w-4 h-4" />
-              PARTNERSHIP MODEL
-            </div>
-            <h2 className="heading-section mb-6">How We Deliver: CWT + CloudRoute</h2>
-            <p className="text-description text-muted-foreground max-w-3xl mx-auto">
-              Strategic collaboration combining revenue operations expertise with enterprise-grade technical implementation
+            <h2 className="heading-section mb-6">CWT + CloudRoute</h2>
+            <p className="text-description text-muted-foreground max-w-2xl mx-auto">
+              Strategy led by CWT Studio. Implementation delivered by CloudRoute—Salesforce ISV & OEM Partner with 100+ certifications.
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gutter-content">
-            <StandardCard variant="bordered" className="p-8">
-              <h3 className="heading-subsection mb-3">CWT Studio</h3>
-              <p className="text-description text-muted-foreground font-medium mb-8">Strategy & Optimization</p>
-              
-              <ul className="space-y-4">
+            <div className="bg-card p-8 border-l-4 border-accent">
+              <h3 className="heading-subsection mb-4">CWT Studio</h3>
+              <p className="text-description text-muted-foreground mb-6">Revenue operations strategy and system design</p>
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-description">Revenue operations expertise</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-description">Business process design</span>
+                  <span className="text-description">Business process architecture</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
@@ -317,37 +154,45 @@ const Salesforce = () => {
                   <span className="text-description">Ongoing optimization</span>
                 </li>
               </ul>
-            </StandardCard>
+            </div>
 
-            <StandardCard variant="bordered" className="p-8">
-              <h3 className="heading-subsection mb-3">CloudRoute</h3>
-              <p className="text-description text-muted-foreground font-medium mb-8">Technical Implementation</p>
-              
-              <ul className="space-y-4">
+            <div className="bg-card p-8 border-l-4 border-accent">
+              <h3 className="heading-subsection mb-4">CloudRoute</h3>
+              <p className="text-description text-muted-foreground mb-6">Salesforce-exclusive technical implementation</p>
+              <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-description">Salesforce development</span>
+                  <span className="text-description">Platform development</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-description">System integrations</span>
+                  <span className="text-description">API integrations</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-description">Technical architecture</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
-                  <span className="text-description">Platform maintenance</span>
+                  <span className="text-description">System maintenance</span>
                 </li>
               </ul>
-              
-              <div className="mt-8 pt-6 border-t border-border">
-                <p className="text-description text-muted-foreground">
-                  <span className="font-semibold text-foreground">Salesforce-Only Focus:</span> CloudRoute specializes exclusively in Salesforce, ensuring deep platform expertise without dilution.
-                </p>
-              </div>
-            </StandardCard>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* CTA */}
+      <Section>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="heading-section mb-6">Start With Assessment</h2>
+          <p className="text-description text-muted-foreground mb-10">
+            Audit your current Salesforce configuration. Identify technical debt. Map implementation priorities.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="teal" asChild>
+              <Link to="/contact?interest=salesforce">{CTA.scheduleConsultation}</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to={ROUTES.assessment}>Take Self-Assessment</Link>
+            </Button>
           </div>
         </div>
       </Section>
