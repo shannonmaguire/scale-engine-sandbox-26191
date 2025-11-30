@@ -1,222 +1,212 @@
 import { Button } from "@/components/ui/button";
-import { StandardCard, StandardCardContent } from "@/components/ui/standard-card";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
-import { Clock, CheckCircle, TrendingUp, Users, FileText, Calendar } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { ServiceJourneyFlow } from "@/components/ServiceJourneyFlow";
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { CTA, ROUTES } from "@/lib/canonical-constants";
 
 const Fractional = () => {
-  const whatYouGet = [
+  const operatingCadence = [
     {
-      icon: FileText,
-      title: "Monthly Operating Review",
-      description: "Performance scorecard tracking revenue metrics, system health, and adoption rates with executive summary"
+      component: "Monthly Review",
+      description: "System health audit tracking automation execution, data quality, integration performance, and workflow bottlenecks."
     },
     {
-      icon: TrendingUp,
-      title: "Continuous System Optimization",
-      description: "Ongoing refinement of workflows, dashboards, and automation based on actual usage patterns and team feedback"
+      component: "Quarter Planning",
+      description: "Forward-looking roadmap session aligning system enhancements to business objectives and scaling requirements."
     },
     {
-      icon: Calendar,
-      title: "Quarterly Strategic Planning",
-      description: "Forward-looking roadmap sessions aligned to business objectives, market expansion, and scaling requirements"
+      component: "System Tuning",
+      description: "Performance optimization based on usage patterns—workflow refinement, dashboard updates, automation logic adjustments."
     },
     {
-      icon: Users,
-      title: "Team Training & Documentation",
-      description: "Process documentation, onboarding materials, and ongoing capability building for internal stakeholders"
+      component: "Documentation Updates",
+      description: "Process SOPs, field definitions, and admin protocols kept current as systems evolve and team capacity grows."
     },
     {
-      icon: CheckCircle,
-      title: "Executive Reporting",
-      description: "Actionable insights with clear recommendations, risk identification, and performance trending"
+      component: "Adoption Metrics",
+      description: "User behavior tracking, training gap identification, and stakeholder engagement measurement to drive system utilization."
     }
   ];
 
-
-  const faqs = [
-    {
-      question: "What's the difference between Fractional Ops and a Sprint?",
-      answer: "Sprint is an 8-12 week implementation project to build your revenue infrastructure. Fractional Ops is ongoing monthly support after your systems are live. Think of Sprint as installation, Fractional Ops as continuous optimization and performance management."
-    },
-    {
-      question: "Can I start Fractional Ops without doing a Sprint first?",
-      answer: "Fractional Ops requires existing infrastructure in production. If you completed a Sprint with CWT Studio or have equivalent revenue systems already deployed, you're eligible. If not, you'll need to complete a Sprint or comparable implementation first."
-    },
-    {
-      question: "What if I only need help a few hours per month?",
-      answer: "Fractional Ops includes a minimum monthly commitment to maintain continuity and strategic oversight. For ad-hoc support, consider our on-demand support blocks (available for Web Systems clients) or schedule an Assessment to discuss lighter-touch options."
-    },
-    {
-      question: "How is Fractional Ops different from hiring a full-time RevOps person?",
-      answer: "Fractional Ops gives you senior operator-level expertise without the $120K+ salary and benefits. You get strategic oversight, hands-on system work, and vendor management at a fraction of the cost. If your systems are mature enough to require full-time attention, we'll tell you."
-    },
-    {
-      question: "What systems and platforms do you support?",
-      answer: "We primarily work with Salesforce-based revenue stacks, including common integrations like HubSpot, Outreach, Gong, Stripe, and custom APIs. If your stack is outside this ecosystem, book an Assessment to confirm fit."
-    },
-    {
-      question: "Can I pause or cancel Fractional Ops?",
-      answer: "Six-month minimum commitment is required. After that, you can cancel with 30 days notice. Pausing is available for planned business interruptions (e.g., acquisition, restructuring) on a case-by-case basis."
-    }
+  const compoundingOutcomes = [
+    { label: "Operational Velocity", description: "System changes deploy faster as institutional knowledge builds and technical debt remains controlled." },
+    { label: "Forecast Reliability", description: "Prediction accuracy improves as data quality compounds and reporting infrastructure stabilizes." },
+    { label: "Founder Independence", description: "Executive intervention in daily operations decreases as systems prove load-tolerant and team competence increases." }
   ];
-
 
   return (
     <div className="min-h-screen">
       <SEOHead 
         title="Fractional Revenue Operations | CWT Studio" 
-        description="Ongoing operations support for teams that need their systems maintained, optimized, and performance-driven. Starting at $6K/month with six-month minimum." 
-        keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'Salesforce managed services']} 
-        canonicalUrl="/fractional" 
+        description="Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount." 
+        keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'monthly operating cadence']} 
+        canonicalUrl="/fractional"
+        serviceSchema={{
+          name: 'Fractional Revenue Operations',
+          description: 'Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount.',
+          offers: [
+            {
+              name: 'Monthly Review',
+              description: 'System health audit tracking automation execution, data quality, and workflow performance'
+            },
+            {
+              name: 'Quarter Planning',
+              description: 'Forward-looking roadmap session aligning system enhancements to business objectives'
+            },
+            {
+              name: 'System Tuning',
+              description: 'Performance optimization based on usage patterns and workflow refinement'
+            }
+          ]
+        }}
       />
       
       <Breadcrumbs />
       
-      <Section>
+      <Section className="border-b border-border">
         {/* Hero */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="system-status mb-6">CONTINUOUS OPTIMIZATION</div>
-          <h1 className="heading-page mb-6">Fractional Ops</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            Your infrastructure is installed. Fractional ops keeps it optimized, maintained, and compounding performance through a monthly operating rhythm.
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h1 className="heading-section">Fractional Revenue Operations</h1>
+          </div>
+          
+          <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
+            Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount.
           </p>
-        </div>
 
-        {/* Service Journey Flow */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <ServiceJourneyFlow 
-            steps={[
-              { name: "Assessment", href: "/assessment", completed: true },
-              { name: "Sprint", href: "/sprint", completed: true },
-              { name: "Fractional Ops", href: "/fractional", current: true }
-            ]}
-          />
-        </div>
-
-        {/* What You Get - Expanded */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-8">What You Get</h2>
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 items-stretch">
-            {whatYouGet.map((item, index) => (
-              <StandardCard key={index} variant="bordered" className="border-primary/20" equalHeight>
-                <StandardCardContent className="p-4 sm:p-6 flex-1">
-                  <div className="flex items-start gap-3 sm:gap-4">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-base sm:text-lg mb-1 sm:mb-2">{item.title}</h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-                </StandardCardContent>
-              </StandardCard>
-            ))}
-          </div>
-        </div>
-
-
-        {/* How It Works */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">How It Works</h2>
-          <div className="space-y-4">
-            <div className="border-l-2 sm:border-l-4 border-primary pl-4 sm:pl-6 py-2">
-              <h3 className="font-bold text-base sm:text-lg mb-2">Month 1: Baseline & Strategic Planning</h3>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Current state assessment, priority alignment, stakeholder onboarding
-              </p>
-            </div>
-            <div className="border-l-2 sm:border-l-4 border-primary/60 pl-4 sm:pl-6 py-2">
-              <h3 className="font-bold text-base sm:text-lg mb-2">Months 2-3: Infrastructure Optimization</h3>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                System enhancements, process refinement, training deployment
-              </p>
-            </div>
-            <div className="border-l-2 sm:border-l-4 border-primary/30 pl-4 sm:pl-6 py-2">
-              <h3 className="font-bold text-base sm:text-lg mb-2">Month 4+: Scale Enablement</h3>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Growth preparation, advanced automation, strategic executive partnership
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        {/* FAQ */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-8">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-semibold">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-
-        {/* Pricing */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <StandardCard variant="bordered" className="border-primary/30">
-            <StandardCardContent className="p-8 text-center">
-              <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h2 className="heading-subsection mb-2">Monthly Investment</h2>
-              <p className="text-3xl font-bold text-primary mb-2 tabular-nums">From $6K/month</p>
-              <p className="text-sm text-muted-foreground mb-4">Six-month minimum commitment</p>
-              <p className="text-xs text-muted-foreground font-mono">
-                * Requires completed Assessment ($4,500+) and Sprint implementation
-              </p>
-            </StandardCardContent>
-          </StandardCard>
-        </div>
-
-        {/* Requirements */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="heading-subsection mb-6">Requirements</h2>
-          <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
-              <span className="text-muted-foreground text-sm sm:text-base">Completed Sprint or equivalent</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
-              <span className="text-muted-foreground text-sm sm:text-base">Infrastructure in production</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
-              <span className="text-muted-foreground text-sm sm:text-base">Internal stakeholder</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full flex-shrink-0" />
-              <span className="text-muted-foreground text-sm sm:text-base">Six-month commitment</span>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA */}
-        <div className="max-w-2xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-primary/10 to-background border-2 border-primary rounded-lg p-8">
-            <h3 className="text-2xl font-bold mb-4">Ready to Scale Your Systems?</h3>
-            <p className="text-muted-foreground mb-6">Six-month minimum • From $6K/month</p>
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" asChild>
               <Link to="/contact?interest=fractional&source_page=fractional">
                 Apply for Fractional Ops
               </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/sprint">View Sprint</Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* Operating Cadence */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Monthly Operating Cadence</h2>
+          </div>
+
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
+            Recurring rhythm that maintains system health, captures institutional knowledge, and prevents technical debt accumulation.
+          </p>
+
+          <div className="space-y-6">
+            {operatingCadence.map((item, index) => (
+              <div key={index} className="border-l-2 border-primary/50 pl-6">
+                <div className="font-mono text-base font-semibold text-foreground mb-2">
+                  {item.component}
+                </div>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Compounding Outcomes */}
+      <Section className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Compounding Performance</h2>
+          </div>
+
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
+            Long-term operator partnership yields exponential returns—systems compound reliability, teams compound capability, forecasts compound accuracy.
+          </p>
+
+          <div className="grid sm:grid-cols-3 gap-6">
+            {compoundingOutcomes.map((outcome, index) => (
+              <div key={index} className="border border-border bg-card p-6">
+                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
+                  {outcome.label}
+                </div>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  {outcome.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Requirements */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Partnership Requirements</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+              <div>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Completed Sprint</div>
+                <p className="text-base text-muted-foreground">CWT Studio Sprint or equivalent revenue infrastructure in production.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+              <div>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Internal Stakeholder</div>
+                <p className="text-base text-muted-foreground">Designated point person with system access and decision authority.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+              <div>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Six-Month Minimum</div>
+                <p className="text-base text-muted-foreground">Initial commitment ensures continuity and strategic value compounding.</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+              <div>
+                <div className="font-mono text-base font-semibold text-foreground mb-1">Monthly Investment</div>
+                <p className="text-base text-muted-foreground">Starting at $6K/month based on system complexity and support scope.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* CTA */}
+      <Section>
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
+            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
+            <span className="text-primary font-semibold">Long-Term Partnership</span>
+          </div>
+
+          <h2 className="heading-section mb-6">Apply for Fractional Ops</h2>
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Monthly operating cadence. Six-month minimum. Sprint completion required. Systems compound performance through continuous operator engagement.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link to="/contact?interest=fractional&source_page=fractional">
+                Apply for Fractional Ops
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <Link to="/sprint">View Sprint</Link>
             </Button>
           </div>
         </div>

@@ -142,8 +142,8 @@ const AETechnicalSupport = () => {
         timeline: ""
       });
 
-      // Navigate back to AE Hub after 2 seconds
-      setTimeout(() => navigate("/ae-hub"), 2000);
+      // Form submitted successfully - stay on page or navigate to home
+      setTimeout(() => navigate("/"), 2000);
     } catch (error) {
       console.error("Form submission error:", error);
       analytics.trackEvent('ae_support_form_error', {
@@ -159,12 +159,10 @@ const AETechnicalSupport = () => {
     }
   };
   return <>
-      <SEOHead title="Request Technical Support | AE Hub | CWT Studio" description="Get expert technical support on Salesforce deals. Our team provides rapid response based on urgency level." canonicalUrl="https://coalescentwebtech.com/ae-support" />
+      <SEOHead title="Technical Support for AEs | CWT Studio" description="Technical support for Salesforce Account Executives. Pre-sales clarity, scoping support, and feasibility checks. Response within 24-48 hours." canonicalUrl="https://coalescentwebtech.com/ae-support" />
 
       {/* Header */}
       <Section noPadding className="pt-16 md:pt-20 pb-8 md:pb-12 border-b border-border">
-        
-
         <div className="system-status mb-6 md:mb-8">TECHNICAL SUPPORT REQUEST</div>
         
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">
@@ -172,8 +170,52 @@ const AETechnicalSupport = () => {
         </h1>
         
         <p className="text-description max-w-3xl text-base md:text-lg">
-          Submit your request using the form below. Response times range from 4 hours for critical deals to 3-5 days for general questions.
+          Technical support for Salesforce Account Executives. Submit your request below.
         </p>
+      </Section>
+
+      {/* For Account Executives Section */}
+      <Section className="bg-accent/5 border-b border-border">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">For Account Executives</h2>
+          
+          <p className="text-base md:text-lg text-muted-foreground mb-6">
+            This support form is designed for Salesforce AEs who require:
+          </p>
+          
+          <ul className="space-y-3 mb-8">
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+              <span className="text-foreground">Pre-sales technical clarity</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+              <span className="text-foreground">Scoping support</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+              <span className="text-foreground">Feasibility checks</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+              <span className="text-foreground">System risk identification</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+              <span className="text-foreground">Architecture alignment</span>
+            </li>
+          </ul>
+
+          <div className="flex items-start gap-3 p-4 bg-card border border-accent/20 rounded-lg">
+            <Clock className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-foreground mb-1">Response Time</p>
+              <p className="text-sm text-muted-foreground">
+                Within 24–48 hours. High-priority deals flagged by AEs receive same-day support.
+              </p>
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* Main Form */}
@@ -294,14 +336,14 @@ const AETechnicalSupport = () => {
                     </div>
                     
                     <div>
-                      <Label htmlFor="supportNeeded">What support do you need? *</Label>
-                      <Textarea id="supportNeeded" value={formData.supportNeeded} onChange={e => handleChange("supportNeeded", e.target.value)} placeholder="e.g., Join discovery call, validate approach" rows={3} className={errors.supportNeeded ? "border-destructive" : ""} />
+                      <Label htmlFor="supportNeeded">Support Needed *</Label>
+                      <Textarea id="supportNeeded" value={formData.supportNeeded} onChange={e => handleChange("supportNeeded", e.target.value)} placeholder="e.g., Join discovery call, validate technical approach, provide scoping support" rows={3} className={errors.supportNeeded ? "border-destructive" : ""} />
                       {errors.supportNeeded && <p className="text-xs text-destructive mt-1">{errors.supportNeeded}</p>}
                     </div>
 
                     <div>
-                      <Label htmlFor="technicalChallenges">Technical Challenges / Context *</Label>
-                      <Textarea id="technicalChallenges" value={formData.technicalChallenges} onChange={e => handleChange("technicalChallenges", e.target.value)} placeholder="Describe technical issues, system details, pain points, and requirements..." rows={5} className={errors.technicalChallenges ? "border-destructive" : ""} />
+                      <Label htmlFor="technicalChallenges">Technical Context *</Label>
+                      <Textarea id="technicalChallenges" value={formData.technicalChallenges} onChange={e => handleChange("technicalChallenges", e.target.value)} placeholder="Current Salesforce configuration, integration requirements, data volume, technical constraints, compliance requirements..." rows={5} className={errors.technicalChallenges ? "border-destructive" : ""} />
                       {errors.technicalChallenges && <p className="text-xs text-destructive mt-1">{errors.technicalChallenges}</p>}
                       <p className="text-xs text-muted-foreground mt-1">
                         {formData.technicalChallenges.length} / 1000 characters (min 50)
@@ -350,18 +392,22 @@ const AETechnicalSupport = () => {
               <StandardCardHeader>
                 <StandardCardTitle className="text-lg flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-accent-data" aria-hidden="true" />
-                  What We Provide
+                  Support Provided
                 </StandardCardTitle>
               </StandardCardHeader>
               <StandardCardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
                     <span className="text-accent-data mt-0.5">•</span>
-                    <span>Technical validation & scoping</span>
+                    <span>Technical validation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-data mt-0.5">•</span>
-                    <span>Prospect call support</span>
+                    <span>Scoping assistance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-accent-data mt-0.5">•</span>
+                    <span>Prospect call participation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-data mt-0.5">•</span>
@@ -369,7 +415,7 @@ const AETechnicalSupport = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-accent-data mt-0.5">•</span>
-                    <span>ROI quantification</span>
+                    <span>ROI calculation</span>
                   </li>
                 </ul>
               </StandardCardContent>
@@ -380,26 +426,26 @@ const AETechnicalSupport = () => {
               <StandardCardHeader>
                 <StandardCardTitle className="text-lg flex items-center gap-2">
                   <AlertCircle className="w-5 h-5 text-accent-data" aria-hidden="true" />
-                  Before You Submit
+                  Required Context
                 </StandardCardTitle>
               </StandardCardHeader>
               <StandardCardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Prospect's technical pain points</span>
+                    <span>Technical pain points</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Current Salesforce setup (if known)</span>
+                    <span>Current Salesforce configuration</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Deal stage & timeline</span>
+                    <span>Deal stage and timeline</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-0.5">•</span>
-                    <span>Budget or deal size estimate</span>
+                    <span>Deal size estimate</span>
                   </li>
                 </ul>
               </StandardCardContent>

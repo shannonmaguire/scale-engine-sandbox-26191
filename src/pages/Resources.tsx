@@ -21,9 +21,17 @@ interface Resource {
 
 const resources: Resource[] = [
   {
+    id: "self-assessment",
+    title: "Technical Maturity Self-Assessment",
+    description: "Interactive 5-minute checklist. Instant scoring across 6 dimensions. Free, no commitment.",
+    icon: CheckSquare,
+    category: "Assessment",
+    downloadUrl: "/self-assessment"
+  },
+  {
     id: "service-selection-guide",
     title: "Service Selection Guide",
-    description: "Match your revenue maturity stage to the right CWT Studio service—Assessment, Sprint, or Fractional Ops. Clear decision framework for choosing your next engagement.",
+    description: "Service selection based on revenue maturity. Assessment, Sprint, or Fractional Ops.",
     icon: Map,
     category: "Planning",
     downloadUrl: "/pdfs/service-selection-guide.pdf"
@@ -31,7 +39,7 @@ const resources: Resource[] = [
   {
     id: "roi-calculator",
     title: "ROI Calculator",
-    description: "Calculate how Salesforce cleanup saves pipeline risk over 12 months. Input your current metrics, get projected ROI with cost/benefit breakdown.",
+    description: "Salesforce cleanup ROI calculation. 12-month projection. Cost/benefit analysis.",
     icon: Calculator,
     category: "Financial",
     downloadUrl: "/pdfs/roi-calculator.pdf"
@@ -39,7 +47,7 @@ const resources: Resource[] = [
   {
     id: "technical-assessment-framework",
     title: "Technical Assessment Framework",
-    description: "Our 6-dimension audit framework (Data Quality, Automation, Integration, Governance, Reporting, Adoption) for revenue system assessments. Self-score in 15 minutes.",
+    description: "6-dimension audit framework. Data Quality, Automation, Integration, Governance, Reporting, Adoption. 15-minute self-score.",
     icon: CheckSquare,
     category: "Assessment",
     downloadUrl: "/pdfs/technical-assessment-framework.pdf"
@@ -47,7 +55,7 @@ const resources: Resource[] = [
   {
     id: "90-day-roadmap-template",
     title: "90-Day Roadmap Template",
-    description: "Turn assessment findings into executable sprints. Break system installation into weekly milestones with clear deliverables, dependencies, and go/no-go decision points.",
+    description: "Assessment findings converted to executable sprints. Weekly milestones. Deliverables, dependencies, decision points.",
     icon: FileText,
     category: "Planning",
     downloadUrl: "/pdfs/90-day-roadmap-template.pdf"
@@ -55,7 +63,7 @@ const resources: Resource[] = [
   {
     id: "discovery-questions-library",
     title: "Discovery Questions Library",
-    description: "30+ proven questions that uncover technical debt in prospect deals. Organized by deal stage and objection type—helps AEs qualify Salesforce opportunities.",
+    description: "30+ discovery questions exposing technical debt. Organized by deal stage and objection type. AE qualification tool.",
     icon: FileQuestion,
     category: "Sales Enablement",
     downloadUrl: "/pdfs/discovery-questions-library.pdf"
@@ -63,7 +71,7 @@ const resources: Resource[] = [
   {
     id: "website-readiness-checklist",
     title: "Website Readiness Checklist",
-    description: "47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment. Prevents scope creep.",
+    description: "47-point pre-project checklist. Content, assets, integrations, stakeholder alignment. Prevents scope creep.",
     icon: CheckSquare,
     category: "Planning",
     downloadUrl: "/pdfs/website-readiness-checklist.pdf"
@@ -71,7 +79,7 @@ const resources: Resource[] = [
   {
     id: "vendor-handoff-sop",
     title: "Vendor Handoff SOP",
-    description: "Take full ownership of your web infrastructure from any vendor. Step-by-step SOP for domain, hosting, CMS, analytics, and CRM transfer—eliminate ongoing vendor dependency.",
+    description: "Web infrastructure ownership transfer protocol. Domain, hosting, CMS, analytics, CRM. Eliminates vendor dependency.",
     icon: FileText,
     category: "Operations",
     downloadUrl: "/pdfs/vendor-handoff-sop.pdf"
@@ -84,7 +92,12 @@ const Resources = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const handleDownloadClick = (resource: Resource) => {
-    // All resources now require email
+    // Self-assessment navigates directly, others require email
+    if (resource.id === "self-assessment") {
+      window.location.href = resource.downloadUrl;
+      return;
+    }
+    
     trackEvent('resource_modal_opened', {
       resourceId: resource.id,
       resourceTitle: resource.title,
@@ -150,20 +163,13 @@ const Resources = () => {
             <div className="system-status">
               Resource Library
             </div>
-            <div className="text-xs font-mono text-muted-foreground">
-              2,847 downloads · Updated weekly
-            </div>
           </div>
           <h1 className="heading-page text-primary mb-6">
             Proven Revenue Operations Frameworks
           </h1>
-          <p className="text-description text-muted-foreground max-w-3xl mb-4">
+          <p className="text-description text-muted-foreground max-w-3xl">
             The same tools we use in our revenue operations assessments and sprint engagements. All resources unlock instantly with your email.
           </p>
-          <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
-            <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Used by RevOps teams at 100+ B2B companies</span>
-          </div>
         </div>
       </section>
 
@@ -213,8 +219,17 @@ const Resources = () => {
                     variant="outline"
                     onClick={() => handleDownloadClick(resource)}
                   >
-                    <Download className="mr-2 h-4 w-4" />
-                    Get Resource
+                    {resource.id === "self-assessment" ? (
+                      <>
+                        <ArrowRight className="mr-2 h-4 w-4" />
+                        Start Assessment
+                      </>
+                    ) : (
+                      <>
+                        <Download className="mr-2 h-4 w-4" />
+                        Get Resource
+                      </>
+                    )}
                   </Button>
                 </StandardCard>
               );
@@ -244,51 +259,6 @@ const Resources = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AE Resources Crosslink */}
-      <section className="section-spacing px-6 bg-primary/5 border-y-2 border-primary/20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono mb-6">
-              FOR ACCOUNT EXECUTIVES
-            </div>
-            <h2 className="heading-section text-foreground mb-6">
-              Selling Salesforce Services?
-            </h2>
-            <p className="text-description text-muted-foreground mb-8 max-w-3xl mx-auto">
-              If you're an AE working Salesforce deals, we have dedicated tools, playbooks, and technical support in the AE Hub.
-            </p>
-            <Button asChild size="lg">
-              <Link to="/ae-hub">
-                Visit AE Hub
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* AE Hub Cross-Link */}
-      <section className="section-spacing px-6 bg-accent/5 border-y border-accent/20">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="flex-1">
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                Selling Salesforce Services?
-              </h2>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Access our AE Hub with objection frameworks, discovery questions, and deal qualification tools designed specifically for Account Executives.
-              </p>
-            </div>
-            <Button asChild size="lg" variant="outline" className="flex-shrink-0 w-full sm:w-auto">
-              <Link to="/ae-hub" className="flex items-center justify-center">
-                Visit AE Hub
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>

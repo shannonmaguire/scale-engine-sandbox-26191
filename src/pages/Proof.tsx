@@ -187,7 +187,7 @@ const Proof = () => {
       <Section noPadding className="border-b">
         <div className="section-spacing-half">
           <h1 className="heading-page mb-3">Proof of Execution</h1>
-          <p className="text-lg text-muted-foreground font-mono">
+          <p className="text-xl text-muted-foreground font-mono">
             Systems deployed under documented conditions with measured outcomes.
           </p>
         </div>
@@ -201,32 +201,32 @@ const Proof = () => {
       {/* Quick Metrics Bar */}
       <Section variant="muted" className="py-16">
         <div className="text-center mb-8">
-          <h2 className="text-sm font-mono font-bold text-muted-foreground uppercase tracking-wider mb-1">
+          <h2 className="text-base font-mono font-bold text-muted-foreground uppercase tracking-wider mb-1">
             Featured Case Studies
           </h2>
-          <p className="text-xs text-muted-foreground">
+          <p className="text-sm text-muted-foreground">
             From 42+ total deployments
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">7</div>
-            <div className="text-xs text-muted-foreground">Featured Case Studies</div>
+            <div className="text-4xl font-mono font-bold text-primary mb-1">7</div>
+            <div className="text-sm text-muted-foreground">Featured Case Studies</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">$500K+</div>
-            <div className="text-xs text-muted-foreground">Pipeline Activated</div>
+            <div className="text-4xl font-mono font-bold text-primary mb-1">$500K+</div>
+            <div className="text-sm text-muted-foreground">Pipeline Activated</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">107%</div>
-            <div className="text-xs text-muted-foreground">Peak Growth Rate</div>
+            <div className="text-4xl font-mono font-bold text-primary mb-1">107%</div>
+            <div className="text-sm text-muted-foreground">Peak Growth Rate</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="text-3xl font-mono font-bold text-primary mb-1">90 Days</div>
-            <div className="text-xs text-muted-foreground">Fastest Deploy</div>
+            <div className="text-4xl font-mono font-bold text-primary mb-1">90 Days</div>
+            <div className="text-sm text-muted-foreground">Fastest Deploy</div>
           </div>
         </div>
       </Section>
@@ -245,8 +245,8 @@ const Proof = () => {
                   <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-sm">ICP Before Infrastructure</h3>
-                  <p className="text-xs text-muted-foreground">
+                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-base">ICP Before Infrastructure</h3>
+                  <p className="text-sm text-muted-foreground">
                     Infrastructure performs when ideal customer profiles are defined first. Automation scales what targeting validates.
                   </p>
                 </div>
@@ -259,8 +259,8 @@ const Proof = () => {
                   <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-sm">Manual Execution Consumes Strategic Capacity</h3>
-                  <p className="text-xs text-muted-foreground">
+                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-base">Manual Execution Consumes Strategic Capacity</h3>
+                  <p className="text-sm text-muted-foreground">
                     Administrative workflows occupy founder time regardless of product performance. Automation shifts capacity allocation from execution to decision architecture.
                   </p>
                 </div>
@@ -273,8 +273,8 @@ const Proof = () => {
                   <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-sm">Dashboards Drive Decisions</h3>
-                  <p className="text-xs text-muted-foreground">
+                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-base">Dashboards Drive Decisions</h3>
+                  <p className="text-sm text-muted-foreground">
                     Real-time visibility enables data-informed decisions without requiring retrospective analysis.
                   </p>
                 </div>
@@ -287,8 +287,8 @@ const Proof = () => {
                   <CheckCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-sm">90-Day Validation Cycles</h3>
-                  <p className="text-xs text-muted-foreground">
+                  <h3 className="font-mono font-bold text-foreground mb-1.5 text-base">90-Day Validation Cycles</h3>
+                  <p className="text-sm text-muted-foreground">
                     Early wins validate system design before full deployment. Documentation creates compounding momentum.
                   </p>
                 </div>

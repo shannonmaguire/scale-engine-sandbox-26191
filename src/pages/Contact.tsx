@@ -188,7 +188,7 @@ const Contact = () => {
             <h1 className="heading-page mb-4">
               Let's Talk
             </h1>
-            <p className="text-description text-lg max-w-2xl mx-auto">
+            <p className="text-description text-xl max-w-2xl mx-auto">
               Tell us about your project. We'll send a detailed response within 24 hours with next steps and pricing.
             </p>
           </div>
@@ -197,7 +197,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <div className="border-l-4 border-primary pl-8">
-                <h2 className="font-mono text-sm font-bold text-primary mb-8 uppercase tracking-wider">
+                <h2 className="font-mono text-base font-bold text-primary mb-8 uppercase tracking-wider">
                   Send a Message
                 </h2>
                 

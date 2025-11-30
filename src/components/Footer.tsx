@@ -26,7 +26,7 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/assessment" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                <Link to="/self-assessment" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
                   Assessment
                 </Link>
               </li>
@@ -65,11 +65,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Blog
-                </Link>
-              </li>
-              <li>
                 <Link to="/sample-report" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
                   Sample Report
                 </Link>
@@ -89,18 +84,8 @@ const Footer = () => {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/ae-hub" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  AE Hub
-                </Link>
-              </li>
-              <li>
-                <Link to="/ae-technical-support" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
+                <Link to="/ae-support" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
                   Technical Support
-                </Link>
-              </li>
-              <li>
-                <Link to="/ae-objection-library" className="text-white/80 hover:text-white transition-colors font-mono text-sm">
-                  Objection Library
                 </Link>
               </li>
             </ul>
@@ -169,7 +154,7 @@ const Footer = () => {
                 Follow on LinkedIn
               </a>
               <Button asChild size="sm" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10">
-                <Link to="/assessment">
+                <Link to="/self-assessment">
                   Start Assessment
                 </Link>
               </Button>

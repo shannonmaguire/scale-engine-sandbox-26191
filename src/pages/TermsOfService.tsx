@@ -24,7 +24,7 @@ const TermsOfService = memo(() => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Terms of Service</h1>
             <p className="text-muted-foreground mb-8">Last updated: {new Date().toLocaleDateString()}</p>
 
-            <div className="space-y-8 text-foreground/90">
+            <div className="space-y-8 text-foreground">
               <section>
                 <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
                 <p className="mb-4">

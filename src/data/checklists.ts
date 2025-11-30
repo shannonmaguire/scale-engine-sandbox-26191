@@ -188,102 +188,6 @@ export const websiteReadinessChecklist: ChecklistCategory[] = [
   }
 ];
 
-export const aeQualificationChecklist: ChecklistCategory[] = [
-  {
-    id: "technical-fit",
-    title: "Technical Fit",
-    description: "Assess the technical requirements and complexity",
-    items: [
-      {
-        id: "sf-instance",
-        label: "Active Salesforce instance (not trial)",
-        helpText: "Production or sandbox with real data and customizations"
-      },
-      {
-        id: "integration-needs",
-        label: "Integration requirements identified",
-        helpText: "Clear list of systems that need to connect to Salesforce"
-      },
-      {
-        id: "data-volume",
-        label: "Data volume documented (records, objects)",
-        helpText: "Understanding data scale helps scope migration and performance work"
-      },
-      {
-        id: "custom-objects",
-        label: "Custom objects and fields mapped",
-        helpText: "Customizations drive complexity and cost"
-      }
-    ]
-  },
-  {
-    id: "budget-authority",
-    title: "Budget & Authority",
-    description: "Verify financial readiness and decision-making power",
-    items: [
-      {
-        id: "budget-allocated",
-        label: "Budget allocated (not just 'exploring')",
-        helpText: "Money set aside = serious intent"
-      },
-      {
-        id: "decision-maker",
-        label: "Direct access to decision maker",
-        helpText: "Avoid multi-layer approval processes"
-      },
-      {
-        id: "timeline-pressure",
-        label: "Defined timeline or deadline",
-        helpText: "Urgency drives action. No timeline = no urgency"
-      }
-    ]
-  },
-  {
-    id: "pain-points",
-    title: "Pain Points",
-    description: "Identify deal-blocking issues and urgency",
-    items: [
-      {
-        id: "blocking-issue",
-        label: "Deal-blocking technical issue identified",
-        helpText: "Something broken or missing that prevents them from closing deals"
-      },
-      {
-        id: "current-workaround",
-        label: "Current workaround is painful",
-        helpText: "Manual processes, lost revenue, compliance risk"
-      },
-      {
-        id: "executive-visibility",
-        label: "Problem has executive visibility",
-        helpText: "Leadership awareness = budget and urgency"
-      }
-    ]
-  },
-  {
-    id: "opportunity",
-    title: "Opportunity Size",
-    description: "Assess deal value and expansion potential",
-    items: [
-      {
-        id: "deal-value",
-        label: "Project value >$15K",
-        helpText: "Below this threshold, profitability is challenging"
-      },
-      {
-        id: "expansion-potential",
-        label: "Clear expansion opportunities identified",
-        helpText: "One project leads to ongoing partnership"
-      },
-      {
-        id: "referral-potential",
-        label: "Referral or case study potential",
-        helpText: "Client willing to advocate and share their story"
-      }
-    ]
-  }
-];
-
 export const technicalAssessmentChecklist: ChecklistCategory[] = [
   {
     id: "data-quality",
@@ -421,12 +325,6 @@ export const checklists = [
     title: 'Website Readiness Checklist',
     description: 'Ensure you have everything ready for a successful website launch',
     categories: websiteReadinessChecklist
-  },
-  {
-    id: 'ae-qualification',
-    title: 'AE Qualification Checklist',
-    description: 'Qualify prospects for technical fit and deal potential',
-    categories: aeQualificationChecklist
   },
   {
     id: 'technical-maturity',

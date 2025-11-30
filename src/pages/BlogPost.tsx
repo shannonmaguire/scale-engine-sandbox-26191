@@ -144,10 +144,10 @@ const BlogPost = () => {
     // Default fallback for other posts
     return (
       <div className="prose-blog">
-        <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
           {post.excerpt}
         </p>
-        <p className="text-foreground/90 leading-relaxed">
+        <p className="text-foreground leading-relaxed">
           Full article content coming soon...
         </p>
       </div>
@@ -224,7 +224,7 @@ const BlogPost = () => {
               {post.title}
             </h1>
             
-            <p className="text-foreground/70 mb-12 leading-relaxed font-medium"
+            <p className="text-[hsl(var(--foreground-subtle))] mb-12 leading-relaxed font-medium"
                style={{ fontSize: 'clamp(1.125rem, 2vw, 1.375rem)', maxWidth: '65ch' }}>
               {post.excerpt}
             </p>
@@ -263,7 +263,7 @@ const BlogPost = () => {
                   <h3 className="font-mono font-bold text-2xl sm:text-3xl text-foreground mb-4 leading-tight">
                     Have questions about this framework?
                   </h3>
-                  <p className="text-foreground/70 text-base sm:text-lg leading-relaxed">
+                  <p className="text-[hsl(var(--foreground-subtle))] text-base sm:text-lg leading-relaxed">
                     Let's discuss how this could work for your organization.
                   </p>
                 </div>
@@ -330,7 +330,7 @@ const BlogPost = () => {
                       {article.title}
                     </h3>
                     
-                    <p className="text-foreground/70 text-sm leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-[hsl(var(--foreground-subtle))] text-sm leading-relaxed mb-4 line-clamp-3">
                       {article.excerpt}
                     </p>
                     
@@ -371,7 +371,7 @@ const BlogPost = () => {
                 style={{ fontSize: 'clamp(2rem, 4.5vw, 3.5rem)', letterSpacing: '-0.02em' }}>
               Ready to Install Your Own Revenue System?
             </h2>
-            <p className="text-foreground/70 mb-12 leading-relaxed max-w-2xl mx-auto font-medium"
+            <p className="text-[hsl(var(--foreground-subtle))] mb-12 leading-relaxed max-w-2xl mx-auto font-medium"
                 style={{ fontSize: 'clamp(1.0625rem, 1.5vw, 1.25rem)' }}>
               Every system starts with a deep technical assessment. Book yours in 48 hours and receive a prioritized 90-day roadmap tailored to your infrastructure.
             </p>

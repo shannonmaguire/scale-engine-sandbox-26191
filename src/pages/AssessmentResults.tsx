@@ -202,14 +202,14 @@ const AssessmentResults = () => {
           <section className="mb-8 print:break-after-page">
             <h2 className="text-2xl font-bold mb-4">Executive Summary</h2>
             <Card className="p-6">
-              <p className="text-foreground/80 leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 This assessment evaluates your organization's technical maturity across critical business systems. 
                 The analysis identifies opportunities to enhance operational efficiency, system scalability, and 
                 revenue generation through systematic infrastructure improvements.
               </p>
-              <p className="text-foreground/80 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 The framework examines key dimensions including data infrastructure, process automation, system 
-                integration, and operational governance. Each criterion represents validated best practices from 
+                integration, and operational governance. Each criterion represents validated best practices from
                 successful deployments.
               </p>
               
