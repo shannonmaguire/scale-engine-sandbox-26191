@@ -23,20 +23,27 @@ const AssessmentPreview = () => {
     categoryCount
   } = location.state || {};
 
-  // Redirect if no state
-  if (!checklistId || !checklistState) {
-    navigate('/self-assessment');
-    return null;
-  }
-
   // Auto-open email modal after 500ms delay
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowEmailModal(true);
-    }, 500);
+    if (checklistId && checklistState) {
+      const timer = setTimeout(() => {
+        setShowEmailModal(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [checklistId, checklistState]);
 
-    return () => clearTimeout(timer);
-  }, []);
+  // Redirect if no state
+  useEffect(() => {
+    if (!checklistId || !checklistState) {
+      navigate('/self-assessment');
+    }
+  }, [checklistId, checklistState, navigate]);
+
+  // Early return after all hooks
+  if (!checklistId || !checklistState) {
+    return null;
+  }
 
   const handleEmailSubmit = async (email: string) => {
     setIsSubmitting(true);
