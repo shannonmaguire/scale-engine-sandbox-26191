@@ -7,7 +7,6 @@ import SEOHead from "@/components/SEOHead";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import analytics from "@/lib/analytics";
-import { FunnelProgressIndicator } from "@/components/FunnelProgressIndicator";
 
 const AssessmentPreview = () => {
   const location = useLocation();
@@ -34,9 +33,6 @@ const AssessmentPreview = () => {
     setIsSubmitting(true);
 
     try {
-      // Get current user session if logged in
-      const { data: { session } } = await supabase.auth.getSession();
-      
       // Save to database
       const { error: dbError } = await supabase
         .from('assessments')
@@ -48,8 +44,7 @@ const AssessmentPreview = () => {
           answer_counts: answerCounts,
           checklist_state: checklistState,
           user_agent: navigator.userAgent,
-          referrer: document.referrer,
-          user_id: session?.user?.id || null
+          referrer: document.referrer
         });
 
       if (dbError) throw dbError;
@@ -127,11 +122,6 @@ const AssessmentPreview = () => {
 
       <Section className="py-16">
         <div className="max-w-4xl mx-auto">
-          {/* Progress Indicator */}
-          <div className="mb-12">
-            <FunnelProgressIndicator currentStep="health-check" />
-          </div>
-
           <div className="mb-12 text-center">
             <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4">
               Free Health Check Complete

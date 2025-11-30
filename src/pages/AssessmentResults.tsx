@@ -9,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { InlineEmailCapture } from "@/components/InlineEmailCapture";
 import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
-import { FunnelProgressIndicator } from "@/components/FunnelProgressIndicator";
 
 interface CategoryData {
   id: string;
@@ -163,11 +162,6 @@ const AssessmentResults = () => {
 
         {/* Main Content */}
         <div className="container mx-auto px-4 py-8 max-w-5xl">
-          {/* Progress Indicator */}
-          <div className="mb-10 print:hidden">
-            <FunnelProgressIndicator currentStep="health-check" />
-          </div>
-
           {/* Email Capture CTA #1 */}
           {hasBackend && !email && (
             <div className="mb-8 print:hidden">
