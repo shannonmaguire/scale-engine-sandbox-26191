@@ -1,6 +1,7 @@
 import { ChecklistWizard } from "@/components/checklist/ChecklistWizard";
 import { checklists } from "@/data/checklists";
 import SEOHead from "@/components/SEOHead";
+import { FunnelProgressIndicator } from "@/components/FunnelProgressIndicator";
 
 const SelfAssessment = () => {
   const technicalMaturityChecklist = checklists.find(c => c.id === 'technical-maturity');
@@ -26,6 +27,11 @@ const SelfAssessment = () => {
       
       <div className="container-standard py-12 md:py-16">
         <div className="max-w-4xl mx-auto">
+          {/* Progress Indicator */}
+          <div className="mb-12">
+            <FunnelProgressIndicator currentStep="health-check" />
+          </div>
+
           {/* Intro Section */}
           <div className="mb-12 text-center">
             <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-6 font-mono text-xs uppercase tracking-widest">

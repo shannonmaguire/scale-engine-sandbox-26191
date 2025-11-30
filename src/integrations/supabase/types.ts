@@ -26,6 +26,7 @@ export type Database = {
           overall_score: number
           referrer: string | null
           user_agent: string | null
+          user_id: string | null
         }
         Insert: {
           answer_counts: Json
@@ -38,6 +39,7 @@ export type Database = {
           overall_score: number
           referrer?: string | null
           user_agent?: string | null
+          user_id?: string | null
         }
         Update: {
           answer_counts?: Json
@@ -50,6 +52,7 @@ export type Database = {
           overall_score?: number
           referrer?: string | null
           user_agent?: string | null
+          user_id?: string | null
         }
         Relationships: []
       }
