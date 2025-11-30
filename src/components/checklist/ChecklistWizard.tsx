@@ -88,39 +88,22 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
   const allQuestionsAnswered = answeredItems === totalItems;
 
   return (
-    <div className="relative border-2 border-border bg-card p-8 md:p-12">
-      {/* Corner Accents */}
-      <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-primary" />
-      <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-primary" />
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-primary" />
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-primary" />
-      
+    <div className="border-2 border-black bg-white p-6 md:p-10">
       {/* Header */}
-      <div className="mb-8">
-        <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
-          TECHNICAL MATURITY ASSESSMENT | v1.0
+      <div className="mb-6 md:mb-8 pb-6 md:pb-8 border-b-2 border-black">
+        <div className="text-xs md:text-sm uppercase tracking-wider text-black/60 mb-3">
+          Step {currentStep + 1} of {categories.length}
         </div>
-        <h1 className="font-mono text-2xl md:text-3xl font-bold mb-4 text-foreground">
-          {title}
-        </h1>
-        <div className="font-mono text-sm text-foreground/70">
-          Step {currentStep + 1} of {categories.length} | {currentCategory.title}
-        </div>
-      </div>
-
-      {/* Progress Bar - Technical Notation */}
-      <div className="mb-8">
-        <div className="font-mono text-xs text-muted-foreground mb-2">
-          {'█'.repeat(Math.floor((answeredItems / totalItems) * 20))}{'░'.repeat(20 - Math.floor((answeredItems / totalItems) * 20))} {answeredItems}/{totalItems} points
-        </div>
-      </div>
-
-      {/* Category */}
-      <div className="mb-8">
-        <h2 className="font-mono text-xl font-semibold mb-6 text-foreground">
+        <h2 className="text-xl md:text-2xl font-bold text-black mb-2">
           {currentCategory.title}
         </h2>
-        
+        <div className="text-sm md:text-base text-black/70">
+          {answeredItems} of {totalItems} answered
+        </div>
+      </div>
+
+      {/* Questions */}
+      <div className="mb-6 md:mb-8">
         <div className="space-y-1">
           {currentCategory.items.map((item) => (
             <AssessmentItem
@@ -137,12 +120,13 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between gap-4 pt-6 border-t border-black/5">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-6 border-t-2 border-black">
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
             onClick={handleBack}
             disabled={currentStep === 0}
+            className="flex-1 sm:flex-initial min-h-[48px]"
           >
             <ChevronLeft className="w-4 h-4 mr-1" />
             Back
@@ -152,18 +136,19 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
             variant="outline"
             onClick={handleReset}
             title="Start Over"
+            className="min-h-[48px] min-w-[48px]"
           >
             <RotateCcw className="w-4 h-4" />
           </Button>
         </div>
 
         {currentStep < categories.length - 1 ? (
-          <Button onClick={handleNext}>
+          <Button onClick={handleNext} className="min-h-[48px]">
             Next
             <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
         ) : (
-          <Button onClick={handleViewResults} disabled={answeredItems === 0}>
+          <Button onClick={handleViewResults} disabled={answeredItems === 0} className="min-h-[48px]">
             <FileText className="w-4 h-4 mr-2" />
             View Results
           </Button>
