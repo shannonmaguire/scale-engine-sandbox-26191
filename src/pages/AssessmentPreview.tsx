@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ScorePreview } from "@/components/checklist/ScorePreview";
 import { EmailCaptureModal } from "@/components/checklist/EmailCaptureModal";
@@ -28,6 +28,15 @@ const AssessmentPreview = () => {
     navigate('/self-assessment');
     return null;
   }
+
+  // Auto-open email modal after 500ms delay
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowEmailModal(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleEmailSubmit = async (email: string) => {
     setIsSubmitting(true);
