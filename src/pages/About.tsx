@@ -132,7 +132,7 @@ const About = () => {
                 <span className="px-3 py-1 bg-accent/10 border border-accent/20 rounded-full font-mono text-sm text-foreground">B2B SaaS</span>
               </div>
 
-              <p className="text-base text-muted-foreground leading-relaxed border-l-2 border-primary pl-4 italic">
+              <p className="text-description text-muted-foreground leading-relaxed border-l-2 border-primary pl-4 italic">
                 "Fixed-scope implementations. 90-day cycles. Documented handoffs. No ongoing dependencies."
               </p>
             </div>
@@ -155,7 +155,7 @@ const About = () => {
                 {whatWeDo.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <p className="text-base text-foreground/90 leading-relaxed">{item}</p>
+                    <p className="text-description text-foreground leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -172,7 +172,7 @@ const About = () => {
                 {whatWeDont.map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <X className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <p className="text-base text-muted-foreground leading-relaxed">{item}</p>
+                    <p className="text-description text-muted-foreground leading-relaxed">{item}</p>
                   </div>
                 ))}
               </div>
@@ -196,10 +196,10 @@ const About = () => {
           <div className="grid sm:grid-cols-3 gap-6">
             {principlePoints.map((point, index) => (
               <div key={index} className="border border-border p-6">
-                <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4 font-semibold">
+                <div className="text-label text-primary mb-4">
                   {point.label}
                 </div>
-                <p className="text-base text-foreground/80 leading-relaxed">
+                <p className="text-description text-foreground leading-relaxed">
                   {point.description}
                 </p>
               </div>
@@ -223,7 +223,7 @@ const About = () => {
                 <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4 font-semibold">
                   CWT Studio
                 </div>
-                <div className="space-y-2 text-base text-foreground/90">
+                <div className="space-y-2 text-description text-foreground">
                   <div>• Revenue operations strategy</div>
                   <div>• Process design and documentation</div>
                   <div>• Automation architecture</div>
@@ -236,10 +236,10 @@ const About = () => {
 
               {/* CloudRoute */}
               <div>
-                <div className="font-mono text-sm uppercase tracking-widest text-accent mb-4 font-semibold">
+                <div className="text-label text-accent mb-4">
                   CloudRoute (Salesforce Partner)
                 </div>
-                <div className="space-y-2 text-base text-foreground/90">
+                <div className="space-y-2 text-description text-foreground">
                   <div>• Platform configuration and build</div>
                   <div>• Certified technical implementation</div>
                   <div>• Integration engineering</div>
@@ -249,7 +249,7 @@ const About = () => {
             </div>
 
             <div className="mt-8 pt-8 border-t border-border">
-              <p className="text-base text-muted-foreground leading-relaxed">
+              <p className="text-description text-muted-foreground leading-relaxed">
                 This model combines operational pragmatism with platform-certified technical delivery. CWT Studio leads strategy and design. CloudRoute executes enterprise-grade Salesforce implementation. Single contract, unified accountability.
               </p>
             </div>
@@ -260,7 +260,7 @@ const About = () => {
       {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
+          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
             <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
             <span className="text-primary font-semibold">Ready to Start</span>
           </div>
