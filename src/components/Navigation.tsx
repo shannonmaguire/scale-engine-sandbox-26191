@@ -12,9 +12,6 @@ const Navigation = () => {
     label: "Home",
     href: "/"
   }, {
-    label: "Free Health Check",
-    href: "/self-assessment"
-  }, {
     label: "Proof",
     href: "/proof"
   }, {
