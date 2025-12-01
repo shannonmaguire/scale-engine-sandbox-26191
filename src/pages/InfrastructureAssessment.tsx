@@ -5,6 +5,7 @@ import { CheckCircle, ArrowRight, FileText, BarChart3, Target, Clock, DollarSign
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA, ROUTES, TIMELINES, METRICS } from "@/lib/canonical-constants";
+import AssessmentComparisonTable from "@/components/AssessmentComparisonTable";
 
 const InfrastructureAssessment = () => {
   const deliverables = [
@@ -130,60 +131,15 @@ const InfrastructureAssessment = () => {
         </div>
       </Section>
 
-      {/* Free Quiz vs Paid Assessment */}
+      {/* Detailed Comparison Table */}
       <Section variant="muted" className="border-b border-border">
-        <div className="max-w-4xl">
+        <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Free Quiz vs Paid Assessment</h2>
+            <h2 className="heading-section">Detailed Feature Comparison</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border border-border bg-card p-6">
-              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-4">
-                Free Health Check
-              </div>
-              <h3 className="heading-subsection mb-4">5-Minute Self-Assessment</h3>
-              <ul className="space-y-3 text-description text-muted-foreground mb-6">
-                <li>• Self-guided 18-question quiz</li>
-                <li>• Instant maturity score (0-36 scale)</li>
-                <li>• High-level category breakdown</li>
-                <li>• General recommendations</li>
-                <li>• No cost, no commitment</li>
-              </ul>
-              <Button variant="outline" asChild className="w-full">
-                <Link to={ROUTES.assessment}>Take Free Quiz</Link>
-              </Button>
-            </div>
-
-            <div className="border-2 border-primary bg-card p-6 relative">
-              <div className="absolute -top-3 left-6 bg-primary text-primary-foreground px-3 py-1 text-xs font-mono font-semibold uppercase">
-                Recommended
-              </div>
-              <div className="font-mono text-sm uppercase tracking-widest text-primary mb-4">
-                Infrastructure Assessment
-              </div>
-              <h3 className="heading-subsection mb-4">{TIMELINES.assessment} Deep Diagnostic</h3>
-              <ul className="space-y-3 text-description text-foreground mb-6">
-                <li>• Expert-led system audit</li>
-                <li>• Quantitative scorecard with benchmarks</li>
-                <li>• Detailed gap analysis and risk assessment</li>
-                <li>• Custom 90-day implementation roadmap</li>
-                <li>• {METRICS.feeCredit} toward Sprint</li>
-              </ul>
-              <Button asChild className="w-full">
-                <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
-                  Book Assessment
-                </Link>
-              </Button>
-            </div>
-          </div>
-
-          <div className="mt-8 p-6 bg-muted/30 border border-border">
-            <p className="text-description text-foreground font-mono">
-              <strong>Recommended path:</strong> Start with free Health Check to identify gaps, then book Infrastructure Assessment for detailed roadmap and Sprint eligibility.
-            </p>
-          </div>
+          <AssessmentComparisonTable />
         </div>
       </Section>
 
