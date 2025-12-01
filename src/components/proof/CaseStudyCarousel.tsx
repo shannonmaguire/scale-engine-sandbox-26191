@@ -100,23 +100,26 @@ export const CaseStudyCarousel = ({
         </div>
 
         {/* Horizontal Metrics Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {/* Before Metric */}
-          <div className="flex items-center justify-between p-4 bg-background border border-border rounded">
-            <span className="text-label text-muted-foreground">Before</span>
-            <span className="font-mono text-foreground font-bold">{currentStudy.beforeMetric.value}</span>
+          <div className="flex flex-col gap-2 p-6 bg-background border border-border rounded">
+            <span className="text-sm text-muted-foreground uppercase tracking-wider font-medium">Before</span>
+            <span className="text-base font-mono text-foreground font-bold">{currentStudy.beforeMetric.value}</span>
           </div>
 
           {/* After Metric */}
-          <div className="flex items-center justify-between p-4 bg-primary/10 border border-primary/30 rounded">
-            <span className="text-label text-primary font-semibold">After</span>
-            <span className="font-mono font-bold text-primary">{currentStudy.afterMetric.value}</span>
+          <div className="flex flex-col gap-2 p-6 bg-primary/10 border border-primary/30 rounded">
+            <span className="text-sm text-primary uppercase tracking-wider font-semibold">After</span>
+            <span className="text-base font-mono font-bold text-primary">{currentStudy.afterMetric.value}</span>
           </div>
 
           {/* Growth */}
-          <div className="flex items-center justify-center gap-2 p-4 bg-primary/10 border border-primary/30 rounded">
-            <TrendingUp className="w-5 h-5 text-primary" />
-            <span className="font-mono font-bold text-primary">{currentStudy.growth}</span>
+          <div className="flex flex-col gap-2 p-6 bg-primary/10 border border-primary/30 rounded">
+            <div className="flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 text-primary" />
+              <span className="text-sm text-primary uppercase tracking-wider font-semibold">Growth</span>
+            </div>
+            <span className="text-base font-mono font-bold text-primary">{currentStudy.growth}</span>
           </div>
         </div>
 
