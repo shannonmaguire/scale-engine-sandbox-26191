@@ -166,15 +166,36 @@ const Proof = () => {
     growth: "87% Time Reclaimed",
     outcomes: ["Account manager admin time reduced from 15 hours to 2 hours per week", "Client escalations dropped 73% through proactive status visibility", "Project delivery time decreased 18% via standardized workflows", "Team capacity increased 22% through better resource allocation", "Client retention improved—NPS score rose from 6.8 to 8.9", "**Expansion enabled:** Time reclaimed allowed agency to take on 4 new clients without additional hires"],
     whyItWorked: "Unified system of record replaced memory-based project tracking. Clients gained self-service visibility, account managers shifted from status reporting to strategic work, and standardized SOPs ensured consistent delivery quality."
+  }, {
+    id: 8,
+    industry: "Healthcare",
+    vertical: "AI-Assisted Wellness Clinic",
+    size: "Launch stage clinic",
+    timeline: "14 days",
+    challenge: "AI-assisted medical clinic launching in Colorado. No unified patient acquisition system, no funnel or landing pages, conflicting design directions across website, print, and ad assets, no sprint structure, no communication protocol. Ops, marketing, and technical teams were misaligned. No tracking, no AEO strategy, no lead journey. Meta setup blocked. Creative direction inconsistent and too 'internet ad' for a clinical brand. Gap: needed operational infrastructure in under 2 weeks.",
+    pullQuote: "Zero to operational patient acquisition system in 14 days",
+    system: ["Multi-variant landing page system with A/B testing infrastructure", "Full lead flow architecture: ScoreApp → CRM → SMS → AI voice agent → booking", "Waitlist, free-consultation pipeline, and patient tracking system", "Complete design system aligning clinical warmth with Colorado aesthetic", "Ad creative direction, hooks, angles, and testing strategy", "UGC pod strategy for local content generation", "Meta Business setup resolution and lead system integration", "HIPAA-appropriate tool integration (SMS, AI voice, scheduling, CRM)", "Sprint cadences and cross-department communication protocols", "Internal operating system: role guides, project calendar, sprint rules, team hub", "UTM frameworks and structured tracking implementation"],
+    beforeMetric: {
+      label: "Patient acquisition",
+      value: "No system"
+    },
+    afterMetric: {
+      label: "Operational in",
+      value: "14 days"
+    },
+    growth: "Foundation",
+    outcomes: ["Digital infrastructure built from zero to operational in under 14 days", "Clear, unified brand direction across all channels (ads, web, in-clinic materials)", "Ad-ready funnel prepared for launch with patient flow fully mapped", "Cross-team communication improved 10x through sprint structure and protocols", "Scheduling, intake, and lead flow fully integrated and functional", "Executives gained clarity, direction, and trust in execution process", "System designed for replication across multiple future clinic locations", "**Pattern validated:** Clinical brands require warmth + precision—technical infrastructure with human-centered creative"],
+    whyItWorked: "Tight timeline forced ruthless prioritization. Sprint structure aligned misaligned teams. Brand system balanced clinical credibility with approachable Colorado aesthetic. Infrastructure built for scale from day one—replicable across locations."
   }];
   return <div className="min-h-screen bg-background">
       <SEOHead 
         title="Revenue System Case Studies | Real Results & Proof | CWT Studio" 
-        description="5 systems deployed across e-commerce, compliance, legal, and creator tech. $500K+ pipeline activated, 107% growth, documented results." 
+        description="8 systems deployed across healthcare, e-commerce, compliance, legal, and creator tech. $500K+ pipeline activated, 107% growth, documented results." 
         keywords={[
           'revenue system case studies', 
           'backend infrastructure results', 
           'Salesforce optimization proof',
+          'healthcare patient acquisition',
           'e-commerce systemization', 
           'compliance outbound engine', 
           'legal subscription pipeline'
@@ -189,7 +210,7 @@ const Proof = () => {
         <div className="section-spacing-half">
           <h1 className="heading-page mb-4">Proof</h1>
           <p className="text-description text-muted-foreground">
-            7 deployed systems with measured outcomes.
+            8 deployed systems with measured outcomes.
           </p>
         </div>
       </Section>
@@ -235,7 +256,7 @@ const Proof = () => {
       <Section variant="muted" className="py-12 border-t border-border">
         <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
           <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">7</div>
+            <div className="heading-subsection text-primary mb-1">8</div>
             <div className="text-description text-muted-foreground">Case Studies</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
@@ -245,13 +266,13 @@ const Proof = () => {
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">107%</div>
-            <div className="text-description text-muted-foreground">Peak Growth</div>
+            <div className="heading-subsection text-primary mb-1">14 Days</div>
+            <div className="text-description text-muted-foreground">Fastest Deploy</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">90 Days</div>
-            <div className="text-description text-muted-foreground">Fastest Deploy</div>
+            <div className="heading-subsection text-primary mb-1">107%</div>
+            <div className="text-description text-muted-foreground">Peak Growth</div>
           </div>
         </div>
       </Section>
