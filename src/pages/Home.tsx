@@ -124,11 +124,11 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <ConversionOptimizedButton
               to={ROUTES.assessment}
-              ctaName="Hero - Run Infrastructure Assessment"
+              ctaName="Hero - Free Health Check"
               location="Homepage Hero"
               size="lg"
             >
-              {CTA.startAssessment}
+              {CTA.takeHealthCheck}
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
               to={ROUTES.proof}
