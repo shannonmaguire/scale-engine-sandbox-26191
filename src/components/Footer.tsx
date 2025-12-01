@@ -12,9 +12,7 @@ const Footer = () => {
           <img src={cwtLogo} alt="CWT Studio" className="h-[40px] sm:h-[42px] md:h-12 w-auto mb-4 hover:opacity-90 transition-opacity" style={{
           imageRendering: 'crisp-edges'
         }} />
-          <p className="text-white/60 text-base sm:text-lg">
-            Infrastructure that compounds
-          </p>
+          <p className="text-white/60 text-base sm:text-lg">Revenue Infrastructure for High-Trust Teams </p>
         </div>
 
         {/* Navigation Grid - 6 equal columns */}
@@ -149,12 +147,7 @@ const Footer = () => {
                 <Mail className="h-4 w-4 sm:h-3.5 sm:w-3.5 flex-shrink-0" />
                 hello@cwtstudio.com
               </a>
-              <a 
-                href="https://www.linkedin.com/company/cwt-studio/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0"
-              >
+              <a href="https://www.linkedin.com/company/cwt-studio/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0">
                 <Linkedin className="h-4 w-4 sm:h-3.5 sm:w-3.5 flex-shrink-0" />
                 Follow on LinkedIn
               </a>
