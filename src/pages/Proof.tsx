@@ -271,8 +271,8 @@ const Proof = () => {
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">107%</div>
-            <div className="text-description text-muted-foreground">Peak Growth</div>
+            <div className="heading-subsection text-primary mb-1">300%</div>
+            <div className="text-description text-muted-foreground">Peak Conversion Lift</div>
           </div>
         </div>
       </Section>
