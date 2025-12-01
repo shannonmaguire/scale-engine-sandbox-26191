@@ -1,3 +1,4 @@
+import React from "react";
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -91,7 +92,7 @@ const AssessmentComparisonTable = () => {
           {/* Body */}
           <tbody>
             {features.map((section, sectionIdx) => (
-              <tbody key={sectionIdx}>
+              <React.Fragment key={sectionIdx}>
                 {/* Category Header Row */}
                 <tr className="border-t-2 border-border bg-muted/30">
                   <td colSpan={3} className="p-4 font-mono text-xs uppercase tracking-widest text-foreground font-semibold">
@@ -133,7 +134,7 @@ const AssessmentComparisonTable = () => {
                     </td>
                   </tr>
                 ))}
-              </tbody>
+              </React.Fragment>
             ))}
           </tbody>
         </table>
