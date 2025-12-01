@@ -28,6 +28,26 @@ const Proof = () => {
     whyItWorked?: string;
   }> = [{
     id: 1,
+    industry: "Healthcare",
+    vertical: "AI-Assisted Wellness Clinic",
+    size: "Launch stage clinic",
+    timeline: "90 Days",
+    challenge: "AI-assisted medical clinic launching in Colorado. No unified patient acquisition system, no funnel or landing pages, conflicting design directions across website, print, and ad assets, no sprint structure, no communication protocol. Ops, marketing, and technical teams were misaligned. No tracking, no AEO strategy, no lead journey. Meta setup blocked. Creative direction inconsistent and too 'internet ad' for a clinical brand. Gap: needed operational infrastructure for market launch.",
+    pullQuote: "Zero to operational patient acquisition system in 90 days",
+    system: ["Multi-variant landing page system with A/B testing infrastructure", "Full lead flow architecture: ScoreApp → CRM → SMS → AI voice agent → booking", "Waitlist, free-consultation pipeline, and patient tracking system", "Complete design system aligning clinical warmth with Colorado aesthetic", "Ad creative direction, hooks, angles, and testing strategy", "UGC pod strategy for local content generation", "Meta Business setup resolution and lead system integration", "HIPAA-appropriate tool integration (SMS, AI voice, scheduling, CRM)", "Sprint cadences and cross-department communication protocols", "Internal operating system: role guides, project calendar, sprint rules, team hub", "UTM frameworks and structured tracking implementation"],
+    beforeMetric: {
+      label: "Patient acquisition",
+      value: "No system"
+    },
+    afterMetric: {
+      label: "Infrastructure deployed",
+      value: "90 days"
+    },
+    growth: "Foundation",
+    outcomes: ["Digital infrastructure built from zero to operational in 90 days", "Clear, unified brand direction across all channels (ads, web, in-clinic materials)", "Ad-ready funnel prepared for launch with patient flow fully mapped", "Cross-team communication improved 10x through sprint structure and protocols", "Scheduling, intake, and lead flow fully integrated and functional", "Executives gained clarity, direction, and trust in execution process", "System designed for replication across multiple future clinic locations", "**Pattern validated:** Clinical brands require warmth + precision—technical infrastructure with human-centered creative"],
+    whyItWorked: "Sprint structure aligned misaligned teams. Brand system balanced clinical credibility with approachable Colorado aesthetic. Infrastructure built for scale from day one—replicable across locations."
+  }, {
+    id: 2,
     industry: "Creator Technology",
     vertical: "Digital Education Platform",
     size: "Thousands of members",
@@ -47,7 +67,7 @@ const Proof = () => {
     outcomes: ["Siloed processes unified: Support and sales connected through automation without losing brand voice", "Accountability established: Clear ownership assigned between marketing, service, and fulfillment teams", "Daily momentum achieved: 2-5 qualified calls per day became the new baseline", "Live CRM dashboard: Real-time visibility into pipeline health and conversion stages", "Memory debt eliminated: Individual recall replaced with documented, repeatable systems", "**Pattern validated:** Growth wasn't blocked by market demand—it died in process debt"],
     whyItWorked: "Strong product and loyal audience were already in place—the fracture was operational. Backend infrastructure rebuilt to match frontend strength, established operational cadence without new tools or headcount."
   }, {
-    id: 2,
+    id: 3,
     industry: "Creator Technology",
     vertical: "Financial Intelligence SaaS",
     size: "Pre-launch MVP",
@@ -67,7 +87,7 @@ const Proof = () => {
     outcomes: ["100+ user signups: Validated pain point and product-market fit hypothesis", "9-11% conversion rate: Proven funnel performance from outbound to signup", "30-32% newsletter open rates: Thought leadership resonance confirmed brand authority", "Three user archetypes identified: Freelancers, UGC creators, micro-creators with digital products", "$1.80 CAD cost per lead: Efficient paid acquisition validated messaging and targeting", "**Strategic pivot:** Project paused to focus on CWT Studio—applying same operational infrastructure directly to clients"],
     whyItWorked: "Pain point validated through creator acknowledgment, offer validated through conversion rates. Market timing and integration depth required engineering resources beyond availability. Validated frameworks now power CWT Studio's Financial Intelligence service line."
   }, {
-    id: 3,
+    id: 4,
     industry: "Compliance Advisory",
     vertical: "Federal Cybersecurity",
     size: "Founder + contractors",
@@ -87,7 +107,7 @@ const Proof = () => {
     outcomes: ["Eliminated founder dependency: 3-lane ICP system now runs via documented VA workflows", "Exceeded benchmarks: >40% open rates vs. industry avg 15-25%, 0% bounce rate maintained", "Pipeline activated: First qualified opportunity sourced within 90 days from cold outbound", "Complete VA/SDR handoff: Every workflow documented and repeatable without founder involvement", "ICP clarity achieved: Narrowed 9 unfocused lanes to 3 high-conviction target segments", "**12-month projection:** $500K+ predictable pipeline based on validated open rates and targeting"],
     whyItWorked: "Tight ICP focus combined with artifact-led sequences and safety-first LinkedIn protocols. Every touch demonstrated subject matter authority through valuable deliverables rather than volume-based outreach."
   }, {
-    id: 4,
+    id: 5,
     industry: "Legal Services",
     vertical: "Subscription Legal",
     size: "Boutique firm",
@@ -107,7 +127,7 @@ const Proof = () => {
     outcomes: ["Subscription economics validated: Profitable tier structure with clear usage caps and attorney compensation aligned to growth", "Atlanta pilot delivered data: Validated messaging, targeting, and acquisition economics for replication", "Real-time visibility: Live dashboards track subscribers, usage patterns, and churn risk indicators", "Attorney leverage achieved: Onboarding automation freed $500/hr partner time for client service", "Partner time reclaimed: Growth logistics shifted from manual execution to strategic oversight", "**12-month projection:** Proven subscription framework ready for geographic expansion and partnership activation"],
     whyItWorked: "Subscription model required economic validation before scale. Atlanta pilot proved unit economics, automation removed friction, and dashboards enabled data-driven expansion decisions."
   }, {
-    id: 5,
+    id: 6,
     industry: "E-Commerce",
     vertical: "Peer-to-Peer Resale",
     size: "Independent seller",
@@ -127,7 +147,7 @@ const Proof = () => {
     outcomes: ["Earnings: $2.3K (+107% vs previous 6 months)", "Sales: 108 orders (+177%)", "Listings Created: 692 (+585%)", "Views: 41.5K in 7 days (+58% from boosting)", "Sales from Boosting: 176 total", "Average Rating: 5 stars from 134 reviews", "**Pattern validated:** Listing velocity outperformed inventory volume as primary growth driver", "Standardized copy and photo framing increased conversion predictability", "Insert program lifted repeat purchases within 30 days by double-digit margin"],
     whyItWorked: "System discipline created enterprise-grade results inside a consumer marketplace. Structure outperformed intuition. Boosting only worked when paired with daily new listings. No brand spend, no ad budget—only infrastructure."
   }, {
-    id: 6,
+    id: 7,
     industry: "B2B SaaS (Composite)",
     vertical: "Project Management Platform",
     size: "$4.2M ARR, Series A",
@@ -147,7 +167,7 @@ const Proof = () => {
     outcomes: ["Trial-to-paid conversion increased from 6% to 24% through behavior-based targeting", "Sales team capacity freed by 60%—stopped calling unqualified cold trials", "Average sales cycle reduced by 32% through better timing and context", "Rep win rate improved 3.5x by focusing on users demonstrating product value", "Expansion revenue surfaced through usage pattern analysis (identified upsell signals)", "**Pattern validated:** Product usage signals are the strongest predictor of purchase intent in PLG motion"],
     whyItWorked: "Reps stopped interrupting evaluators and started helping buyers. Usage data transformed spray-and-pray outreach into contextual, timely conversations with users already experiencing product value."
   }, {
-    id: 7,
+    id: 8,
     industry: "Professional Services (Composite)",
     vertical: "Marketing Agency",
     size: "$2.8M annual revenue, 12 employees",
@@ -166,26 +186,6 @@ const Proof = () => {
     growth: "87% Time Reclaimed",
     outcomes: ["Account manager admin time reduced from 15 hours to 2 hours per week", "Client escalations dropped 73% through proactive status visibility", "Project delivery time decreased 18% via standardized workflows", "Team capacity increased 22% through better resource allocation", "Client retention improved—NPS score rose from 6.8 to 8.9", "**Expansion enabled:** Time reclaimed allowed agency to take on 4 new clients without additional hires"],
     whyItWorked: "Unified system of record replaced memory-based project tracking. Clients gained self-service visibility, account managers shifted from status reporting to strategic work, and standardized SOPs ensured consistent delivery quality."
-  }, {
-    id: 8,
-    industry: "Healthcare",
-    vertical: "AI-Assisted Wellness Clinic",
-    size: "Launch stage clinic",
-    timeline: "14 days",
-    challenge: "AI-assisted medical clinic launching in Colorado. No unified patient acquisition system, no funnel or landing pages, conflicting design directions across website, print, and ad assets, no sprint structure, no communication protocol. Ops, marketing, and technical teams were misaligned. No tracking, no AEO strategy, no lead journey. Meta setup blocked. Creative direction inconsistent and too 'internet ad' for a clinical brand. Gap: needed operational infrastructure in under 2 weeks.",
-    pullQuote: "Zero to operational patient acquisition system in 14 days",
-    system: ["Multi-variant landing page system with A/B testing infrastructure", "Full lead flow architecture: ScoreApp → CRM → SMS → AI voice agent → booking", "Waitlist, free-consultation pipeline, and patient tracking system", "Complete design system aligning clinical warmth with Colorado aesthetic", "Ad creative direction, hooks, angles, and testing strategy", "UGC pod strategy for local content generation", "Meta Business setup resolution and lead system integration", "HIPAA-appropriate tool integration (SMS, AI voice, scheduling, CRM)", "Sprint cadences and cross-department communication protocols", "Internal operating system: role guides, project calendar, sprint rules, team hub", "UTM frameworks and structured tracking implementation"],
-    beforeMetric: {
-      label: "Patient acquisition",
-      value: "No system"
-    },
-    afterMetric: {
-      label: "Operational in",
-      value: "14 days"
-    },
-    growth: "Foundation",
-    outcomes: ["Digital infrastructure built from zero to operational in under 14 days", "Clear, unified brand direction across all channels (ads, web, in-clinic materials)", "Ad-ready funnel prepared for launch with patient flow fully mapped", "Cross-team communication improved 10x through sprint structure and protocols", "Scheduling, intake, and lead flow fully integrated and functional", "Executives gained clarity, direction, and trust in execution process", "System designed for replication across multiple future clinic locations", "**Pattern validated:** Clinical brands require warmth + precision—technical infrastructure with human-centered creative"],
-    whyItWorked: "Tight timeline forced ruthless prioritization. Sprint structure aligned misaligned teams. Brand system balanced clinical credibility with approachable Colorado aesthetic. Infrastructure built for scale from day one—replicable across locations."
   }];
   return <div className="min-h-screen bg-background">
       <SEOHead 
@@ -266,7 +266,7 @@ const Proof = () => {
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
           <div className="text-center">
-            <div className="heading-subsection text-primary mb-1">14 Days</div>
+            <div className="heading-subsection text-primary mb-1">90 Days</div>
             <div className="text-description text-muted-foreground">Fastest Deploy</div>
           </div>
           <div className="h-12 w-px bg-border hidden sm:block" />
