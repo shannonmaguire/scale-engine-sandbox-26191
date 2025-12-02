@@ -19,9 +19,6 @@ const Navigation = () => {
     href: "/about"
   }];
   const coreServices = [{
-    label: "Free Health Check",
-    href: "/self-assessment"
-  }, {
     label: "Infrastructure Assessment",
     href: "/infrastructure-assessment"
   }, {
@@ -87,8 +84,7 @@ const Navigation = () => {
                       >
                         <span className="text-white">{link.label}</span>
                         <span className="text-xs text-white/60">
-                          {link.label === "Free Health Check" ? "(5 min)" :
-                           link.label === "Infrastructure Assessment" ? "(2 weeks)" :
+                          {link.label === "Infrastructure Assessment" ? "(2 weeks)" :
                            link.label === "Sprint" ? "(90 days)" :
                            link.label === "Fractional Ops" ? "(ongoing)" : ""}
                         </span>
