@@ -152,48 +152,6 @@ export type Database = {
         }
         Relationships: []
       }
-      waitlist: {
-        Row: {
-          company: string | null
-          contacted_at: string | null
-          created_at: string
-          email: string
-          full_name: string
-          id: string
-          message: string | null
-          queue_position: number | null
-          service_interest: string | null
-          status: string
-          timeline: string | null
-        }
-        Insert: {
-          company?: string | null
-          contacted_at?: string | null
-          created_at?: string
-          email: string
-          full_name: string
-          id?: string
-          message?: string | null
-          queue_position?: number | null
-          service_interest?: string | null
-          status?: string
-          timeline?: string | null
-        }
-        Update: {
-          company?: string | null
-          contacted_at?: string | null
-          created_at?: string
-          email?: string
-          full_name?: string
-          id?: string
-          message?: string | null
-          queue_position?: number | null
-          service_interest?: string | null
-          status?: string
-          timeline?: string | null
-        }
-        Relationships: []
-      }
     }
     Views: {
       [_ in never]: never
