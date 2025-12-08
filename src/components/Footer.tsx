@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className="lg:pr-8">
+          <div className="lg:pr-12 xl:pr-16">
             <h4 className="font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5 text-white">
               Contact
             </h4>
