@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="lg:pr-8">
             <h4 className="font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5 text-white">
               Contact
             </h4>
@@ -151,17 +151,13 @@ const Footer = () => {
                 <Linkedin className="h-4 w-4 sm:h-3.5 sm:w-3.5 flex-shrink-0" />
                 Follow on LinkedIn
               </a>
+              <Button asChild size="default" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10 min-h-[48px]">
+                <Link to="/self-assessment">
+                  Take Free Health Check
+                </Link>
+              </Button>
             </div>
           </div>
-        </div>
-
-        {/* CTA Row */}
-        <div className="py-8 sm:py-10 border-b border-white/10 flex justify-center">
-          <Button asChild size="default" variant="outline" className="border-white/20 text-white hover:bg-white/10 min-h-[48px]">
-            <Link to="/self-assessment">
-              Take Free Health Check
-            </Link>
-          </Button>
         </div>
 
         {/* Bottom Bar */}
