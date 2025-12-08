@@ -156,7 +156,7 @@ const Footer = () => {
         </div>
 
         {/* CTA Row */}
-        <div className="py-8 sm:py-10 border-b border-white/10">
+        <div className="py-8 sm:py-10 border-b border-white/10 flex justify-center">
           <Button asChild size="default" variant="outline" className="border-white/20 text-white hover:bg-white/10 min-h-[48px]">
             <Link to="/self-assessment">
               Take Free Health Check
