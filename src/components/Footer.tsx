@@ -155,6 +155,15 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* CTA Row */}
+        <div className="py-8 sm:py-10 border-b border-white/10">
+          <Button asChild size="default" variant="outline" className="border-white/20 text-white hover:bg-white/10 min-h-[48px]">
+            <Link to="/self-assessment">
+              Take Free Health Check
+            </Link>
+          </Button>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-6 sm:pt-8 flex flex-col sm:grid sm:grid-cols-2 gap-4 sm:gap-3 sm:items-center">
           <p className="text-white/40 text-sm sm:text-xs order-2 sm:order-1">
