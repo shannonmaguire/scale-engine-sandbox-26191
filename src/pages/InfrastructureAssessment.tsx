@@ -270,7 +270,7 @@ const InfrastructureAssessment = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             <div className="border border-border bg-card p-6 text-center">
               <DollarSign className="w-8 h-8 text-primary mx-auto mb-4" />
-              <div className="heading-subsection mb-2">$4,500 - $7,500</div>
+              <div className="heading-subsection mb-2">$1,500 - $3,000</div>
               <div className="text-description text-muted-foreground">
                 Assessment fee based on infrastructure complexity
               </div>
@@ -294,27 +294,9 @@ const InfrastructureAssessment = () => {
           </div>
 
           <div className="border-2 border-primary/30 bg-primary/5 p-8">
-            <h3 className="heading-subsection mb-4 text-center">Credit Example</h3>
-            <div className="max-w-2xl mx-auto space-y-4 text-description font-mono">
-              <div className="flex justify-between items-center pb-3 border-b border-border">
-                <span className="text-muted-foreground">Infrastructure Assessment</span>
-                <span className="text-foreground font-semibold">$6,000</span>
-              </div>
-              <div className="flex justify-between items-center pb-3 border-b border-border">
-                <span className="text-muted-foreground">Sprint Engagement (base)</span>
-                <span className="text-foreground">$45,000</span>
-              </div>
-              <div className="flex justify-between items-center pb-3 border-b border-border">
-                <span className="text-muted-foreground">Assessment Credit Applied</span>
-                <span className="text-primary font-semibold">-$6,000</span>
-              </div>
-              <div className="flex justify-between items-center pt-3">
-                <span className="text-foreground font-bold">Net Sprint Investment</span>
-                <span className="text-foreground font-bold text-xl">$39,000</span>
-              </div>
-            </div>
-            <p className="text-center text-sm text-muted-foreground mt-6 italic">
-              Assessment becomes free if you proceed to Sprint within 90 days
+            <h3 className="heading-subsection mb-4 text-center">How the Credit Works</h3>
+            <p className="text-description text-muted-foreground text-center max-w-2xl mx-auto">
+              Your full Assessment investment is credited toward your Sprint engagement when you proceed within 90 days. The Assessment effectively becomes free—you only pay for the implementation.
             </p>
           </div>
         </div>
