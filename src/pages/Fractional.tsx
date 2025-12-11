@@ -177,8 +177,8 @@ const Fractional = () => {
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
               <div>
-                <div className="heading-subsection mb-2">Monthly Investment</div>
-                <p className="text-description text-muted-foreground">Starting at $6K/month based on system complexity and support scope.</p>
+                <div className="heading-subsection mb-2">Scoped Investment</div>
+                <p className="text-description text-muted-foreground">Monthly retainer scoped during Sprint handoff based on system complexity and support needs.</p>
               </div>
             </div>
           </div>
