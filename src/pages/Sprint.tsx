@@ -113,7 +113,7 @@ const Sprint = () => {
           </h1>
           
           <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-10">
-            This is an engineering sprint. Not a creative sprint.
+            Engineering implementation. Fixed scope, documented handoff.
           </p>
 
           <Button size="lg" asChild>
@@ -149,7 +149,7 @@ const Sprint = () => {
             ))}
             
             <div className="mt-8 pt-6 border-t border-border/40 text-xs text-muted-foreground uppercase tracking-widest">
-              FIXED SCOPE | DOCUMENTED HANDOFF | ZERO VENDOR LOCK-IN
+              Fixed scope with documented handoff. No vendor lock-in.
             </div>
           </div>
         </div>
