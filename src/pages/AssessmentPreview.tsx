@@ -20,7 +20,9 @@ const AssessmentPreview = () => {
     overallScore,
     answerCounts,
     checklistState,
-    categoryCount
+    categoryCount,
+    buyerPattern,
+    yesPercentage
   } = location.state || {};
 
   // Redirect if no state
@@ -82,7 +84,9 @@ const AssessmentPreview = () => {
           overallScore,
           answerCounts,
           checklistState,
-          email
+          email,
+          buyerPattern,
+          yesPercentage
         }
       });
 
@@ -107,7 +111,9 @@ const AssessmentPreview = () => {
         overallScore,
         answerCounts,
         checklistState,
-        skipped: true
+        skipped: true,
+        buyerPattern,
+        yesPercentage
       }
     });
   };

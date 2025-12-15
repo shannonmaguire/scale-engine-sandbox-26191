@@ -23,7 +23,8 @@ interface ResultsData {
   checklistState: Record<string, Record<string, "yes" | "partial" | "no" | null>>;
   overallProgress: number;
   answerCounts: { yes: number; partial: number; no: number; unanswered: number };
-  
+  buyerPattern?: 'validation_seeker' | 'high_performer' | 'intervention_candidate';
+  yesPercentage?: number;
 }
 
 const AssessmentResults = () => {
@@ -59,7 +60,7 @@ const AssessmentResults = () => {
     return <Navigate to="/self-assessment" replace />;
   }
 
-  const { checklistId, title, categories, checklistState, overallProgress, answerCounts } = resultsData;
+  const { checklistId, title, categories, checklistState, overallProgress, answerCounts, buyerPattern, yesPercentage } = resultsData;
 
   const handleEmailSubmit = async (submittedEmail: string) => {
     if (!hasBackend) {
@@ -107,14 +108,21 @@ const AssessmentResults = () => {
     window.print();
   };
 
-  const getScoreInsight = (score: number) => {
-    if (score >= 31) return { text: "Optimized", color: "text-green-600", bg: "bg-green-50" };
-    if (score >= 21) return { text: "Structured", color: "text-blue-600", bg: "bg-blue-50" };
-    if (score >= 11) return { text: "Emerging", color: "text-orange-600", bg: "bg-orange-50" };
-    return { text: "Foundational", color: "text-red-600", bg: "bg-red-50" };
+  const getScoreInsight = (score: number, pattern?: string) => {
+    // Override tier for validation seekers - they score high but aren't intervention candidates
+    if (pattern === 'validation_seeker') {
+      return { text: "Optimized", color: "text-green-600", bg: "bg-green-50", isExclusion: true };
+    }
+    if (pattern === 'high_performer') {
+      return { text: "Structured", color: "text-blue-600", bg: "bg-blue-50", isExclusion: false };
+    }
+    if (score >= 31) return { text: "Optimized", color: "text-green-600", bg: "bg-green-50", isExclusion: false };
+    if (score >= 21) return { text: "Structured", color: "text-blue-600", bg: "bg-blue-50", isExclusion: false };
+    if (score >= 11) return { text: "Emerging", color: "text-orange-600", bg: "bg-orange-50", isExclusion: false };
+    return { text: "Foundational", color: "text-red-600", bg: "bg-red-50", isExclusion: false };
   };
 
-  const insight = getScoreInsight(overallProgress);
+  const insight = getScoreInsight(overallProgress, buyerPattern);
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
 
   return (
@@ -282,37 +290,68 @@ const AssessmentResults = () => {
             </div>
           </section>
 
-          {/* Booking CTA #2 - Primary Conversion */}
+          {/* Booking CTA #2 - Primary Conversion (conditional on buyer pattern) */}
           <section className="my-12 print:hidden">
-            <Card className="p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background border-primary/20">
-              <div className="text-center max-w-2xl mx-auto">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                  <Calendar className="h-8 w-8 text-primary" />
+            {buyerPattern === 'validation_seeker' ? (
+              // Validation Seeker - Systems are fine, don't push intervention
+              <Card className="p-8 border-2 border-border">
+                <div className="text-center max-w-2xl mx-auto">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+                    <CheckCircle2 className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">Your Systems Are Working</h3>
+                  <p className="text-muted-foreground mb-4">
+                    Based on your responses, your revenue infrastructure is already performing at a high level. 
+                    Our services are designed for organizations with broken or underperforming systems—not optimization 
+                    of already-functional infrastructure.
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-6 font-mono">
+                    You answered "Yes" to {yesPercentage?.toFixed(0)}% of questions. This indicates systems that don't require intervention.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button size="lg" variant="outline" onClick={handlePrint}>
+                      <Printer className="h-5 w-5 mr-2" />
+                      Save Report as PDF
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-6 italic">
+                    If you believe your systems are actually underperforming despite these results, 
+                    the free quiz may not have captured the nuance. Consider our paid Infrastructure Assessment for deeper diagnostic.
+                  </p>
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Book Your Infrastructure Assessment</h3>
-                <p className="text-muted-foreground mb-2">
-                  This free quiz identified your gaps. Our {" "}
-                  <strong className="text-foreground">2-week Infrastructure Assessment</strong> 
-                  {" "} delivers a complete diagnostic audit and 90-day implementation roadmap.
-                </p>
-                <p className="text-sm text-muted-foreground mb-6 italic">
-                  Assessment fee credits 100% toward Sprint engagement.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button size="lg" onClick={handleBookingClick} className="shadow-lg">
-                    <Phone className="h-5 w-5 mr-2" />
-                    Book Infrastructure Assessment
-                  </Button>
-                  <Button size="lg" variant="outline" onClick={handlePrint}>
-                    <Printer className="h-5 w-5 mr-2" />
-                    Save Report as PDF
-                  </Button>
+              </Card>
+            ) : (
+              // Intervention Candidate or High Performer - Standard CTA
+              <Card className="p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background border-primary/20">
+                <div className="text-center max-w-2xl mx-auto">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                    <Calendar className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">Book Your Infrastructure Assessment</h3>
+                  <p className="text-muted-foreground mb-2">
+                    This free quiz identified your gaps. Our {" "}
+                    <strong className="text-foreground">2-week Infrastructure Assessment</strong> 
+                    {" "} delivers a complete diagnostic audit and 90-day implementation roadmap.
+                  </p>
+                  <p className="text-sm text-muted-foreground mb-6 italic">
+                    Assessment fee credits 100% toward Sprint engagement.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button size="lg" onClick={handleBookingClick} className="shadow-lg">
+                      <Phone className="h-5 w-5 mr-2" />
+                      Book Infrastructure Assessment
+                    </Button>
+                    <Button size="lg" variant="outline" onClick={handlePrint}>
+                      <Printer className="h-5 w-5 mr-2" />
+                      Save Report as PDF
+                    </Button>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-4">
+                    2-week timeline • Gap analysis • 90-day deployment roadmap
+                  </p>
                 </div>
-                <p className="text-xs text-muted-foreground mt-4">
-                  2-week timeline • Gap analysis • 90-day deployment roadmap
-                </p>
-              </div>
-            </Card>
+              </Card>
+            )}
           </section>
 
           {/* Detailed Criteria */}
