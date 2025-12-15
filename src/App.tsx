@@ -87,7 +87,8 @@ const AppContent = () => {
             <Route path="/infrastructure-assessment" element={<InfrastructureAssessment />} />
             
             {/* Common typo redirects */}
-            <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
+            <Route path="/assesment" element={<Navigate to="/self-assessment" replace />} />
+            <Route path="/assessment" element={<Navigate to="/self-assessment" replace />} />
             <Route path="/fractional-ops" element={<Navigate to="/fractional" replace />} />
             <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
             
