@@ -212,6 +212,15 @@ const Contact = () => {
       
       <Section>
         <div className="max-w-4xl mx-auto">
+          {/* Priority Intake Banner - shown for critical tier from assessment */}
+          {searchParams.get("priority") === "high" && (
+            <div className="mb-8 p-4 border-2 border-destructive bg-destructive/10">
+              <p className="font-mono text-sm uppercase tracking-widest text-destructive font-semibold text-center">
+                Priority Intake — Response within 24 hours
+              </p>
+            </div>
+          )}
+
           {/* Hero */}
           <div className="text-center mb-16">
             <div className="system-status mb-8">

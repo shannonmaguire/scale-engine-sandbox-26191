@@ -44,21 +44,18 @@ const SelfAssessment = () => {
               <p className="font-mono text-sm uppercase tracking-widest text-destructive mb-3 font-semibold">
                 Stop. Read This First.
               </p>
-              <p className="text-base text-foreground mb-3">
-                This quiz diagnoses broken revenue systems. It assumes you have infrastructure that isn't working.
-              </p>
               <ul className="space-y-2 text-sm text-foreground">
                 <li className="flex items-start gap-2">
                   <span className="text-destructive font-bold">×</span>
-                  <span>If you're building from scratch, this doesn't apply.</span>
+                  <span>Building from scratch — not applicable.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-destructive font-bold">×</span>
-                  <span>If you want validation that things are fine, don't take this.</span>
+                  <span>Seeking validation — wrong tool.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-destructive font-bold">×</span>
-                  <span>If you're not ready to accept that systems may need rebuilding, stop here.</span>
+                  <span>Not ready to rebuild — stop here.</span>
                 </li>
               </ul>
             </div>

@@ -194,6 +194,36 @@ const About = () => {
         </div>
       </Section>
 
+      {/* Rules of Engagement */}
+      <Section className="border-b border-border">
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-8">Rules of Engagement</h2>
+
+          <div className="space-y-4">
+            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
+              <span className="text-label text-destructive font-mono">01</span>
+              <p className="text-description text-foreground">Assessment required before Sprint.</p>
+            </div>
+            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
+              <span className="text-label text-destructive font-mono">02</span>
+              <p className="text-description text-foreground">Fixed scope only. No hourly.</p>
+            </div>
+            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
+              <span className="text-label text-destructive font-mono">03</span>
+              <p className="text-description text-foreground">I choose clients. You choose timing.</p>
+            </div>
+            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
+              <span className="text-label text-destructive font-mono">04</span>
+              <p className="text-description text-foreground">One project at a time.</p>
+            </div>
+            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
+              <span className="text-label text-destructive font-mono">05</span>
+              <p className="text-description text-foreground">90-day cycles. Not open-ended retainers.</p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* Partner Network */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
@@ -233,26 +263,14 @@ const About = () => {
             5-minute self-assessment identifies your gaps. Then book our {TIMELINES.assessment} Infrastructure Assessment—complete diagnostic audit with 90-day roadmap.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ConversionOptimizedButton 
-              to={ROUTES.assessment}
-              ctaName="About - Free Health Check" 
-              location="About CTA Section"
-              size="lg"
-            >
-              {CTA.takeHealthCheck}
-            </ConversionOptimizedButton>
-            <ConversionOptimizedButton 
-              to={ROUTES.proof}
-              ctaName="About - View Proof" 
-              location="About CTA Section" 
-              variant="outline"
-              showArrow={false}
-              size="lg"
-            >
-              {CTA.seeProof}
-            </ConversionOptimizedButton>
-          </div>
+          <ConversionOptimizedButton 
+            to={ROUTES.assessment}
+            ctaName="About - Free Health Check" 
+            location="About CTA Section"
+            size="lg"
+          >
+            {CTA.takeHealthCheck}
+          </ConversionOptimizedButton>
         </div>
       </Section>
     </div>
