@@ -6,8 +6,8 @@
 
 // ===== POSITIONING =====
 export const POSITIONING = {
-  primary: "Revenue infrastructure that works in 90-day cycles with fixed scope, documented handoff, and zero vendor lock-in.",
-  tagline: "Revenue infrastructure you own",
+  primary: "We design how your revenue systems work. Then we build them.",
+  tagline: "Revenue architecture you own",
 } as const;
 
 // ===== SERVICE NAMES =====
@@ -92,4 +92,5 @@ export const PHRASES = {
   systemHealth: "System health",
   operationalExcellence: "Operational excellence",
   predictableRevenue: "Revenue predictability",
+  whatWeBuild: "Outbound. Acquisition. Operations.",
 } as const;

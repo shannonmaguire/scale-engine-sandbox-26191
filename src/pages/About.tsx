@@ -93,7 +93,7 @@ const About = () => {
               </p>
 
               <p className="text-description text-foreground mb-6">
-                Installs revenue infrastructure for regulated and high-trust industries. Legal, compliance, cybersecurity, healthcare, B2B SaaS.
+                Designs and builds revenue systems for regulated and high-trust industries. Legal, compliance, cybersecurity, healthcare, B2B SaaS.
               </p>
 
               <p className="text-description text-muted-foreground mb-8">
