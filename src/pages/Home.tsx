@@ -79,8 +79,8 @@ const Home = () => {
       <EngagementTracker />
       <CookieBanner />
       <SEOHead
-        title="Revenue Infrastructure | CWT Studio"
-        description="Revenue infrastructure installed in 90 days. Systems engineered for load tolerance, documented for handoff, measured against baselines."
+        title="Revenue Architecture | CWT Studio"
+        description="We design how your revenue systems work. Then we build them. 90-day implementations for legal, compliance, and healthcare teams."
         keywords={[
           'revenue infrastructure',
           'revenue operations',
@@ -110,11 +110,11 @@ const Home = () => {
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
-            We build your revenue infrastructure.
+            We design how your revenue systems work. Then we build them.
           </h1>
 
           <p className="text-description text-muted-foreground mb-6 max-w-2xl">
-            Backend systems for legal, compliance, and healthcare teams.
+            Outbound. Acquisition. Operations. For legal, compliance, and healthcare teams.
           </p>
 
           <p className="font-mono text-sm text-foreground/60 mb-10">
