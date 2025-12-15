@@ -122,7 +122,7 @@ const AssessmentPreview = () => {
     <div className="min-h-screen bg-[#FAFAFA]">
       <SEOHead
         title="Your Health Check Results | CWT Studio"
-        description="View your free revenue systems health check score and unlock detailed category analysis."
+        description="View your free revenue systems health check score and access detailed category analysis."
         canonicalUrl="/assessment-preview"
       />
 
@@ -134,7 +134,7 @@ const AssessmentPreview = () => {
             </div>
             <h1 className="heading-page mb-4">Your Revenue Systems Score</h1>
             <p className="text-muted-foreground">
-              Enter your email to unlock detailed category analysis and receive your full report with personalized recommendations.
+              Enter your email to access detailed category analysis and receive your full report with personalized recommendations.
             </p>
           </div>
 

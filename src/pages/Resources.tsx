@@ -168,7 +168,7 @@ const Resources = () => {
             Proven Revenue Operations Frameworks
           </h1>
           <p className="text-description text-muted-foreground max-w-3xl">
-            The same tools we use in our revenue operations assessments and sprint engagements. All resources unlock instantly with your email.
+            The same tools we use in our revenue operations assessments and sprint engagements. All resources available instantly with your email.
           </p>
         </div>
       </section>

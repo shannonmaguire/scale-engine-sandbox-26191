@@ -66,7 +66,7 @@ const Salesforce = () => {
       <Section className="bg-card border-b border-border">
         <div className="max-w-4xl mx-auto text-center">
             <div className="system-status border-accent mb-8">
-              <span className="text-accent">SALESFORCE SOLUTIONS</span>
+              <span className="text-accent">SALESFORCE IMPLEMENTATION</span>
             </div>
             <h1 className="heading-page mb-6">
               Salesforce Built for Revenue Predictability
