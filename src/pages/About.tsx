@@ -14,24 +14,39 @@ const About = () => {
   usePerformanceMonitoring();
   useScrollDepth();
 
+  const operatingBeliefs = [
+    {
+      label: "Systems Over Tactics",
+      description: "Revenue problems are architecture problems. Fix the structure, the metrics follow."
+    },
+    {
+      label: "Complexity Is Information",
+      description: "High tolerance for complexity. Low tolerance for incoherence. The goal is clarity, not simplicity."
+    },
+    {
+      label: "Ownership Transfer",
+      description: "Every engagement ends with you owning the system. No dependencies. No retainers required."
+    }
+  ];
+
   const approach = [
-    "Audit revenue infrastructure. Identify failure points before they manifest.",
-    "Install CRM architecture, automation logic, reporting frameworks. 90-day cycles.",
-    "Document handoff. No ongoing dependencies."
+    "Design how your revenue systems should work. Architecture before implementation.",
+    "Build the infrastructure in 90-day cycles. CRM, automation, reporting, integrations.",
+    "Document and hand off. Your team runs it. We move on."
   ];
 
   const principlePoints = [
     {
       label: "Fixed Scope",
-      description: "Every engagement has defined deliverables, timeline boundaries, and success criteria established before work begins."
+      description: "Defined deliverables, timeline boundaries, success criteria. Established before work begins."
     },
     {
       label: "Measurable Baselines",
-      description: "Systems performance measured against baseline metrics—pipeline velocity, data quality, automation coverage, manual effort reduction."
+      description: "Pipeline velocity, data quality, automation coverage, manual effort reduction. Measured against baseline."
     },
     {
       label: "Documented Handoff",
-      description: "Process SOPs, field definitions, automation logic maps, and admin protocols documented for internal team execution."
+      description: "SOPs, field definitions, logic maps, admin protocols. Your team executes."
     }
   ];
 
@@ -92,12 +107,16 @@ const About = () => {
                 Founder & Revenue Systems Architect
               </p>
 
-              <p className="text-description text-foreground mb-6">
-                Designs and builds revenue systems for regulated and high-trust industries. Legal, compliance, cybersecurity, healthcare, B2B SaaS.
+              <p className="text-xl text-foreground mb-6 leading-relaxed">
+                I design how revenue systems work. Then I build them.
+              </p>
+
+              <p className="text-description text-muted-foreground mb-4">
+                Legal, compliance, cybersecurity, healthcare, B2B SaaS. Industries where system failure carries financial, legal, and operational consequences.
               </p>
 
               <p className="text-description text-muted-foreground mb-8">
-                Fixed-scope implementations. 90-day cycles. Documented handoffs.
+                Most consultants optimize what exists. I architect what should exist. Fixed-scope implementations. 90-day cycles. Documented handoffs. You own everything when I leave.
               </p>
 
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
@@ -119,14 +138,31 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Approach */}
+      {/* Operating Beliefs */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Approach</h2>
+          <h2 className="heading-section mb-8">Operating Beliefs</h2>
+          
+          <div className="grid sm:grid-cols-3 gap-6">
+            {operatingBeliefs.map((belief, index) => (
+              <div key={index} className="bg-card p-6 border-l-2 border-primary">
+                <div className="text-label text-primary mb-3">{belief.label}</div>
+                <p className="text-description text-muted-foreground">{belief.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Approach */}
+      <Section className="border-b border-border">
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-8">How I Work</h2>
           
           <div className="space-y-4">
             {approach.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 bg-card p-6 border-l-2 border-primary">
+              <div key={index} className="flex items-start gap-4 bg-card p-6 border-l-2 border-accent">
+                <span className="text-label text-accent font-mono">{String(index + 1).padStart(2, '0')}</span>
                 <p className="text-description text-foreground">{item}</p>
               </div>
             ))}
@@ -134,13 +170,13 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Operating Principles */}
-      <Section className="border-b border-border">
+      {/* 90-Day Cycles */}
+      <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">90-Day Cycles</h2>
 
           <p className="text-description text-muted-foreground mb-10">
-            All implementations operate on 90-day delivery cycles. Forces prioritization. Eliminates scope creep. Produces measurable outcomes within a fiscal quarter.
+            Every engagement operates on 90-day delivery cycles. Forces prioritization. Eliminates scope creep. Produces measurable outcomes within a fiscal quarter.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-6">
@@ -159,12 +195,12 @@ const About = () => {
       </Section>
 
       {/* Partner Network */}
-      <Section variant="muted" className="border-b border-border">
+      <Section className="border-b border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">Partner Network</h2>
 
           <p className="text-description text-muted-foreground mb-10">
-            CWT Studio leads strategy. CloudRoute delivers Salesforce implementation. Single contract, unified accountability.
+            CWT Studio leads strategy and architecture. CloudRoute delivers Salesforce implementation. Single contract, unified accountability.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
