@@ -314,10 +314,6 @@ const AssessmentResults = () => {
                       Save Report as PDF
                     </Button>
                   </div>
-                  <p className="text-xs text-muted-foreground mt-6 italic">
-                    If you believe your systems are actually underperforming despite these results, 
-                    the free quiz may not have captured the nuance. Consider our paid Infrastructure Assessment for deeper diagnostic.
-                  </p>
                 </div>
               </Card>
             ) : (
