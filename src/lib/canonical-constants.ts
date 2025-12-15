@@ -94,5 +94,5 @@ export const PHRASES = {
   systemHealth: "System health",
   operationalExcellence: "Operational excellence",
   predictableRevenue: "Revenue predictability",
-  whatWeBuild: "Outbound. Acquisition. Operations.",
+  whatWeBuild: "Outbound pipelines, acquisition systems, and revenue operations",
 } as const;
