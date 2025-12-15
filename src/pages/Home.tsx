@@ -351,15 +351,27 @@ const Home = () => {
         </div>
       </Section>
 
+      {/* North Star */}
+      <Section variant="muted" className="border-t border-border text-center">
+        <div className="max-w-2xl mx-auto">
+          <p className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-4">
+            North Star
+          </p>
+          <p className="text-2xl text-foreground font-medium mb-4">
+            Build systems that make revenue boring.
+          </p>
+          <p className="text-description text-muted-foreground">
+            If revenue feels exciting, it is unstable. If revenue feels predictable, the system is working.
+          </p>
+        </div>
+      </Section>
+
       {/* Final CTA */}
       <Section className="border-t border-border text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="heading-section mb-6">Start With Free Health Check</h2>
-          <p className="text-description text-muted-foreground mb-4">
-            5-minute self-assessment identifies your revenue systems gaps. Then book our {TIMELINES.assessment} Infrastructure Assessment for detailed roadmap.
-          </p>
-          <p className="text-description text-muted-foreground mb-10 italic">
-            Assessment fee credits 100% toward Sprint engagement.
+          <p className="text-description text-muted-foreground mb-10">
+            5-minute self-assessment identifies your revenue systems gaps.
           </p>
 
           <ConversionOptimizedButton
