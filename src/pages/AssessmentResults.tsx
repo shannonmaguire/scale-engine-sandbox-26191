@@ -1,14 +1,15 @@
-import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import { useLocation, useNavigate, Navigate, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle2, AlertCircle, XCircle, Printer, ArrowLeft, Calendar, Phone } from "lucide-react";
+import { CheckCircle2, AlertCircle, XCircle, Printer, ArrowLeft, ArrowRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Badge } from "@/components/ui/badge";
 import { InlineEmailCapture } from "@/components/InlineEmailCapture";
 import { trackEvent } from "@/hooks/usePageTracking";
 import { toast } from "sonner";
+import { determineIntakeRoute, getUrgencyBadge, type BuyerPattern } from "@/lib/intake-routing";
 
 interface CategoryData {
   id: string;
@@ -124,6 +125,14 @@ const AssessmentResults = () => {
 
   const insight = getScoreInsight(overallProgress, buyerPattern);
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
+  
+  // Compute intake routing decision
+  const intakeDecision = determineIntakeRoute(
+    overallProgress,
+    (buyerPattern || 'intervention_candidate') as BuyerPattern,
+    checklistId
+  );
+  const urgencyBadge = getUrgencyBadge(intakeDecision.urgencyLevel);
 
   return (
     <>
@@ -290,64 +299,78 @@ const AssessmentResults = () => {
             </div>
           </section>
 
-          {/* Booking CTA #2 - Primary Conversion (conditional on buyer pattern) */}
+          {/* Intake Routing CTA - Based on score tier and buyer pattern */}
           <section className="my-12 print:hidden">
-            {buyerPattern === 'validation_seeker' ? (
-              // Validation Seeker - Systems are fine, don't push intervention
-              <Card className="p-8 border-2 border-border">
-                <div className="text-center max-w-2xl mx-auto">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
+            <Card className={`p-8 ${intakeDecision.showPdfOnly ? 'border-2 border-border' : 'border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-background to-background'}`}>
+              <div className="text-center max-w-2xl mx-auto">
+                {/* Urgency Badge */}
+                {urgencyBadge && (
+                  <div className="mb-4">
+                    <Badge className={urgencyBadge.className}>
+                      {urgencyBadge.label}
+                    </Badge>
+                  </div>
+                )}
+                
+                {/* Icon based on route */}
+                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full mb-4 ${
+                  intakeDecision.route === 'excluded' ? 'bg-green-100' :
+                  intakeDecision.route === 'triage' ? 'bg-destructive/10' :
+                  'bg-primary/10'
+                }`}>
+                  {intakeDecision.route === 'excluded' ? (
                     <CheckCircle2 className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">Your Systems Are Working</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Based on your responses, your revenue infrastructure is already performing at a high level. 
-                    Our services are designed for organizations with broken or underperforming systems—not optimization 
-                    of already-functional infrastructure.
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-6 font-mono">
-                    You answered "Yes" to {yesPercentage?.toFixed(0)}% of questions. This indicates systems that don't require intervention.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button size="lg" variant="outline" onClick={handlePrint}>
-                      <Printer className="h-5 w-5 mr-2" />
-                      Save Report as PDF
-                    </Button>
-                  </div>
+                  ) : intakeDecision.route === 'triage' ? (
+                    <AlertCircle className="h-8 w-8 text-destructive" />
+                  ) : (
+                    <ArrowRight className="h-8 w-8 text-primary" />
+                  )}
                 </div>
-              </Card>
-            ) : (
-              // Intervention Candidate or High Performer - Standard CTA
-              <Card className="p-8 bg-gradient-to-br from-primary/10 via-primary/5 to-background border-primary/20">
-                <div className="text-center max-w-2xl mx-auto">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
-                    <Calendar className="h-8 w-8 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3">Book Your Infrastructure Assessment</h3>
-                  <p className="text-muted-foreground mb-2">
-                    This free quiz identified your gaps. Our {" "}
-                    <strong className="text-foreground">2-week Infrastructure Assessment</strong> 
-                    {" "} delivers a complete diagnostic audit and 90-day implementation roadmap.
+                
+                {/* Headline */}
+                <h3 className="text-2xl font-bold mb-3">{intakeDecision.headline}</h3>
+                
+                {/* Description */}
+                <p className="text-muted-foreground mb-6">
+                  {intakeDecision.description}
+                </p>
+                
+                {/* Score context for validation seekers */}
+                {intakeDecision.showPdfOnly && yesPercentage && (
+                  <p className="text-sm text-muted-foreground mb-6 font-mono">
+                    You answered "Yes" to {yesPercentage.toFixed(0)}% of questions.
                   </p>
-                  <p className="text-sm text-muted-foreground mb-6 italic">
-                    Assessment fee credits 100% toward Sprint engagement.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                    <Button size="lg" onClick={handleBookingClick} className="shadow-lg">
-                      <Phone className="h-5 w-5 mr-2" />
-                      Book Infrastructure Assessment
+                )}
+                
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  {intakeDecision.showBooking && (
+                    <Button 
+                      size="lg" 
+                      variant={intakeDecision.ctaVariant}
+                      asChild 
+                      className={intakeDecision.route === 'triage' ? 'shadow-lg' : ''}
+                    >
+                      <Link to={intakeDecision.contactPath}>
+                        {intakeDecision.ctaLabel}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </Button>
-                    <Button size="lg" variant="outline" onClick={handlePrint}>
-                      <Printer className="h-5 w-5 mr-2" />
-                      Save Report as PDF
-                    </Button>
-                  </div>
+                  )}
+                  <Button size="lg" variant="outline" onClick={handlePrint}>
+                    <Printer className="h-5 w-5 mr-2" />
+                    Save Report as PDF
+                  </Button>
+                </div>
+                
+                {/* Timeline note for booking routes */}
+                {intakeDecision.showBooking && intakeDecision.route !== 'soft_touch' && (
                   <p className="text-xs text-muted-foreground mt-4">
                     2-week timeline • Gap analysis • 90-day deployment roadmap
                   </p>
-                </div>
-              </Card>
-            )}
+                )}
+              </div>
+            </Card>
           </section>
 
           {/* Detailed Criteria */}
