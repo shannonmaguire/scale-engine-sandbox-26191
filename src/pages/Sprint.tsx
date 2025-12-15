@@ -47,10 +47,10 @@ const Sprint = () => {
   ];
 
   const deliverables = [
-    "Workflow automation eliminating manual handoffs and reducing operational overhead",
-    "Integration architecture connecting CRM, marketing tools, and third-party systems",
-    "Executive dashboards surfacing pipeline health, forecast accuracy, and bottleneck analysis",
-    "Process documentation covering system logic, field definitions, and escalation protocols"
+    "Phase 1 stabilizes data. No automation until data model holds.",
+    "Phase 2 builds integration architecture. CRM, marketing automation, third-party systems.",
+    "Phase 3 validates under load. No production until edge cases handled.",
+    "Phase 4 deploys and documents. Your team runs it. We move on."
   ];
 
   const outcomes = [
@@ -116,14 +116,9 @@ const Sprint = () => {
             This is an engineering sprint. Not a creative sprint.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" asChild>
-              <Link to="/contact?interest=sprint&source_page=sprint">{CTA.startSprint}</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.takeHealthCheck}</Link>
-            </Button>
-          </div>
+          <Button size="lg" asChild>
+            <Link to="/contact?interest=sprint&source_page=sprint">{CTA.startSprint}</Link>
+          </Button>
         </div>
       </Section>
 
@@ -215,17 +210,12 @@ const Sprint = () => {
             {TIMELINES.sprint} deployment cycle. Assessment required. Fixed scope, documented handoff, operational infrastructure.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/contact?interest=sprint&source_page=sprint">
-                {CTA.startSprint}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.takeHealthCheck}</Link>
-            </Button>
-          </div>
+          <Button size="lg" asChild>
+            <Link to="/contact?interest=sprint&source_page=sprint">
+              {CTA.startSprint}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </Section>
     </div>

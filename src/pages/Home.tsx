@@ -201,41 +201,41 @@ const Home = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                You Want Reversibility
+                No Reversibility
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                We install permanent infrastructure. If you need a vendor you can walk away from cleanly, we are not that vendor.
+                Permanent infrastructure only.
               </p>
             </div>
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                You're Comparing Features
+                No Feature Comparisons
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                We don't compete on feature lists. If you're shopping vendors, you're not ready for what we do.
+                Not a vendor RFP.
               </p>
             </div>
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                You Have Nothing Built
+                Existing Systems Only
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                We repair broken systems. Ground-zero builds without existing infrastructure are outside our scope.
+                No ground-zero builds.
               </p>
             </div>
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                You Want Validation
+                No Validation
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                We diagnose what's broken and rebuild it. If you need reassurance that things are fine, don't call us.
+                Diagnosis only.
               </p>
             </div>
           </div>
 
           <div className="mt-8 p-6 border-2 border-destructive/50 bg-destructive/5">
             <p className="text-base text-foreground font-mono font-medium">
-              We turn down engagements. Not all systems are eligible for intervention.
+              Not all systems are eligible for intervention.
             </p>
           </div>
         </div>
@@ -362,26 +362,14 @@ const Home = () => {
             Assessment fee credits 100% toward Sprint engagement.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <ConversionOptimizedButton
-              to={ROUTES.assessment}
-              ctaName="Final CTA - Free Health Check"
-              location="Final CTA Section"
-              size="lg"
-            >
-              {CTA.takeHealthCheck}
-            </ConversionOptimizedButton>
-            <ConversionOptimizedButton
-              to={ROUTES.infrastructureAssessment}
-              ctaName="Final CTA - Learn About Assessment"
-              location="Final CTA Section"
-              variant="outline"
-              showArrow={false}
-              size="lg"
-            >
-              Learn About Assessment
-            </ConversionOptimizedButton>
-          </div>
+          <ConversionOptimizedButton
+            to={ROUTES.assessment}
+            ctaName="Final CTA - Free Health Check"
+            location="Final CTA Section"
+            size="lg"
+          >
+            {CTA.takeHealthCheck}
+          </ConversionOptimizedButton>
         </div>
       </Section>
     </div>

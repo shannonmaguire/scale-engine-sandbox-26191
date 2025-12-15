@@ -193,24 +193,21 @@ const InfrastructureAssessment = () => {
             <ul className="space-y-3 text-base text-foreground">
               <li className="flex items-start gap-2">
                 <span className="text-destructive font-bold">×</span>
-                <span>You want confirmation your systems are fine. They're not.</span>
+                <span>Seeking validation.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-destructive font-bold">×</span>
-                <span>You're unwilling to rebuild. We don't optimize broken architecture.</span>
+                <span>Unwilling to rebuild.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-destructive font-bold">×</span>
-                <span>You're comparing on price. This is a commitment, not a quote.</span>
+                <span>Comparing on price.</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-destructive font-bold">×</span>
-                <span>You have nothing built. We repair existing systems, not first-time setup.</span>
+                <span>Nothing built yet.</span>
               </li>
             </ul>
-            <p className="mt-6 text-base text-foreground font-mono font-medium border-t border-destructive/30 pt-4">
-              We turn down engagements. This assessment determines whether intervention will hold.
-            </p>
           </div>
         </div>
       </Section>
@@ -339,24 +336,16 @@ const InfrastructureAssessment = () => {
           </div>
 
           <h2 className="heading-section mb-6">Book Your Assessment</h2>
-          <p className="text-description text-muted-foreground mb-4 max-w-2xl mx-auto">
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
             {TIMELINES.assessment} diagnostic audit. System scorecard, gap analysis, 90-day roadmap. Fee credits 100% toward Sprint.
           </p>
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto italic">
-            Not sure yet? Start with our free 5-minute Health Check to identify your gaps.
-          </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild>
-              <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
-                {CTA.bookAssessment}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.takeHealthCheck}</Link>
-            </Button>
-          </div>
+          <Button size="lg" asChild>
+            <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
+              {CTA.bookAssessment}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </Section>
     </div>
