@@ -18,7 +18,7 @@ export const SERVICES = {
   assessment: "Infrastructure Assessment",
   fractional: "Fractional Operations",
   webSystems: "Web Systems",
-  salesforce: "Salesforce Solutions",
+  salesforce: "Salesforce Implementation",
 } as const;
 
 // ===== CTA TEXT =====

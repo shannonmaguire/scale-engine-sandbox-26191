@@ -100,7 +100,7 @@ export const ScorePreview = ({ score, categoryCount, onUnlock }: ScorePreviewPro
             <div>
               <h3 className="heading-subsection mb-3">Get Your Full Report</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Enter your email to unlock detailed category breakdowns, specific recommendations, and a downloadable PDF report.
+                Enter your email to access detailed category breakdowns, specific recommendations, and a downloadable PDF report.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export const ScorePreview = ({ score, categoryCount, onUnlock }: ScorePreviewPro
               size="lg"
               className="w-full"
             >
-              Unlock Full Report
+              Access Full Report
             </Button>
 
             <p className="text-xs text-muted-foreground">

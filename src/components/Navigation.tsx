@@ -33,7 +33,7 @@ const Navigation = () => {
   }];
 
   const platformExpertise = [{
-    label: "Salesforce Solutions",
+    label: "Salesforce Implementation",
     href: "/salesforce"
   }];
 
