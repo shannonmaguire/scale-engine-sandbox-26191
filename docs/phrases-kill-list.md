@@ -84,6 +84,27 @@ Avoid three-part lists that sound performative.
 ❌ "Revolutionary"
 ❌ "Game-changing"
 
+## Grandmaster Lexical Violations
+
+❌ "Compelling"
+❌ "Powerful"
+❌ "Impactful"
+❌ "Transformative"
+❌ "Nuance"
+❌ "Lens"
+❌ "Framework" (overused)
+❌ "Paradigm"
+❌ "Obviously"
+❌ "Clearly"
+❌ "Simply"
+❌ "Just"
+
+## Discovery Language (Use Settled Verbs Instead)
+
+❌ "identifies your gaps" → ✅ "surfaces current state"
+❌ "uncovers opportunities" → ✅ "maps existing systems"
+❌ "explores possibilities" → ✅ "documents operational patterns"
+
 ## Replacement Patterns
 
 Instead of explaining, state:

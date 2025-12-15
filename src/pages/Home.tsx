@@ -110,11 +110,11 @@ const Home = () => {
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
-            We design how your revenue systems work. Then we build them.
+            Revenue systems architecture and implementation for regulated industries.
           </h1>
 
           <p className="text-description text-muted-foreground mb-6 max-w-2xl">
-            Outbound. Acquisition. Operations. For legal, compliance, and healthcare teams.
+            Outbound pipelines, acquisition systems, and revenue operations for legal, compliance, and healthcare teams.
           </p>
 
           <p className="font-mono text-sm text-foreground/60 mb-10">
@@ -248,7 +248,7 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Proof Section - Before → After Snapshots */}
+      {/* Proof Section */}
       <Section className="border-t border-border">
         <div className="max-w-5xl">
           <div className="flex items-center gap-4 mb-10">
@@ -263,24 +263,19 @@ const Home = () => {
                   {snapshot.client}
                 </div>
 
-                <div className="grid md:grid-cols-[1fr,auto,1fr] gap-6 items-center">
-                  {/* Before */}
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3 font-semibold">
-                      Before
+                    <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                      Initial State
                     </div>
                     <p className="text-base text-[hsl(var(--foreground-subtle))]">
                       {snapshot.before}
                     </p>
                   </div>
 
-                  {/* Arrow */}
-                  <ArrowRight className="w-6 h-6 text-primary hidden md:block" strokeWidth={2} />
-
-                  {/* After */}
                   <div>
-                    <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
-                      After
+                    <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3">
+                      Result
                     </div>
                     <p className="text-base font-medium text-foreground">
                       {snapshot.after}
@@ -288,7 +283,6 @@ const Home = () => {
                   </div>
                 </div>
 
-                {/* Metric */}
                 <div className="mt-6 pt-6 border-t border-border">
                   <div className="font-mono text-xl font-bold text-primary">
                     {snapshot.metric}
@@ -351,17 +345,18 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* North Star */}
-      <Section variant="muted" className="border-t border-border text-center">
-        <div className="max-w-2xl mx-auto">
-          <p className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-4">
-            North Star
+      {/* Operating Principle */}
+      <Section variant="muted" className="border-t border-border">
+        <div className="max-w-2xl">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Operating Principle</h2>
+          </div>
+          <p className="text-description text-foreground mb-4">
+            Revenue infrastructure should be predictable. Predictable systems are stable. Stable systems compound.
           </p>
-          <p className="text-2xl text-foreground font-medium mb-4">
-            Build systems that make revenue boring.
-          </p>
-          <p className="text-description text-muted-foreground">
-            If revenue feels exciting, it is unstable. If revenue feels predictable, the system is working.
+          <p className="text-base text-muted-foreground">
+            Excitement in revenue operations indicates instability. The goal is boring, repeatable execution.
           </p>
         </div>
       </Section>
@@ -371,7 +366,7 @@ const Home = () => {
         <div className="max-w-2xl mx-auto">
           <h2 className="heading-section mb-6">Start With Free Health Check</h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute self-assessment identifies your revenue systems gaps.
+            5-minute self-assessment surfaces current state of your revenue systems.
           </p>
 
           <ConversionOptimizedButton

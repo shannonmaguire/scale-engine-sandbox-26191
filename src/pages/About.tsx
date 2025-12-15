@@ -161,7 +161,7 @@ const About = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-6">Start With Free Health Check</h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute self-assessment identifies your gaps.
+            5-minute self-assessment surfaces current state.
           </p>
 
           <ConversionOptimizedButton 
