@@ -116,7 +116,7 @@ const About = () => {
               </p>
 
               <p className="text-description text-muted-foreground mb-8">
-                Most consultants optimize what exists. I architect what should exist. Fixed-scope implementations. 90-day cycles. Documented handoffs. You own everything when I leave.
+                Architecture before implementation. Fixed-scope engagements. 90-day cycles. Documented handoffs. You own everything when I leave.
               </p>
 
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
