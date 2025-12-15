@@ -41,9 +41,14 @@ const Contact = () => {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
-  // Pre-populate service based on URL params
+  // Pre-populate service and message based on URL params (from intake routing)
   useEffect(() => {
     const interest = searchParams.get("interest");
+    const tier = searchParams.get("tier");
+    const score = searchParams.get("score");
+    const priority = searchParams.get("priority");
+    
+    // Set service interest
     if (interest) {
       const matchingService = services.find(s => s.param === interest);
       if (matchingService) {
@@ -52,6 +57,35 @@ const Contact = () => {
           servicesInterested: [matchingService.id]
         }));
       }
+    }
+    
+    // Generate prefilled message based on intake routing tier
+    if (tier && score) {
+      let prefilledMessage = '';
+      const scoreNum = parseInt(score, 10);
+      
+      switch (tier) {
+        case 'critical':
+          prefilledMessage = `PRIORITY: I completed the Revenue Health Check and scored ${scoreNum}/36. My revenue systems have critical gaps across multiple categories. I need to discuss immediate intervention options.`;
+          break;
+        case 'emerging':
+          prefilledMessage = `I completed the Revenue Health Check and scored ${scoreNum}/36. I have structural gaps in my revenue systems and want to discuss the Infrastructure Assessment to map a repair plan.`;
+          break;
+        case 'structured':
+          prefilledMessage = `I completed the Revenue Health Check and scored ${scoreNum}/36. I have a solid foundation but identified specific gaps I would like to address through an Infrastructure Assessment.`;
+          break;
+        case 'optimized':
+        case 'high_performer':
+          prefilledMessage = `I completed the Revenue Health Check and scored ${scoreNum}/36. Despite the high score, I am experiencing friction and would like to explore whether an Assessment could identify hidden issues.`;
+          break;
+        default:
+          prefilledMessage = `I completed the Revenue Health Check and scored ${scoreNum}/36. I would like to discuss next steps.`;
+      }
+      
+      setFormData(prev => ({
+        ...prev,
+        message: prefilledMessage
+      }));
     }
   }, [searchParams]);
 
