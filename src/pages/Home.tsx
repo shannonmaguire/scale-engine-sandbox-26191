@@ -190,6 +190,57 @@ const Home = () => {
         </div>
       </Section>
 
+      {/* Exclusion Filter - This Is Not For You If */}
+      <Section className="border-t border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-destructive/50" />
+            <h2 className="heading-section">This Is Not For You If…</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div className="border border-border/50 p-6 bg-muted/20">
+              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                Seeking Reversibility
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                You want to experiment without committing to structural change. You prefer vendors you can walk away from cleanly.
+              </p>
+            </div>
+            <div className="border border-border/50 p-6 bg-muted/20">
+              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                Optimizing for Familiarity
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                You're comparing vendors on feature lists. You want execution without disruption to current operations.
+              </p>
+            </div>
+            <div className="border border-border/50 p-6 bg-muted/20">
+              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                Ground Zero Build
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                You have no existing systems to fix. You need first-time setup, not architectural redesign.
+              </p>
+            </div>
+            <div className="border border-border/50 p-6 bg-muted/20">
+              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
+                Seeking Reassurance
+              </div>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                You want validation that what you're doing is fine. You're not ready to accept that systems need rebuilding.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 p-6 border border-border bg-card/50">
+            <p className="text-base text-muted-foreground font-mono">
+              Our effectiveness is limited not by capability, but by buyer readiness. Systems that engage us either stabilize or expose their own unviability.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* Technical Architecture Diagram */}
       <Section variant="muted" className="border-t border-border">
         <div className="max-w-5xl">

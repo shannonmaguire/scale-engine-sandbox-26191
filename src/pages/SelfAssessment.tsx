@@ -28,16 +28,23 @@ const SelfAssessment = () => {
         <div className="max-w-3xl mx-auto px-4">
           {/* Intro Section */}
           <div className="mb-8 md:mb-12">
-            <div className="text-xs md:text-sm uppercase tracking-wider text-black/60 mb-3 md:mb-4">
+            <div className="text-xs md:text-sm uppercase tracking-wider text-muted-foreground mb-3 md:mb-4 font-mono">
               Free 5-Minute Assessment
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Revenue Health Check</h1>
-            <p className="text-base md:text-lg max-w-2xl mb-3">
+            <p className="text-base md:text-lg max-w-2xl mb-3 text-foreground">
               Answer 18 questions across data quality, automation, integration, governance, reporting, and user adoption.
             </p>
-            <p className="text-sm md:text-base text-black/70">
+            <p className="text-sm md:text-base text-muted-foreground mb-6">
               Takes 5 minutes. Instant score. No sales call required.
             </p>
+
+            {/* Readiness Gate */}
+            <div className="border border-border bg-muted/30 p-4 mb-6">
+              <p className="text-sm text-muted-foreground font-mono">
+                <strong className="text-foreground">Before you begin:</strong> This assessment is designed for organizations with existing revenue systems that aren't performing. If you're building from scratch or seeking validation that everything is fine, this won't be useful.
+              </p>
+            </div>
           </div>
 
           <ChecklistWizard

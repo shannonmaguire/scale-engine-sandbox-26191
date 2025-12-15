@@ -184,6 +184,22 @@ const InfrastructureAssessment = () => {
               <strong>Recommended path:</strong> Start with free Health Check to identify gaps, then book Infrastructure Assessment for detailed roadmap and Sprint eligibility.
             </p>
           </div>
+
+          {/* Exclusion Warning */}
+          <div className="mt-8 border border-destructive/30 bg-destructive/5 p-6">
+            <h3 className="font-mono text-sm uppercase tracking-widest text-destructive mb-4">
+              This Assessment Is Not For
+            </h3>
+            <ul className="space-y-3 text-description text-muted-foreground">
+              <li>• Organizations seeking validation that current systems are adequate</li>
+              <li>• Teams unwilling to accept that infrastructure may need rebuilding</li>
+              <li>• Buyers comparing vendors on price rather than readiness for change</li>
+              <li>• Ground-zero builds requiring first-time setup, not system repair</li>
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground italic">
+              This audit determines whether intervention will hold. Not all systems are eligible.
+            </p>
+          </div>
         </div>
       </Section>
 
