@@ -12,7 +12,7 @@ const Footer = () => {
           <img src={cwtLogo} alt="CWT Studio" className="h-[40px] sm:h-[42px] md:h-12 w-auto mb-4 hover:opacity-90 transition-opacity" style={{
           imageRendering: 'crisp-edges'
         }} />
-          <p className="text-white/60 text-base sm:text-lg">Revenue Infrastructure for High-Trust Teams </p>
+          <p className="text-white/60 text-base sm:text-lg">Revenue architecture for high-trust teams</p>
         </div>
 
         {/* Navigation Grid - 6 equal columns */}
