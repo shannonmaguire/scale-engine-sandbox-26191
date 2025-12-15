@@ -51,10 +51,18 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
     const progress = getProgress(checklistId, totalItems);
     const rawScoreValue = getRawScore(checklistId);
     
+    // Detect "validation seeker" pattern: >80% yes answers indicates systems are likely fine
+    // These users are seeking reassurance, not intervention
+    const yesPercentage = totalItems > 0 ? (answerCounts.yes / totalItems) * 100 : 0;
+    const isValidationSeeker = yesPercentage >= 80;
+    const isHighPerformer = yesPercentage >= 66 && yesPercentage < 80;
+    
     trackEvent('assessment_completed', {
       checklist_id: checklistId,
       score: rawScoreValue,
-      answers: answerCounts
+      answers: answerCounts,
+      yes_percentage: yesPercentage,
+      buyer_pattern: isValidationSeeker ? 'validation_seeker' : isHighPerformer ? 'high_performer' : 'intervention_candidate'
     });
     
     // Navigate to preview page instead of directly to results
@@ -65,7 +73,9 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
         overallScore: rawScoreValue,
         answerCounts,
         checklistState,
-        categoryCount: categories.length
+        categoryCount: categories.length,
+        buyerPattern: isValidationSeeker ? 'validation_seeker' : isHighPerformer ? 'high_performer' : 'intervention_candidate',
+        yesPercentage
       }
     });
   };
