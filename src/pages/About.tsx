@@ -40,7 +40,7 @@ const About = () => {
       <EngagementTracker />
       <SEOHead 
         title="About | CWT Studio" 
-        description="Shannon Maguire installs revenue infrastructure for regulated and high-trust industries where system failure carries financial, legal, and compliance consequences." 
+        description="Shannon Maguire designs and builds revenue systems for regulated and high-trust industries where system failure carries financial, legal, and compliance consequences." 
         keywords={[
           'about CWT Studio', 
           'revenue infrastructure', 
