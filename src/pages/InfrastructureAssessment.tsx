@@ -116,17 +116,12 @@ const InfrastructureAssessment = () => {
             Required before Sprint engagement. Assessment fee credits 100% toward Sprint if you proceed within 90 days.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" asChild>
-              <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
-                {CTA.bookAssessment}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>{CTA.takeHealthCheck}</Link>
-            </Button>
-          </div>
+          <Button size="lg" asChild>
+            <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
+              {CTA.bookAssessment}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </Section>
 
@@ -206,6 +201,14 @@ const InfrastructureAssessment = () => {
               <li className="flex items-start gap-2">
                 <span className="text-destructive font-bold">×</span>
                 <span>Nothing built yet.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive font-bold">×</span>
+                <span>Education without ownership transfer.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive font-bold">×</span>
+                <span>Addicted to optionality.</span>
               </li>
             </ul>
           </div>
@@ -319,9 +322,8 @@ const InfrastructureAssessment = () => {
           </div>
 
           <div className="border-2 border-primary/30 bg-primary/5 p-8">
-            <h3 className="heading-subsection mb-4 text-center">How the Credit Works</h3>
-            <p className="text-description text-muted-foreground text-center max-w-2xl mx-auto">
-              Your full Assessment investment is credited toward your Sprint engagement when you proceed within 90 days. The Assessment effectively becomes free—you only pay for the implementation.
+            <p className="text-description text-foreground text-center max-w-2xl mx-auto font-medium">
+              100% credited toward Sprint within 90 days.
             </p>
           </div>
         </div>

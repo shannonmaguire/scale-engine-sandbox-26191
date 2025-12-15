@@ -1,8 +1,27 @@
 /**
  * Canonical constants for Fortune 500-level consistency
  * Single source of truth for CTAs, service names, metrics, and positioning
- * Based on docs/canonical-language.md
+ * Based on docs/canonical-language.md and docs/design-law.md (Shannon Playbook)
  */
+
+// ===== PRIME DIRECTIVE =====
+export const PRIME_DIRECTIVE = {
+  statement: "I do not persuade. I diagnose, design, and contain.",
+  corollaries: [
+    "If persuasion is required, the system is wrong.",
+    "If explanation is required, the boundary is wrong.",
+    "If convincing is required, the client is wrong."
+  ]
+} as const;
+
+// ===== NORTH STAR =====
+export const NORTH_STAR = {
+  statement: "Build systems that make revenue boring.",
+  corollaries: [
+    "If revenue feels exciting, it is unstable.",
+    "If revenue feels predictable, the system is working."
+  ]
+} as const;
 
 // ===== POSITIONING =====
 export const POSITIONING = {

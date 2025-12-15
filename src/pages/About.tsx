@@ -1,53 +1,56 @@
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import { Linkedin, CheckCircle } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import shannonHeadshot from "@/assets/shannon-headshot.jpg";
-import { CTA, ROUTES, TIMELINES } from "@/lib/canonical-constants";
+import { CTA, ROUTES, PRIME_DIRECTIVE, NORTH_STAR } from "@/lib/canonical-constants";
 
 const About = () => {
   usePerformanceMonitoring();
   useScrollDepth();
 
-  const operatingBeliefs = [
+  const threeRoles = [
     {
-      label: "Systems Over Tactics",
-      description: "Revenue problems are architecture problems. Fix the structure, the metrics follow."
+      role: "Diagnostician",
+      description: "Identifies failure points, misalignment, leakage, and false assumptions."
     },
     {
-      label: "Complexity Is Information",
-      description: "High tolerance for complexity. Low tolerance for incoherence. The goal is clarity, not simplicity."
+      role: "Architect",
+      description: "Designs the system that resolves those failures at scale."
     },
     {
-      label: "Ownership Transfer",
-      description: "Every engagement ends with you owning the system. No dependencies. No retainers required."
+      role: "Operator",
+      description: "Installs and runs the system until it is stable and repeatable."
     }
   ];
 
-  const approach = [
-    "Design how your revenue systems should work. Architecture before implementation.",
-    "Build the infrastructure in 90-day cycles. CRM, automation, reporting, integrations.",
-    "Document and hand off. Your team runs it. We move on."
+  const cwtIsNot = [
+    "An ideas shop",
+    "A funnel factory",
+    "A marketing agency",
+    "A \"growth partner\"",
+    "A flexible freelancer collective"
   ];
 
-  const principlePoints = [
-    {
-      label: "Fixed Scope",
-      description: "Defined deliverables, timeline boundaries, success criteria. Established before work begins."
-    },
-    {
-      label: "Measurable Baselines",
-      description: "Pipeline velocity, data quality, automation coverage, manual effort reduction. Measured against baseline."
-    },
-    {
-      label: "Documented Handoff",
-      description: "SOPs, field definitions, logic maps, admin protocols. Your team executes."
-    }
+  const clientFilter = [
+    "Founders comparing multiple agencies simultaneously",
+    "Clients who want education without ownership transfer",
+    "Businesses unwilling to expose real numbers",
+    "Teams addicted to optionality",
+    "Anyone who needs constant reassurance"
+  ];
+
+  const rulesOfEngagement = [
+    "Assessment required before Sprint.",
+    "Fixed scope only. No hourly.",
+    "I choose clients. You choose timing.",
+    "One project at a time.",
+    "90-day cycles. Not open-ended retainers."
   ];
 
   return (
@@ -138,56 +141,93 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Operating Beliefs */}
+      {/* Prime Directive */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Operating Beliefs</h2>
+          <h2 className="heading-section mb-8">Prime Directive</h2>
           
-          <div className="grid sm:grid-cols-3 gap-6">
-            {operatingBeliefs.map((belief, index) => (
-              <div key={index} className="bg-card p-6 border-l-2 border-primary">
-                <div className="text-label text-primary mb-3">{belief.label}</div>
-                <p className="text-description text-muted-foreground">{belief.description}</p>
-              </div>
-            ))}
+          <p className="text-xl text-foreground mb-8 font-medium">
+            {PRIME_DIRECTIVE.statement}
+          </p>
+          
+          <div className="space-y-3 text-description text-muted-foreground">
+            <p>{PRIME_DIRECTIVE.corollaries[0]}</p>
+            <p>{PRIME_DIRECTIVE.corollaries[1]}</p>
+            <p>{PRIME_DIRECTIVE.corollaries[2]}</p>
           </div>
         </div>
       </Section>
 
-      {/* Approach */}
+      {/* Three Roles */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">How I Work</h2>
+          <h2 className="heading-section mb-4">Three Roles</h2>
+          <p className="text-description text-muted-foreground mb-8">
+            Shannon is always one of three things — never all three at once.
+          </p>
           
-          <div className="space-y-4">
-            {approach.map((item, index) => (
-              <div key={index} className="flex items-start gap-4 bg-card p-6 border-l-2 border-accent">
-                <span className="text-label text-accent font-mono">{String(index + 1).padStart(2, '0')}</span>
-                <p className="text-description text-foreground">{item}</p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {threeRoles.map((item, index) => (
+              <div key={index} className="bg-card p-6 border-l-2 border-primary">
+                <div className="text-label text-primary mb-3">{item.role}</div>
+                <p className="text-description text-muted-foreground">{item.description}</p>
               </div>
             ))}
+          </div>
+          
+          <p className="text-sm text-muted-foreground mt-6 italic">
+            Shannon does not float between roles mid-engagement. Each phase has a clear function.
+          </p>
+        </div>
+      </Section>
+
+      {/* What CWT Is Not */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-8">What CWT Studio Is Not</h2>
+          
+          <div className="grid sm:grid-cols-2 gap-3 mb-8">
+            {cwtIsNot.map((item, index) => (
+              <div key={index} className="flex items-center gap-3 bg-card p-4 border-l-2 border-destructive">
+                <span className="text-destructive font-mono text-sm">✕</span>
+                <span className="text-description text-foreground">{item}</span>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-lg text-foreground font-medium">
+            CWT does not "support." CWT installs.
+          </p>
+        </div>
+      </Section>
+
+      {/* Systems Principle */}
+      <Section className="border-b border-border">
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-8">Systems Principle</h2>
+          
+          <p className="text-xl text-foreground mb-8 font-medium">
+            If it cannot be repeated, it does not exist.
+          </p>
+          
+          <div className="bg-card p-6 border-l-2 border-accent">
+            <p className="text-description text-muted-foreground">
+              Every deliverable is documented, transferable, testable, measurable, and survives Shannon's absence.
+            </p>
           </div>
         </div>
       </Section>
 
-      {/* 90-Day Cycles */}
+      {/* Client Selection Filter */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">90-Day Cycles</h2>
-
-          <p className="text-description text-muted-foreground mb-10">
-            Every engagement operates on 90-day delivery cycles. Forces prioritization. Eliminates scope creep. Produces measurable outcomes within a fiscal quarter.
-          </p>
-
-          <div className="grid sm:grid-cols-3 gap-6">
-            {principlePoints.map((point, index) => (
-              <div key={index} className="bg-card p-6 border-l-2 border-primary">
-                <div className="text-label text-primary mb-3">
-                  {point.label}
-                </div>
-                <p className="text-description text-muted-foreground">
-                  {point.description}
-                </p>
+          <h2 className="heading-section mb-8">CWT Does Not Work With</h2>
+          
+          <div className="space-y-3">
+            {clientFilter.map((item, index) => (
+              <div key={index} className="flex items-center gap-3 bg-card p-4 border-l-2 border-destructive">
+                <span className="text-destructive font-mono text-sm">✕</span>
+                <span className="text-description text-foreground">{item}</span>
               </div>
             ))}
           </div>
@@ -200,26 +240,36 @@ const About = () => {
           <h2 className="heading-section mb-8">Rules of Engagement</h2>
 
           <div className="space-y-4">
-            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
-              <span className="text-label text-destructive font-mono">01</span>
-              <p className="text-description text-foreground">Assessment required before Sprint.</p>
-            </div>
-            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
-              <span className="text-label text-destructive font-mono">02</span>
-              <p className="text-description text-foreground">Fixed scope only. No hourly.</p>
-            </div>
-            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
-              <span className="text-label text-destructive font-mono">03</span>
-              <p className="text-description text-foreground">I choose clients. You choose timing.</p>
-            </div>
-            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
-              <span className="text-label text-destructive font-mono">04</span>
-              <p className="text-description text-foreground">One project at a time.</p>
-            </div>
-            <div className="flex items-start gap-4 bg-card p-6 border-l-2 border-destructive">
-              <span className="text-label text-destructive font-mono">05</span>
-              <p className="text-description text-foreground">90-day cycles. Not open-ended retainers.</p>
-            </div>
+            {rulesOfEngagement.map((rule, index) => (
+              <div key={index} className="flex items-start gap-4 bg-card p-6 border-l-2 border-primary">
+                <span className="text-label text-primary font-mono">{String(index + 1).padStart(2, '0')}</span>
+                <p className="text-description text-foreground">{rule}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* North Star + Final Statement */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-3xl text-center">
+          <h2 className="heading-section mb-8">North Star</h2>
+          
+          <p className="text-2xl text-foreground mb-6 font-medium">
+            {NORTH_STAR.statement}
+          </p>
+          
+          <p className="text-description text-muted-foreground mb-4">
+            {NORTH_STAR.corollaries[0]}
+          </p>
+          <p className="text-description text-muted-foreground mb-12">
+            {NORTH_STAR.corollaries[1]}
+          </p>
+          
+          <div className="pt-8 border-t border-border">
+            <p className="text-lg text-foreground font-medium">
+              Shannon does not scale chaos. She replaces it.
+            </p>
           </div>
         </div>
       </Section>
@@ -260,7 +310,7 @@ const About = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-6">Start With Free Health Check</h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute self-assessment identifies your gaps. Then book our {TIMELINES.assessment} Infrastructure Assessment—complete diagnostic audit with 90-day roadmap.
+            5-minute self-assessment identifies your gaps.
           </p>
 
           <ConversionOptimizedButton 
