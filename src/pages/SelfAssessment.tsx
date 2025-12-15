@@ -40,10 +40,27 @@ const SelfAssessment = () => {
             </p>
 
             {/* Readiness Gate */}
-            <div className="border border-border bg-muted/30 p-4 mb-6">
-              <p className="text-sm text-muted-foreground font-mono">
-                <strong className="text-foreground">Before you begin:</strong> This assessment is designed for organizations with existing revenue systems that aren't performing. If you're building from scratch or seeking validation that everything is fine, this won't be useful.
+            <div className="border-2 border-destructive/50 bg-destructive/5 p-5 mb-6">
+              <p className="font-mono text-sm uppercase tracking-widest text-destructive mb-3 font-semibold">
+                Stop. Read This First.
               </p>
+              <p className="text-base text-foreground mb-3">
+                This quiz diagnoses broken revenue systems. It assumes you have infrastructure that isn't working.
+              </p>
+              <ul className="space-y-2 text-sm text-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive font-bold">×</span>
+                  <span>If you're building from scratch, this doesn't apply.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive font-bold">×</span>
+                  <span>If you want validation that things are fine, don't take this.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-destructive font-bold">×</span>
+                  <span>If you're not ready to accept that systems may need rebuilding, stop here.</span>
+                </li>
+              </ul>
             </div>
           </div>
 

@@ -190,52 +190,52 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Exclusion Filter - This Is Not For You If */}
+      {/* Exclusion Filter - Do Not Engage If */}
       <Section className="border-t border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-destructive/50" />
-            <h2 className="heading-section">This Is Not For You If…</h2>
+            <div className="w-12 h-px bg-destructive" />
+            <h2 className="heading-section">Do Not Engage If</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            <div className="border border-border/50 p-6 bg-muted/20">
-              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
-                Seeking Reversibility
+            <div className="border border-destructive/40 p-6 bg-destructive/5">
+              <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
+                You Want Reversibility
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                You want to experiment without committing to structural change. You prefer vendors you can walk away from cleanly.
+              <p className="text-base text-foreground leading-relaxed">
+                We install permanent infrastructure. If you need a vendor you can walk away from cleanly, we are not that vendor.
               </p>
             </div>
-            <div className="border border-border/50 p-6 bg-muted/20">
-              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
-                Optimizing for Familiarity
+            <div className="border border-destructive/40 p-6 bg-destructive/5">
+              <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
+                You're Comparing Features
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                You're comparing vendors on feature lists. You want execution without disruption to current operations.
+              <p className="text-base text-foreground leading-relaxed">
+                We don't compete on feature lists. If you're shopping vendors, you're not ready for what we do.
               </p>
             </div>
-            <div className="border border-border/50 p-6 bg-muted/20">
-              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
-                Ground Zero Build
+            <div className="border border-destructive/40 p-6 bg-destructive/5">
+              <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
+                You Have Nothing Built
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                You have no existing systems to fix. You need first-time setup, not architectural redesign.
+              <p className="text-base text-foreground leading-relaxed">
+                We repair broken systems. Ground-zero builds without existing infrastructure are outside our scope.
               </p>
             </div>
-            <div className="border border-border/50 p-6 bg-muted/20">
-              <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
-                Seeking Reassurance
+            <div className="border border-destructive/40 p-6 bg-destructive/5">
+              <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
+                You Want Validation
               </div>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                You want validation that what you're doing is fine. You're not ready to accept that systems need rebuilding.
+              <p className="text-base text-foreground leading-relaxed">
+                We diagnose what's broken and rebuild it. If you need reassurance that things are fine, don't call us.
               </p>
             </div>
           </div>
 
-          <div className="mt-8 p-6 border border-border bg-card/50">
-            <p className="text-base text-muted-foreground font-mono">
-              Our effectiveness is limited not by capability, but by buyer readiness. Systems that engage us either stabilize or expose their own unviability.
+          <div className="mt-8 p-6 border-2 border-destructive/50 bg-destructive/5">
+            <p className="text-base text-foreground font-mono font-medium">
+              We turn down engagements. Not all systems are eligible for intervention.
             </p>
           </div>
         </div>

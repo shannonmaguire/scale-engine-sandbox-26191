@@ -186,18 +186,30 @@ const InfrastructureAssessment = () => {
           </div>
 
           {/* Exclusion Warning */}
-          <div className="mt-8 border border-destructive/30 bg-destructive/5 p-6">
+          <div className="mt-8 border-2 border-destructive/50 bg-destructive/5 p-6">
             <h3 className="font-mono text-sm uppercase tracking-widest text-destructive mb-4">
-              This Assessment Is Not For
+              Do Not Book If
             </h3>
-            <ul className="space-y-3 text-description text-muted-foreground">
-              <li>• Organizations seeking validation that current systems are adequate</li>
-              <li>• Teams unwilling to accept that infrastructure may need rebuilding</li>
-              <li>• Buyers comparing vendors on price rather than readiness for change</li>
-              <li>• Ground-zero builds requiring first-time setup, not system repair</li>
+            <ul className="space-y-3 text-base text-foreground">
+              <li className="flex items-start gap-2">
+                <span className="text-destructive font-bold">×</span>
+                <span>You want confirmation your systems are fine. They're not.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive font-bold">×</span>
+                <span>You're unwilling to rebuild. We don't optimize broken architecture.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive font-bold">×</span>
+                <span>You're comparing on price. This is a commitment, not a quote.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-destructive font-bold">×</span>
+                <span>You have nothing built. We repair existing systems, not first-time setup.</span>
+              </li>
             </ul>
-            <p className="mt-4 text-sm text-muted-foreground italic">
-              This audit determines whether intervention will hold. Not all systems are eligible.
+            <p className="mt-6 text-base text-foreground font-mono font-medium border-t border-destructive/30 pt-4">
+              We turn down engagements. This assessment determines whether intervention will hold.
             </p>
           </div>
         </div>
