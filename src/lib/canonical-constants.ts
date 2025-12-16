@@ -8,8 +8,8 @@
 
 // ===== POSITIONING =====
 export const POSITIONING = {
-  primary: "We design how your revenue systems work. Then we build them.",
-  tagline: "Revenue architecture you own",
+  primary: "Revenue systems are load-bearing. Growth reveals where they crack.",
+  tagline: "Infrastructure is risk containment",
 } as const;
 
 // ===== SERVICE NAMES =====
