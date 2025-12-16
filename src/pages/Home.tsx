@@ -7,19 +7,40 @@ import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
-import { CheckCircle, ArrowRight, AlertCircle, Database, Zap, FileText, BarChart3 } from "lucide-react";
+import { CheckCircle, ArrowRight, AlertCircle, XCircle } from "lucide-react";
 import { CTA, ROUTES, METRICS, TIMELINES } from "@/lib/canonical-constants";
 
 const Home = () => {
   usePerformanceMonitoring();
   useScrollDepth();
 
+  // Failure mechanics: cause → effect → cost
   const infrastructureFailures = [
-    "Revenue forecasting built from spreadsheet assumptions rather than system data",
-    "Sales operations concentrated in single-founder dependency",
-    "Pipeline administration consuming 15-20 hours weekly on manual updates",
-    "CRM underperforming due to incomplete process mapping and data fragmentation",
-    "No handoff documentation—systems knowledge exists only in individual memory"
+    {
+      failure: "Forecasting from spreadsheets assumes stable deal velocity.",
+      effect: "Velocity variance compounds under scale.",
+      cost: "Board loses confidence in projections within 2 quarters."
+    },
+    {
+      failure: "Operations knowledge concentrated in founder memory.",
+      effect: "Every deal requires founder intervention.",
+      cost: "Founder becomes bottleneck. Growth ceiling installed."
+    },
+    {
+      failure: "Pipeline updates require manual CRM entry.",
+      effect: "Data freshness degrades. Stage accuracy drops.",
+      cost: "15-20 hours weekly on administrative reconciliation."
+    },
+    {
+      failure: "CRM structure doesn't match actual sales process.",
+      effect: "Reps work around system. Data fragments.",
+      cost: "Reporting becomes fiction. Decisions made on noise."
+    },
+    {
+      failure: "No handoff documentation exists.",
+      effect: "Knowledge leaves when people leave.",
+      cost: "Every transition resets institutional learning to zero."
+    }
   ];
 
   const icpTriggers = [
@@ -29,39 +50,46 @@ const Home = () => {
     { label: "CRM Underperforming", description: "Salesforce exists but doesn't reflect how deals actually move." }
   ];
 
+  // Diagnostic proof: failure → constraint → correction → pattern
   const proofSnapshots = [
     {
       client: "Cybersecurity SaaS ($4.2M ARR)",
-      before: "20 hrs/week manual pipeline updates",
-      after: "Automated tracking—real-time visibility",
-      metric: "95% time reduction"
+      failure: "Pipeline administration consumed founder bandwidth.",
+      constraint: "No Salesforce admin on staff. No budget for FTE.",
+      correction: "Automated status tracking. Removed manual stage updates.",
+      pattern: "Time-to-close predictability restored in 6 weeks."
     },
     {
       client: "Legal Tech Platform ($2.8M ARR)",
-      before: "Forecast built from spreadsheets",
-      after: "Board-ready forecast with confidence intervals",
-      metric: "3-day → 30-min reporting"
+      failure: "Forecast built from spreadsheet extrapolation.",
+      constraint: "Historical data scattered across 3 systems.",
+      correction: "Unified pipeline with weighted probability model.",
+      pattern: "Board-ready forecast with confidence intervals. 3-day → 30-min."
     },
     {
       client: "Compliance Software ($3.5M ARR)",
-      before: "One founder owns all ops knowledge",
-      after: "Documented systems anyone can execute",
-      metric: "Zero single points of failure"
+      failure: "One founder owned all operations knowledge.",
+      constraint: "No documentation. No process maps.",
+      correction: "Documented systems with role-based access.",
+      pattern: "Zero single points of failure. Founder exits day-to-day ops."
     }
   ];
 
+  // Subtractive clarity: what each phase eliminates
   const pipeline = [
     {
       phase: "01",
       title: "Infrastructure Assessment",
       duration: TIMELINES.assessment,
+      eliminates: "Unknown system state. Scope ambiguity. Priority disagreement.",
       output: "Revenue Infrastructure Scorecard + 90-day roadmap",
-      description: "Paid diagnostic audit mapping current state against industry benchmarks. Delivers prioritized implementation sequence. (Start with free 5-min Health Check)"
+      description: "Paid diagnostic audit mapping current state against industry benchmarks. Delivers prioritized implementation sequence."
     },
     {
       phase: "02", 
       title: "Sprint",
       duration: "8-12 weeks",
+      eliminates: "Manual dependency. Data fragmentation. Undocumented processes.",
       output: "Installed infrastructure + handoff documentation",
       description: "Fixed-scope implementation. CRM configuration, automation build, reporting dashboards, process documentation."
     },
@@ -69,6 +97,7 @@ const Home = () => {
       phase: "03",
       title: "Fractional Ops",
       duration: "6+ months",
+      eliminates: "Cognitive load. Optimization debt. Performance drift.",
       output: "Ongoing optimization + performance management",
       description: "Post-implementation support. System maintenance, metric monitoring, continuous improvement cycles."
     }
@@ -80,7 +109,7 @@ const Home = () => {
       <CookieBanner />
       <SEOHead
         title="Revenue Architecture | CWT Studio"
-        description="We design how your revenue systems work. Then we build them. 90-day implementations for legal, compliance, and healthcare teams."
+        description="Revenue systems break under growth. Forecasting collapses. Manual processes multiply. We install infrastructure that holds."
         keywords={[
           'revenue infrastructure',
           'revenue operations',
@@ -91,7 +120,7 @@ const Home = () => {
         canonicalUrl="/"
       />
 
-      {/* Hero Section */}
+      {/* Hero Section — Systems Audit Opening */}
       <Section className="min-h-[85vh] flex items-center relative overflow-hidden">
         {/* Technical grid background */}
         <div className="absolute inset-0 opacity-[0.03]" 
@@ -110,25 +139,25 @@ const Home = () => {
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
-            Revenue systems architecture and implementation for regulated industries.
+            Revenue systems are load-bearing. Growth reveals where they crack.
           </h1>
 
           <p className="text-description text-muted-foreground mb-6 max-w-2xl">
-            Outbound pipelines, acquisition systems, and revenue operations for legal, compliance, and healthcare teams.
+            Forecasting collapses. Manual processes multiply. Founder dependency compounds. Infrastructure is risk containment.
           </p>
 
           <p className="font-mono text-sm text-foreground/60 mb-10">
-            // assessment → sprint → operations
+            // for legal, compliance, and healthcare teams
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <ConversionOptimizedButton
               to={ROUTES.assessment}
-              ctaName="Hero - Free Health Check"
+              ctaName="Hero - Measure System State"
               location="Homepage Hero"
               size="lg"
             >
-              {CTA.takeHealthCheck}
+              Measure Your System State
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
               to={ROUTES.proof}
@@ -153,14 +182,26 @@ const Home = () => {
           </div>
 
           <p className="text-description text-muted-foreground mb-10">
-            Operational failures without infrastructure:
+            What fails, why it fails, what it costs:
           </p>
 
-          <div className="grid gap-4">
-            {infrastructureFailures.map((failure, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 border-l-2 border-destructive/30 bg-card/50">
-                <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" strokeWidth={2} />
-                <p className="text-base text-foreground leading-relaxed">{failure}</p>
+          <div className="grid gap-6">
+            {infrastructureFailures.map((item, index) => (
+              <div key={index} className="border-l-2 border-destructive/30 bg-card/50 p-6">
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div>
+                    <div className="font-mono text-xs uppercase tracking-widest text-destructive mb-2">Failure</div>
+                    <p className="text-sm text-foreground">{item.failure}</p>
+                  </div>
+                  <div>
+                    <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">Effect</div>
+                    <p className="text-sm text-muted-foreground">{item.effect}</p>
+                  </div>
+                  <div>
+                    <div className="font-mono text-xs uppercase tracking-widest text-primary mb-2">Cost</div>
+                    <p className="text-sm text-foreground font-medium">{item.cost}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -190,7 +231,7 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Exclusion Filter - Do Not Engage If */}
+      {/* Exclusion Filter - Do Not Engage If (Organizational Maturity Filters) */}
       <Section className="border-t border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
@@ -201,41 +242,41 @@ const Home = () => {
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                No Reversibility
+                Decision Cycles Exceed 30 Days
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                Permanent infrastructure only.
+                Infrastructure changes require rapid iteration. Slow approval chains stall implementation.
               </p>
             </div>
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                No Feature Comparisons
+                No Single Ops Owner
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                Not a vendor RFP.
+                Ownership ambiguity fragments scope. Someone must approve changes without committee.
               </p>
             </div>
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                Existing Systems Only
+                Unwilling to Consolidate Tools
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                No ground-zero builds.
+                Tool sprawl creates data fragmentation. Redundant systems get deprecated.
               </p>
             </div>
             <div className="border border-destructive/40 p-6 bg-destructive/5">
               <div className="font-mono text-sm uppercase tracking-widest text-destructive mb-3">
-                No Validation
+                Ground-Zero Builds
               </div>
               <p className="text-base text-foreground leading-relaxed">
-                Diagnosis only.
+                Existing systems only. No revenue infrastructure from scratch.
               </p>
             </div>
           </div>
 
           <div className="mt-8 p-6 border-2 border-destructive/50 bg-destructive/5">
             <p className="text-base text-foreground font-mono font-medium">
-              Not all systems are eligible for intervention.
+              Not all systems are eligible for intervention. We walk away early.
             </p>
           </div>
         </div>
@@ -248,12 +289,12 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Proof Section */}
+      {/* Proof Section — Diagnostic Patterns */}
       <Section className="border-t border-border">
         <div className="max-w-5xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Proof</h2>
+            <h2 className="heading-section">Proof: Repeatable Corrections</h2>
           </div>
 
           <div className="grid gap-8">
@@ -263,29 +304,35 @@ const Home = () => {
                   {snapshot.client}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div>
-                    <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground mb-3">
-                      Initial State
+                    <div className="font-mono text-xs uppercase tracking-widest text-destructive mb-2">
+                      What Broke
                     </div>
-                    <p className="text-base text-[hsl(var(--foreground-subtle))]">
-                      {snapshot.before}
-                    </p>
+                    <p className="text-sm text-foreground">{snapshot.failure}</p>
                   </div>
 
                   <div>
-                    <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3">
-                      Result
+                    <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
+                      Constraint
                     </div>
-                    <p className="text-base font-medium text-foreground">
-                      {snapshot.after}
-                    </p>
+                    <p className="text-sm text-muted-foreground">{snapshot.constraint}</p>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-border">
-                  <div className="font-mono text-xl font-bold text-primary">
-                    {snapshot.metric}
+                <div className="grid md:grid-cols-2 gap-6 pt-6 border-t border-border">
+                  <div>
+                    <div className="font-mono text-xs uppercase tracking-widest text-primary mb-2">
+                      Correction
+                    </div>
+                    <p className="text-sm text-foreground">{snapshot.correction}</p>
+                  </div>
+
+                  <div>
+                    <div className="font-mono text-xs uppercase tracking-widest text-primary mb-2">
+                      Pattern
+                    </div>
+                    <p className="text-sm font-medium text-foreground">{snapshot.pattern}</p>
                   </div>
                 </div>
               </div>
@@ -304,7 +351,7 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Pipeline - Assessment → Sprint → Fractional Ops */}
+      {/* Pipeline - Subtractive Clarity */}
       <Section variant="muted" className="border-t border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
@@ -326,6 +373,15 @@ const Home = () => {
                       <h3 className="heading-subsection">{phase.title}</h3>
                       <div className="font-mono text-sm uppercase tracking-widest text-muted-foreground">
                         {phase.duration}
+                      </div>
+                    </div>
+
+                    {/* What gets eliminated */}
+                    <div className="flex items-start gap-2 mb-4 p-3 bg-destructive/5 border border-destructive/20">
+                      <XCircle className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" strokeWidth={2} />
+                      <div>
+                        <span className="font-mono text-xs uppercase tracking-widest text-destructive">Eliminates: </span>
+                        <span className="text-sm text-foreground">{phase.eliminates}</span>
                       </div>
                     </div>
 
@@ -361,21 +417,21 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Final CTA */}
+      {/* Final CTA — Diagnostic Gravity */}
       <Section className="border-t border-border text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="heading-section mb-6">Start With Free Health Check</h2>
+          <h2 className="heading-section mb-6">Measure Your System State</h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute self-assessment surfaces current state of your revenue systems.
+            5-minute diagnostic. Results are immediate. What you see may not be comfortable.
           </p>
 
           <ConversionOptimizedButton
             to={ROUTES.assessment}
-            ctaName="Final CTA - Free Health Check"
+            ctaName="Final CTA - Measure System State"
             location="Final CTA Section"
             size="lg"
           >
-            {CTA.takeHealthCheck}
+            Start Diagnostic
           </ConversionOptimizedButton>
         </div>
       </Section>
