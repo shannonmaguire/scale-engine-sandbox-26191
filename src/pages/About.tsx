@@ -79,7 +79,7 @@ const About = () => {
               </p>
 
               <p className="text-xl text-foreground mb-6 leading-relaxed">
-                I design how revenue systems work. Then I build them.
+                Revenue systems architect. Design and implementation for regulated industries.
               </p>
 
               <p className="text-description text-muted-foreground mb-4">

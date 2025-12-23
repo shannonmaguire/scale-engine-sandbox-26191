@@ -65,7 +65,7 @@ const WebSystems = () => {
           </div>
           <h1 className="heading-page mb-6">Web as Revenue Infrastructure</h1>
           <p className="text-description text-muted-foreground mb-8">
-            Capture demand, qualify prospects, route leads. CRM-wired, conversion-tracked, zero vendor lock-in.
+            Capture demand. Qualify prospects. Route leads to CRM. Conversion-tracked. Zero vendor lock-in.
           </p>
           
           <div className="grid grid-cols-3 gap-6 mb-10 py-6 border-y border-border">

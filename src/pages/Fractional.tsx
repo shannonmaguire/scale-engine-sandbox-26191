@@ -31,21 +31,21 @@ const Fractional = () => {
   ];
 
   const compoundingOutcomes = [
-    { label: "Operational Velocity", description: "System changes deploy faster as institutional knowledge builds and technical debt remains controlled." },
-    { label: "Forecast Reliability", description: "Prediction accuracy improves as data quality compounds and reporting infrastructure stabilizes." },
-    { label: "Founder Independence", description: "Executive intervention in daily operations decreases as systems prove load-tolerant and team competence increases." }
+    { label: "Operational Velocity", description: "System changes deploy faster. Institutional knowledge builds. Technical debt stays controlled." },
+    { label: "Forecast Reliability", description: "Prediction accuracy improves. Data quality increases. Reporting infrastructure stabilizes." },
+    { label: "Founder Independence", description: "Executive intervention decreases. Systems prove load-tolerant. Team competence increases." }
   ];
 
   return (
     <div className="min-h-screen">
       <SEOHead 
         title="Fractional Revenue Operations | CWT Studio" 
-        description="Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount." 
+        description="Monthly operating cadence. Post-Sprint partnership for teams scaling infrastructure without adding headcount." 
         keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'monthly operating cadence']} 
         canonicalUrl="/fractional"
         serviceSchema={{
           name: 'Fractional Revenue Operations',
-          description: 'Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount.',
+          description: 'Monthly operating cadence. Post-Sprint partnership for teams scaling infrastructure without adding headcount.',
           offers: [
             {
               name: 'Monthly Review',
@@ -74,7 +74,7 @@ const Fractional = () => {
           </div>
           
           <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
-            Monthly operating cadence that compounds system performance. Post-Sprint partnership for teams scaling infrastructure without adding headcount.
+            Monthly operating cadence. Post-Sprint partnership for teams scaling infrastructure without adding headcount.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -126,7 +126,7 @@ const Fractional = () => {
           </div>
 
           <p className="text-description text-muted-foreground mb-10 max-w-2xl">
-            Long-term operator partnership yields exponential returns—systems compound reliability, teams compound capability, forecasts compound accuracy.
+            Long-term operator partnership. System reliability increases. Team capability grows. Forecast accuracy improves.
           </p>
 
           <div className="grid sm:grid-cols-3 gap-6">
@@ -195,7 +195,7 @@ const Fractional = () => {
 
           <h2 className="heading-section mb-6">Apply for Fractional Ops</h2>
           <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            Monthly operating cadence. Six-month minimum. Sprint completion required. Systems compound performance through continuous operator engagement.
+            Monthly operating cadence. Six-month minimum. Sprint completion required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

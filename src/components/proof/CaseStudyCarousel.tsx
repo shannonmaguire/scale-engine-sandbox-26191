@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Building2, Target, CheckCircle, TrendingUp, Clock } from "lucide-react";
+import { ChevronLeft, ChevronRight, Building2, Target, TrendingUp, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { StandardCard } from "@/components/ui/standard-card";
 import { PullQuote } from "@/components/blog/PullQuote";
@@ -9,7 +9,7 @@ interface CaseStudy {
   vertical: string;
   size: string;
   timeline: string;
-  challenge: string;
+  whatBroke: string;
   pullQuote: string;
   system: string[];
   beforeMetric: {
@@ -21,8 +21,7 @@ interface CaseStudy {
     value: string;
   };
   growth: string;
-  outcomes: string[];
-  whyItWorked?: string;
+  patternRestored: string;
 }
 interface CaseStudyCarouselProps {
   caseStudies: CaseStudy[];
@@ -128,34 +127,32 @@ export const CaseStudyCarousel = ({
           <PullQuote>{currentStudy.pullQuote}</PullQuote>
         </div>
 
-        {/* System & Outcomes - Side by Side */}
+        {/* System & Pattern Restored - Side by Side */}
         <div className="grid md:grid-cols-2 gap-8">
-          {/* System Installed */}
+          {/* What Broke */}
           <div>
-            <h3 className="heading-subsection mb-4">System Installed</h3>
-            <ul className="space-y-3">
-              {currentStudy.system.slice(0, 3).map((item, idx) => (
+            <h3 className="heading-subsection mb-4">What Broke</h3>
+            <p className="text-description text-muted-foreground leading-relaxed">
+              {currentStudy.whatBroke}
+            </p>
+            
+            <h3 className="heading-subsection mb-4 mt-6">System Installed</h3>
+            <ul className="space-y-2">
+              {currentStudy.system.slice(0, 4).map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <Target className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-description leading-relaxed">{item}</span>
+                  <Target className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Outcomes */}
+          {/* Pattern Restored */}
           <div>
-            <h3 className="heading-subsection mb-4">Outcomes</h3>
-            <ul className="space-y-3">
-              {currentStudy.outcomes.slice(0, 3).map((outcome, idx) => (
-                <li key={idx} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-description leading-relaxed">
-                    {outcome.replace(/\*\*/g, '')}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            <h3 className="heading-subsection mb-4">Pattern Restored</h3>
+            <p className="text-description leading-relaxed">
+              {currentStudy.patternRestored}
+            </p>
           </div>
         </div>
       </StandardCard>
