@@ -19,17 +19,21 @@ const Navigation = () => {
     href: "/about"
   }];
   const coreServices = [{
-    label: "Infrastructure Assessment",
-    href: "/infrastructure-assessment"
+    label: "Assessment",
+    href: "/infrastructure-assessment",
+    timeline: "2 weeks"
   }, {
-    label: "Sprint",
-    href: "/sprint"
+    label: "90-Day Sprint",
+    href: "/sprint",
+    timeline: "90 days"
   }, {
     label: "Fractional Ops",
-    href: "/fractional"
+    href: "/fractional",
+    timeline: "Ongoing"
   }, {
     label: "Web Systems",
-    href: "/web-systems"
+    href: "/web-systems",
+    timeline: "4-8 weeks"
   }];
 
   const platformExpertise = [{
@@ -84,9 +88,7 @@ const Navigation = () => {
                       >
                         <span className="text-white">{link.label}</span>
                         <span className="text-xs text-white/60">
-                          {link.label === "Infrastructure Assessment" ? "(2 weeks)" :
-                           link.label === "Sprint" ? "(90 days)" :
-                           link.label === "Fractional Ops" ? "(ongoing)" : ""}
+                          ({link.timeline})
                         </span>
                       </Link>
                     </DropdownMenuItem>

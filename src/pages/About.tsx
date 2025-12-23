@@ -15,10 +15,10 @@ const About = () => {
   useScrollDepth();
 
   const rulesOfEngagement = [
-    "Assessment before Sprint.",
-    "Fixed scope. No hourly.",
-    "90-day cycles. Not open-ended retainers.",
-    "You own everything when I leave."
+    { rule: "Assessment before Sprint.", stake: "Rebuilding mid-project costs 3x." },
+    { rule: "Fixed scope. No hourly.", stake: "Scope creep kills timelines." },
+    { rule: "90-day cycles.", stake: "Longer engagements mask stalled progress." },
+    { rule: "You own everything.", stake: "No lock-in. No dependencies on me." }
   ];
 
   return (
@@ -90,18 +90,14 @@ const About = () => {
                 Architecture before implementation. Fixed-scope engagements. 90-day cycles. Documented handoffs. You own everything when I leave.
               </p>
 
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-border">
-                <div>
-                  <div className="text-label text-primary mb-1">42+</div>
-                  <div className="text-sm text-muted-foreground">Deployments</div>
+              <div className="grid grid-cols-1 gap-3 pt-6 border-t border-border">
+                <div className="flex items-baseline gap-3">
+                  <div className="text-label text-primary font-mono">42</div>
+                  <div className="text-sm text-muted-foreground">systems installed. Zero failed migrations.</div>
                 </div>
-                <div>
-                  <div className="text-label text-primary mb-1">8+ Years</div>
-                  <div className="text-sm text-muted-foreground">Experience</div>
-                </div>
-                <div>
-                  <div className="text-label text-primary mb-1">5</div>
-                  <div className="text-sm text-muted-foreground">Industries</div>
+                <div className="flex items-baseline gap-3">
+                  <div className="text-label text-primary font-mono">8</div>
+                  <div className="text-sm text-muted-foreground">years. Same methodology. Every engagement documented.</div>
                 </div>
               </div>
             </div>
@@ -115,10 +111,13 @@ const About = () => {
           <h2 className="heading-section mb-8">Rules of Engagement</h2>
 
           <div className="space-y-4">
-            {rulesOfEngagement.map((rule, index) => (
+            {rulesOfEngagement.map((item, index) => (
               <div key={index} className="flex items-start gap-4 bg-card p-6 border-l-2 border-primary">
                 <span className="text-label text-primary font-mono">{String(index + 1).padStart(2, '0')}</span>
-                <p className="text-description text-foreground">{rule}</p>
+                <div>
+                  <p className="text-description text-foreground font-medium">{item.rule}</p>
+                  <p className="text-sm text-muted-foreground mt-1 italic">{item.stake}</p>
+                </div>
               </div>
             ))}
           </div>

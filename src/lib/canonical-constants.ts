@@ -14,8 +14,8 @@ export const POSITIONING = {
 
 // ===== SERVICE NAMES =====
 export const SERVICES = {
-  sprint: "90-Day Revenue Sprint",
-  assessment: "Infrastructure Assessment",
+  sprint: "90-Day Sprint",
+  assessment: "Assessment",
   fractional: "Fractional Operations",
   webSystems: "Web Systems",
   salesforce: "Salesforce Implementation",
@@ -29,7 +29,7 @@ export const CTA = {
   
   // Paid Assessment CTAs (2-week diagnostic)
   startAssessment: "Start Assessment",
-  bookAssessment: "Book Infrastructure Assessment",
+  bookAssessment: "Book Assessment",
   
   // Service-specific CTAs
   startSprint: "Start Your Sprint",
@@ -61,8 +61,8 @@ export const ROUTES = {
 
 // ===== METRICS =====
 export const METRICS = {
-  deployments: "42+ Deployments",
-  experience: "8+ Years",
+  deployments: "42 systems installed. Zero failed migrations.",
+  experience: "8 years. Same methodology. Every engagement documented.",
   industries: "Legal, Compliance, Cybersecurity, Healthcare, B2B SaaS",
   avgRevenueLift: "$220K Avg. Revenue Lift",
   cycleTime: "90 Days",
