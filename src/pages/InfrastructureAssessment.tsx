@@ -61,8 +61,8 @@ const InfrastructureAssessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Infrastructure Assessment | 2-Week Revenue Systems Diagnostic | CWT Studio"
-        description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, 90-day roadmap. Assessment fee credits 100% toward Sprint engagement."
+        title="Assessment | 2-Week Revenue Systems Diagnostic | CWT Studio"
+        description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, 90-day roadmap. Assessment fee credits 100% toward Sprint."
         keywords={[
           'revenue infrastructure assessment',
           'Salesforce systems audit',
@@ -105,7 +105,7 @@ const InfrastructureAssessment = () => {
           </div>
           
           <h1 className="heading-page mb-6 leading-[1.1]">
-            Infrastructure Assessment
+            Assessment
           </h1>
           
           <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-4">
