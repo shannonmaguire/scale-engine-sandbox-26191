@@ -74,7 +74,7 @@ export const RevenueArchitectureDiagram = () => {
           {components.map((component, index) => (
             <div 
               key={index}
-              className="relative border border-primary/30 bg-card/50 backdrop-blur-sm group hover:border-primary/50 transition-colors"
+              className="relative border border-primary/30 bg-card/50 backdrop-blur-sm group hover:border-primary/50 transition-colors flex flex-col h-full"
             >
               {/* Corner accent marks */}
               <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-primary/50" />
@@ -82,7 +82,7 @@ export const RevenueArchitectureDiagram = () => {
               <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-primary/50" />
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary/50" />
 
-              <div className="p-6">
+              <div className="p-6 flex-grow flex flex-col">
                 {/* Layer number - prominent */}
                 <div className="font-mono text-xs text-primary font-semibold mb-3">
                   LAYER {component.layer}
@@ -99,7 +99,7 @@ export const RevenueArchitectureDiagram = () => {
                 </div>
 
                 {/* Description */}
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                <p className="text-xs text-muted-foreground leading-relaxed flex-grow">
                   {component.description}
                 </p>
               </div>
