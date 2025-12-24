@@ -105,7 +105,7 @@ export const RevenueArchitectureDiagram = () => {
               </div>
 
               {/* If Skipped consequence */}
-              <div className="border-t border-destructive/20 bg-destructive/5 p-4">
+              <div className="border-t border-destructive/20 bg-destructive/5 p-4 min-h-[72px]">
                 <div className="flex items-start gap-2">
                   <AlertTriangle className="w-3 h-3 text-destructive flex-shrink-0 mt-0.5" strokeWidth={2} />
                   <div>
