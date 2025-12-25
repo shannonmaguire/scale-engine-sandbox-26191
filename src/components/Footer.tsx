@@ -29,8 +29,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/infrastructure-assessment" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-                  Infrastructure Assessment
+                <Link to="/assessment" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
+                  Assessment
                 </Link>
               </li>
               <li>

@@ -23,7 +23,7 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const SelfAssessment = lazy(() => import("@/pages/SelfAssessment"));
 const AssessmentPreview = lazy(() => import("@/pages/AssessmentPreview"));
 const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
-const InfrastructureAssessment = lazy(() => import("@/pages/InfrastructureAssessment"));
+const Assessment = lazy(() => import("@/pages/Assessment"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
 const Fractional = lazy(() => import("@/pages/Fractional"));
@@ -86,11 +86,11 @@ const AppContent = () => {
             <Route path="/self-assessment" element={<SelfAssessment />} />
             <Route path="/assessment-preview" element={<AssessmentPreview />} />
             <Route path="/assessment-results" element={<AssessmentResults />} />
-            <Route path="/infrastructure-assessment" element={<InfrastructureAssessment />} />
+            <Route path="/assessment" element={<Assessment />} />
             
-            {/* Common typo redirects */}
+            {/* Redirects for old routes and typos */}
+            <Route path="/infrastructure-assessment" element={<Navigate to="/assessment" replace />} />
             <Route path="/assesment" element={<Navigate to="/self-assessment" replace />} />
-            <Route path="/assessment" element={<Navigate to="/self-assessment" replace />} />
             <Route path="/fractional-ops" element={<Navigate to="/fractional" replace />} />
             <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
             
