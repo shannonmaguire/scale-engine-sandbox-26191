@@ -40,6 +40,7 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Auth = lazy(() => import("@/pages/Auth"));
 const StartHere = lazy(() => import("@/pages/StartHere"));
+const DataRights = lazy(() => import("@/pages/DataRights"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -116,6 +117,7 @@ const AppContent = () => {
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/data-rights" element={<DataRights />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Routes>
         </Suspense>

@@ -56,6 +56,48 @@ export type Database = {
         }
         Relationships: []
       }
+      data_requests: {
+        Row: {
+          created_at: string
+          download_expires_at: string | null
+          download_url: string | null
+          email: string
+          id: string
+          processed_at: string | null
+          reason: string | null
+          request_type: Database["public"]["Enums"]["data_request_type"]
+          status: Database["public"]["Enums"]["data_request_status"]
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          download_expires_at?: string | null
+          download_url?: string | null
+          email: string
+          id?: string
+          processed_at?: string | null
+          reason?: string | null
+          request_type: Database["public"]["Enums"]["data_request_type"]
+          status?: Database["public"]["Enums"]["data_request_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          download_expires_at?: string | null
+          download_url?: string | null
+          email?: string
+          id?: string
+          processed_at?: string | null
+          reason?: string | null
+          request_type?: Database["public"]["Enums"]["data_request_type"]
+          status?: Database["public"]["Enums"]["data_request_status"]
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: []
+      }
       deals: {
         Row: {
           client_email: string
@@ -236,6 +278,8 @@ export type Database = {
     }
     Enums: {
       app_role: "user" | "partner" | "admin"
+      data_request_status: "pending" | "processing" | "completed" | "failed"
+      data_request_type: "export" | "deletion"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -364,6 +408,8 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["user", "partner", "admin"],
+      data_request_status: ["pending", "processing", "completed", "failed"],
+      data_request_type: ["export", "deletion"],
     },
   },
 } as const
