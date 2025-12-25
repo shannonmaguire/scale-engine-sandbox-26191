@@ -169,7 +169,11 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
 
       {/* Navigation hint - hidden on mobile */}
       <div className="hidden md:block text-center mt-4">
-        <p className="text-xs text-muted-foreground font-mono">← → to navigate</p>
+        <p className="text-xs text-muted-foreground font-mono flex items-center justify-center gap-1">
+          <ChevronLeft className="w-3 h-3" />
+          <ChevronRight className="w-3 h-3" />
+          <span>to navigate</span>
+        </p>
       </div>
     </div>
   );
