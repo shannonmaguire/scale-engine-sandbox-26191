@@ -98,8 +98,15 @@ const PrivacyPolicy = memo(() => {
                   <li><strong>Withdraw Consent:</strong> Withdraw consent at any time</li>
                 </ul>
                 <p className="mt-4">
-                  To exercise these rights, please contact us at hello@cwtstudio.com.
+                  To exercise these rights, you can use our <a href="/data-rights" className="text-primary hover:underline font-medium">Data Rights Portal</a> to 
+                  export or delete your personal data, or contact us at hello@cwtstudio.com.
                 </p>
+                <div className="mt-4 p-4 bg-muted rounded-lg">
+                  <a href="/data-rights" className="inline-flex items-center text-primary hover:underline font-medium">
+                    Manage Your Data →
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">Export or delete your personal data</p>
+                </div>
               </section>
 
               <section>
