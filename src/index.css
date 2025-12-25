@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+/* Self-hosted Inter font - loaded via index.html for better LCP */
+/* JetBrains Mono loaded async from Google Fonts */
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +8,16 @@
 /* Performance optimizations */
 img {
   content-visibility: auto;
+}
+
+/* Prevent CLS from images */
+img:not([width]):not([height]) {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Font loading optimization - prevent layout shift */
+html {
+  font-size-adjust: from-font;
 }
 
 /* CWT Studio Design System - Operator Console Aesthetic */
@@ -1310,5 +1321,118 @@ img {
   /* Prevent double-tap zoom on buttons */
   .no-double-tap-zoom {
     touch-action: manipulation;
+  }
+  
+  /* === CORE WEB VITALS OPTIMIZATIONS === */
+  
+  /* CLS Prevention - Reserve space for dynamic content */
+  .aspect-hero {
+    aspect-ratio: 16/9;
+  }
+  
+  .aspect-card {
+    aspect-ratio: 4/3;
+  }
+  
+  .aspect-square {
+    aspect-ratio: 1/1;
+  }
+  
+  /* Prevent layout shift from fonts */
+  .font-loaded body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  
+  /* Content containment for performance */
+  .contain-layout {
+    contain: layout;
+  }
+  
+  .contain-paint {
+    contain: paint;
+  }
+  
+  .contain-strict {
+    contain: strict;
+  }
+  
+  /* GPU acceleration for animations (use sparingly) */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Optimized animations - use transform instead of layout properties */
+  @keyframes fade-in-optimized {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-optimized {
+    animation: fade-in-optimized 0.3s ease-out forwards;
+    will-change: opacity, transform;
+  }
+  
+  /* Skeleton loading states - prevents CLS */
+  .skeleton {
+    @apply bg-muted animate-pulse rounded;
+  }
+  
+  .skeleton-text {
+    @apply h-4 bg-muted animate-pulse rounded w-full;
+  }
+  
+  .skeleton-heading {
+    @apply h-8 bg-muted animate-pulse rounded w-3/4;
+  }
+  
+  /* Lazy load placeholder - maintains aspect ratio */
+  .lazy-placeholder {
+    @apply bg-muted;
+    min-height: 200px;
+  }
+  
+  /* Navigation fixed height to prevent CLS */
+  nav {
+    min-height: 64px;
+  }
+  
+  @media (min-width: 640px) {
+    nav {
+      min-height: 80px;
+    }
+  }
+  
+  /* Footer fixed minimum height */
+  footer {
+    min-height: 300px;
+  }
+  
+  /* Reduce motion for accessibility and performance */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in-optimized,
+    .animate-spin,
+    .animate-pulse {
+      animation: none;
+    }
+    
+    .will-change-transform,
+    .will-change-opacity {
+      will-change: auto;
+    }
+    
+    * {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
   }
 }
