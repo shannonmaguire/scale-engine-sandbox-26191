@@ -159,7 +159,7 @@ const InfrastructureAssessment = () => {
                 <li>• No cost, no commitment</li>
               </ul>
               <Button variant="outline" asChild className="w-full">
-                <Link to={ROUTES.assessment}>Take Free Quiz</Link>
+                <Link to={ROUTES.selfAssessment}>Take Free Quiz</Link>
               </Button>
             </div>
 

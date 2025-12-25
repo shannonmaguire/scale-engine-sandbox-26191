@@ -65,9 +65,7 @@ const Salesforce = () => {
       {/* Hero Section */}
       <Section className="bg-card border-b border-border">
         <div className="max-w-4xl mx-auto text-center">
-            <div className="system-status border-accent mb-8">
-              <span className="text-accent">SALESFORCE IMPLEMENTATION</span>
-            </div>
+            <div className="system-status mb-8">SALESFORCE IMPLEMENTATION</div>
             <h1 className="heading-page mb-6">
               Salesforce Built for Revenue Predictability
             </h1>
@@ -191,7 +189,7 @@ const Salesforce = () => {
               <Link to="/contact?interest=salesforce">{CTA.scheduleConsultation}</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link to={ROUTES.assessment}>Take Free Health Check</Link>
+              <Link to={ROUTES.selfAssessment}>Take Free Health Check</Link>
             </Button>
           </div>
         </div>

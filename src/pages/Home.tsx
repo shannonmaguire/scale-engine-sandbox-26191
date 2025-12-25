@@ -144,7 +144,7 @@ const Home = () => {
           {/* Single Primary CTA */}
           <div className="flex flex-col gap-6">
             <ConversionOptimizedButton
-              to={ROUTES.assessment}
+              to={ROUTES.selfAssessment}
               ctaName="Hero - Find Out What's Breaking"
               location="Homepage Hero"
               size="lg"
@@ -326,7 +326,7 @@ const Home = () => {
           </p>
 
           <ConversionOptimizedButton
-            to={ROUTES.assessment}
+            to={ROUTES.selfAssessment}
             ctaName="Final CTA - Find Out What's Breaking"
             location="Final CTA Section"
             size="lg"
