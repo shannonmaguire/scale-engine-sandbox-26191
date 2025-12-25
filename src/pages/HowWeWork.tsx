@@ -179,7 +179,7 @@ const HowWeWork = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton
-              to={ROUTES.assessment}
+              to={ROUTES.selfAssessment}
               ctaName="How We Work - Take Health Check"
               location="How We Work CTA"
               size="lg"

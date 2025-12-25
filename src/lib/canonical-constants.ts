@@ -54,7 +54,6 @@ export const ROUTES = {
   salesforce: "/salesforce",
   webSystems: "/web-systems",
   proof: "/proof",
-  resources: "/resources",
   contact: "/contact",
   about: "/about",
 } as const;

@@ -188,7 +188,7 @@ const About = () => {
           </p>
 
           <ConversionOptimizedButton 
-            to={ROUTES.assessment}
+            to={ROUTES.selfAssessment}
             ctaName="About - Free Health Check" 
             location="About CTA Section"
             size="lg"

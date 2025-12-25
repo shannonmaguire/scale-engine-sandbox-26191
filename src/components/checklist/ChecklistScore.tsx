@@ -63,9 +63,9 @@ export const ChecklistScore = ({
     if (score >= 41) return {
       icon: AlertCircle,
       title: "Room for Improvement",
-      text: "You're on the right track. Download our resources to strengthen your systems.",
-      cta: "Access Resources",
-      link: "/resources"
+      text: "Your systems need attention. Book an assessment to identify the fix.",
+      cta: "Book Assessment",
+      link: "/contact?interest=assessment"
     };
     return {
       icon: AlertCircle,
