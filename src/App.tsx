@@ -110,7 +110,8 @@ const AppContent = () => {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            {/* Catch-all 404 route - must be last */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>

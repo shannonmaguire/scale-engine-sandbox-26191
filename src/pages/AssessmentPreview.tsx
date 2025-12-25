@@ -1,10 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ScorePreview } from "@/components/checklist/ScorePreview";
 import { EmailCaptureModal } from "@/components/checklist/EmailCaptureModal";
 import { Section } from "@/components/ui/section";
 import SEOHead from "@/components/SEOHead";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import analytics from "@/lib/analytics";
 
@@ -31,10 +30,21 @@ const AssessmentPreview = () => {
     return null;
   }
 
+  // Auto-open email modal after 500ms delay for better conversion
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowEmailModal(true);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleEmailSubmit = async (email: string) => {
     setIsSubmitting(true);
 
     try {
+      // Lazy import Supabase for resilience
+      const { supabase } = await import("@/integrations/supabase/client");
+      
       // Save to database
       const { error: dbError } = await supabase
         .from('assessments')
@@ -51,7 +61,7 @@ const AssessmentPreview = () => {
 
       if (dbError) throw dbError;
 
-      // Call edge function to send PDF report
+      // Call edge function to send PDF report (supabase already imported above)
       const { error: functionError } = await supabase.functions.invoke('send-assessment-report', {
         body: {
           email,
