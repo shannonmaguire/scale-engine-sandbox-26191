@@ -10,7 +10,7 @@ const Start = () => {
       <Helmet>
         <title>Revenue Infrastructure Assessment | CWT Studio</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="description" content="2-week diagnostic for legal, compliance, and healthcare teams. Fixed price. Fixed output." />
+        <meta name="description" content="2-week revenue diagnostic for high-trust teams where failure is expensive. Fixed price. Fixed output." />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
@@ -22,7 +22,7 @@ const Start = () => {
               Your revenue systems are either compounding or leaking.
             </h1>
             <p className="text-muted-foreground text-lg mb-10">
-              Revenue infrastructure for legal, compliance, and healthcare teams.
+              Revenue infrastructure for high-trust teams where failure is expensive.
             </p>
             <Link
               to={bookingUrl}
@@ -74,8 +74,11 @@ const Start = () => {
               <li>Revenue scorecard and dependency map</li>
               <li>90-day fix plan with scoped recommendations</li>
             </ul>
-            <p className="font-mono text-sm text-foreground">
+            <p className="font-mono text-sm text-foreground mb-6">
               Fixed price. Fixed output. No obligation to continue.
+            </p>
+            <p className="text-muted-foreground text-sm">
+              Most revenue systems fail because teams build before they diagnose.
             </p>
           </section>
 
@@ -84,9 +87,10 @@ const Start = () => {
             <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-8">
               Proof
             </h2>
-            <div className="space-y-4 text-foreground">
-              <p>Pipeline administration: 20hr → 2hr weekly. +$127K ARR captured.</p>
-              <p>Forecast variance: ±40% → ±8%.</p>
+            <div className="space-y-3 text-foreground">
+              <p>Reduced pipeline administration from 20 hours to 2 hours per week.</p>
+              <p>Captured $127K in ARR.</p>
+              <p>Improved forecast variance from ±40% to ±8%.</p>
             </div>
           </section>
 
