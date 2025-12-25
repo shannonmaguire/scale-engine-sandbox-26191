@@ -107,6 +107,33 @@ export type Database = {
         }
         Relationships: []
       }
+      nurture_sequences_sent: {
+        Row: {
+          email: string
+          id: string
+          ip_address: string | null
+          resource_id: string
+          sent_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          email: string
+          id?: string
+          ip_address?: string | null
+          resource_id: string
+          sent_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          email?: string
+          id?: string
+          ip_address?: string | null
+          resource_id?: string
+          sent_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           company_name: string | null
