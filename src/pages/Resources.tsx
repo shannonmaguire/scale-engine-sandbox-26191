@@ -131,30 +131,6 @@ const Resources = () => {
 
       <Breadcrumbs />
 
-      {/* New Here Section */}
-      <section className="section-spacing-half px-6 bg-primary/5 border-b-2 border-primary/20">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col gap-4 sm:gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="flex-1">
-              <div className="text-xs font-mono text-primary uppercase tracking-wide mb-2">
-                New Here?
-              </div>
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
-                Not sure which resource you need?
-              </h2>
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Take 30 seconds to identify your path: Breaking, Planning, or Selling Salesforce.
-              </p>
-            </div>
-            <Button asChild size="lg" variant="outline" className="flex-shrink-0 w-full sm:w-auto">
-              <Link to="/start-here" className="flex items-center justify-center">
-                Find Your Path
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Header */}
       <section className="section-spacing-half px-6 border-b-2 border-border">

@@ -20,7 +20,6 @@ const Home = lazy(() => import("@/pages/Home"));
 const HowWeWork = lazy(() => import("@/pages/HowWeWork"));
 const Sprint = lazy(() => import("@/pages/Sprint"));
 const Contact = lazy(() => import("@/pages/Contact"));
-const Assessment = lazy(() => import("@/pages/Assessment"));
 const SelfAssessment = lazy(() => import("@/pages/SelfAssessment"));
 const AssessmentPreview = lazy(() => import("@/pages/AssessmentPreview"));
 const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
@@ -38,10 +37,7 @@ const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
-const Auth = lazy(() => import("@/pages/Auth"));
-const StartHere = lazy(() => import("@/pages/StartHere"));
 const Start = lazy(() => import("@/pages/Start"));
-const DataRights = lazy(() => import("@/pages/DataRights"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -113,13 +109,11 @@ const AppContent = () => {
             <Route path="/ae-support" element={<AETechnicalSupport />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/resources" element={<Resources />} />
-            <Route path="/start-here" element={<StartHere />} />
+            <Route path="/start-here" element={<Navigate to="/start" replace />} />
             <Route path="/start" element={<Start />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/data-rights" element={<DataRights />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Routes>
         </Suspense>
