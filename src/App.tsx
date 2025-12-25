@@ -17,6 +17,7 @@ import analytics from "@/lib/analytics";
 
 // Lazy load route components for better performance
 const Home = lazy(() => import("@/pages/Home"));
+const HowWeWork = lazy(() => import("@/pages/HowWeWork"));
 const Sprint = lazy(() => import("@/pages/Sprint"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
@@ -81,6 +82,7 @@ const AppContent = () => {
         }>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/how-we-work" element={<HowWeWork />} />
             <Route path="/self-assessment" element={<SelfAssessment />} />
             <Route path="/assessment-preview" element={<AssessmentPreview />} />
             <Route path="/assessment-results" element={<AssessmentResults />} />
