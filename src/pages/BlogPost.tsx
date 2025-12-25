@@ -161,36 +161,16 @@ const BlogPost = () => {
         description={post.excerpt}
         keywords={[...post.tags, 'revenue systems blog', 'backend infrastructure insights']}
         ogImage="https://cwtstudio.com/og-image.jpg"
-        canonicalUrl={`https://cwtstudio.com/blog/${post.slug}`}
+        canonicalUrl={`/blog/${post.slug}`}
+        type="article"
+        article={{
+          publishedTime: post.publishedAt,
+          modifiedTime: post.publishedAt,
+          author: post.author,
+          section: post.category,
+          isNewsArticle: true
+        }}
       />
-      
-      {/* Article Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: post.title,
-          description: post.excerpt,
-          author: {
-            '@type': 'Person',
-            name: post.author
-          },
-          datePublished: post.publishedAt,
-          publisher: {
-            '@type': 'Organization',
-            name: 'CWT Studio',
-            logo: {
-              '@type': 'ImageObject',
-              url: 'https://cwtstudio.com/favicon.ico'
-            }
-          },
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `https://cwtstudio.com/blog/${post.slug}`
-          },
-          keywords: post.tags.join(', ')
-        })}
-      </script>
       {/* Header */}
       <header className="border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-6 py-4">

@@ -23,6 +23,7 @@ interface SEOHeadProps {
     modifiedTime?: string;
     author?: string;
     section?: string;
+    isNewsArticle?: boolean;
   };
   faqSchema?: Array<{
     question: string;
@@ -38,6 +39,12 @@ interface SEOHeadProps {
       description: string;
     }>;
   };
+  caseStudySchema?: Array<{
+    name: string;
+    description: string;
+    industry: string;
+    result: string;
+  }>;
 }
 
 const SEOHead = ({
@@ -62,7 +69,8 @@ const SEOHead = ({
   personSchema,
   article,
   faqSchema,
-  serviceSchema
+  serviceSchema,
+  caseStudySchema
 }: SEOHeadProps) => {
   const location = useLocation();
   const baseUrl = 'https://cwtstudio.com';
@@ -234,6 +242,61 @@ const SEOHead = ({
     })
   } : null;
 
+  // Case Study Schema (ItemList of Articles)
+  const caseStudyStructuredData = caseStudySchema ? {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'CWT Studio Case Studies',
+    description: 'Real results from revenue system implementations',
+    itemListElement: caseStudySchema.map((study, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Article',
+        headline: study.name,
+        description: study.description,
+        about: {
+          '@type': 'Thing',
+          name: study.industry
+        },
+        abstract: study.result,
+        author: {
+          '@type': 'Organization',
+          name: 'CWT Studio'
+        }
+      }
+    }))
+  } : null;
+
+  // NewsArticle Schema for blog posts (better for Google Discover)
+  const newsArticleStructuredData = (type === 'article' && article?.isNewsArticle) ? {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: title,
+    description: description,
+    image: ogImage,
+    datePublished: article.publishedTime,
+    dateModified: article.modifiedTime || article.publishedTime,
+    author: {
+      '@type': 'Person',
+      name: article.author || 'Shannon Maguire',
+      url: 'https://cwtstudio.com/about'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'CWT Studio',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://cwtstudio.com/og-image.jpg'
+      }
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': fullUrl
+    },
+    articleSection: article.section
+  } : null;
+
   return (
     <Helmet>
       <title>{title}</title>
@@ -293,6 +356,12 @@ const SEOHead = ({
       )}
       {serviceStructuredData && (
         <script type="application/ld+json">{JSON.stringify(serviceStructuredData)}</script>
+      )}
+      {caseStudyStructuredData && (
+        <script type="application/ld+json">{JSON.stringify(caseStudyStructuredData)}</script>
+      )}
+      {newsArticleStructuredData && (
+        <script type="application/ld+json">{JSON.stringify(newsArticleStructuredData)}</script>
       )}
     </Helmet>
   );

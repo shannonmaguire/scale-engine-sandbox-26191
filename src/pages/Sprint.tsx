@@ -62,7 +62,7 @@ const Sprint = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="90-Day Revenue System Sprint | CWT Studio"
+        title="90-Day Revenue System Sprint | CRM Implementation | CWT Studio"
         description="8-12 week implementation sprint: install CRM infrastructure, automation, dashboards, and documentation. Complete revenue systems."
         keywords={[
           '90-day system installation',
@@ -91,6 +91,24 @@ const Sprint = () => {
             }
           ]
         }}
+        faqSchema={[
+          {
+            question: 'How long does a revenue system sprint take?',
+            answer: 'Our sprints run 8-12 weeks depending on complexity. Week 1-2 is foundation work, weeks 3-6 are build phase, weeks 7-8 are validation, weeks 9-10 are deployment, and weeks 11-12 are optimization.'
+          },
+          {
+            question: 'What do I get at the end of a sprint?',
+            answer: 'You receive a fully operational revenue system including CRM configuration, automation workflows, integrated dashboards, complete documentation, and team training. You own everything—no vendor lock-in.'
+          },
+          {
+            question: 'Do I need an assessment before starting a sprint?',
+            answer: 'Yes, we require an Infrastructure Assessment before any Sprint engagement. This ensures we understand your current state and can scope the Sprint accurately. The assessment fee credits 100% toward your Sprint.'
+          },
+          {
+            question: 'What is the investment for a 90-day sprint?',
+            answer: 'Sprint pricing is scoped during the assessment based on system complexity. We offer fixed-price engagements—no hourly billing, no scope creep. Contact us for a custom quote.'
+          }
+        ]}
       />
       
       <Breadcrumbs />

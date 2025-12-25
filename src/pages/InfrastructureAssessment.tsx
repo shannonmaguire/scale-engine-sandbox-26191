@@ -61,7 +61,7 @@ const InfrastructureAssessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Assessment | 2-Week Revenue Systems Diagnostic | CWT Studio"
+        title="Revenue Systems Assessment | 2-Week Diagnostic | CWT Studio"
         description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, 90-day roadmap. Assessment fee credits 100% toward Sprint."
         keywords={[
           'revenue infrastructure assessment',
@@ -89,6 +89,24 @@ const InfrastructureAssessment = () => {
             }
           ]
         }}
+        faqSchema={[
+          {
+            question: 'What is a revenue infrastructure assessment?',
+            answer: 'A comprehensive 2-week diagnostic audit of your revenue systems including CRM, marketing automation, and data infrastructure. Deliverables include a quantitative scorecard, gap analysis, risk assessment, and prioritized 90-day implementation roadmap.'
+          },
+          {
+            question: 'How much does an infrastructure assessment cost?',
+            answer: 'Assessment fees range from $1,500 to $3,000 based on infrastructure complexity. The entire fee credits 100% toward a Sprint engagement if booked within 90 days.'
+          },
+          {
+            question: 'What is the difference between the free Health Check and paid Assessment?',
+            answer: 'The free Health Check is a 5-minute self-guided quiz providing a high-level maturity score. The paid Assessment is a 2-week expert-led audit with stakeholder interviews, detailed scorecard, benchmarks, and custom 90-day roadmap.'
+          },
+          {
+            question: 'Do I need an assessment before working with CWT Studio?',
+            answer: 'Yes, we require an Infrastructure Assessment before any Sprint engagement. This ensures accurate scoping and sets realistic expectations. Start with the free Health Check to identify gaps, then book the full Assessment.'
+          }
+        ]}
       />
       
       <Breadcrumbs />

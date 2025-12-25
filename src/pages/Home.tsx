@@ -99,13 +99,14 @@ const Home = () => {
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead
-        title="We Fix Broken Sales Systems | CWT Studio"
-        description="Your leads are dying in inboxes. Your forecast is a guess. We fix your sales systems so they actually work."
+        title="Revenue Operations Consulting | CRM Implementation | CWT Studio"
+        description="Fix broken sales systems: leads dying in inboxes, forecasts that are guesses, founders stuck in admin. Revenue ops for legal, healthcare, and B2B SaaS."
         keywords={[
-          'fix CRM',
-          'sales operations',
+          'revenue operations consulting',
+          'CRM implementation',
+          'sales operations fix',
           'Salesforce help',
-          'revenue operations',
+          'revenue ops',
           'sales system broken'
         ]}
         canonicalUrl="/"
