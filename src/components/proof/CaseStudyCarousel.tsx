@@ -8,6 +8,7 @@ interface CaseStudy {
   vertical: string;
   size: string;
   timeline: string;
+  humanProblem?: string;
   whatBroke: string;
   pullQuote: string;
   system: string[];
@@ -115,6 +116,13 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
           </div>
         </div>
 
+        {/* Human Problem - Lead with this */}
+        {currentStudy.humanProblem && (
+          <div className="text-base md:text-lg text-foreground mb-6 leading-relaxed">
+            {currentStudy.humanProblem}
+          </div>
+        )}
+
         {/* Metrics - Mobile stacks, desktop horizontal */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
           <div className="p-4 bg-background border border-border rounded">
@@ -126,7 +134,7 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
             <div className="text-sm font-mono font-bold text-primary">{currentStudy.afterMetric.value}</div>
           </div>
           <div className="p-4 bg-primary/10 border border-primary/30 rounded">
-            <div className="text-xs text-primary uppercase tracking-wider mb-1">Growth</div>
+            <div className="text-xs text-primary uppercase tracking-wider mb-1">Result</div>
             <div className="text-sm font-mono font-bold text-primary">{currentStudy.growth}</div>
           </div>
         </div>
@@ -139,12 +147,7 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
         {/* Content - Mobile stacks */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">What Broke</h3>
-            <p className="text-sm text-foreground leading-relaxed mb-6">
-              {currentStudy.whatBroke}
-            </p>
-            
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">System Installed</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">What We Did</h3>
             <ul className="space-y-2">
               {currentStudy.system.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2 text-sm">
@@ -156,7 +159,7 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">Pattern Restored</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-3">The Result</h3>
             <p className="text-sm text-foreground leading-relaxed">
               {currentStudy.patternRestored}
             </p>
