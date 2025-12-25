@@ -178,12 +178,12 @@ const Resources = () => {
         <div className="max-w-7xl mx-auto">
           {/* Category Tabs */}
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-8">
-            <TabsList className="w-full justify-start overflow-x-auto flex-nowrap h-auto gap-1 sm:gap-2 bg-muted/30 p-2 scrollbar-hide">
+            <TabsList className="w-full justify-start overflow-x-auto flex-nowrap h-auto gap-1 sm:gap-2 bg-muted/30 p-2 scrollbar-hide scroll-snap-x">
               {categories.map((category) => (
                 <TabsTrigger 
                   key={category} 
                   value={category}
-                  className="font-mono text-xs sm:text-sm capitalize whitespace-nowrap data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shrink-0"
+                  className="font-mono text-xs sm:text-sm capitalize whitespace-nowrap data-[state=active]:bg-primary data-[state=active]:text-primary-foreground shrink-0 scroll-snap-item touch-target no-double-tap-zoom"
                 >
                   {category === "all" ? "All Resources" : category}
                 </TabsTrigger>

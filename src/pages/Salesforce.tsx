@@ -12,20 +12,20 @@ const Salesforce = () => {
     {
       icon: BarChart3,
       title: "Assessment",
-      description: "Audit existing configuration. Identify technical debt. Map to revenue outcomes.",
-      deliverables: ["Infrastructure scorecard", "Risk analysis", "Implementation roadmap"]
+      description: "We audit what's broken, find the mess, and tie it back to real revenue impact.",
+      deliverables: ["System health report", "Risk analysis", "90-day fix plan"]
     },
     {
       icon: Zap,
       title: "Implementation",
-      description: "Build integrations. Automate workflows. Deploy reporting infrastructure.",
-      deliverables: ["Custom objects & fields", "API integrations", "Dashboard architecture"]
+      description: "We connect your tools, automate your workflows, and build dashboards you'll actually use.",
+      deliverables: ["Custom data structure", "Tool integrations", "Real-time dashboards"]
     },
     {
       icon: Target,
       title: "Optimization",
-      description: "Tune performance. Fix adoption blockers. Document handoff.",
-      deliverables: ["Process documentation", "User training", "Maintenance runbook"]
+      description: "We tune performance, figure out why your team isn't using it, and document everything for handoff.",
+      deliverables: ["Process guides", "Team training", "Maintenance playbook"]
     }
   ];
 

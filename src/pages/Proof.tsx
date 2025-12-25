@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
 import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
+import { PartnerLogos } from "@/components/TrustIndicators";
 import { TIMELINES } from "@/lib/canonical-constants";
 import { useState } from "react";
 
@@ -258,6 +259,9 @@ const Proof = () => {
         </p>
         <CaseStudyCarousel caseStudies={caseStudies} />
       </Section>
+
+      {/* Trust Indicators */}
+      <PartnerLogos className="border-b border-border" />
 
       {/* CTA */}
       <Section>
