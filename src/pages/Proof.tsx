@@ -163,6 +163,7 @@ const Proof = () => {
       {/* Hero - Human */}
       <Section noPadding className="border-b border-border">
         <div className="section-spacing-half">
+          <div className="system-status mb-8">CASE STUDIES</div>
           <h1 className="heading-page mb-4">What Actually Happened</h1>
           <p className="text-description text-muted-foreground max-w-2xl">
             8 broken sales systems. 8 fixes. Real numbers.

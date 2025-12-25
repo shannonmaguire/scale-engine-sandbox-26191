@@ -28,9 +28,7 @@ const SelfAssessment = () => {
         <div className="max-w-3xl mx-auto px-4">
           {/* Intro Section */}
           <div className="mb-8 md:mb-12">
-            <div className="text-xs md:text-sm uppercase tracking-wider text-muted-foreground mb-3 md:mb-4 font-mono">
-              Free 5-Minute Assessment
-            </div>
+            <div className="system-status mb-6">HEALTH CHECK</div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6">Revenue Health Check</h1>
             <p className="text-base md:text-lg max-w-2xl mb-3 text-foreground">
               Answer 18 questions across data quality, automation, integration, governance, reporting, and user adoption.

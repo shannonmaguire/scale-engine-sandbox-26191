@@ -114,13 +114,7 @@ const InfrastructureAssessment = () => {
       {/* Hero */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
-            <span className="text-primary font-semibold">PAID DIAGNOSTIC</span>
-            <span className="text-muted-foreground">|</span>
-            <span className="text-muted-foreground">Duration: {TIMELINES.assessment}</span>
-            <span className="text-muted-foreground">|</span>
-            <span className="text-muted-foreground">{METRICS.feeCredit}</span>
-          </div>
+          <div className="system-status mb-8">DIAGNOSTIC</div>
           
           <h1 className="heading-page mb-6 leading-[1.1]">
             Assessment
