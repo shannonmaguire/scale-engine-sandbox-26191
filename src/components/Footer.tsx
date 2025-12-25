@@ -15,8 +15,8 @@ const Footer = () => {
           <p className="text-white/60 text-base sm:text-lg">Revenue architecture for high-trust teams</p>
         </div>
 
-        {/* Navigation Grid - 6 equal columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-x-8 sm:gap-y-10 pb-10 sm:pb-12 border-b border-white/10">
+        {/* Navigation Grid - 4 columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-x-8 sm:gap-y-10 pb-10 sm:pb-12 border-b border-white/10">
           {/* Services */}
           <div>
             <h4 className="font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5 text-white">
@@ -56,10 +56,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Library */}
+          {/* Company */}
           <div>
             <h4 className="font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5 text-white">
-              Library
+              Company
             </h4>
             <ul className="space-y-3 sm:space-y-2.5">
               <li>
@@ -67,29 +67,6 @@ const Footer = () => {
                   Proof
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* For Account Executives */}
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5 text-white">
-              For AEs
-            </h4>
-            <ul className="space-y-3 sm:space-y-2.5">
-              <li>
-                <Link to="/ae-support" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-                  Technical Support
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base uppercase tracking-wider mb-4 sm:mb-5 text-white">
-              Company
-            </h4>
-            <ul className="space-y-3 sm:space-y-2.5">
               <li>
                 <Link to="/about" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
                   About
