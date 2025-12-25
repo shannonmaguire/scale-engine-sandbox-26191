@@ -77,8 +77,8 @@ const AppContent = () => {
       {!isDocumentMode && <Navigation />}
       <main id="main-content" tabIndex={-1}>
         <Suspense fallback={
-          <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6">
-            <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+          <div className="min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-4 px-6" style={{ contain: 'layout' }}>
+            <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin" style={{ willChange: 'transform' }} />
             <div className="text-muted-foreground font-mono text-sm">Loading...</div>
           </div>
         }>

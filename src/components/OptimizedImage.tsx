@@ -10,10 +10,11 @@ interface OptimizedImageProps {
   height?: number;
   priority?: boolean;
   objectFit?: "cover" | "contain" | "fill";
+  aspectRatio?: string;
 }
 
 /**
- * Optimized image component with lazy loading and blur-up effect
+ * Optimized image component with lazy loading, blur-up effect, and CLS prevention
  * Automatically loads images when they enter the viewport
  */
 export const OptimizedImage = ({
@@ -24,10 +25,11 @@ export const OptimizedImage = ({
   height,
   priority = false,
   objectFit = "cover",
+  aspectRatio,
 }: OptimizedImageProps) => {
   const { ref, isVisible } = useIntersectionObserver<HTMLDivElement>({
     threshold: 0.1,
-    rootMargin: "50px",
+    rootMargin: "100px", // Increased for earlier loading
     triggerOnce: true,
   });
   
@@ -46,6 +48,9 @@ export const OptimizedImage = ({
     img.onerror = () => setHasError(true);
   }, [shouldLoad, src]);
 
+  // Calculate aspect ratio for CLS prevention
+  const computedAspectRatio = aspectRatio || (width && height ? `${width}/${height}` : undefined);
+
   if (hasError) {
     return (
       <div
@@ -54,7 +59,12 @@ export const OptimizedImage = ({
           "bg-muted flex items-center justify-center",
           className
         )}
-        style={{ width, height }}
+        style={{ 
+          width, 
+          height,
+          aspectRatio: computedAspectRatio,
+          contain: 'layout'
+        }}
         role="img"
         aria-label={alt}
       >
@@ -69,20 +79,32 @@ export const OptimizedImage = ({
     <div
       ref={ref}
       className={cn("relative overflow-hidden", className)}
-      style={{ width, height }}
+      style={{ 
+        width, 
+        height,
+        aspectRatio: computedAspectRatio,
+        contain: 'layout'
+      }}
     >
-      {/* Blur placeholder */}
-      {!isLoaded && shouldLoad && (
-        <div className="absolute inset-0 shimmer bg-muted" />
-      )}
+      {/* Blur placeholder - prevents CLS */}
+      <div 
+        className={cn(
+          "absolute inset-0 bg-muted transition-opacity duration-300",
+          isLoaded ? "opacity-0" : "opacity-100"
+        )}
+        style={{ contain: 'strict' }}
+      />
       
       {/* Actual image */}
       {shouldLoad && (
         <img
           src={src}
           alt={alt}
+          width={width}
+          height={height}
           loading={priority ? "eager" : "lazy"}
           decoding="async"
+          fetchPriority={priority ? "high" : "auto"}
           className={cn(
             "w-full h-full transition-opacity duration-500",
             objectFit === "cover" && "object-cover",
@@ -90,6 +112,10 @@ export const OptimizedImage = ({
             objectFit === "fill" && "object-fill",
             isLoaded ? "opacity-100" : "opacity-0"
           )}
+          style={{ 
+            willChange: isLoaded ? 'auto' : 'opacity',
+            contentVisibility: 'auto'
+          }}
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
         />
