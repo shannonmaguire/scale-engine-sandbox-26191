@@ -29,11 +29,12 @@ const getPerformanceRating = (metricName: string, value: number): 'good' | 'need
 
 /**
  * Monitor Core Web Vitals and performance metrics
+ * Tracks LCP, FID, CLS in both dev and production
  */
 export const usePerformanceMonitoring = () => {
   useEffect(() => {
-    // Only run in production
-    if (import.meta.env.DEV) return;
+    // Track in all environments for debugging, but only send to analytics in prod
+    const shouldSendAnalytics = !import.meta.env.DEV;
 
     // Monitor Core Web Vitals
     if ('PerformanceObserver' in window) {
@@ -44,7 +45,8 @@ export const usePerformanceMonitoring = () => {
           const lastEntry = entries[entries.length - 1];
           const value = lastEntry.startTime;
           const rating = getPerformanceRating('LCP', value);
-          sendMetric('LCP', value, rating);
+          console.log(`📊 LCP: ${value.toFixed(0)}ms (${rating})`);
+          if (shouldSendAnalytics) sendMetric('LCP', value, rating);
         });
         lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
 
@@ -54,7 +56,8 @@ export const usePerformanceMonitoring = () => {
           entries.forEach((entry) => {
             const value = entry.processingStart - entry.startTime;
             const rating = getPerformanceRating('FID', value);
-            sendMetric('FID', value, rating);
+            console.log(`📊 FID: ${value.toFixed(0)}ms (${rating})`);
+            if (shouldSendAnalytics) sendMetric('FID', value, rating);
           });
         });
         fidObserver.observe({ type: 'first-input', buffered: true });
@@ -69,7 +72,8 @@ export const usePerformanceMonitoring = () => {
             }
           });
           const rating = getPerformanceRating('CLS', clsScore);
-          sendMetric('CLS', clsScore, rating);
+          console.log(`📊 CLS: ${clsScore.toFixed(3)} (${rating})`);
+          if (shouldSendAnalytics) sendMetric('CLS', clsScore, rating);
         });
         clsObserver.observe({ type: 'layout-shift', buffered: true });
 

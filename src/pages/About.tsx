@@ -68,12 +68,17 @@ const About = () => {
       <Section className="border-b border-border">
         <div className="max-w-4xl">
           <div className="grid md:grid-cols-[240px,1fr] gap-12 items-start">
-            {/* Photo */}
-            <div>
+            {/* Photo - LCP element with explicit dimensions for CLS prevention */}
+            <div className="w-[240px] h-[320px]">
               <img 
                 src={shannonHeadshot} 
                 alt="Shannon Maguire, Founder & Revenue Systems Architect" 
-                className="w-full aspect-[3/4] object-cover object-top border border-border"
+                className="w-full h-full object-cover object-top border border-border"
+                width={240}
+                height={320}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
               
               <Button asChild variant="outline" size="sm" className="mt-6 w-full">
