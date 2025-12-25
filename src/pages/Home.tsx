@@ -5,10 +5,8 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import CookieBanner from "@/components/CookieBanner";
 import { CheckCircle, ArrowRight, Shield, TrendingUp, Users, Mail, BarChart3, UserX } from "lucide-react";
 import { CTA, ROUTES, METRICS, TIMELINES } from "@/lib/canonical-constants";
-
 const Home = () => {
   usePerformanceMonitoring();
   useScrollDepth();
@@ -100,7 +98,6 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       <EngagementTracker />
-      <CookieBanner />
       <SEOHead
         title="We Fix Broken Sales Systems | CWT Studio"
         description="Your leads are dying in inboxes. Your forecast is a guess. We fix your sales systems so they actually work."

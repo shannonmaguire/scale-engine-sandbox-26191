@@ -39,6 +39,7 @@ const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Auth = lazy(() => import("@/pages/Auth"));
+const StartHere = lazy(() => import("@/pages/StartHere"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -76,8 +77,9 @@ const AppContent = () => {
       {!isDocumentMode && <Navigation />}
       <main id="main-content" tabIndex={-1}>
         <Suspense fallback={
-          <div className="min-h-screen flex items-center justify-center">
-            <div className="animate-pulse text-muted-foreground font-mono">Loading...</div>
+          <div className="min-h-screen flex flex-col items-center justify-center gap-4 px-6">
+            <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
+            <div className="text-muted-foreground font-mono text-sm">Loading...</div>
           </div>
         }>
           <Routes>
@@ -109,12 +111,12 @@ const AppContent = () => {
             <Route path="/ae-support" element={<AETechnicalSupport />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/start-here" element={<StartHere />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
             <Route path="/auth" element={<Auth />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>

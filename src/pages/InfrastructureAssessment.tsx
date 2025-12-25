@@ -10,18 +10,18 @@ const InfrastructureAssessment = () => {
   const deliverables = [
     {
       icon: BarChart3,
-      title: "Revenue Infrastructure Scorecard",
-      description: "Quantitative audit across data quality, automation maturity, integration architecture, governance standards, reporting accuracy, and user adoption metrics."
+      title: "System Health Report",
+      description: "We score how well your tools are working: data accuracy, automation reliability, how well your systems talk to each other, and whether your team is actually using them."
     },
     {
       icon: Target,
-      title: "Gap Analysis & Risk Assessment",
-      description: "Technical debt inventory, system vulnerability mapping, adoption blocker identification, and cost-of-inaction projections for each identified gap."
+      title: "What's Broken & What It's Costing You",
+      description: "A clear list of what needs fixing, what's risky, why your team isn't adopting tools, and what happens if you don't act."
     },
     {
       icon: FileText,
-      title: "90-Day Implementation Roadmap",
-      description: "Prioritized deployment sequence with effort estimates, dependency mapping, quick-win identification, and phased rollout milestones."
+      title: "90-Day Fix Plan",
+      description: "A prioritized roadmap: what to tackle first, how long each fix takes, what depends on what, and quick wins you can implement immediately."
     }
   ];
 

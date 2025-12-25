@@ -9,31 +9,31 @@ import { CTA, ROUTES } from "@/lib/canonical-constants";
 const Fractional = () => {
   const operatingCadence = [
     {
-      component: "Monthly Review",
-      description: "System health audit tracking automation execution, data quality, integration performance, and workflow bottlenecks."
+      component: "Monthly Check-In",
+      description: "We review how your automations are running, check your data quality, make sure your tools are playing nice, and spot bottlenecks before they hurt."
     },
     {
-      component: "Quarter Planning",
-      description: "Forward-looking roadmap session aligning system enhancements to business objectives and scaling requirements."
+      component: "Quarterly Planning",
+      description: "Every 3 months, we sit down and plan ahead—what system upgrades align with your goals and where you're headed."
     },
     {
-      component: "System Tuning",
-      description: "Performance optimization based on usage patterns—workflow refinement, dashboard updates, automation logic adjustments."
+      component: "Ongoing Tuning",
+      description: "Based on how your team is actually using things, we refine workflows, update dashboards, and tweak automation logic."
     },
     {
-      component: "Documentation Updates",
-      description: "Process SOPs, field definitions, and admin protocols kept current as systems evolve and team capacity grows."
+      component: "Keeping Docs Fresh",
+      description: "We keep your how-to guides, field definitions, and admin processes up to date as things evolve."
     },
     {
-      component: "Adoption Metrics",
-      description: "User behavior tracking, training gap identification, and stakeholder engagement measurement to drive system utilization."
+      component: "Adoption Tracking",
+      description: "We watch who's using what, find training gaps, and measure whether people are actually engaging with the tools."
     }
   ];
 
   const compoundingOutcomes = [
-    { label: "Operational Velocity", description: "System changes deploy faster. Institutional knowledge builds. Technical debt stays controlled." },
-    { label: "Forecast Reliability", description: "Prediction accuracy improves. Data quality increases. Reporting infrastructure stabilizes." },
-    { label: "Founder Independence", description: "Executive intervention decreases. Systems prove load-tolerant. Team competence increases." }
+    { label: "Faster Execution", description: "Changes ship faster. Knowledge stays in-house. Technical mess stays under control." },
+    { label: "Reliable Forecasts", description: "Predictions get more accurate. Data quality goes up. Reporting stops being a fire drill." },
+    { label: "Founder Gets Time Back", description: "You stop putting out fires. Systems work without you. Your team gets better at this." }
   ];
 
   return (

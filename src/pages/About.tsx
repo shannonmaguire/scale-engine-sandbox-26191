@@ -15,10 +15,10 @@ const About = () => {
   useScrollDepth();
 
   const rulesOfEngagement = [
-    { rule: "Assessment before Sprint.", stake: "Rebuilding mid-project costs 3x." },
-    { rule: "Fixed scope. No hourly.", stake: "Scope creep kills timelines." },
-    { rule: "90-day cycles.", stake: "Longer engagements mask stalled progress." },
-    { rule: "You own everything.", stake: "No lock-in. No dependencies on me." }
+    { rule: "We assess before we build.", stake: "Starting without a diagnosis costs 3x more to fix." },
+    { rule: "Fixed price, not hourly.", stake: "Hourly billing incentivizes slow work." },
+    { rule: "90-day cycles max.", stake: "Long projects mask the fact that nothing's moving." },
+    { rule: "You own everything.", stake: "No lock-in. No dependencies. You can fire us anytime." }
   ];
 
   return (
@@ -79,15 +79,15 @@ const About = () => {
               </p>
 
               <p className="text-xl text-foreground mb-6 leading-relaxed">
-                Revenue systems architect. Design and implementation for regulated industries.
+                I fix broken sales systems. Mostly for industries where getting it wrong is expensive—legal, healthcare, compliance, SaaS.
               </p>
 
               <p className="text-description text-muted-foreground mb-4">
-                Legal, compliance, cybersecurity, healthcare, B2B SaaS. Industries where system failure carries financial, legal, and operational consequences.
+                System failures in these industries carry real consequences: missed compliance, lost deals, founders who can't step back.
               </p>
 
               <p className="text-description text-muted-foreground mb-8">
-                Architecture before implementation. Fixed-scope engagements. 90-day cycles. Documented handoffs. You own everything when I leave.
+                I assess before I build. Fixed-price work. 90-day max projects. Everything gets documented. When I leave, you own it all.
               </p>
 
               <div className="grid grid-cols-1 gap-3 pt-6 border-t border-border">
@@ -127,10 +127,10 @@ const About = () => {
       {/* Partner Network */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Partner Network</h2>
+          <h2 className="heading-section mb-8">Who Does the Work</h2>
 
           <p className="text-description text-muted-foreground mb-10">
-            CWT Studio leads strategy and architecture. CloudRoute delivers Salesforce implementation. Single contract, unified accountability.
+            I lead strategy and design. CloudRoute does the Salesforce heavy lifting. One contract, one team.
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
