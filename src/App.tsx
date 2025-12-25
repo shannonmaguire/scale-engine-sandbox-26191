@@ -27,9 +27,7 @@ const Assessment = lazy(() => import("@/pages/Assessment"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
 const Fractional = lazy(() => import("@/pages/Fractional"));
-const Resources = lazy(() => import("@/pages/Resources"));
 const WebSystems = lazy(() => import("@/pages/WebSystems"));
-const SampleReport = lazy(() => import("@/pages/SampleReport"));
 const Proof = lazy(() => import("@/pages/Proof"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
@@ -52,7 +50,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/sample-report' || location.pathname === '/start';
+  const isStandalonePage = location.pathname === '/start';
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -100,7 +98,6 @@ const AppContent = () => {
             <Route path="/fractional" element={<Fractional />} />
             <Route path="/web-systems" element={<WebSystems />} />
             <Route path="/web" element={<WebSystems />} />
-            <Route path="/sample-report" element={<SampleReport />} />
             <Route path="/proof" element={<Proof />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
@@ -108,7 +105,6 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
-            <Route path="/resources" element={<Resources />} />
             <Route path="/start-here" element={<Navigate to="/start" replace />} />
             <Route path="/start" element={<Start />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
