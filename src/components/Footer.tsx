@@ -67,16 +67,6 @@ const Footer = () => {
                   Proof
                 </Link>
               </li>
-              <li>
-                <Link to="/sample-report" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-                  Sample Report
-                </Link>
-              </li>
-              <li>
-                <Link to="/resources" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-                  Resource Library
-                </Link>
-              </li>
             </ul>
           </div>
 
