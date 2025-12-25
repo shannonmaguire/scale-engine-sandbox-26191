@@ -86,10 +86,9 @@ const Fractional = () => {
       <Section className="border-b border-border">
         {/* Hero */}
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h1 className="heading-section">Fractional Revenue Operations</h1>
-          </div>
+          <div className="system-status mb-8">FRACTIONAL OPERATIONS</div>
+          
+          <h1 className="heading-page mb-6 leading-[1.1]">Fractional Revenue Operations</h1>
           
           <p className="text-description text-foreground leading-relaxed max-w-2xl mb-10">
             Monthly operating cadence. Post-Sprint partnership for teams scaling infrastructure without adding headcount.

@@ -67,6 +67,7 @@ const About = () => {
       {/* Founder Section */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
+          <div className="system-status mb-8">FOUNDER</div>
           <div className="grid md:grid-cols-[240px,1fr] gap-12 items-start">
             {/* Photo - LCP element with explicit dimensions for CLS prevention */}
             <div className="w-[240px] h-[320px]">

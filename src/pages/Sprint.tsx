@@ -116,15 +116,7 @@ const Sprint = () => {
       <Section className="border-b border-border">
       {/* Hero */}
         <div className="max-w-4xl">
-          <div className="inline-flex flex-wrap items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 border border-primary/30 mb-8 font-mono text-[10px] sm:text-xs uppercase tracking-widest">
-            <span className="text-primary font-semibold">Deploy</span>
-            <span className="text-muted-foreground hidden sm:inline">|</span>
-            <span className="text-muted-foreground">Sprint v2.0</span>
-            <span className="text-muted-foreground hidden sm:inline">|</span>
-            <span className="text-muted-foreground hidden sm:inline">90 Days</span>
-            <span className="text-muted-foreground hidden sm:inline">|</span>
-            <span className="text-muted-foreground hidden sm:inline">Fixed Scope</span>
-          </div>
+          <div className="system-status mb-8">SYSTEM SPRINT</div>
           
           <h1 className="heading-page mb-6 leading-[1.1]">
             90-Day Revenue Sprint
