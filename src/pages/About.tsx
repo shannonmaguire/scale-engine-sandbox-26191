@@ -25,7 +25,7 @@ const About = () => {
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead 
-        title="About | CWT Studio" 
+        title="About Shannon Maguire | Revenue Systems Architect | CWT Studio" 
         description="Shannon Maguire designs and builds revenue systems for regulated and high-trust industries where system failure carries financial, legal, and compliance consequences." 
         keywords={[
           'about CWT Studio', 
@@ -42,6 +42,24 @@ const About = () => {
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
           image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
         }}
+        faqSchema={[
+          {
+            question: 'Who is Shannon Maguire?',
+            answer: 'Shannon Maguire is the founder and revenue systems architect at CWT Studio. She specializes in fixing broken sales systems for regulated industries including legal, healthcare, compliance, and B2B SaaS companies.'
+          },
+          {
+            question: 'What industries does CWT Studio serve?',
+            answer: 'CWT Studio specializes in legal tech, healthcare, compliance/cybersecurity, and B2B SaaS companies—industries where system failure carries real financial, legal, and compliance consequences.'
+          },
+          {
+            question: 'How does CWT Studio work with clients?',
+            answer: 'We assess before we build, use fixed pricing (not hourly), limit projects to 90-day cycles, and ensure complete ownership transfer. When we leave, you own everything with no vendor lock-in.'
+          },
+          {
+            question: 'What is the relationship between CWT Studio and CloudRoute?',
+            answer: 'CWT Studio handles revenue operations strategy, process design, and automation architecture. CloudRoute provides Salesforce implementation, platform configuration, and integration engineering. One contract, one team.'
+          }
+        ]}
       />
       
       <Breadcrumbs />

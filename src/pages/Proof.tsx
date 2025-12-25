@@ -140,7 +140,7 @@ const Proof = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Case Studies | CWT Studio" 
+        title="Case Studies | Revenue System Results | CWT Studio" 
         description="Real results: $500K+ pipeline activated, 4x conversion improvement, 87% admin time eliminated. See how we fixed broken sales systems." 
         keywords={[
           'sales system case studies', 
@@ -149,7 +149,13 @@ const Proof = () => {
           'pipeline activation',
           'sales operations results'
         ]} 
-        canonicalUrl="/proof" 
+        canonicalUrl="/proof"
+        caseStudySchema={caseStudies.map(study => ({
+          name: `${study.industry} - ${study.vertical}`,
+          description: study.humanProblem,
+          industry: study.industry,
+          result: study.growth
+        }))}
       />
       
       <Breadcrumbs />

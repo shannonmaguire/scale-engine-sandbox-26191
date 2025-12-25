@@ -39,7 +39,7 @@ const Fractional = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Fractional Revenue Operations | CWT Studio" 
+        title="Fractional Revenue Operations | Monthly RevOps Support | CWT Studio" 
         description="Monthly operating cadence. Post-Sprint partnership for teams scaling infrastructure without adding headcount." 
         keywords={['fractional revenue operations', 'continuous system optimization', 'backend systems maintenance', 'monthly operating cadence']} 
         canonicalUrl="/fractional"
@@ -61,6 +61,24 @@ const Fractional = () => {
             }
           ]
         }}
+        faqSchema={[
+          {
+            question: 'What is fractional revenue operations?',
+            answer: 'Fractional RevOps provides ongoing system management and optimization without hiring a full-time team. We maintain your revenue infrastructure, tune workflows, update documentation, and plan quarterly enhancements.'
+          },
+          {
+            question: 'Do I need to complete a Sprint first?',
+            answer: 'Yes, Fractional Ops is a post-Sprint partnership. We require either a completed CWT Studio Sprint or equivalent revenue infrastructure already in production before starting ongoing support.'
+          },
+          {
+            question: 'What is the minimum commitment for Fractional Ops?',
+            answer: 'We require a six-month minimum commitment. This ensures continuity and allows strategic value to compound over time. Monthly retainer is scoped during Sprint handoff based on system complexity.'
+          },
+          {
+            question: 'What happens during monthly check-ins?',
+            answer: 'We review automation performance, check data quality, verify system integrations, spot bottlenecks, and make proactive improvements. Quarterly sessions cover strategic roadmap planning aligned with your business goals.'
+          }
+        ]}
       />
       
       <Breadcrumbs />
