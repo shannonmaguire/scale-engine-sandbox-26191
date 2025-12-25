@@ -1,3 +1,11 @@
+import {
+  validateEmail,
+  validatePayloadSize,
+  escapeHtml,
+  checkRateLimit,
+  getClientIP,
+} from './_lib/validation.js';
+
 const RECIPIENT =
   process.env.EXIT_INTENT_RECIPIENT ||
   process.env.CONTACT_RECIPIENT ||
@@ -13,6 +21,17 @@ export default async function handler(req, res) {
       .json({ error: "Method Not Allowed" });
   }
 
+  // Rate limiting
+  const clientIP = getClientIP(req);
+  const rateLimit = checkRateLimit(`exit-intent:${clientIP}`);
+  if (!rateLimit.allowed) {
+    res.setHeader('Retry-After', rateLimit.retryAfter);
+    return res.status(429).json({ 
+      error: "Too many requests. Please try again later.",
+      retryAfter: rateLimit.retryAfter 
+    });
+  }
+
   if (!process.env.RESEND_API_KEY) {
     console.error("Missing RESEND_API_KEY environment variable");
     return res
@@ -25,16 +44,24 @@ export default async function handler(req, res) {
       typeof req.body === "string"
         ? JSON.parse(req.body || "{}")
         : req.body || {};
-    const email =
-      typeof payload.email === "string" ? payload.email.trim() : "";
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Validate payload size
+    if (!validatePayloadSize(payload)) {
+      return res.status(413).json({ error: "Request payload too large" });
+    }
+
+    const rawEmail = typeof payload.email === "string" ? payload.email : "";
+    const email = rawEmail.trim();
+
+    // Validate email format (now using shared validation)
+    if (!validateEmail(email)) {
       return res
         .status(400)
         .json({ error: "Valid email address is required" });
     }
 
     const timestamp = new Date().toISOString();
+    const htmlEmail = escapeHtml(email);
 
     const html = `
       <div style="font-family:Inter,Segoe UI,system-ui,-apple-system,sans-serif;color:#111827;max-width:600px;">
@@ -45,7 +72,7 @@ export default async function handler(req, res) {
             <tr>
               <td style="padding:8px 12px;border:1px solid #e5e7eb;font-weight:600;text-transform:uppercase;font-size:12px;letter-spacing:0.04em;">Email</td>
               <td style="padding:8px 12px;border:1px solid #e5e7eb;font-size:14px;">
-                <a href="mailto:${email}" style="color:#681038;text-decoration:none;">${email}</a>
+                <a href="mailto:${htmlEmail}" style="color:#681038;text-decoration:none;">${htmlEmail}</a>
               </td>
             </tr>
             <tr>
