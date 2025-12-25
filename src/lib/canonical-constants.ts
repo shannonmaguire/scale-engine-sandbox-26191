@@ -47,8 +47,8 @@ export const CTA = {
 
 // ===== CTA ROUTES =====
 export const ROUTES = {
-  assessment: "/self-assessment",
-  infrastructureAssessment: "/infrastructure-assessment",
+  selfAssessment: "/self-assessment",
+  assessment: "/assessment",
   sprint: "/sprint",
   fractional: "/fractional",
   salesforce: "/salesforce",

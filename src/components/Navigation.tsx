@@ -23,7 +23,7 @@ const Navigation = () => {
   }];
   const coreServices = [{
     label: "Assessment",
-    href: "/infrastructure-assessment",
+    href: "/assessment",
     timeline: "2 weeks"
   }, {
     label: "90-Day Sprint",

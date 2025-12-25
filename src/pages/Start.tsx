@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 const Start = () => {
-  const bookingUrl = '/contact?service=infrastructure-assessment';
+  const bookingUrl = '/contact?service=assessment';
 
   return (
     <>

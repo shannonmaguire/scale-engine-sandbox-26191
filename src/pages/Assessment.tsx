@@ -70,7 +70,7 @@ const InfrastructureAssessment = () => {
           'RevOps assessment',
           '90-day roadmap'
         ]}
-        canonicalUrl="/infrastructure-assessment"
+        canonicalUrl="/assessment"
         serviceSchema={{
           name: 'Infrastructure Assessment',
           description: 'Comprehensive 2-week revenue infrastructure diagnostic delivering system scorecard, gap analysis, and prioritized 90-day implementation roadmap.',
@@ -135,7 +135,7 @@ const InfrastructureAssessment = () => {
           </p>
 
           <Button size="lg" asChild>
-            <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
+            <Link to="/contact?interest=assessment&source_page=assessment">
               {CTA.bookAssessment}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -185,7 +185,7 @@ const InfrastructureAssessment = () => {
                 <li>• {METRICS.feeCredit} toward Sprint</li>
               </ul>
               <Button asChild className="w-full">
-                <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
+                <Link to="/contact?interest=assessment&source_page=assessment">
                   Book Assessment
                 </Link>
               </Button>
@@ -361,7 +361,7 @@ const InfrastructureAssessment = () => {
           </p>
 
           <Button size="lg" asChild>
-            <Link to="/contact?interest=assessment&source_page=infrastructure-assessment">
+            <Link to="/contact?interest=assessment&source_page=assessment">
               {CTA.bookAssessment}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
