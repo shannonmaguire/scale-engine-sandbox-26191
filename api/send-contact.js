@@ -1,7 +1,29 @@
+import {
+  validateEmail,
+  validateRequired,
+  validatePayloadSize,
+  validateTextFields,
+  escapeHtml,
+  checkRateLimit,
+  getClientIP,
+} from './_lib/validation.js';
+
 const RECIPIENT =
   process.env.CONTACT_RECIPIENT || "shannon@creatorwealthtools.com";
 const FROM_ADDRESS =
   process.env.CONTACT_FROM || "Creator Wealth Tools <onboarding@resend.dev>";
+
+// Field-specific length limits
+const FIELD_LIMITS = {
+  fullName: 200,
+  email: 254,
+  company: 200,
+  servicesInterested: 500,
+  timeline: 100,
+  budgetRange: 100,
+  currentSetup: 500,
+  message: 5000,
+};
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -9,6 +31,17 @@ export default async function handler(req, res) {
     return res
       .status(405)
       .json({ error: "Method Not Allowed" });
+  }
+
+  // Rate limiting
+  const clientIP = getClientIP(req);
+  const rateLimit = checkRateLimit(`contact:${clientIP}`);
+  if (!rateLimit.allowed) {
+    res.setHeader('Retry-After', rateLimit.retryAfter);
+    return res.status(429).json({ 
+      error: "Too many requests. Please try again later.",
+      retryAfter: rateLimit.retryAfter 
+    });
   }
 
   if (!process.env.RESEND_API_KEY) {
@@ -24,13 +57,24 @@ export default async function handler(req, res) {
         ? JSON.parse(req.body || "{}")
         : req.body || {};
 
+    // Validate payload size (prevent DoS)
+    if (!validatePayloadSize(payload)) {
+      return res.status(413).json({ error: "Request payload too large" });
+    }
+
+    // Validate required fields
     const requiredFields = ["fullName", "email", "servicesInterested", "timeline", "message"];
-    const missing = requiredFields.filter((field) => !payload[field]);
+    const missing = validateRequired(payload, requiredFields);
 
     if (missing.length > 0) {
       return res.status(400).json({
         error: `Missing required fields: ${missing.join(", ")}`,
       });
+    }
+
+    // Validate email format
+    if (!validateEmail(payload.email)) {
+      return res.status(400).json({ error: "Invalid email address format" });
     }
 
     // Validate servicesInterested is an array
@@ -40,9 +84,15 @@ export default async function handler(req, res) {
       });
     }
 
+    // Validate field lengths
+    const textValidation = validateTextFields(payload, FIELD_LIMITS);
+    if (!textValidation.valid) {
+      return res.status(400).json({ error: textValidation.errors[0] });
+    }
+
     const html = buildHtml(payload);
     const servicesLabel = payload.servicesInterested.join(", ");
-    const subject = `New Lead: ${payload.fullName}${payload.company ? ` · ${payload.company}` : ""} · ${servicesLabel}`;
+    const subject = `New Lead: ${escapeHtml(payload.fullName)}${payload.company ? ` · ${escapeHtml(payload.company)}` : ""} · ${escapeHtml(servicesLabel)}`;
 
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -76,14 +126,6 @@ export default async function handler(req, res) {
       .json({ error: "Unexpected server error" });
   }
 }
-
-const escapeHtml = (value = "") =>
-  String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
 
 const buildHtml = (payload) => {
   // Format services array

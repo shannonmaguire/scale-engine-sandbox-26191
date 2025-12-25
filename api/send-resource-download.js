@@ -1,3 +1,12 @@
+import {
+  validateEmail,
+  validatePayloadSize,
+  validateLength,
+  escapeHtml,
+  checkRateLimit,
+  getClientIP,
+} from './_lib/validation.js';
+
 const RECIPIENT =
   process.env.RESOURCES_RECIPIENT ||
   process.env.EXIT_INTENT_RECIPIENT ||
@@ -6,18 +15,27 @@ const RECIPIENT =
 const FROM_ADDRESS =
   process.env.CONTACT_FROM || "CWT Studio Resources <onboarding@resend.dev>";
 
-const escapeHtml = (value = "") =>
-  String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#39;");
+// Field length limits
+const MAX_RESOURCE_TITLE = 200;
+const MAX_RESOURCE_ID = 100;
+const MAX_URL = 500;
+const MAX_PAGE = 200;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
     return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  // Rate limiting
+  const clientIP = getClientIP(req);
+  const rateLimit = checkRateLimit(`resource:${clientIP}`);
+  if (!rateLimit.allowed) {
+    res.setHeader('Retry-After', rateLimit.retryAfter);
+    return res.status(429).json({ 
+      error: "Too many requests. Please try again later.",
+      retryAfter: rateLimit.retryAfter 
+    });
   }
 
   if (!process.env.RESEND_API_KEY) {
@@ -31,27 +49,38 @@ export default async function handler(req, res) {
         ? JSON.parse(req.body || "{}")
         : req.body || {};
 
+    // Validate payload size
+    if (!validatePayloadSize(payload)) {
+      return res.status(413).json({ error: "Request payload too large" });
+    }
+
     const rawEmail = typeof payload.email === "string" ? payload.email : "";
     const email = rawEmail.trim();
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    // Validate email format
+    if (!validateEmail(email)) {
       return res
         .status(400)
         .json({ error: "Valid email address is required" });
     }
 
+    // Extract and validate fields with length limits
     const resourceTitle =
       typeof payload.resourceTitle === "string" && payload.resourceTitle.trim()
-        ? payload.resourceTitle.trim()
+        ? payload.resourceTitle.trim().slice(0, MAX_RESOURCE_TITLE)
         : "Unknown Resource";
     const resourceId =
-      typeof payload.resourceId === "string" ? payload.resourceId.trim() : "";
+      typeof payload.resourceId === "string" 
+        ? payload.resourceId.trim().slice(0, MAX_RESOURCE_ID) 
+        : "";
     const downloadUrl =
       typeof payload.downloadUrl === "string"
-        ? payload.downloadUrl.trim()
+        ? payload.downloadUrl.trim().slice(0, MAX_URL)
         : "";
     const pagePath =
-      typeof payload.page === "string" ? payload.page.trim() : "";
+      typeof payload.page === "string" 
+        ? payload.page.trim().slice(0, MAX_PAGE) 
+        : "";
 
     const timestamp = new Date().toISOString();
 
