@@ -166,7 +166,7 @@ const Footer = () => {
             © {currentYear} CWT Studio. All rights reserved.
           </p>
           <span className="text-white/30 text-sm sm:text-xs uppercase tracking-wider order-1 sm:order-2 sm:text-right">
-            Revenue architecture you own
+            Broken systems don't scale.
           </span>
         </div>
       </div>
