@@ -40,6 +40,7 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Auth = lazy(() => import("@/pages/Auth"));
 const StartHere = lazy(() => import("@/pages/StartHere"));
+const Start = lazy(() => import("@/pages/Start"));
 const DataRights = lazy(() => import("@/pages/DataRights"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -54,8 +55,8 @@ const AppContent = () => {
   useServiceWorker();
   useErrorTracking();
 
-  // Determine if we're on the sample report page (document mode)
-  const isDocumentMode = location.pathname === '/sample-report';
+  // Determine if we're on standalone pages (no nav/footer)
+  const isStandalonePage = location.pathname === '/sample-report' || location.pathname === '/start';
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -75,7 +76,7 @@ const AppContent = () => {
   return (
     <>
       <NetworkStatusBanner />
-      {!isDocumentMode && <Navigation />}
+      {!isStandalonePage && <Navigation />}
       <main id="main-content" tabIndex={-1}>
         <Suspense fallback={
           <div className="min-h-[calc(100vh-80px)] sm:min-h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-4 px-6" style={{ contain: 'layout' }}>
@@ -113,6 +114,7 @@ const AppContent = () => {
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/start-here" element={<StartHere />} />
+            <Route path="/start" element={<Start />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
@@ -122,8 +124,8 @@ const AppContent = () => {
           </Routes>
         </Suspense>
       </main>
-      {!isDocumentMode && <Footer />}
-      {!isDocumentMode && <CookieBanner />}
+      {!isStandalonePage && <Footer />}
+      {!isStandalonePage && <CookieBanner />}
     </>
   );
 };
