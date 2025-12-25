@@ -12,6 +12,7 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 
 const COOKIE_CONSENT_KEY = "cookie_consent";
+const BANNER_DELAY_MS = 4000; // 4 second delay
 
 interface CookieConsent {
   necessary: boolean;
@@ -23,6 +24,7 @@ interface CookieConsent {
 
 const CookieBanner = memo(() => {
   const [showBanner, setShowBanner] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookieConsent>({
     necessary: true,
@@ -35,13 +37,25 @@ const CookieBanner = memo(() => {
   useEffect(() => {
     const consent = localStorage.getItem(COOKIE_CONSENT_KEY);
     if (!consent) {
-      setShowBanner(true);
+      // Delay showing the banner
+      const timer = setTimeout(() => {
+        setShowBanner(true);
+        // Small delay for animation
+        requestAnimationFrame(() => {
+          setIsVisible(true);
+        });
+      }, BANNER_DELAY_MS);
+      
+      return () => clearTimeout(timer);
     }
   }, []);
 
   const saveConsent = (consent: CookieConsent) => {
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
-    setShowBanner(false);
+    setIsVisible(false);
+    setTimeout(() => {
+      setShowBanner(false);
+    }, 300);
     setShowSettings(false);
   };
 
@@ -79,50 +93,62 @@ const CookieBanner = memo(() => {
     setShowSettings(true);
   };
 
+  const handleDismiss = () => {
+    handleRejectAll();
+  };
+
   if (!showBanner) return null;
 
   return (
     <>
-      <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-background/95 backdrop-blur-sm border-t border-border shadow-lg">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-            <div className="flex items-start gap-3 flex-1">
-              <Cookie className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg mb-2">We Value Your Privacy</h3>
-                <p className="text-sm text-muted-foreground">
-                  We use cookies to enhance your browsing experience, analyze site traffic, and deliver personalized content. 
-                  By clicking "Accept All", you consent to our use of cookies.{" "}
-                  <a href="/cookie-policy" className="text-primary hover:underline">
-                    Learn more
-                  </a>
-                </p>
+      {/* Slim, non-intrusive banner */}
+      <div 
+        className={`fixed bottom-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+        }`}
+      >
+        <div className="bg-background/95 backdrop-blur-sm border-t border-border shadow-lg">
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <p className="text-sm text-muted-foreground text-center sm:text-left">
+                We use cookies to improve your experience.{" "}
+                <a href="/cookie-policy" className="text-primary hover:underline">
+                  Learn more
+                </a>
+              </p>
+              
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleOpenSettings}
+                  className="text-xs h-8"
+                >
+                  Customize
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleRejectAll}
+                  className="text-xs h-8"
+                >
+                  Reject
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={handleAcceptAll}
+                  className="text-xs h-8"
+                >
+                  Accept
+                </Button>
+                <button
+                  onClick={handleDismiss}
+                  className="p-1.5 text-muted-foreground hover:text-foreground transition-colors ml-1"
+                  aria-label="Dismiss cookie banner"
+                >
+                  <X className="h-4 w-4" />
+                </button>
               </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-2 w-full md:w-auto">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleOpenSettings}
-                className="flex items-center gap-2"
-              >
-                <Settings className="h-4 w-4" />
-                Customize
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={handleRejectAll}
-              >
-                Reject All
-              </Button>
-              <Button
-                size="sm"
-                onClick={handleAcceptAll}
-              >
-                Accept All
-              </Button>
             </div>
           </div>
         </div>

@@ -2,51 +2,48 @@ import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
-import { RevenueArchitectureDiagram } from "@/components/RevenueArchitectureDiagram";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
 import CookieBanner from "@/components/CookieBanner";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Shield, TrendingUp, Users } from "lucide-react";
 import { CTA, ROUTES, METRICS, TIMELINES } from "@/lib/canonical-constants";
 
 const Home = () => {
   usePerformanceMonitoring();
   useScrollDepth();
 
-  // Compressed failure mechanics: single-line cause → cost
-  const infrastructureFailures = [
-    "Spreadsheet forecasting breaks at velocity variance. Board confidence lost in 2 quarters.",
-    "Operations knowledge in founder memory. Every deal requires intervention. Growth ceiling installed.",
-    "Manual CRM entry degrades data freshness. 15-20 hours weekly on reconciliation.",
-    "CRM structure misaligned with sales process. Reporting becomes fiction.",
-    "No handoff documentation. Every transition resets institutional learning to zero."
+  // Fit triggers only - exclusions moved to separate section
+  const fitTriggers = [
+    { label: "Forecast Blind", description: "Board asks for projections. You extrapolate from memory." },
+    { label: "Manual Operations", description: "Pipeline updates consume 15+ hours weekly." },
+    { label: "Founder Dependency", description: "Revenue knowledge concentrated in one person." }
   ];
 
-  // Merged fit/exclusion triggers - compressed
-  const triggers = [
-    { label: "Forecast Blind", description: "Board asks for projections. You extrapolate from memory.", fit: true },
-    { label: "Manual Operations", description: "Pipeline updates consume 15+ hours weekly.", fit: true },
-    { label: "Founder Dependency", description: "Revenue knowledge concentrated in one person.", fit: true },
-    { label: "Decision Cycles >30 Days", description: "Slow approval chains stall implementation.", fit: false },
-    { label: "No Single Ops Owner", description: "Ownership ambiguity fragments scope.", fit: false },
-    { label: "Ground-Zero Builds", description: "Existing systems only. No infrastructure from scratch.", fit: false }
+  // Exclusion criteria - shown separately with muted styling
+  const exclusionCriteria = [
+    { label: "Decision Cycles >30 Days", description: "Slow approval chains stall implementation." },
+    { label: "No Single Ops Owner", description: "Ownership ambiguity fragments scope." },
+    { label: "Ground-Zero Builds", description: "Existing systems only. No infrastructure from scratch." }
   ];
 
-  // Compressed proof: What Broke → Pattern Restored
+  // Humanized proof with emotional quotes
   const proofSnapshots = [
     {
       client: "Cybersecurity SaaS ($4.2M ARR)",
+      quote: "I was spending 15 hours a week on spreadsheet reconciliation. Now I spend zero.",
       broke: "Pipeline administration consumed founder bandwidth.",
       pattern: "Automated status tracking. Time-to-close predictability restored in 6 weeks."
     },
     {
       client: "Legal Tech Platform ($2.8M ARR)",
+      quote: "For the first time, I can tell the board exactly where we'll land. In 30 minutes, not 3 days.",
       broke: "Forecast built from spreadsheet extrapolation.",
       pattern: "Unified pipeline with weighted probability. Board-ready forecast in 30 min."
     },
     {
       client: "Compliance Software ($3.5M ARR)",
+      quote: "I took my first real vacation in four years. The system ran without me.",
       broke: "One founder owned all operations knowledge.",
       pattern: "Documented systems. Zero single points of failure. Founder exits day-to-day."
     }
@@ -74,6 +71,13 @@ const Home = () => {
     }
   ];
 
+  // Trust badges
+  const trustBadges = [
+    { icon: Shield, label: "42 systems rebuilt" },
+    { icon: TrendingUp, label: "23% avg forecast improvement" },
+    { icon: Users, label: "Zero failed migrations" }
+  ];
+
   return (
     <div className="min-h-screen">
       <EngagementTracker />
@@ -91,7 +95,7 @@ const Home = () => {
         canonicalUrl="/"
       />
 
-      {/* Hero Section */}
+      {/* Hero Section - Rewritten with Emotional Punch */}
       <Section className="min-h-[85vh] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" 
              style={{
@@ -107,71 +111,58 @@ const Home = () => {
             <span className="text-muted-foreground">{METRICS.deployments}</span>
           </div>
 
+          {/* Emotionally Resonant Hero Copy */}
           <h1 className="heading-page mb-6 leading-[1.1]">
-            Revenue systems are load-bearing. Growth reveals where they crack.
+            Your CRM works. Until it doesn't.
           </h1>
 
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
-            Forecasting collapses. Manual processes multiply. Infrastructure is risk containment.
-          </p>
+          <div className="space-y-3 text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl font-mono">
+            <p>That forecast you built? It's wrong.</p>
+            <p>The manual processes "just for now"? They're permanent.</p>
+            <p className="text-foreground font-medium">Growth doesn't fix infrastructure. It breaks it.</p>
+          </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          {/* Single Primary CTA */}
+          <div className="flex flex-col gap-6">
             <ConversionOptimizedButton
               to={ROUTES.assessment}
-              ctaName="Hero - Measure System State"
+              ctaName="Hero - Take Free Health Check"
               location="Homepage Hero"
               size="lg"
             >
-              Measure Your System State
+              Take Free Health Check
             </ConversionOptimizedButton>
-            <ConversionOptimizedButton
-              to={ROUTES.proof}
-              ctaName="Hero - See Proof"
-              location="Homepage Hero"
-              variant="outline"
-              showArrow={false}
-              size="lg"
-            >
-              {CTA.seeProof}
-            </ConversionOptimizedButton>
+
+            {/* Trust Badges */}
+            <div className="flex flex-wrap gap-6 pt-2">
+              {trustBadges.map((badge, index) => (
+                <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <badge.icon className="w-4 h-4 text-primary" strokeWidth={2} />
+                  <span className="font-mono">{badge.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
 
-      {/* Why Infrastructure Precedes Growth - Compressed */}
+      {/* You're a Fit If... Section */}
       <Section variant="muted" className="border-t border-border">
-        <div className="max-w-3xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Why Infrastructure Precedes Growth</h2>
-          </div>
-
-          <div className="space-y-4">
-            {infrastructureFailures.map((failure, index) => (
-              <p key={index} className="text-base text-foreground font-mono border-l-2 border-destructive/40 pl-4 py-2">
-                {failure}
-              </p>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Merged Fit/Exclusion Section */}
-      <Section className="border-t border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">System Fit</h2>
+            <h2 className="heading-section">You're a Fit If...</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {triggers.map((trigger, index) => (
+            {fitTriggers.map((trigger, index) => (
               <div 
                 key={index} 
-                className={`border p-5 ${trigger.fit ? 'border-primary/30 hover:border-primary/50' : 'border-destructive/40 bg-destructive/5'} transition-colors`}
+                className="border border-primary/30 hover:border-primary/50 p-5 transition-colors bg-card"
               >
-                <div className={`font-mono text-xs uppercase tracking-widest mb-2 ${trigger.fit ? 'text-primary' : 'text-destructive'}`}>
-                  {trigger.fit ? '✓' : '✗'} {trigger.label}
+                <div className="font-mono text-xs uppercase tracking-widest mb-2 text-primary flex items-center gap-2">
+                  <CheckCircle className="w-3 h-3" strokeWidth={2} />
+                  {trigger.label}
                 </div>
                 <p className="text-sm text-muted-foreground">{trigger.description}</p>
               </div>
@@ -180,15 +171,42 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* Technical Architecture Diagram */}
-      <Section variant="muted" className="border-t border-border">
-        <div className="max-w-5xl">
-          <RevenueArchitectureDiagram />
+      {/* We're Not the Right Fit If... Section (Muted) */}
+      <Section className="border-t border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-muted-foreground/30" />
+            <h2 className="heading-section text-muted-foreground">We're Not the Right Fit If...</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {exclusionCriteria.map((trigger, index) => (
+              <div 
+                key={index} 
+                className="border border-border p-5 bg-muted/30"
+              >
+                <div className="font-mono text-xs uppercase tracking-widest mb-2 text-muted-foreground">
+                  {trigger.label}
+                </div>
+                <p className="text-sm text-muted-foreground/70">{trigger.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <Link 
+              to="/how-we-work" 
+              className="inline-flex items-center gap-2 text-sm font-mono text-primary hover:text-primary/80 transition-colors"
+            >
+              See our full methodology
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </Section>
 
-      {/* Proof Section - Compressed */}
-      <Section className="border-t border-border">
+      {/* Proof Section - Humanized with Quotes */}
+      <Section variant="muted" className="border-t border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
@@ -197,7 +215,12 @@ const Home = () => {
 
           <div className="space-y-6">
             {proofSnapshots.map((snapshot, index) => (
-              <div key={index} className="border border-border p-6">
+              <div key={index} className="border border-border bg-card p-6">
+                {/* Emotional Quote First */}
+                <blockquote className="text-lg md:text-xl text-foreground font-medium mb-6 border-l-2 border-primary pl-4 italic">
+                  "{snapshot.quote}"
+                </blockquote>
+                
                 <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-4">
                   {snapshot.client}
                 </div>
@@ -228,7 +251,7 @@ const Home = () => {
       </Section>
 
       {/* Pipeline - Simplified */}
-      <Section variant="muted" className="border-t border-border">
+      <Section className="border-t border-border">
         <div className="max-w-3xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
@@ -256,20 +279,20 @@ const Home = () => {
       </Section>
 
       {/* Final CTA */}
-      <Section className="border-t border-border text-center">
+      <Section variant="muted" className="border-t border-border text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="heading-section mb-6">Measure Your System State</h2>
+          <h2 className="heading-section mb-6">Find Out What's Breaking</h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute diagnostic. Results are immediate.
+            5-minute diagnostic. Immediate results. No sales pitch.
           </p>
 
           <ConversionOptimizedButton
             to={ROUTES.assessment}
-            ctaName="Final CTA - Measure System State"
+            ctaName="Final CTA - Take Free Health Check"
             location="Final CTA Section"
             size="lg"
           >
-            Start Diagnostic
+            Take Free Health Check
           </ConversionOptimizedButton>
         </div>
       </Section>
