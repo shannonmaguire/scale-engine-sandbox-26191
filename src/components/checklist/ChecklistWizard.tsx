@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, RefObject } from "react";
 import { useNavigate } from "react-router-dom";
 import { ChecklistCategory } from "./InteractiveChecklist";
 import { useChecklist } from "./ChecklistContext";
@@ -12,12 +12,14 @@ interface ChecklistWizardProps {
   checklistId: string;
   title: string;
   categories: ChecklistCategory[];
+  quizContainerRef?: RefObject<HTMLDivElement>;
 }
 
-export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWizardProps) => {
+export const ChecklistWizard = ({ checklistId, title, categories, quizContainerRef }: ChecklistWizardProps) => {
   const [currentStep, setCurrentStep] = useState(0);
   const { checklistState, setAnswer, resetChecklist, getRawScore, getProgress, getAnswerCounts } = useChecklist();
   const navigate = useNavigate();
+  const prevStepRef = useRef(currentStep);
 
   const currentCategory = categories[currentStep];
   const totalItems = categories.reduce((sum, cat) => sum + cat.items.length, 0);
@@ -31,11 +33,20 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
     trackEvent('assessment_wizard_started', { checklistId });
   }, [checklistId]);
 
+  // Scroll to quiz container only when step changes
+  const scrollToQuiz = () => {
+    if (quizContainerRef?.current) {
+      quizContainerRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const handleNext = () => {
     if (currentStep < categories.length - 1) {
       setCurrentStep(currentStep + 1);
       trackEvent('assessment_step_next', { checklistId, step: currentStep + 1 });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToQuiz();
     }
   };
 
@@ -43,7 +54,7 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
       trackEvent('assessment_step_back', { checklistId, step: currentStep - 1 });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToQuiz();
     }
   };
 
@@ -86,7 +97,7 @@ export const ChecklistWizard = ({ checklistId, title, categories }: ChecklistWiz
       setCurrentStep(0);
       toast.success("Assessment reset");
       trackEvent("assessment_reset", { checklistId });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToQuiz();
     }
   };
 
