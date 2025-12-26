@@ -172,19 +172,19 @@ const HowWeWork = () => {
       {/* CTA */}
       <Section className="border-t border-border text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="heading-section mb-6">See Where Your System Stands</h2>
+          <h2 className="heading-section mb-6">Find Out What's Breaking</h2>
           <p className="text-description text-muted-foreground mb-10">
-            Take the 5-minute diagnostic to identify which layers need attention.
+            Book an assessment to identify which layers need attention.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton
-              to={ROUTES.selfAssessment}
-              ctaName="How We Work - Take Health Check"
+              to={ROUTES.assessment}
+              ctaName="How We Work - Book Assessment"
               location="How We Work CTA"
               size="lg"
             >
-              Take Free Health Check
+              Book Assessment
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
               to="/proof"
