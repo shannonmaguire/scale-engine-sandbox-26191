@@ -277,15 +277,15 @@ const Proof = () => {
             Find Out What's Breaking
           </h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute quiz. See exactly where your sales system is leaking deals.
+            Book an assessment. We'll find exactly where your sales system is leaking deals.
           </p>
           <ConversionOptimizedButton 
-            to="/self-assessment" 
-            ctaName="Proof Page - Find Out What's Breaking" 
+            to="/assessment" 
+            ctaName="Proof Page - Book Assessment" 
             location="Proof Page CTA" 
             size="lg"
           >
-            Take the Free Health Check
+            Book Assessment
           </ConversionOptimizedButton>
         </div>
       </Section>

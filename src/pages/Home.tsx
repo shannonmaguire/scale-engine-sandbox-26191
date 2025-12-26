@@ -144,7 +144,7 @@ const Home = () => {
           {/* Single Primary CTA */}
           <div className="flex flex-col gap-6">
             <ConversionOptimizedButton
-              to={ROUTES.selfAssessment}
+              to={ROUTES.assessment}
               ctaName="Hero - Find Out What's Breaking"
               location="Homepage Hero"
               size="lg"
@@ -322,16 +322,16 @@ const Home = () => {
         <div className="max-w-2xl mx-auto">
           <h2 className="heading-section mb-6">Find Out What's Breaking</h2>
           <p className="text-description text-muted-foreground mb-10">
-            5-minute diagnostic. See exactly where your sales system is leaking deals.
+            Book an assessment. Find out exactly where your revenue system is leaking deals.
           </p>
 
           <ConversionOptimizedButton
-            to={ROUTES.selfAssessment}
+            to={ROUTES.assessment}
             ctaName="Final CTA - Find Out What's Breaking"
             location="Final CTA Section"
             size="lg"
           >
-            Find Out What's Breaking
+            Book Assessment
           </ConversionOptimizedButton>
         </div>
       </Section>

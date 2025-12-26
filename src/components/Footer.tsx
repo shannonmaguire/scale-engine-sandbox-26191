@@ -24,11 +24,6 @@ const Footer = () => {
             </h4>
             <ul className="space-y-3 sm:space-y-2.5">
               <li>
-                <Link to="/self-assessment" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-                  Free Health Check
-                </Link>
-              </li>
-              <li>
                 <Link to="/assessment" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
                   Assessment
                 </Link>
@@ -119,8 +114,8 @@ const Footer = () => {
                 Follow on LinkedIn
               </a>
               <Button asChild size="default" variant="outline" className="mt-4 border-white/20 text-white hover:bg-white/10 w-full sm:w-auto min-h-[48px]">
-                <Link to="/self-assessment">
-                  Take Free Health Check
+                <Link to="/assessment">
+                  Book Assessment
                 </Link>
               </Button>
             </div>

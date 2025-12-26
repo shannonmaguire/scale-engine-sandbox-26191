@@ -20,9 +20,6 @@ const Home = lazy(() => import("@/pages/Home"));
 const HowWeWork = lazy(() => import("@/pages/HowWeWork"));
 const Sprint = lazy(() => import("@/pages/Sprint"));
 const Contact = lazy(() => import("@/pages/Contact"));
-const SelfAssessment = lazy(() => import("@/pages/SelfAssessment"));
-const AssessmentPreview = lazy(() => import("@/pages/AssessmentPreview"));
-const AssessmentResults = lazy(() => import("@/pages/AssessmentResults"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const About = lazy(() => import("@/pages/About"));
 const Salesforce = lazy(() => import("@/pages/Salesforce"));
@@ -81,14 +78,14 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/how-we-work" element={<HowWeWork />} />
-            <Route path="/self-assessment" element={<SelfAssessment />} />
-            <Route path="/assessment-preview" element={<AssessmentPreview />} />
-            <Route path="/assessment-results" element={<AssessmentResults />} />
             <Route path="/assessment" element={<Assessment />} />
             
             {/* Redirects for old routes and typos */}
+            <Route path="/self-assessment" element={<Navigate to="/assessment" replace />} />
+            <Route path="/assessment-preview" element={<Navigate to="/assessment" replace />} />
+            <Route path="/assessment-results" element={<Navigate to="/assessment" replace />} />
             <Route path="/infrastructure-assessment" element={<Navigate to="/assessment" replace />} />
-            <Route path="/assesment" element={<Navigate to="/self-assessment" replace />} />
+            <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
             <Route path="/fractional-ops" element={<Navigate to="/fractional" replace />} />
             <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
             
