@@ -68,7 +68,7 @@ const WebSystems = () => {
             Capture demand. Qualify prospects. Route leads to CRM. Conversion-tracked. Zero vendor lock-in.
           </p>
           
-          <div className="grid grid-cols-3 gap-6 mb-10 py-6 border-y border-border">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-10 py-6 border-y border-border">
             <div>
               <div className="heading-subsection text-primary mb-1">Sub-1s</div>
               <div className="text-label text-muted-foreground">Page load</div>
@@ -103,10 +103,10 @@ const WebSystems = () => {
           
           <div className="space-y-4 max-w-3xl">
             {phases.map((phase, index) => (
-              <div key={index} className="flex items-center gap-4 border-l-4 border-primary pl-6 py-3">
+              <div key={index} className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 border-l-4 border-primary pl-4 md:pl-6 py-3">
                 <span className="font-mono text-sm text-primary">{phase.phase}</span>
                 <span className="heading-subsection">{phase.title}</span>
-                <span className="text-muted-foreground">→</span>
+                <span className="hidden md:inline text-muted-foreground">→</span>
                 <span className="text-sm text-muted-foreground">{phase.output}</span>
               </div>
             ))}

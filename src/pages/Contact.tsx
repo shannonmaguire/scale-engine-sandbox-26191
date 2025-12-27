@@ -194,7 +194,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Simplified Contact Form */}
             <div className="lg:col-span-3">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -297,7 +297,7 @@ const Contact = () => {
 
             {/* Side Info */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="border border-border p-6 bg-card">
+              <div className="border border-border p-4 md:p-6 bg-card">
                 <div className="flex items-center gap-3 mb-4">
                   <Clock className="w-5 h-5 text-primary" />
                   <h3 className="font-mono text-sm uppercase tracking-widest">Response Time</h3>
@@ -308,7 +308,7 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="border border-border p-6 bg-card">
+              <div className="border border-border p-4 md:p-6 bg-card">
                 <div className="flex items-center gap-3 mb-4">
                   <Mail className="w-5 h-5 text-primary" />
                   <h3 className="font-mono text-sm uppercase tracking-widest">Direct Email</h3>
@@ -321,7 +321,7 @@ const Contact = () => {
                 </a>
               </div>
 
-              <div className="border border-border p-6 bg-card">
+              <div className="border border-border p-4 md:p-6 bg-card">
                 <div className="flex items-center gap-3 mb-4">
                   <MessageSquare className="w-5 h-5 text-primary" />
                   <h3 className="font-mono text-sm uppercase tracking-widest">What Happens Next</h3>

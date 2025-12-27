@@ -140,7 +140,7 @@ const InfrastructureAssessment = () => {
       {/* Exclusion Warning */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="border-2 border-destructive/50 bg-destructive/5 p-6">
+          <div className="border-2 border-destructive/50 bg-destructive/5 p-4 md:p-6">
             <h3 className="font-mono text-sm uppercase tracking-widest text-destructive mb-4">
               Do Not Book If
             </h3>
@@ -198,7 +198,7 @@ const InfrastructureAssessment = () => {
 
           <div className="border border-border bg-card/50 p-8">
             <h3 className="heading-subsection mb-6">Complete Scope</h3>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-3 md:gap-4">
               {included.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -220,7 +220,7 @@ const InfrastructureAssessment = () => {
 
           <div className="space-y-8">
             {process.map((phase, index) => (
-              <div key={index} className="border border-border bg-card p-8">
+              <div key={index} className="border border-border bg-card p-4 md:p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
                     {index + 1}
@@ -254,8 +254,8 @@ const InfrastructureAssessment = () => {
             <h2 className="heading-section">Investment & Credit Structure</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
-            <div className="border border-border bg-card p-6 text-center">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-10">
+            <div className="border border-border bg-card p-4 md:p-6 text-center">
               <DollarSign className="w-8 h-8 text-primary mx-auto mb-4" />
               <div className="heading-subsection mb-2">$1,500 - $3,000</div>
               <div className="text-description text-muted-foreground">
@@ -263,7 +263,7 @@ const InfrastructureAssessment = () => {
               </div>
             </div>
 
-            <div className="border border-border bg-card p-6 text-center">
+            <div className="border border-border bg-card p-4 md:p-6 text-center">
               <Clock className="w-8 h-8 text-primary mx-auto mb-4" />
               <div className="heading-subsection mb-2">{TIMELINES.assessment}</div>
               <div className="text-description text-muted-foreground">
@@ -271,7 +271,7 @@ const InfrastructureAssessment = () => {
               </div>
             </div>
 
-            <div className="border border-border bg-card p-6 text-center">
+            <div className="border border-border bg-card p-4 md:p-6 text-center">
               <Zap className="w-8 h-8 text-primary mx-auto mb-4" />
               <div className="heading-subsection mb-2">100% Credit</div>
               <div className="text-description text-muted-foreground">
@@ -280,7 +280,7 @@ const InfrastructureAssessment = () => {
             </div>
           </div>
 
-          <div className="border-2 border-primary/30 bg-primary/5 p-8">
+          <div className="border-2 border-primary/30 bg-primary/5 p-4 md:p-8">
             <p className="text-description text-foreground text-center max-w-2xl mx-auto font-medium">
               100% credited toward Sprint within 90 days.
             </p>

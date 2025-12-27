@@ -113,7 +113,7 @@ const Home = () => {
       />
 
       {/* Hero Section - Plain English Pain Points */}
-      <Section className="min-h-[85vh] flex items-center relative overflow-hidden">
+      <Section className="min-h-[90vh] md:min-h-[85vh] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.03]" 
              style={{
                backgroundImage: 'linear-gradient(hsl(var(--foreground)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)',
@@ -153,7 +153,7 @@ const Home = () => {
             </ConversionOptimizedButton>
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-6 pt-2">
+            <div className="flex flex-wrap gap-3 md:gap-6 pt-2">
               {trustBadges.map((badge, index) => (
                 <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
                   <badge.icon className="w-4 h-4 text-primary" strokeWidth={2} />
@@ -173,7 +173,7 @@ const Home = () => {
             <h2 className="heading-section">What We Actually Do</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6">
             {whatWeDo.map((service, index) => (
               <div 
                 key={index} 
@@ -196,7 +196,7 @@ const Home = () => {
             <h2 className="heading-section">This Is For You If...</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-3 gap-4">
             {fitTriggers.map((trigger, index) => (
               <div 
                 key={index} 
@@ -221,7 +221,7 @@ const Home = () => {
             <h2 className="heading-section text-muted-foreground">Not For You If...</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-3 gap-4">
             {exclusionCriteria.map((trigger, index) => (
               <div 
                 key={index} 
@@ -266,7 +266,7 @@ const Home = () => {
                 <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-4">
                   {snapshot.client}
                 </div>
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                   <div>
                     <div className="font-semibold text-sm text-destructive mb-1">The Problem</div>
                     <p className="text-sm text-foreground">{snapshot.broke}</p>

@@ -140,7 +140,7 @@ const Sprint = () => {
             <h2 className="heading-section">Deployment Sequence</h2>
           </div>
 
-          <div className="border border-border/40 bg-card/50 p-8 font-mono text-sm leading-relaxed">
+          <div className="border border-border/40 bg-card/50 p-4 md:p-8 font-mono text-sm leading-relaxed overflow-x-auto">
             {phases.map((phase, index) => (
               <div key={index} className="mb-6 last:mb-0">
                 <div className="flex items-baseline gap-3 mb-2">
@@ -192,9 +192,9 @@ const Sprint = () => {
             <h2 className="heading-section">Expected Outcomes</h2>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             {outcomes.map((outcome, index) => (
-              <div key={index} className="border border-border bg-card p-6">
+              <div key={index} className="border border-border bg-card p-4 md:p-6">
                 <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
                   {outcome.label}
                 </div>
