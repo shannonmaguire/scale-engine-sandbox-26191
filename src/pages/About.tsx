@@ -103,7 +103,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Before CWT Studio, I spent two years at Salesforce—started as a BDR, got promoted to Account Executive in the SMB space. That's where I saw how broken most revenue systems actually are. Not the tools. The way people implement them.
+                  Before CWT Studio, I spent two years in enterprise SaaS—started as a BDR, got promoted to Account Executive in the SMB space. That's where I saw how broken most revenue systems actually are. Not the tools. The way people implement them.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
