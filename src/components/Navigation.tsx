@@ -12,7 +12,7 @@ const Navigation = () => {
     label: "Home",
     href: "/"
   }, {
-    label: "How It Works",
+    label: "How We Work",
     href: "/how-we-work"
   }, {
     label: "Proof",
