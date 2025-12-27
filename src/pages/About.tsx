@@ -14,11 +14,12 @@ const About = () => {
   usePerformanceMonitoring();
   useScrollDepth();
 
-  const rulesOfEngagement = [
-    { rule: "We assess before we build.", stake: "Starting without a diagnosis costs 3x more to fix." },
-    { rule: "Fixed price, not hourly.", stake: "Hourly billing incentivizes slow work." },
-    { rule: "90-day cycles max.", stake: "Long projects mask the fact that nothing's moving." },
-    { rule: "You own everything.", stake: "No lock-in. No dependencies. You can fire us anytime." }
+  // Rules - no justifications
+  const rules = [
+    "We assess before we build.",
+    "Fixed price, not hourly.",
+    "90-day cycles max.",
+    "You own everything."
   ];
 
   return (
@@ -38,38 +39,33 @@ const About = () => {
         personSchema={{
           name: 'Shannon Maguire',
           jobTitle: 'Founder & Revenue Systems Architect',
-          description: 'Revenue systems architect specializing in legal, compliance, cybersecurity, healthcare, and B2B SaaS. Fixed-scope implementations, 90-day cycles, documented handoffs.',
+          description: 'Revenue systems architect specializing in legal, compliance, cybersecurity, healthcare, and B2B SaaS.',
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
           image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
         }}
         faqSchema={[
           {
             question: 'Who is Shannon Maguire?',
-            answer: 'Shannon Maguire is the founder and revenue systems architect at CWT Studio. She specializes in fixing broken sales systems for regulated industries including legal, healthcare, compliance, and B2B SaaS companies.'
+            answer: 'Shannon Maguire is the founder and revenue systems architect at CWT Studio, specializing in fixing broken sales systems for regulated industries.'
           },
           {
             question: 'What industries does CWT Studio serve?',
-            answer: 'CWT Studio specializes in legal tech, healthcare, compliance/cybersecurity, and B2B SaaS companies—industries where system failure carries real financial, legal, and compliance consequences.'
-          },
-          {
-            question: 'How does CWT Studio work with clients?',
-            answer: 'We assess before we build, use fixed pricing (not hourly), limit projects to 90-day cycles, and ensure complete ownership transfer. When we leave, you own everything with no vendor lock-in.'
+            answer: 'Legal tech, healthcare, compliance/cybersecurity, and B2B SaaS.'
           },
           {
             question: 'What is the relationship between CWT Studio and CloudRoute?',
-            answer: 'For projects that require Salesforce implementation, CWT Studio partners with CloudRoute—a certified Salesforce ISV & OEM partner. CWT leads strategy and design; CloudRoute handles platform configuration and integration. For non-Salesforce work, CWT handles directly.'
+            answer: 'For Salesforce projects, CWT partners with CloudRoute (Salesforce ISV Partner). For non-Salesforce work, CWT handles directly.'
           }
         ]}
       />
       
       <Breadcrumbs />
       
-      {/* Founder Section */}
+      {/* Founder */}
       <Section className="border-b border-border">
-      <div className="max-w-4xl">
+        <div className="max-w-4xl">
           <div className="system-status mb-8">FOUNDER</div>
           <div className="grid md:grid-cols-[240px,1fr] gap-8 md:gap-12 items-start">
-            {/* Photo - LCP element with explicit dimensions for CLS prevention */}
             <div className="w-full max-w-[240px] mx-auto md:mx-0">
               <img 
                 src={shannonHeadshot} 
@@ -95,33 +91,24 @@ const About = () => {
               </Button>
             </div>
 
-            {/* Bio */}
             <div>
               <h1 className="heading-section mb-2">Shannon Maguire</h1>
               <p className="text-label text-muted-foreground mb-8">
                 Founder & Revenue Systems Architect
               </p>
 
-              <p className="text-xl text-foreground mb-6 leading-relaxed">
-                I fix broken sales systems. Mostly for industries where getting it wrong is expensive—legal, healthcare, compliance, SaaS.
+              <p className="text-xl text-foreground mb-8 leading-relaxed">
+                I fix broken sales systems for legal, healthcare, compliance, and SaaS.
               </p>
 
-              <p className="text-description text-muted-foreground mb-4">
-                System failures in these industries carry real consequences: missed compliance, lost deals, founders who can't step back.
-              </p>
-
-              <p className="text-description text-muted-foreground mb-8">
-                I assess before I build. Fixed-price work. 90-day max projects. Everything gets documented. When I leave, you own it all.
-              </p>
-
-              <div className="grid grid-cols-1 gap-3 pt-6 border-t border-border">
+              <div className="grid grid-cols-2 gap-3 pt-6 border-t border-border">
                 <div className="flex items-baseline gap-3">
                   <div className="text-label text-primary font-mono">42</div>
-                  <div className="text-sm text-muted-foreground">systems installed. Zero failed migrations.</div>
+                  <div className="text-sm text-muted-foreground">systems installed</div>
                 </div>
                 <div className="flex items-baseline gap-3">
-                  <div className="text-label text-primary font-mono">8</div>
-                  <div className="text-sm text-muted-foreground">years. Same methodology. Every engagement documented.</div>
+                  <div className="text-label text-primary font-mono">0</div>
+                  <div className="text-sm text-muted-foreground">failed migrations</div>
                 </div>
               </div>
             </div>
@@ -129,71 +116,52 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Rules of Engagement */}
+      {/* Rules - No justifications */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Rules of Engagement</h2>
+          <h2 className="heading-section mb-8">Rules</h2>
 
-          <div className="space-y-3 md:space-y-4">
-            {rulesOfEngagement.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 md:gap-4 bg-card p-4 md:p-6 border-l-2 border-primary">
+          <div className="space-y-3">
+            {rules.map((rule, index) => (
+              <div key={index} className="flex items-center gap-4 bg-card p-4 border-l-2 border-primary">
                 <span className="text-label text-primary font-mono">{String(index + 1).padStart(2, '0')}</span>
-                <div>
-                  <p className="text-description text-foreground font-medium">{item.rule}</p>
-                  <p className="text-sm text-muted-foreground mt-1 italic">{item.stake}</p>
-                </div>
+                <p className="text-foreground font-medium">{rule}</p>
               </div>
             ))}
           </div>
         </div>
       </Section>
 
-      {/* Salesforce Partner */}
+      {/* Salesforce Partner - Condensed */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-4">For Salesforce Projects</h2>
-          <p className="text-sm text-muted-foreground mb-8">When an engagement requires Salesforce implementation</p>
+          <h2 className="heading-section mb-8">Salesforce Projects</h2>
 
-          <p className="text-description text-muted-foreground mb-10">
-            When a project requires Salesforce, I bring in CloudRoute. They're a certified ISV & OEM partner. I lead strategy and design; they handle platform configuration and integration. One contract, one team.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            <div className="bg-card p-4 md:p-6 border-l-2 border-primary">
-              <div className="text-label text-primary mb-3">CWT Studio</div>
-              <div className="space-y-2 text-description text-muted-foreground">
-                <div>Revenue operations strategy</div>
-                <div>Process design</div>
-                <div>Automation architecture</div>
-              </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-card p-6 border-l-2 border-primary">
+              <div className="text-label text-primary mb-2">CWT Studio</div>
+              <div className="text-sm text-muted-foreground">Strategy & design</div>
             </div>
 
-            <div className="bg-card p-4 md:p-6 border-l-2 border-accent">
-              <div className="flex items-center gap-2 mb-3">
+            <div className="bg-card p-6 border-l-2 border-accent">
+              <div className="flex items-center gap-2 mb-2">
                 <div className="text-label text-accent">CloudRoute</div>
-                <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded font-mono">Salesforce ISV Partner</span>
+                <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded font-mono">ISV Partner</span>
               </div>
-              <div className="space-y-2 text-description text-muted-foreground">
-                <div>Salesforce implementation</div>
-                <div>Platform configuration</div>
-                <div>Integration engineering</div>
-              </div>
+              <div className="text-sm text-muted-foreground">Platform implementation</div>
             </div>
           </div>
 
-          <p className="text-sm text-muted-foreground mt-8 italic">
-            For HubSpot, custom ops, or non-Salesforce work—I handle directly.
+          <p className="text-sm text-muted-foreground mt-6">
+            HubSpot and non-Salesforce work handled directly.
           </p>
         </div>
       </Section>
 
-      {/* CTA */}
+      {/* CTA - No paragraph */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="heading-section mb-6">Find Out What's Breaking</h2>
-          <p className="text-description text-muted-foreground mb-10">
-            Book an assessment. We'll map what's broken and what it's costing you.
-          </p>
+          <h2 className="heading-section mb-8">Find Out What's Breaking</h2>
 
           <ConversionOptimizedButton 
             to={ROUTES.assessment}
