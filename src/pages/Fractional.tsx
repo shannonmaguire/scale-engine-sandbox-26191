@@ -146,9 +146,9 @@ const Fractional = () => {
             Long-term operator partnership. System reliability increases. Team capability grows. Forecast accuracy improves.
           </p>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
             {compoundingOutcomes.map((outcome, index) => (
-              <div key={index} className="border border-border bg-card p-6">
+              <div key={index} className="border border-border bg-card p-4 md:p-6">
                 <div className="font-mono text-sm uppercase tracking-widest text-primary mb-3 font-semibold">
                   {outcome.label}
                 </div>
@@ -169,7 +169,7 @@ const Fractional = () => {
             <h2 className="heading-section">Partnership Requirements</h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             <div className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
               <div>

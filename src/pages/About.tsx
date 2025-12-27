@@ -66,15 +66,15 @@ const About = () => {
       
       {/* Founder Section */}
       <Section className="border-b border-border">
-        <div className="max-w-4xl">
+      <div className="max-w-4xl">
           <div className="system-status mb-8">FOUNDER</div>
-          <div className="grid md:grid-cols-[240px,1fr] gap-12 items-start">
+          <div className="grid md:grid-cols-[240px,1fr] gap-8 md:gap-12 items-start">
             {/* Photo - LCP element with explicit dimensions for CLS prevention */}
-            <div className="w-[240px] h-[320px]">
+            <div className="w-full max-w-[240px] mx-auto md:mx-0">
               <img 
                 src={shannonHeadshot} 
                 alt="Shannon Maguire, Founder & Revenue Systems Architect" 
-                className="w-full h-full object-cover object-top border border-border"
+                className="w-full aspect-[3/4] object-cover object-top border border-border"
                 width={240}
                 height={320}
                 loading="eager"
@@ -82,7 +82,7 @@ const About = () => {
                 fetchPriority="high"
               />
               
-              <Button asChild variant="outline" size="sm" className="mt-6 w-full">
+              <Button asChild variant="outline" size="sm" className="mt-4 w-full">
                 <a 
                   href="https://www.linkedin.com/in/shanmag/" 
                   target="_blank" 
@@ -134,9 +134,9 @@ const About = () => {
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">Rules of Engagement</h2>
 
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {rulesOfEngagement.map((item, index) => (
-              <div key={index} className="flex items-start gap-4 bg-card p-6 border-l-2 border-primary">
+              <div key={index} className="flex items-start gap-3 md:gap-4 bg-card p-4 md:p-6 border-l-2 border-primary">
                 <span className="text-label text-primary font-mono">{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <p className="text-description text-foreground font-medium">{item.rule}</p>
@@ -157,8 +157,8 @@ const About = () => {
             I lead strategy and design. CloudRoute does the Salesforce heavy lifting. One contract, one team.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card p-6 border-l-2 border-primary">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+            <div className="bg-card p-4 md:p-6 border-l-2 border-primary">
               <div className="text-label text-primary mb-3">CWT Studio</div>
               <div className="space-y-2 text-description text-muted-foreground">
                 <div>Revenue operations strategy</div>
@@ -167,7 +167,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="bg-card p-6 border-l-2 border-accent">
+            <div className="bg-card p-4 md:p-6 border-l-2 border-accent">
               <div className="text-label text-accent mb-3">CloudRoute</div>
               <div className="space-y-2 text-description text-muted-foreground">
                 <div>Salesforce implementation</div>
