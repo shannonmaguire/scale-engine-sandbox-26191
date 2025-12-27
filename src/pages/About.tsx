@@ -57,7 +57,7 @@ const About = () => {
           },
           {
             question: 'What is the relationship between CWT Studio and CloudRoute?',
-            answer: 'CWT Studio handles revenue operations strategy, process design, and automation architecture. CloudRoute provides Salesforce implementation, platform configuration, and integration engineering. One contract, one team.'
+            answer: 'For projects that require Salesforce implementation, CWT Studio partners with CloudRoute—a certified Salesforce ISV & OEM partner. CWT leads strategy and design; CloudRoute handles platform configuration and integration. For non-Salesforce work, CWT handles directly.'
           }
         ]}
       />
@@ -148,13 +148,14 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Partner Network */}
+      {/* Salesforce Partner */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Who Does the Work</h2>
+          <h2 className="heading-section mb-4">For Salesforce Projects</h2>
+          <p className="text-sm text-muted-foreground mb-8">When an engagement requires Salesforce implementation</p>
 
           <p className="text-description text-muted-foreground mb-10">
-            I lead strategy and design. CloudRoute does the Salesforce heavy lifting. One contract, one team.
+            When a project requires Salesforce, I bring in CloudRoute. They're a certified ISV & OEM partner. I lead strategy and design; they handle platform configuration and integration. One contract, one team.
           </p>
 
           <div className="grid md:grid-cols-2 gap-4 md:gap-6">
@@ -168,7 +169,10 @@ const About = () => {
             </div>
 
             <div className="bg-card p-4 md:p-6 border-l-2 border-accent">
-              <div className="text-label text-accent mb-3">CloudRoute</div>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="text-label text-accent">CloudRoute</div>
+                <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded font-mono">Salesforce ISV Partner</span>
+              </div>
               <div className="space-y-2 text-description text-muted-foreground">
                 <div>Salesforce implementation</div>
                 <div>Platform configuration</div>
@@ -176,6 +180,10 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          <p className="text-sm text-muted-foreground mt-8 italic">
+            For HubSpot, custom ops, or non-Salesforce work—I handle directly.
+          </p>
         </div>
       </Section>
 
