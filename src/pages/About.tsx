@@ -103,11 +103,11 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Before CWT Studio, I spent two years at Salesforce running enterprise healthcare sales—first as a BDR, then leading a team. I saw how broken most revenue systems actually are. Not the tools. The way people implement them.
+                  Before CWT Studio, I spent two years at Salesforce—started as a BDR, got promoted to Account Executive in the SMB space. That's where I saw how broken most revenue systems actually are. Not the tools. The way people implement them.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Now I diagnose what's leaking and install systems that work. I took a cybersecurity consultancy from $0 pipeline to $500K+. I 4x'd trial conversions for a $4.2M SaaS by connecting product usage to their CRM. I built the patient acquisition system for a healthcare startup from nothing.
+                  Now I diagnose what's leaking and install systems that work.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
