@@ -42,7 +42,7 @@ const Instagram = () => {
             <img
               src={shannonHeadshot}
               alt="Shannon Maguire"
-              className="w-28 h-28 rounded-full mx-auto object-cover border-2 border-border"
+              className="w-28 h-28 rounded-full mx-auto object-cover object-top border-2 border-border"
             />
           </div>
 
