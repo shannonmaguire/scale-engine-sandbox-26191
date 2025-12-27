@@ -97,9 +97,23 @@ const About = () => {
                 Founder & Revenue Systems Architect
               </p>
 
-              <p className="text-xl text-foreground mb-8 leading-relaxed">
-                I fix broken sales systems for legal, healthcare, compliance, and SaaS.
-              </p>
+              <div className="space-y-4">
+                <p className="text-xl text-foreground leading-relaxed">
+                  I fix broken sales systems for legal, healthcare, compliance, and SaaS.
+                </p>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  Before CWT Studio, I spent two years at Salesforce running enterprise healthcare sales—first as a BDR, then leading a team. I saw how broken most revenue systems actually are. Not the tools. The way people implement them.
+                </p>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  Now I diagnose what's leaking and install systems that work. I took a cybersecurity consultancy from $0 pipeline to $500K+. I 4x'd trial conversions for a $4.2M SaaS by connecting product usage to their CRM. I built the patient acquisition system for a healthcare startup from nothing.
+                </p>
+                
+                <p className="text-muted-foreground leading-relaxed">
+                  For Salesforce projects, I partner with CloudRoute (Salesforce Platinum Partner). Everything else I handle directly.
+                </p>
+              </div>
 
               <div className="grid grid-cols-2 gap-3 pt-6 border-t border-border">
                 <div className="flex items-baseline gap-3">
