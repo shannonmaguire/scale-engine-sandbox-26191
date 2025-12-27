@@ -33,7 +33,7 @@ const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Start = lazy(() => import("@/pages/Start"));
-const Instagram = lazy(() => import("@/pages/Instagram"));
+
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -48,7 +48,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/start' || location.pathname === '/instagram';
+  const isStandalonePage = location.pathname === '/start';
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -105,7 +105,7 @@ const AppContent = () => {
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/start-here" element={<Navigate to="/start" replace />} />
             <Route path="/start" element={<Start />} />
-            <Route path="/instagram" element={<Instagram />} />
+            
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
