@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
-import shannonHeadshot from "@/assets/shannon-headshot.jpg";
+
 
 const Instagram = () => {
   const links = [
@@ -37,15 +37,6 @@ const Instagram = () => {
 
       <main className="min-h-screen bg-background flex items-center justify-center px-6 py-12">
         <div className="w-full max-w-sm text-center">
-          {/* Headshot */}
-          <div className="mb-6">
-            <img
-              src={shannonHeadshot}
-              alt="Shannon Maguire"
-              className="w-28 h-28 rounded-full mx-auto object-cover object-top border-2 border-border"
-            />
-          </div>
-
           {/* Name */}
           <h1 className="font-mono text-xl font-semibold text-foreground mb-2">
             Shannon Maguire
