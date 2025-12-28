@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
-import { CheckCircle, ArrowRight, FileText, BarChart3, Target, Clock, DollarSign, Zap } from "lucide-react";
+import { CheckCircle, ArrowRight, FileText, BarChart3, Target, Clock, DollarSign } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { CTA, ROUTES, TIMELINES, METRICS } from "@/lib/canonical-constants";
+import { CTA, TIMELINES } from "@/lib/canonical-constants";
 
 const InfrastructureAssessment = () => {
   const deliverables = [
@@ -20,8 +20,8 @@ const InfrastructureAssessment = () => {
     },
     {
       icon: FileText,
-      title: "90-Day Fix Plan",
-      description: "A prioritized roadmap: what to tackle first, how long each fix takes, what depends on what, and quick wins you can implement immediately."
+      title: "Implementation Pathway",
+      description: "A prioritized roadmap with two clear paths forward: a $25K-$40K implementation engagement or a $50K+ enterprise architecture engagement."
     }
   ];
 
@@ -53,27 +53,38 @@ const InfrastructureAssessment = () => {
     "Stakeholder interviews (3-5 key operators)",
     "Benchmark analysis against industry standards",
     "Technical debt and risk assessment",
-    "90-day prioritized implementation roadmap",
+    "Prioritized implementation roadmap",
     "Executive presentation and recommendations document",
     "30-day post-delivery Q&A support window"
+  ];
+
+  const outcomes = [
+    {
+      title: "$25K-$40K Implementation",
+      description: "For established systems that need focused fixes: workflow automation, data cleanup, integration repair, and process optimization."
+    },
+    {
+      title: "$50K+ Enterprise Architecture",
+      description: "For foundational rebuilds: complete system redesign, multi-platform integration, custom development, and organizational change management."
+    }
   ];
 
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Revenue Systems Assessment | 2-Week Diagnostic | CWT Studio"
-        description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, 90-day roadmap. Assessment fee credits 100% toward Sprint."
+        title="Revenue Infrastructure Assessment | $10K-$15K Diagnostic | CWT Studio"
+        description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, implementation pathway. Investment: $10,000-$15,000."
         keywords={[
           'revenue infrastructure assessment',
-          'Salesforce systems audit',
+          'systems audit',
           'technical maturity diagnostic',
           'RevOps assessment',
-          '90-day roadmap'
+          'implementation roadmap'
         ]}
         canonicalUrl="/assessment"
         serviceSchema={{
-          name: 'Infrastructure Assessment',
-          description: 'Comprehensive 2-week revenue infrastructure diagnostic delivering system scorecard, gap analysis, and prioritized 90-day implementation roadmap.',
+          name: 'Revenue Infrastructure Assessment',
+          description: 'Comprehensive 2-week revenue infrastructure diagnostic delivering system scorecard, gap analysis, and prioritized implementation pathway.',
           offers: [
             {
               name: 'Revenue Infrastructure Scorecard',
@@ -84,27 +95,27 @@ const InfrastructureAssessment = () => {
               description: 'Technical debt inventory and system vulnerability mapping'
             },
             {
-              name: '90-Day Implementation Roadmap',
-              description: 'Prioritized deployment sequence with effort estimates and milestones'
+              name: 'Implementation Pathway',
+              description: 'Clear path to $25K-$40K implementation or $50K+ enterprise architecture engagement'
             }
           ]
         }}
         faqSchema={[
           {
             question: 'What is a revenue infrastructure assessment?',
-            answer: 'A comprehensive 2-week diagnostic audit of your revenue systems including CRM, marketing automation, and data infrastructure. Deliverables include a quantitative scorecard, gap analysis, risk assessment, and prioritized 90-day implementation roadmap.'
+            answer: 'A comprehensive 2-week diagnostic audit of your revenue systems including CRM, marketing automation, and data infrastructure. Deliverables include a quantitative scorecard, gap analysis, risk assessment, and prioritized implementation pathway.'
           },
           {
-            question: 'How much does an infrastructure assessment cost?',
-            answer: 'Assessment fees range from $1,500 to $3,000 based on infrastructure complexity. The entire fee credits 100% toward a Sprint engagement if booked within 90 days.'
+            question: 'How much does the assessment cost?',
+            answer: 'Assessment investment ranges from $10,000 to $15,000 based on infrastructure complexity. This is a required entry point before any implementation engagement.'
           },
           {
-            question: 'What is the difference between the free Health Check and paid Assessment?',
-            answer: 'The free Health Check is a 5-minute self-guided quiz providing a high-level maturity score. The paid Assessment is a 2-week expert-led audit with stakeholder interviews, detailed scorecard, benchmarks, and custom 90-day roadmap.'
+            question: 'What happens after the assessment?',
+            answer: 'The assessment ends in one of two outcomes: a $25K-$40K implementation engagement for focused fixes, or a $50K+ enterprise architecture engagement for foundational rebuilds.'
           },
           {
             question: 'Do I need an assessment before working with CWT Studio?',
-            answer: 'Yes, we require an Infrastructure Assessment before any Sprint engagement. This ensures accurate scoping and sets realistic expectations. Start with the free Health Check to identify gaps, then book the full Assessment.'
+            answer: 'Yes. We start with the assessment. This ensures accurate scoping, sets realistic expectations, and qualifies whether we are the right fit for each other.'
           }
         ]}
       />
@@ -114,18 +125,18 @@ const InfrastructureAssessment = () => {
       {/* Hero */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="system-status mb-8">DIAGNOSTIC</div>
+          <div className="system-status mb-8">REVENUE INFRASTRUCTURE ASSESSMENT</div>
           
           <h1 className="heading-page mb-6 leading-[1.1]">
             Find Out What's Breaking
           </h1>
           
           <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-4">
-            {TIMELINES.assessment} diagnostic audit. We map your revenue infrastructure, find what's broken, and build a 90-day fix plan.
+            {TIMELINES.assessment} diagnostic audit. We map your revenue infrastructure, find what's broken, and build your implementation pathway.
           </p>
 
           <p className="text-description text-muted-foreground leading-relaxed max-w-2xl mb-10">
-            Required before Sprint engagement. Assessment fee credits 100% toward Sprint if you proceed within 90 days.
+            Required entry point. We start with the assessment.
           </p>
 
           <Button size="lg" asChild>
@@ -246,18 +257,18 @@ const InfrastructureAssessment = () => {
         </div>
       </Section>
 
-      {/* Investment & Credit Structure */}
+      {/* Investment */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
           <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Investment & Credit Structure</h2>
+            <h2 className="heading-section">Investment</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-10">
+          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-10">
             <div className="border border-border bg-card p-4 md:p-6 text-center">
               <DollarSign className="w-8 h-8 text-primary mx-auto mb-4" />
-              <div className="heading-subsection mb-2">$1,500 - $3,000</div>
+              <div className="heading-subsection mb-2">$10,000 - $15,000</div>
               <div className="text-description text-muted-foreground">
                 Assessment fee based on infrastructure complexity
               </div>
@@ -270,21 +281,36 @@ const InfrastructureAssessment = () => {
                 From kickoff to final roadmap delivery
               </div>
             </div>
+          </div>
+        </div>
+      </Section>
 
-            <div className="border border-border bg-card p-4 md:p-6 text-center">
-              <Zap className="w-8 h-8 text-primary mx-auto mb-4" />
-              <div className="heading-subsection mb-2">100% Credit</div>
-              <div className="text-description text-muted-foreground">
-                Full fee credited toward Sprint if booked within 90 days
+      {/* Step-Up Structure */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">What Happens Next</h2>
+          </div>
+
+          <p className="text-description text-foreground/80 mb-8 max-w-2xl">
+            The assessment ends in one of two outcomes:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {outcomes.map((outcome, index) => (
+              <div key={index} className="border-2 border-primary/30 bg-primary/5 p-6 md:p-8">
+                <h3 className="heading-subsection mb-4">{outcome.title}</h3>
+                <p className="text-description text-muted-foreground">
+                  {outcome.description}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
 
-          <div className="border-2 border-primary/30 bg-primary/5 p-4 md:p-8">
-            <p className="text-description text-foreground text-center max-w-2xl mx-auto font-medium">
-              100% credited toward Sprint within 90 days.
-            </p>
-          </div>
+          <p className="text-description text-muted-foreground mt-8 text-center">
+            No third option. This is how one deal changes everything.
+          </p>
         </div>
       </Section>
 
@@ -298,7 +324,7 @@ const InfrastructureAssessment = () => {
 
           <h2 className="heading-section mb-6">Book Your Assessment</h2>
           <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            {TIMELINES.assessment} diagnostic audit. System scorecard, gap analysis, 90-day roadmap. Fee credits 100% toward Sprint.
+            {TIMELINES.assessment} diagnostic audit. System scorecard, gap analysis, implementation pathway.
           </p>
 
           <Button size="lg" asChild>
