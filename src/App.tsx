@@ -18,13 +18,9 @@ import analytics from "@/lib/analytics";
 // Lazy load route components for better performance
 const Home = lazy(() => import("@/pages/Home"));
 const HowWeWork = lazy(() => import("@/pages/HowWeWork"));
-const Sprint = lazy(() => import("@/pages/Sprint"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const About = lazy(() => import("@/pages/About"));
-const Salesforce = lazy(() => import("@/pages/Salesforce"));
-const Fractional = lazy(() => import("@/pages/Fractional"));
-const WebSystems = lazy(() => import("@/pages/WebSystems"));
 const Proof = lazy(() => import("@/pages/Proof"));
 const Blog = lazy(() => import("@/pages/Blog"));
 const BlogPost = lazy(() => import("@/pages/BlogPost"));
@@ -81,21 +77,23 @@ const AppContent = () => {
             <Route path="/how-we-work" element={<HowWeWork />} />
             <Route path="/assessment" element={<Assessment />} />
             
-            {/* Redirects for old routes and typos */}
+            {/* Redirects for old service routes - all go to assessment */}
+            <Route path="/sprint" element={<Navigate to="/assessment" replace />} />
+            <Route path="/salesforce" element={<Navigate to="/assessment" replace />} />
+            <Route path="/salesforce/delivery" element={<Navigate to="/assessment" replace />} />
+            <Route path="/fractional" element={<Navigate to="/assessment" replace />} />
+            <Route path="/fractional-ops" element={<Navigate to="/assessment" replace />} />
+            <Route path="/web-systems" element={<Navigate to="/assessment" replace />} />
+            <Route path="/web-system" element={<Navigate to="/assessment" replace />} />
+            <Route path="/web" element={<Navigate to="/assessment" replace />} />
+            
+            {/* Redirects for old assessment routes and typos */}
             <Route path="/self-assessment" element={<Navigate to="/assessment" replace />} />
             <Route path="/assessment-preview" element={<Navigate to="/assessment" replace />} />
             <Route path="/assessment-results" element={<Navigate to="/assessment" replace />} />
             <Route path="/infrastructure-assessment" element={<Navigate to="/assessment" replace />} />
             <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
-            <Route path="/fractional-ops" element={<Navigate to="/fractional" replace />} />
-            <Route path="/web-system" element={<Navigate to="/web-systems" replace />} />
             
-            <Route path="/sprint" element={<Sprint />} />
-            <Route path="/salesforce" element={<Salesforce />} />
-            <Route path="/salesforce/delivery" element={<Navigate to="/salesforce" replace />} />
-            <Route path="/fractional" element={<Fractional />} />
-            <Route path="/web-systems" element={<WebSystems />} />
-            <Route path="/web" element={<WebSystems />} />
             <Route path="/proof" element={<Proof />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

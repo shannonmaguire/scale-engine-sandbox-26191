@@ -53,7 +53,6 @@ const Home = () => {
           'revenue operations consulting',
           'CRM implementation',
           'sales operations fix',
-          'Salesforce help',
           'revenue ops',
           'sales system broken'
         ]}
