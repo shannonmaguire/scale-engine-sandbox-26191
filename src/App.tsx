@@ -29,6 +29,7 @@ const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Start = lazy(() => import("@/pages/Start"));
+const Upwork = lazy(() => import("@/pages/Upwork"));
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -44,7 +45,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/start';
+  const isStandalonePage = location.pathname === '/start' || location.pathname === '/upwork';
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -103,6 +104,8 @@ const AppContent = () => {
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/start-here" element={<Navigate to="/start" replace />} />
             <Route path="/start" element={<Start />} />
+            <Route path="/upwork" element={<Upwork />} />
+            <Route path="/operatorsprint" element={<Navigate to="/upwork" replace />} />
             
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
