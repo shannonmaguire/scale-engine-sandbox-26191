@@ -57,7 +57,7 @@ export const TIMELINES = {
 // ===== VALUE PROPOSITIONS =====
 export const VALUE_PROPS = {
   assessmentRequired: "We start with the assessment",
-  implementationPath: "$25K-$40K implementation or $50K+ enterprise architecture",
+  implementationPath: "Implementation engagement or enterprise architecture engagement",
 } as const;
 
 // ===== KEY PHRASES =====

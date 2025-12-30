@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
-import { CheckCircle, ArrowRight, FileText, BarChart3, Target, Clock, DollarSign } from "lucide-react";
+import { CheckCircle, ArrowRight, FileText, BarChart3, Target } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA, TIMELINES } from "@/lib/canonical-constants";
@@ -21,7 +21,7 @@ const InfrastructureAssessment = () => {
     {
       icon: FileText,
       title: "Implementation Pathway",
-      description: "A prioritized roadmap with two clear paths forward: a $25K-$40K implementation engagement or a $50K+ enterprise architecture engagement."
+      description: "A prioritized roadmap with two clear paths forward: a focused implementation engagement or an enterprise architecture engagement."
     }
   ];
 
@@ -60,11 +60,11 @@ const InfrastructureAssessment = () => {
 
   const outcomes = [
     {
-      title: "$25K-$40K Implementation",
+      title: "Implementation Engagement",
       description: "For established systems that need focused fixes: workflow automation, data cleanup, integration repair, and process optimization."
     },
     {
-      title: "$50K+ Enterprise Architecture",
+      title: "Enterprise Architecture",
       description: "For foundational rebuilds: complete system redesign, multi-platform integration, custom development, and organizational change management."
     }
   ];
@@ -72,8 +72,8 @@ const InfrastructureAssessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Revenue Infrastructure Assessment | $10K-$15K Diagnostic | CWT Studio"
-        description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, implementation pathway. Investment: $10,000-$15,000."
+        title="Revenue Infrastructure Assessment | CWT Studio"
+        description="Comprehensive 2-week revenue infrastructure audit. System scorecard, gap analysis, implementation pathway."
         keywords={[
           'revenue infrastructure assessment',
           'systems audit',
@@ -96,7 +96,7 @@ const InfrastructureAssessment = () => {
             },
             {
               name: 'Implementation Pathway',
-              description: 'Clear path to $25K-$40K implementation or $50K+ enterprise architecture engagement'
+              description: 'Clear path to implementation or enterprise architecture engagement'
             }
           ]
         }}
@@ -106,12 +106,12 @@ const InfrastructureAssessment = () => {
             answer: 'A comprehensive 2-week diagnostic audit of your revenue systems including CRM, marketing automation, and data infrastructure. Deliverables include a quantitative scorecard, gap analysis, risk assessment, and prioritized implementation pathway.'
           },
           {
-            question: 'How much does the assessment cost?',
-            answer: 'Assessment investment ranges from $10,000 to $15,000 based on infrastructure complexity. This is a required entry point before any implementation engagement.'
+            question: 'How is the assessment scoped?',
+            answer: 'Assessment scope is determined during the initial conversation based on infrastructure complexity. This is a required entry point before any implementation engagement.'
           },
           {
             question: 'What happens after the assessment?',
-            answer: 'The assessment ends in one of two outcomes: a $25K-$40K implementation engagement for focused fixes, or a $50K+ enterprise architecture engagement for foundational rebuilds.'
+            answer: 'The assessment ends in one of two outcomes: an implementation engagement for focused fixes, or an enterprise architecture engagement for foundational rebuilds.'
           },
           {
             question: 'Do I need an assessment before working with CWT Studio?',
@@ -257,33 +257,6 @@ const InfrastructureAssessment = () => {
         </div>
       </Section>
 
-      {/* Investment */}
-      <Section className="border-b border-border">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Investment</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-10">
-            <div className="border border-border bg-card p-4 md:p-6 text-center">
-              <DollarSign className="w-8 h-8 text-primary mx-auto mb-4" />
-              <div className="heading-subsection mb-2">$10,000 - $15,000</div>
-              <div className="text-description text-muted-foreground">
-                Assessment fee based on infrastructure complexity
-              </div>
-            </div>
-
-            <div className="border border-border bg-card p-4 md:p-6 text-center">
-              <Clock className="w-8 h-8 text-primary mx-auto mb-4" />
-              <div className="heading-subsection mb-2">{TIMELINES.assessment}</div>
-              <div className="text-description text-muted-foreground">
-                From kickoff to final roadmap delivery
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
 
       {/* Step-Up Structure */}
       <Section variant="muted" className="border-b border-border">
