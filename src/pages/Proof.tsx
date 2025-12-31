@@ -265,8 +265,8 @@ const Proof = () => {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Indicator dots */}
-          <div className="flex justify-center gap-2 mb-6">
+          {/* Navigation dots - enlarged for mobile touch targets */}
+          <div className="flex justify-center gap-3 mb-6 min-h-[44px] items-center">
             {metricSets.map((_, index) => (
               <button
                 key={index}
@@ -277,10 +277,10 @@ const Proof = () => {
                     setIsTransitioning(false);
                   }, 150);
                 }}
-                className={`h-1.5 rounded-full transition-all ${
+                className={`h-3 rounded-full transition-all ${
                   index === currentSetIndex 
-                    ? 'w-6 bg-primary' 
-                    : 'w-1.5 bg-border hover:bg-primary/50'
+                    ? 'w-8 bg-primary' 
+                    : 'w-3 bg-border hover:bg-primary/50'
                 }`}
                 aria-label={`View ${metricSets[index].headline}`}
               />
@@ -315,7 +315,7 @@ const Proof = () => {
             <button
               key={study.id}
               onClick={() => setExpandedStudy(expandedStudy === study.id ? null : study.id)}
-              className="text-left bg-card border border-border p-6 hover:border-primary/50 transition-colors"
+              className="text-left bg-card border border-border p-6 hover:border-primary/50 transition-colors active:scale-[0.98] active:bg-card/80"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>

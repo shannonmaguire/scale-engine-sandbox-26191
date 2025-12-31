@@ -115,7 +115,7 @@ const About = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-6 border-t border-border">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-border">
                 <div className="flex items-baseline gap-3">
                   <div className="text-label text-primary font-mono">42</div>
                   <div className="text-sm text-muted-foreground">systems installed</div>
