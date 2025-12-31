@@ -99,7 +99,7 @@ const PrivacyPolicy = memo(() => {
                 </ul>
                 <p className="mt-4">
                   To exercise these rights, you can use our <a href="/data-rights" className="text-primary hover:underline font-medium">Data Rights Portal</a> to 
-                  export or delete your personal data, or contact us at hello@cwtstudio.com.
+                  export or delete your personal data, or contact us at hello@thecwtstudio.com.
                 </p>
                 <div className="mt-4 p-4 bg-muted rounded-lg">
                   <a href="/data-rights" className="inline-flex items-center text-primary hover:underline font-medium">
@@ -156,7 +156,7 @@ const PrivacyPolicy = memo(() => {
                   If you have questions about this privacy policy or our data practices, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@cwtstudio.com</li>
+                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
                   <li><strong>Company:</strong> CWT Studio</li>
                 </ul>
               </section>

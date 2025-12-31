@@ -11,7 +11,7 @@ import {
 const RECIPIENT =
   process.env.AE_SUPPORT_RECIPIENT ||
   process.env.CONTACT_RECIPIENT ||
-  "shannon@creatorwealthtools.com";
+  "shannon@thecwtstudio.com";
 const FROM_ADDRESS =
   process.env.CONTACT_FROM || "CWT Studio AE Support <onboarding@resend.dev>";
 

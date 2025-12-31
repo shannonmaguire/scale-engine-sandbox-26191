@@ -9,9 +9,9 @@ import {
 } from './_lib/validation.js';
 
 const RECIPIENT =
-  process.env.CONTACT_RECIPIENT || "shannon@creatorwealthtools.com";
+  process.env.CONTACT_RECIPIENT || "shannon@thecwtstudio.com";
 const FROM_ADDRESS =
-  process.env.CONTACT_FROM || "Creator Wealth Tools <onboarding@resend.dev>";
+  process.env.CONTACT_FROM || "CWT Studio <onboarding@resend.dev>";
 
 // Field-specific length limits
 const FIELD_LIMITS = {
