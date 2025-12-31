@@ -47,8 +47,8 @@ const Home = () => {
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead
-        title="Revenue Infrastructure for Regulated Industries | CWT Studio"
-        description="Compliant revenue infrastructure for teams in regulated and high-risk environments. Assessment first. Fixed scope. Documented delivery."
+        title="Revenue Infrastructure That Compounds | CWT Studio"
+        description="Revenue infrastructure that scales without breaking. For teams where system failure means lost deals, not just lost time."
         keywords={[
           'revenue infrastructure',
           'regulated industries',
@@ -70,15 +70,15 @@ const Home = () => {
         
         <div className="relative z-10 max-w-4xl">
           <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-8">
-            Assessment first. Fixed scope. Documented delivery.
+            Disciplined systems. Clean execution. Compounding growth.
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
-            Revenue systems built to hold up under scrutiny.
+            Growth dies when systems break.
           </h1>
 
           <p className="text-lg md:text-xl text-foreground font-medium mb-8 max-w-2xl">
-            We design and implement compliant revenue infrastructure for teams operating in regulated and high-risk environments.
+            We build revenue infrastructure that scales without breaking. For teams where system failure means lost deals, not just lost time.
           </p>
 
           <div className="flex flex-col gap-6">

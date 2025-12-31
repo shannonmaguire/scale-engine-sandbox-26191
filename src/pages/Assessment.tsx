@@ -73,7 +73,7 @@ const InfrastructureAssessment = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Revenue Infrastructure Assessment | CWT Studio"
-        description="2-week diagnostic for teams in regulated industries. System scorecard, risk assessment, implementation pathway."
+        description="2-week diagnostic. Find what's slowing your growth and get a clear fix plan."
         keywords={[
           'revenue infrastructure assessment',
           'systems audit',
@@ -128,7 +128,7 @@ const InfrastructureAssessment = () => {
           <div className="system-status mb-8">REVENUE INFRASTRUCTURE ASSESSMENT</div>
           
           <p className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-4">
-            For teams in regulated and high-risk environments
+            For teams where broken systems mean lost deals
           </p>
           
           <h1 className="heading-page mb-6 leading-[1.1]">
@@ -136,7 +136,7 @@ const InfrastructureAssessment = () => {
           </h1>
           
           <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-4">
-            {TIMELINES.assessment} diagnostic audit. We audit your revenue infrastructure for compliance gaps, system risk, and structural weaknesses.
+            {TIMELINES.assessment} diagnostic audit. We find what's breaking your growth—system bottlenecks, data leaks, process gaps—and a clear path to fix them.
           </p>
 
           <p className="text-description text-muted-foreground leading-relaxed max-w-2xl mb-10">

@@ -27,7 +27,7 @@ const About = () => {
       <EngagementTracker />
       <SEOHead 
         title="About Shannon Maguire | Revenue Systems Architect | CWT Studio" 
-        description="Shannon Maguire designs and builds revenue systems for regulated and high-trust industries where system failure carries financial, legal, and compliance consequences." 
+        description="Shannon Maguire builds revenue systems that compound—for legal, healthcare, and B2B SaaS teams where broken infrastructure kills growth." 
         keywords={[
           'about CWT Studio', 
           'revenue infrastructure', 
@@ -99,7 +99,7 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I design revenue infrastructure for regulated industries—legal, healthcare, compliance, and SaaS.
+                  I build revenue systems that compound. Legal, healthcare, compliance, SaaS—industries where broken systems kill deals.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
@@ -107,7 +107,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Now I audit systems and install infrastructure that holds up under scrutiny.
+                  Now I install infrastructure that scales. Clean execution, documented handoff, zero dependencies on me.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">

@@ -8,10 +8,10 @@
 
 // ===== POSITIONING =====
 export const POSITIONING = {
-  primary: "Revenue infrastructure for teams operating in regulated and high-risk environments.",
-  tagline: "Growth dies when systems break.",
-  supportingLine: "For teams in regulated and high-risk environments.",
-  compliance: "Revenue systems built to hold up under scrutiny.",
+  primary: "Growth dies when systems break.",
+  tagline: "Revenue infrastructure that compounds.",
+  supportingLine: "For teams where broken systems mean lost deals, not just lost time.",
+  velocity: "Disciplined systems. Clean execution. Compounding growth.",
 } as const;
 
 // ===== SERVICE NAMES =====
