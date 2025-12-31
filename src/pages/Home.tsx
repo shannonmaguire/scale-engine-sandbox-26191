@@ -47,14 +47,14 @@ const Home = () => {
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead
-        title="Revenue Operations Consulting | CRM Implementation | CWT Studio"
-        description="Fix broken sales systems: leads dying in inboxes, forecasts that are guesses, founders stuck in admin. Revenue ops for legal, healthcare, and B2B SaaS."
+        title="Revenue Infrastructure for Regulated Industries | CWT Studio"
+        description="Compliant revenue infrastructure for teams in regulated and high-risk environments. Assessment first. Fixed scope. Documented delivery."
         keywords={[
-          'revenue operations consulting',
-          'CRM implementation',
-          'sales operations fix',
-          'revenue ops',
-          'sales system broken'
+          'revenue infrastructure',
+          'regulated industries',
+          'compliant CRM',
+          'revenue operations',
+          'high-risk environments'
         ]}
         canonicalUrl="/"
       />
@@ -69,30 +69,26 @@ const Home = () => {
         />
         
         <div className="relative z-10 max-w-4xl">
-          <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-xs uppercase tracking-widest">
-            <span className="text-primary font-semibold">Revenue Ops</span>
-            <span className="text-muted-foreground">|</span>
-            <span className="text-muted-foreground">{METRICS.deployments}</span>
+          <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-8">
+            Assessment first. Fixed scope. Documented delivery.
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">
-            Your leads are dying in inboxes.<br/>
-            Your forecast is a guess.<br/>
-            <span className="text-primary">We fix that.</span>
+            Revenue systems built to hold up under scrutiny.
           </h1>
 
           <p className="text-lg md:text-xl text-foreground font-medium mb-8 max-w-2xl">
-            We fix your sales systems so they actually work.
+            We design and implement compliant revenue infrastructure for teams operating in regulated and high-risk environments.
           </p>
 
           <div className="flex flex-col gap-6">
             <ConversionOptimizedButton
               to={ROUTES.assessment}
-              ctaName="Hero - Find Out What's Breaking"
+              ctaName="Hero - Run Assessment"
               location="Homepage Hero"
               size="lg"
             >
-              Find Out What's Breaking
+              Run a revenue infrastructure assessment
             </ConversionOptimizedButton>
 
             <div className="flex flex-wrap gap-3 md:gap-6 pt-2">
