@@ -164,9 +164,9 @@ const Proof = () => {
       <Section noPadding className="border-b border-border">
         <div className="section-spacing-half">
           <div className="system-status mb-8">CASE STUDIES</div>
-          <h1 className="heading-page mb-4">Results Under Scrutiny</h1>
+          <h1 className="heading-page mb-4">Systems That Scaled</h1>
           <p className="text-description text-muted-foreground max-w-2xl">
-            Documented outcomes from regulated and high-stakes environments.
+            Real results from teams that stopped leaking and started compounding.
           </p>
         </div>
       </Section>

@@ -22,7 +22,7 @@ const Start = () => {
               Your revenue systems are either compounding or leaking.
             </h1>
             <p className="text-muted-foreground text-lg mb-10">
-              Revenue infrastructure for teams operating in regulated and high-risk environments.
+              We find the leaks and install systems that compound.
             </p>
             <Link
               to={bookingUrl}
