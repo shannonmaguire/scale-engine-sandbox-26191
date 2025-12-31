@@ -205,9 +205,12 @@ const Proof = () => {
   // Rotating metrics state
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-rotate every 5 seconds
+  // Auto-rotate every 5 seconds (pauses on hover)
   useEffect(() => {
+    if (isPaused) return;
+    
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
@@ -217,7 +220,7 @@ const Proof = () => {
     }, 5000);
     
     return () => clearInterval(interval);
-  }, [metricSets.length]);
+  }, [metricSets.length, isPaused]);
 
   const currentMetrics = metricSets[currentSetIndex];
 
@@ -257,7 +260,11 @@ const Proof = () => {
 
       {/* Metrics Bar - Rotating highlights from case studies */}
       <Section variant="muted" className="py-8 border-b border-border">
-        <div className="max-w-4xl mx-auto">
+        <div 
+          className="max-w-4xl mx-auto"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Indicator dots */}
           <div className="flex justify-center gap-2 mb-6">
             {metricSets.map((_, index) => (
