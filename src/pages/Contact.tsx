@@ -314,10 +314,10 @@ const Contact = () => {
                   <h3 className="font-mono text-sm uppercase tracking-widest">Direct Email</h3>
                 </div>
                 <a 
-                  href="mailto:shannon@cwtstudio.com" 
+                  href="mailto:shannon@thecwtstudio.com" 
                   className="text-primary hover:text-primary/80 font-mono transition-colors"
                 >
-                  shannon@cwtstudio.com
+                  shannon@thecwtstudio.com
                 </a>
               </div>
 

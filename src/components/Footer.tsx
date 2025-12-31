@@ -82,9 +82,9 @@ const Footer = () => {
               Contact
             </h4>
             <div className="space-y-4 sm:space-y-3">
-              <a href="mailto:hello@cwtstudio.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0">
+              <a href="mailto:hello@thecwtstudio.com" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0">
                 <Mail className="h-4 w-4 sm:h-3.5 sm:w-3.5 flex-shrink-0" />
-                hello@cwtstudio.com
+                hello@thecwtstudio.com
               </a>
               <a href="https://www.linkedin.com/company/cwt-studio/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-base sm:text-sm min-h-[44px] sm:min-h-0">
                 <Linkedin className="h-4 w-4 sm:h-3.5 sm:w-3.5 flex-shrink-0" />

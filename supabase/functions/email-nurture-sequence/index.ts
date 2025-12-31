@@ -205,7 +205,7 @@ const handler = async (req: Request): Promise<Response> => {
       // Continue anyway - better to send duplicate than block legitimate user
     }
 
-    const fromEmail = "CWT Studio <hello@cwtstudio.com>";
+    const fromEmail = "CWT Studio <hello@thecwtstudio.com>";
     const fromEmailFallback = "CWT Studio <onboarding@resend.dev>";
 
     // Send Email 1 immediately

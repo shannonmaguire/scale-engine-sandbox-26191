@@ -190,7 +190,7 @@ const TermsOfService = memo(() => {
                   For questions about these Terms, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@cwtstudio.com</li>
+                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
                 </ul>
               </section>
             </div>
