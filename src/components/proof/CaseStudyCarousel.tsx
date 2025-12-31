@@ -26,19 +26,35 @@ interface CaseStudy {
 
 interface CaseStudyCarouselProps {
   caseStudies: CaseStudy[];
+  initialIndex?: number;
+  onIndexChange?: (index: number) => void;
 }
 
-export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export const CaseStudyCarousel = ({ caseStudies, initialIndex = 0, onIndexChange }: CaseStudyCarouselProps) => {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
   const totalStudies = caseStudies.length;
 
+  // Sync with external initialIndex changes
+  useEffect(() => {
+    setCurrentIndex(initialIndex);
+  }, [initialIndex]);
+
   const goToPrevious = useCallback(() => {
-    setCurrentIndex(prev => prev === 0 ? totalStudies - 1 : prev - 1);
-  }, [totalStudies]);
+    const newIndex = currentIndex === 0 ? totalStudies - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    onIndexChange?.(newIndex);
+  }, [totalStudies, currentIndex, onIndexChange]);
 
   const goToNext = useCallback(() => {
-    setCurrentIndex(prev => prev === totalStudies - 1 ? 0 : prev + 1);
-  }, [totalStudies]);
+    const newIndex = currentIndex === totalStudies - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    onIndexChange?.(newIndex);
+  }, [totalStudies, currentIndex, onIndexChange]);
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+    onIndexChange?.(index);
+  };
 
   // Keyboard navigation
   useEffect(() => {
@@ -64,7 +80,7 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
             {caseStudies.map((_, index) => (
               <button 
                 key={index} 
-                onClick={() => setCurrentIndex(index)} 
+                onClick={() => handleDotClick(index)} 
                 className={`h-2 rounded-full transition-all ${
                   index === currentIndex 
                     ? "w-6 bg-primary" 
