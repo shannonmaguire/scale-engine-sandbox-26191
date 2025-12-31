@@ -5,7 +5,68 @@ import { Section } from "@/components/ui/section";
 import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
 import { PartnerLogos } from "@/components/TrustIndicators";
 import { TIMELINES } from "@/lib/canonical-constants";
-import { useState } from "react";
+import { useState, useMemo } from "react";
+
+interface CaseStudy {
+  id: number;
+  industry: string;
+  vertical: string;
+  size: string;
+  timeline: string;
+  humanProblem: string;
+  whatBroke: string;
+  pullQuote: string;
+  system: string[];
+  beforeMetric: { label: string; value: string };
+  afterMetric: { label: string; value: string };
+  growth: string;
+  patternRestored: string;
+}
+
+interface DerivedMetric {
+  value: string;
+  label: string;
+}
+
+const deriveBestMetrics = (studies: CaseStudy[]): DerivedMetric[] => {
+  // Find highest pipeline value (case study 3: $500K+)
+  const pipelineStudy = studies.find(s => s.afterMetric.value.includes('$500K'));
+  
+  // Find conversion multiplier (case study 6: 4x)
+  const conversionStudy = studies.find(s => s.growth.includes('4x'));
+  
+  // Find time savings percentage (case study 7: 87%)
+  const timeStudy = studies.find(s => s.growth.includes('87%'));
+  
+  // Find most common timeline (count occurrences)
+  const timelineCounts = studies.reduce((acc, s) => {
+    const days = s.timeline.replace(' Days', '').replace(' months', ' months');
+    acc[days] = (acc[days] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+  
+  const mostCommonTimeline = Object.entries(timelineCounts)
+    .sort((a, b) => b[1] - a[1])[0]?.[0] || '90';
+
+  return [
+    { 
+      value: pipelineStudy?.afterMetric.value || '$500K+', 
+      label: 'Pipeline Built' 
+    },
+    { 
+      value: conversionStudy?.growth.replace(' Conversion', '') || '4x', 
+      label: 'Conversion Lift' 
+    },
+    { 
+      value: timeStudy?.growth.replace(' Time Saved', '') || '87%', 
+      label: 'Less Admin Work' 
+    },
+    { 
+      value: mostCommonTimeline.replace(' Days', ''), 
+      label: 'Days to Fix' 
+    }
+  ];
+};
 
 const Proof = () => {
   const [expandedStudy, setExpandedStudy] = useState<number | null>(null);
@@ -137,6 +198,9 @@ const Proof = () => {
   // Featured case studies for above-the-fold preview
   const featuredStudies = caseStudies.slice(0, 4);
 
+  // Derive metrics from case study data
+  const derivedMetrics = useMemo(() => deriveBestMetrics(caseStudies), [caseStudies]);
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -171,25 +235,19 @@ const Proof = () => {
         </div>
       </Section>
 
-      {/* Metrics Bar - Above the fold */}
+      {/* Metrics Bar - Dynamically derived from case studies */}
       <Section variant="muted" className="py-8 border-b border-border">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary font-mono">$500K+</div>
-            <div className="text-sm text-muted-foreground mt-1">Pipeline Built</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary font-mono">4x</div>
-            <div className="text-sm text-muted-foreground mt-1">Conversion Lift</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary font-mono">87%</div>
-            <div className="text-sm text-muted-foreground mt-1">Less Admin Work</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary font-mono">90</div>
-            <div className="text-sm text-muted-foreground mt-1">Days to Fix</div>
-          </div>
+          {derivedMetrics.map((metric, index) => (
+            <div key={index} className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-primary font-mono">
+                {metric.value}
+              </div>
+              <div className="text-sm text-muted-foreground mt-1">
+                {metric.label}
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
 
