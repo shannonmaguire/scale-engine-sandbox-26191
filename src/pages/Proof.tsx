@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/section";
 import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
 import { PartnerLogos } from "@/components/TrustIndicators";
 import { TIMELINES } from "@/lib/canonical-constants";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 interface CaseStudy {
   id: number;
@@ -26,44 +26,45 @@ interface CaseStudy {
 interface DerivedMetric {
   value: string;
   label: string;
+  source?: string;
 }
 
-const deriveBestMetrics = (studies: CaseStudy[]): DerivedMetric[] => {
-  // Find highest pipeline value (case study 3: $500K+)
-  const pipelineStudy = studies.find(s => s.afterMetric.value.includes('$500K'));
-  
-  // Find conversion multiplier (case study 6: 4x)
-  const conversionStudy = studies.find(s => s.growth.includes('4x'));
-  
-  // Find time savings percentage (case study 7: 87%)
-  const timeStudy = studies.find(s => s.growth.includes('87%'));
-  
-  // Find most common timeline (count occurrences)
-  const timelineCounts = studies.reduce((acc, s) => {
-    const days = s.timeline.replace(' Days', '').replace(' months', ' months');
-    acc[days] = (acc[days] || 0) + 1;
-    return acc;
-  }, {} as Record<string, number>);
-  
-  const mostCommonTimeline = Object.entries(timelineCounts)
-    .sort((a, b) => b[1] - a[1])[0]?.[0] || '90';
+interface MetricSet {
+  metrics: DerivedMetric[];
+  headline: string;
+}
 
+const deriveAllMetricSets = (studies: CaseStudy[]): MetricSet[] => {
   return [
-    { 
-      value: pipelineStudy?.afterMetric.value || '$500K+', 
-      label: 'Pipeline Built' 
+    // Set 1: Pipeline & Growth
+    {
+      headline: "Pipeline & Growth",
+      metrics: [
+        { value: '$500K+', label: 'Pipeline Built', source: 'Federal Cybersecurity' },
+        { value: '4x', label: 'Conversion Lift', source: 'B2B SaaS' },
+        { value: '87%', label: 'Less Admin Work', source: 'Marketing Agency' },
+        { value: '90', label: 'Days to Fix' }
+      ]
     },
-    { 
-      value: conversionStudy?.growth.replace(' Conversion', '') || '4x', 
-      label: 'Conversion Lift' 
+    // Set 2: Efficiency & Speed
+    {
+      headline: "Efficiency Gains",
+      metrics: [
+        { value: '2-5', label: 'Qualified Calls/Day', source: 'Creator Platform' },
+        { value: '24%', label: 'PQL Conversion', source: 'SaaS Platform' },
+        { value: '13hrs', label: 'Weekly Time Saved', source: 'Marketing Agency' },
+        { value: '40%+', label: 'Email Open Rates', source: 'Federal Cyber' }
+      ]
     },
-    { 
-      value: timeStudy?.growth.replace(' Time Saved', '') || '87%', 
-      label: 'Less Admin Work' 
-    },
-    { 
-      value: mostCommonTimeline.replace(' Days', ''), 
-      label: 'Days to Fix' 
+    // Set 3: Revenue Results
+    {
+      headline: "Revenue Impact",
+      metrics: [
+        { value: '+107%', label: 'Sales Growth', source: 'E-Commerce' },
+        { value: '100+', label: 'User Signups', source: 'Creator SaaS' },
+        { value: '8.9', label: 'Client NPS', source: 'Marketing Agency' },
+        { value: '90', label: 'Days to Launch', source: 'Healthcare' }
+      ]
     }
   ];
 };
@@ -198,8 +199,27 @@ const Proof = () => {
   // Featured case studies for above-the-fold preview
   const featuredStudies = caseStudies.slice(0, 4);
 
-  // Derive metrics from case study data
-  const derivedMetrics = useMemo(() => deriveBestMetrics(caseStudies), [caseStudies]);
+  // Derive all metric sets from case study data
+  const metricSets = useMemo(() => deriveAllMetricSets(caseStudies), [caseStudies]);
+  
+  // Rotating metrics state
+  const [currentSetIndex, setCurrentSetIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Auto-rotate every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentSetIndex(prev => (prev + 1) % metricSets.length);
+        setIsTransitioning(false);
+      }, 300);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, [metricSets.length]);
+
+  const currentMetrics = metricSets[currentSetIndex];
 
   return (
     <div className="min-h-screen bg-background">
@@ -235,19 +255,48 @@ const Proof = () => {
         </div>
       </Section>
 
-      {/* Metrics Bar - Dynamically derived from case studies */}
+      {/* Metrics Bar - Rotating highlights from case studies */}
       <Section variant="muted" className="py-8 border-b border-border">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-          {derivedMetrics.map((metric, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-primary font-mono">
-                {metric.value}
+        <div className="max-w-4xl mx-auto">
+          {/* Indicator dots */}
+          <div className="flex justify-center gap-2 mb-6">
+            {metricSets.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setIsTransitioning(true);
+                  setTimeout(() => {
+                    setCurrentSetIndex(index);
+                    setIsTransitioning(false);
+                  }, 150);
+                }}
+                className={`h-1.5 rounded-full transition-all ${
+                  index === currentSetIndex 
+                    ? 'w-6 bg-primary' 
+                    : 'w-1.5 bg-border hover:bg-primary/50'
+                }`}
+                aria-label={`View ${metricSets[index].headline}`}
+              />
+            ))}
+          </div>
+          
+          {/* Rotating metrics */}
+          <div 
+            className={`grid grid-cols-2 md:grid-cols-4 gap-6 transition-opacity duration-300 ${
+              isTransitioning ? 'opacity-0' : 'opacity-100'
+            }`}
+          >
+            {currentMetrics.metrics.map((metric, index) => (
+              <div key={index} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-primary font-mono">
+                  {metric.value}
+                </div>
+                <div className="text-sm text-muted-foreground mt-1">
+                  {metric.label}
+                </div>
               </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                {metric.label}
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </Section>
 
