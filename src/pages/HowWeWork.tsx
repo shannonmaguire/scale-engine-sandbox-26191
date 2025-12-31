@@ -40,11 +40,12 @@ const HowWeWork = () => {
     <div className="min-h-screen">
       <SEOHead
         title="How We Work | CWT Studio"
-        description="Our methodology for building revenue infrastructure. Six-layer architecture and implementation process."
+        description="Revenue infrastructure methodology for regulated industries. Six-layer architecture and implementation process."
         keywords={[
           'revenue infrastructure methodology',
           'RevOps implementation',
-          'revenue operations process'
+          'revenue operations process',
+          'regulated industries'
         ]}
         canonicalUrl="/how-we-work"
       />
@@ -55,9 +56,12 @@ const HowWeWork = () => {
       <Section>
         <div className="max-w-3xl">
           <div className="system-status mb-8">METHODOLOGY</div>
+          <p className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-4">
+            For teams in regulated and high-risk environments
+          </p>
           <h1 className="heading-page mb-6">How We Work</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Revenue infrastructure is built in layers. Each depends on the one before it.
+            Revenue infrastructure for regulated industries is built in layers. Each depends on the one before it.
           </p>
         </div>
       </Section>

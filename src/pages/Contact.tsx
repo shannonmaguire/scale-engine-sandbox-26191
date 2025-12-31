@@ -190,7 +190,7 @@ const Contact = () => {
               Let's Talk
             </h1>
             <p className="text-description text-muted-foreground max-w-xl mx-auto">
-              Tell us what's breaking. We'll respond within 24 hours.
+              Describe your infrastructure. We'll respond within 24 hours.
             </p>
           </div>
 
@@ -240,14 +240,14 @@ const Contact = () => {
                 {/* Message - The One Open Question */}
                 <div>
                   <Label htmlFor="message" className="text-label mb-2 block">
-                    What's breaking right now? *
+                    Describe your current systems *
                   </Label>
                   <Textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => handleInputChange("message", e.target.value)}
                     onBlur={() => handleBlur("message")}
-                    placeholder="Tell us about the biggest friction point in your revenue operations..."
+                    placeholder="Tell us about your revenue infrastructure and what you're trying to solve..."
                     rows={5}
                     required
                     className={`font-mono resize-none ${errors.message && touched.message ? 'border-destructive' : ''}`}

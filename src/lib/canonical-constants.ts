@@ -8,8 +8,10 @@
 
 // ===== POSITIONING =====
 export const POSITIONING = {
-  primary: "Revenue systems are load-bearing. Growth reveals where they crack.",
-  tagline: "Infrastructure is risk containment",
+  primary: "Revenue infrastructure for teams operating in regulated and high-risk environments.",
+  tagline: "Growth dies when systems break.",
+  supportingLine: "For teams in regulated and high-risk environments.",
+  compliance: "Revenue systems built to hold up under scrutiny.",
 } as const;
 
 // ===== SERVICE NAMES =====
