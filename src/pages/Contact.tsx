@@ -194,9 +194,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Simplified Contact Form */}
-            <div className="lg:col-span-3">
+            <div className="lg:col-span-2">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
@@ -296,7 +296,7 @@ const Contact = () => {
             </div>
 
             {/* Side Info */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-1 space-y-6">
               <div className="border border-border p-4 md:p-6 bg-card">
                 <div className="flex items-center gap-3 mb-4">
                   <Clock className="w-5 h-5 text-primary" />

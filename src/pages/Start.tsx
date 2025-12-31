@@ -26,7 +26,7 @@ const Start = () => {
             </p>
             <Link
               to={bookingUrl}
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 min-h-[48px] font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
             >
               Book Revenue Assessment
               <ArrowRight className="w-4 h-4" />
@@ -111,7 +111,7 @@ const Start = () => {
           <section className="pt-8 border-t border-border">
             <Link
               to={bookingUrl}
-              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-4 min-h-[48px] font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
             >
               Book Revenue Assessment
               <ArrowRight className="w-4 h-4" />
