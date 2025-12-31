@@ -10,7 +10,7 @@ const Start = () => {
       <Helmet>
         <title>Revenue Infrastructure Assessment | CWT Studio</title>
         <meta name="robots" content="noindex, nofollow" />
-        <meta name="description" content="2-week revenue diagnostic for high-trust teams where failure is expensive. Fixed price. Fixed output." />
+        <meta name="description" content="2-week revenue diagnostic for teams in regulated and high-risk environments. Fixed price. Fixed output." />
       </Helmet>
 
       <div className="min-h-screen bg-background text-foreground">
@@ -22,7 +22,7 @@ const Start = () => {
               Your revenue systems are either compounding or leaking.
             </h1>
             <p className="text-muted-foreground text-lg mb-10">
-              Revenue infrastructure for high-trust teams where failure is expensive.
+              Revenue infrastructure for teams operating in regulated and high-risk environments.
             </p>
             <Link
               to={bookingUrl}

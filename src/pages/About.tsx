@@ -99,7 +99,7 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I fix broken sales systems for legal, healthcare, compliance, and SaaS.
+                  I design revenue infrastructure for regulated industries—legal, healthcare, compliance, and SaaS.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
@@ -107,7 +107,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Now I diagnose what's leaking and install systems that work.
+                  Now I audit systems and install infrastructure that holds up under scrutiny.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
