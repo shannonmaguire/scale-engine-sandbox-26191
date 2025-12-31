@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/section";
 import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
 import { PartnerLogos } from "@/components/TrustIndicators";
 import { TIMELINES } from "@/lib/canonical-constants";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 
 interface CaseStudy {
   id: number;
@@ -32,13 +32,15 @@ interface DerivedMetric {
 interface MetricSet {
   metrics: DerivedMetric[];
   headline: string;
+  linkedCaseStudyIndex: number;
 }
 
 const deriveAllMetricSets = (studies: CaseStudy[]): MetricSet[] => {
   return [
-    // Set 1: Pipeline & Growth
+    // Set 1: Pipeline & Growth - links to Federal Cyber (id 3, index 2)
     {
       headline: "Pipeline & Growth",
+      linkedCaseStudyIndex: 2,
       metrics: [
         { value: '$500K+', label: 'Pipeline Built', source: 'Federal Cybersecurity' },
         { value: '4x', label: 'Conversion Lift', source: 'B2B SaaS' },
@@ -46,9 +48,10 @@ const deriveAllMetricSets = (studies: CaseStudy[]): MetricSet[] => {
         { value: '90', label: 'Days to Fix' }
       ]
     },
-    // Set 2: Efficiency & Speed
+    // Set 2: Efficiency & Speed - links to Creator Platform (id 2, index 1)
     {
       headline: "Efficiency Gains",
+      linkedCaseStudyIndex: 1,
       metrics: [
         { value: '2-5', label: 'Qualified Calls/Day', source: 'Creator Platform' },
         { value: '24%', label: 'PQL Conversion', source: 'SaaS Platform' },
@@ -56,9 +59,10 @@ const deriveAllMetricSets = (studies: CaseStudy[]): MetricSet[] => {
         { value: '40%+', label: 'Email Open Rates', source: 'Federal Cyber' }
       ]
     },
-    // Set 3: Revenue Results
+    // Set 3: Revenue Results - links to E-Commerce (id 5, index 4)
     {
       headline: "Revenue Impact",
+      linkedCaseStudyIndex: 4,
       metrics: [
         { value: '+107%', label: 'Sales Growth', source: 'E-Commerce' },
         { value: '100+', label: 'User Signups', source: 'Creator SaaS' },
@@ -202,10 +206,31 @@ const Proof = () => {
   // Derive all metric sets from case study data
   const metricSets = useMemo(() => deriveAllMetricSets(caseStudies), [caseStudies]);
   
+  // Carousel ref and controlled index
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
+  
   // Rotating metrics state
   const [currentSetIndex, setCurrentSetIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+
+  // Handle clicking a metric set to scroll to carousel
+  const handleMetricSetClick = (index: number) => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentSetIndex(index);
+      setIsTransitioning(false);
+      
+      // Set carousel to linked case study and scroll
+      const linkedIndex = metricSets[index].linkedCaseStudyIndex;
+      setCarouselIndex(linkedIndex);
+      
+      setTimeout(() => {
+        carouselRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }, 150);
+  };
 
   // Auto-rotate every 5 seconds (pauses on hover)
   useEffect(() => {
@@ -265,27 +290,26 @@ const Proof = () => {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Indicator dots */}
+          {/* Indicator dots - clickable to scroll to related case studies */}
           <div className="flex justify-center gap-2 mb-6">
-            {metricSets.map((_, index) => (
+            {metricSets.map((set, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setIsTransitioning(true);
-                  setTimeout(() => {
-                    setCurrentSetIndex(index);
-                    setIsTransitioning(false);
-                  }, 150);
-                }}
+                onClick={() => handleMetricSetClick(index)}
                 className={`h-1.5 rounded-full transition-all ${
                   index === currentSetIndex 
                     ? 'w-6 bg-primary' 
                     : 'w-1.5 bg-border hover:bg-primary/50'
                 }`}
-                aria-label={`View ${metricSets[index].headline}`}
+                aria-label={`View ${set.headline} and scroll to related case study`}
               />
             ))}
           </div>
+          
+          {/* Click hint */}
+          <p className="text-xs text-muted-foreground text-center mb-4 font-mono">
+            Click to see related case study
+          </p>
           
           {/* Rotating metrics */}
           <div 
@@ -374,11 +398,17 @@ const Proof = () => {
 
       {/* Full Case Studies - Carousel for deep dives */}
       <Section className="border-b border-border">
-        <h2 className="heading-section mb-2">All 8 Case Studies</h2>
-        <p className="text-description text-muted-foreground mb-8">
-          The full story with details.
-        </p>
-        <CaseStudyCarousel caseStudies={caseStudies} />
+        <div ref={carouselRef} className="scroll-mt-24">
+          <h2 className="heading-section mb-2">All 8 Case Studies</h2>
+          <p className="text-description text-muted-foreground mb-8">
+            The full story with details.
+          </p>
+          <CaseStudyCarousel 
+            caseStudies={caseStudies} 
+            initialIndex={carouselIndex}
+            onIndexChange={setCarouselIndex}
+          />
+        </div>
       </Section>
 
       {/* Trust Indicators */}
