@@ -58,13 +58,13 @@ export const Breadcrumbs = () => {
                 <ChevronRight className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
               )}
               {isLast ? (
-                <span className="text-foreground font-semibold" aria-current="page">
+                <span className="text-foreground font-semibold min-h-[44px] inline-flex items-center" aria-current="page">
                   {crumb.label}
                 </span>
               ) : (
                 <Link
                   to={crumb.path}
-                  className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 min-h-[44px]"
                 >
                   {isFirst && <Home className="w-3.5 h-3.5" aria-hidden="true" />}
                   {crumb.label}

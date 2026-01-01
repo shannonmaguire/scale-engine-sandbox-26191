@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
-import { CheckCircle, ArrowRight, FileText, BarChart3, Target } from "lucide-react";
+import { CheckCircle, ArrowRight, FileText, BarChart3, Target, X } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA, TIMELINES } from "@/lib/canonical-constants";
@@ -159,29 +159,29 @@ const InfrastructureAssessment = () => {
             <h3 className="font-mono text-sm uppercase tracking-widest text-destructive mb-4">
               Do Not Book If
             </h3>
-            <ul className="space-y-3 text-base text-foreground">
-              <li className="flex items-start gap-2">
-                <span className="text-destructive font-bold">×</span>
+            <ul className="space-y-2 text-base text-foreground">
+              <li className="flex items-start gap-3 min-h-[44px] py-2">
+                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                 <span>Seeking validation.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-destructive font-bold">×</span>
+              <li className="flex items-start gap-3 min-h-[44px] py-2">
+                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                 <span>Unwilling to rebuild.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-destructive font-bold">×</span>
+              <li className="flex items-start gap-3 min-h-[44px] py-2">
+                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                 <span>Comparing on price.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-destructive font-bold">×</span>
+              <li className="flex items-start gap-3 min-h-[44px] py-2">
+                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                 <span>Nothing built yet.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-destructive font-bold">×</span>
+              <li className="flex items-start gap-3 min-h-[44px] py-2">
+                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                 <span>Education without ownership transfer.</span>
               </li>
-              <li className="flex items-start gap-2">
-                <span className="text-destructive font-bold">×</span>
+              <li className="flex items-start gap-3 min-h-[44px] py-2">
+                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
                 <span>Addicted to optionality.</span>
               </li>
             </ul>

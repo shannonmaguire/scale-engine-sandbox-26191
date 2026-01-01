@@ -66,7 +66,7 @@ const About = () => {
         <div className="max-w-4xl">
           <div className="system-status mb-8">FOUNDER</div>
           <div className="grid md:grid-cols-[240px,1fr] gap-8 md:gap-12 items-start">
-            <div className="w-full max-w-[240px] mx-auto md:mx-0">
+            <div className="w-full max-w-[200px] sm:max-w-[240px] mx-auto md:mx-0">
               <img 
                 src={shannonHeadshot} 
                 alt="Shannon Maguire, Founder & Revenue Systems Architect" 

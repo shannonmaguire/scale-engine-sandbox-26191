@@ -81,20 +81,20 @@ const HowWeWork = () => {
 
           <div className="space-y-6">
             {phases.map((phase, index) => (
-              <div key={index} className="border border-border bg-card p-6">
-                <div className="flex items-start gap-6">
+              <div key={index} className="border border-border bg-card p-4 md:p-6">
+                <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
                   <div className="font-mono text-3xl font-bold text-primary/20">{phase.phase}</div>
                   <div className="flex-1">
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                       <h3 className="heading-subsection">{phase.title}</h3>
-                      <span className="font-mono text-xs text-muted-foreground bg-muted px-3 py-1">
+                      <span className="font-mono text-xs text-muted-foreground bg-muted px-3 py-1 self-start sm:self-auto">
                         {phase.duration}
                       </span>
                     </div>
                     
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-wrap gap-3 md:gap-4">
                       {phase.deliverables.map((deliverable, dIndex) => (
-                        <div key={dIndex} className="flex items-center gap-2 text-sm">
+                        <div key={dIndex} className="flex items-center gap-2 text-sm py-1">
                           <CheckCircle className="w-4 h-4 text-primary flex-shrink-0" strokeWidth={2} />
                           <span className="font-mono">{deliverable}</span>
                         </div>
