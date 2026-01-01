@@ -91,11 +91,11 @@ const Home = () => {
               Run a revenue infrastructure assessment
             </ConversionOptimizedButton>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 pt-2">
               {trustBadges.map((badge, index) => (
                 <div key={index} className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <badge.icon className="w-4 h-4 text-primary" strokeWidth={2} />
-                  <span className="font-mono">{badge.label}</span>
+                  <badge.icon className="w-4 h-4 text-primary flex-shrink-0" strokeWidth={2} />
+                  <span className="font-mono whitespace-nowrap">{badge.label}</span>
                 </div>
               ))}
             </div>
