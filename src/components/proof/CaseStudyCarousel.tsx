@@ -60,15 +60,15 @@ export const CaseStudyCarousel = ({ caseStudies }: CaseStudyCarouselProps) => {
           <span className="text-sm font-mono text-muted-foreground">
             {currentIndex + 1} / {totalStudies}
           </span>
-          <div className="flex gap-1">
+        <div className="flex gap-2 min-h-[44px] items-center">
             {caseStudies.map((_, index) => (
               <button 
                 key={index} 
                 onClick={() => setCurrentIndex(index)} 
-                className={`h-2 rounded-full transition-all ${
+                className={`h-3 rounded-full transition-all ${
                   index === currentIndex 
-                    ? "w-6 bg-primary" 
-                    : "w-2 bg-border hover:bg-primary/50"
+                    ? "w-8 bg-primary" 
+                    : "w-3 bg-border hover:bg-primary/50"
                 }`} 
                 aria-label={`Go to case study ${index + 1}`} 
               />

@@ -38,20 +38,20 @@ const Start = () => {
             <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-8">
               Who This Is For
             </h2>
-            <ul className="space-y-4 text-foreground mb-8">
-              <li className="flex items-start gap-3">
+            <ul className="space-y-3 text-foreground mb-8">
+              <li className="flex items-start gap-3 py-2 min-h-[44px]">
                 <span className="text-muted-foreground mt-1">—</span>
                 <span>Running demand through fragmented systems</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 py-2 min-h-[44px]">
                 <span className="text-muted-foreground mt-1">—</span>
                 <span>Forecasting unreliable beyond 30 days</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 py-2 min-h-[44px]">
                 <span className="text-muted-foreground mt-1">—</span>
                 <span>Founder still routing deals manually</span>
               </li>
-              <li className="flex items-start gap-3">
+              <li className="flex items-start gap-3 py-2 min-h-[44px]">
                 <span className="text-muted-foreground mt-1">—</span>
                 <span>Tools adopted but not integrated</span>
               </li>
@@ -69,10 +69,10 @@ const Start = () => {
             <p className="text-foreground text-lg mb-6">
               2-week diagnostic.
             </p>
-            <ul className="space-y-3 text-foreground/80 mb-8">
-              <li>System audit across CRM, pipeline, automation, reporting</li>
-              <li>Revenue scorecard and dependency map</li>
-              <li>90-day fix plan with scoped recommendations</li>
+            <ul className="space-y-2 text-foreground/80 mb-8">
+              <li className="py-2 min-h-[44px] flex items-center">System audit across CRM, pipeline, automation, reporting</li>
+              <li className="py-2 min-h-[44px] flex items-center">Revenue scorecard and dependency map</li>
+              <li className="py-2 min-h-[44px] flex items-center">90-day fix plan with scoped recommendations</li>
             </ul>
             <p className="font-mono text-sm text-foreground mb-6">
               Fixed price. Fixed output. No obligation to continue.
@@ -99,11 +99,11 @@ const Start = () => {
             <h2 className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-8">
               Rules of Engagement
             </h2>
-            <ul className="space-y-3 text-foreground">
-              <li>Assessment before build</li>
-              <li>Fixed scope, not hourly</li>
-              <li>Documentation first</li>
-              <li>No vendor lock-in</li>
+            <ul className="space-y-2 text-foreground">
+              <li className="py-2 min-h-[44px] flex items-center">Assessment before build</li>
+              <li className="py-2 min-h-[44px] flex items-center">Fixed scope, not hourly</li>
+              <li className="py-2 min-h-[44px] flex items-center">Documentation first</li>
+              <li className="py-2 min-h-[44px] flex items-center">No vendor lock-in</li>
             </ul>
           </section>
 

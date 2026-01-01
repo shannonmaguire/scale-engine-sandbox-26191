@@ -70,7 +70,7 @@ export const RevenueArchitectureDiagram = () => {
           Six layers. Each one depends on the one before it. Skip a layer, and everything downstream breaks.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {components.map((component, index) => (
             <div 
               key={index}
@@ -82,7 +82,7 @@ export const RevenueArchitectureDiagram = () => {
               <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-primary/50" />
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-primary/50" />
 
-              <div className="p-6 flex-grow flex flex-col">
+              <div className="p-4 md:p-6 flex-grow flex flex-col">
                 {/* Layer number - prominent */}
                 <div className="font-mono text-xs text-primary font-semibold mb-3">
                   LAYER {component.layer}
