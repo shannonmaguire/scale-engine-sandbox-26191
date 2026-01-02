@@ -9,7 +9,7 @@ const Diagnostic = () => {
         <title>Revenue Infrastructure Diagnostic | CWT Studio</title>
         <meta 
           name="description" 
-          content="A short, paid engagement to diagnose what's breaking before anything is built. $2,000 USD. Fixed scope. Fixed output." 
+          content="A paid diagnostic engagement that surfaces system debt before implementation. $2,000 USD. Fixed scope and output." 
         />
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
@@ -108,11 +108,8 @@ const Diagnostic = () => {
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
             Why This Exists
           </p>
-          <p className="text-foreground mb-4">
-            Most revenue systems fail because teams build before they diagnose. This diagnostic prevents expensive rework and misalignment.
-          </p>
           <p className="text-foreground">
-            Teams don't fail from lack of effort. They fail from invisible system debt.
+            Revenue systems accumulate invisible debt when teams build before understanding what already exists. This diagnostic surfaces that debt before it compounds into rework or misalignment.
           </p>
         </section>
 
@@ -122,7 +119,7 @@ const Diagnostic = () => {
             $2,000 USD
           </p>
           <p className="text-muted-foreground mb-4">
-            Fixed scope. Fixed output. No obligation to continue.
+            Fixed scope and output. No obligation to continue.
           </p>
           <p className="text-muted-foreground text-sm">
             Used by founder-led teams in legal, healthcare, and compliance-sensitive environments.
