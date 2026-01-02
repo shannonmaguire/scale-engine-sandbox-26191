@@ -63,7 +63,7 @@ const Diagnostic = () => {
           </p>
           
           <div className="mb-8">
-            <p className="font-mono text-sm text-foreground mb-4">Week 1</p>
+            <p className="font-mono text-sm text-foreground mb-4">Diagnostic Phase</p>
             <ul className="space-y-2 text-foreground">
               <li className="flex items-start gap-3 py-1">
                 <span className="text-muted-foreground">—</span>
@@ -108,8 +108,11 @@ const Diagnostic = () => {
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-6">
             Why This Exists
           </p>
-          <p className="text-foreground">
+          <p className="text-foreground mb-4">
             Most revenue systems fail because teams build before they diagnose. This diagnostic prevents expensive rework and misalignment.
+          </p>
+          <p className="text-foreground">
+            Teams don't fail from lack of effort. They fail from invisible system debt.
           </p>
         </section>
 
@@ -118,8 +121,11 @@ const Diagnostic = () => {
           <p className="font-mono text-4xl md:text-5xl font-bold text-foreground mb-4">
             $2,000 USD
           </p>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-4">
             Fixed scope. Fixed output. No obligation to continue.
+          </p>
+          <p className="text-muted-foreground text-sm">
+            Used by founder-led teams in legal, healthcare, and compliance-sensitive environments.
           </p>
         </section>
 
