@@ -205,7 +205,7 @@ const CookiePolicy = memo(() => {
                   If you have questions about our use of cookies, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@cwtstudio.com</li>
+                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
                   <li><strong>Privacy Policy:</strong> <a href="/privacy-policy" className="text-primary hover:underline">View our Privacy Policy</a></li>
                 </ul>
               </section>
