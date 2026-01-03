@@ -31,6 +31,7 @@ const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Start = lazy(() => import("@/pages/Start"));
 const Upwork = lazy(() => import("@/pages/Upwork"));
 const Diagnostic = lazy(() => import("@/pages/Diagnostic"));
+const DiagnosticHealthcare = lazy(() => import("@/pages/DiagnosticHealthcare"));
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -46,7 +47,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/start' || location.pathname === '/upwork' || location.pathname === '/diagnostic';
+  const isStandalonePage = location.pathname === '/start' || location.pathname === '/upwork' || location.pathname === '/diagnostic' || location.pathname.startsWith('/diagnostic/');
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -107,6 +108,7 @@ const AppContent = () => {
             <Route path="/start" element={<Start />} />
             <Route path="/upwork" element={<Upwork />} />
             <Route path="/diagnostic" element={<Diagnostic />} />
+            <Route path="/diagnostic/healthcare" element={<DiagnosticHealthcare />} />
             <Route path="/operatorsprint" element={<Navigate to="/upwork" replace />} />
             
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
