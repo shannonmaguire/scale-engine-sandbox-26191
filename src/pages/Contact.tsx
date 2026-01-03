@@ -194,9 +194,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
             {/* Simplified Contact Form */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-3">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
@@ -296,11 +296,11 @@ const Contact = () => {
             </div>
 
             {/* Side Info */}
-            <div className="lg:col-span-1 space-y-6">
-              <div className="border border-border p-4 md:p-6 bg-card">
+            <div className="lg:col-span-2 space-y-6">
+              <div className="border border-border p-4 md:p-6 bg-card overflow-hidden">
                 <div className="flex items-center gap-3 mb-4">
                   <Clock className="w-5 h-5 text-primary" />
-                  <h3 className="font-mono text-sm uppercase tracking-widest">Response Time</h3>
+                  <h3 className="font-mono text-xs uppercase tracking-wide">Response Time</h3>
                 </div>
                 <p className="text-2xl font-bold text-foreground mb-2">24 hours</p>
                 <p className="text-sm text-muted-foreground">
@@ -308,23 +308,23 @@ const Contact = () => {
                 </p>
               </div>
 
-              <div className="border border-border p-4 md:p-6 bg-card">
+              <div className="border border-border p-4 md:p-6 bg-card overflow-hidden">
                 <div className="flex items-center gap-3 mb-4">
                   <Mail className="w-5 h-5 text-primary" />
-                  <h3 className="font-mono text-sm uppercase tracking-widest">Direct Email</h3>
+                  <h3 className="font-mono text-xs uppercase tracking-wide">Direct Email</h3>
                 </div>
                 <a 
                   href="mailto:shannon@thecwtstudio.com" 
-                  className="text-primary hover:text-primary/80 font-mono transition-colors"
+                  className="text-primary hover:text-primary/80 font-mono transition-colors break-all"
                 >
                   shannon@thecwtstudio.com
                 </a>
               </div>
 
-              <div className="border border-border p-4 md:p-6 bg-card">
+              <div className="border border-border p-4 md:p-6 bg-card overflow-hidden">
                 <div className="flex items-center gap-3 mb-4">
                   <MessageSquare className="w-5 h-5 text-primary" />
-                  <h3 className="font-mono text-sm uppercase tracking-widest">What Happens Next</h3>
+                  <h3 className="font-mono text-xs uppercase tracking-wide">What Happens Next</h3>
                 </div>
                 <ol className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
