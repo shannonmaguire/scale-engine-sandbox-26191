@@ -129,7 +129,7 @@ const SEOHead = ({
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'hello@cwtstudio.com',
+      email: 'hello@thecwtstudio.com',
       contactType: 'Sales',
       availableLanguage: ['English']
     },
