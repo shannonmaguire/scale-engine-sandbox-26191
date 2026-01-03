@@ -1,18 +1,15 @@
-import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEOHead";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 const Diagnostic = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <title>Revenue Infrastructure Diagnostic | CWT Studio</title>
-        <meta 
-          name="description" 
-          content="A paid diagnostic engagement that surfaces system debt before implementation. $2,000 USD. Fixed scope and output." 
-        />
-        <meta name="robots" content="noindex, nofollow" />
-      </Helmet>
+      <SEOHead
+        title="Revenue Infrastructure Diagnostic | CWT Studio"
+        description="A paid diagnostic engagement that surfaces system debt before implementation. $2,000 USD. Fixed scope and output."
+        noindex={true}
+      />
 
       <main className="max-w-[600px] mx-auto px-6 py-16 md:py-24">
         {/* Header */}

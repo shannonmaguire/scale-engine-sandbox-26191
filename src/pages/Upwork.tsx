@@ -76,21 +76,21 @@ const Upwork = () => {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 border border-border flex items-center justify-center">
                   <Zap className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-medium text-lg">I don't sell posts.</h3>
                 <p className="text-muted-foreground text-sm">I install systems. Repeatable infrastructure that compounds.</p>
               </div>
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 border border-border flex items-center justify-center">
                   <Target className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-medium text-lg">I don't need hand-holding.</h3>
                 <p className="text-muted-foreground text-sm">I need access + decisions. Everything else I handle.</p>
               </div>
               <div className="space-y-3">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <div className="w-10 h-10 border border-border flex items-center justify-center">
                   <BarChart3 className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-medium text-lg">If it can't be measured, it doesn't ship.</h3>
@@ -139,7 +139,7 @@ const Upwork = () => {
                   data: "ICP definition, existing partner list"
                 }
               ].map((module, i) => (
-                <div key={i} className="border border-border rounded-lg p-6 bg-card hover:border-primary/50 transition-colors">
+                <div key={i} className="border border-border p-6 bg-card hover:border-primary/50 transition-colors">
                   <h3 className="font-medium text-lg mb-3">{module.title}</h3>
                   <p className="text-muted-foreground text-sm mb-4">{module.output}</p>
                   <div className="space-y-2 text-xs">
@@ -216,9 +216,9 @@ const Upwork = () => {
             <h2 className="font-display text-2xl md:text-3xl font-medium mb-12">First 14 Days: What You Get</h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border p-6 bg-card">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium">
+                  <div className="w-10 h-10 border border-primary bg-primary text-primary-foreground flex items-center justify-center font-medium">
                     W1
                   </div>
                   <h3 className="font-medium text-lg">Week 1</h3>
@@ -243,9 +243,9 @@ const Upwork = () => {
                 </ul>
               </div>
 
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border p-6 bg-card">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-medium">
+                  <div className="w-10 h-10 border border-primary bg-primary text-primary-foreground flex items-center justify-center font-medium">
                     W2
                   </div>
                   <h3 className="font-medium text-lg">Week 2</h3>
@@ -300,7 +300,7 @@ const Upwork = () => {
                   desc: "Tracking plans, SOPs, dashboard templates"
                 }
               ].map((proof, i) => (
-                <div key={i} className="border border-border rounded-lg p-6 bg-card">
+              <div key={i} className="border border-border p-6 bg-card">
                   <h3 className="font-medium mb-2">{proof.title}</h3>
                   <p className="text-muted-foreground text-sm">{proof.desc}</p>
                 </div>
@@ -349,7 +349,7 @@ const Upwork = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border p-6 bg-card">
                 <h3 className="font-medium text-lg mb-4">Most Common Causes of Low Show Rate</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• Weak pre-call conditioning</li>
@@ -359,7 +359,7 @@ const Upwork = () => {
                   <li>• No confirmation loop (SMS/email)</li>
                 </ul>
               </div>
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border p-6 bg-card">
                 <h3 className="font-medium text-lg mb-4">How I Improve Close Rate</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>• Better lead qualification + intent routing</li>
@@ -382,7 +382,7 @@ const Upwork = () => {
             <p className="text-muted-foreground mb-12">Two entry points. Both lead to systems that compound.</p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-10">
-              <div className="border border-border rounded-lg p-6 bg-card">
+              <div className="border border-border p-6 bg-card">
                 <h3 className="font-medium text-lg mb-2">Systems Assessment</h3>
                 <p className="text-muted-foreground text-sm mb-4">5-day diagnostic of your revenue infrastructure</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
@@ -404,7 +404,7 @@ const Upwork = () => {
                   </li>
                 </ul>
               </div>
-              <div className="border-2 border-primary rounded-lg p-6 bg-card">
+              <div className="border-2 border-primary p-6 bg-card">
                 <h3 className="font-medium text-lg mb-2">90-Day Sprint</h3>
                 <p className="text-muted-foreground text-sm mb-4">Full implementation with weekly delivery</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
