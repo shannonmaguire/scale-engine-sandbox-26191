@@ -103,7 +103,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Everything documented, nothing dependent on me.
+                  Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Every system documented. Every handoff clean.
                 </p>
               </div>
 
