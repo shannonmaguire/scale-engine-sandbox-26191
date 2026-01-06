@@ -94,16 +94,12 @@ const About = () => {
             <div>
               <h1 className="heading-section mb-2">Shannon Maguire</h1>
               <p className="text-label text-muted-foreground mb-8">
-                Founder & Revenue Systems Architect
+                Principal System Architect. Managing Director at CloudRoute.
               </p>
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I install revenue infrastructure for high-trust teams. Legal, healthcare, compliance, SaaS—where broken systems kill deals.
-                </p>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  Background in enterprise SaaS—BDR to Account Executive. Most revenue systems fail at implementation, not technology. That observation became the practice.
+                  I install revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. Where broken systems kill deals.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
