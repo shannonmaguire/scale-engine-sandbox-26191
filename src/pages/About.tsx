@@ -27,13 +27,13 @@ const About = () => {
       <EngagementTracker />
       <SEOHead 
         title="About Shannon Maguire | Revenue Systems Architect | CWT Studio" 
-        description="Shannon Maguire builds revenue systems that compound—for legal, healthcare, and B2B SaaS teams where broken infrastructure kills growth." 
+        description="Shannon Maguire installs revenue infrastructure for high-trust teams—legal, healthcare, and B2B SaaS—where broken systems kill deals." 
         keywords={[
           'about CWT Studio', 
           'revenue infrastructure', 
           'system architect', 
           'Shannon Maguire',
-          'regulated industries'
+          'high-trust teams'
         ]}
         includeOrganizationSchema={true}
         personSchema={{
@@ -46,7 +46,7 @@ const About = () => {
         faqSchema={[
           {
             question: 'Who is Shannon Maguire?',
-            answer: 'Shannon Maguire is the founder and revenue systems architect at CWT Studio, specializing in fixing broken sales systems for regulated industries.'
+            answer: 'Shannon Maguire is the founder and revenue systems architect at CWT Studio, installing revenue infrastructure for high-trust teams.'
           },
           {
             question: 'What industries does CWT Studio serve?',
@@ -99,7 +99,7 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I install revenue infrastructure for teams in regulated industries. Legal, healthcare, compliance, SaaS—where broken systems kill deals.
+                  I install revenue infrastructure for high-trust teams. Legal, healthcare, compliance, SaaS—where broken systems kill deals.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
@@ -130,8 +130,42 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Rules - No justifications */}
+      {/* How I Think About Systems */}
       <Section variant="muted" className="border-b border-border">
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-8">How I Think About Systems</h2>
+
+          <div className="grid md:grid-cols-3 gap-4 mb-6">
+            <div className="bg-card p-6 border-l-2 border-primary">
+              <div className="text-label text-primary mb-3 font-mono">PEOPLE</div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                The relationships and judgment that built the business. Automation should protect this, not replace it.
+              </p>
+            </div>
+
+            <div className="bg-card p-6 border-l-2 border-primary">
+              <div className="text-label text-primary mb-3 font-mono">PROCESS</div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                The way decisions get made. We document what works before we change anything.
+              </p>
+            </div>
+
+            <div className="bg-card p-6 border-l-2 border-primary">
+              <div className="text-label text-primary mb-3 font-mono">TECHNOLOGY</div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                The tools that support execution. Last to be configured, first to be blamed.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            Most system failures aren't technology problems. They're sequence problems.
+          </p>
+        </div>
+      </Section>
+
+      {/* Rules - No justifications */}
+      <Section className="border-b border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">Rules</h2>
 
