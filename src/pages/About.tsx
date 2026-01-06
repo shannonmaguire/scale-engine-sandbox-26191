@@ -103,15 +103,11 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Before CWT Studio, I spent two years in enterprise SaaS—started as a BDR, got promoted to Account Executive in the SMB space. That's where I saw how broken most revenue systems actually are. Not the tools. The way people implement them.
+                  Background in enterprise SaaS—BDR to Account Executive. Most revenue systems fail at implementation, not technology. That observation became the practice.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Now I install infrastructure that scales. Clean execution, documented handoff, zero dependencies on me.
-                </p>
-                
-                <p className="text-muted-foreground leading-relaxed">
-                  For Salesforce projects, I partner with CloudRoute (Salesforce Platinum Partner). Everything else I handle directly.
+                  Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Everything documented, nothing dependent on me.
                 </p>
               </div>
 
