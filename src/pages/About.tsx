@@ -159,7 +159,7 @@ const About = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            Most system failures aren't technology problems. They're sequence problems.
+            Most system failures trace back to sequence.
           </p>
         </div>
       </Section>
