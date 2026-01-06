@@ -47,7 +47,7 @@ export const ROUTES = {
 // ===== METRICS =====
 export const METRICS = {
   deployments: "42 systems installed. Zero failed migrations.",
-  experience: "8 years. Same methodology. Every engagement documented.",
+  experience: "8 years. Same methodology. Every handoff clean.",
   industries: "Legal, Compliance, Cybersecurity, Healthcare, B2B SaaS",
 } as const;
 

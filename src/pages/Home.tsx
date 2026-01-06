@@ -48,7 +48,7 @@ const Home = () => {
       <EngagementTracker />
       <SEOHead
         title="Revenue Infrastructure That Compounds | CWT Studio"
-        description="Revenue infrastructure that scales without breaking. For teams where system failure means lost deals, not just lost time."
+        description="Revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. For teams where broken systems kill deals."
         keywords={[
           'revenue infrastructure',
           'regulated industries',
@@ -78,7 +78,7 @@ const Home = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-foreground font-medium mb-8 max-w-2xl">
-            We build revenue infrastructure that scales without breaking. For teams where system failure means lost deals, not just lost time.
+            We install revenue infrastructure that scales without breaking. For teams where system failure means lost deals, not just lost time.
           </p>
 
           <div className="flex flex-col gap-6">
