@@ -99,7 +99,7 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I build revenue systems that compound. Legal, healthcare, compliance, SaaS—industries where broken systems kill deals.
+                  I install revenue infrastructure for teams in regulated industries. Legal, healthcare, compliance, SaaS—where broken systems kill deals.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
