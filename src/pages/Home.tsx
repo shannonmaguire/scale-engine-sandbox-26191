@@ -87,8 +87,10 @@ const Home = () => {
               ctaName="Hero - Run Assessment"
               location="Homepage Hero"
               size="lg"
+              className="w-full sm:w-auto"
             >
-              Run a revenue infrastructure assessment
+              <span className="hidden sm:inline">Run a revenue infrastructure assessment</span>
+              <span className="sm:hidden">Run Assessment</span>
             </ConversionOptimizedButton>
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 pt-2">
