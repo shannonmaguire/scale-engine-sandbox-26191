@@ -89,8 +89,8 @@ const Home = () => {
               size="lg"
               className="w-full sm:w-auto"
             >
-              <span className="hidden sm:inline">Run a revenue infrastructure assessment</span>
-              <span className="sm:hidden">Run Assessment</span>
+              <span className="hidden sm:inline text-inherit">Run a revenue infrastructure assessment</span>
+              <span className="sm:hidden text-inherit">Run Assessment</span>
             </ConversionOptimizedButton>
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 pt-2">
