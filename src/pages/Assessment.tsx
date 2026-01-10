@@ -61,11 +61,13 @@ const InfrastructureAssessment = () => {
   const outcomes = [
     {
       title: "Implementation Engagement",
-      description: "For established systems that need focused fixes: workflow automation, data cleanup, integration repair, and process optimization."
+      scope: "Your systems work but need fixes",
+      description: "Workflow automation, data cleanup, integration repair, process optimization. Typically 4-8 weeks."
     },
     {
       title: "Enterprise Architecture",
-      description: "For foundational rebuilds: complete system redesign, multi-platform integration, custom development, and organizational change management."
+      scope: "Your foundation needs rebuilding",
+      description: "Complete system redesign, multi-platform integration, custom development. Typically 3-6 months."
     }
   ];
 
@@ -271,12 +273,15 @@ const InfrastructureAssessment = () => {
           </div>
 
           <p className="text-description text-foreground/80 mb-8 max-w-2xl">
-            The assessment ends in one of two outcomes:
+            The assessment determines which path fits your situation. We recommend one of two engagements based on what we find:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
             {outcomes.map((outcome, index) => (
               <div key={index} className="border-2 border-primary/30 bg-primary/5 p-6 md:p-8">
+                <p className="font-mono text-xs uppercase tracking-widest text-primary mb-2">
+                  {outcome.scope}
+                </p>
                 <h3 className="heading-subsection mb-4">{outcome.title}</h3>
                 <p className="text-description text-muted-foreground">
                   {outcome.description}
@@ -286,7 +291,7 @@ const InfrastructureAssessment = () => {
           </div>
 
           <p className="text-description text-muted-foreground mt-8 text-center">
-            No third option. This is how one deal changes everything.
+            The assessment report includes a clear recommendation for which path applies to you.
           </p>
         </div>
       </Section>
