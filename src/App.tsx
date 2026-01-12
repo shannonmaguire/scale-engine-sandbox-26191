@@ -33,6 +33,8 @@ const Upwork = lazy(() => import("@/pages/Upwork"));
 const Diagnostic = lazy(() => import("@/pages/Diagnostic"));
 const DiagnosticHealthcare = lazy(() => import("@/pages/DiagnosticHealthcare"));
 const DiagnosticLaw = lazy(() => import("@/pages/DiagnosticLaw"));
+const Resources = lazy(() => import("@/pages/Resources"));
+const SampleReport = lazy(() => import("@/pages/SampleReport"));
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -111,6 +113,8 @@ const AppContent = () => {
             <Route path="/diagnostic" element={<Diagnostic />} />
             <Route path="/diagnostic/healthcare" element={<DiagnosticHealthcare />} />
             <Route path="/diagnostic/law" element={<DiagnosticLaw />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/sample-report" element={<SampleReport />} />
             <Route path="/operatorsprint" element={<Navigate to="/upwork" replace />} />
             
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
