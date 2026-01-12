@@ -6,9 +6,9 @@ const DiagnosticLaw = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Legal Revenue & Systems Diagnostic | CWT Studio"
-        description="A structured diagnostic for law firms and legal practices where client acquisition, case management, and intake systems determine growth capacity. $2,000 USD. Fixed scope and output."
-        noindex={true}
+        title="Law Firm Revenue Systems Diagnostic | Legal Practice CRM Audit"
+        description="Revenue systems diagnostic for multi-practice law firms. Map client intake, case management, and conflict-check touchpoints. $2,000 fixed scope. Clear outputs."
+        keywords={["law firm CRM audit", "legal client intake systems", "law firm revenue operations", "legal practice management", "law firm marketing attribution", "legal case management systems", "attorney CRM optimization"]}
       />
 
       <main className="max-w-[600px] mx-auto px-6 py-16 md:py-24">

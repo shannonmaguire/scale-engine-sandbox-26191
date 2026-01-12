@@ -6,9 +6,9 @@ const DiagnosticHealthcare = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Healthcare Revenue & Systems Diagnostic | CWT Studio"
-        description="A structured diagnostic for healthcare organizations where patient acquisition, compliance, and systems integrity determine growth capacity. $2,000 USD. Fixed scope and output."
-        noindex={true}
+        title="Healthcare Revenue Systems Diagnostic | Multi-Provider CRM Audit"
+        description="Revenue systems diagnostic for multi-provider healthcare organizations. Map patient acquisition, CRM, and compliance touchpoints. $2,000 fixed scope. Clear outputs."
+        keywords={["healthcare CRM audit", "patient acquisition systems", "healthcare revenue operations", "multi-provider practice management", "healthcare compliance systems", "medical practice CRM", "healthcare marketing attribution"]}
       />
 
       <main className="max-w-[600px] mx-auto px-6 py-16 md:py-24">

@@ -3,19 +3,20 @@ Allow: /
 
 # Priority pages
 Allow: /assessment
-Allow: /sprint
-Allow: /fractional
-Allow: /salesforce
-Allow: /web-systems
+Allow: /diagnostic
+Allow: /diagnostic/healthcare
+Allow: /diagnostic/law
 Allow: /proof
 Allow: /resources
-Allow: /self-assessment
-Allow: /ae-hub
+Allow: /how-we-work
+Allow: /about
 
 # Block utility pages
 Disallow: /auth
 Disallow: /design-system
 Disallow: /partner-dashboard
+Disallow: /upwork
+Disallow: /start
 
 Sitemap: https://cwtstudio.com/sitemap.xml
 
