@@ -17,11 +17,11 @@ const Start = () => {
         
         {/* Above the Fold */}
         <section className="mb-20">
-          <h1 className="font-mono text-2xl md:text-3xl font-medium tracking-tight mb-6 leading-tight">
-            Your revenue systems are either compounding or leaking.
+        <h1 className="font-mono text-2xl md:text-3xl font-medium tracking-tight mb-6 leading-tight">
+            Revenue systems break. We fix them.
           </h1>
           <p className="text-muted-foreground text-lg mb-10">
-            We find the leaks and install systems that compound.
+            A 2-week diagnostic for teams where broken systems mean lost deals.
           </p>
           <Link
             to={bookingUrl}
