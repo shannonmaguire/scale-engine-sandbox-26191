@@ -9,9 +9,9 @@
 // ===== POSITIONING =====
 export const POSITIONING = {
   primary: "Growth dies when systems break.",
-  tagline: "Revenue infrastructure that compounds.",
+  tagline: "Revenue infrastructure that scales.",
   supportingLine: "For teams where broken systems mean lost deals, not just lost time.",
-  velocity: "Disciplined systems. Clean execution. Compounding growth.",
+  velocity: "Disciplined systems. Clean execution. Durable growth.",
 } as const;
 
 // ===== SERVICE NAMES =====

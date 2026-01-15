@@ -117,7 +117,7 @@ export const BreakagePointsArticle = () => {
       </p>
 
       <p>
-        <strong>Why it breaks:</strong> Early-stage companies accept messy data as the cost of moving fast. But at scale, bad data compounds:
+        <strong>Why it breaks:</strong> Early-stage companies accept messy data as the cost of moving fast. But at scale, bad data accumulates:
       </p>
 
       <ul>

@@ -48,7 +48,7 @@ const SampleReport = () => {
                 Executive Summary
               </h3>
               <p className="text-foreground mb-4">
-                Current revenue infrastructure shows three critical failure points that compound into 23% pipeline leakage between qualification and close. Primary issues stem from disconnected systems between marketing automation and CRM, manual handoff processes with no SLA enforcement, and reporting that measures activity rather than revenue impact.
+                Current revenue infrastructure shows three critical failure points causing 23% pipeline leakage between qualification and close. Primary issues stem from disconnected systems between marketing automation and CRM, manual handoff processes with no SLA enforcement, and reporting that measures activity rather than revenue impact.
               </p>
               <p className="text-muted-foreground text-sm">
                 Estimated revenue recovery: $180K-$240K annually with 90-day implementation window.

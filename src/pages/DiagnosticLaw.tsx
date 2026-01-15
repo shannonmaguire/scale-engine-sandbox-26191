@@ -110,7 +110,7 @@ const DiagnosticLaw = () => {
             Why This Exists
           </p>
           <p className="text-foreground">
-            Legal practices accumulate invisible debt when teams build client acquisition infrastructure before understanding what already exists. This diagnostic surfaces that debt before it compounds into intake leakage, compliance gaps, or operational misalignment.
+            Legal practices accumulate invisible debt when teams build client acquisition infrastructure before understanding what already exists. This diagnostic surfaces that debt before it becomes intake leakage, compliance gaps, or operational misalignment.
           </p>
         </section>
 
