@@ -106,7 +106,7 @@ const Diagnostic = () => {
             Why This Exists
           </p>
           <p className="text-foreground">
-            Revenue systems accumulate invisible debt when teams build before understanding what already exists. This diagnostic surfaces that debt before it compounds into rework or misalignment.
+            Revenue systems accumulate invisible debt when teams build before understanding what already exists. This diagnostic surfaces that debt before it becomes rework or misalignment.
           </p>
         </section>
 

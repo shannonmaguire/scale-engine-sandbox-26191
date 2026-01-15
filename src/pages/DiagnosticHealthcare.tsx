@@ -110,7 +110,7 @@ const DiagnosticHealthcare = () => {
             Why This Exists
           </p>
           <p className="text-foreground">
-            Healthcare systems accumulate invisible debt when teams build patient acquisition infrastructure before understanding what already exists. This diagnostic surfaces that debt before it compounds into compliance risk, rework, or operational misalignment.
+            Healthcare systems accumulate invisible debt when teams build patient acquisition infrastructure before understanding what already exists. This diagnostic surfaces that debt before it becomes compliance risk, rework, or operational misalignment.
           </p>
         </section>
 

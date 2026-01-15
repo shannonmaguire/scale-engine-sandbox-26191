@@ -27,7 +27,7 @@ const Upwork = () => {
             </h1>
             <p className="text-foreground leading-relaxed">
               It's a system sequencing problem. Leads enter. They don't route correctly. 
-              Reporting shows activity but not revenue impact. Fixes compound into rework within 60 days.
+              Reporting shows activity but not revenue impact. Fixes become rework within 60 days.
             </p>
           </section>
 
@@ -47,7 +47,7 @@ const Upwork = () => {
               </li>
               <li className="flex items-start gap-3 py-2 min-h-[44px] text-foreground">
                 <span className="text-muted-foreground">—</span>
-                Fixes compound into rework within 60 days
+                Fixes become rework within 60 days
               </li>
               <li className="flex items-start gap-3 py-2 min-h-[44px] text-foreground">
                 <span className="text-muted-foreground">—</span>

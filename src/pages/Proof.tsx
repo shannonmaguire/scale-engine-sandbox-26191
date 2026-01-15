@@ -253,7 +253,7 @@ const Proof = () => {
           <div className="system-status mb-8">CASE STUDIES</div>
           <h1 className="heading-page mb-4">Systems That Scaled</h1>
           <p className="text-description text-muted-foreground max-w-2xl">
-            Real results from teams that stopped leaking and started compounding.
+            Real results from teams that fixed what was breaking.
           </p>
         </div>
       </Section>

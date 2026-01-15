@@ -47,7 +47,7 @@ const Home = () => {
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead
-        title="Revenue Infrastructure That Compounds | CWT Studio"
+        title="Revenue Infrastructure for High-Trust Teams | CWT Studio"
         description="Revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. For teams where broken systems kill deals."
         keywords={[
           'revenue infrastructure',
@@ -70,7 +70,7 @@ const Home = () => {
         
         <div className="relative z-10 max-w-4xl">
           <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-8">
-            Disciplined systems. Clean execution. Compounding growth.
+            Disciplined systems. Clean execution. Durable growth.
           </div>
 
           <h1 className="heading-page mb-6 leading-[1.1]">

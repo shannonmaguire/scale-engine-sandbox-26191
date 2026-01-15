@@ -107,7 +107,7 @@ export const SalesforceTechnicalDebtArticle = () => {
       <ul>
         <li>Change management protocols: how to request and approve new customizations</li>
         <li>Documentation standards: require documentation for all custom builds</li>
-        <li>Regular audits: quarterly reviews to catch debt before it compounds</li>
+        <li>Regular audits: quarterly reviews to catch debt before it accumulates</li>
         <li>Training programs: teach your team how to build maintainable solutions</li>
       </ul>
       

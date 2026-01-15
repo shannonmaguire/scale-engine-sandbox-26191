@@ -83,6 +83,7 @@ Avoid three-part lists that sound performative.
 ❌ "Cutting-edge"
 ❌ "Revolutionary"
 ❌ "Game-changing"
+❌ "Compound" / "Compounding" (growth, revenue, systems)
 
 ## Grandmaster Lexical Violations
 

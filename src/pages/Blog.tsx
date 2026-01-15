@@ -85,7 +85,7 @@ const blogPosts = [{
   id: 7,
   slug: "salesforce-implementation-mistakes",
   title: "High-Cost Salesforce Implementation Errors",
-  excerpt: "Implementation errors during initial Salesforce deployment create compounding technical debt that requires extensive remediation cycles. Analysis of cleanup projects identifies five recurring configuration decisions that generate the majority of downstream costs.",
+  excerpt: "Implementation errors during initial Salesforce deployment create accumulating technical debt that requires extensive remediation cycles. Analysis of cleanup projects identifies five recurring configuration decisions that generate the majority of downstream costs.",
   content: "Implementation best practices...",
   author: "Shannon Maguire",
   publishedAt: "2023-12-22",
