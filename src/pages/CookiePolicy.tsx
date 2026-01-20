@@ -6,8 +6,8 @@ const CookiePolicy = memo(() => {
   return (
     <>
       <SEOHead
-        title="Cookie Policy | CWT Studio Digital Services"
-        description="Discover how CWT Studio leverages cookies to deliver business automation, Salesforce, web, and mobile experiences through Creator Wealth Tools."
+        title="Cookie Policy | CWT Studio"
+        description="How CWT Studio uses cookies to deliver revenue infrastructure services. Cookie types, purposes, and your control options."
         keywords={[
           'CWT Studio cookies',
           'business automation analytics',

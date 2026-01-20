@@ -13,7 +13,7 @@ const blogPosts = [
     id: 1,
     slug: "90-day-revenue-system-installation",
     title: "The 90-Day Revenue System Installation: A Deployment Framework",
-    excerpt: "How we install documented, repeatable revenue systems for Salesforce-driven businesses in 90 days. No 18-month transformation projects. Just measurable outcomes and operational leverage.",
+    excerpt: "How we install documented, repeatable revenue systems for Salesforce-driven businesses in 90 days. Fixed scope, measurable outcomes, full documentation.",
     author: "Shannon Maguire",
     publishedAt: "2024-01-15",
     readTime: "12 min read",

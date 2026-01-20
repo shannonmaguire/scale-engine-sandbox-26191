@@ -198,7 +198,7 @@ export const SalesforceTechnicalDebtArticle = () => {
         </div>
       </div>
 
-      <h2 id="bottom-line">The Bottom Line</h2>
+      <h2 id="bottom-line">Summary</h2>
       
       <p>
         Technical debt represents accumulated business decisions rather than implementation failures. Universal presence across organizations shifts focus from debt existence to intelligence extraction capability. Competitive advantage emerges from converting operational complexity into actionable strategic insight through systematic analysis frameworks. Configuration archaeology requires interpretation skills that transform accumulated technical artifacts into readable business evolution narratives.
