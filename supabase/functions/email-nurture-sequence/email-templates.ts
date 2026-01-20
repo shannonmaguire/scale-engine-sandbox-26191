@@ -306,7 +306,7 @@ Founder, CWT Studio`,
         </ul>
         
         <p><strong>Benchmark interpretation:</strong><br>
-        • 75-100: Optimize (Fractional)<br>
+        • 75-100: Refine (Fractional)<br>
         • 50-74: Fix (Sprint)<br>
         • Below 50: Diagnose first (Assessment)</p>
         
@@ -326,7 +326,7 @@ How to use it:
 - Compare your total score to the benchmark ranges (page 5)
 
 Benchmark interpretation:
-• 75-100: Optimize (Fractional)
+• 75-100: Refine (Fractional)
 • 50-74: Fix (Sprint)
 • Below 50: Diagnose first (Assessment)
 
@@ -369,7 +369,7 @@ You're scoring too high if:
 Why this matters:
 Overestimating health = choosing the wrong engagement type. You'll jump to Sprint when you need Assessment first. That costs 3-6 months of wasted implementation.
 
-The reality check:
+How to verify:
 If your total score is 60+ but you're still dealing with forecast misses, rep complaints, or integration breaks—rescore using the "red flag" section as your guide.
 
 Shannon Greenberg
@@ -499,7 +499,7 @@ What this costs you:
 Average project delay from poor sequencing: 6-10 weeks. Plus team morale erosion from "hurry up and wait" cycles.
 
 The fix:
-Use the 90-Day Roadmap Template's dependency mapping (Section 3). Sequence by "what unlocks what"—not by category. You'll cut timeline by 30-40%.
+Use the 90-Day Roadmap Template's dependency mapping (Section 3). Sequence by "what enables what"—not by category. You'll cut timeline by 30-40%.
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -691,7 +691,7 @@ Founder, CWT Studio`,
         <p>You just downloaded the <strong>47-point pre-project checklist</strong> covering content, assets, integrations, and stakeholder alignment.</p>
         
         <h3>Why this matters:</h3>
-        <p>Most website projects blow past budget because teams discover missing assets mid-build. This checklist surfaces those gaps before kickoff.</p>
+        <p>Most website projects blow past budget because teams find missing assets mid-build. This checklist surfaces those gaps before kickoff.</p>
         
         <h3>How to use it:</h3>
         <ul>
@@ -710,7 +710,7 @@ Founder, CWT Studio`,
 You just downloaded the 47-point pre-project checklist covering content, assets, integrations, and stakeholder alignment.
 
 Why this matters:
-Most website projects blow past budget because teams discover missing assets mid-build. This checklist surfaces those gaps before kickoff.
+Most website projects blow past budget because teams find missing assets mid-build. This checklist surfaces those gaps before kickoff.
 
 How to use it:
 - Review Section 1 (Content Inventory) first—this is where most gaps hide
