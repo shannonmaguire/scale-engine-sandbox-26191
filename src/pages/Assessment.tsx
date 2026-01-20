@@ -300,8 +300,7 @@ const InfrastructureAssessment = () => {
       <Section>
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse-subtle" />
-            <span className="text-primary font-semibold">Ready to Assess</span>
+            <span className="text-primary font-semibold">Start Here</span>
           </div>
 
           <h2 className="heading-section mb-6">Book Your Assessment</h2>

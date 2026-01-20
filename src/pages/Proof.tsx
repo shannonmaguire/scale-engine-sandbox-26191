@@ -95,11 +95,11 @@ const Proof = () => {
       vertical: "Digital Education Platform",
       size: "Thousands of members",
       timeline: "6 months",
-      humanProblem: "Sales were dying in their inbox. Leads came in, nobody followed up, and deals went cold.",
+      humanProblem: "Leads came in. Nobody followed up. Deals went cold.",
       whatBroke: "No follow-up system. Everything depended on memory.",
-      pullQuote: "Leads stopped dying. We went from chaos to 2-5 qualified calls a day",
+      pullQuote: "Zero leads fall through now. 2-5 qualified calls a day.",
       system: ["Mapped every way leads come in", "Built ownership so nothing falls through cracks", "Automated follow-up that sounds human"],
-      beforeMetric: { label: "Leads dying in inbox", value: "Constant" },
+      beforeMetric: { label: "Follow-up rate", value: "None" },
       afterMetric: { label: "Qualified calls/day", value: "2-5" },
       growth: "Pipeline Fixed",
       patternRestored: "Team knows exactly who owns what. Nothing slips through anymore."
@@ -147,7 +147,7 @@ const Proof = () => {
       beforeMetric: { label: "6 months before", value: "$1.1K" },
       afterMetric: { label: "6 months after", value: "$2.3K" },
       growth: "+107%",
-      patternRestored: "Turns out consistency beats inspiration. Who knew."
+      patternRestored: "Repeatable process in place. Sales no longer depend on motivation."
     },
     {
       id: 6,
@@ -251,7 +251,7 @@ const Proof = () => {
       <Section noPadding className="border-b border-border">
         <div className="section-spacing-half">
           <div className="system-status mb-8">CASE STUDIES</div>
-          <h1 className="heading-page mb-4">Systems That Scaled</h1>
+          <h1 className="heading-page mb-4">What We Fixed</h1>
           <p className="text-description text-muted-foreground max-w-2xl">
             Real results from teams that fixed what was breaking.
           </p>
@@ -335,13 +335,13 @@ const Proof = () => {
               
               <div className="flex items-center gap-4 text-xs font-mono pt-3 border-t border-border">
                 <div>
-                  <span className="text-muted-foreground">Before: </span>
+                  <span className="text-muted-foreground">{study.beforeMetric.label}: </span>
                   <span className="text-foreground">{study.beforeMetric.value}</span>
                 </div>
-                <div className="text-primary">→</div>
+                <div className="text-muted-foreground">→</div>
                 <div>
-                  <span className="text-muted-foreground">After: </span>
-                  <span className="text-primary font-semibold">{study.afterMetric.value}</span>
+                  <span className="text-muted-foreground">{study.afterMetric.label}: </span>
+                  <span className="text-foreground">{study.afterMetric.value}</span>
                 </div>
               </div>
               
