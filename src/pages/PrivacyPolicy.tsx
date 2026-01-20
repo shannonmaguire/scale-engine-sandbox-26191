@@ -61,7 +61,7 @@ const PrivacyPolicy = memo(() => {
                   <li>To respond to your inquiries and provide requested services</li>
                   <li>To send you marketing communications (with your consent)</li>
                   <li>To improve our website and services</li>
-                  <li>To analyze usage patterns and optimize user experience</li>
+                  <li>To analyze usage patterns and improve user experience</li>
                   <li>To comply with legal obligations</li>
                 </ul>
               </section>

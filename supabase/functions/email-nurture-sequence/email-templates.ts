@@ -350,7 +350,7 @@ Founder, CWT Studio`,
         <h3>Why this matters:</h3>
         <p>Overestimating health = choosing the wrong engagement type. You'll jump to Sprint when you need Assessment first. That costs 3-6 months of wasted implementation.</p>
         
-        <h3>The reality check:</h3>
+        <h3>How to verify:</h3>
         <p>If your total score is 60+ but you're still dealing with forecast misses, rep complaints, or integration breaks—rescore using the "red flag" section as your guide.</p>
         
         <p>Shannon Greenberg<br>
@@ -480,7 +480,7 @@ Founder, CWT Studio`,
         <p>Average project delay from poor sequencing: <strong>6-10 weeks</strong>. Plus team morale erosion from "hurry up and wait" cycles.</p>
         
         <h3>The fix:</h3>
-        <p>Use the 90-Day Roadmap Template's dependency mapping (Section 3). Sequence by "what unlocks what"—not by category. You'll cut timeline by 30-40%.</p>
+        <p>Use the 90-Day Roadmap Template's dependency mapping (Section 3). Sequence by "what enables what"—not by category. You'll cut timeline by 30-40%.</p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
