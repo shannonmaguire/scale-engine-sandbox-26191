@@ -151,7 +151,7 @@ const About = () => {
           </div>
 
           <p className="text-sm text-muted-foreground">
-            People first. Then process. Then technology.
+            This sequence determines project success.
           </p>
         </div>
       </Section>
