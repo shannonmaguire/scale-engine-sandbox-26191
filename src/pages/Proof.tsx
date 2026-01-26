@@ -172,11 +172,9 @@ const Proof = () => {
       <Breadcrumbs />
       
       {/* Hero */}
-      <Section noPadding className="border-b border-border">
-        <div className="section-spacing-half">
-          <div className="system-status mb-8">CASE STUDIES</div>
-          <h1 className="heading-page">What We Fixed</h1>
-        </div>
+      <Section className="border-b border-border">
+        <div className="system-status mb-8">CASE STUDIES</div>
+        <h1 className="heading-page">What We Fixed</h1>
       </Section>
 
       {/* All 8 Case Studies - Single scannable grid */}
