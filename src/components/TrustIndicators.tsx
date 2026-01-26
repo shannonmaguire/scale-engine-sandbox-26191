@@ -101,9 +101,9 @@ interface CertificationBadgesProps {
 
 export function CertificationBadges({ className }: CertificationBadgesProps) {
   const certifications = [
-    { icon: Award, label: "Salesforce ISV Partner" },
     { icon: CheckCircle, label: "SOC 2 Compliant" },
-    { icon: Shield, label: "GDPR Ready" }
+    { icon: Shield, label: "GDPR Ready" },
+    { icon: Award, label: "Salesforce ISV Partner" }
   ];
 
   return (

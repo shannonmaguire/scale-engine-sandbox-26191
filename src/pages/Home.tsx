@@ -74,7 +74,7 @@ const Home = () => {
     { fit: true, label: "Deals stalling for reasons you can't see in dashboards" },
     { fit: true, label: "RevOps or ops function exists but can't scale" },
     { fit: false, label: "Pre-revenue or pre-product" },
-    { fit: false, label: "Looking for a Salesforce admin" },
+    { fit: false, label: "Looking for platform administration" },
     { fit: false, label: "Comparing consultants on hourly rate" }
   ];
 
