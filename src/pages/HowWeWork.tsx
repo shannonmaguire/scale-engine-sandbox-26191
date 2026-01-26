@@ -4,7 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { RevenueArchitectureDiagram } from "@/components/RevenueArchitectureDiagram";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, AlertTriangle } from "lucide-react";
 import { ROUTES, TIMELINES } from "@/lib/canonical-constants";
 
 const HowWeWork = () => {
@@ -34,6 +34,44 @@ const HowWeWork = () => {
     "Documentation first",
     "Measurable outcomes",
     "No vendor lock-in"
+  ];
+
+  const diagnosticQuestions = [
+    {
+      question: "What happens when reality changes in your system?",
+      description: "Surfacing whether the system silently passes or critically exposes manual intervention."
+    },
+    {
+      question: "Walk me through the steps when someone purchases.",
+      description: "Mapping where the workflow breaks, where steps are undocumented, and where operational revenue is baked into commercial settlements."
+    },
+    {
+      question: "How do you reconcile when a subscription changes?",
+      description: "Identifying notification gaps, system-to-system ambiguity, and edge case handling."
+    },
+    {
+      question: "What keeps you up at night?",
+      description: "Locating the trust or rigor and where things slip through the cracks."
+    }
+  ];
+
+  const criticalPatterns = [
+    {
+      title: "No orchestration",
+      description: "Everything trying to be generous stitches"
+    },
+    {
+      title: "System drift",
+      description: "Parallel changing that one system but not the adjacent one"
+    },
+    {
+      title: "Manual enforcement",
+      description: "If something critical requires someone to check"
+    },
+    {
+      title: "Operational access before contractual settlement",
+      description: "Granting viewing that hits the payment collection"
+    }
   ];
 
   return (
@@ -71,6 +109,64 @@ const HowWeWork = () => {
         <div className="max-w-5xl">
           <h2 className="heading-section mb-10">The Architecture</h2>
           <RevenueArchitectureDiagram />
+        </div>
+      </Section>
+
+      {/* Questions We Ask */}
+      <Section className="border-t border-border">
+        <div className="max-w-4xl">
+          <div className="system-status mb-6">DIAGNOSTIC</div>
+          <h2 className="heading-section mb-4">Questions We Ask</h2>
+          <p className="text-base text-muted-foreground mb-10 max-w-2xl">
+            Every engagement starts with four questions. The answers expose system state faster than any dashboard.
+          </p>
+
+          <div className="space-y-6">
+            {diagnosticQuestions.map((item, index) => (
+              <div key={index} className="border border-border bg-card p-6">
+                <div className="flex items-start gap-4">
+                  <div className="font-mono text-2xl font-bold text-primary/30">
+                    {String(index + 1).padStart(2, '0')}
+                  </div>
+                  <div className="flex-1">
+                    <p className="font-mono text-sm font-medium text-foreground mb-2">
+                      "{item.question}"
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* What We Look For */}
+      <Section variant="muted" className="border-t border-border">
+        <div className="max-w-4xl">
+          <div className="system-status mb-6">CRITICAL PATTERNS</div>
+          <h2 className="heading-section mb-4">What We Look For</h2>
+          <p className="text-base text-muted-foreground mb-10 max-w-2xl">
+            These are the four patterns that predict revenue system failure. If any of these exist, growth will expose them.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {criticalPatterns.map((pattern, index) => (
+              <div key={index} className="border border-border bg-card p-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <AlertTriangle className="w-4 h-4 text-destructive flex-shrink-0 mt-1" strokeWidth={2} />
+                  <h3 className="font-mono text-sm font-semibold text-foreground uppercase tracking-wide">
+                    {pattern.title}
+                  </h3>
+                </div>
+                <p className="text-sm text-muted-foreground pl-7">
+                  {pattern.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
