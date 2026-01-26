@@ -48,14 +48,12 @@ interface SEOHeadProps {
 }
 
 const SEOHead = ({
-  title = 'CWT Studio | Backend Revenue Systems & Infrastructure',
-  description = 'Install backend revenue systems that scale. Assessment, Sprint, and Fractional Ops for legal, compliance, cybersecurity, and B2B SaaS.',
+  title = 'CWT Studio | Systems Architecture',
+  description = 'Revenue systems break. We find where—then install enforcement. For legal, healthcare, compliance, and SaaS teams.',
   keywords = [
     'cwtstudio.com',
-    'studio',
-    'backend revenue systems',
-    'revenue infrastructure',
-    'business automation services',
+    'systems architecture',
+    'revenue systems audit',
     'Salesforce implementation',
     'Salesforce optimization',
     'revenue operations',
