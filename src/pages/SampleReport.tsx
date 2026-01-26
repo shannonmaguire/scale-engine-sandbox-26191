@@ -1,6 +1,5 @@
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
-import { SectionHeader } from "@/components/ui/section-header";
 import { Link } from "react-router-dom";
 import { ArrowRight, FileText, CheckCircle, AlertTriangle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,13 +15,16 @@ const SampleReport = () => {
       />
 
       <main className="min-h-screen bg-background">
+        <Breadcrumbs />
+        
         <Section>
-          <Breadcrumbs />
-
-          <SectionHeader
-            title="Sample Assessment Report"
-            description="This is what the diagnostic output looks like. Redacted from an actual client engagement."
-          />
+          <div className="max-w-4xl">
+            <div className="system-status mb-8">SAMPLE DELIVERABLE</div>
+            <h1 className="heading-page mb-4">Sample Assessment Report</h1>
+            <p className="text-description text-muted-foreground max-w-2xl">
+              This is what the diagnostic output looks like. Redacted from an actual client engagement.
+            </p>
+          </div>
 
           {/* Report Preview */}
           <div className="mt-12 border border-border">
@@ -34,7 +36,7 @@ const SampleReport = () => {
                   Revenue Systems Diagnostic Report
                 </span>
               </div>
-              <h2 className="font-display text-2xl font-medium text-foreground mb-2">
+              <h2 className="heading-section mb-2">
                 [Client Name Redacted]
               </h2>
               <p className="text-muted-foreground">
@@ -197,7 +199,7 @@ const SampleReport = () => {
           {/* CTA */}
           <div className="mt-16 border-t border-border pt-16">
             <div className="max-w-2xl">
-              <h2 className="font-display text-2xl font-medium text-foreground mb-4">
+              <h2 className="heading-section mb-4">
                 Get your own diagnostic report
               </h2>
               <p className="text-muted-foreground mb-6">
