@@ -130,16 +130,16 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I find where revenue systems are failing—then install enforcement so they can't fail again.
+                  CRM agnostic. I dive deeper into how the business actually runs—then design systems that hold under load.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Most revenue problems are invisible until the deal is already lost. I surface them early, diagnose where the system is actually breaking, and install infrastructure that holds under load.
+                  Former Salesforce AE. Now I'm on the delivery side, architecting what the sales team sold. I've seen implementations go sideways because nobody translated business process to system logic. That's what I do—I see the whole board and make sure the system actually enforces what it's supposed to.
                 </p>
 
-            <p className="text-muted-foreground leading-relaxed">
-              Architecture and strategy handled directly. Enterprise platform implementation through CloudRoute (ISV Partner). HubSpot and lighter stacks handled directly. Every system documented. Every handoff clean.
-            </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Enterprise Salesforce implementations through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
+                </p>
               </div>
 
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
