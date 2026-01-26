@@ -138,7 +138,7 @@ const About = () => {
                 </p>
 
                 <p className="text-muted-foreground leading-relaxed">
-                  Enterprise Salesforce implementations through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
+                  Salesforce implementations through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
                 </p>
               </div>
 
