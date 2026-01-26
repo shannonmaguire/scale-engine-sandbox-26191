@@ -43,6 +43,11 @@ const Home = () => {
       category: "WRONG BUSINESS MODEL",
       title: "$500/hour partners doing $50/hour work",
       description: "Want subscriptions but don't know if the math works. Trapped in hourly billing."
+    },
+    {
+      category: "HEALTHCARE LAUNCH",
+      title: "Great idea. Zero patients.",
+      description: "Marketing, ops, and tech all pointing fingers. No acquisition system. No alignment."
     }
   ];
 
