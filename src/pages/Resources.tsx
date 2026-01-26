@@ -1,6 +1,5 @@
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
-import { SectionHeader } from "@/components/ui/section-header";
 import { Link } from "react-router-dom";
 import { Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -61,13 +60,16 @@ const Resources = () => {
       />
 
       <main className="min-h-screen bg-background">
+        <Breadcrumbs />
+        
         <Section>
-          <Breadcrumbs />
-
-          <SectionHeader
-            title="Resources"
-            description="Templates, frameworks, and guides for revenue infrastructure planning and implementation."
-          />
+          <div className="max-w-4xl">
+            <div className="system-status mb-8">RESOURCES</div>
+            <h1 className="heading-page mb-4">Resources</h1>
+            <p className="text-description text-muted-foreground max-w-2xl">
+              Templates, frameworks, and guides for revenue infrastructure planning and implementation.
+            </p>
+          </div>
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
             {resources.map((resource) => (
@@ -78,7 +80,7 @@ const Resources = () => {
                 <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-3">
                   {resource.category}
                 </span>
-                <h3 className="font-display text-lg font-medium text-foreground mb-3">
+                <h3 className="heading-subsection mb-3">
                   {resource.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-grow">
@@ -98,7 +100,7 @@ const Resources = () => {
 
           <div className="mt-16 border-t border-border pt-16">
             <div className="max-w-2xl">
-              <h2 className="font-display text-2xl font-medium text-foreground mb-4">
+              <h2 className="heading-section mb-4">
                 Need a custom assessment?
               </h2>
               <p className="text-muted-foreground mb-6">
