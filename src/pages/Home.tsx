@@ -48,6 +48,11 @@ const Home = () => {
       category: "HEALTHCARE LAUNCH",
       title: "Great idea. Zero patients.",
       description: "Marketing, ops, and tech all pointing fingers. No acquisition system. No alignment."
+    },
+    {
+      category: "FEDERAL / COMPLIANCE",
+      title: "No pipeline. Just waiting for inbound.",
+      description: "9 target types. Zero outreach system. Founder still doing all the selling."
     }
   ];
 
