@@ -46,7 +46,6 @@ const diagnosticQuestions = [
 const rules = [
   "We assess before we build.",
   "Fixed price, not hourly.",
-  "90-day cycles max.",
   "You own everything."
 ];
 
