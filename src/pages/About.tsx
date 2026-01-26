@@ -44,8 +44,10 @@ const diagnosticQuestions = [
 
 // Rules - no justifications
 const rules = [
-  "We assess before we build.",
-  "Fixed price, not hourly.",
+  "Discovery before scope.",
+  "No skipped layers.",
+  "Fixed scope, not hourly.",
+  "Build → Document → Handoff.",
   "You own everything."
 ];
 
