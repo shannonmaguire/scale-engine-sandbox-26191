@@ -1,128 +1,180 @@
 
+# Fortune 500 Voice of Customer Integration
 
-# About Page Enterprise Cleanup
+## The Enterprise Approach
 
-## Issues Identified
+Fortune 500 marketing teams don't randomly add quotes. They run systematic **Voice of Customer (VoC) programs** that:
 
-### 1. Stats Section Alignment (Lines 145-158)
-Current layout uses inconsistent flex structure. The three stats don't align cleanly:
-- "8 years | same methodology"
-- "42 | systems installed"  
-- "0 | failed migrations"
+1. **Extract patterns** from sales/discovery calls
+2. **Validate language** that resonates with buyers
+3. **Update messaging** based on how real prospects describe problems
+4. **Rotate fresh signals** to show market awareness
 
-**Fix**: Use a cleaner grid with consistent formatting. Make the number/label pairs stack vertically instead of inline.
-
-### 2. Job Title Still Says "Salesforce Delivery"
-Line 128: `Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)`
-
-This contradicts the gateway positioning we just established. The About page bio should be platform-agnostic.
-
-**Fix**: Change to `Principal System Architect, CWT Studio | Managing Partner, CloudRoute`
-
-Also update:
-- Line 72 (personSchema jobTitle)
-- Line 88 (FAQ answer about CloudRoute relationship)
-
-### 3. Platform Implementation Section
-Lines 256-280 explicitly names CloudRoute and creates a "partner card" aesthetic. For enterprise positioning, this feels like selling.
-
-**Options**:
-- Remove entirely (CloudRoute is mentioned in proposals, not public pages)
-- Keep but simplify to single line: "Enterprise delivery through CloudRoute (ISV Partner)"
-
-**Recommendation**: Remove the section. The hero bio already mentions CloudRoute once. Repeating it in its own section feels like a sales deck, not an executive bio.
-
-### 4. Upwork Page Existence
-The `/upwork` page exists and is indexed in App.tsx. It's a standalone landing page for Upwork proposals with $2,000 diagnostic pricing.
-
-**Options**:
-- Keep as-is (it's noindexed, used for proposals)
-- Remove entirely
-- Update positioning language to match gateway
-
-**Recommendation**: Keep. It's noindexed (`noindex={true}`), so not visible to search. It serves a specific funnel purpose for Upwork leads.
-
-### 5. FAQ Schema References Salesforce
-Line 88: `'For Salesforce projects, CWT partners with CloudRoute (Salesforce ISV Partner). For non-Salesforce work, CWT handles directly.'`
-
-**Fix**: Change to platform-agnostic language:
-`'For enterprise platform implementations, CWT partners with CloudRoute (ISV Partner). For lighter stacks (HubSpot, etc.), CWT handles directly.'`
+This creates credibility because visitors think: "They're describing my exact situation."
 
 ---
 
-## Changes Summary
+## Integration Points for CWT Studio
 
-| Location | Before | After |
-|----------|--------|-------|
-| Line 128 (job title) | `...Salesforce Delivery (CloudRoute)` | `...Managing Partner, CloudRoute` |
-| Line 72 (personSchema) | `...Salesforce Delivery (CloudRoute)` | `...Managing Partner, CloudRoute` |
-| Line 88 (FAQ) | `For Salesforce projects...` | `For enterprise platform implementations...` |
-| Lines 145-158 (stats) | Inline flex with varying widths | Consistent stacked layout |
-| Lines 256-280 (Platform Implementation section) | Full section with 2 cards | Remove entirely |
+### 1. Homepage "What We're Seeing Right Now" Section
+
+**Current State (Lines 16-47)**
+Generic patterns like "OPS" and "EQUIPMENT / KIT" that feel manufactured.
+
+**Update with Call-Validated Patterns**
+
+From Clean Claims transcript:
+```
+Category: ENFORCEMENT SOFTWARE
+Title: Companies selling enforcement systems without internal enforcement
+Description: The product is polished. The back office is duct tape and prayer.
+```
+
+From Munch/Gino transcript:
+```
+Category: MULTI-PLATFORM
+Title: Platform decisions made by familiarity, not architecture fit
+Description: "One guy knew Zoho" becomes a $50K mistake six months later.
+```
+
+From Clean Claims transcript:
+```
+Category: HEALTH SERVICES  
+Title: Operational access granted before payment collected
+Description: Clients onboarded. Revenue recognized. Invoice never sent.
+```
+
+From Munch transcript:
+```
+Category: REALITY DRIFT
+Title: CRM data requires human intervention to match truth
+Description: Software assumes compliance. Humans don't comply.
+```
+
+### 2. Proof Page "What We're Seeing Right Now" (Lines 26-67)
+
+Add two new patterns from transcripts:
+
+```tsx
+{
+  category: "ENFORCEMENT SOFTWARE",
+  title: "Product enforces rules externally that don't exist internally",
+  description: "Clean claims for customers, messy books for the business"
+},
+{
+  category: "PLATFORM DECISIONS",
+  title: "CRM chosen by individual familiarity, not system fit",
+  description: "One person knew the tool. Nobody knew the architecture."
+}
+```
+
+### 3. New Case Study Candidate
+
+From Clean Claims engagement:
+```tsx
+{
+  id: 9,
+  industry: "Healthcare Technology",
+  vertical: "Claims Enforcement SaaS",
+  size: "Series A",
+  timeline: "6 weeks",
+  humanProblem: "They sell software that enforces clean claims. Their own invoicing had no enforcement.",
+  whatBroke: "Clients got operational access before commercial settlement. Revenue recognized, payment not collected.",
+  pullQuote: "We fixed the irony: enforcement software with no internal enforcement",
+  system: [
+    "Linked operational access to commercial settlement",
+    "Built invoice enforcement before service activation",
+    "Created audit trail for revenue recognition"
+  ],
+  beforeMetric: { label: "Payment collection", value: "Untracked" },
+  afterMetric: { label: "Payment collection", value: "Enforced" },
+  growth: "Revenue Secured",
+  patternRestored: "Access only after payment. No exceptions. System enforces what the product promises."
+}
+```
+
+### 4. Callout Box Language Update
+
+**Current (Lines 203-206)**
+```
+"We design for expected value—what will close, what will stall, and why."
+```
+
+**Updated with validated positioning phrase**
+```
+"CRM agnostic. We dive deeper into how the business actually runs—then design systems that hold under load."
+```
+
+This phrase landed in the Clean Claims discovery call: "CRM agnostic...dive deeper into how the business actually runs."
 
 ---
 
 ## Technical Implementation
 
-### File: `src/pages/About.tsx`
+### File 1: `src/pages/Home.tsx`
 
-**1. Fix job title (line 128)**
-```
-Before: Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)
-After:  Principal System Architect, CWT Studio | Managing Partner, CloudRoute
-```
+**Lines 16-47 — Replace `currentPatterns` array**
 
-**2. Fix personSchema jobTitle (line 72)**
-```
-Before: jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)'
-After:  jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, CloudRoute'
-```
+New patterns derived from call insights:
 
-**3. Fix FAQ answer (line 88)**
-```
-Before: 'For Salesforce projects, CWT partners with CloudRoute (Salesforce ISV Partner). For non-Salesforce work, CWT handles directly.'
-After:  'For enterprise implementations, CWT partners with CloudRoute (ISV Partner). For lighter stacks, CWT handles directly.'
-```
+| Category | Title | Source |
+|----------|-------|--------|
+| ENFORCEMENT SOFTWARE | Product enforces externally what doesn't exist internally | Clean Claims |
+| HEALTH SERVICES | Operational access before commercial settlement | Clean Claims |
+| MULTI-PLATFORM | Platform chosen by familiarity, not architecture | Munch/Gino |
+| REALITY DRIFT | CRM data diverges from truth without human intervention | Munch |
+| PROFESSIONAL SERVICES | Revenue closes, delivery systems fail to operationalize | Existing (keep) |
+| PARTNER-LED SALESFORCE | RevOps → Finance boundary breaks at scale | Existing (keep) |
 
-**4. Fix stats alignment (lines 145-158)**
-Replace inline flex with stacked layout:
-```tsx
-<div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
-  <div>
-    <div className="text-2xl text-primary font-mono">8</div>
-    <div className="text-sm text-muted-foreground">years, same methodology</div>
-  </div>
-  <div>
-    <div className="text-2xl text-primary font-mono">42</div>
-    <div className="text-sm text-muted-foreground">systems installed</div>
-  </div>
-  <div>
-    <div className="text-2xl text-primary font-mono">0</div>
-    <div className="text-sm text-muted-foreground">failed migrations</div>
-  </div>
-</div>
-```
+**Lines 203-206 — Update callout quote**
 
-**5. Remove Platform Implementation section (lines 256-280)**
-Delete the entire section. CloudRoute is already mentioned once in the hero bio—that's sufficient for a gateway page.
+Replace generic quote with validated positioning language.
+
+### File 2: `src/pages/Proof.tsx`
+
+**Lines 26-67 — Update `currentPatterns` array**
+
+Add enforcement software and platform decision patterns.
+
+**Lines 73-194 — Add 9th case study**
+
+Clean Claims engagement as anonymized case study (if appropriate).
 
 ---
 
-## What Stays
+## Quarterly Rotation Strategy (Fortune 500 Standard)
 
-- **Upwork page** (`/upwork`): Kept as-is. Noindexed, serves specific funnel purpose.
-- **Blog Salesforce content**: Kept. Thought leadership, not selling.
-- **Email nurture Salesforce references**: Kept. Qualified leads.
+Enterprise marketing teams rotate "What We're Seeing Right Now" quarterly based on:
+- Recent discovery calls
+- Closed deals
+- Lost deals (patterns that indicate readiness)
+
+For CWT Studio, establish a cadence:
+- Q1: Update with insights from Q4 calls
+- Q2: Update with insights from Q1 calls
+- etc.
+
+This shows buyers the site is actively maintained and market-aware.
 
 ---
 
-## Result
+## Summary of Changes
 
-The About page becomes a clean executive bio focused on:
-- Who Shannon is (Principal System Architect)
-- What she does (diagnoses revenue system failures)
-- How she works (diagnostic questions, beliefs, rules)
-- Social proof (8 years, 42 systems, 0 failed migrations)
+| Location | Change | Purpose |
+|----------|--------|---------|
+| `Home.tsx` lines 16-47 | Replace 4 of 6 patterns with call-validated ones | Real market signals |
+| `Home.tsx` lines 203-206 | Update callout with validated language | Proven resonance |
+| `Proof.tsx` lines 26-67 | Add 2 new patterns from calls | Fresh signals |
+| `Proof.tsx` lines 73-194 | Optional: Add 9th case study | Depth of proof |
 
-CloudRoute appears once, in passing, in the hero bio. No dedicated section. No partner cards. Gateway, not destination.
+---
 
+## What This Achieves
+
+**Before**: Patterns feel like consultant hypotheticals
+
+**After**: Patterns feel like "wait, how do they know my exact situation?"
+
+The key insight from Fortune 500 VoC programs: **Buyers trust language that sounds like their internal meetings, not marketing copy.**
+
+These transcripts gave you exact phrases buyers use. Now your website speaks their language.
