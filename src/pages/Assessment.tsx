@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
-import { CheckCircle, ArrowRight, FileText, BarChart3, Target, X } from "lucide-react";
+import { CheckCircle, FileText, BarChart3, Target, X } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { CTA, TIMELINES } from "@/lib/canonical-constants";
 
 const InfrastructureAssessment = () => {
@@ -129,10 +128,6 @@ const InfrastructureAssessment = () => {
         <div className="max-w-4xl">
           <div className="system-status mb-8">REVENUE INFRASTRUCTURE ASSESSMENT</div>
           
-          <p className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-4">
-            For teams where broken systems mean lost deals
-          </p>
-          
           <h1 className="heading-page mb-6 leading-[1.1]">
             Find Out What's Breaking
           </h1>
@@ -145,12 +140,14 @@ const InfrastructureAssessment = () => {
             Required entry point. We start with the assessment.
           </p>
 
-          <Button size="lg" asChild>
-            <Link to="/contact?interest=assessment&source_page=assessment">
-              {CTA.bookAssessment}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <ConversionOptimizedButton
+            to="/contact?interest=assessment&source_page=assessment"
+            ctaName="Assessment - Book Assessment Hero"
+            location="Assessment Hero"
+            size="lg"
+          >
+            {CTA.bookAssessment}
+          </ConversionOptimizedButton>
         </div>
       </Section>
 
@@ -308,12 +305,14 @@ const InfrastructureAssessment = () => {
             {TIMELINES.assessment} diagnostic audit. System scorecard, gap analysis, implementation pathway.
           </p>
 
-          <Button size="lg" asChild>
-            <Link to="/contact?interest=assessment&source_page=assessment">
-              {CTA.bookAssessment}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <ConversionOptimizedButton
+            to="/contact?interest=assessment&source_page=assessment"
+            ctaName="Assessment - Book Assessment CTA"
+            location="Assessment CTA"
+            size="lg"
+          >
+            {CTA.bookAssessment}
+          </ConversionOptimizedButton>
         </div>
       </Section>
     </div>

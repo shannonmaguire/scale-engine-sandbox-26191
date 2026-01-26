@@ -5,7 +5,7 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import { CheckCircle, X, Eye, Search, Lock, ArrowRight } from "lucide-react";
+import { CheckCircle, X } from "lucide-react";
 import { POSITIONING, ROUTES } from "@/lib/canonical-constants";
 
 const Home = () => {
@@ -46,27 +46,6 @@ const Home = () => {
     }
   ];
 
-  // How We Work
-  const howWeWork = [
-    {
-      icon: Eye,
-      label: "WHAT YOU CAN'T SEE YET",
-      title: "Visibility",
-      description: "Most revenue problems are invisible until too late. We surface them first."
-    },
-    {
-      icon: Search,
-      label: "WHERE IT BREAKS",
-      title: "Diagnosis",
-      description: "We trace breakage to source—fix traffic, process breaks, and catch contact failures."
-    },
-    {
-      icon: Lock,
-      label: "WHAT HOLDS UNDER LOAD",
-      title: "Enforcement",
-      description: "Systems that hold under load—automation, prevention, and accountability built in."
-    }
-  ];
 
   // Fit / Not Fit
   const fitCriteria = [
@@ -139,16 +118,12 @@ const Home = () => {
               <span className="sm:hidden text-inherit">Book Audit</span>
             </ConversionOptimizedButton>
 
-            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 pt-2">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="font-mono">42 systems installed</span>
-                <ArrowRight className="w-3 h-3 text-primary" />
-                <span className="font-mono">Zero failed migrations</span>
-              </div>
-              <div className="hidden sm:block text-muted-foreground/50">|</div>
-              <div className="text-sm text-muted-foreground font-mono">
-                Martech, RevOps, Ops, SaaS
-              </div>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground font-mono">
+              <span>42 systems installed</span>
+              <span className="text-primary">•</span>
+              <span>Zero failed migrations</span>
+              <span className="text-primary">•</span>
+              <span>8 years, same methodology</span>
             </div>
           </div>
         </div>
@@ -156,7 +131,7 @@ const Home = () => {
 
       {/* What We're Seeing Right Now */}
       <Section variant="muted" className="border-t border-border">
-        <div className="max-w-6xl">
+        <div className="max-w-5xl">
           <h2 className="heading-section mb-10">What We're Seeing Right Now</h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -177,36 +152,6 @@ const Home = () => {
         </div>
       </Section>
 
-      {/* How We Work */}
-      <Section className="border-t border-border">
-        <div className="max-w-4xl">
-          <h2 className="heading-section mb-10">How We Work</h2>
-
-          <div className="grid lg:grid-cols-3 gap-6 mb-10">
-            {howWeWork.map((item, index) => (
-              <div key={index} className="border border-border bg-card p-6">
-                <item.icon className="w-8 h-8 text-primary mb-4" strokeWidth={1.5} />
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-2">
-                  {item.label}
-                </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Callout box */}
-          <div className="border-l-2 border-primary bg-muted/50 p-6">
-            <p className="text-base text-foreground italic">
-              "CRM agnostic. We dive deeper into how the business actually runs—then design systems that hold under load."
-            </p>
-          </div>
-        </div>
-      </Section>
 
       {/* Who This Is For */}
       <Section variant="muted" className="border-t border-border">

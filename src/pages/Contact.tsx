@@ -182,14 +182,10 @@ const Contact = () => {
           )}
 
           {/* Hero */}
-          <div className="text-center mb-12">
-            <div className="system-status mb-8">
-              CONTACT
-            </div>
-            <h1 className="heading-page mb-4">
-              Let's Talk
-            </h1>
-            <p className="text-description text-muted-foreground max-w-xl mx-auto">
+          <div className="mb-12">
+            <div className="system-status mb-8">CONTACT</div>
+            <h1 className="heading-page mb-4">Let's Talk</h1>
+            <p className="text-description text-muted-foreground max-w-2xl">
               Describe your infrastructure. We'll respond within 24 hours.
             </p>
           </div>

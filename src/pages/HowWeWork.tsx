@@ -94,9 +94,6 @@ const HowWeWork = () => {
       <Section>
         <div className="max-w-3xl">
           <div className="system-status mb-8">METHODOLOGY</div>
-          <p className="text-sm font-mono text-muted-foreground uppercase tracking-widest mb-4">
-            For teams ready to stop patching and start scaling
-          </p>
           <h1 className="heading-page mb-6">How We Work</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Revenue infrastructure is built in layers. Each layer depends on the one before it. Skip a layer, and growth stalls.
