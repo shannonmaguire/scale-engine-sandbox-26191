@@ -15,14 +15,24 @@ const Home = () => {
   // What We're Seeing Right Now - Industry patterns
   const currentPatterns = [
     {
-      category: "MEDICAL DEVICES",
-      title: "Teams losing forecast accuracy during regulatory handoffs",
-      description: "Deals stall as compliance reviews prevent clean baseline → the pipeline"
+      category: "ENFORCEMENT SOFTWARE",
+      title: "Product enforces externally what doesn't exist internally",
+      description: "The product is polished. The back office is duct tape and prayer."
     },
     {
-      category: "OPS",
-      title: "Deals stalling post-demo because ownership isn't enforced",
-      description: "Handoff from sales to ops breaks when there's no system holding it"
+      category: "HEALTH SERVICES",
+      title: "Operational access granted before payment collected",
+      description: "Clients onboarded. Revenue recognized. Invoice never sent."
+    },
+    {
+      category: "MULTI-PLATFORM",
+      title: "Platform chosen by familiarity, not architecture fit",
+      description: "One person knew the tool. Nobody knew the architecture."
+    },
+    {
+      category: "REALITY DRIFT",
+      title: "CRM data diverges from truth without human intervention",
+      description: "Software assumes compliance. Humans don't comply."
     },
     {
       category: "PROFESSIONAL SERVICES",
@@ -33,16 +43,6 @@ const Home = () => {
       category: "PARTNER-LED SALESFORCE",
       title: "RevOps → Finance boundary breaks at scale",
       description: "Everyone looks clean until 5 errors accumulate"
-    },
-    {
-      category: "SAAS STARTUPS",
-      title: "Companies selling enforcement systems that lack their own internal system of enforcement",
-      description: "The product is polished but the back office is held together by manual processes"
-    },
-    {
-      category: "EQUIPMENT / KIT",
-      title: "Growth exposing cracks in fragmented systems before they break",
-      description: "Things work today, but volume will surface what manual processes are hiding"
     }
   ];
 
@@ -202,7 +202,7 @@ const Home = () => {
           {/* Callout box */}
           <div className="border-l-2 border-primary bg-muted/50 p-6">
             <p className="text-base text-foreground italic">
-              "We design for expected value—what will close, what will stall, and why. That's how CPOs and RevOps leaders think. We design systems the same way."
+              "CRM agnostic. We dive deeper into how the business actually runs—then design systems that hold under load."
             </p>
           </div>
         </div>

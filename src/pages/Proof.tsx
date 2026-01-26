@@ -25,14 +25,24 @@ interface CaseStudy {
 // Current patterns from active engagements
 const currentPatterns = [
   {
-    category: "MEDICAL DEVICES",
-    title: "Teams losing forecast accuracy during regulatory handoffs",
-    description: "Deals stall as compliance reviews aren't linked into the pipeline"
+    category: "ENFORCEMENT SOFTWARE",
+    title: "Product enforces externally what doesn't exist internally",
+    description: "Clean claims for customers, messy books for the business"
   },
   {
-    category: "OPS",
-    title: "Deals stalling post-demo because ownership isn't enforced",
-    description: "Handoff from sales to ops breaks when there's no system holding it"
+    category: "PLATFORM DECISIONS",
+    title: "CRM chosen by individual familiarity, not system fit",
+    description: "One person knew the tool. Nobody knew the architecture."
+  },
+  {
+    category: "HEALTH SERVICES",
+    title: "Operational access granted before payment collected",
+    description: "Clients onboarded. Revenue recognized. Invoice never sent."
+  },
+  {
+    category: "REALITY DRIFT",
+    title: "CRM data requires human intervention to match truth",
+    description: "Software assumes compliance. Humans don't comply."
   },
   {
     category: "PROFESSIONAL SERVICES",
@@ -45,24 +55,14 @@ const currentPatterns = [
     description: "Everyone looks clean until 5 errors accumulate"
   },
   {
-    category: "SAAS STARTUPS",
-    title: "Companies selling enforcement systems that lack their own internal system of enforcement",
-    description: "The product is polished but the back office is held together by manual processes"
+    category: "MULTI-PLATFORM",
+    title: "Platform chosen by familiarity, not architecture fit",
+    description: "One guy knew Zoho. Six months later, $50K mistake."
   },
   {
-    category: "EQUIPMENT / KIT",
-    title: "Growth exposing cracks in fragmented systems before they break",
-    description: "Things work today, but volume will surface what manual processes are hiding"
-  },
-  {
-    category: "HEALTH SERVICES",
-    title: "Operational access granted before commercials are settled",
-    description: "Revenue recognized in paper while payment collection is unmoored"
-  },
-  {
-    category: "MULTI SYSTEM ENGINEERING",
-    title: "Systems drift between CRM, finance, and operations platforms",
-    description: "Reality diverges in one system but isn't reflected everywhere without human intervention"
+    category: "OPS",
+    title: "Handoff from sales to ops breaks when ownership isn't enforced",
+    description: "Deal closes. Delivery scrambles. Client churns."
   }
 ];
 
