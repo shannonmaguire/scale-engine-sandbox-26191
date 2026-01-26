@@ -137,9 +137,9 @@ const About = () => {
                   Most revenue problems are invisible until the deal is already lost. I surface them early, diagnose where the system is actually breaking, and install infrastructure that holds under load.
                 </p>
 
-                <p className="text-muted-foreground leading-relaxed">
-                  Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Every system documented. Every handoff clean.
-                </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Architecture and strategy handled directly. Enterprise platform implementation through CloudRoute (ISV Partner). HubSpot and lighter stacks handled directly. Every system documented. Every handoff clean.
+            </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-border">
@@ -253,15 +253,15 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Salesforce Partner */}
+      {/* Platform Implementation */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Salesforce Projects</h2>
+          <h2 className="heading-section mb-8">Platform Implementation</h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-card p-6 border-l-2 border-primary">
               <div className="text-label text-primary mb-2">CWT Studio</div>
-              <div className="text-sm text-muted-foreground">Strategy & design</div>
+              <div className="text-sm text-muted-foreground">Strategy & architecture</div>
             </div>
 
             <div className="bg-card p-6 border-l-2 border-accent">
@@ -269,12 +269,12 @@ const About = () => {
                 <div className="text-label text-accent">CloudRoute</div>
                 <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded font-mono">ISV Partner</span>
               </div>
-              <div className="text-sm text-muted-foreground">Platform implementation</div>
+              <div className="text-sm text-muted-foreground">Enterprise platform delivery</div>
             </div>
           </div>
 
           <p className="text-sm text-muted-foreground mt-6">
-            HubSpot and non-Salesforce work handled directly.
+            HubSpot and lighter stacks handled directly.
           </p>
         </div>
       </Section>

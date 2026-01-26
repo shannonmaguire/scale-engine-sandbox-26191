@@ -346,11 +346,10 @@ export const DealRegistrationModal = ({ open, onOpenChange }: DealRegistrationMo
                   <SelectTrigger className="font-mono">
                     <SelectValue placeholder="Select..." />
                   </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="assessment">Revenue Assessment</SelectItem>
-                    <SelectItem value="sprint">Revenue Sprint</SelectItem>
-                    <SelectItem value="salesforce">Salesforce Implementation</SelectItem>
-                    <SelectItem value="fractional">Fractional Operations</SelectItem>
+                <SelectContent>
+                    <SelectItem value="assessment">Assessment</SelectItem>
+                    <SelectItem value="implementation">Implementation</SelectItem>
+                    <SelectItem value="enterprise">Enterprise Architecture</SelectItem>
                     <SelectItem value="custom">Custom Engagement</SelectItem>
                   </SelectContent>
                 </Select>
