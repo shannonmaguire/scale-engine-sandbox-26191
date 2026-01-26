@@ -1,140 +1,133 @@
 
-
-# How We Work Page Redesign Plan
+# Proof Page Redesign: Maximize Case Studies
 
 ## Overview
-Redesign the How We Work page to match the reference screenshot structure, adding two new sections ("Questions We Ask" and "What We Look For") while refining the existing architecture and implementation phases sections.
+Restructure the Proof page to maximize case study visibility by adding a pattern-based industry signals section (mirroring the homepage pattern grid) and improving the overall information density so visitors see more social proof above the fold.
 
-## Key Changes
+## Current Issues
+1. The rotating metrics bar takes up valuable space but only shows 4 metrics at a time
+2. "The Short Version" only shows 4 of 8 case studies
+3. The carousel requires active navigation to see all case studies
+4. Missing: Pattern signals section that shows current observations from active engagements
 
-### 1. Architecture Section Enhancement
+## Proposed Structure (matching reference)
 
-**Current:**
-- Title: "The Architecture" with subtitle "How We Build It"
-- 6-layer grid with cards
+### Section 1: Hero (Keep, Minor Update)
+- Title: "What We Fixed"
+- Subtitle: "Real results from teams that fixed what was breaking."
+- Remove rotating metrics bar (redundant - metrics embedded in case studies)
 
-**Updated:**
-- Combined title: "The Architecture" + "How We Build It" on two lines
-- Keep the 6-layer grid with same structure
-- Footer text: "This is the order. Starting layer stages." (matching reference)
+### Section 2: The Short Version (Enhanced)
+All 4 featured studies shown with:
+- Industry + Vertical header
+- Growth result + timeline badge
+- Human problem as main text
+- Before → After metrics footer
+- Click to expand for "What we did" + "The Result"
 
-### 2. NEW Section: "Questions We Ask"
+### Section 3: NEW - "What We're Seeing Right Now" (Pattern Grid)
+Add 8-card grid mirroring homepage pattern but derived from case study verticals:
 
-Add a diagnostic questions section after the architecture:
+| Category | Title | Description |
+|----------|-------|-------------|
+| MEDICAL DEVICES | Teams losing forecast accuracy during regulatory handoffs | Deals stall as compliance reviews aren't linked into the pipeline |
+| OPS | Deals stalling post-demo because ownership isn't enforced | Handoff from sales to ops breaks when there's no system holding it |
+| PROFESSIONAL SERVICES | Revenue closes but delivery systems fail to operationalize | Sales close, ops scrambles, clients churn |
+| PARTNER-LED SALESFORCE | RevOps → Finance boundary breaks at scale | Everyone looks clean until 5 errors accumulate |
+| SAAS STARTUPS | Companies selling enforcement systems that lack their own internal system of enforcement | The product is polished but the back office is held together by manual processes |
+| EQUIPMENT / KIT | Growth exposing cracks in fragmented systems before they break | Things work today, but volume will surface what manual processes are hiding |
+| HEALTH SERVICES | Operational access granted before commercials are settled | Revenue recognized in paper while payment collection is unmoored |
+| MULTI SYSTEM ENGINEERING | Systems drift between CRM, finance, and operations platforms | Reality diverges in one system but isn't reflected everywhere without human intervention |
 
-| Question | Description |
-|----------|-------------|
-| "What happens when reality changes in your system?" | Surfacing whether the system the silently passes under critically exposes manual intervention. |
-| "Walk me through the steps when someone purchases." | Mapping where the workflow breaks, where steps are undocumented, and where operational revenue is baked into the commercial settlements. |
-| "How do you reconcile when a subscription changes?" | Identifying notification gaps, system-to-system ambiguity and edge case handling. |
-| "What keeps you up at night?" | Locating the trust or rigor and where things slip through the cracks. |
+Section intro: "Anonymized signals from active engagements across medical devices, CPG, SaaS, and services."
 
-### 3. NEW Section: "What We Look For"
+### Section 4: All 8 Case Studies (Carousel - Keep)
+- Title: "All 8 Case Studies"
+- Subtitle: "The full story with details."
+- Keep existing carousel component unchanged
 
-Add a 4-card grid showing critical patterns that predict revenue system failure:
+### Section 5: Trust Indicators (Keep)
+Partner logos section
 
-| Pattern | Description |
-|---------|-------------|
-| No orchestration | Everything trying to be generous stitches |
-| System drift | Parallel changing that one system but not the adjacent one |
-| Manual enforcement | If something critical requires someone to check |
-| Operational access before contractual settlement | Granting viewing that hits the payment collection |
-
-Intro text: "These are the four patterns that predict revenue system failure. If any of these exist, growth will expose them."
-
-### 4. Implementation Phases - Minor Updates
-
-Keep the current 3-phase structure with same deliverables, but ensure styling matches reference:
-- Phase numbers aligned left
-- Title with duration badge on the right
-- Deliverables as checkmark list inline
-
-### 5. Principles Section
-
-Keep existing principles as border-boxed tags with primary color text.
-
-### 6. Final CTA
-
-Keep current structure:
-- Title: "Find Out What's Breaking"
-- Two buttons: "Book Assessment" and "See Results"
+### Section 6: Final CTA (Keep)
+"Find Out What's Breaking" with Book Assessment button
 
 ---
 
 ## Technical Implementation
 
-### Files to Modify:
-1. **`src/pages/HowWeWork.tsx`** - Add new sections and data structures
-2. **`src/components/RevenueArchitectureDiagram.tsx`** - Update footer text
+### Files to Modify
+1. **`src/pages/Proof.tsx`** - Add patterns section, remove rotating metrics bar
 
-### New Data Structures:
-
+### New Data Structure
 ```typescript
-// Questions We Ask
-const diagnosticQuestions = [
+const currentPatterns = [
   {
-    question: "What happens when reality changes in your system?",
-    description: "Surfacing whether the system silently passes or critically exposes manual intervention."
+    category: "MEDICAL DEVICES",
+    title: "Teams losing forecast accuracy during regulatory handoffs",
+    description: "Deals stall as compliance reviews aren't linked into the pipeline"
   },
   {
-    question: "Walk me through the steps when someone purchases.",
-    description: "Mapping where the workflow breaks, where steps are undocumented, and where operational revenue is baked into commercial settlements."
+    category: "OPS",
+    title: "Deals stalling post-demo because ownership isn't enforced",
+    description: "Handoff from sales to ops breaks when there's no system holding it"
   },
   {
-    question: "How do you reconcile when a subscription changes?",
-    description: "Identifying notification gaps, system-to-system ambiguity, and edge case handling."
+    category: "PROFESSIONAL SERVICES",
+    title: "Revenue closes but delivery systems fail to operationalize",
+    description: "Sales close, ops scrambles, clients churn"
   },
   {
-    question: "What keeps you up at night?",
-    description: "Locating the trust or rigor and where things slip through the cracks."
-  }
-];
-
-// What We Look For - Critical patterns
-const criticalPatterns = [
-  {
-    title: "No orchestration",
-    description: "Everything trying to be generous stitches"
+    category: "PARTNER-LED SALESFORCE",
+    title: "RevOps → Finance boundary breaks at scale",
+    description: "Everyone looks clean until 5 errors accumulate"
   },
   {
-    title: "System drift",
-    description: "Parallel changing that one system but not the adjacent one"
+    category: "SAAS STARTUPS",
+    title: "Companies selling enforcement systems that lack their own internal system of enforcement",
+    description: "The product is polished but the back office is held together by manual processes"
   },
   {
-    title: "Manual enforcement",
-    description: "If something critical requires someone to check"
+    category: "EQUIPMENT / KIT",
+    title: "Growth exposing cracks in fragmented systems before they break",
+    description: "Things work today, but volume will surface what manual processes are hiding"
   },
   {
-    title: "Operational access before contractual settlement",
-    description: "Granting viewing that hits the payment collection"
+    category: "HEALTH SERVICES",
+    title: "Operational access granted before commercials are settled",
+    description: "Revenue recognized in paper while payment collection is unmoored"
+  },
+  {
+    category: "MULTI SYSTEM ENGINEERING",
+    title: "Systems drift between CRM, finance, and operations platforms",
+    description: "Reality diverges in one system but isn't reflected everywhere without human intervention"
   }
 ];
 ```
 
-### Section Order (matching reference):
-1. Hero (existing)
-2. The Architecture / How We Build It (existing, update footer text)
-3. **NEW: Questions We Ask**
-4. **NEW: What We Look For**
-5. Implementation Phases (existing)
-6. Principles (existing)
-7. Final CTA (existing)
+### Section Order (Final)
+1. Hero ("What We Fixed")
+2. The Short Version (4 featured case study cards)
+3. **NEW: "What We're Seeing Right Now"** (8-card pattern grid)
+4. All 8 Case Studies (carousel)
+5. Trust Indicators
+6. Final CTA
 
-### Styling Approach:
-- Questions section: Numbered list with monospace question text and muted description
-- Critical patterns: 2x2 card grid with border-border styling
-- Use font-mono for section badges and labels
-- Maintain squared aesthetic (no rounded corners)
-- Primary color for section badges
+### Changes Summary
+- **Remove**: Rotating metrics bar section (lines 261-308)
+- **Add**: "What We're Seeing Right Now" pattern grid section after "The Short Version"
+- **Keep**: Everything else unchanged
+
+### Styling
+- Pattern grid: 2 columns on mobile, 4 columns on desktop
+- Cards use `border border-border bg-card p-6` consistent with homepage
+- Monospace category labels with `font-mono text-xs uppercase tracking-widest text-primary`
+- Section badge: "PATTERNS" in primary color
 
 ---
 
-## Language Compliance Check
-
+## Language Compliance
 All new copy verified against phrases kill list:
 - No triplet cadences
-- No "compelling/powerful/impactful/transformative"
-- No "unlock/discover/leverage/optimize"
-- No "Not X, but Y" framing
+- No banned words (compelling, powerful, unlock, discover, etc.)
 - Direct declarative statements only
-
