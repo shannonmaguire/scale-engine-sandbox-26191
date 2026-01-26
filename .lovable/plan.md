@@ -1,97 +1,71 @@
 
+# Standardize Nav-to-Hero Spacing Across All Interior Pages
 
-# Fix "What We're Seeing Right Now" Patterns
+## Problem Identified
+The Proof page uses different spacing than other interior pages:
+- **Proof**: Uses `noPadding` + custom `section-spacing-half` (40px on both desktop and mobile)
+- **About, How We Work, Assessment, Contact**: Use standard `section-spacing` (80px desktop / 40px mobile)
 
-## Problem
-The current patterns mix real observations with made-up categories. "PARTNER-LED SALESFORCE" and "ENFORCEMENT SOFTWARE" don't map to actual work done. The descriptions are too abstract and generic.
-
-## Solution
-Replace with patterns grounded in actual case study work and real market observations. Each pattern should describe what's breaking in language buyers recognize.
+This creates visual inconsistency in the distance between the navigation/breadcrumbs and the hero section badges (FOUNDER, METHODOLOGY, CASE STUDIES, etc.).
 
 ---
 
-## New Patterns (Based on Real Work)
+## Solution
 
-**File**: `src/pages/Home.tsx`  
-**Lines**: 15-47
+Update the Proof page hero section to match the standard pattern used by About, How We Work, Assessment, and Contact pages.
 
-Replace `currentPatterns` array with:
+### Changes Required
 
-```javascript
-const currentPatterns = [
-  {
-    category: "LEAD FOLLOW-UP",
-    title: "Leads come in. Nobody follows up.",
-    description: "Everything depends on memory. Deals go cold while the team argues about whose turn it was."
-  },
-  {
-    category: "TRIAL CONVERSION",
-    title: "800 trials a month, 6% convert",
-    description: "Sales calls everyone. No way to tell who's actually using the product."
-  },
-  {
-    category: "SCATTERED OPERATIONS",
-    title: "Projects live in email, Slack, Drive, and Trello",
-    description: "15 hours a week just figuring out what's happening. No single source of truth."
-  },
-  {
-    category: "OUTBOUND",
-    title: "Zero pipeline. Waiting for inbound that never comes.",
-    description: "No ICP. No system. Founder still doing all the selling."
-  },
-  {
-    category: "BILLING / DELIVERY GAP",
-    title: "Clients onboarded. Invoice never sent.",
-    description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
-  },
-  {
-    category: "WRONG BUSINESS MODEL",
-    title: "$500/hour partners doing $50/hour work",
-    description: "Want subscriptions but don't know if the math works. Trapped in hourly billing."
-  }
-];
+**File**: `src/pages/Proof.tsx`  
+**Lines**: 175-179
+
+**Current code:**
+```jsx
+<Section noPadding className="border-b border-border">
+  <div className="section-spacing-half">
+    <div className="system-status mb-8">CASE STUDIES</div>
+    <h1 className="heading-page">What We Fixed</h1>
+  </div>
+</Section>
+```
+
+**Updated code:**
+```jsx
+<Section className="border-b border-border">
+  <div className="system-status mb-8">CASE STUDIES</div>
+  <h1 className="heading-page">What We Fixed</h1>
+</Section>
 ```
 
 ---
 
-## Why These Patterns
+## Why This Works
 
-| Pattern | Source |
-|---------|--------|
-| "Leads come in. Nobody follows up." | Case Study #2: Digital Education Platform |
-| "800 trials a month, 6% convert" | Case Study #6: B2B SaaS Project Management |
-| "Projects live in email, Slack, Drive, and Trello" | Case Study #7: Marketing Agency |
-| "Zero pipeline. Waiting for inbound." | Case Study #3: Federal Cybersecurity |
-| "Clients onboarded. Invoice never sent." | Retained from current (validated observation) |
-| "$500/hour partners doing $50/hour work" | Case Study #4: Subscription Legal |
+- Removes `noPadding` prop to restore standard section spacing
+- Removes the extra `<div className="section-spacing-half">` wrapper since the Section component already applies padding
+- All interior pages now have identical structure:
+  - `Breadcrumbs` → `Section` (with standard 80px/40px padding) → `system-status` badge → `heading-page`
 
 ---
 
-## What Gets Removed
+## Verification
 
-- "ENFORCEMENT SOFTWARE" — No case study supports it
-- "MULTI-PLATFORM" — Too abstract, replaced with specific "scattered operations" observation  
-- "REALITY DRIFT" — Good concept but too abstract as a category label
-- "PARTNER-LED SALESFORCE" — Made up, no supporting work
+After this change, all interior pages will share identical spacing:
 
----
-
-## Tone Alignment
-
-Each pattern now:
-- Uses specific numbers where possible (800 trials, 6%, $500/hour)
-- Describes the symptom the buyer experiences
-- Avoids abstract category labels
-- Matches the grandmaster writing standards (direct, settled, no theatrical framing)
+| Page | Structure |
+|------|-----------|
+| About | `Breadcrumbs` → `Section` → `system-status mb-8` → `heading-page` |
+| How We Work | `Breadcrumbs` → `Section` → `system-status mb-8` → `heading-page` |
+| Proof | `Breadcrumbs` → `Section` → `system-status mb-8` → `heading-page` |
+| Assessment | `Breadcrumbs` → `Section` → `system-status mb-8` → `heading-page` |
+| Contact | `Breadcrumbs` → `Section` → `system-status mb-8` → `heading-page` |
 
 ---
 
 ## Technical Details
 
-**File**: `src/pages/Home.tsx`  
-**Lines modified**: 15-47 (replace `currentPatterns` array)
-
-**No other files affected**
-
-**Estimated change**: ~30 lines replaced
+- **File modified**: `src/pages/Proof.tsx`
+- **Lines changed**: 175-179 (5 lines)
+- **No other files affected**
+- **Spacing system preserved**: Uses existing `section-spacing` class from design system
 
