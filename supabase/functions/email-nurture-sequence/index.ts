@@ -102,6 +102,21 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const { email, resourceId, resourceTitle }: NurtureRequest = await req.json();
+
+    // Validate input lengths to prevent abuse
+    if (resourceId && resourceId.length > 100) {
+      return new Response(
+        JSON.stringify({ error: "Resource ID too long" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (resourceTitle && resourceTitle.length > 500) {
+      return new Response(
+        JSON.stringify({ error: "Resource title too long" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
     
     console.log(`Processing nurture sequence for resource: ${resourceId}, email: ${email?.substring(0, 3)}***`);
 

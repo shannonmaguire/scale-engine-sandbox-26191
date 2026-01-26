@@ -8,6 +8,9 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
+// UUID v4 validation regex
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+
 interface DataDeletionRequest {
   requestId: string;
 }
@@ -22,18 +25,55 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const supabaseUrl = Deno.env.get("SUPABASE_URL");
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+    const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY");
     const resendApiKey = Deno.env.get("RESEND_API_KEY");
 
-    if (!supabaseUrl || !supabaseServiceKey) {
+    if (!supabaseUrl || !supabaseServiceKey || !supabaseAnonKey) {
       throw new Error("Missing Supabase configuration");
     }
 
+    // Validate authentication and get current user
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return new Response(
+        JSON.stringify({ error: "Authorization required" }),
+        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Create client with user's auth context to verify their identity
+    const supabaseAuth = createClient(supabaseUrl, supabaseAnonKey, {
+      global: { headers: { Authorization: authHeader } }
+    });
+
+    // Verify the user's token
+    const { data: { user }, error: userError } = await supabaseAuth.auth.getUser();
+    
+    if (userError || !user) {
+      return new Response(
+        JSON.stringify({ error: "Invalid authentication token" }),
+        { status: 401, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const currentUserId = user.id;
+    const currentUserEmail = user.email;
+
+    // Service role client for actual data operations
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
     const { requestId }: DataDeletionRequest = await req.json();
 
-    if (!requestId) {
+    if (!requestId || typeof requestId !== 'string') {
       return new Response(
         JSON.stringify({ error: "Request ID is required" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // Validate UUID format
+    if (!UUID_REGEX.test(requestId)) {
+      return new Response(
+        JSON.stringify({ error: "Invalid request ID format" }),
         { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
@@ -51,6 +91,19 @@ const handler = async (req: Request): Promise<Response> => {
       return new Response(
         JSON.stringify({ error: "Deletion request not found" }),
         { status: 404, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    // CRITICAL: Verify ownership - user can only process their own requests
+    const ownsRequest = 
+      (request.user_id && request.user_id === currentUserId) ||
+      (request.email && currentUserEmail && request.email.toLowerCase() === currentUserEmail.toLowerCase());
+
+    if (!ownsRequest) {
+      console.warn(`Unauthorized deletion attempt: user ${currentUserId} tried to delete request ${requestId}`);
+      return new Response(
+        JSON.stringify({ error: "Not authorized to process this request" }),
+        { status: 403, headers: { "Content-Type": "application/json", ...corsHeaders } }
       );
     }
 

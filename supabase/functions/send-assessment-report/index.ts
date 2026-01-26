@@ -21,6 +21,12 @@ interface AssessmentRequest {
   checklistState: any;
 }
 
+// Validation constants
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_TITLE_LENGTH = 200;
+const MIN_SCORE = 0;
+const MAX_SCORE = 36;
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -34,7 +40,36 @@ const handler = async (req: Request): Promise<Response> => {
       answerCounts,
     }: AssessmentRequest = await req.json();
 
-    console.log("Sending assessment report to:", email);
+    // Input validation
+    if (!email || typeof email !== 'string' || !EMAIL_REGEX.test(email.trim())) {
+      return new Response(
+        JSON.stringify({ error: "Invalid email format" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (!checklistTitle || typeof checklistTitle !== 'string' || checklistTitle.length > MAX_TITLE_LENGTH) {
+      return new Response(
+        JSON.stringify({ error: "Invalid checklist title" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (typeof overallScore !== 'number' || overallScore < MIN_SCORE || overallScore > MAX_SCORE) {
+      return new Response(
+        JSON.stringify({ error: `Invalid score (must be ${MIN_SCORE}-${MAX_SCORE})` }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    if (!answerCounts || typeof answerCounts.yes !== 'number' || typeof answerCounts.no !== 'number' || typeof answerCounts.partial !== 'number') {
+      return new Response(
+        JSON.stringify({ error: "Invalid answer counts" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    console.log("Sending assessment report to:", email.substring(0, 3) + "***");
 
     // Determine tier based on raw score (0-36)
     const getTierData = (score: number) => {
