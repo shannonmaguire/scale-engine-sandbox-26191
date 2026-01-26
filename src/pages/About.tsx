@@ -4,30 +4,62 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import { Linkedin } from "lucide-react";
+import { Linkedin, CheckSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import shannonHeadshot from "@/assets/shannon-headshot.jpg";
 import { CTA, ROUTES } from "@/lib/canonical-constants";
 
+// What I Believe
+const beliefs = [
+  {
+    title: "System enforcement, not human enforcement",
+    description: "If a process depends on someone remembering to do it, it will eventually fail. Systems must hold what humans cannot."
+  },
+  {
+    title: "Discovery before configuration",
+    description: "We ask the hard questions first. What happens when reality changes? Where do things slip through the cracks?"
+  },
+  {
+    title: "Dependency order matters",
+    description: "Revenue infrastructure is built in layers. Skip a layer, and growth stalls. We install in sequence."
+  }
+];
+
+// How I Work - Diagnostic questions
+const diagnosticQuestions = [
+  {
+    question: '"What happens when reality changes in your system?"',
+    purpose: "Surfacing whether the system silently passes or critically exposes manual intervention."
+  },
+  {
+    question: '"Walk me through the steps when someone purchases."',
+    purpose: "Mapping where the workflow breaks, where steps are undocumented, and where operational access outpaces commercial settlement."
+  },
+  {
+    question: '"How do you reconcile when a subscription changes?"',
+    purpose: "Identifying notification gaps, ownership ambiguity, and edge case handling."
+  }
+];
+
+// Rules - no justifications
+const rules = [
+  "We assess before we build.",
+  "Fixed price, not hourly.",
+  "90-day cycles max.",
+  "You own everything."
+];
+
 const About = () => {
   usePerformanceMonitoring();
   useScrollDepth();
-
-  // Rules - no justifications
-  const rules = [
-    "We assess before we build.",
-    "Fixed price, not hourly.",
-    "90-day cycles max.",
-    "You own everything."
-  ];
 
   return (
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead 
         title="About Shannon Maguire | Revenue Systems Architect | CWT Studio" 
-        description="Shannon Maguire installs revenue infrastructure for high-trust teams—legal, healthcare, and B2B SaaS—where broken systems kill deals." 
+        description="Shannon Maguire finds where revenue systems are failing—then installs enforcement so they can't fail again. For teams where broken systems erode customer trust." 
         keywords={[
           'about CWT Studio', 
           'revenue infrastructure', 
@@ -39,14 +71,14 @@ const About = () => {
         personSchema={{
           name: 'Shannon Maguire',
           jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)',
-          description: 'Installs revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. Every system documented. Every handoff clean.',
+          description: "Finds where revenue systems are failing—then installs enforcement so they cannot fail again. Every system documented. Every handoff clean.",
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
           image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
         }}
         faqSchema={[
           {
             question: 'Who is Shannon Maguire?',
-            answer: 'Shannon Maguire is the founder and revenue systems architect at CWT Studio, installing revenue infrastructure for high-trust teams.'
+            answer: "Shannon Maguire is the founder and revenue systems architect at CWT Studio, finding where revenue systems fail and installing enforcement so they cannot fail again."
           },
           {
             question: 'What industries does CWT Studio serve?',
@@ -99,18 +131,26 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  I install revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. Where broken systems kill deals.
+                  I find where revenue systems are failing—then install enforcement so they can't fail again.
                 </p>
                 
+                <p className="text-muted-foreground leading-relaxed">
+                  Most revenue problems are invisible until the deal is already lost. I surface them early, diagnose where the system is actually breaking, and install infrastructure that holds under load.
+                </p>
+
                 <p className="text-muted-foreground leading-relaxed">
                   Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Every system documented. Every handoff clean.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-border">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-border">
                 <div className="flex items-baseline gap-3">
                   <div className="text-label text-primary font-mono">8 years</div>
                   <div className="text-sm text-muted-foreground">same methodology</div>
+                </div>
+                <div className="flex items-baseline gap-3">
+                  <div className="text-label text-primary font-mono">42</div>
+                  <div className="text-sm text-muted-foreground">systems installed</div>
                 </div>
                 <div className="flex items-baseline gap-3">
                   <div className="text-label text-primary font-mono">0</div>
@@ -122,10 +162,52 @@ const About = () => {
         </div>
       </Section>
 
-      {/* How I Think About Systems */}
+      {/* What I Believe */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">How I Think About Systems</h2>
+          <div className="system-status mb-4">BELIEFS</div>
+          <h2 className="heading-section mb-8">What I Believe</h2>
+
+          <div className="space-y-4">
+            {beliefs.map((belief, index) => (
+              <div key={index} className="bg-card p-6 border-l-2 border-primary">
+                <h3 className="text-foreground font-semibold mb-2">{belief.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {belief.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* How I Work */}
+      <Section className="border-b border-border">
+        <div className="max-w-3xl">
+          <div className="system-status mb-4">DIAGNOSTIC</div>
+          <h2 className="heading-section mb-4">How I Work</h2>
+          <p className="text-muted-foreground mb-8">
+            Every engagement starts with the same questions. They surface where the system is actually failing—not where you think it's failing.
+          </p>
+
+          <div className="space-y-6">
+            {diagnosticQuestions.map((item, index) => (
+              <div key={index} className="flex gap-4">
+                <CheckSquare className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <p className="font-mono text-foreground mb-1">{item.question}</p>
+                  <p className="text-sm text-muted-foreground">{item.purpose}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* People → Process → Technology */}
+      <Section variant="muted" className="border-b border-border">
+        <div className="max-w-3xl">
+          <h2 className="heading-section mb-8">People → Process → Technology</h2>
 
           <div className="grid md:grid-cols-3 gap-4 mb-6">
             <div className="bg-card p-6 border-l-2 border-primary">
@@ -156,7 +238,7 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Rules - No justifications */}
+      {/* Rules */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">Rules</h2>
@@ -172,7 +254,7 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Salesforce Partner - Condensed */}
+      {/* Salesforce Partner */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">Salesforce Projects</h2>
@@ -198,7 +280,7 @@ const About = () => {
         </div>
       </Section>
 
-      {/* CTA - No paragraph */}
+      {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-8">Find Out What's Breaking</h2>
