@@ -121,7 +121,7 @@ export const RevenueArchitectureDiagram = () => {
         {/* Footer */}
         <div className="mt-10 pt-6 border-t border-primary/20">
           <p className="text-sm text-muted-foreground text-center">
-            This is the order. We don't skip steps.
+            This is the order. Starting layer stages.
           </p>
         </div>
       </div>
