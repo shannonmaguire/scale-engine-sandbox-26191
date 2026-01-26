@@ -8,9 +8,10 @@
 
 // ===== POSITIONING =====
 export const POSITIONING = {
-  primary: "Growth dies when systems break.",
-  tagline: "Revenue infrastructure that scales.",
-  supportingLine: "For teams where broken systems mean lost deals, not just lost time.",
+  primary: "Most revenue problems are invisible until it's too late.",
+  tagline: "Revenue Integrity Systems",
+  supportingLine: "We surface them early, prove where they're leaking, and install enforcement before deals are lost.",
+  targetLine: "For teams where system failure means lost deals, not just lost time.",
   velocity: "Systems that hold under load.",
 } as const;
 
