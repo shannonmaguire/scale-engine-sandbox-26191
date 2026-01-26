@@ -26,19 +26,19 @@ const beliefs = [
   }
 ];
 
-// How I Work - Diagnostic questions
+// How I Work - Diagnostic questions (validated from discovery calls)
 const diagnosticQuestions = [
   {
-    question: '"What happens when reality changes in your system?"',
-    purpose: "Surfacing whether the system silently passes or critically exposes manual intervention."
+    question: '"Walk me through what happens when someone purchases."',
+    purpose: "Mapping where operational access outpaces commercial settlement. Clients onboarded, revenue recognized, invoice never sent."
   },
   {
-    question: '"Walk me through the steps when someone purchases."',
-    purpose: "Mapping where the workflow breaks, where steps are undocumented, and where operational access outpaces commercial settlement."
+    question: '"How many systems does your team check to answer one customer question?"',
+    purpose: "Surfacing swivel-chairing between platforms. If it's more than one, context is fragmented."
   },
   {
-    question: '"How do you reconcile when a subscription changes?"',
-    purpose: "Identifying notification gaps, ownership ambiguity, and edge case handling."
+    question: '"What happens when reality changes and nobody updates the CRM?"',
+    purpose: "Exposing reality drift. Software assumes compliance. Humans don't comply."
   }
 ];
 

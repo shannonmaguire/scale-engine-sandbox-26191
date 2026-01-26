@@ -38,39 +38,39 @@ const HowWeWork = () => {
 
   const diagnosticQuestions = [
     {
-      question: "What happens when reality changes in your system?",
-      description: "Surfacing whether the system silently passes or critically exposes manual intervention."
-    },
-    {
       question: "Walk me through the steps when someone purchases.",
-      description: "Mapping where the workflow breaks, where steps are undocumented, and where operational revenue is baked into commercial settlements."
+      description: "Mapping where operational access outpaces commercial settlement. Clients get onboarded. Revenue gets recognized. Invoice never sent."
     },
     {
-      question: "How do you reconcile when a subscription changes?",
-      description: "Identifying notification gaps, system-to-system ambiguity, and edge case handling."
+      question: "How many systems does your team check to answer one customer question?",
+      description: "Surfacing swivel-chairing between platforms. Two databases that don't talk to each other means context is always fragmented."
     },
     {
-      question: "What keeps you up at night?",
-      description: "Locating the trust or rigor and where things slip through the cracks."
+      question: "What happens when reality changes and nobody updates the CRM?",
+      description: "Exposing reality drift. Software assumes compliance. Humans don't comply. Data diverges from truth without human intervention."
+    },
+    {
+      question: "Where does your pre-sale system break down post-sale?",
+      description: "Pre-sale tools work fine until service complexity hits. That's where recurring revenue breaks."
     }
   ];
 
   const criticalPatterns = [
     {
-      title: "No orchestration",
-      description: "Everything trying to be generous stitches"
+      title: "Pre-sale / post-sale break",
+      description: "HubSpot works for marketing. Service complexity exposes the gaps. That's where recurring revenue dies."
     },
     {
-      title: "System drift",
-      description: "Parallel changing that one system but not the adjacent one"
+      title: "Reality drift",
+      description: "CRM data diverges from truth without human intervention. One system updated, adjacent systems stale."
     },
     {
-      title: "Manual enforcement",
-      description: "If something critical requires someone to check"
+      title: "Platform by familiarity",
+      description: "One person knew the tool. Nobody knew the architecture. Six months later, $50K mistake."
     },
     {
-      title: "Operational access before contractual settlement",
-      description: "Granting viewing that hits the payment collection"
+      title: "Operational access before payment",
+      description: "Clients get onboarded. Revenue recognized. Invoice never sent. No enforcement."
     }
   ];
 
