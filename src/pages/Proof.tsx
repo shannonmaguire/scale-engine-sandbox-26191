@@ -2,9 +2,7 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
-import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
 import { PartnerLogos } from "@/components/TrustIndicators";
-import { useState } from "react";
 
 interface CaseStudy {
   id: number;
@@ -24,7 +22,6 @@ interface CaseStudy {
 
 
 const Proof = () => {
-  const [expandedStudy, setExpandedStudy] = useState<number | null>(null);
   
   // Case studies rewritten with human problems first
   const caseStudies = [
@@ -150,8 +147,6 @@ const Proof = () => {
     }
   ];
 
-  // Featured case studies for above-the-fold preview
-  const featuredStudies = caseStudies.slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background">
@@ -180,86 +175,37 @@ const Proof = () => {
       <Section noPadding className="border-b border-border">
         <div className="section-spacing-half">
           <div className="system-status mb-8">CASE STUDIES</div>
-          <h1 className="heading-page mb-4">What We Fixed</h1>
-          <p className="text-description text-muted-foreground max-w-2xl">
-            Real results from teams that fixed what was breaking.
-          </p>
+          <h1 className="heading-page">What We Fixed</h1>
         </div>
       </Section>
 
-      {/* Featured Case Studies - Lead with human problem */}
+      {/* All 8 Case Studies - Single scannable grid */}
       <Section className="border-b border-border">
-        <h2 className="heading-section mb-8">The Short Version</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {featuredStudies.map((study) => (
-            <button
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {caseStudies.map((study) => (
+            <div
               key={study.id}
-              onClick={() => setExpandedStudy(expandedStudy === study.id ? null : study.id)}
-              className="text-left bg-card border border-border p-6 hover:border-primary/50 hover:bg-card/50 transition-colors cursor-pointer"
+              className="bg-card border border-border p-5"
             >
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div>
-                  <div className="text-sm font-mono text-primary mb-1">{study.industry}</div>
-                  <div className="text-xs text-muted-foreground">{study.vertical}</div>
-                </div>
-                <div className="text-right">
-                  <div className="text-lg font-bold font-mono text-primary">{study.growth}</div>
-                  <div className="text-xs text-muted-foreground">{study.timeline}</div>
-                </div>
+              <div className="flex items-start justify-between gap-2 mb-3">
+                <div className="text-sm font-mono text-primary">{study.industry}</div>
+                <div className="text-sm font-bold font-mono text-primary">{study.growth}</div>
               </div>
               
-              {/* Human problem first */}
-              <div className="text-sm text-foreground mb-3">
-                {study.humanProblem}
+              <div className="text-xs text-muted-foreground mb-3">{study.vertical} • {study.timeline}</div>
+              
+              <div className="text-sm text-foreground mb-4 min-h-[40px]">
+                {study.whatBroke}
               </div>
               
-              <div className="flex items-center gap-4 text-xs font-mono pt-3 border-t border-border">
-                <div>
-                  <span className="text-muted-foreground">{study.beforeMetric.label}: </span>
-                  <span className="text-foreground">{study.beforeMetric.value}</span>
-                </div>
-                <div className="text-muted-foreground">→</div>
-                <div>
-                  <span className="text-muted-foreground">{study.afterMetric.label}: </span>
-                  <span className="text-foreground">{study.afterMetric.value}</span>
-                </div>
+              <div className="flex items-center gap-2 text-xs font-mono pt-3 border-t border-border">
+                <span className="text-muted-foreground">{study.beforeMetric.value}</span>
+                <span className="text-primary">→</span>
+                <span className="text-foreground">{study.afterMetric.value}</span>
               </div>
-              
-              {expandedStudy === study.id && (
-                <div className="mt-4 pt-4 border-t border-border">
-                  <div className="text-sm mb-3">
-                    <span className="font-medium text-foreground">What we did: </span>
-                  </div>
-                  <ul className="space-y-1 mb-3">
-                    {study.system.map((item, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                        <span className="text-primary mt-0.5">•</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="text-sm text-muted-foreground italic">
-                    "{study.patternRestored}"
-                  </div>
-                </div>
-              )}
-            </button>
+            </div>
           ))}
         </div>
-        
-        <p className="text-sm text-muted-foreground text-center mt-6 font-mono">
-          ↓ Click any card to see what we did
-        </p>
-      </Section>
-
-
-      {/* Full Case Studies - Carousel for deep dives */}
-      <Section className="border-b border-border">
-        <h2 className="heading-section mb-2">All 8 Case Studies</h2>
-        <p className="text-description text-muted-foreground mb-8">
-          The full story with details.
-        </p>
-        <CaseStudyCarousel caseStudies={caseStudies} />
       </Section>
 
       {/* Trust Indicators */}
