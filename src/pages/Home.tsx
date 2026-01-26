@@ -80,7 +80,7 @@ const Home = () => {
 
   // Single proof point
   const proof = {
-    quote: "We went from waiting for Upwork gigs to a repeatable outbound system with 40%+ open rates.",
+    quote: "We went from zero outbound to a repeatable system with 40%+ open rates.",
     attribution: "FEDERAL CYBERSECURITY (SAVIINT PIPELINE)",
     result: "$500k pipeline built in 90 days."
   };
