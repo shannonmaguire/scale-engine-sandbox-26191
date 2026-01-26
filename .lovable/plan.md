@@ -1,168 +1,128 @@
 
 
-# Lock In: CWT Studio as Gateway, Not Destination
+# About Page Enterprise Cleanup
 
-## Strategic Architecture
+## Issues Identified
 
-```
-CWT Studio (Gateway)          →    CloudRoute (Destination)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Platform-agnostic                  Platform-specific
-Diagnosis-first                    Implementation
-Executive-facing                   Technical delivery
-Risk-aware                         Solution-oriented
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-"We don't sell tools.              "We implement what the
- We identify failure modes."        diagnosis requires."
-```
+### 1. Stats Section Alignment (Lines 145-158)
+Current layout uses inconsistent flex structure. The three stats don't align cleanly:
+- "8 years | same methodology"
+- "42 | systems installed"  
+- "0 | failed migrations"
 
----
+**Fix**: Use a cleaner grid with consistent formatting. Make the number/label pairs stack vertically instead of inline.
 
-## Phase 1: Homepage — Remove Platform Tells
+### 2. Job Title Still Says "Salesforce Delivery"
+Line 128: `Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)`
 
-### Current Problem
-Line 77: `"Looking for a Salesforce admin"` in "Not a Fit" list
+This contradicts the gateway positioning we just established. The About page bio should be platform-agnostic.
 
-This signals "we do Salesforce" rather than "we diagnose systems."
+**Fix**: Change to `Principal System Architect, CWT Studio | Managing Partner, CloudRoute`
 
-### Change
-Replace with: `"Looking for platform administration"`
+Also update:
+- Line 72 (personSchema jobTitle)
+- Line 88 (FAQ answer about CloudRoute relationship)
 
-This stays diagnostic. Doesn't name a tool.
+### 3. Platform Implementation Section
+Lines 256-280 explicitly names CloudRoute and creates a "partner card" aesthetic. For enterprise positioning, this feels like selling.
 
----
+**Options**:
+- Remove entirely (CloudRoute is mentioned in proposals, not public pages)
+- Keep but simplify to single line: "Enterprise delivery through CloudRoute (ISV Partner)"
 
-## Phase 2: About Page — Soften CloudRoute Introduction
+**Recommendation**: Remove the section. The hero bio already mentions CloudRoute once. Repeating it in its own section feels like a sales deck, not an executive bio.
 
-### Current State
-Hero copy (lines 140-141): "Salesforce implementation through CloudRoute (Platinum Partner)."
+### 4. Upwork Page Existence
+The `/upwork` page exists and is indexed in App.tsx. It's a standalone landing page for Upwork proposals with $2,000 diagnostic pricing.
 
-This is direct but premature. The assessment hasn't happened yet.
+**Options**:
+- Keep as-is (it's noindexed, used for proposals)
+- Remove entirely
+- Update positioning language to match gateway
 
-### Change
-Replace with: "Enterprise platform implementation through CloudRoute (ISV Partner). HubSpot and lighter stacks handled directly."
+**Recommendation**: Keep. It's noindexed (`noindex={true}`), so not visible to search. It serves a specific funnel purpose for Upwork leads.
 
-Why: "Enterprise platform" signals scale without naming Salesforce. Lets the assessment determine what's needed.
+### 5. FAQ Schema References Salesforce
+Line 88: `'For Salesforce projects, CWT partners with CloudRoute (Salesforce ISV Partner). For non-Salesforce work, CWT handles directly.'`
 
-### Salesforce Projects Section (lines 256-279)
-Keep but rename to "Platform Implementation" section:
-- CWT Studio: Strategy & architecture
-- CloudRoute: Enterprise platform delivery
-
----
-
-## Phase 3: Assessment Output Language
-
-### Current State
-Assessment page outcomes (lines 61-72) are already platform-agnostic:
-- "Implementation Engagement" (4-8 weeks)
-- "Enterprise Architecture" (3-6 months)
-
-This is correct. The assessment determines the path, not the platform.
-
-### No Change Needed Here
+**Fix**: Change to platform-agnostic language:
+`'For enterprise platform implementations, CWT partners with CloudRoute (ISV Partner). For lighter stacks (HubSpot, etc.), CWT handles directly.'`
 
 ---
 
-## Phase 4: Trust Indicators — Quiet the Badges
+## Changes Summary
 
-### Current State
-`src/components/TrustIndicators.tsx` line 104: `"Salesforce ISV Partner"` as primary badge
-
-### Change
-Move Salesforce badge to secondary position. Lead with compliance badges:
-1. SOC 2 Compliant
-2. GDPR Ready  
-3. Salesforce ISV Partner (moved to third)
-
-Or: Remove from public-facing pages entirely. Let CloudRoute carry the partner badge in proposals.
-
----
-
-## Phase 5: Blog / Content — Keep as Thought Leadership
-
-### Current State
-Blog has "Salesforce Technical Debt as Competitive Intelligence" article.
-
-### Recommendation: Keep
-This is thought leadership, not sales. It positions you as someone who understands Salesforce deeply—which is expertise, not selling.
-
-The difference:
-- Selling: "We implement Salesforce"
-- Authority: "We understand what Salesforce debt reveals about your business"
-
-No change needed.
-
----
-
-## Phase 6: Email Nurture — Platform-Specific is OK Here
-
-### Current State
-Email templates reference "Salesforce cleanup" extensively.
-
-### Recommendation: Keep for Now
-These emails go to people who downloaded Salesforce-specific resources. They're already qualified by interest.
-
-The gateway logic applies to cold traffic, not nurtured leads.
-
----
-
-## Phase 7: Deal Registration Modal — Simplify Options
-
-### Current State (line 352)
-Options include: "Salesforce Implementation"
-
-### Change
-Replace with:
-- Assessment
-- Implementation
-- Enterprise Architecture
-- Custom Engagement
-
-Remove "Sprint" and "Fractional" (deprecated). Remove "Salesforce Implementation" (let assessment determine).
-
----
-
-## Summary of Changes
-
-| File | Change | Purpose |
-|------|--------|---------|
-| `src/pages/Home.tsx` | "Salesforce admin" → "platform administration" | Remove platform tell |
-| `src/pages/About.tsx` | "Salesforce implementation" → "Enterprise platform implementation" | Soften introduction |
-| `src/pages/About.tsx` | "Salesforce Projects" → "Platform Implementation" | De-brand the section |
-| `src/components/TrustIndicators.tsx` | Reorder badges (Salesforce → third) | Compliance-first positioning |
-| `src/components/DealRegistrationModal.tsx` | Simplify service options | Assessment-first funnel |
-
----
-
-## What Stays Platform-Specific (Correctly)
-
-- Blog content (thought leadership)
-- Email nurture sequences (qualified leads)
-- SEO keywords (organic discovery)
-- FAQ schema on About page (explicit Q&A)
-
----
-
-## The Strategic Result
-
-**Before**: CWT Studio looks like "a Salesforce partner with a diagnostic wrapper"
-
-**After**: CWT Studio looks like "a systems architect who happens to have enterprise delivery capabilities"
-
-The assessment becomes the conversion event. CloudRoute enters as a consequence of diagnosis, not as a sales pitch.
+| Location | Before | After |
+|----------|--------|-------|
+| Line 128 (job title) | `...Salesforce Delivery (CloudRoute)` | `...Managing Partner, CloudRoute` |
+| Line 72 (personSchema) | `...Salesforce Delivery (CloudRoute)` | `...Managing Partner, CloudRoute` |
+| Line 88 (FAQ) | `For Salesforce projects...` | `For enterprise platform implementations...` |
+| Lines 145-158 (stats) | Inline flex with varying widths | Consistent stacked layout |
+| Lines 256-280 (Platform Implementation section) | Full section with 2 cards | Remove entirely |
 
 ---
 
 ## Technical Implementation
 
-### Files to Modify
+### File: `src/pages/About.tsx`
 
-1. **`src/pages/Home.tsx`** — Line 77 fit criteria change
-2. **`src/pages/About.tsx`** — Lines 140-141 + 256-279 section rename
-3. **`src/components/TrustIndicators.tsx`** — Badge reordering
-4. **`src/components/DealRegistrationModal.tsx`** — Service options cleanup
+**1. Fix job title (line 128)**
+```
+Before: Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)
+After:  Principal System Architect, CWT Studio | Managing Partner, CloudRoute
+```
 
-### Estimated Scope
-4 small edits. No new components. No structural changes.
+**2. Fix personSchema jobTitle (line 72)**
+```
+Before: jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)'
+After:  jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, CloudRoute'
+```
+
+**3. Fix FAQ answer (line 88)**
+```
+Before: 'For Salesforce projects, CWT partners with CloudRoute (Salesforce ISV Partner). For non-Salesforce work, CWT handles directly.'
+After:  'For enterprise implementations, CWT partners with CloudRoute (ISV Partner). For lighter stacks, CWT handles directly.'
+```
+
+**4. Fix stats alignment (lines 145-158)**
+Replace inline flex with stacked layout:
+```tsx
+<div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+  <div>
+    <div className="text-2xl text-primary font-mono">8</div>
+    <div className="text-sm text-muted-foreground">years, same methodology</div>
+  </div>
+  <div>
+    <div className="text-2xl text-primary font-mono">42</div>
+    <div className="text-sm text-muted-foreground">systems installed</div>
+  </div>
+  <div>
+    <div className="text-2xl text-primary font-mono">0</div>
+    <div className="text-sm text-muted-foreground">failed migrations</div>
+  </div>
+</div>
+```
+
+**5. Remove Platform Implementation section (lines 256-280)**
+Delete the entire section. CloudRoute is already mentioned once in the hero bio—that's sufficient for a gateway page.
+
+---
+
+## What Stays
+
+- **Upwork page** (`/upwork`): Kept as-is. Noindexed, serves specific funnel purpose.
+- **Blog Salesforce content**: Kept. Thought leadership, not selling.
+- **Email nurture Salesforce references**: Kept. Qualified leads.
+
+---
+
+## Result
+
+The About page becomes a clean executive bio focused on:
+- Who Shannon is (Principal System Architect)
+- What she does (diagnoses revenue system failures)
+- How she works (diagnostic questions, beliefs, rules)
+- Social proof (8 years, 42 systems, 0 failed migrations)
+
+CloudRoute appears once, in passing, in the hero bio. No dedicated section. No partner cards. Gateway, not destination.
 
