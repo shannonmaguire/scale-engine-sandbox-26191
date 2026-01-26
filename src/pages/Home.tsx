@@ -130,13 +130,13 @@ const Home = () => {
           <div className="flex flex-col gap-6">
             <ConversionOptimizedButton
               to={ROUTES.assessment}
-              ctaName="Hero - Run Diagnostic"
+              ctaName="Hero - Book System Audit"
               location="Homepage Hero"
               size="lg"
               className="w-full sm:w-auto"
             >
-              <span className="hidden sm:inline text-inherit">Run a Revenue Integrity Diagnostic</span>
-              <span className="sm:hidden text-inherit">Run Diagnostic</span>
+              <span className="hidden sm:inline text-inherit">Book a System Audit</span>
+              <span className="sm:hidden text-inherit">Book Audit</span>
             </ConversionOptimizedButton>
 
             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 pt-2">
@@ -277,7 +277,7 @@ const Home = () => {
           <h2 className="heading-section mb-4">Find Out What's Breaking</h2>
           
           <p className="text-muted-foreground mb-8">
-            2-week diagnostic. System-level audit for when deals are active, budgets are real, and failure is expensive.
+            2-week audit. For teams with active pipeline, real budget, and no room for system failure.
           </p>
 
           <ConversionOptimizedButton

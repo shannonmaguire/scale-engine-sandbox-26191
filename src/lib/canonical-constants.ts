@@ -8,9 +8,9 @@
 
 // ===== POSITIONING =====
 export const POSITIONING = {
-  primary: "Most revenue problems are invisible until it's too late.",
-  tagline: "Revenue Integrity Systems",
-  supportingLine: "We surface them early, prove where they're leaking, and install enforcement before deals are lost.",
+  primary: "Revenue systems break. We find where.",
+  tagline: "Systems Architecture",
+  supportingLine: "2-week audit. We diagnose where deals stall, forecasts fail, and customers lose trust.",
   targetLine: "For teams where system failure means lost deals, not just lost time.",
   velocity: "Systems that hold under load.",
 } as const;
