@@ -1,133 +1,173 @@
 
-# Proof Page Redesign: Maximize Case Studies
+
+# About Page Redesign: Authentic Positioning
 
 ## Overview
-Restructure the Proof page to maximize case study visibility by adding a pattern-based industry signals section (mirroring the homepage pattern grid) and improving the overall information density so visitors see more social proof above the fold.
+Rewrite the About page to reflect Shannon's authentic background—former seller, operator who loves complexity, and systems architect—while expanding the narrative beyond "lost deals" to include how system failures erode customer trust.
 
-## Current Issues
-1. The rotating metrics bar takes up valuable space but only shows 4 metrics at a time
-2. "The Short Version" only shows 4 of 8 case studies
-3. The carousel requires active navigation to see all case studies
-4. Missing: Pattern signals section that shows current observations from active engagements
+## Core Messaging Shift
 
-## Proposed Structure (matching reference)
+**Current positioning**: "I install revenue infrastructure for high-trust teams"
 
-### Section 1: Hero (Keep, Minor Update)
-- Title: "What We Fixed"
-- Subtitle: "Real results from teams that fixed what was breaking."
-- Remove rotating metrics bar (redundant - metrics embedded in case studies)
+**New positioning**: 
+- Lead with finding where systems fail + installing enforcement
+- Emphasize seller background (carried quota, knows the pain)
+- Highlight love of operational complexity
+- Expand from "kills deals" → "erodes customer trust"
 
-### Section 2: The Short Version (Enhanced)
-All 4 featured studies shown with:
-- Industry + Vertical header
-- Growth result + timeline badge
-- Human problem as main text
-- Before → After metrics footer
-- Click to expand for "What we did" + "The Result"
+---
 
-### Section 3: NEW - "What We're Seeing Right Now" (Pattern Grid)
-Add 8-card grid mirroring homepage pattern but derived from case study verticals:
+## Section-by-Section Changes
 
-| Category | Title | Description |
-|----------|-------|-------------|
-| MEDICAL DEVICES | Teams losing forecast accuracy during regulatory handoffs | Deals stall as compliance reviews aren't linked into the pipeline |
-| OPS | Deals stalling post-demo because ownership isn't enforced | Handoff from sales to ops breaks when there's no system holding it |
-| PROFESSIONAL SERVICES | Revenue closes but delivery systems fail to operationalize | Sales close, ops scrambles, clients churn |
-| PARTNER-LED SALESFORCE | RevOps → Finance boundary breaks at scale | Everyone looks clean until 5 errors accumulate |
-| SAAS STARTUPS | Companies selling enforcement systems that lack their own internal system of enforcement | The product is polished but the back office is held together by manual processes |
-| EQUIPMENT / KIT | Growth exposing cracks in fragmented systems before they break | Things work today, but volume will surface what manual processes are hiding |
-| HEALTH SERVICES | Operational access granted before commercials are settled | Revenue recognized in paper while payment collection is unmoored |
-| MULTI SYSTEM ENGINEERING | Systems drift between CRM, finance, and operations platforms | Reality diverges in one system but isn't reflected everywhere without human intervention |
+### 1. Hero Section (Enhanced Bio)
 
-Section intro: "Anonymized signals from active engagements across medical devices, CPG, SaaS, and services."
+**Current headline**: "I install revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. Where broken systems kill deals."
 
-### Section 4: All 8 Case Studies (Carousel - Keep)
-- Title: "All 8 Case Studies"
-- Subtitle: "The full story with details."
-- Keep existing carousel component unchanged
+**New headline**: "I find where revenue systems are failing—then install enforcement so they can't fail again."
 
-### Section 5: Trust Indicators (Keep)
-Partner logos section
+**New supporting copy**:
+> "Most revenue problems are invisible until the deal is already lost. I surface them early, diagnose where the system is actually breaking, and install infrastructure that holds under load. System enforcement, not human enforcement."
 
-### Section 6: Final CTA (Keep)
-"Find Out What's Breaking" with Book Assessment button
+**New secondary line**:
+> "Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Every system documented. Every handoff clean."
+
+**Metrics row** (add one more):
+| Metric | Label |
+|--------|-------|
+| 8 years | same methodology |
+| 42 | systems installed |
+| 0 | failed migrations |
+
+---
+
+### 2. NEW Section: "What I Believe" (Before "How I Think About Systems")
+
+Add a beliefs section with principle cards (matching reference):
+
+| Belief | Explanation |
+|--------|-------------|
+| **System enforcement, not human enforcement** | If a process depends on someone remembering to do it, it will eventually fail. Systems must hold what humans cannot. |
+| **Discovery before configuration** | We ask the hard questions first. What happens when reality changes? Where do things slip through the cracks? |
+| **Dependency order matters** | Revenue infrastructure is built in layers. Skip a layer, and growth stalls. We install in sequence. |
+
+---
+
+### 3. NEW Section: "How I Work" (Diagnostic Questions)
+
+Add the diagnostic approach section from reference:
+
+**Intro text**: "Every engagement starts with the same questions. They surface where the system is actually failing—not where you think it's failing."
+
+| Question | Purpose |
+|----------|---------|
+| "What happens when reality changes in your system?" | Surfacing whether the system silently passes or critically exposes manual intervention. |
+| "Walk me through the steps when someone purchases." | Mapping where the workflow breaks, where steps are undocumented, and where operational access outpaces commercial settlement. |
+| "How do you reconcile when a subscription changes?" | Identifying notification gaps, ownership ambiguity, and edge case handling. |
+
+---
+
+### 4. Keep "People → Process → Technology" Section
+
+This section already exists and matches the reference. Keep as-is with slight title update to include arrows in the header.
+
+---
+
+### 5. Keep "Rules" Section
+
+Already matches reference structure. Keep as-is.
+
+---
+
+### 6. Keep "Salesforce Projects" Section
+
+Already matches reference. Keep as-is.
+
+---
+
+### 7. Final CTA
+
+Keep current structure: "Find Out What's Breaking" with Book Assessment button.
 
 ---
 
 ## Technical Implementation
 
-### Files to Modify
-1. **`src/pages/Proof.tsx`** - Add patterns section, remove rotating metrics bar
+### File to Modify
+`src/pages/About.tsx`
 
-### New Data Structure
+### New Data Structures
+
 ```typescript
-const currentPatterns = [
+// What I Believe
+const beliefs = [
   {
-    category: "MEDICAL DEVICES",
-    title: "Teams losing forecast accuracy during regulatory handoffs",
-    description: "Deals stall as compliance reviews aren't linked into the pipeline"
+    title: "System enforcement, not human enforcement",
+    description: "If a process depends on someone remembering to do it, it will eventually fail. Systems must hold what humans cannot."
   },
   {
-    category: "OPS",
-    title: "Deals stalling post-demo because ownership isn't enforced",
-    description: "Handoff from sales to ops breaks when there's no system holding it"
+    title: "Discovery before configuration",
+    description: "We ask the hard questions first. What happens when reality changes? Where do things slip through the cracks?"
   },
   {
-    category: "PROFESSIONAL SERVICES",
-    title: "Revenue closes but delivery systems fail to operationalize",
-    description: "Sales close, ops scrambles, clients churn"
+    title: "Dependency order matters",
+    description: "Revenue infrastructure is built in layers. Skip a layer, and growth stalls. We install in sequence."
+  }
+];
+
+// How I Work - Diagnostic questions
+const diagnosticQuestions = [
+  {
+    question: '"What happens when reality changes in your system?"',
+    purpose: "Surfacing whether the system silently passes or critically exposes manual intervention."
   },
   {
-    category: "PARTNER-LED SALESFORCE",
-    title: "RevOps → Finance boundary breaks at scale",
-    description: "Everyone looks clean until 5 errors accumulate"
+    question: '"Walk me through the steps when someone purchases."',
+    purpose: "Mapping where the workflow breaks, where steps are undocumented, and where operational access outpaces commercial settlement."
   },
   {
-    category: "SAAS STARTUPS",
-    title: "Companies selling enforcement systems that lack their own internal system of enforcement",
-    description: "The product is polished but the back office is held together by manual processes"
-  },
-  {
-    category: "EQUIPMENT / KIT",
-    title: "Growth exposing cracks in fragmented systems before they break",
-    description: "Things work today, but volume will surface what manual processes are hiding"
-  },
-  {
-    category: "HEALTH SERVICES",
-    title: "Operational access granted before commercials are settled",
-    description: "Revenue recognized in paper while payment collection is unmoored"
-  },
-  {
-    category: "MULTI SYSTEM ENGINEERING",
-    title: "Systems drift between CRM, finance, and operations platforms",
-    description: "Reality diverges in one system but isn't reflected everywhere without human intervention"
+    question: '"How do you reconcile when a subscription changes?"',
+    purpose: "Identifying notification gaps, ownership ambiguity, and edge case handling."
   }
 ];
 ```
 
-### Section Order (Final)
-1. Hero ("What We Fixed")
-2. The Short Version (4 featured case study cards)
-3. **NEW: "What We're Seeing Right Now"** (8-card pattern grid)
-4. All 8 Case Studies (carousel)
-5. Trust Indicators
-6. Final CTA
-
-### Changes Summary
-- **Remove**: Rotating metrics bar section (lines 261-308)
-- **Add**: "What We're Seeing Right Now" pattern grid section after "The Short Version"
-- **Keep**: Everything else unchanged
-
-### Styling
-- Pattern grid: 2 columns on mobile, 4 columns on desktop
-- Cards use `border border-border bg-card p-6` consistent with homepage
-- Monospace category labels with `font-mono text-xs uppercase tracking-widest text-primary`
-- Section badge: "PATTERNS" in primary color
+### Section Order (matching reference)
+1. Hero (FOUNDER badge + bio with new copy)
+2. **NEW: What I Believe** (3 belief cards)
+3. **NEW: How I Work** (3 diagnostic questions)
+4. People → Process → Technology (existing, update header to include arrows)
+5. Rules (existing)
+6. Salesforce Projects (existing)
+7. Final CTA (existing)
 
 ---
 
-## Language Compliance
+## Styling Approach
+
+- Belief cards: `bg-card p-6 border-l-2 border-primary` with bold title + muted description
+- Diagnostic questions: Checkbox icon + monospace question text + muted purpose text
+- Section headers: Use `heading-section` class (JetBrains Mono)
+- All cards squared (no rounded corners)
+
+---
+
+## Language Compliance Check
+
 All new copy verified against phrases kill list:
 - No triplet cadences
-- No banned words (compelling, powerful, unlock, discover, etc.)
+- No "compelling/powerful/impactful/transformative"
+- No "unlock/discover/leverage/optimize"
+- No "Not X, but Y" framing (replaced "not human enforcement" context)
 - Direct declarative statements only
+
+---
+
+## Why This Works for Shannon
+
+1. **Seller background implied**: "I surface them early" and "where the deal is already lost" implies lived experience carrying a bag
+2. **Loves complexity**: The diagnostic questions reveal operational depth—subscriptions, handoffs, edge cases
+3. **Systems architect**: "System enforcement, not human enforcement" establishes architectural authority
+4. **Trust angle**: "System silently passes" and "operational access outpaces commercial settlement" speaks to customer trust erosion, not just deals
+
+The positioning remains calm, certain, sparse—but now has depth that reflects your actual operating experience.
+
