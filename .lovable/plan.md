@@ -1,108 +1,97 @@
 
-# Proof Page Compression
+
+# Fix "What We're Seeing Right Now" Patterns
 
 ## Problem
-The page shows the same 8 case studies twice with overlapping content. Too much text, too much scrolling, too much repetition.
+The current patterns mix real observations with made-up categories. "PARTNER-LED SALESFORCE" and "ENFORCEMENT SOFTWARE" don't map to actual work done. The descriptions are too abstract and generic.
 
 ## Solution
-Merge the two sections into one tight grid. Kill the carousel. Show all 8 studies in a scannable format.
+Replace with patterns grounded in actual case study work and real market observations. Each pattern should describe what's breaking in language buyers recognize.
 
 ---
 
-## Structure: Before vs After
+## New Patterns (Based on Real Work)
 
-### Current (Verbose)
-1. Hero (badge + h1 + subtitle)
-2. "The Short Version" — 4 expandable cards
-3. "All 8 Case Studies" — Full carousel with navigation, quotes, bullet lists
-4. Partner logos
-5. CTA
+**File**: `src/pages/Home.tsx`  
+**Lines**: 15-47
 
-### Proposed (Compressed)
-1. Hero (badge + h1 only — remove subtitle)
-2. Single grid: all 8 studies, scannable format
-3. Partner logos
-4. CTA
+Replace `currentPatterns` array with:
 
----
-
-## Changes
-
-### 1. Remove hero subtitle
-**File**: `src/pages/Proof.tsx` (lines 184-186)
-
-```text
-BEFORE:
-<h1 className="heading-page mb-4">What We Fixed</h1>
-<p className="text-description text-muted-foreground max-w-2xl">
-  Real results from teams that fixed what was breaking.
-</p>
-
-AFTER:
-<h1 className="heading-page">What We Fixed</h1>
+```javascript
+const currentPatterns = [
+  {
+    category: "LEAD FOLLOW-UP",
+    title: "Leads come in. Nobody follows up.",
+    description: "Everything depends on memory. Deals go cold while the team argues about whose turn it was."
+  },
+  {
+    category: "TRIAL CONVERSION",
+    title: "800 trials a month, 6% convert",
+    description: "Sales calls everyone. No way to tell who's actually using the product."
+  },
+  {
+    category: "SCATTERED OPERATIONS",
+    title: "Projects live in email, Slack, Drive, and Trello",
+    description: "15 hours a week just figuring out what's happening. No single source of truth."
+  },
+  {
+    category: "OUTBOUND",
+    title: "Zero pipeline. Waiting for inbound that never comes.",
+    description: "No ICP. No system. Founder still doing all the selling."
+  },
+  {
+    category: "BILLING / DELIVERY GAP",
+    title: "Clients onboarded. Invoice never sent.",
+    description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
+  },
+  {
+    category: "WRONG BUSINESS MODEL",
+    title: "$500/hour partners doing $50/hour work",
+    description: "Want subscriptions but don't know if the math works. Trapped in hourly billing."
+  }
+];
 ```
 
 ---
 
-### 2. Combine into single 8-study grid
-**File**: `src/pages/Proof.tsx` (lines 190-263)
+## Why These Patterns
 
-Replace the two sections ("The Short Version" + "All 8 Case Studies" carousel) with a single grid showing all 8 studies.
-
-Each card shows:
-- Industry + Growth (top row, bold)
-- One-line problem (what broke, not the full paragraph)
-- Before → After metric (bottom)
-
-Remove:
-- `humanProblem` full paragraph (too long)
-- Expandable detail
-- Carousel entirely
-- "Click to expand" instruction
-- "The full story with details" subtitle
-
-New format per card:
-```text
-┌─────────────────────────────────────┐
-│ Healthcare          Foundation Built │
-│ AI-Assisted Clinic          90 Days │
-├─────────────────────────────────────┤
-│ No patient acquisition system.       │
-├─────────────────────────────────────┤
-│ Patients: Zero → System: 90 days    │
-└─────────────────────────────────────┘
-```
+| Pattern | Source |
+|---------|--------|
+| "Leads come in. Nobody follows up." | Case Study #2: Digital Education Platform |
+| "800 trials a month, 6% convert" | Case Study #6: B2B SaaS Project Management |
+| "Projects live in email, Slack, Drive, and Trello" | Case Study #7: Marketing Agency |
+| "Zero pipeline. Waiting for inbound." | Case Study #3: Federal Cybersecurity |
+| "Clients onboarded. Invoice never sent." | Retained from current (validated observation) |
+| "$500/hour partners doing $50/hour work" | Case Study #4: Subscription Legal |
 
 ---
 
-### 3. Use `whatBroke` instead of `humanProblem`
-The `humanProblem` field has full paragraph descriptions. The `whatBroke` field is a compressed one-liner. Use that instead.
+## What Gets Removed
+
+- "ENFORCEMENT SOFTWARE" — No case study supports it
+- "MULTI-PLATFORM" — Too abstract, replaced with specific "scattered operations" observation  
+- "REALITY DRIFT" — Good concept but too abstract as a category label
+- "PARTNER-LED SALESFORCE" — Made up, no supporting work
 
 ---
 
-### 4. Delete carousel component import
-Remove the `CaseStudyCarousel` import since it's no longer used.
+## Tone Alignment
+
+Each pattern now:
+- Uses specific numbers where possible (800 trials, 6%, $500/hour)
+- Describes the symptom the buyer experiences
+- Avoids abstract category labels
+- Matches the grandmaster writing standards (direct, settled, no theatrical framing)
 
 ---
 
 ## Technical Details
 
-**Files modified**:
-- `src/pages/Proof.tsx` — lines 1-6, 184-263
+**File**: `src/pages/Home.tsx`  
+**Lines modified**: 15-47 (replace `currentPatterns` array)
 
-**Components removed from page**:
-- `CaseStudyCarousel` (import and usage)
+**No other files affected**
 
-**Note**: `CaseStudyCarousel.tsx` file can remain in codebase if potentially needed later.
+**Estimated change**: ~30 lines replaced
 
-**Estimated change**: ~80 lines removed, ~40 lines simplified
-
----
-
-## Expected Outcome
-
-- Page becomes scannable in one viewport
-- No duplicate content
-- All 8 studies visible at once
-- Faster path to CTA
-- Matches "ruthless compression" and "single viewport" standards from memories
