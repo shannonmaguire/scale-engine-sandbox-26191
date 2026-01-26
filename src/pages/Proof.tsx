@@ -22,49 +22,6 @@ interface CaseStudy {
   patternRestored: string;
 }
 
-// Current patterns from active engagements
-const currentPatterns = [
-  {
-    category: "ENFORCEMENT SOFTWARE",
-    title: "Product enforces externally what doesn't exist internally",
-    description: "Clean claims for customers, messy books for the business"
-  },
-  {
-    category: "PLATFORM DECISIONS",
-    title: "CRM chosen by individual familiarity, not system fit",
-    description: "One person knew the tool. Nobody knew the architecture."
-  },
-  {
-    category: "HEALTH SERVICES",
-    title: "Operational access granted before payment collected",
-    description: "Clients onboarded. Revenue recognized. Invoice never sent."
-  },
-  {
-    category: "REALITY DRIFT",
-    title: "CRM data requires human intervention to match truth",
-    description: "Software assumes compliance. Humans don't comply."
-  },
-  {
-    category: "PROFESSIONAL SERVICES",
-    title: "Revenue closes but delivery systems fail to operationalize",
-    description: "Sales close, ops scrambles, clients churn"
-  },
-  {
-    category: "PARTNER-LED SALESFORCE",
-    title: "RevOps → Finance boundary breaks at scale",
-    description: "Everyone looks clean until 5 errors accumulate"
-  },
-  {
-    category: "MULTI-PLATFORM",
-    title: "Platform chosen by familiarity, not architecture fit",
-    description: "One guy knew Zoho. Six months later, $50K mistake."
-  },
-  {
-    category: "OPS",
-    title: "Handoff from sales to ops breaks when ownership isn't enforced",
-    description: "Deal closes. Delivery scrambles. Client churns."
-  }
-];
 
 const Proof = () => {
   const [expandedStudy, setExpandedStudy] = useState<number | null>(null);
@@ -238,7 +195,7 @@ const Proof = () => {
             <button
               key={study.id}
               onClick={() => setExpandedStudy(expandedStudy === study.id ? null : study.id)}
-              className="text-left bg-card border border-border p-6 hover:border-primary/50 transition-colors active:scale-[0.98] active:bg-card/80"
+              className="text-left bg-card border border-border p-6 hover:border-primary/50 hover:bg-card/50 transition-colors cursor-pointer"
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div>
@@ -290,38 +247,11 @@ const Proof = () => {
           ))}
         </div>
         
-        <p className="text-sm text-muted-foreground text-center mt-6">
-          Click any card to see what we actually did
+        <p className="text-sm text-muted-foreground text-center mt-6 font-mono">
+          ↓ Click any card to see what we did
         </p>
       </Section>
 
-      {/* What We're Seeing Right Now - Pattern Grid */}
-      <Section className="border-b border-border">
-        <div className="system-status mb-6">PATTERNS</div>
-        <h2 className="heading-section mb-2">What We're Seeing Right Now</h2>
-        <p className="text-description text-muted-foreground mb-8">
-          Anonymized signals from active engagements across medical devices, CPG, SaaS, and services.
-        </p>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {currentPatterns.map((pattern, index) => (
-            <div 
-              key={index}
-              className="bg-card border border-border p-6 hover:border-primary/30 transition-colors"
-            >
-              <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3">
-                {pattern.category}
-              </div>
-              <div className="text-sm font-medium text-foreground mb-2 leading-snug">
-                {pattern.title}
-              </div>
-              <div className="text-xs text-muted-foreground leading-relaxed">
-                {pattern.description}
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
 
       {/* Full Case Studies - Carousel for deep dives */}
       <Section className="border-b border-border">
