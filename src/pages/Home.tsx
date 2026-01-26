@@ -15,34 +15,34 @@ const Home = () => {
   // What We're Seeing Right Now - Industry patterns
   const currentPatterns = [
     {
-      category: "ENFORCEMENT SOFTWARE",
-      title: "Product enforces externally what doesn't exist internally",
-      description: "The product is polished. The back office is duct tape and prayer."
+      category: "LEAD FOLLOW-UP",
+      title: "Leads come in. Nobody follows up.",
+      description: "Everything depends on memory. Deals go cold while the team argues about whose turn it was."
     },
     {
-      category: "HEALTH SERVICES",
-      title: "Operational access granted before payment collected",
-      description: "Clients onboarded. Revenue recognized. Invoice never sent."
+      category: "TRIAL CONVERSION",
+      title: "800 trials a month, 6% convert",
+      description: "Sales calls everyone. No way to tell who's actually using the product."
     },
     {
-      category: "MULTI-PLATFORM",
-      title: "Platform chosen by familiarity, not architecture fit",
-      description: "One person knew the tool. Nobody knew the architecture."
+      category: "SCATTERED OPERATIONS",
+      title: "Projects live in email, Slack, Drive, and Trello",
+      description: "15 hours a week just figuring out what's happening. No single source of truth."
     },
     {
-      category: "REALITY DRIFT",
-      title: "CRM data diverges from truth without human intervention",
-      description: "Software assumes compliance. Humans don't comply."
+      category: "OUTBOUND",
+      title: "Zero pipeline. Waiting for inbound that never comes.",
+      description: "No ICP. No system. Founder still doing all the selling."
     },
     {
-      category: "PROFESSIONAL SERVICES",
-      title: "Revenue closes but delivery systems fail to operationalize",
-      description: "Sales close, ops scrambles, clients churn"
+      category: "BILLING / DELIVERY GAP",
+      title: "Clients onboarded. Invoice never sent.",
+      description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
     },
     {
-      category: "PARTNER-LED SALESFORCE",
-      title: "RevOps → Finance boundary breaks at scale",
-      description: "Everyone looks clean until 5 errors accumulate"
+      category: "WRONG BUSINESS MODEL",
+      title: "$500/hour partners doing $50/hour work",
+      description: "Want subscriptions but don't know if the math works. Trapped in hourly billing."
     }
   ];
 
