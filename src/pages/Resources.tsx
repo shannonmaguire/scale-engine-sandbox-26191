@@ -55,9 +55,9 @@ const Resources = () => {
   return (
     <>
       <SEOHead
-        title="Revenue Operations Resources & Templates | CWT Studio"
-        description="Free templates, frameworks, and guides for building revenue infrastructure. 90-day roadmaps, assessment frameworks, ROI calculators, and implementation checklists."
-        keywords={["RevOps templates", "revenue operations resources", "CRM assessment framework", "sales operations guides", "marketing operations templates", "revenue infrastructure planning"]}
+        title="Systems Architecture Resources & Templates | CWT Studio"
+        description="Templates, frameworks, and guides for systems architecture. 90-day roadmaps, audit frameworks, ROI calculators, and implementation checklists."
+        keywords={["systems architecture templates", "revenue operations resources", "CRM audit framework", "sales operations guides", "marketing operations templates", "systems planning"]}
       />
 
       <main className="min-h-screen bg-background">

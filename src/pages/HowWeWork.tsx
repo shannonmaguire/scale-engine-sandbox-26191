@@ -78,9 +78,9 @@ const HowWeWork = () => {
     <div className="min-h-screen">
       <SEOHead
         title="How We Work | CWT Studio"
-        description="Revenue infrastructure methodology for regulated industries. Six-layer architecture and implementation process."
+        description="Systems architecture methodology. Discovery, enforcement, and dependency order for regulated industries."
         keywords={[
-          'revenue infrastructure methodology',
+          'systems architecture methodology',
           'RevOps implementation',
           'revenue operations process',
           'regulated industries'

@@ -159,11 +159,11 @@ const Contact = () => {
     <div className="min-h-screen">
       <SEOHead 
         title="Contact CWT Studio | Get in Touch"
-        description="Contact CWT Studio for revenue infrastructure consulting. We respond within 24 hours."
+        description="Contact CWT Studio for systems architecture consulting. We respond within 24 hours."
         keywords={[
           'contact CWT Studio',
-          'revenue operations contact',
-          'business automation inquiry'
+          'systems architecture contact',
+          'revenue operations inquiry'
         ]}
         canonicalUrl="/contact"
       />

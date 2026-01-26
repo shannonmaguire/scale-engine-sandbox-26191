@@ -199,15 +199,15 @@ const Proof = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
-        title="Case Studies | Revenue System Results | CWT Studio" 
-        description="Real results: $500K+ pipeline activated, 4x conversion improvement, 87% admin time eliminated. See how we fixed broken sales systems." 
+        title="Case Studies | Systems Architecture Results | CWT Studio" 
+        description="$500K+ pipeline activated. 4x conversion improvement. 87% admin time eliminated. What happens when systems stop breaking." 
         keywords={[
-          'sales system case studies', 
-          'CRM fix results',
+          'systems architecture case studies', 
+          'CRM audit results',
           'revenue operations examples',
           'pipeline activation',
           'sales operations results'
-        ]} 
+        ]}
         canonicalUrl="/proof"
         caseStudySchema={caseStudies.map(study => ({
           name: `${study.industry} - ${study.vertical}`,

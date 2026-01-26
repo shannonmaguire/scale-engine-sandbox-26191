@@ -89,14 +89,14 @@ const Home = () => {
     <div className="min-h-screen">
       <EngagementTracker />
       <SEOHead
-        title="Revenue Integrity Systems | CWT Studio"
-        description="Revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. For teams where broken systems kill deals."
+        title="Systems Architecture | CWT Studio"
+        description="Revenue systems break. We find where. 2-week audit for legal, healthcare, compliance, and SaaS teams."
         keywords={[
-          'revenue infrastructure',
+          'systems architecture',
+          'revenue systems audit',
           'regulated industries',
           'compliant CRM',
-          'revenue operations',
-          'high-risk environments'
+          'revenue operations'
         ]}
         canonicalUrl="/"
       />

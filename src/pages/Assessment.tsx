@@ -74,19 +74,19 @@ const InfrastructureAssessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Revenue Infrastructure Assessment | CWT Studio"
-        description="2-week diagnostic. Find what's slowing your growth and get a clear fix plan."
+        title="System Audit | CWT Studio"
+        description="2-week audit. We diagnose where deals stall, forecasts fail, and customers lose trust."
         keywords={[
-          'revenue infrastructure assessment',
           'systems audit',
-          'technical maturity diagnostic',
+          'revenue systems diagnostic',
+          'technical maturity assessment',
           'RevOps assessment',
           'implementation roadmap'
         ]}
         canonicalUrl="/assessment"
         serviceSchema={{
-          name: 'Revenue Infrastructure Assessment',
-          description: 'Comprehensive 2-week revenue infrastructure diagnostic delivering system scorecard, gap analysis, and prioritized implementation pathway.',
+          name: 'System Audit',
+          description: 'Comprehensive 2-week systems diagnostic delivering system scorecard, gap analysis, and prioritized implementation pathway.',
           offers: [
             {
               name: 'Revenue Infrastructure Scorecard',

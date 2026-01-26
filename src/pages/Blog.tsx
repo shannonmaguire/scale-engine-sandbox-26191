@@ -123,7 +123,7 @@ const Blog = () => {
   const featuredPost = blogPosts.find(post => post.featured);
   const regularPosts = filteredPosts.filter(post => !post.featured);
   return <div className="min-h-screen bg-background">
-      <SEOHead title="The CWT Standard | CWT Studio" description="Documented systems. Proven frameworks. Zero abstractions. Learn how to install revenue infrastructure for high-trust industries." keywords={['revenue systems blog', 'infrastructure insights', 'Salesforce optimization frameworks', 'system installation guides', 'revenue operations insights']} />
+      <SEOHead title="The CWT Standard | CWT Studio" description="Documented systems. Proven frameworks. Zero abstractions. Systems architecture insights for high-trust industries." keywords={['systems architecture blog', 'revenue systems insights', 'Salesforce optimization frameworks', 'system installation guides', 'revenue operations insights']} />
       
       
       {/* Page Header */}
