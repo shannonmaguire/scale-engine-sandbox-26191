@@ -69,7 +69,7 @@ const About = () => {
         includeOrganizationSchema={true}
         personSchema={{
           name: 'Shannon Maguire',
-          jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)',
+          jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, CloudRoute',
           description: "Finds where revenue systems are failing—then installs enforcement so they cannot fail again. Every system documented. Every handoff clean.",
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
           image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
@@ -85,7 +85,7 @@ const About = () => {
           },
           {
             question: 'What is the relationship between CWT Studio and CloudRoute?',
-            answer: 'For Salesforce projects, CWT partners with CloudRoute (Salesforce ISV Partner). For non-Salesforce work, CWT handles directly.'
+            answer: 'For enterprise implementations, CWT partners with CloudRoute (ISV Partner). For lighter stacks, CWT handles directly.'
           }
         ]}
       />
@@ -125,7 +125,7 @@ const About = () => {
             <div>
               <h1 className="heading-section mb-2">Shannon Maguire</h1>
               <p className="text-label text-muted-foreground mb-8">
-                Principal System Architect, CWT Studio | Managing Partner, Salesforce Delivery (CloudRoute)
+                Principal System Architect, CWT Studio | Managing Partner, CloudRoute
               </p>
 
               <div className="space-y-4">
@@ -142,17 +142,17 @@ const About = () => {
             </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-border">
-                <div className="flex items-baseline gap-3">
-                  <div className="text-label text-primary font-mono">8 years</div>
-                  <div className="text-sm text-muted-foreground">same methodology</div>
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+                <div>
+                  <div className="text-2xl text-primary font-mono">8</div>
+                  <div className="text-sm text-muted-foreground">years, same methodology</div>
                 </div>
-                <div className="flex items-baseline gap-3">
-                  <div className="text-label text-primary font-mono">42</div>
+                <div>
+                  <div className="text-2xl text-primary font-mono">42</div>
                   <div className="text-sm text-muted-foreground">systems installed</div>
                 </div>
-                <div className="flex items-baseline gap-3">
-                  <div className="text-label text-primary font-mono">0</div>
+                <div>
+                  <div className="text-2xl text-primary font-mono">0</div>
                   <div className="text-sm text-muted-foreground">failed migrations</div>
                 </div>
               </div>
@@ -253,31 +253,6 @@ const About = () => {
         </div>
       </Section>
 
-      {/* Platform Implementation */}
-      <Section className="border-b border-border">
-        <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">Platform Implementation</h2>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-card p-6 border-l-2 border-primary">
-              <div className="text-label text-primary mb-2">CWT Studio</div>
-              <div className="text-sm text-muted-foreground">Strategy & architecture</div>
-            </div>
-
-            <div className="bg-card p-6 border-l-2 border-accent">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="text-label text-accent">CloudRoute</div>
-                <span className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded font-mono">ISV Partner</span>
-              </div>
-              <div className="text-sm text-muted-foreground">Enterprise platform delivery</div>
-            </div>
-          </div>
-
-          <p className="text-sm text-muted-foreground mt-6">
-            HubSpot and lighter stacks handled directly.
-          </p>
-        </div>
-      </Section>
 
       {/* CTA */}
       <Section>
