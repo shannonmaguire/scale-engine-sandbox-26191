@@ -1,173 +1,78 @@
 
 
-# About Page Redesign: Authentic Positioning
+# Homepage Language Grounding: Remove Abstract Jargon
 
-## Overview
-Rewrite the About page to reflect Shannon's authentic background—former seller, operator who loves complexity, and systems architect—while expanding the narrative beyond "lost deals" to include how system failures erode customer trust.
+## Problem
+"Run a Revenue Integrity Diagnostic" and related phrases use abstract consultant language. The /start page proves simpler is better: "Revenue systems break. We fix them."
 
-## Core Messaging Shift
+## Changes
 
-**Current positioning**: "I install revenue infrastructure for high-trust teams"
+### 1. Hero CTA
+**Before**: "Run a Revenue Integrity Diagnostic"
+**After**: "Book a System Audit"
 
-**New positioning**: 
-- Lead with finding where systems fail + installing enforcement
-- Emphasize seller background (carried quota, knows the pain)
-- Highlight love of operational complexity
-- Expand from "kills deals" → "erodes customer trust"
+Simple. Says what it is. Not branded jargon.
 
----
+### 2. Hero Headline (POSITIONING.primary)
+**Before**: "Most revenue problems are invisible until it's too late."
+**After**: "Revenue systems break. We find where."
 
-## Section-by-Section Changes
+Mirrors /start page language. Active, not passive.
 
-### 1. Hero Section (Enhanced Bio)
+### 3. Supporting Line (POSITIONING.supportingLine)
+**Before**: "We surface them early, prove where they're leaking, and install enforcement before deals are lost."
+**After**: "2-week audit. We diagnose where deals stall, forecast fails, and customers lose trust."
 
-**Current headline**: "I install revenue infrastructure for high-trust teams—legal, healthcare, compliance, SaaS. Where broken systems kill deals."
+Specific outcomes. Time-bound. Trust angle (from About page work).
 
-**New headline**: "I find where revenue systems are failing—then install enforcement so they can't fail again."
+### 4. Tagline Badge (POSITIONING.tagline)
+**Before**: "Revenue Integrity Systems"
+**After**: "Systems Architecture"
 
-**New supporting copy**:
-> "Most revenue problems are invisible until the deal is already lost. I surface them early, diagnose where the system is actually breaking, and install infrastructure that holds under load. System enforcement, not human enforcement."
+Less branded, more descriptive of what you actually do.
 
-**New secondary line**:
-> "Architecture and strategy handled directly. Salesforce implementation through CloudRoute (Platinum Partner). Every system documented. Every handoff clean."
+### 5. Final CTA Section
+**Before**: "2-week diagnostic. System-level audit for when deals are active, budgets are real, and failure is expensive."
+**After**: "2-week audit. For teams with active pipeline, real budget, and no room for system failure."
 
-**Metrics row** (add one more):
-| Metric | Label |
-|--------|-------|
-| 8 years | same methodology |
-| 42 | systems installed |
-| 0 | failed migrations |
-
----
-
-### 2. NEW Section: "What I Believe" (Before "How I Think About Systems")
-
-Add a beliefs section with principle cards (matching reference):
-
-| Belief | Explanation |
-|--------|-------------|
-| **System enforcement, not human enforcement** | If a process depends on someone remembering to do it, it will eventually fail. Systems must hold what humans cannot. |
-| **Discovery before configuration** | We ask the hard questions first. What happens when reality changes? Where do things slip through the cracks? |
-| **Dependency order matters** | Revenue infrastructure is built in layers. Skip a layer, and growth stalls. We install in sequence. |
+Direct qualifiers. Same rhythm as "Who This Is For" section.
 
 ---
 
-### 3. NEW Section: "How I Work" (Diagnostic Questions)
+## Files to Modify
 
-Add the diagnostic approach section from reference:
-
-**Intro text**: "Every engagement starts with the same questions. They surface where the system is actually failing—not where you think it's failing."
-
-| Question | Purpose |
-|----------|---------|
-| "What happens when reality changes in your system?" | Surfacing whether the system silently passes or critically exposes manual intervention. |
-| "Walk me through the steps when someone purchases." | Mapping where the workflow breaks, where steps are undocumented, and where operational access outpaces commercial settlement. |
-| "How do you reconcile when a subscription changes?" | Identifying notification gaps, ownership ambiguity, and edge case handling. |
+1. **`src/lib/canonical-constants.ts`** - Update POSITIONING constants
+2. **`src/pages/Home.tsx`** - Update hero CTA text
 
 ---
 
-### 4. Keep "People → Process → Technology" Section
+## Technical Details
 
-This section already exists and matches the reference. Keep as-is with slight title update to include arrows in the header.
-
----
-
-### 5. Keep "Rules" Section
-
-Already matches reference structure. Keep as-is.
-
----
-
-### 6. Keep "Salesforce Projects" Section
-
-Already matches reference. Keep as-is.
-
----
-
-### 7. Final CTA
-
-Keep current structure: "Find Out What's Breaking" with Book Assessment button.
-
----
-
-## Technical Implementation
-
-### File to Modify
-`src/pages/About.tsx`
-
-### New Data Structures
-
+### canonical-constants.ts changes:
 ```typescript
-// What I Believe
-const beliefs = [
-  {
-    title: "System enforcement, not human enforcement",
-    description: "If a process depends on someone remembering to do it, it will eventually fail. Systems must hold what humans cannot."
-  },
-  {
-    title: "Discovery before configuration",
-    description: "We ask the hard questions first. What happens when reality changes? Where do things slip through the cracks?"
-  },
-  {
-    title: "Dependency order matters",
-    description: "Revenue infrastructure is built in layers. Skip a layer, and growth stalls. We install in sequence."
-  }
-];
-
-// How I Work - Diagnostic questions
-const diagnosticQuestions = [
-  {
-    question: '"What happens when reality changes in your system?"',
-    purpose: "Surfacing whether the system silently passes or critically exposes manual intervention."
-  },
-  {
-    question: '"Walk me through the steps when someone purchases."',
-    purpose: "Mapping where the workflow breaks, where steps are undocumented, and where operational access outpaces commercial settlement."
-  },
-  {
-    question: '"How do you reconcile when a subscription changes?"',
-    purpose: "Identifying notification gaps, ownership ambiguity, and edge case handling."
-  }
-];
+export const POSITIONING = {
+  primary: "Revenue systems break. We find where.",
+  tagline: "Systems Architecture",
+  supportingLine: "2-week audit. We diagnose where deals stall, forecasts fail, and customers lose trust.",
+  targetLine: "For teams where system failure means lost deals, not just lost time.",
+  velocity: "Systems that hold under load.",
+} as const;
 ```
 
-### Section Order (matching reference)
-1. Hero (FOUNDER badge + bio with new copy)
-2. **NEW: What I Believe** (3 belief cards)
-3. **NEW: How I Work** (3 diagnostic questions)
-4. People → Process → Technology (existing, update header to include arrows)
-5. Rules (existing)
-6. Salesforce Projects (existing)
-7. Final CTA (existing)
+### Home.tsx hero CTA:
+```tsx
+<ConversionOptimizedButton ...>
+  <span className="hidden sm:inline text-inherit">Book a System Audit</span>
+  <span className="sm:hidden text-inherit">Book Audit</span>
+</ConversionOptimizedButton>
+```
 
 ---
 
-## Styling Approach
-
-- Belief cards: `bg-card p-6 border-l-2 border-primary` with bold title + muted description
-- Diagnostic questions: Checkbox icon + monospace question text + muted purpose text
-- Section headers: Use `heading-section` class (JetBrains Mono)
-- All cards squared (no rounded corners)
-
----
-
-## Language Compliance Check
-
-All new copy verified against phrases kill list:
-- No triplet cadences
-- No "compelling/powerful/impactful/transformative"
+## Language Compliance
+- No triplets
 - No "unlock/discover/leverage/optimize"
-- No "Not X, but Y" framing (replaced "not human enforcement" context)
-- Direct declarative statements only
-
----
-
-## Why This Works for Shannon
-
-1. **Seller background implied**: "I surface them early" and "where the deal is already lost" implies lived experience carrying a bag
-2. **Loves complexity**: The diagnostic questions reveal operational depth—subscriptions, handoffs, edge cases
-3. **Systems architect**: "System enforcement, not human enforcement" establishes architectural authority
-4. **Trust angle**: "System silently passes" and "operational access outpaces commercial settlement" speaks to customer trust erosion, not just deals
-
-The positioning remains calm, certain, sparse—but now has depth that reflects your actual operating experience.
+- No abstract branded terms ("Revenue Integrity")
+- Direct, active voice
+- Concrete outcomes (deals stall, forecasts fail, customers lose trust)
 
