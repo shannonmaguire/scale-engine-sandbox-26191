@@ -4,8 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
 import { CaseStudyCarousel } from "@/components/proof/CaseStudyCarousel";
 import { PartnerLogos } from "@/components/TrustIndicators";
-import { TIMELINES } from "@/lib/canonical-constants";
-import { useState, useMemo, useEffect } from "react";
+import { useState } from "react";
 
 interface CaseStudy {
   id: number;
@@ -23,51 +22,49 @@ interface CaseStudy {
   patternRestored: string;
 }
 
-interface DerivedMetric {
-  value: string;
-  label: string;
-  source?: string;
-}
-
-interface MetricSet {
-  metrics: DerivedMetric[];
-  headline: string;
-}
-
-const deriveAllMetricSets = (studies: CaseStudy[]): MetricSet[] => {
-  return [
-    // Set 1: Pipeline & Growth
-    {
-      headline: "Pipeline & Growth",
-      metrics: [
-        { value: '$500K+', label: 'Pipeline Built', source: 'Federal Cybersecurity' },
-        { value: '4x', label: 'Conversion Lift', source: 'B2B SaaS' },
-        { value: '87%', label: 'Less Admin Work', source: 'Marketing Agency' },
-        { value: '90', label: 'Days to Fix' }
-      ]
-    },
-    // Set 2: Efficiency & Speed
-    {
-      headline: "Efficiency Gains",
-      metrics: [
-        { value: '2-5', label: 'Qualified Calls/Day', source: 'Creator Platform' },
-        { value: '24%', label: 'PQL Conversion', source: 'SaaS Platform' },
-        { value: '13hrs', label: 'Weekly Time Saved', source: 'Marketing Agency' },
-        { value: '40%+', label: 'Email Open Rates', source: 'Federal Cyber' }
-      ]
-    },
-    // Set 3: Revenue Results
-    {
-      headline: "Revenue Impact",
-      metrics: [
-        { value: '+107%', label: 'Sales Growth', source: 'E-Commerce' },
-        { value: '100+', label: 'User Signups', source: 'Creator SaaS' },
-        { value: '8.9', label: 'Client NPS', source: 'Marketing Agency' },
-        { value: '90', label: 'Days to Launch', source: 'Healthcare' }
-      ]
-    }
-  ];
-};
+// Current patterns from active engagements
+const currentPatterns = [
+  {
+    category: "MEDICAL DEVICES",
+    title: "Teams losing forecast accuracy during regulatory handoffs",
+    description: "Deals stall as compliance reviews aren't linked into the pipeline"
+  },
+  {
+    category: "OPS",
+    title: "Deals stalling post-demo because ownership isn't enforced",
+    description: "Handoff from sales to ops breaks when there's no system holding it"
+  },
+  {
+    category: "PROFESSIONAL SERVICES",
+    title: "Revenue closes but delivery systems fail to operationalize",
+    description: "Sales close, ops scrambles, clients churn"
+  },
+  {
+    category: "PARTNER-LED SALESFORCE",
+    title: "RevOps → Finance boundary breaks at scale",
+    description: "Everyone looks clean until 5 errors accumulate"
+  },
+  {
+    category: "SAAS STARTUPS",
+    title: "Companies selling enforcement systems that lack their own internal system of enforcement",
+    description: "The product is polished but the back office is held together by manual processes"
+  },
+  {
+    category: "EQUIPMENT / KIT",
+    title: "Growth exposing cracks in fragmented systems before they break",
+    description: "Things work today, but volume will surface what manual processes are hiding"
+  },
+  {
+    category: "HEALTH SERVICES",
+    title: "Operational access granted before commercials are settled",
+    description: "Revenue recognized in paper while payment collection is unmoored"
+  },
+  {
+    category: "MULTI SYSTEM ENGINEERING",
+    title: "Systems drift between CRM, finance, and operations platforms",
+    description: "Reality diverges in one system but isn't reflected everywhere without human intervention"
+  }
+];
 
 const Proof = () => {
   const [expandedStudy, setExpandedStudy] = useState<number | null>(null);
@@ -199,31 +196,6 @@ const Proof = () => {
   // Featured case studies for above-the-fold preview
   const featuredStudies = caseStudies.slice(0, 4);
 
-  // Derive all metric sets from case study data
-  const metricSets = useMemo(() => deriveAllMetricSets(caseStudies), [caseStudies]);
-  
-  // Rotating metrics state
-  const [currentSetIndex, setCurrentSetIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Auto-rotate every 5 seconds (pauses on hover)
-  useEffect(() => {
-    if (isPaused) return;
-    
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentSetIndex(prev => (prev + 1) % metricSets.length);
-        setIsTransitioning(false);
-      }, 300);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [metricSets.length, isPaused]);
-
-  const currentMetrics = metricSets[currentSetIndex];
-
   return (
     <div className="min-h-screen bg-background">
       <SEOHead 
@@ -255,55 +227,6 @@ const Proof = () => {
           <p className="text-description text-muted-foreground max-w-2xl">
             Real results from teams that fixed what was breaking.
           </p>
-        </div>
-      </Section>
-
-      {/* Metrics Bar - Rotating highlights from case studies */}
-      <Section variant="muted" className="py-8 border-b border-border">
-        <div 
-          className="max-w-4xl mx-auto"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Navigation dots - enlarged for mobile touch targets */}
-          <div className="flex justify-center gap-3 mb-6 min-h-[44px] items-center">
-            {metricSets.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => {
-                  setIsTransitioning(true);
-                  setTimeout(() => {
-                    setCurrentSetIndex(index);
-                    setIsTransitioning(false);
-                  }, 150);
-                }}
-                className={`h-3 rounded-full transition-all ${
-                  index === currentSetIndex 
-                    ? 'w-8 bg-primary' 
-                    : 'w-3 bg-border hover:bg-primary/50'
-                }`}
-                aria-label={`View ${metricSets[index].headline}`}
-              />
-            ))}
-          </div>
-          
-          {/* Rotating metrics */}
-          <div 
-            className={`grid grid-cols-2 md:grid-cols-4 gap-6 transition-opacity duration-300 ${
-              isTransitioning ? 'opacity-0' : 'opacity-100'
-            }`}
-          >
-            {currentMetrics.metrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-primary font-mono">
-                  {metric.value}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  {metric.label}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </Section>
 
@@ -370,6 +293,34 @@ const Proof = () => {
         <p className="text-sm text-muted-foreground text-center mt-6">
           Click any card to see what we actually did
         </p>
+      </Section>
+
+      {/* What We're Seeing Right Now - Pattern Grid */}
+      <Section className="border-b border-border">
+        <div className="system-status mb-6">PATTERNS</div>
+        <h2 className="heading-section mb-2">What We're Seeing Right Now</h2>
+        <p className="text-description text-muted-foreground mb-8">
+          Anonymized signals from active engagements across medical devices, CPG, SaaS, and services.
+        </p>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {currentPatterns.map((pattern, index) => (
+            <div 
+              key={index}
+              className="bg-card border border-border p-6 hover:border-primary/30 transition-colors"
+            >
+              <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3">
+                {pattern.category}
+              </div>
+              <div className="text-sm font-medium text-foreground mb-2 leading-snug">
+                {pattern.title}
+              </div>
+              <div className="text-xs text-muted-foreground leading-relaxed">
+                {pattern.description}
+              </div>
+            </div>
+          ))}
+        </div>
       </Section>
 
       {/* Full Case Studies - Carousel for deep dives */}
