@@ -40,19 +40,19 @@ const Start = () => {
           <ul className="space-y-3 text-foreground mb-8">
             <li className="flex items-start gap-3 py-2 min-h-[44px]">
               <span className="text-muted-foreground mt-1">—</span>
-              <span>Running demand through fragmented systems</span>
+              <span>Two databases that don't talk to each other</span>
             </li>
             <li className="flex items-start gap-3 py-2 min-h-[44px]">
               <span className="text-muted-foreground mt-1">—</span>
-              <span>Forecasting unreliable beyond 30 days</span>
+              <span>Pre-sale tools breaking down post-sale</span>
             </li>
             <li className="flex items-start gap-3 py-2 min-h-[44px]">
               <span className="text-muted-foreground mt-1">—</span>
-              <span>Founder still routing deals manually</span>
+              <span>Team checking 3-4 systems for one customer question</span>
             </li>
             <li className="flex items-start gap-3 py-2 min-h-[44px]">
               <span className="text-muted-foreground mt-1">—</span>
-              <span>Tools adopted but not integrated</span>
+              <span>Growth about to expose cracks in current process</span>
             </li>
           </ul>
           <p className="text-muted-foreground text-sm font-mono">
