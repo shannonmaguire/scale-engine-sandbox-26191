@@ -146,12 +146,7 @@ const App = () => {
         <ErrorBoundary>
           <Toaster />
           <Sonner />
-          <BrowserRouter
-            future={{
-              v7_startTransition: true,
-              v7_relativeSplatPath: true,
-            }}
-          >
+          <BrowserRouter>
             {/* Skip to main content link for accessibility */}
             <a href="#main-content" className="skip-to-main">
               Skip to main content
