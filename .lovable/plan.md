@@ -1,132 +1,131 @@
 
-# Homepage Redesign Plan
+
+# How We Work Page Redesign Plan
 
 ## Overview
-Redesign the homepage to match the reference screenshot's structure and content while maintaining the existing design system and brand standards.
+Redesign the How We Work page to match the reference screenshot structure, adding two new sections ("Questions We Ask" and "What We Look For") while refining the existing architecture and implementation phases sections.
 
 ## Key Changes
 
-### 1. Hero Section Updates
+### 1. Architecture Section Enhancement
 
 **Current:**
-- Tagline: "Disciplined systems. Clean execution. Durable growth."
-- Headline: "Growth dies when systems break."
-- Subtext about installing infrastructure
+- Title: "The Architecture" with subtitle "How We Build It"
+- 6-layer grid with cards
 
-**New (matching reference):**
-- Tagline: `REVENUE INTEGRITY SYSTEMS`
-- Headline: "Most revenue problems are invisible until it's too late."
-- Subtext: "We surface them early, prove where they're leaking, and install enforcement before deals are lost."
-- Target line: "For teams where system failure means lost deals, not just lost time."
-- Primary CTA: "RUN A REVENUE INTEGRITY DIAGNOSTIC →"
-- Trust badges: "42 systems installed → Zero failed migrations" + "Martech, Revops, OPS, SaaS, RevOps"
+**Updated:**
+- Combined title: "The Architecture" + "How We Build It" on two lines
+- Keep the 6-layer grid with same structure
+- Footer text: "This is the order. Starting layer stages." (matching reference)
 
-### 2. New Section: "What We're Seeing Right Now"
+### 2. NEW Section: "Questions We Ask"
 
-Add a 6-card grid showing current patterns observed from active engagements, organized by industry/vertical:
+Add a diagnostic questions section after the architecture:
 
-| Category | Title | Description |
-|----------|-------|-------------|
-| MEDICAL DEVICES | Teams losing forecast accuracy during regulatory handoffs | Deals stall as compliance reviews prevent clean baseline → the pipeline |
-| OPS | Deals stalling post-demo because ownership isn't enforced | Handoff from sales to ops breaks when there's no system holding it |
-| PROFESSIONAL SERVICES | Revenue closes but delivery systems fail to operationalize | Sales close, ops scrambles, clients churn |
-| PARTNER-LED SALESFORCE | RevOps → Finance boundary breaks at scale | Everyone looks clean until 5 errors compound |
-| SAAS STARTUPS | Companies selling enforcement systems that lack their own internal system of enforcement | The product is polished but the back office is held together by manual processes |
-| EQUIPMENT / KIT | Growth exposing cracks in fragmented systems before they break | Things work today, but volume will surface what manual processes are hiding |
+| Question | Description |
+|----------|-------------|
+| "What happens when reality changes in your system?" | Surfacing whether the system the silently passes under critically exposes manual intervention. |
+| "Walk me through the steps when someone purchases." | Mapping where the workflow breaks, where steps are undocumented, and where operational revenue is baked into the commercial settlements. |
+| "How do you reconcile when a subscription changes?" | Identifying notification gaps, system-to-system ambiguity and edge case handling. |
+| "What keeps you up at night?" | Locating the trust or rigor and where things slip through the cracks. |
 
-### 3. Replace "What We Do" → "How We Work"
+### 3. NEW Section: "What We Look For"
 
-Transform the simple 3-icon row into a more descriptive 3-card section with icons:
+Add a 4-card grid showing critical patterns that predict revenue system failure:
 
-| Icon | Title | Description |
-|------|-------|-------------|
-| Eye | Visibility | Most revenue problems are invisible until too late. We surface them first. |
-| Search | Diagnosis | We trace breakage to source—fix traffic, process breaks, and catch contact failures. |
-| Lock | Enforcement | Systems that hold under load—automation, prevention, and accountability built in. |
+| Pattern | Description |
+|---------|-------------|
+| No orchestration | Everything trying to be generous stitches |
+| System drift | Parallel changing that one system but not the adjacent one |
+| Manual enforcement | If something critical requires someone to check |
+| Operational access before contractual settlement | Granting viewing that hits the payment collection |
 
-Add a callout box below:
-> "We design for expected value—what will close, what will stall, and why. That's how CPOs and RevOps leaders think. We design systems the same way."
+Intro text: "These are the four patterns that predict revenue system failure. If any of these exist, growth will expose them."
 
-### 4. Rename "Fit Check" → "Who This Is For"
+### 4. Implementation Phases - Minor Updates
 
-Keep the existing Good Fit / Not a Fit structure but update the content to match reference:
+Keep the current 3-phase structure with same deliverables, but ensure styling matches reference:
+- Phase numbers aligned left
+- Title with duration badge on the right
+- Deliverables as checkmark list inline
 
-**Good Fit:**
-- Active pipeline, real budget, pressure
-- Deals stalling for reasons you can't see in dashboards
-- RevOps or ops function exists but can't scale
+### 5. Principles Section
 
-**Not a Fit:**
-- Pre-revenue or pre-product
-- Looking for a Salesforce admin
-- Comparing consultants on hourly rate
+Keep existing principles as border-boxed tags with primary color text.
 
-### 5. Keep "What Happened" with Updated Content
+### 6. Final CTA
 
-Update the single proof point to match reference style:
-- Quote: "We went from waiting for Upwork gigs to a repeatable outbound system with 40%+ open rates."
-- Attribution: FEDERAL CYBERSECURITY (SAVIINT PIPELINE)
-- Result metric: "$500k pipeline built in 90 days."
-- Link: "SEE ALL 8 CASE STUDIES →"
-
-### 6. Update Final CTA Section
-
-**Current:** "Find Out What's Breaking" → "Book Assessment"
-
-**New:** 
-- Heading: "Find Out What's Breaking"
-- Subtext: "2-week diagnostic. System-level audit for when deals are active, budgets are real, and failure is expensive."
-- CTA: "BOOK ASSESSMENT →"
+Keep current structure:
+- Title: "Find Out What's Breaking"
+- Two buttons: "Book Assessment" and "See Results"
 
 ---
 
 ## Technical Implementation
 
 ### Files to Modify:
-1. **`src/pages/Home.tsx`** - Complete restructure of sections
-2. **`src/lib/canonical-constants.ts`** - Update positioning constants
+1. **`src/pages/HowWeWork.tsx`** - Add new sections and data structures
+2. **`src/components/RevenueArchitectureDiagram.tsx`** - Update footer text
 
 ### New Data Structures:
 
 ```typescript
-// What We're Seeing patterns
-const currentPatterns = [
+// Questions We Ask
+const diagnosticQuestions = [
   {
-    category: "MEDICAL DEVICES",
-    title: "Teams losing forecast accuracy during regulatory handoffs",
-    description: "Deals stall as compliance reviews prevent clean baseline → the pipeline"
+    question: "What happens when reality changes in your system?",
+    description: "Surfacing whether the system silently passes or critically exposes manual intervention."
   },
-  // ... 5 more patterns
+  {
+    question: "Walk me through the steps when someone purchases.",
+    description: "Mapping where the workflow breaks, where steps are undocumented, and where operational revenue is baked into commercial settlements."
+  },
+  {
+    question: "How do you reconcile when a subscription changes?",
+    description: "Identifying notification gaps, system-to-system ambiguity, and edge case handling."
+  },
+  {
+    question: "What keeps you up at night?",
+    description: "Locating the trust or rigor and where things slip through the cracks."
+  }
 ];
 
-// How We Work cards
-const howWeWork = [
+// What We Look For - Critical patterns
+const criticalPatterns = [
   {
-    icon: Eye,
-    title: "Visibility",
-    label: "WHAT YOU CAN'T SEE YET",
-    description: "Most revenue problems are invisible until too late. We surface them first."
+    title: "No orchestration",
+    description: "Everything trying to be generous stitches"
   },
-  // ... 2 more
-];
-
-// Updated fit criteria
-const fitCriteria = [
-  { fit: true, label: "Active pipeline, real budget, pressure" },
-  { fit: true, label: "Deals stalling for reasons you can't see in dashboards" },
-  { fit: true, label: "RevOps or ops function exists but can't scale" },
-  { fit: false, label: "Pre-revenue or pre-product" },
-  { fit: false, label: "Looking for a Salesforce admin" },
-  { fit: false, label: "Comparing consultants on hourly rate" }
+  {
+    title: "System drift",
+    description: "Parallel changing that one system but not the adjacent one"
+  },
+  {
+    title: "Manual enforcement",
+    description: "If something critical requires someone to check"
+  },
+  {
+    title: "Operational access before contractual settlement",
+    description: "Granting viewing that hits the payment collection"
+  }
 ];
 ```
 
+### Section Order (matching reference):
+1. Hero (existing)
+2. The Architecture / How We Build It (existing, update footer text)
+3. **NEW: Questions We Ask**
+4. **NEW: What We Look For**
+5. Implementation Phases (existing)
+6. Principles (existing)
+7. Final CTA (existing)
+
 ### Styling Approach:
-- Maintain existing Section component and spacing
-- Use border-border for card borders
-- Use font-mono for category labels (uppercase, tracking-widest)
-- Keep squared aesthetic (no rounded corners)
-- Primary color for category labels and accents
+- Questions section: Numbered list with monospace question text and muted description
+- Critical patterns: 2x2 card grid with border-border styling
+- Use font-mono for section badges and labels
+- Maintain squared aesthetic (no rounded corners)
+- Primary color for section badges
 
 ---
 
@@ -138,3 +137,4 @@ All new copy verified against phrases kill list:
 - No "unlock/discover/leverage/optimize"
 - No "Not X, but Y" framing
 - Direct declarative statements only
+
