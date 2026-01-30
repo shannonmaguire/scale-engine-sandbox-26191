@@ -1,69 +1,157 @@
 
-# Implementation Plan: Footer Resources Link + Mini Blog CMS
+# Convert Resources Page to Article-Style Content
 
-## Status: ✅ COMPLETED
-
----
-
-## Part 1: Footer Resources Link ✅
-
-Added Resources link to the Company section in `src/components/Footer.tsx`.
+## Overview
+Transform the Resources page from downloadable PDFs into readable article-style content, using the existing blog infrastructure and database-backed CMS.
 
 ---
 
-## Part 2: Database-Backed Mini Blog CMS ✅
+## Current State
+- **7 PDF resources** at `/resources` with direct download links
+- PDFs stored in `/public/pdfs/`
+- Each resource has: title, description, category, file path
 
-### Completed Items
-
-1. **Database Schema** ✅
-   - Created `blog_posts` table with all required fields
-   - Enabled RLS with public read (published only) and admin-only write policies
-   - Added `updated_at` trigger for automatic timestamp updates
-
-2. **Dependencies** ✅
-   - Installed `react-markdown` for rendering Markdown content
-   - Installed `remark-gfm` for GitHub-flavored Markdown support
-
-3. **Frontend Implementation** ✅
-   - Created `src/hooks/useBlogPosts.ts` - React Query hooks for CRUD operations
-   - Created `src/components/blog/MarkdownRenderer.tsx` - Custom styled Markdown rendering
-   - Updated `src/pages/Blog.tsx` - Fetches from database with legacy fallback
-   - Updated `src/pages/BlogPost.tsx` - Renders database posts + keeps legacy article components
-   - Created `src/pages/AdminBlog.tsx` - Password-protected admin interface
-
-4. **Admin Interface** ✅
-   - Available at `/admin/blog` (no nav/footer)
-   - Password protection with session storage
-   - Also checks for admin role in user_roles table
-   - Full CRUD: create, edit, publish/unpublish, feature, delete posts
-   - Live Markdown preview
-   - Tag management
-
-5. **Routes** ✅
-   - Added `/admin/blog` route to `src/App.tsx`
-   - Marked as standalone page (no nav/footer)
+## Target State
+- **7 readable articles** displayed inline or linked as dedicated pages
+- Content managed through the same CMS as blog posts
+- No downloads - content is accessible directly on the site
+- Resources become part of the content library
 
 ---
 
-## How to Use
+## Implementation Options
 
-### Admin Access
-1. Navigate to `/admin/blog`
-2. Enter password (default: `cwt-admin-2024` or set `VITE_BLOG_ADMIN_PASSWORD` env var)
-3. Create/edit posts using Markdown
+### Option A: Merge Resources into Blog (Recommended)
+Convert each resource into a blog post with a "Resources" category:
 
-### Legacy Articles
-The three existing blog articles remain as React components:
-- `90-day-revenue-system-installation`
-- `salesforce-technical-debt-competitive-advantage`
-- `breaking-points-2-5m-arr`
+**Advantages:**
+- Single CMS for all content
+- Consistent styling and rendering
+- SEO benefits (indexable content)
+- Unified content management
 
-These will continue to render their custom component content. New articles added via the CMS will render as Markdown.
+**Changes Required:**
+1. Add "Resources" category to blog categories
+2. Create 7 new blog posts (one per resource) via the admin CMS
+3. Update Resources page to display filtered blog posts (category = "Resources")
+4. Remove or archive the PDF files
+
+### Option B: Separate Resources Content
+Keep Resources as its own section with dedicated pages:
+
+**Advantages:**
+- Clear separation between blog and resources
+- Different URL structure (`/resources/roi-calculator`)
+
+**Changes Required:**
+1. Create a new `resources` database table
+2. Create resource content pages
+3. Build a resource detail page component
+4. More infrastructure to maintain
 
 ---
 
-## Security Notes
+## Recommended Approach: Option A
 
-- RLS policies restrict writes to admin role only
-- Admin page uses session storage for auth state
-- `noindex` meta tag prevents search indexing of admin page
+### Database Changes
+None required - the existing `blog_posts` table works as-is.
+
+### Frontend Changes
+
+#### 1. Update Blog Categories
+**File:** `src/pages/Blog.tsx`
+
+Add "Resources" to the categories array so resource articles can be filtered:
+```tsx
+const categories = ["All", "Revenue Infrastructure", "System Installation", "Fractional Ops", "Salesforce Ecosystem", "Revenue Operations", "Resources"];
+```
+
+#### 2. Simplify Resources Page
+**File:** `src/pages/Resources.tsx`
+
+Transform from download grid to a curated list linking to resource articles:
+- Keep the page header and structure
+- Replace download cards with article preview cards
+- Link each card to `/blog/[resource-slug]`
+- Optionally embed short excerpts directly on the page
+
+#### 3. Seed Resource Content
+Using the admin panel at `/admin/blog`, create 7 new posts:
+
+| Title | Slug | Category |
+|-------|------|----------|
+| 90-Day Roadmap Template | `90-day-roadmap-template` | Resources |
+| Discovery Questions Library | `discovery-questions-library` | Resources |
+| ROI Calculator | `roi-calculator` | Resources |
+| Service Selection Guide | `service-selection-guide` | Resources |
+| Technical Assessment Framework | `technical-assessment-framework` | Resources |
+| Vendor Handoff SOP | `vendor-handoff-sop` | Resources |
+| Website Readiness Checklist | `website-readiness-checklist` | Resources |
+
+Each post will contain the full content of the original PDF, written in Markdown.
+
+#### 4. Remove PDF Download Links
+- Delete download icons and `<a download>` elements
+- Replace with "Read Article" links
+
+#### 5. Optional: Archive PDFs
+The PDF files in `/public/pdfs/` can be:
+- Kept as secondary download option (if you want both)
+- Removed entirely (cleaner)
+
+---
+
+## Content Migration Strategy
+
+Since I cannot read the PDF contents directly, you have two options:
+
+1. **Manual entry**: Use the admin panel to create each resource article and paste the content
+2. **Provide content**: Share the text content from each PDF and I can seed the database
+
+---
+
+## Updated Resources Page Layout
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│ RESOURCES                                                   │
+│ Resources                                                   │
+│ Templates, frameworks, and guides for revenue               │
+│ infrastructure planning and implementation.                 │
+├─────────────────────────────────────────────────────────────┤
+│ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ │
+│ │ PLANNING        │ │ ASSESSMENT      │ │ ANALYSIS        │ │
+│ │ 90-Day Roadmap  │ │ Discovery       │ │ ROI Calculator  │ │
+│ │ Template        │ │ Questions       │ │                 │ │
+│ │                 │ │ Library         │ │ [description]   │ │
+│ │ [description]   │ │ [description]   │ │                 │ │
+│ │                 │ │                 │ │ Read Article →  │ │
+│ │ Read Article →  │ │ Read Article →  │ │                 │ │
+│ └─────────────────┘ └─────────────────┘ └─────────────────┘ │
+│          ...remaining 4 resource cards...                   │
+├─────────────────────────────────────────────────────────────┤
+│ NEXT STEP                                                   │
+│ Need a custom assessment?                                   │
+│ [Book Assessment →]                                         │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Implementation Steps
+
+1. Add "Resources" to blog categories in `Blog.tsx`
+2. Update `Resources.tsx` to link to blog posts instead of downloads
+3. Seed the 7 resource articles via admin panel (content needed from you)
+4. Test navigation from Resources → individual articles
+5. Optionally remove PDF files from `/public/pdfs/`
+
+---
+
+## What I Need From You
+
+Before implementation, I need the actual content for each resource. You can either:
+- **Paste the text** from each PDF so I can seed the database
+- **Enter via admin panel** at `/admin/blog` yourself after I update the frontend
+
+Let me know if you'd like to proceed with this approach, and how you'd like to handle the content migration.
