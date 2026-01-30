@@ -56,6 +56,57 @@ export type Database = {
         }
         Relationships: []
       }
+      blog_posts: {
+        Row: {
+          author: string
+          category: string
+          content: string
+          created_at: string | null
+          excerpt: string
+          featured: boolean | null
+          id: string
+          published: boolean | null
+          published_at: string | null
+          read_time: string | null
+          slug: string
+          tags: string[] | null
+          title: string
+          updated_at: string | null
+        }
+        Insert: {
+          author?: string
+          category: string
+          content: string
+          created_at?: string | null
+          excerpt: string
+          featured?: boolean | null
+          id?: string
+          published?: boolean | null
+          published_at?: string | null
+          read_time?: string | null
+          slug: string
+          tags?: string[] | null
+          title: string
+          updated_at?: string | null
+        }
+        Update: {
+          author?: string
+          category?: string
+          content?: string
+          created_at?: string | null
+          excerpt?: string
+          featured?: boolean | null
+          id?: string
+          published?: boolean | null
+          published_at?: string | null
+          read_time?: string | null
+          slug?: string
+          tags?: string[] | null
+          title?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
       data_requests: {
         Row: {
           created_at: string

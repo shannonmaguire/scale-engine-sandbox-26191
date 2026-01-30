@@ -1,121 +1,69 @@
 
 # Implementation Plan: Footer Resources Link + Mini Blog CMS
 
-## Overview
-Add the Resources page to the footer navigation and implement a database-backed blog CMS using Lovable Cloud for content management.
+## Status: ✅ COMPLETED
 
 ---
 
-## Part 1: Footer Resources Link (Quick Fix)
+## Part 1: Footer Resources Link ✅
 
-### Change Required
-**File:** `src/components/Footer.tsx`
-
-Add a new list item for Resources in the Company section (after Contact):
-
-```tsx
-<li>
-  <Link to="/resources" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-    Resources
-  </Link>
-</li>
-```
+Added Resources link to the Company section in `src/components/Footer.tsx`.
 
 ---
 
-## Part 2: Database-Backed Mini Blog CMS
+## Part 2: Database-Backed Mini Blog CMS ✅
 
-### Database Schema
+### Completed Items
 
-Create a `blog_posts` table:
+1. **Database Schema** ✅
+   - Created `blog_posts` table with all required fields
+   - Enabled RLS with public read (published only) and admin-only write policies
+   - Added `updated_at` trigger for automatic timestamp updates
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                       blog_posts                            │
-├─────────────────────────────────────────────────────────────┤
-│ id              UUID PRIMARY KEY                            │
-│ slug            TEXT UNIQUE NOT NULL                        │
-│ title           TEXT NOT NULL                               │
-│ excerpt         TEXT NOT NULL                               │
-│ content         TEXT NOT NULL (Markdown)                    │
-│ author          TEXT DEFAULT 'Shannon Maguire'              │
-│ category        TEXT NOT NULL                               │
-│ tags            TEXT[] (array of strings)                   │
-│ read_time       TEXT (e.g., "12 min read")                  │
-│ featured        BOOLEAN DEFAULT FALSE                       │
-│ published       BOOLEAN DEFAULT FALSE                       │
-│ published_at    TIMESTAMPTZ                                 │
-│ created_at      TIMESTAMPTZ DEFAULT NOW()                   │
-│ updated_at      TIMESTAMPTZ DEFAULT NOW()                   │
-└─────────────────────────────────────────────────────────────┘
-```
+2. **Dependencies** ✅
+   - Installed `react-markdown` for rendering Markdown content
+   - Installed `remark-gfm` for GitHub-flavored Markdown support
 
-### Security (RLS Policies)
-- **Public read:** Anyone can read published posts
-- **Admin write:** Protected admin route for creating/editing (can use a simple password or authenticated admin role)
+3. **Frontend Implementation** ✅
+   - Created `src/hooks/useBlogPosts.ts` - React Query hooks for CRUD operations
+   - Created `src/components/blog/MarkdownRenderer.tsx` - Custom styled Markdown rendering
+   - Updated `src/pages/Blog.tsx` - Fetches from database with legacy fallback
+   - Updated `src/pages/BlogPost.tsx` - Renders database posts + keeps legacy article components
+   - Created `src/pages/AdminBlog.tsx` - Password-protected admin interface
 
-### Frontend Changes
+4. **Admin Interface** ✅
+   - Available at `/admin/blog` (no nav/footer)
+   - Password protection with session storage
+   - Also checks for admin role in user_roles table
+   - Full CRUD: create, edit, publish/unpublish, feature, delete posts
+   - Live Markdown preview
+   - Tag management
 
-#### A. Update Blog.tsx
-- Replace hardcoded `blogPosts` array with a database query
-- Use `@tanstack/react-query` for data fetching
-- Add loading states
-
-#### B. Update BlogPost.tsx  
-- Fetch individual post by slug from database
-- Render Markdown content using a lightweight parser (e.g., `react-markdown`)
-- Keep existing article components as fallback for legacy posts
-
-#### C. Create Admin Page (Optional)
-- Protected route at `/admin/blog` or similar
-- Form to create/edit blog posts
-- Markdown preview
-- Publish/unpublish toggle
-
-### New Dependencies
-- `react-markdown` - For rendering Markdown content
-- `remark-gfm` - GitHub-flavored Markdown support (tables, etc.)
-
-### Migration Strategy
-1. Create database table
-2. Seed existing 3 articles into database
-3. Update frontend to read from database
-4. Legacy component articles remain as backup
+5. **Routes** ✅
+   - Added `/admin/blog` route to `src/App.tsx`
+   - Marked as standalone page (no nav/footer)
 
 ---
 
-## Technical Considerations
-
-### Content Format
-Blog content will be stored as Markdown, which allows:
-- Easy formatting without HTML
-- Code blocks with syntax highlighting (future)
-- Tables, lists, blockquotes
-- Portable content that could move to another CMS later
+## How to Use
 
 ### Admin Access
-For a "mini" CMS, we can use one of these approaches:
-1. **Simple password protection** - Environment variable with admin password
-2. **Magic link** - Email-based auth for specific email addresses
-3. **Full auth** - User accounts with admin role
+1. Navigate to `/admin/blog`
+2. Enter password (default: `cwt-admin-2024` or set `VITE_BLOG_ADMIN_PASSWORD` env var)
+3. Create/edit posts using Markdown
 
-Recommendation: Start with simple password protection, upgrade later if needed.
+### Legacy Articles
+The three existing blog articles remain as React components:
+- `90-day-revenue-system-installation`
+- `salesforce-technical-debt-competitive-advantage`
+- `breaking-points-2-5m-arr`
 
----
-
-## Implementation Order
-
-1. Add Resources link to footer (immediate)
-2. Create `blog_posts` database table with RLS
-3. Install `react-markdown` and `remark-gfm`
-4. Create blog data fetching hooks
-5. Update Blog.tsx to use database
-6. Update BlogPost.tsx to render Markdown
-7. Create simple admin interface
-8. Migrate existing articles to database
+These will continue to render their custom component content. New articles added via the CMS will render as Markdown.
 
 ---
 
-## Estimated Scope
-- **Footer fix:** 1 change
-- **Blog CMS:** New table, 2-3 updated pages, 1 new admin page, hooks/utilities
+## Security Notes
+
+- RLS policies restrict writes to admin role only
+- Admin page uses session storage for auth state
+- `noindex` meta tag prevents search indexing of admin page
