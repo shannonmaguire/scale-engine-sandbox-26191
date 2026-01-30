@@ -1,17 +1,34 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Share2, Calendar, User, ArrowRight, BookOpen } from "lucide-react";
+import { ArrowLeft, Share2, Calendar, User, ArrowRight, BookOpen, Loader2 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
+import { usePostBySlug, usePublishedPosts } from "@/hooks/useBlogPosts";
+import { MarkdownRenderer } from "@/components/blog/MarkdownRenderer";
+
+// Legacy article components (for backwards compatibility)
 import { NinetyDaySystemArticle } from "@/components/blog/NinetyDaySystemArticle";
 import { SalesforceTechnicalDebtArticle } from "@/components/blog/SalesforceTechnicalDebtArticle";
 import { BreakagePointsArticle } from "@/components/blog/BreakagePointsArticle";
 
-// Sample blog posts data (in production, this would come from a CMS or API)
-const blogPosts = [
-  {
-    id: 1,
-    slug: "90-day-revenue-system-installation",
+// Legacy slugs that have custom component articles
+const LEGACY_SLUGS = [
+  "90-day-revenue-system-installation",
+  "salesforce-technical-debt-competitive-advantage",
+  "breaking-points-2-5m-arr",
+];
+
+// Legacy post metadata for fallback
+const legacyPostsMetadata: Record<string, {
+  title: string;
+  excerpt: string;
+  author: string;
+  publishedAt: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+}> = {
+  "90-day-revenue-system-installation": {
     title: "The 90-Day Revenue System Installation: A Deployment Framework",
     excerpt: "How we install documented, repeatable revenue systems for Salesforce-driven businesses in 90 days. Fixed scope, measurable outcomes, full documentation.",
     author: "Shannon Maguire",
@@ -19,11 +36,8 @@ const blogPosts = [
     readTime: "12 min read",
     category: "System Installation",
     tags: ["90-day sprint", "revenue systems", "implementation", "frameworks"],
-    featured: true
   },
-  {
-    id: 2,
-    slug: "salesforce-technical-debt-competitive-advantage",
+  "salesforce-technical-debt-competitive-advantage": {
     title: "Why Salesforce Technical Debt Is Actually a Competitive Advantage",
     excerpt: "Most Salesforce orgs are messy. That's not a bug — it's an opportunity. How technical debt becomes your edge when you have the right cleanup framework.",
     author: "Shannon Maguire",
@@ -31,11 +45,8 @@ const blogPosts = [
     readTime: "10 min read",
     category: "Salesforce Ecosystem",
     tags: ["technical debt", "Salesforce", "competitive advantage", "cleanup"],
-    featured: false
   },
-  {
-    id: 3,
-    slug: "breaking-points-2-5m-arr",
+  "breaking-points-2-5m-arr": {
     title: "What Breaks First in $2-5M ARR Companies",
     excerpt: "Between $2M and $5M ARR, every SaaS company hits the same breaking points. Not because they're bad at execution—because manual processes that worked at $500K become systemic bottlenecks at scale.",
     author: "Shannon Maguire",
@@ -43,92 +54,56 @@ const blogPosts = [
     readTime: "14 min read",
     category: "Revenue Operations",
     tags: ["scaling", "breaking points", "infrastructure", "operations"],
-    featured: false
   },
-  {
-    id: 4,
-    slug: "revenue-operations-automation-playbook",
-    title: "The Revenue Operations Automation Playbook",
-    excerpt: "Stop treating automation like a nice-to-have. Learn how to build automated revenue operations that scale with your business and deliver predictable outcomes.",
-    author: "Shannon Maguire",
-    publishedAt: "2024-01-06",
-    readTime: "15 min read",
-    category: "Revenue Operations",
-    tags: ["automation", "RevOps", "scalability", "playbook"],
-    featured: false
-  },
-  {
-    id: 5,
-    slug: "data-migration-without-chaos",
-    title: "Data Migration Without the Chaos: A Structured Approach",
-    excerpt: "Data migrations fail because teams skip the infrastructure work. Here's how to move data between systems without losing weekends or your sanity.",
-    author: "Shannon Maguire",
-    publishedAt: "2024-01-05",
-    readTime: "11 min read",
-    category: "Data Engineering",
-    tags: ["data migration", "infrastructure", "systems", "methodology"],
-    featured: false
-  },
-  {
-    id: 6,
-    slug: "fractional-cto-when-and-why",
-    title: "Fractional CTO: When Your Business Needs Strategic Tech Leadership",
-    excerpt: "You don't need a full-time CTO to solve technical debt and build systems. Here's when fractional technical leadership makes sense and how to make it work.",
-    author: "Shannon Maguire",
-    publishedAt: "2024-01-03",
-    readTime: "9 min read",
-    category: "Leadership",
-    tags: ["fractional CTO", "technical leadership", "strategy", "consulting"],
-    featured: false
-  },
-  {
-    id: 7,
-    slug: "api-integration-patterns-that-scale",
-    title: "API Integration Patterns That Actually Scale",
-    excerpt: "Most API integrations break under load. Learn the architectural patterns that keep your integrations running smoothly as you grow from dozens to millions of requests.",
-    author: "Shannon Maguire",
-    publishedAt: "2023-12-28",
-    readTime: "13 min read",
-    category: "System Architecture",
-    tags: ["API", "integrations", "scalability", "architecture"],
-    featured: false
-  },
-  {
-    id: 8,
-    slug: "salesforce-implementation-mistakes",
-    title: "The 5 Most Expensive Salesforce Implementation Mistakes",
-    excerpt: "Years of cleanup work traces back to five preventable mistakes made during implementation. Here's what they are and how to avoid them.",
-    author: "Shannon Maguire",
-    publishedAt: "2023-12-22",
-    readTime: "10 min read",
-    category: "Salesforce Ecosystem",
-    tags: ["Salesforce", "implementation", "mistakes", "best practices"],
-    featured: false
-  },
-  {
-    id: 9,
-    slug: "building-business-intelligence-infrastructure",
-    title: "Building Business Intelligence That People Actually Use",
-    excerpt: "BI dashboards fail when they're built backward. Start with the decisions you need to make, then build the data pipeline to support them.",
-    author: "Shannon Maguire",
-    publishedAt: "2023-12-18",
-    readTime: "14 min read",
-    category: "Business Intelligence",
-    tags: ["BI", "data analytics", "decision making", "infrastructure"],
-    featured: false
-  }
-];
+};
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = blogPosts.find(p => p.slug === slug);
+  
+  // Check if this is a legacy article first
+  const isLegacySlug = slug && LEGACY_SLUGS.includes(slug);
+  
+  // Only fetch from database if not a legacy slug
+  const { data: dbPost, isLoading, error } = usePostBySlug(isLegacySlug ? undefined : slug);
+  
+  // Fetch all posts for related articles
+  const { data: allPosts } = usePublishedPosts();
 
-  if (!post) {
+  // Get legacy metadata if it's a legacy article
+  const legacyMeta = slug ? legacyPostsMetadata[slug] : null;
+  
+  // Determine the post data to display
+  const post = dbPost || (legacyMeta ? {
+    title: legacyMeta.title,
+    excerpt: legacyMeta.excerpt,
+    author: legacyMeta.author,
+    published_at: legacyMeta.publishedAt,
+    read_time: legacyMeta.readTime,
+    category: legacyMeta.category,
+    tags: legacyMeta.tags,
+    content: "",
+    slug: slug!,
+  } : null);
+
+  // Loading state (only for non-legacy posts)
+  if (!isLegacySlug && isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    );
+  }
+
+  // Not found - redirect to blog
+  if (!post && !isLoading) {
     return <Navigate to="/blog" replace />;
   }
 
-  // Render the actual blog content based on slug
+  if (!post) return null;
+
+  // Render the article content
   const renderBlogContent = () => {
+    // Check for legacy component articles first
     if (slug === "90-day-revenue-system-installation") {
       return <NinetyDaySystemArticle />;
     }
@@ -141,7 +116,12 @@ const BlogPost = () => {
       return <BreakagePointsArticle />;
     }
     
-    // Default fallback for other posts
+    // Render database content as Markdown
+    if (dbPost?.content) {
+      return <MarkdownRenderer content={dbPost.content} />;
+    }
+    
+    // Fallback for posts without content
     return (
       <div className="prose-blog">
         <p className="text-lg text-muted-foreground leading-relaxed mb-6">
@@ -154,23 +134,27 @@ const BlogPost = () => {
     );
   };
 
+  // Get related posts (excluding current)
+  const relatedPosts = allPosts?.filter(p => p.slug !== slug).slice(0, 3) || [];
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
         title={`${post.title} | CWT Studio Insights`}
         description={post.excerpt}
-        keywords={[...post.tags, 'revenue systems blog', 'backend infrastructure insights']}
+        keywords={[...(post.tags || []), 'revenue systems blog', 'backend infrastructure insights']}
         ogImage="https://cwtstudio.com/og-image.jpg"
-        canonicalUrl={`/blog/${post.slug}`}
+        canonicalUrl={`/blog/${slug}`}
         type="article"
         article={{
-          publishedTime: post.publishedAt,
-          modifiedTime: post.publishedAt,
+          publishedTime: post.published_at || undefined,
+          modifiedTime: post.published_at || undefined,
           author: post.author,
           section: post.category,
           isNewsArticle: true
         }}
       />
+      
       {/* Header */}
       <header className="border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto px-6 py-4">
@@ -192,7 +176,7 @@ const BlogPost = () => {
               <Badge variant="outline" className="font-mono border-2 border-primary text-primary px-4 py-1.5 text-sm">
                 {post.category}
               </Badge>
-              {post.tags.map((tag) => (
+              {(post.tags || []).map((tag) => (
                 <Badge key={tag} variant="secondary" className="font-mono text-xs px-3 py-1.5">
                   #{tag}
                 </Badge>
@@ -216,7 +200,7 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <Calendar className="h-5 w-5" />
-                <time>{new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                <time>{new Date(post.published_at || '').toLocaleDateString('en-US', { 
                   year: 'numeric', 
                   month: 'long', 
                   day: 'numeric' 
@@ -224,7 +208,7 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-2.5">
                 <BookOpen className="h-5 w-5" />
-                <span>{post.readTime}</span>
+                <span>{post.read_time}</span>
               </div>
             </div>
           </header>
@@ -266,6 +250,17 @@ const BlogPost = () => {
                     variant="ghost" 
                     size="sm" 
                     className="hover:bg-primary/10 hover:text-primary h-10 w-10 p-0 transition-all border border-border/50 hover:border-primary/30"
+                    onClick={() => {
+                      if (navigator.share) {
+                        navigator.share({
+                          title: post.title,
+                          text: post.excerpt,
+                          url: window.location.href,
+                        });
+                      } else {
+                        navigator.clipboard.writeText(window.location.href);
+                      }
+                    }}
                   >
                     <Share2 className="h-4 w-4" />
                   </Button>
@@ -277,21 +272,19 @@ const BlogPost = () => {
       </article>
 
       {/* Related Articles */}
-      <section className="border-t border-border">
-        <div className="container mx-auto px-6 py-20">
-          <div className="max-w-6xl mx-auto">
-            <div className="mb-12">
-              <h2 className="font-mono font-bold text-foreground text-3xl mb-3">
-                More Revenue Systems Insights
-              </h2>
-            </div>
+      {relatedPosts.length > 0 && (
+        <section className="border-t border-border">
+          <div className="container mx-auto px-6 py-20">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-12">
+                <h2 className="font-mono font-bold text-foreground text-3xl mb-3">
+                  More Revenue Systems Insights
+                </h2>
+              </div>
 
-            {/* Articles Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {blogPosts
-                .filter(p => p.slug !== slug)
-                .slice(0, 3)
-                .map((article) => (
+              {/* Articles Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {relatedPosts.map((article) => (
                   <Link
                     key={article.id}
                     to={`/blog/${article.slug}`}
@@ -302,7 +295,7 @@ const BlogPost = () => {
                         {article.category}
                       </Badge>
                       <span className="text-xs text-muted-foreground font-mono">
-                        {article.readTime}
+                        {article.read_time}
                       </span>
                     </div>
                     
@@ -316,7 +309,7 @@ const BlogPost = () => {
                     
                     <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
                       <Calendar className="h-4 w-4" />
-                      <time>{new Date(article.publishedAt).toLocaleDateString('en-US', { 
+                      <time>{new Date(article.published_at || '').toLocaleDateString('en-US', { 
                         year: 'numeric', 
                         month: 'long', 
                         day: 'numeric' 
@@ -324,20 +317,21 @@ const BlogPost = () => {
                     </div>
                   </Link>
                 ))}
-            </div>
+              </div>
 
-            {/* View All CTA */}
-            <div className="text-center">
-              <Button asChild variant="outline" size="lg" className="px-8 h-12">
-                <Link to="/blog">
-                  View All Articles
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              {/* View All CTA */}
+              <div className="text-center">
+                <Button asChild variant="outline" size="lg" className="px-8 h-12">
+                  <Link to="/blog">
+                    View All Articles
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Book Assessment CTA */}
       <section className="border-t border-border bg-muted/30">
