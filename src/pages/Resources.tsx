@@ -100,6 +100,7 @@ const Resources = () => {
 
           <div className="mt-16 border-t border-border pt-16">
             <div className="max-w-2xl">
+              <div className="system-status mb-4">NEXT STEP</div>
               <h2 className="heading-section mb-4">
                 Need a custom assessment?
               </h2>

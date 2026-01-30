@@ -210,7 +210,7 @@ const Proof = () => {
       <PartnerLogos className="border-b border-border" />
 
       {/* CTA */}
-      <Section>
+      <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-6">
             Find Out What's Breaking

@@ -326,12 +326,10 @@ const InfrastructureAssessment = () => {
 
 
       {/* Step-Up Structure */}
-      <Section variant="muted" className="border-b border-border">
+      <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">What Happens Next</h2>
-          </div>
+          <div className="system-status mb-6">OUTCOMES</div>
+          <h2 className="heading-section mb-4">What Happens Next</h2>
 
           <p className="text-description text-foreground/80 mb-8 max-w-2xl">
             The assessment determines which path fits your situation. We recommend one of two engagements based on what we find:
@@ -358,7 +356,7 @@ const InfrastructureAssessment = () => {
       </Section>
 
       {/* CTA */}
-      <Section>
+      <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-3 px-4 py-2 border border-primary/30 mb-8 font-mono text-sm uppercase tracking-widest">
             <span className="text-primary font-semibold">Start Here</span>
