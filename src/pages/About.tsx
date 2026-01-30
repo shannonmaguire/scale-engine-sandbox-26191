@@ -146,7 +146,7 @@ const About = () => {
                 fetchPriority="high"
               />
               
-              <Button asChild variant="outline" size="sm" className="mt-4 w-full">
+              <Button asChild variant="outline" size="default" className="mt-4 w-full">
                 <a 
                   href="https://www.linkedin.com/in/shanmag/" 
                   target="_blank" 
@@ -177,27 +177,29 @@ const About = () => {
 
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                 <div>
-                  <div className="text-2xl text-primary font-mono">8</div>
+                  <div className="text-2xl text-primary font-mono tabular-nums">8</div>
                   <div className="text-sm text-muted-foreground">years, same methodology</div>
                 </div>
                 <div>
-                  <div className="text-2xl text-primary font-mono">42</div>
+                  <div className="text-2xl text-primary font-mono tabular-nums">42</div>
                   <div className="text-sm text-muted-foreground">systems installed</div>
                 </div>
                 <div>
-                  <div className="text-2xl text-primary font-mono">0</div>
+                  <div className="text-2xl text-primary font-mono tabular-nums">0</div>
                   <div className="text-sm text-muted-foreground">failed migrations</div>
                 </div>
               </div>
 
               {/* Micro-testimonial */}
               <div className="mt-6 pt-6 border-t border-border">
-                <blockquote className="text-muted-foreground italic">
-                  "Shannon sees the whole board. She caught dependencies our internal team missed."
-                </blockquote>
-                <p className="text-sm text-muted-foreground mt-2">
-                  — Operations Director, Healthcare SaaS
-                </p>
+                <div className="bg-card border-l-2 border-primary p-4">
+                  <blockquote className="text-muted-foreground italic">
+                    "Shannon sees the whole board. She caught dependencies our internal team missed."
+                  </blockquote>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    — Operations Director, Healthcare SaaS
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -268,6 +270,7 @@ const About = () => {
       {/* Rules */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
+          <div className="system-status mb-4">OPERATING PRINCIPLES</div>
           <h2 className="heading-section mb-8">Rules</h2>
 
           <div className="space-y-3">
@@ -287,7 +290,7 @@ const About = () => {
       </Section>
 
       {/* CTA */}
-      <Section>
+      <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-8">Find Out What's Breaking</h2>
 
