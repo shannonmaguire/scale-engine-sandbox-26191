@@ -52,7 +52,7 @@ const legacyPosts = [
   },
 ];
 
-const categories = ["All", "Revenue Infrastructure", "System Installation", "Fractional Ops", "Salesforce Ecosystem", "Revenue Operations"];
+const categories = ["All", "Revenue Infrastructure", "System Installation", "Fractional Ops", "Salesforce Ecosystem", "Revenue Operations", "Resources"];
 
 const Blog = () => {
   useScrollDepth();
