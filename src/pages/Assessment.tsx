@@ -57,6 +57,40 @@ const InfrastructureAssessment = () => {
     "30-day post-delivery Q&A support window"
   ];
 
+  // VoC-grounded qualification patterns
+  const qualificationPatterns = [
+    {
+      category: "DATA GOVERNANCE",
+      question: "Do you manually import data into Salesforce via CSV?",
+      signal: "Asset records, serial numbers, product data entering the system without validation."
+    },
+    {
+      category: "INTEGRATION",
+      question: "Are your financial systems disconnected from your CRM?",
+      signal: "Stripe, QuickBooks, invoicing tools—none talking to each other. Manual reconciliation."
+    },
+    {
+      category: "ACCESS CONTROL",
+      question: "Do team members share system credentials?",
+      signal: "Shared logins, no audit trail, unclear who has access to what."
+    },
+    {
+      category: "FOLLOW-UP",
+      question: "Do leads come in without a clear owner or follow-up system?",
+      signal: "Everything depends on memory. Deals go cold while the team argues about whose turn it was."
+    },
+    {
+      category: "TOOL SPRAWL",
+      question: "Do projects live in email, Slack, Drive, and 3+ other tools?",
+      signal: "No single source of truth. 15 hours a week just figuring out what's happening."
+    },
+    {
+      category: "BILLING GAP",
+      question: "Do clients get onboarded before invoices are sent?",
+      signal: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
+    }
+  ];
+
   const outcomes = [
     {
       title: "Implementation Engagement",
@@ -184,6 +218,36 @@ const InfrastructureAssessment = () => {
                 <span>Addicted to optionality.</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Qualification Patterns - VoC Based */}
+      <Section className="border-b border-border">
+        <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="w-12 h-px bg-primary" />
+            <h2 className="heading-section">Recognize Any of These?</h2>
+          </div>
+          
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
+            These are patterns we see in discovery calls. If you're nodding at 2 or more, the assessment will surface the root cause.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {qualificationPatterns.map((pattern, index) => (
+              <div key={index} className="border border-border bg-card p-5">
+                <div className="font-mono text-xs uppercase tracking-widest text-primary mb-3">
+                  {pattern.category}
+                </div>
+                <p className="text-base font-medium text-foreground mb-2">
+                  {pattern.question}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {pattern.signal}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
