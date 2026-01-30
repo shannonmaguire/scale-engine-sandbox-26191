@@ -179,13 +179,13 @@ const Blog = () => {
       {/* CTA */}
       <Section>
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="heading-section mb-4">Get System Updates</h2>
+          <h2 className="heading-section mb-4">Ready to Fix Your Systems?</h2>
           <p className="text-muted-foreground mb-8">
-            New frameworks, case studies, and implementation guides.
+            Book an assessment to identify what's breaking and what to fix first.
           </p>
           <Button asChild size="lg">
-            <Link to="/resources">
-              Explore Resources
+            <Link to="/assessment">
+              Book Assessment
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
