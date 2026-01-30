@@ -217,7 +217,7 @@ const HowWeWork = () => {
       </Section>
 
       {/* CTA */}
-      <Section className="border-t border-border text-center">
+      <Section variant="muted" className="border-t border-border text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="heading-section mb-8">Find Out What's Breaking</h2>
 
