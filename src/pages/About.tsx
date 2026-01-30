@@ -10,19 +10,39 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import shannonHeadshot from "@/assets/shannon-headshot.jpg";
 import { CTA, ROUTES } from "@/lib/canonical-constants";
 
-// What I Believe
-const beliefs = [
+// What I've Seen - VoC failure patterns
+const seenPatterns = [
   {
-    title: "System enforcement, not human enforcement",
-    description: "If a process depends on someone remembering to do it, it will eventually fail. Systems must hold what humans cannot."
+    label: "CSV IMPORT CHAOS",
+    description: "Data entering the system without validation. Nobody catches duplicates until finance asks."
   },
   {
-    title: "Discovery before configuration",
-    description: "We ask the hard questions first. What happens when reality changes? Where do things slip through the cracks?"
+    label: "INVOICE-DELIVERY GAP",
+    description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
   },
   {
-    title: "Dependency order matters",
-    description: "Revenue infrastructure is built in layers. Skip a layer, and growth stalls. We install in sequence."
+    label: "SHARED LOGIN SPRAWL",
+    description: '"Everyone uses the same login." Compliance asks for an access audit. Nobody can produce one.'
+  },
+  {
+    label: "TOOL SELECTION BY FAMILIARITY",
+    description: '"We picked it because someone used it before." Architecture evaluated never.'
+  }
+];
+
+// Contrarian stances (rewritten from beliefs)
+const stances = [
+  {
+    title: "Processes fail when they depend on memory.",
+    description: "If someone has to remember to do it, the system is incomplete."
+  },
+  {
+    title: "The hard questions come first.",
+    description: '"What happens when reality changes?" precedes "What fields do you need?"'
+  },
+  {
+    title: "Revenue infrastructure installs in layers.",
+    description: "Skip a layer and the next one breaks. The sequence is People → Process → Technology. Most projects fail because they start with technology."
   }
 ];
 
@@ -42,13 +62,28 @@ const diagnosticQuestions = [
   }
 ];
 
-// Rules - no justifications
+// Rules with consequences
 const rules = [
-  "Discovery before scope.",
-  "No skipped layers.",
-  "Fixed scope, not hourly.",
-  "Build → Document → Handoff.",
-  "You own everything."
+  {
+    rule: "Discovery before scope.",
+    consequence: "Skipping this adds 6 weeks to implementation."
+  },
+  {
+    rule: "No skipped layers.",
+    consequence: "The layer you skip becomes the layer that breaks."
+  },
+  {
+    rule: "Fixed scope, not hourly.",
+    consequence: "Hourly incentivizes inefficiency."
+  },
+  {
+    rule: "Build → Document → Handoff.",
+    consequence: "Undocumented systems die with their builder."
+  },
+  {
+    rule: "You own everything.",
+    consequence: "No vendor lock-in. No dependency."
+  }
 ];
 
 const About = () => {
@@ -132,13 +167,9 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  CRM agnostic. I dive deeper into how the business actually runs—then design systems that hold under load.
+                  Former Salesforce AE. I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold—systems that survive the first quarter of actual use.
                 </p>
                 
-                <p className="text-muted-foreground leading-relaxed">
-                  Former Salesforce AE. Now I'm on the delivery side, architecting what the sales team sold. I've seen implementations go sideways because nobody translated business process to system logic. That's what I do—I see the whole board and make sure the system actually enforces what it's supposed to.
-                </p>
-
                 <p className="text-muted-foreground leading-relaxed">
                   Salesforce implementations through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
                 </p>
@@ -158,23 +189,52 @@ const About = () => {
                   <div className="text-sm text-muted-foreground">failed migrations</div>
                 </div>
               </div>
+
+              {/* Micro-testimonial */}
+              <div className="mt-6 pt-6 border-t border-border">
+                <blockquote className="text-muted-foreground italic">
+                  "Shannon sees the whole board. She caught dependencies our internal team missed."
+                </blockquote>
+                <p className="text-sm text-muted-foreground mt-2">
+                  — Operations Director, Healthcare SaaS
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </Section>
 
-      {/* What I Believe */}
+      {/* What I've Seen */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
-          <div className="system-status mb-4">BELIEFS</div>
-          <h2 className="heading-section mb-8">What I Believe</h2>
+          <div className="system-status mb-4">PATTERN RECOGNITION</div>
+          <h2 className="heading-section mb-8">What I've Seen</h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {seenPatterns.map((pattern, index) => (
+              <div key={index} className="bg-card p-6 border-l-2 border-primary">
+                <div className="text-label text-primary mb-3 font-mono">{pattern.label}</div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {pattern.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Contrarian Stances */}
+      <Section className="border-b border-border">
+        <div className="max-w-3xl">
+          <div className="system-status mb-4">POSITIONS</div>
+          <h2 className="heading-section mb-8">Where I Disagree</h2>
 
           <div className="space-y-4">
-            {beliefs.map((belief, index) => (
+            {stances.map((stance, index) => (
               <div key={index} className="bg-card p-6 border-l-2 border-primary">
-                <h3 className="text-foreground font-semibold mb-2">{belief.title}</h3>
+                <h3 className="text-foreground font-semibold mb-2">{stance.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  {belief.description}
+                  {stance.description}
                 </p>
               </div>
             ))}
@@ -183,7 +243,7 @@ const About = () => {
       </Section>
 
       {/* How I Work */}
-      <Section className="border-b border-border">
+      <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
           <div className="system-status mb-4">DIAGNOSTIC</div>
           <h2 className="heading-section mb-4">How I Work</h2>
@@ -205,56 +265,26 @@ const About = () => {
         </div>
       </Section>
 
-      {/* People → Process → Technology */}
-      <Section variant="muted" className="border-b border-border">
-        <div className="max-w-3xl">
-          <h2 className="heading-section mb-8">People → Process → Technology</h2>
-
-          <div className="grid md:grid-cols-3 gap-4 mb-6">
-            <div className="bg-card p-6 border-l-2 border-primary">
-              <div className="text-label text-primary mb-3 font-mono">PEOPLE</div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                The relationships and judgment that built the business. Automation should protect this, not replace it.
-              </p>
-            </div>
-
-            <div className="bg-card p-6 border-l-2 border-primary">
-              <div className="text-label text-primary mb-3 font-mono">PROCESS</div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                The way decisions get made. We document what works before we change anything.
-              </p>
-            </div>
-
-            <div className="bg-card p-6 border-l-2 border-primary">
-              <div className="text-label text-primary mb-3 font-mono">TECHNOLOGY</div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                The tools that support execution. Last to be configured, first to be blamed.
-              </p>
-            </div>
-          </div>
-
-          <p className="text-sm text-muted-foreground">
-            This sequence determines project success.
-          </p>
-        </div>
-      </Section>
-
       {/* Rules */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-8">Rules</h2>
 
           <div className="space-y-3">
-            {rules.map((rule, index) => (
-              <div key={index} className="flex items-center gap-4 bg-card p-4 border-l-2 border-primary">
-                <span className="text-label text-primary font-mono">{String(index + 1).padStart(2, '0')}</span>
-                <p className="text-foreground font-medium">{rule}</p>
+            {rules.map((item, index) => (
+              <div key={index} className="bg-card p-4 border-l-2 border-primary">
+                <div className="flex items-start gap-4">
+                  <span className="text-label text-primary font-mono flex-shrink-0">{String(index + 1).padStart(2, '0')}</span>
+                  <div>
+                    <p className="text-foreground font-medium">{item.rule}</p>
+                    <p className="text-sm text-muted-foreground mt-1">{item.consequence}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </Section>
-
 
       {/* CTA */}
       <Section>
