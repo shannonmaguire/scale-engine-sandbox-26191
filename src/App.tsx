@@ -27,9 +27,12 @@ const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 const Upwork = lazy(() => import("@/pages/Upwork"));
-
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
 
+// Case Study pages
+const HealthcareCaseStudy = lazy(() => import("@/pages/case-studies/HealthcareCaseStudy"));
+const SaasCaseStudy = lazy(() => import("@/pages/case-studies/SaasCaseStudy"));
+const CybersecurityCaseStudy = lazy(() => import("@/pages/case-studies/CybersecurityCaseStudy"));
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -96,6 +99,9 @@ const AppContent = () => {
             <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
             
             <Route path="/proof" element={<Proof />} />
+            <Route path="/proof/healthcare" element={<HealthcareCaseStudy />} />
+            <Route path="/proof/b2b-saas" element={<SaasCaseStudy />} />
+            <Route path="/proof/cybersecurity" element={<CybersecurityCaseStudy />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
