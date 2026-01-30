@@ -146,20 +146,13 @@ const BlogPost = () => {
       {/* Article Header */}
       <Section className="border-b border-border">
         <div className="max-w-3xl">
-          <Button asChild variant="ghost" size="sm" className="mb-8 -ml-3">
-            <Link to="/blog" className="flex items-center gap-2">
-              <ArrowLeft className="h-4 w-4" />
-              All Articles
-            </Link>
-          </Button>
-          
-          <div className="system-status mb-4">{post.category?.toUpperCase()}</div>
+          <div className="system-status mb-8">{post.category?.toUpperCase()}</div>
           
           <h1 className="heading-page mb-6">{post.title}</h1>
           
           <p className="text-description max-w-2xl mb-8">{post.excerpt}</p>
           
-          <div className="flex items-center gap-4 text-sm text-muted-foreground font-mono pb-8 border-b border-border">
+          <div className="flex items-center gap-4 text-sm text-muted-foreground font-mono">
             <span>{post.author}</span>
             <span>•</span>
             <span>{formatDate(post.published_at)}</span>
