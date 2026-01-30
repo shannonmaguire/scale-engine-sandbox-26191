@@ -133,7 +133,7 @@ const Home = () => {
               <span className="text-primary">•</span>
               <span>Zero failed migrations</span>
               <span className="text-primary">•</span>
-              <span>8 years, same methodology</span>
+              <span>6 years, same methodology</span>
             </div>
           </div>
         </div>
