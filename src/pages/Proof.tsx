@@ -188,43 +188,47 @@ const Proof = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {caseStudies.map((study) => {
             const CardContent = (
-              <>
-                <div className="flex items-start justify-between gap-2 mb-3">
-                  <div className="text-sm font-mono text-primary">{study.industry}</div>
-                  <div className="text-sm font-bold font-mono text-primary">{study.growth}</div>
+              <div className="flex flex-col h-full">
+                {/* Header - fixed height with consistent layout */}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="text-sm font-mono text-primary leading-tight">{study.industry}</div>
+                  <div className="text-sm font-bold font-mono text-primary text-right leading-tight whitespace-nowrap">{study.growth}</div>
                 </div>
                 
-                <div className="text-xs text-muted-foreground mb-3">{study.vertical} • {study.timeline}</div>
+                {/* Meta - single line */}
+                <div className="text-xs text-muted-foreground mb-3 truncate">{study.vertical} • {study.timeline}</div>
                 
-                <div className="text-sm text-foreground mb-4 min-h-[40px]">
+                {/* Problem description - flex grow to push footer down */}
+                <div className="text-sm text-foreground mb-4 flex-grow min-h-[60px]">
                   {study.whatBroke}
                 </div>
                 
-                <div className="flex items-center justify-between pt-3 border-t border-border">
+                {/* Footer - always at bottom */}
+                <div className="flex items-center justify-between pt-3 border-t border-border mt-auto">
                   <div className="flex items-center gap-2 text-xs font-mono">
-                    <span className="text-muted-foreground">{study.beforeMetric.value}</span>
+                    <span className="text-muted-foreground whitespace-nowrap">{study.beforeMetric.value}</span>
                     <span className="text-primary">→</span>
-                    <span className="text-foreground">{study.afterMetric.value}</span>
+                    <span className="text-foreground whitespace-nowrap">{study.afterMetric.value}</span>
                   </div>
                   {study.detailPage && (
-                    <ArrowRight className="w-4 h-4 text-primary" />
+                    <ArrowRight className="w-4 h-4 text-primary flex-shrink-0" />
                   )}
                 </div>
-              </>
+              </div>
             );
 
             return study.detailPage ? (
               <Link
                 key={study.id}
                 to={study.detailPage}
-                className="bg-card border border-border p-5 hover:border-primary/50 transition-colors group"
+                className="bg-card border border-border p-5 hover:border-primary/50 transition-colors group flex"
               >
                 {CardContent}
               </Link>
             ) : (
               <div
                 key={study.id}
-                className="bg-card border border-border p-5"
+                className="bg-card border border-border p-5 flex"
               >
                 {CardContent}
               </div>
