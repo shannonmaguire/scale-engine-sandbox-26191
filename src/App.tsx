@@ -22,8 +22,6 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const About = lazy(() => import("@/pages/About"));
 const Proof = lazy(() => import("@/pages/Proof"));
-const Blog = lazy(() => import("@/pages/Blog"));
-const BlogPost = lazy(() => import("@/pages/BlogPost"));
 const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
@@ -35,7 +33,7 @@ const DiagnosticHealthcare = lazy(() => import("@/pages/DiagnosticHealthcare"));
 const DiagnosticLaw = lazy(() => import("@/pages/DiagnosticLaw"));
 
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
-const AdminBlog = lazy(() => import("@/pages/AdminBlog"));
+
 
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -51,7 +49,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/start' || location.pathname === '/upwork' || location.pathname === '/diagnostic' || location.pathname.startsWith('/diagnostic/') || location.pathname === '/admin/blog';
+  const isStandalonePage = location.pathname === '/start' || location.pathname === '/upwork' || location.pathname === '/diagnostic' || location.pathname.startsWith('/diagnostic/');
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -102,8 +100,6 @@ const AppContent = () => {
             <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
             
             <Route path="/proof" element={<Proof />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
@@ -116,7 +112,7 @@ const AppContent = () => {
             <Route path="/diagnostic/law" element={<DiagnosticLaw />} />
             
             <Route path="/sample-report" element={<SampleReport />} />
-            <Route path="/admin/blog" element={<AdminBlog />} />
+            
             <Route path="/operatorsprint" element={<Navigate to="/upwork" replace />} />
             
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />

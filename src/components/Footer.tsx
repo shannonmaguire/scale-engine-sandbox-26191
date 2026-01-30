@@ -49,11 +49,6 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
-              <li>
-                <Link to="/blog" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
-                  Blog
-                </Link>
-              </li>
             </ul>
           </div>
 
