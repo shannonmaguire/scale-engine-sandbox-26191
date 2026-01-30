@@ -12,47 +12,47 @@ const Home = () => {
   usePerformanceMonitoring();
   useScrollDepth();
 
-  // What We're Seeing Right Now - Industry patterns
+  // What We're Seeing Right Now - Industry patterns (VoC-grounded)
   const currentPatterns = [
     {
-      category: "LEAD FOLLOW-UP",
-      title: "Leads come in. Nobody follows up.",
-      description: "Everything depends on memory. Deals go cold while the team argues about whose turn it was."
+      category: "DATA STRUCTURE",
+      title: "CSV uploads to Salesforce. Zero validation.",
+      description: "Asset records, serial numbers, product data—all entering the system without governance."
+    },
+    {
+      category: "INTEGRATION GAP",
+      title: "Apple, Stripe, QuickBooks—none talking to each other.",
+      description: "Manual reconciliation takes 15 hours a week. Finance trusts nothing."
+    },
+    {
+      category: "BILLING / DELIVERY GAP",
+      title: "Client onboarded. Invoice never sent.",
+      description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
+    },
+    {
+      category: "CREDENTIAL CHAOS",
+      title: "Shared logins. No audit trail.",
+      description: "Who has access? Nobody knows. Former contractor still has Salesforce access."
+    },
+    {
+      category: "PARTNER HANDOFF",
+      title: "Deals registered. Then silence.",
+      description: "AE can't scope technical work. Pipeline stalls post-introduction."
     },
     {
       category: "TRIAL CONVERSION",
-      title: "800 trials a month, 6% convert",
+      title: "800 trials a month, 6% convert.",
       description: "Sales calls everyone. No way to tell who's actually using the product."
     },
     {
       category: "SCATTERED OPERATIONS",
-      title: "Projects live in email, Slack, Drive, and Trello",
+      title: "Projects live in email, Slack, Drive, and Trello.",
       description: "15 hours a week just figuring out what's happening. No single source of truth."
     },
     {
-      category: "OUTBOUND",
-      title: "Zero pipeline. Waiting for inbound that never comes.",
-      description: "No ICP. No system. Founder still doing all the selling."
-    },
-    {
-      category: "BILLING / DELIVERY GAP",
-      title: "Clients onboarded. Invoice never sent.",
-      description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
-    },
-    {
-      category: "WRONG BUSINESS MODEL",
-      title: "$500/hour partners doing $50/hour work",
-      description: "Want subscriptions but don't know if the math works. Trapped in hourly billing."
-    },
-    {
-      category: "HEALTHCARE LAUNCH",
-      title: "Great idea. Zero patients.",
-      description: "Marketing, ops, and tech all pointing fingers. No acquisition system. No alignment."
-    },
-    {
-      category: "FEDERAL / COMPLIANCE",
-      title: "No pipeline. Just waiting for inbound.",
-      description: "9 target types. Zero outreach system. Founder still doing all the selling."
+      category: "TOOL SELECTION",
+      title: "We picked it because someone used it before.",
+      description: "Decisions made by familiarity, not architecture. Nobody evaluated fit."
     }
   ];
 
