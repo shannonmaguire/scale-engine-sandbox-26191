@@ -1,37 +1,39 @@
 
-
-# Remove Expandable Case Study Links
+# Fix 6-Year Timeline Inconsistency
 
 ## Summary
-Remove the clickable/expandable functionality from case study cards on the Proof page. All cards will become static display cards without links to detailed pages.
+The About page still displays "8 years" while the canonical constants and homepage have been updated to "6 years". One file needs updating.
 
-## Changes
+## Inconsistency Found
 
-### 1. Update `src/pages/Proof.tsx`
+| Location | Current Value | Should Be |
+|----------|---------------|-----------|
+| `src/lib/canonical-constants.ts` | "6 years" | ✓ Correct |
+| `src/pages/Home.tsx` (hero) | "6 years" | ✓ Correct |
+| `src/pages/About.tsx` (line 180) | **"8"** | ✗ Needs update |
 
-**Remove imports:**
-- Remove `Link` from react-router-dom import
-- Remove `ArrowRight` from lucide-react import
+## Change Required
 
-**Remove detailPage from case studies:**
-- Delete the `detailPage` property from Healthcare (id: 1), Cybersecurity (id: 3), and B2B SaaS (id: 6) entries
-- Remove `detailPage?: string` from the CaseStudy interface
+### `src/pages/About.tsx`
+**Line 180**: Update the hardcoded metric from `8` to `6`
 
-**Simplify card rendering:**
-- Remove the conditional that checks for `study.detailPage`
-- Remove the `<Link>` wrapper entirely
-- Remove the ArrowRight icon from the footer
-- All cards become simple `<div>` elements
+```tsx
+// Before
+<div className="text-2xl text-primary font-mono tabular-nums">8</div>
+<div className="text-sm text-muted-foreground">years, same methodology</div>
 
-### 2. Keep Routes but Remove from Navigation
+// After
+<div className="text-2xl text-primary font-mono tabular-nums">6</div>
+<div className="text-sm text-muted-foreground">years, same methodology</div>
+```
 
-The case study page files and routes can remain in place (in case you want to use them later), but they won't be accessible from the Proof page grid. Alternatively, I can also:
-- Remove the routes from `src/App.tsx`
-- Delete the case study page files
+## Technical Note
+The About page uses inline metrics rather than importing from `canonical-constants.ts`. This creates potential for future drift. After this fix, all "years" references will be consistent at 6 years.
 
-**Recommendation:** Keep the files and routes for now—they're not hurting anything and you may want them later. Just remove the links from the cards.
+## All Other References Verified
+- `PrivacyPolicy.tsx`: Uses "18 years of age" — unrelated to business timeline
+- `PartnerApplicationModal.tsx`: Uses "Years in Business" / "Years of Experience" — form field labels, not CWT timeline
+- `TrustIndicators.tsx`: Uses "42 systems rebuilt" — no years reference
 
 ## Result
-
-All 8 case study cards become uniform, non-clickable display cards with no visual indication of expandability.
-
+One-line change. All public-facing timeline references will show 6 years.
