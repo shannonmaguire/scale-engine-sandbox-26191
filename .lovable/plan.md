@@ -1,145 +1,121 @@
 
+# Implementation Plan: Footer Resources Link + Mini Blog CMS
 
-# About Page Enhancement Plan
-
-## Current State Analysis
-
-The About page currently has **6 sections**:
-1. **Founder** - Photo, name, bio, metrics (8 years / 42 systems / 0 failed)
-2. **What I Believe** - 3 belief cards
-3. **How I Work** - 3 diagnostic questions
-4. **People → Process → Technology** - 3 philosophy cards
-5. **Rules** - 5 operating rules
-6. **CTA** - "Find Out What's Breaking"
-
-### What's Working
-- Clean visual hierarchy with JetBrains Mono headers
-- Metrics strip is strong (8 / 42 / 0)
-- Diagnostic questions are VoC-grounded and specific
-- Rules section is sharp and constraint-focused
-
-### What Needs Improvement
-
-**1. The bio reads generic.** "CRM agnostic" is good, but "I dive deeper into how the business actually runs" is vague. The transition story (Salesforce AE → delivery) is buried.
-
-**2. The "What I Believe" section is abstract.** "System enforcement, not human enforcement" is philosophically true but doesn't ground in the specific failures buyers recognize.
-
-**3. The "People → Process → Technology" section is internal doctrine, not buyer-facing value.** It's explaining methodology rather than demonstrating capability.
-
-**4. Missing a "Pattern Recognition" section.** The VoC library has specific failure patterns that would let buyers self-identify faster.
-
-**5. No social proof in the founder section.** The metrics are good but there's no client voice validating Shannon's approach.
+## Overview
+Add the Resources page to the footer navigation and implement a database-backed blog CMS using Lovable Cloud for content management.
 
 ---
 
-## Proposed Changes
+## Part 1: Footer Resources Link (Quick Fix)
 
-### 1. Rewrite the Founder Bio (Lines 133-145)
+### Change Required
+**File:** `src/components/Footer.tsx`
 
-**Current:**
-> "CRM agnostic. I dive deeper into how the business actually runs—then design systems that hold under load."
+Add a new list item for Resources in the Company section (after Contact):
 
-**Proposed:**
-> "Former Salesforce AE. I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold—systems that survive the first quarter of actual use."
-
-**Rationale:** Grounds the origin story in a specific insight. "Survive the first quarter of actual use" is more concrete than "hold under load."
-
----
-
-### 2. Add a "What I've Seen" Pattern Section (New)
-
-Insert after the Founder section. This surfaces buyer-recognized failure modes so visitors immediately think "she's seen my situation."
-
-**Patterns to include (from VoC Library):**
-| Pattern | Description |
-|---------|-------------|
-| CSV import chaos | Data entering the system without validation. Nobody catches duplicates until finance asks. |
-| Invoice-delivery gap | Operational access granted before payment collected. Revenue recognized, cash never arrives. |
-| Shared login sprawl | "Everyone uses the same login." Compliance asks for an access audit. Nobody can produce one. |
-| Tool selection by familiarity | "We picked it because someone used it before." Architecture evaluated never. |
+```tsx
+<li>
+  <Link to="/resources" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
+    Resources
+  </Link>
+</li>
+```
 
 ---
 
-### 3. Transform "What I Believe" Into "Where I Disagree" (Lines 166-183)
+## Part 2: Database-Backed Mini Blog CMS
 
-Position beliefs as contrarian stances that filter misaligned buyers.
+### Database Schema
 
-**Current:** "System enforcement, not human enforcement"
-**Proposed:** Remove the contrastual framing. Rewrite as settled positions:
+Create a `blog_posts` table:
 
-| Current Title | Proposed |
-|--------------|----------|
-| System enforcement, not human enforcement | **Processes fail when they depend on memory.** If someone has to remember to do it, the system is incomplete. |
-| Discovery before configuration | **The hard questions come first.** "What happens when reality changes?" precedes "What fields do you need?" |
-| Dependency order matters | **Revenue infrastructure installs in layers.** Skip a layer and the next one breaks. |
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                       blog_posts                            │
+├─────────────────────────────────────────────────────────────┤
+│ id              UUID PRIMARY KEY                            │
+│ slug            TEXT UNIQUE NOT NULL                        │
+│ title           TEXT NOT NULL                               │
+│ excerpt         TEXT NOT NULL                               │
+│ content         TEXT NOT NULL (Markdown)                    │
+│ author          TEXT DEFAULT 'Shannon Maguire'              │
+│ category        TEXT NOT NULL                               │
+│ tags            TEXT[] (array of strings)                   │
+│ read_time       TEXT (e.g., "12 min read")                  │
+│ featured        BOOLEAN DEFAULT FALSE                       │
+│ published       BOOLEAN DEFAULT FALSE                       │
+│ published_at    TIMESTAMPTZ                                 │
+│ created_at      TIMESTAMPTZ DEFAULT NOW()                   │
+│ updated_at      TIMESTAMPTZ DEFAULT NOW()                   │
+└─────────────────────────────────────────────────────────────┘
+```
 
----
+### Security (RLS Policies)
+- **Public read:** Anyone can read published posts
+- **Admin write:** Protected admin route for creating/editing (can use a simple password or authenticated admin role)
 
-### 4. Replace "People → Process → Technology" With a Single Statement (Lines 208-240)
+### Frontend Changes
 
-The 3-card grid is internal consulting doctrine that over-explains. Compress to:
+#### A. Update Blog.tsx
+- Replace hardcoded `blogPosts` array with a database query
+- Use `@tanstack/react-query` for data fetching
+- Add loading states
 
-> "The sequence is People → Process → Technology. Most projects fail because they start with technology."
+#### B. Update BlogPost.tsx  
+- Fetch individual post by slug from database
+- Render Markdown content using a lightweight parser (e.g., `react-markdown`)
+- Keep existing article components as fallback for legacy posts
 
-One sentence. Same insight. Eliminates a full section.
+#### C. Create Admin Page (Optional)
+- Protected route at `/admin/blog` or similar
+- Form to create/edit blog posts
+- Markdown preview
+- Publish/unpublish toggle
 
----
+### New Dependencies
+- `react-markdown` - For rendering Markdown content
+- `remark-gfm` - GitHub-flavored Markdown support (tables, etc.)
 
-### 5. Add a Micro-Testimonial in the Founder Section (Lines 146-160)
-
-Add one client voice below the metrics strip:
-
-> "Shannon sees the whole board. She caught dependencies our internal team missed."  
-> — Operations Director, Healthcare SaaS
-
-**Rationale:** Third-party validation in the bio section adds credibility without requiring visitors to scroll to Proof.
-
----
-
-### 6. Tighten the Rules Section (Lines 242-256)
-
-The current 5 rules are good. Consider adding one consequence to each:
-
-| Rule | Consequence |
-|------|-------------|
-| Discovery before scope. | Skipping this adds 6 weeks to implementation. |
-| No skipped layers. | The layer you skip becomes the layer that breaks. |
-| Fixed scope, not hourly. | Hourly incentivizes inefficiency. |
-| Build → Document → Handoff. | Undocumented systems die with their builder. |
-| You own everything. | No vendor lock-in. No dependency. |
-
----
-
-## Section Order (Proposed)
-
-1. **Founder** - Tightened bio + micro-testimonial
-2. **What I've Seen** (NEW) - 4 VoC failure patterns
-3. **Where I Disagree** (renamed from "What I Believe") - 3 contrarian stances
-4. **How I Work** - Keep as-is (diagnostic questions are strong)
-5. **Rules** - With consequences added
-6. **CTA** - Keep as-is
-
-**Removed:** "People → Process → Technology" (compressed to one line in "Where I Disagree")
+### Migration Strategy
+1. Create database table
+2. Seed existing 3 articles into database
+3. Update frontend to read from database
+4. Legacy component articles remain as backup
 
 ---
 
-## Technical Summary
+## Technical Considerations
 
-| File | Change |
-|------|--------|
-| `src/pages/About.tsx` | Rewrite founder bio (lines 133-145) |
-| `src/pages/About.tsx` | Add new `seenPatterns` array and "What I've Seen" section |
-| `src/pages/About.tsx` | Rename and rewrite beliefs section |
-| `src/pages/About.tsx` | Remove "People → Process → Technology" section |
-| `src/pages/About.tsx` | Add consequences to rules array |
-| `src/pages/About.tsx` | Add micro-testimonial under metrics strip |
+### Content Format
+Blog content will be stored as Markdown, which allows:
+- Easy formatting without HTML
+- Code blocks with syntax highlighting (future)
+- Tables, lists, blockquotes
+- Portable content that could move to another CMS later
+
+### Admin Access
+For a "mini" CMS, we can use one of these approaches:
+1. **Simple password protection** - Environment variable with admin password
+2. **Magic link** - Email-based auth for specific email addresses
+3. **Full auth** - User accounts with admin role
+
+Recommendation: Start with simple password protection, upgrade later if needed.
 
 ---
 
-## Expected Outcome
+## Implementation Order
 
-- **Faster self-selection**: Buyers see their failures in "What I've Seen" within 10 seconds
-- **Stronger authority**: Bio grounds in specific insight rather than generic capability
-- **Tighter page**: Removing PPT section reduces scroll depth by ~20%
-- **More credibility**: Micro-testimonial provides third-party validation early
+1. Add Resources link to footer (immediate)
+2. Create `blog_posts` database table with RLS
+3. Install `react-markdown` and `remark-gfm`
+4. Create blog data fetching hooks
+5. Update Blog.tsx to use database
+6. Update BlogPost.tsx to render Markdown
+7. Create simple admin interface
+8. Migrate existing articles to database
 
+---
+
+## Estimated Scope
+- **Footer fix:** 1 change
+- **Blog CMS:** New table, 2-3 updated pages, 1 new admin page, hooks/utilities
