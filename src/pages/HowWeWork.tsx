@@ -1,55 +1,31 @@
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { RevenueArchitectureDiagram } from "@/components/RevenueArchitectureDiagram";
-import { AlertTriangle } from "lucide-react";
-import { ROUTES, TIMELINES } from "@/lib/canonical-constants";
+import { ROUTES } from "@/lib/canonical-constants";
 
 const HowWeWork = () => {
-  const principles = [
-    "Dependency order",
-    "Documentation first",
-    "Measurable outcomes",
-    "No vendor lock-in"
-  ];
-
-  const diagnosticQuestions = [
+  const sequencingRules = [
     {
-      question: "Walk me through the steps when someone purchases.",
-      description: "Mapping where operational access outpaces commercial settlement. Clients get onboarded. Revenue gets recognized. Invoice never sent."
+      rule: "Discovery before scope",
+      consequence: "Prevents mid-project drift"
     },
     {
-      question: "How many systems does your team check to answer one customer question?",
-      description: "Surfacing swivel-chairing between platforms. Two databases that don't talk to each other means context is always fragmented."
+      rule: "No skipped layers",
+      consequence: "The skipped layer becomes the one that breaks"
     },
     {
-      question: "What happens when reality changes and nobody updates the CRM?",
-      description: "Exposing reality drift. Software assumes compliance. Humans don't comply. Data diverges from truth without human intervention."
+      rule: "Fixed scope, not hourly",
+      consequence: "Incentivizes efficiency"
     },
     {
-      question: "Where does your pre-sale system break down post-sale?",
-      description: "Pre-sale tools work fine until service complexity hits. That's where recurring revenue breaks."
-    }
-  ];
-
-  const criticalPatterns = [
-    {
-      title: "Pre-sale / post-sale break",
-      description: "HubSpot works for marketing. Service complexity exposes the gaps. That's where recurring revenue dies."
+      rule: "Build → Document → Handoff",
+      consequence: "Undocumented systems die with the builder"
     },
     {
-      title: "Reality drift",
-      description: "CRM data diverges from truth without human intervention. One system updated, adjacent systems stale."
-    },
-    {
-      title: "Platform by familiarity",
-      description: "One person knew the tool. Nobody knew the architecture. Six months later, $50K mistake."
-    },
-    {
-      title: "Operational access before payment",
-      description: "Clients get onboarded. Revenue recognized. Invoice never sent. No enforcement."
+      rule: "You own everything",
+      consequence: "No vendor lock-in"
     }
   ];
 
@@ -57,7 +33,7 @@ const HowWeWork = () => {
     <div className="min-h-screen">
       <SEOHead
         title="How We Work | CWT Studio"
-        description="Systems architecture methodology. Discovery, enforcement, and dependency order for regulated industries."
+        description="Systems architecture methodology. Layer sequencing and dependency order for regulated industries."
         keywords={[
           'systems architecture methodology',
           'RevOps implementation',
@@ -70,91 +46,44 @@ const HowWeWork = () => {
       <Breadcrumbs />
 
       {/* Hero */}
-      <Section>
+      <Section className="border-b border-border">
         <div className="max-w-3xl">
           <div className="system-status mb-8">METHODOLOGY</div>
           <h1 className="heading-page mb-6">How We Work</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Revenue infrastructure is built in layers. Each layer depends on the one before it. Skip a layer, and growth stalls.
+            Revenue infrastructure is built in layers. Each layer depends on the one before it. Skip a layer, and growth exposes the gap.
           </p>
         </div>
       </Section>
 
       {/* Architecture */}
-      <Section variant="muted" className="border-t border-border">
+      <Section variant="muted" className="border-b border-border">
         <div className="max-w-5xl">
-          <h2 className="heading-section mb-10">The Architecture</h2>
+          <div className="system-status mb-6">ARCHITECTURE</div>
+          <h2 className="heading-section mb-10">Layer Dependencies</h2>
           <RevenueArchitectureDiagram />
         </div>
       </Section>
 
-      {/* Questions We Ask */}
-      <Section className="border-t border-border">
+      {/* Sequencing Rules */}
+      <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="system-status mb-6">DIAGNOSTIC</div>
-          <h2 className="heading-section mb-4">Questions We Ask</h2>
+          <div className="system-status mb-6">CONSTRAINTS</div>
+          <h2 className="heading-section mb-4">Operating Rules</h2>
           <p className="text-base text-muted-foreground mb-10 max-w-2xl">
-            Every engagement starts with four questions. The answers expose system state faster than any dashboard.
+            Each constraint protects system integrity. Violating any of them creates rework.
           </p>
 
-          <div className="space-y-6">
-            {diagnosticQuestions.map((item, index) => (
-              <div key={index} className="border border-border bg-card p-6">
-                <div className="flex items-start gap-4">
-                  <div className="font-mono text-2xl font-bold text-primary/30">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-mono text-sm font-medium text-foreground mb-2">
-                      "{item.question}"
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
+          <div className="space-y-4">
+            {sequencingRules.map((item, index) => (
+              <div key={index} className="border border-border bg-card p-5 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
+                <div className="font-mono text-sm font-medium text-foreground flex-shrink-0">
+                  {item.rule}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* What We Look For */}
-      <Section variant="muted" className="border-t border-border">
-        <div className="max-w-4xl">
-          <div className="system-status mb-6">CRITICAL PATTERNS</div>
-          <h2 className="heading-section mb-4">What We Look For</h2>
-          <p className="text-base text-muted-foreground mb-10 max-w-2xl">
-            These are the four patterns that predict revenue system failure. If any of these exist, growth will expose them.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {criticalPatterns.map((pattern, index) => (
-              <div key={index} className="border border-border bg-card p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <AlertTriangle className="w-4 h-4 text-destructive flex-shrink-0 mt-1" strokeWidth={2} />
-                  <h3 className="font-mono text-sm font-semibold text-foreground uppercase tracking-wide">
-                    {pattern.title}
-                  </h3>
+                <div className="hidden sm:block text-muted-foreground">→</div>
+                <div className="text-sm text-muted-foreground">
+                  {item.consequence}
                 </div>
-                <p className="text-sm text-muted-foreground pl-7">
-                  {pattern.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Principles */}
-      <Section variant="muted" className="border-t border-border">
-        <div className="max-w-4xl">
-          <h2 className="heading-section mb-10">Principles</h2>
-
-          <div className="flex flex-wrap gap-4">
-            {principles.map((principle, index) => (
-              <div key={index} className="border border-border bg-card px-4 py-2">
-                <span className="font-mono text-sm text-primary">{principle}</span>
               </div>
             ))}
           </div>
@@ -162,7 +91,7 @@ const HowWeWork = () => {
       </Section>
 
       {/* CTA */}
-      <Section variant="muted" className="border-t border-border text-center">
+      <Section variant="muted" className="text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="heading-section mb-8">Find Out What's Breaking</h2>
 
