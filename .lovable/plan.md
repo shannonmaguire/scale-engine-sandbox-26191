@@ -1,141 +1,145 @@
 
 
-# Strategic VoC Integration Plan
+# About Page Enhancement Plan
 
-## What I'd Do With Full Reign
+## Current State Analysis
 
-This transcript data is a goldmine. Here's the comprehensive plan to make CWT Studio the best version of itself using this material:
+The About page currently has **6 sections**:
+1. **Founder** - Photo, name, bio, metrics (8 years / 42 systems / 0 failed)
+2. **What I Believe** - 3 belief cards
+3. **How I Work** - 3 diagnostic questions
+4. **People → Process → Technology** - 3 philosophy cards
+5. **Rules** - 5 operating rules
+6. **CTA** - "Find Out What's Breaking"
 
----
+### What's Working
+- Clean visual hierarchy with JetBrains Mono headers
+- Metrics strip is strong (8 / 42 / 0)
+- Diagnostic questions are VoC-grounded and specific
+- Rules section is sharp and constraint-focused
 
-## Phase 1: Extract & Document VoC Patterns
+### What Needs Improvement
 
-**Create a new reference document:** `docs/voice-of-customer-library.md`
+**1. The bio reads generic.** "CRM agnostic" is good, but "I dive deeper into how the business actually runs" is vague. The transition story (Salesforce AE → delivery) is buried.
 
-### What goes in it:
-1. **Verbatim client quotes** (anonymized) organized by pain point
-2. **Exact language patterns** clients use to describe problems
-3. **Objection sequences** from discovery calls
-4. **Pricing psychology insights** (the "too cheap won't be taken seriously" pattern)
-5. **Technical problem descriptions** in client words
+**2. The "What I Believe" section is abstract.** "System enforcement, not human enforcement" is philosophically true but doesn't ground in the specific failures buyers recognize.
 
-### Why this matters:
-The site currently uses consultant-constructed language. Real buyer language converts better because prospects recognize themselves in it.
+**3. The "People → Process → Technology" section is internal doctrine, not buyer-facing value.** It's explaining methodology rather than demonstrating capability.
 
----
+**4. Missing a "Pattern Recognition" section.** The VoC library has specific failure patterns that would let buyers self-identify faster.
 
-## Phase 2: Homepage Pattern Grid Refresh
-
-The current 8 patterns are good, but the transcripts reveal **additional failure modes** that could be added or refined:
-
-### Patterns I'd extract from transcripts:
-
-| New Category | Pattern Title | Description |
-|--------------|---------------|-------------|
-| DATA STRUCTURE | CSV uploads to Salesforce. Zero validation. | Asset records, serial numbers, product data—all entering the system without governance. |
-| INTEGRATION GAP | Apple, Stripe, QuickBooks—none talking to each other | Manual reconciliation between systems. Finance trusts nothing. |
-| CREDENTIAL CHAOS | Shared logins. No audit trail. | Who has access? Nobody knows. Compliance liability growing. |
-| PARTNER HANDOFF | Deals registered. Then silence. | AEs can't scope technical work. Pipeline stalls post-introduction. |
-
-These come directly from the transcript discussions about client situations.
+**5. No social proof in the founder section.** The metrics are good but there's no client voice validating Shannon's approach.
 
 ---
 
-## Phase 3: Update Proof Page Case Studies
+## Proposed Changes
 
-The transcripts mention **specific client situations** that could enrich existing case studies or become new ones:
+### 1. Rewrite the Founder Bio (Lines 133-145)
 
-### Potential additions:
-- **IT Services / Reseller** - Apple authorized reseller with data structure problems (CSV imports, serial numbers, asset tracking)
-- **Partner/Channel** - Deal registration and AE technical support patterns
+**Current:**
+> "CRM agnostic. I dive deeper into how the business actually runs—then design systems that hold under load."
 
-### Enhancement approach:
-Use transcript language to add specificity to existing case studies. Replace generic phrases with the exact way clients described their problems.
+**Proposed:**
+> "Former Salesforce AE. I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold—systems that survive the first quarter of actual use."
 
----
-
-## Phase 4: Objection Handling Content
-
-Create a new section in `docs/canonical-language.md` or a standalone `docs/objection-patterns.md`:
-
-### Documented patterns from transcripts:
-1. **Pricing objection** - "Too cheap won't be taken seriously" → how to handle rate discussions
-2. **Timeline pressure** - Client urgency patterns and how to respond
-3. **Scope creep signals** - Early indicators from discovery language
-4. **Competitor comparison** - How clients describe other vendors they've used
+**Rationale:** Grounds the origin story in a specific insight. "Survive the first quarter of actual use" is more concrete than "hold under load."
 
 ---
 
-## Phase 5: Assessment Quiz Enhancement
+### 2. Add a "What I've Seen" Pattern Section (New)
 
-The transcripts reveal **buyer qualification signals** that could improve the assessment intake:
+Insert after the Founder section. This surfaces buyer-recognized failure modes so visitors immediately think "she's seen my situation."
 
-### Add questions based on:
-- Data structure problems (CSVs, imports, governance)
-- Integration gaps (what systems aren't connected)
-- Credential/access patterns (shared logins, audit trails)
-- Partner/channel dynamics
-
----
-
-## Phase 6: Blog Content Pipeline
-
-The transcripts contain **3-5 potential blog posts** worth of material:
-
-| Post Title | Source Material |
-|------------|-----------------|
-| "Why Your CSV Imports Are a Compliance Time Bomb" | Data structure discussions |
-| "The Partner Handoff Problem: When AEs Can't Scope" | Partner/channel dynamics |
-| "Salesforce 360: What Decision-Makers Actually Need" | BI/strategic decision-making discussions |
+**Patterns to include (from VoC Library):**
+| Pattern | Description |
+|---------|-------------|
+| CSV import chaos | Data entering the system without validation. Nobody catches duplicates until finance asks. |
+| Invoice-delivery gap | Operational access granted before payment collected. Revenue recognized, cash never arrives. |
+| Shared login sprawl | "Everyone uses the same login." Compliance asks for an access audit. Nobody can produce one. |
+| Tool selection by familiarity | "We picked it because someone used it before." Architecture evaluated never. |
 
 ---
 
-## Implementation Priority
+### 3. Transform "What I Believe" Into "Where I Disagree" (Lines 166-183)
 
-```text
-HIGH PRIORITY (immediate impact)
-├── Create docs/voice-of-customer-library.md
-├── Update 2-3 homepage patterns with transcript language
-└── Enrich 2-3 Proof page case studies
+Position beliefs as contrarian stances that filter misaligned buyers.
 
-MEDIUM PRIORITY (content depth)
-├── Document objection patterns
-├── Add assessment quiz questions
-└── Update canonical-language.md with new phrases
+**Current:** "System enforcement, not human enforcement"
+**Proposed:** Remove the contrastual framing. Rewrite as settled positions:
 
-LOWER PRIORITY (content expansion)
-├── Create new case studies
-└── Develop blog post outlines
-```
+| Current Title | Proposed |
+|--------------|----------|
+| System enforcement, not human enforcement | **Processes fail when they depend on memory.** If someone has to remember to do it, the system is incomplete. |
+| Discovery before configuration | **The hard questions come first.** "What happens when reality changes?" precedes "What fields do you need?" |
+| Dependency order matters | **Revenue infrastructure installs in layers.** Skip a layer and the next one breaks. |
 
 ---
 
-## Files to Create/Modify
+### 4. Replace "People → Process → Technology" With a Single Statement (Lines 208-240)
 
-| File | Action |
+The 3-card grid is internal consulting doctrine that over-explains. Compress to:
+
+> "The sequence is People → Process → Technology. Most projects fail because they start with technology."
+
+One sentence. Same insight. Eliminates a full section.
+
+---
+
+### 5. Add a Micro-Testimonial in the Founder Section (Lines 146-160)
+
+Add one client voice below the metrics strip:
+
+> "Shannon sees the whole board. She caught dependencies our internal team missed."  
+> — Operations Director, Healthcare SaaS
+
+**Rationale:** Third-party validation in the bio section adds credibility without requiring visitors to scroll to Proof.
+
+---
+
+### 6. Tighten the Rules Section (Lines 242-256)
+
+The current 5 rules are good. Consider adding one consequence to each:
+
+| Rule | Consequence |
+|------|-------------|
+| Discovery before scope. | Skipping this adds 6 weeks to implementation. |
+| No skipped layers. | The layer you skip becomes the layer that breaks. |
+| Fixed scope, not hourly. | Hourly incentivizes inefficiency. |
+| Build → Document → Handoff. | Undocumented systems die with their builder. |
+| You own everything. | No vendor lock-in. No dependency. |
+
+---
+
+## Section Order (Proposed)
+
+1. **Founder** - Tightened bio + micro-testimonial
+2. **What I've Seen** (NEW) - 4 VoC failure patterns
+3. **Where I Disagree** (renamed from "What I Believe") - 3 contrarian stances
+4. **How I Work** - Keep as-is (diagnostic questions are strong)
+5. **Rules** - With consequences added
+6. **CTA** - Keep as-is
+
+**Removed:** "People → Process → Technology" (compressed to one line in "Where I Disagree")
+
+---
+
+## Technical Summary
+
+| File | Change |
 |------|--------|
-| `docs/voice-of-customer-library.md` | Create new - extracted VoC patterns |
-| `src/pages/Home.tsx` | Modify - update pattern descriptions with VoC language |
-| `src/pages/Proof.tsx` | Modify - enrich case study descriptions |
-| `docs/canonical-language.md` | Modify - add new phrases and objection patterns |
-| `docs/objection-patterns.md` | Create new - sales objection handling |
+| `src/pages/About.tsx` | Rewrite founder bio (lines 133-145) |
+| `src/pages/About.tsx` | Add new `seenPatterns` array and "What I've Seen" section |
+| `src/pages/About.tsx` | Rename and rewrite beliefs section |
+| `src/pages/About.tsx` | Remove "People → Process → Technology" section |
+| `src/pages/About.tsx` | Add consequences to rules array |
+| `src/pages/About.tsx` | Add micro-testimonial under metrics strip |
 
 ---
 
-## What This Achieves
+## Expected Outcome
 
-1. **Authenticity** - Site speaks in buyer language, not consultant language
-2. **Pattern recognition** - Visitors see their exact situation described
-3. **Faster qualification** - Right buyers self-select because they recognize themselves
-4. **Objection preparation** - Sales conversations pre-handled by site content
-5. **Content durability** - Patterns grounded in real data, not assumptions
-
----
-
-## Technical Details
-
-- All changes maintain existing design system (squared borders, JetBrains Mono headers, Inter body text)
-- No new components required—just content updates
-- VoC library becomes reference for future copywriting
-- All additions comply with Grandmaster Writing Prompt standards (no triplets, no contrastual framing, settled authority)
+- **Faster self-selection**: Buyers see their failures in "What I've Seen" within 10 seconds
+- **Stronger authority**: Bio grounds in specific insight rather than generic capability
+- **Tighter page**: Removing PPT section reduces scroll depth by ~20%
+- **More credibility**: Micro-testimonial provides third-party validation early
 
