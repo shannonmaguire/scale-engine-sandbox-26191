@@ -32,7 +32,7 @@ import {
   Loader2,
 } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/safeClient";
 
 const ADMIN_PASSWORD_KEY = "cwt_blog_admin_auth";
 
