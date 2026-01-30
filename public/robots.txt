@@ -3,11 +3,7 @@ Allow: /
 
 # Priority pages
 Allow: /assessment
-Allow: /diagnostic
-Allow: /diagnostic/healthcare
-Allow: /diagnostic/law
 Allow: /proof
-Allow: /resources
 Allow: /how-we-work
 Allow: /about
 

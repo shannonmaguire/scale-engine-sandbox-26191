@@ -26,11 +26,7 @@ const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
-const Start = lazy(() => import("@/pages/Start"));
 const Upwork = lazy(() => import("@/pages/Upwork"));
-const Diagnostic = lazy(() => import("@/pages/Diagnostic"));
-const DiagnosticHealthcare = lazy(() => import("@/pages/DiagnosticHealthcare"));
-const DiagnosticLaw = lazy(() => import("@/pages/DiagnosticLaw"));
 
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
 
@@ -49,7 +45,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/start' || location.pathname === '/upwork' || location.pathname === '/diagnostic' || location.pathname.startsWith('/diagnostic/');
+  const isStandalonePage = location.pathname === '/upwork';
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -104,12 +100,12 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/ae-support" element={<AETechnicalSupport />} />
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
-            <Route path="/start-here" element={<Navigate to="/start" replace />} />
-            <Route path="/start" element={<Start />} />
+            <Route path="/start-here" element={<Navigate to="/assessment" replace />} />
+            <Route path="/start" element={<Navigate to="/assessment" replace />} />
             <Route path="/upwork" element={<Upwork />} />
-            <Route path="/diagnostic" element={<Diagnostic />} />
-            <Route path="/diagnostic/healthcare" element={<DiagnosticHealthcare />} />
-            <Route path="/diagnostic/law" element={<DiagnosticLaw />} />
+            <Route path="/diagnostic" element={<Navigate to="/assessment" replace />} />
+            <Route path="/diagnostic/healthcare" element={<Navigate to="/assessment?vertical=healthcare" replace />} />
+            <Route path="/diagnostic/law" element={<Navigate to="/assessment?vertical=law" replace />} />
             
             <Route path="/sample-report" element={<SampleReport />} />
             

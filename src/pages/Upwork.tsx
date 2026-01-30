@@ -6,7 +6,7 @@ import { trackCTAClick } from "@/hooks/usePageTracking";
 
 const Upwork = () => {
   const handleCTAClick = () => {
-    trackCTAClick("request-diagnostic", "upwork-page", "/contact?source=upwork&interest=diagnostic");
+    trackCTAClick("request-assessment", "upwork-page", "/assessment?source=upwork");
   };
 
   return (
@@ -80,8 +80,8 @@ const Upwork = () => {
               className="w-full"
               onClick={handleCTAClick}
             >
-              <Link to="/contact?source=upwork&interest=diagnostic">
-                Request Diagnostic
+              <Link to="/assessment?source=upwork">
+                Request Assessment
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
