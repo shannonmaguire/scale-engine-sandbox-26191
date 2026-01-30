@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
 import { PartnerLogos } from "@/components/TrustIndicators";
+import { ArrowRight } from "lucide-react";
 
 interface CaseStudy {
   id: number;
@@ -18,13 +20,14 @@ interface CaseStudy {
   afterMetric: { label: string; value: string };
   growth: string;
   patternRestored: string;
+  detailPage?: string; // Optional link to full case study
 }
 
 
 const Proof = () => {
   
   // Case studies rewritten with human problems first
-  const caseStudies = [
+  const caseStudies: CaseStudy[] = [
     {
       id: 1,
       industry: "Healthcare",
@@ -38,7 +41,8 @@ const Proof = () => {
       beforeMetric: { label: "Patients", value: "Zero" },
       afterMetric: { label: "System deployed", value: "90 days" },
       growth: "Foundation Built",
-      patternRestored: "Repeatable system ready to scale to multiple locations."
+      patternRestored: "Repeatable system ready to scale to multiple locations.",
+      detailPage: "/proof/healthcare"
     },
     {
       id: 2,
@@ -68,7 +72,8 @@ const Proof = () => {
       beforeMetric: { label: "Pipeline", value: "$0" },
       afterMetric: { label: "Pipeline", value: "$500K+" },
       growth: "$500K+ Pipeline",
-      patternRestored: "40%+ email open rates. Repeatable outbound without the founder."
+      patternRestored: "40%+ email open rates. Repeatable outbound without the founder.",
+      detailPage: "/proof/cybersecurity"
     },
     {
       id: 4,
@@ -113,7 +118,8 @@ const Proof = () => {
       beforeMetric: { label: "Trial conversion", value: "6%" },
       afterMetric: { label: "PQL conversion", value: "24%" },
       growth: "4x Conversion",
-      patternRestored: "Sales stopped wasting time. Only talk to people who want to talk."
+      patternRestored: "Sales stopped wasting time. Only talk to people who want to talk.",
+      detailPage: "/proof/b2b-saas"
     },
     {
       id: 7,
@@ -180,29 +186,50 @@ const Proof = () => {
       {/* All 8 Case Studies - Single scannable grid */}
       <Section className="border-b border-border">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {caseStudies.map((study) => (
-            <div
-              key={study.id}
-              className="bg-card border border-border p-5"
-            >
-              <div className="flex items-start justify-between gap-2 mb-3">
-                <div className="text-sm font-mono text-primary">{study.industry}</div>
-                <div className="text-sm font-bold font-mono text-primary">{study.growth}</div>
+          {caseStudies.map((study) => {
+            const CardContent = (
+              <>
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <div className="text-sm font-mono text-primary">{study.industry}</div>
+                  <div className="text-sm font-bold font-mono text-primary">{study.growth}</div>
+                </div>
+                
+                <div className="text-xs text-muted-foreground mb-3">{study.vertical} • {study.timeline}</div>
+                
+                <div className="text-sm text-foreground mb-4 min-h-[40px]">
+                  {study.whatBroke}
+                </div>
+                
+                <div className="flex items-center justify-between pt-3 border-t border-border">
+                  <div className="flex items-center gap-2 text-xs font-mono">
+                    <span className="text-muted-foreground">{study.beforeMetric.value}</span>
+                    <span className="text-primary">→</span>
+                    <span className="text-foreground">{study.afterMetric.value}</span>
+                  </div>
+                  {study.detailPage && (
+                    <ArrowRight className="w-4 h-4 text-primary" />
+                  )}
+                </div>
+              </>
+            );
+
+            return study.detailPage ? (
+              <Link
+                key={study.id}
+                to={study.detailPage}
+                className="bg-card border border-border p-5 hover:border-primary/50 transition-colors group"
+              >
+                {CardContent}
+              </Link>
+            ) : (
+              <div
+                key={study.id}
+                className="bg-card border border-border p-5"
+              >
+                {CardContent}
               </div>
-              
-              <div className="text-xs text-muted-foreground mb-3">{study.vertical} • {study.timeline}</div>
-              
-              <div className="text-sm text-foreground mb-4 min-h-[40px]">
-                {study.whatBroke}
-              </div>
-              
-              <div className="flex items-center gap-2 text-xs font-mono pt-3 border-t border-border">
-                <span className="text-muted-foreground">{study.beforeMetric.value}</span>
-                <span className="text-primary">→</span>
-                <span className="text-foreground">{study.afterMetric.value}</span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </Section>
 
