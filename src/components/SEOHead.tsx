@@ -317,14 +317,10 @@ const SEOHead = ({
       <meta property="og:locale" content="en_US" />
       
       {/* Article-specific meta tags */}
-      {type === 'article' && article && (
-        <>
-          {article.publishedTime && <meta property="article:published_time" content={article.publishedTime} />}
-          {article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
-          {article.author && <meta property="article:author" content={article.author} />}
-          {article.section && <meta property="article:section" content={article.section} />}
-        </>
-      )}
+      {type === 'article' && article?.publishedTime && <meta property="article:published_time" content={article.publishedTime} />}
+      {type === 'article' && article?.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
+      {type === 'article' && article?.author && <meta property="article:author" content={article.author} />}
+      {type === 'article' && article?.section && <meta property="article:section" content={article.section} />}
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
