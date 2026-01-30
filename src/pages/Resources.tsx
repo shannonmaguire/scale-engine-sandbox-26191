@@ -1,7 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
 import { Link } from "react-router-dom";
-import { Download, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 
@@ -9,43 +9,37 @@ const resources = [
   {
     title: "90-Day Roadmap Template",
     description: "A structured template for planning your first 90 days of revenue system implementation. Includes milestones, dependencies, and checkpoint criteria.",
-    file: "/pdfs/90-day-roadmap-template.pdf",
+    slug: "90-day-roadmap-template",
     category: "Planning"
   },
   {
     title: "Discovery Questions Library",
     description: "The diagnostic questions we use to map existing systems. Covers CRM, marketing automation, data flows, and team ownership.",
-    file: "/pdfs/discovery-questions-library.pdf",
+    slug: "discovery-questions-library",
     category: "Assessment"
   },
   {
     title: "ROI Calculator",
     description: "Estimate the revenue impact of system improvements. Includes models for pipeline velocity, conversion rates, and operational efficiency.",
-    file: "/pdfs/roi-calculator.pdf",
+    slug: "roi-calculator",
     category: "Analysis"
   },
   {
     title: "Service Selection Guide",
     description: "Framework for determining which engagement model fits your situation. Assessment-only, Sprint implementation, or Fractional support.",
-    file: "/pdfs/service-selection-guide.pdf",
+    slug: "service-selection-guide",
     category: "Planning"
   },
   {
     title: "Technical Assessment Framework",
     description: "Detailed checklist for evaluating CRM health, integration integrity, and data quality. Used in our diagnostic process.",
-    file: "/pdfs/technical-assessment-framework.pdf",
+    slug: "technical-assessment-framework",
     category: "Assessment"
-  },
-  {
-    title: "Vendor Handoff SOP",
-    description: "Standard operating procedure for transitioning from assessment to implementation partner. Includes documentation requirements and milestone definitions.",
-    file: "/pdfs/vendor-handoff-sop.pdf",
-    category: "Operations"
   },
   {
     title: "Website Readiness Checklist",
     description: "Pre-launch checklist for revenue-focused websites. Covers lead capture, analytics, CRM integration, and conversion tracking.",
-    file: "/pdfs/website-readiness-checklist.pdf",
+    slug: "website-readiness-checklist",
     category: "Implementation"
   }
 ];
@@ -73,28 +67,25 @@ const Resources = () => {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mt-12">
             {resources.map((resource) => (
-              <div
+              <Link
                 key={resource.title}
-                className="border border-border p-6 flex flex-col"
+                to={`/blog/${resource.slug}`}
+                className="border border-border p-6 flex flex-col hover:border-primary/50 transition-colors group"
               >
                 <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground mb-3">
                   {resource.category}
                 </span>
-                <h3 className="heading-subsection mb-3">
+                <h3 className="heading-subsection mb-3 group-hover:text-primary transition-colors">
                   {resource.title}
                 </h3>
                 <p className="text-muted-foreground text-sm mb-6 flex-grow">
                   {resource.description}
                 </p>
-                <a
-                  href={resource.file}
-                  download
-                  className="inline-flex items-center gap-2 text-foreground font-mono text-sm hover:text-primary transition-colors"
-                >
-                  <Download className="w-4 h-4" />
-                  Download PDF
-                </a>
-              </div>
+                <span className="inline-flex items-center gap-2 text-foreground font-mono text-sm group-hover:text-primary transition-colors">
+                  Read Article
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </Link>
             ))}
           </div>
 
