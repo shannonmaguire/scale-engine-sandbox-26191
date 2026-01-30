@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 import analytics from "@/lib/analytics";
 import { formRateLimiter } from "@/lib/formRateLimit";
-import { supabase } from "@/integrations/supabase/client";
+import { supabase } from "@/integrations/supabase/safeClient";
 import { Lock } from "lucide-react";
 
 interface DealRegistrationModalProps {

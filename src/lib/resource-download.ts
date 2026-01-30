@@ -1,4 +1,5 @@
 import { callJsonFunction } from "@/lib/serverless";
+import { BACKEND_PUBLISHABLE_KEY, BACKEND_URL } from "@/lib/backendConfig";
 
 export interface ResourceDownloadPayload {
   email: string;
@@ -29,12 +30,12 @@ export async function submitResourceDownload(
   // Trigger nurture sequence via Supabase edge function
   try {
     const nurtureResponse = await fetch(
-      `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/email-nurture-sequence`,
+      `${BACKEND_URL}/functions/v1/email-nurture-sequence`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          Authorization: `Bearer ${BACKEND_PUBLISHABLE_KEY}`,
         },
         body: JSON.stringify({
           email: payload.email,
