@@ -28,7 +28,6 @@ export const Breadcrumbs = () => {
       "ae-support": "AE Support",
       "assessment-tools": "Assessment Tools",
       "sample-report": "Sample Report",
-      "resources": "Resources",
       "diagnostic": "Diagnostic",
       "healthcare": "Healthcare",
       "law": "Legal",
