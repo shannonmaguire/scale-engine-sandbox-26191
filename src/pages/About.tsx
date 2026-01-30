@@ -177,7 +177,7 @@ const About = () => {
 
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
                 <div>
-                  <div className="text-2xl text-primary font-mono tabular-nums">8</div>
+                  <div className="text-2xl text-primary font-mono tabular-nums">6</div>
                   <div className="text-sm text-muted-foreground">years, same methodology</div>
                 </div>
                 <div>
