@@ -510,12 +510,54 @@ Before publishing any content, verify:
 
 ---
 
+## Voice of Customer Patterns
+
+### Extracted Buyer Language (from discovery calls)
+
+Use these exact phrases when describing client pain points:
+
+**Data Problems:**
+- "CSV uploads to Salesforce. Zero validation."
+- "Asset records don't match vendor records."
+- "Serial numbers in Salesforce don't tie back to anything."
+- "Products are in Salesforce, QuickBooks, and a spreadsheet."
+
+**Integration Gaps:**
+- "Apple, Stripe, QuickBooks—none of them talk to each other."
+- "Manual reconciliation takes 15 hours a week."
+- "Finance trusts nothing from Salesforce."
+
+**Access Chaos:**
+- "Everyone uses the same login."
+- "Who has access? Nobody knows."
+- "Former contractor still has Salesforce access."
+
+**Partner/Channel:**
+- "Deals get registered. Then silence."
+- "AE can't scope the technical work."
+- "Pipeline stalls after the introduction."
+
+**Tool Selection:**
+- "We went with Trello because someone used it before."
+- "Nobody evaluated whether it was the right tool."
+- "Decisions made by familiarity, not architecture."
+
+### Pricing Psychology Insights
+
+From transcripts:
+- "If you price too low, you won't be taken seriously."
+- "At that rate, they'll assume you're junior."
+
+**Implication:** Price signals competence. Don't compete on rate.
+
+---
+
 ## Document Maintenance
 
 **Update frequency:** Quarterly or when service offerings change  
 **Owner:** Shannon Greenberg  
-**Last updated:** 2024-Q4  
-**Next review:** 2025-Q1
+**Last updated:** 2026-01  
+**Next review:** 2026-Q2
 
 **Change process:**
 1. Propose changes in writing with rationale
@@ -523,6 +565,10 @@ Before publishing any content, verify:
 3. Measure engagement/conversion impact
 4. Update canonical doc if validated
 5. Audit all content for consistency within 30 days
+
+**Related documents:**
+- docs/voice-of-customer-library.md (full VoC extraction)
+- docs/objection-patterns.md (sales objection handling)
 
 ---
 
