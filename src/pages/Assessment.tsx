@@ -10,17 +10,17 @@ const InfrastructureAssessment = () => {
     {
       icon: BarChart3,
       title: "System Health Report",
-      description: "We score how well your tools are working: data accuracy, automation reliability, how well your systems talk to each other, and whether your team is actually using them."
+      description: "Data accuracy, automation reliability, integration health, adoption rates."
     },
     {
       icon: Target,
       title: "What's Broken & What It's Costing You",
-      description: "A clear list of what needs fixing, what's risky, why your team isn't adopting tools, and what happens if you don't act."
+      description: "Gaps, risks, adoption failures, cost of inaction."
     },
     {
       icon: FileText,
       title: "Implementation Pathway",
-      description: "A prioritized roadmap with two clear paths forward: a focused implementation engagement or an enterprise architecture engagement."
+      description: "Two paths: focused implementation or enterprise architecture."
     }
   ];
 
@@ -96,13 +96,13 @@ const InfrastructureAssessment = () => {
       title: "Focused Implementation",
       scope: "Direct Delivery",
       badge: null as string | null,
-      description: "Workflow automation, data cleanup, integration repair, process optimization. HubSpot and lighter stacks. Typically 4-8 weeks."
+      description: "HubSpot and lighter stacks. 4-8 weeks."
     },
     {
       title: "Enterprise Salesforce",
       scope: "CWT-led, CloudRoute-built",
       badge: "PARTNER",
-      description: "Complete Salesforce redesign, multi-cloud integration, custom development. Typically 3-6 months. You work with me throughout."
+      description: "Complete Salesforce architecture. 3-6 months. I remain your architect."
     }
   ];
 
@@ -168,12 +168,8 @@ const InfrastructureAssessment = () => {
             Find Out What's Breaking
           </h1>
           
-          <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-4">
-            {TIMELINES.assessment} diagnostic audit. We find what's breaking your growth—system bottlenecks, data leaks, process gaps—and a clear path to fix them.
-          </p>
-
-          <p className="text-description text-muted-foreground leading-relaxed max-w-2xl mb-10">
-            Required entry point. We start with the assessment.
+          <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-10">
+            {TIMELINES.assessment} diagnostic. System bottlenecks, data leaks, process gaps.
           </p>
 
           <ConversionOptimizedButton
@@ -227,14 +223,10 @@ const InfrastructureAssessment = () => {
       {/* Qualification Patterns - VoC Based */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4 mb-10">
             <div className="w-12 h-px bg-primary" />
             <h2 className="heading-section">Recognize Any of These?</h2>
           </div>
-          
-          <p className="text-description text-muted-foreground mb-10 max-w-2xl">
-            These are patterns we see in discovery calls. If you're nodding at 2 or more, the assessment will surface the root cause.
-          </p>
 
           <div className="grid md:grid-cols-2 gap-4">
             {qualificationPatterns.map((pattern, index) => (
@@ -334,7 +326,7 @@ const InfrastructureAssessment = () => {
           <h2 className="heading-section mb-4">What Happens Next</h2>
 
           <p className="text-description text-foreground/80 mb-8 max-w-2xl">
-            The assessment determines which path fits your situation. We recommend one of two engagements based on what we find:
+            We recommend one of two paths based on findings:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
