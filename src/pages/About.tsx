@@ -120,10 +120,10 @@ const About = () => {
             question: 'What industries does CWT Studio serve?',
             answer: 'Legal tech, healthcare, compliance/cybersecurity, and B2B SaaS.'
           },
-          {
-            question: 'What is the relationship between CWT Studio and CloudRoute?',
-            answer: 'CWT Studio performs the diagnostic assessment and scopes the work. For enterprise Salesforce implementations, the build is delivered through CloudRoute (ISV Partner). For HubSpot and lighter stacks, CWT Studio handles the implementation directly.'
-          }
+        {
+          question: 'What is the relationship between CWT Studio and CloudRoute?',
+          answer: 'I remain your architect throughout every engagement. For enterprise Salesforce, the build is CWT-led, CloudRoute-built—I scope, manage, and stay involved while CloudRoute provides delivery capacity. For HubSpot and lighter stacks, I handle implementation directly.'
+        }
         ]}
       />
       
