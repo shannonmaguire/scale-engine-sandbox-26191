@@ -300,7 +300,7 @@ const Contact = () => {
                 </div>
                 <p className="text-2xl font-bold text-foreground mb-2">24 hours</p>
                 <p className="text-sm text-muted-foreground">
-                  Usually faster. We don't do sales calls—just direct answers.
+                  Usually faster. No sales calls.
                 </p>
               </div>
 

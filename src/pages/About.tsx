@@ -14,19 +14,19 @@ import { CTA, ROUTES } from "@/lib/canonical-constants";
 const seenPatterns = [
   {
     label: "CSV IMPORT CHAOS",
-    description: "Data entering the system without validation. Nobody catches duplicates until finance asks."
+    description: "No validation. Duplicates found when finance asks."
   },
   {
     label: "INVOICE-DELIVERY GAP",
-    description: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
+    description: "Access before payment. Revenue recognized, cash missing."
   },
   {
     label: "SHARED LOGIN SPRAWL",
-    description: '"Everyone uses the same login." Compliance asks for an access audit. Nobody can produce one.'
+    description: "Compliance asks for access audit. Nobody can produce one."
   },
   {
     label: "TOOL SELECTION BY FAMILIARITY",
-    description: '"We picked it because someone used it before." Architecture evaluated never.'
+    description: "Architecture never evaluated."
   }
 ];
 
@@ -34,15 +34,15 @@ const seenPatterns = [
 const stances = [
   {
     title: "Processes fail when they depend on memory.",
-    description: "If someone has to remember to do it, the system is incomplete."
+    description: "If someone has to remember, the system is incomplete."
   },
   {
     title: "The hard questions come first.",
-    description: '"What happens when reality changes?" precedes "What fields do you need?"'
+    description: '"What happens when reality changes?" before "What fields do you need?"'
   },
   {
     title: "Revenue infrastructure installs in layers.",
-    description: "Skip a layer and the next one breaks. The sequence is People → Process → Technology. Most projects fail because they start with technology."
+    description: "People → Process → Technology. Skip a layer, the next one breaks."
   }
 ];
 
@@ -50,15 +50,15 @@ const stances = [
 const diagnosticQuestions = [
   {
     question: '"Walk me through what happens when someone purchases."',
-    purpose: "Mapping where operational access outpaces commercial settlement. Clients onboarded, revenue recognized, invoice never sent."
+    purpose: "Surfaces billing/delivery gaps."
   },
   {
     question: '"How many systems does your team check to answer one customer question?"',
-    purpose: "Surfacing swivel-chairing between platforms. If it's more than one, context is fragmented."
+    purpose: "Surfaces fragmented context."
   },
   {
     question: '"What happens when reality changes and nobody updates the CRM?"',
-    purpose: "Exposing reality drift. Software assumes compliance. Humans don't comply."
+    purpose: "Surfaces reality drift."
   }
 ];
 
