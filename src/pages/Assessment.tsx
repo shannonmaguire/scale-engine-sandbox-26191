@@ -93,16 +93,16 @@ const InfrastructureAssessment = () => {
 
   const outcomes = [
     {
-      title: "Implementation Engagement",
-      scope: "CWT Studio Direct",
+      title: "Focused Implementation",
+      scope: "Direct Delivery",
       badge: null as string | null,
       description: "Workflow automation, data cleanup, integration repair, process optimization. HubSpot and lighter stacks. Typically 4-8 weeks."
     },
     {
-      title: "Enterprise Salesforce Architecture",
-      scope: "CloudRoute (ISV Partner)",
+      title: "Enterprise Salesforce",
+      scope: "CWT-led, CloudRoute-built",
       badge: "PARTNER",
-      description: "Complete Salesforce redesign, multi-cloud integration, custom development. Typically 3-6 months. We scope and manage; CloudRoute delivers."
+      description: "Complete Salesforce redesign, multi-cloud integration, custom development. Typically 3-6 months. You work with me throughout."
     }
   ];
 
