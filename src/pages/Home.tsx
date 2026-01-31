@@ -129,7 +129,7 @@ const Home = () => {
             </ConversionOptimizedButton>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground font-mono">
-              <span>42 systems installed</span>
+              <span>42 systems assessed</span>
               <span className="text-primary">•</span>
               <span>Zero failed migrations</span>
               <span className="text-primary">•</span>

@@ -22,7 +22,7 @@ const PrivacyPolicy = memo(() => {
         <Section className="pt-32 pb-16">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Privacy Policy</h1>
-            <p className="text-muted-foreground mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+            <p className="text-muted-foreground mb-8">Last updated: January 30, 2026</p>
 
             <div className="space-y-8 text-foreground">
               <section>
@@ -158,6 +158,7 @@ const PrivacyPolicy = memo(() => {
                 <ul className="list-none space-y-2">
                   <li><strong>Email:</strong> hello@thecwtstudio.com</li>
                   <li><strong>Company:</strong> CWT Studio</li>
+                  <li><strong>Location:</strong> United States</li>
                 </ul>
               </section>
             </div>

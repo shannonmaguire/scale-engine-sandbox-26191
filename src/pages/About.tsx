@@ -122,7 +122,7 @@ const About = () => {
           },
           {
             question: 'What is the relationship between CWT Studio and CloudRoute?',
-            answer: 'For enterprise implementations, CWT partners with CloudRoute (ISV Partner). For lighter stacks, CWT handles directly.'
+            answer: 'CWT Studio performs the diagnostic assessment and scopes the work. For enterprise Salesforce implementations, the build is delivered through CloudRoute (ISV Partner). For HubSpot and lighter stacks, CWT Studio handles the implementation directly.'
           }
         ]}
       />
@@ -171,7 +171,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Salesforce implementations through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
+                  Enterprise Salesforce through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
                 </p>
               </div>
 
@@ -182,7 +182,7 @@ const About = () => {
                 </div>
                 <div>
                   <div className="text-2xl text-primary font-mono tabular-nums">42</div>
-                  <div className="text-sm text-muted-foreground">systems installed</div>
+                  <div className="text-sm text-muted-foreground">systems assessed</div>
                 </div>
                 <div>
                   <div className="text-2xl text-primary font-mono tabular-nums">0</div>
