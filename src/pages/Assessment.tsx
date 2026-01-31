@@ -94,13 +94,15 @@ const InfrastructureAssessment = () => {
   const outcomes = [
     {
       title: "Implementation Engagement",
-      scope: "Your systems work but need fixes",
-      description: "Workflow automation, data cleanup, integration repair, process optimization. Typically 4-8 weeks."
+      scope: "CWT Studio Direct",
+      badge: null as string | null,
+      description: "Workflow automation, data cleanup, integration repair, process optimization. HubSpot and lighter stacks. Typically 4-8 weeks."
     },
     {
-      title: "Enterprise Architecture",
-      scope: "Your foundation needs rebuilding",
-      description: "Complete system redesign, multi-platform integration, custom development. Typically 3-6 months."
+      title: "Enterprise Salesforce Architecture",
+      scope: "CloudRoute (ISV Partner)",
+      badge: "PARTNER",
+      description: "Complete Salesforce redesign, multi-cloud integration, custom development. Typically 3-6 months. We scope and manage; CloudRoute delivers."
     }
   ];
 
@@ -337,7 +339,12 @@ const InfrastructureAssessment = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {outcomes.map((outcome, index) => (
-              <div key={index} className="border-2 border-primary/30 bg-primary/5 p-6 md:p-8">
+              <div key={index} className="border-2 border-primary/30 bg-primary/5 p-6 md:p-8 relative">
+                {outcome.badge && (
+                  <div className="absolute -top-3 right-4 bg-primary text-primary-foreground text-xs font-mono px-2 py-1">
+                    {outcome.badge}
+                  </div>
+                )}
                 <p className="font-mono text-xs uppercase tracking-widest text-primary mb-2">
                   {outcome.scope}
                 </p>

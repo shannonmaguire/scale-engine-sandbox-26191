@@ -22,7 +22,7 @@ const TermsOfService = memo(() => {
         <Section className="pt-32 pb-16">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Terms of Service</h1>
-            <p className="text-muted-foreground mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+            <p className="text-muted-foreground mb-8">Last updated: January 30, 2026</p>
 
             <div className="space-y-8 text-foreground">
               <section>
@@ -148,8 +148,12 @@ const TermsOfService = memo(() => {
                 <h2 className="text-2xl font-semibold mb-4">11. Dispute Resolution</h2>
                 <h3 className="text-xl font-medium mb-3">11.1 Governing Law</h3>
                 <p className="mb-4">
-                  These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in 
-                  which CWT Studio operates, without regard to conflict of law provisions.
+                  These Terms shall be governed by and construed in accordance with the laws of the 
+                  State of Delaware, United States, without regard to conflict of law provisions.
+                </p>
+                <p className="mb-4">
+                  Any disputes arising under these Terms shall be resolved in the state or federal 
+                  courts located in Delaware, and you consent to personal jurisdiction in such courts.
                 </p>
 
                 <h3 className="text-xl font-medium mb-3">11.2 Arbitration</h3>

@@ -47,9 +47,15 @@ export const ROUTES = {
 
 // ===== METRICS =====
 export const METRICS = {
-  deployments: "42 systems installed. Zero failed migrations.",
+  deployments: "42 systems assessed. Zero failed migrations.",
   experience: "6 years. Same methodology. Every handoff clean.",
   industries: "Legal, Compliance, Cybersecurity, Healthcare, B2B SaaS",
+} as const;
+
+// ===== PARTNERS =====
+export const PARTNERS = {
+  cloudRoute: "CloudRoute",
+  cloudRouteDescription: "Enterprise Salesforce architecture through CloudRoute (ISV Partner)",
 } as const;
 
 // ===== TIMELINES =====
