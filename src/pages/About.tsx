@@ -122,7 +122,7 @@ const About = () => {
           },
         {
           question: 'What is the relationship between CWT Studio and CloudRoute?',
-          answer: 'I remain your architect throughout every engagement. For enterprise Salesforce, the build is CWT-led, CloudRoute-built—I scope, manage, and stay involved while CloudRoute provides delivery capacity. For HubSpot and lighter stacks, I handle implementation directly.'
+          answer: 'I remain your architect throughout. CloudRoute provides enterprise Salesforce capacity. Lighter stacks I deliver directly.'
         }
         ]}
       />
