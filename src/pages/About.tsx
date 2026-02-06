@@ -248,10 +248,8 @@ const About = () => {
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-3xl">
           <div className="system-status mb-4">DIAGNOSTIC</div>
-          <h2 className="heading-section mb-4">How I Work</h2>
-          <p className="text-muted-foreground mb-8">
-            Every engagement starts with the same questions. They surface where the system is actually failing—not where you think it's failing.
-          </p>
+          <h2 className="heading-section mb-8">How I Work</h2>
+
 
           <div className="space-y-6">
             {diagnosticQuestions.map((item, index) => (

@@ -67,7 +67,7 @@ const InfrastructureAssessment = () => {
     {
       category: "INTEGRATION",
       question: "Are your financial systems disconnected from your CRM?",
-      signal: "Stripe, QuickBooks, invoicing tools—none talking to each other. Manual reconciliation."
+      signal: "Financial tools don't sync. Manual reconciliation."
     },
     {
       category: "ACCESS CONTROL",
