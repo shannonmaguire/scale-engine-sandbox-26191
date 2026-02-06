@@ -17,15 +17,15 @@ const HowWeWork = () => {
     },
     {
       rule: "Fixed scope, not hourly",
-      consequence: "Incentivizes efficiency"
+      consequence: "We sell outcomes, not time"
     },
     {
       rule: "Build → Document → Handoff",
       consequence: "Undocumented systems die with the builder"
     },
     {
-      rule: "You own everything",
-      consequence: "No vendor lock-in"
+      rule: "Your team runs it",
+      consequence: "We build. We train. You operate."
     }
   ];
 
