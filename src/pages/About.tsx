@@ -74,7 +74,7 @@ const rules = [
   },
   {
     rule: "Fixed scope, not hourly.",
-    consequence: "Hourly incentivizes inefficiency."
+    consequence: "We sell outcomes, not time."
   },
   {
     rule: "Build → Document → Handoff.",
