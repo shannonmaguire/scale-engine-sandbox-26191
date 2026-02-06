@@ -81,8 +81,8 @@ const rules = [
     consequence: "Undocumented systems die with their builder."
   },
   {
-    rule: "You own everything.",
-    consequence: "No vendor lock-in. No dependency."
+    rule: "Your team runs it.",
+    consequence: "We build. We train. You operate."
   }
 ];
 
