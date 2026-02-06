@@ -1,179 +1,119 @@
 
-# Website Word Compression Plan
 
-## Problem Identified
+# Full Site Alignment Update
 
-The site has accumulated word density that creates visual compression on mobile, especially in:
+## Issues Found
 
-1. **Descriptions with 2-3 sentences** where 1 would suffice
-2. **Explanatory "why" text** that adds scaffolding instead of signal
-3. **Redundant intro paragraphs** before lists/grids
-4. **Card descriptions** that repeat the title's meaning
+After reviewing all pages, I found several inconsistencies that need alignment:
 
-## Compression Philosophy
+### 1. Operating Rules Mismatch (How We Work vs About)
 
-Every word that doesn't name a **failure mode**, **consequence**, or **action** gets cut.
+**How We Work page** has outdated rules:
+```text
+Rule 3: "Fixed scope, not hourly" → "Incentivizes efficiency"
+Rule 5: "You own everything" → "No vendor lock-in"
+```
+
+**About page** (recently updated) has:
+```text
+Rule 3: "Fixed scope, not hourly." → "We sell outcomes, not time."
+Rule 5: "Your team runs it." → "We build. We train. You operate."
+```
+
+The About page is the canonical version per your recent updates.
 
 ---
 
-## Page-by-Page Compression
+### 2. Assessment Page - Vendor Names Still Present
 
-### 1. Home Page (`src/pages/Home.tsx`)
+The Assessment page still contains specific vendor names that violate the vendor-neutral standard:
+- Line 70: `"Stripe, QuickBooks, invoicing tools—none talking to each other. Manual reconciliation."`
 
-**Current Problem Areas:**
-
-| Section | Current | Issue |
-|---------|---------|-------|
-| Pattern cards | Title + 2-sentence description | Descriptions often repeat the title |
-| Final CTA | "2-week audit. For teams with active pipeline, real budget, and no room for system failure." | 21 words for CTA context |
-
-**Proposed Changes:**
-
-Pattern card descriptions compressed (examples):
-
-```text
-BEFORE: "Asset records, serial numbers, product data—all entering the system without governance."
-AFTER: "Data enters without validation."
-
-BEFORE: "Manual reconciliation takes 15 hours a week. Finance trusts nothing."
-AFTER: "15 hours/week reconciling. Nobody trusts the numbers."
-
-BEFORE: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
-AFTER: "Access granted before invoice sent."
-```
-
-Final CTA compressed:
-```text
-BEFORE: "2-week audit. For teams with active pipeline, real budget, and no room for system failure."
-AFTER: "2-week audit. Active pipeline required."
-```
+Should be generic like the Home page fix: `"Financial tools don't sync. Manual reconciliation."`
 
 ---
 
-### 2. Assessment Page (`src/pages/Assessment.tsx`)
+### 3. Contact Page - Already Aligned
 
-**Current Problem Areas:**
+The Contact page already uses compressed copy:
+- `"Usually faster. No sales calls."` (line 303)
 
-| Section | Current Word Count | Issue |
-|---------|-------------------|-------|
-| Hero description | 32 words | Two paragraphs where one line works |
-| Qualification intro | 23 words | Unnecessary "If you're nodding" framing |
-| Deliverable descriptions | 20-30 words each | Full sentences for bullet-level content |
-| Outcome descriptions | 20+ words | Could be compressed to core |
-
-**Proposed Changes:**
-
-Hero compression:
-```text
-BEFORE: "2 weeks diagnostic audit. We find what's breaking your growth—system bottlenecks, data leaks, process gaps—and a clear path to fix them. Required entry point. We start with the assessment."
-
-AFTER: "2-week diagnostic. System bottlenecks, data leaks, process gaps."
-```
-
-Remove qualification intro paragraph entirely.
-
-Deliverable descriptions compressed:
-```text
-BEFORE: "We score how well your tools are working: data accuracy, automation reliability, how well your systems talk to each other, and whether your team is actually using them."
-
-AFTER: "Data accuracy, automation reliability, integration health, adoption rates."
-```
-
-Outcome descriptions compressed:
-```text
-BEFORE: "Workflow automation, data cleanup, integration repair, process optimization. HubSpot and lighter stacks. Typically 4-8 weeks."
-
-AFTER: "HubSpot and lighter stacks. 4-8 weeks."
-
-BEFORE: "Complete Salesforce redesign, multi-cloud integration, custom development. Typically 3-6 months. You work with me throughout."
-
-AFTER: "Complete Salesforce architecture. 3-6 months. I remain your architect."
-```
+No changes needed.
 
 ---
 
-### 3. About Page (`src/pages/About.tsx`)
+### 4. How I Work Intro Paragraph (About Page)
 
-**Current Problem Areas:**
-
-| Section | Issue |
-|---------|-------|
-| "What I've Seen" descriptions | 2 sentences each, could be 1 |
-| "Where I Disagree" descriptions | Explanation after the stance |
-| Diagnostic questions | Question + full explanation |
-
-**Proposed Changes:**
-
-Pattern descriptions compressed:
+The "How I Work" section has a 2-sentence intro paragraph:
 ```text
-BEFORE: "Data entering the system without validation. Nobody catches duplicates until finance asks."
-AFTER: "No validation. Duplicates found when finance asks."
-
-BEFORE: "Operational access granted before payment collected. Revenue recognized, cash never arrives."
-AFTER: "Access before payment. Revenue recognized, cash missing."
+"Every engagement starts with the same questions. They surface where the system is actually failing—not where you think it's failing."
 ```
 
-Stance descriptions compressed:
-```text
-BEFORE: 'Skip a layer and the next one breaks. The sequence is People → Process → Technology. Most projects fail because they start with technology.'
-AFTER: 'People → Process → Technology. Skip a layer, the next one breaks.'
+Per compression standards, this could be cut entirely since the diagnostic questions are self-explanatory.
+
+---
+
+## Technical Changes
+
+| File | Change |
+|------|--------|
+| `src/pages/HowWeWork.tsx` | Update rules 3 and 5 to match About page canonical versions |
+| `src/pages/Assessment.tsx` | Remove "Stripe, QuickBooks" vendor names from integration pattern |
+| `src/pages/About.tsx` | Remove intro paragraph from "How I Work" section |
+
+---
+
+## Specific Edits
+
+### HowWeWork.tsx (lines 9-30)
+
+Update `sequencingRules` array:
+```typescript
+const sequencingRules = [
+  {
+    rule: "Discovery before scope",
+    consequence: "Prevents mid-project drift"
+  },
+  {
+    rule: "No skipped layers",
+    consequence: "The skipped layer becomes the one that breaks"
+  },
+  {
+    rule: "Fixed scope, not hourly",
+    consequence: "We sell outcomes, not time"
+  },
+  {
+    rule: "Build → Document → Handoff",
+    consequence: "Undocumented systems die with the builder"
+  },
+  {
+    rule: "Your team runs it",
+    consequence: "We build. We train. You operate."
+  }
+];
 ```
 
-Diagnostic question purposes compressed:
-```text
-BEFORE: "Mapping where operational access outpaces commercial settlement. Clients onboarded, revenue recognized, invoice never sent."
-AFTER: "Surfaces billing/delivery gaps."
+### Assessment.tsx (lines 68-71)
+
+Update integration pattern signal:
+```typescript
+{
+  category: "INTEGRATION",
+  question: "Are your financial systems disconnected from your CRM?",
+  signal: "Financial tools don't sync. Manual reconciliation."
+}
 ```
 
----
+### About.tsx (lines 250-254)
 
-### 4. Proof Page (`src/pages/Proof.tsx`)
-
-**Already compressed.** No changes needed. Cards use single-line problem descriptions.
+Remove intro paragraph from "How I Work" section. Keep the system-status badge and heading, go straight into the questions.
 
 ---
 
-### 5. How We Work Page (`src/pages/HowWeWork.tsx`)
+## Result
 
-**Already compressed.** Clean rule → consequence format. No changes needed.
-
----
-
-### 6. Contact Page (`src/pages/Contact.tsx`)
-
-**Minor compression:**
-
-```text
-BEFORE: "Usually faster. We don't do sales calls—just direct answers."
-AFTER: "Usually faster. No sales calls."
-```
-
----
-
-## Technical Changes Summary
-
-| File | Sections Modified |
-|------|------------------|
-| `src/pages/Home.tsx` | 8 pattern descriptions, final CTA |
-| `src/pages/Assessment.tsx` | Hero, deliverables, outcomes, remove intro paragraph |
-| `src/pages/About.tsx` | 4 pattern descriptions, 3 stances, 3 diagnostic questions |
-| `src/pages/Contact.tsx` | 1 sidebar description |
-
----
-
-## Expected Results
-
-- **~40% word reduction** on heavy pages (Assessment, About)
-- **Single-line descriptions** on all cards
-- **Mobile viewport fits** without text compression
-- **Maintains operator tone** - every remaining word names a failure, consequence, or action
-
----
-
-## Implementation Order
-
-1. Assessment page (currently on this route)
-2. Home page
-3. About page
-4. Contact page
+After these changes:
+- All 5 operating rules will be consistent across How We Work and About pages
+- All vendor names removed site-wide (vendor-neutral standard)
+- Intro scaffolding removed per compression philosophy
 
