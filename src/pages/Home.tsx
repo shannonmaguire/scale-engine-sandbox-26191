@@ -21,7 +21,7 @@ const Home = () => {
     },
     {
       category: "INTEGRATION GAP",
-      title: "Apple, Stripe, QuickBooks—none talking to each other.",
+      title: "Financial tools don't sync.",
       description: "15 hours/week reconciling. Nobody trusts the numbers."
     },
     {
