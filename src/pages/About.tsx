@@ -198,17 +198,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Micro-testimonial */}
-              <div className="mt-6 pt-6 border-t border-border">
-                <div className="bg-card border-l-2 border-primary p-4">
-                  <blockquote className="text-muted-foreground italic">
-                    "Shannon sees the whole board. She caught dependencies our internal team missed."
-                  </blockquote>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    — Operations Director, Healthcare SaaS
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
