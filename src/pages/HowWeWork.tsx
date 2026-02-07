@@ -9,23 +9,23 @@ const HowWeWork = () => {
   const sequencingRules = [
     {
       rule: "Discovery before scope",
-      consequence: "Prevents mid-project drift"
+      consequence: "Prevents mid-project drift and protects your budget"
     },
     {
       rule: "No skipped layers",
-      consequence: "The skipped layer becomes the one that breaks"
+      consequence: "Every skipped layer resurfaces as a production incident"
     },
     {
       rule: "Fixed scope, not hourly",
-      consequence: "We sell outcomes, not time"
+      consequence: "You pay for the outcome, not the clock"
     },
     {
       rule: "Build → Document → Handoff",
-      consequence: "Undocumented systems die with the builder"
+      consequence: "Your team can operate it without us on Day 91"
     },
     {
       rule: "Your team runs it",
-      consequence: "We build. We train. You operate."
+      consequence: "Dependency on the builder is a system failure"
     }
   ];
 

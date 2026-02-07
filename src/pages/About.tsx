@@ -57,8 +57,12 @@ const diagnosticQuestions = [
     purpose: "Surfaces fragmented context."
   },
   {
-    question: '"What happens when reality changes and nobody updates the CRM?"',
-    purpose: "Surfaces reality drift."
+    question: '"If someone left tomorrow, how long would it take to revoke every system login they have?"',
+    purpose: "Surfaces access governance gaps."
+  },
+  {
+    question: '"Who chose your current CRM — and did anyone evaluate whether it fit?"',
+    purpose: "Surfaces tool selection by familiarity."
   }
 ];
 

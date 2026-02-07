@@ -7,7 +7,7 @@ interface TrustBadge {
 }
 
 const defaultBadges: TrustBadge[] = [
-  { icon: Shield, label: "42 systems rebuilt" },
+  { icon: Shield, label: "42 systems assessed" },
   { icon: TrendingUp, label: "23% avg forecast improvement" },
   { icon: Users, label: "Zero failed migrations" }
 ];

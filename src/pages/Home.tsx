@@ -164,7 +164,7 @@ const Home = () => {
 
 
       {/* Who This Is For */}
-      <Section variant="muted" className="border-t border-border">
+      <Section className="border-t border-border">
         <div className="max-w-4xl">
           <h2 className="heading-section mb-10">Who This Is For</h2>
 
