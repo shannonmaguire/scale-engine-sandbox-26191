@@ -13,20 +13,20 @@ import { CTA, ROUTES } from "@/lib/canonical-constants";
 // What I've Seen - VoC failure patterns
 const seenPatterns = [
   {
-    label: "CSV IMPORT CHAOS",
-    description: "No validation. Duplicates found when finance asks."
+    label: "DATA ENTERS WITHOUT GOVERNANCE",
+    description: "Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one — so your team quotes from memory."
   },
   {
-    label: "INVOICE-DELIVERY GAP",
-    description: "Access before payment. Revenue recognized, cash missing."
+    label: "BILLING NEVER FOLLOWS DELIVERY",
+    description: "Client gets onboarded, access gets granted, invoice never gets sent. Revenue shows on the books, but cash never arrives."
   },
   {
-    label: "SHARED LOGIN SPRAWL",
-    description: "Compliance asks for access audit. Nobody can produce one."
+    label: "NOBODY KNOWS WHO HAS ACCESS",
+    description: "Everyone uses the same login. When compliance asks for an access audit, nobody can produce one."
   },
   {
-    label: "TOOL SELECTION BY FAMILIARITY",
-    description: "Architecture never evaluated."
+    label: "TOOLS CHOSEN BY WHOEVER USED THEM LAST",
+    description: "The CRM got picked because someone used it at their last company. Nobody evaluated whether it fit the business you're running now."
   }
 ];
 
