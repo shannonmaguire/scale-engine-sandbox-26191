@@ -4,7 +4,10 @@ project_id = "efivymqchdnirblhpnoa"
 verify_jwt = false
 
 [functions.gdpr-data-export]
-verify_jwt = true
+verify_jwt = false
 
 [functions.gdpr-data-deletion]
-verify_jwt = true
+verify_jwt = false
+
+[functions.send-assessment-report]
+verify_jwt = false
