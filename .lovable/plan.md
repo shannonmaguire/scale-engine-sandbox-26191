@@ -1,80 +1,91 @@
 
 
-# Rewrite "What I've Seen" Section — About Page
+# Site-Wide Audit: What's Holding This Back
 
-## The Problem
+## What's Already Working
 
-The current "Pattern Recognition" section reads like internal shorthand. Descriptions like "No validation. Duplicates found when finance asks." are telegraphic to the point of being cryptic for visitors. The actual buyer profile — owners and operators at family-owned businesses and PE-backed companies doing ~$100M — needs to see themselves in this language. Right now, the copy names failure modes without grounding them in buyer context.
+The foundation is strong. The operator tone is consistent. The typography system (JetBrains Mono headers, Inter body) is distinctive. The color palette is cohesive. The VoC-grounded content is real. The filtering strategy is clear. Most sites at this stage don't have this level of editorial discipline.
 
-## Current State (What Needs to Change)
+The issues are all fit-and-finish — the kind of things that separate "good consultant site" from "this person clearly operates at a different level."
 
-```text
-CSV IMPORT CHAOS
-"No validation. Duplicates found when finance asks."
+---
 
-INVOICE-DELIVERY GAP
-"Access before payment. Revenue recognized, cash missing."
+## Issues Found (Priority Order)
 
-SHARED LOGIN SPRAWL
-"Compliance asks for access audit. Nobody can produce one."
+### 1. Placeholder Trust Indicators on the Proof Page
 
-TOOL SELECTION BY FAMILIARITY
-"Architecture never evaluated."
-```
+The Proof page has a "Trusted by revenue leaders at" section showing gray placeholder boxes labeled "Legal Tech SaaS", "Healthcare Platform", "Cybersecurity Startup", etc. This is the single most credibility-damaging element on the site. It signals "template" at the exact moment a buyer is evaluating proof. **Remove this section entirely.** If you don't have real logos with permission, it shouldn't exist.
 
-These are too compressed. A visitor at a $100M family-owned distributor or a PE portfolio company doesn't recognize themselves in "CSV Import Chaos." They recognize themselves in "products are in three systems and nobody knows which price is right."
+### 2. Metric Inconsistency: "rebuilt" vs "assessed"
 
-## Proposed Rewrite
+The TrustIndicators component (used elsewhere) says "42 systems rebuilt" but the canonical positioning everywhere else says "42 systems assessed." This is exactly the kind of detail that erodes trust with Fortune 500-level buyers. Fix to "assessed" site-wide.
 
-Grounded in VoC transcript language, expanded to 2-sentence descriptions that name the situation AND the consequence. Labels shifted from jargon to plain failure modes.
+### 3. Homepage Section Rhythm Is Broken
 
-| Label | Description (VoC-grounded) |
-|-------|---------------------------|
-| DATA ENTERS WITHOUT GOVERNANCE | Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one — so your team quotes from memory. |
-| BILLING NEVER FOLLOWS DELIVERY | Client gets onboarded, access gets granted, invoice never gets sent. Revenue shows on the books, but cash never arrives. |
-| NOBODY KNOWS WHO HAS ACCESS | Everyone uses the same login. When compliance asks for an access audit, nobody can produce one. |
-| TOOLS CHOSEN BY WHOEVER USED THEM LAST | The CRM got picked because someone used it at their last company. Nobody evaluated whether it fit the business you're running now. |
+"What We're Seeing Right Now" and "Who This Is For" both use `variant="muted"` — they visually merge into one indistinguishable block. There's no alternating rhythm. The standard/muted alternation that works beautifully on About and Assessment is missing here. Fix: alternate the variants so each section has a clear visual boundary.
 
-## What Changes and Why
+### 4. Footer Subtitle Doesn't Match Canonical Positioning
 
-- **Labels**: Rewritten from internal category codes ("CSV IMPORT CHAOS") to plain-language failure statements that an owner/operator would say out loud.
-- **Descriptions**: Expanded from 1-line fragments to 2-sentence descriptions pulled directly from VoC transcript phrases ("We quote from memory because no system is accurate," "Everyone uses the same login," etc.)
-- **Buyer context**: Language now reflects the reality of companies with real operations, real compliance exposure, and real teams — not abstract "data governance" problems.
+The footer subtitle says "Revenue architecture for high-trust teams" but the canonical tagline is "Systems Architecture" and the thesis is "Growth dies when systems break." The subtitle should align with the current positioning — either use the tagline or remove the subtitle and let the logo speak.
 
-## Technical Changes
+### 5. Email Address Inconsistency
 
-| File | Change |
-|------|--------|
-| `src/pages/About.tsx` | Rewrite the `seenPatterns` array (lines 14-31) with updated labels and descriptions |
+Footer uses `hello@thecwtstudio.com`. Contact page uses `shannon@thecwtstudio.com`. Pick one and enforce it everywhere. For the operator-grade positioning, `shannon@` is more consistent with the single-architect brand.
 
-## Specific Edit
+### 6. About Page Diagnostic Questions Don't Map to "What I've Seen"
 
-### About.tsx — `seenPatterns` array (lines 14-31)
+The three diagnostic questions currently cover data governance and billing gaps, but miss access visibility and tool selection — the two patterns you just refined in "What I've Seen." Adding two questions (Option B from the previous discussion) would complete the alignment:
+- Q3: "If someone left tomorrow, how long would it take to revoke every system login they have?" (Surfaces access chaos)
+- Q4: "Who chose your current CRM — and did anyone evaluate whether it fit?" (Surfaces tool selection by familiarity)
 
-Replace with:
+### 7. Duplicated Operating Rules Between About and How We Work
 
-```typescript
-const seenPatterns = [
-  {
-    label: "DATA ENTERS WITHOUT GOVERNANCE",
-    description: "Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one — so your team quotes from memory."
-  },
-  {
-    label: "BILLING NEVER FOLLOWS DELIVERY",
-    description: "Client gets onboarded, access gets granted, invoice never gets sent. Revenue shows on the books, but cash never arrives."
-  },
-  {
-    label: "NOBODY KNOWS WHO HAS ACCESS",
-    description: "Everyone uses the same login. When compliance asks for an access audit, nobody can produce one."
-  },
-  {
-    label: "TOOLS CHOSEN BY WHOEVER USED THEM LAST",
-    description: "The CRM got picked because someone used it at their last company. Nobody evaluated whether it fit the business you're running now."
-  }
-];
-```
+The same 5 rules appear on both pages verbatim. This creates a "copy-paste" feeling when someone navigates between them. About should keep the Rules as personal operating principles (first-person authority). How We Work should frame them as project constraints (methodology context). Same content, different framing — or remove from one page entirely.
 
-## Result
+### 8. Proof Page Cards Have No Interaction States
 
-The "What I've Seen" section will read like pattern recognition from someone who has sat across from these operators — not like a consultant's internal taxonomy. Every description uses language buyers actually said in discovery calls.
+The 8 case study cards on the Proof page are completely static — no hover state, no visual feedback, no indication that 3 of them have detail pages. Adding a subtle hover state (border-primary transition) and linking the 3 that have detail pages would add the polish that signals "this was designed, not assembled."
+
+---
+
+## Implementation Plan
+
+### Step 1: Remove Placeholder Trust Indicators
+- Delete the `PartnerLogos` component usage from Proof page
+- This is the highest-impact single change
+
+### Step 2: Fix Metric Consistency
+- Update TrustIndicators default badges: "42 systems rebuilt" to "42 systems assessed"
+
+### Step 3: Fix Homepage Section Rhythm
+- Change "Who This Is For" section from `variant="muted"` to standard (no variant) so it alternates properly with the muted section above it
+
+### Step 4: Align Footer Subtitle
+- Change footer subtitle from "Revenue architecture for high-trust teams" to "Systems architecture for high-trust teams" to match current positioning
+
+### Step 5: Standardize Contact Email
+- Update footer email from `hello@thecwtstudio.com` to `shannon@thecwtstudio.com` to match Contact page
+
+### Step 6: Update About Page Diagnostic Questions
+- Replace Q3 ("What happens when reality changes...") with access governance question
+- Add Q4 for tool selection pattern
+- Update purposes to match
+
+### Step 7: Differentiate Rules Between Pages
+- On How We Work, the rules already have a slightly different framing ("Prevents mid-project drift" vs "Skipping this adds 6 weeks") — keep this differentiation but make it more pronounced. No code change needed if the current differentiation is acceptable; otherwise, adjust the How We Work consequences to be more methodology-specific.
+
+### Step 8: Add Hover States to Proof Cards
+- Add hover border transition to case study cards
+- Link cards that have detail pages (/proof/healthcare, /proof/b2b-saas, /proof/cybersecurity) so they're clickable
+
+---
+
+## What This Does NOT Include
+
+- No new pages or sections
+- No content rewrites (the copy is already strong)
+- No design system changes (the system is solid)
+- No new features or functionality
+
+This is pure consistency enforcement and interaction polish — the difference between "good" and "obviously intentional."
 
