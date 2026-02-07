@@ -83,14 +83,6 @@ const rules = [
   {
     rule: "Your team runs it.",
     consequence: "We build. We train. You operate."
-  },
-  {
-    rule: "The Twice Rule.",
-    consequence: "If a task is explained twice, it gets documented and delegated."
-  },
-  {
-    rule: "Password manager from Day 1.",
-    consequence: "No shared credentials. No sticky notes. Access is auditable or it doesn't exist."
   }
 ];
 
