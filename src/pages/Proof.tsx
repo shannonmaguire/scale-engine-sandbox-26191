@@ -2,7 +2,7 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
-import { PartnerLogos } from "@/components/TrustIndicators";
+import { Link } from "react-router-dom";
 
 interface CaseStudy {
   id: number;
@@ -180,38 +180,47 @@ const Proof = () => {
       {/* All 8 Case Studies - Single scannable grid */}
       <Section className="border-b border-border">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {caseStudies.map((study) => (
-            <div
-              key={study.id}
-              className="bg-card border border-border p-5 flex flex-col h-full"
-            >
-              {/* Header - fixed height with consistent layout */}
-              <div className="flex items-start justify-between gap-3 mb-3">
-                <div className="text-sm font-mono text-primary leading-tight">{study.industry}</div>
-                <div className="text-sm font-bold font-mono text-primary text-right leading-tight whitespace-nowrap">{study.growth}</div>
-              </div>
-              
-              {/* Meta - single line */}
-              <div className="text-xs text-muted-foreground mb-3 truncate">{study.vertical} • {study.timeline}</div>
-              
-              {/* Problem description - flex grow to push footer down */}
-              <div className="text-sm text-foreground mb-4 flex-grow min-h-[60px]">
-                {study.whatBroke}
-              </div>
-              
-              {/* Footer - always at bottom */}
-              <div className="flex items-center gap-2 text-xs font-mono pt-3 border-t border-border mt-auto">
-                <span className="text-muted-foreground whitespace-nowrap">{study.beforeMetric.value}</span>
-                <span className="text-primary">→</span>
-                <span className="text-foreground whitespace-nowrap">{study.afterMetric.value}</span>
-              </div>
-            </div>
-          ))}
+          {caseStudies.map((study) => {
+            const detailRoutes: Record<string, string> = {
+              "Healthcare": "/proof/healthcare",
+              "B2B SaaS": "/proof/b2b-saas",
+              "Compliance Advisory": "/proof/cybersecurity"
+            };
+            const detailRoute = detailRoutes[study.industry];
+            const CardWrapper = detailRoute ? Link : 'div';
+            const wrapperProps = detailRoute ? { to: detailRoute } : {};
+
+            return (
+              <CardWrapper
+                key={study.id}
+                {...wrapperProps as any}
+                className={`bg-card border border-border p-5 flex flex-col h-full transition-colors duration-200 hover:border-primary ${detailRoute ? 'cursor-pointer' : ''}`}
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="text-sm font-mono text-primary leading-tight">{study.industry}</div>
+                  <div className="text-sm font-bold font-mono text-primary text-right leading-tight whitespace-nowrap">{study.growth}</div>
+                </div>
+                
+                {/* Meta */}
+                <div className="text-xs text-muted-foreground mb-3 truncate">{study.vertical} • {study.timeline}</div>
+                
+                {/* Problem */}
+                <div className="text-sm text-foreground mb-4 flex-grow min-h-[60px]">
+                  {study.whatBroke}
+                </div>
+                
+                {/* Footer */}
+                <div className="flex items-center gap-2 text-xs font-mono pt-3 border-t border-border mt-auto">
+                  <span className="text-muted-foreground whitespace-nowrap">{study.beforeMetric.value}</span>
+                  <span className="text-primary">→</span>
+                  <span className="text-foreground whitespace-nowrap">{study.afterMetric.value}</span>
+                </div>
+              </CardWrapper>
+            );
+          })}
         </div>
       </Section>
-
-      {/* Trust Indicators */}
-      <PartnerLogos className="border-b border-border" />
 
       {/* CTA */}
       <Section variant="muted">
