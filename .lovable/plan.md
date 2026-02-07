@@ -1,91 +1,97 @@
 
+# Full Defensible Security Scan Report
 
-# Site-Wide Audit: What's Holding This Back
+## Overall Security Posture: Solid Foundation, 4 Actionable Items
 
-## What's Already Working
-
-The foundation is strong. The operator tone is consistent. The typography system (JetBrains Mono headers, Inter body) is distinctive. The color palette is cohesive. The VoC-grounded content is real. The filtering strategy is clear. Most sites at this stage don't have this level of editorial discipline.
-
-The issues are all fit-and-finish — the kind of things that separate "good consultant site" from "this person clearly operates at a different level."
+The project demonstrates strong security hygiene across most surfaces. RLS is enabled on all 8 tables with RESTRICTIVE policies, input validation is consistent across API endpoints, no sensitive keys are exposed in client code, and there's no use of `dangerouslySetInnerHTML`. The items below are the gaps that would matter in a compliance review or adversarial audit.
 
 ---
 
-## Issues Found (Priority Order)
+## What's Clean (No Action Needed)
 
-### 1. Placeholder Trust Indicators on the Proof Page
+- **RLS enabled on all 8 tables** with 33 RESTRICTIVE policies — no tables are unprotected
+- **No service_role key in client code** — only the publishable anon key is shipped
+- **No dangerouslySetInnerHTML** anywhere in the codebase
+- **All 4 Vercel API endpoints** (send-contact, send-ae-support, send-exit-intent, send-resource-download) have: rate limiting, payload size validation, email format validation, field length limits, and HTML escaping
+- **Client-side form rate limiter** provides defense-in-depth against spam
+- **GDPR edge functions** (export + deletion) verify user identity and enforce ownership checks before processing
+- **Email nurture sequence** has duplicate detection, rate limiting, and input validation
+- **Cookie consent** gates analytics initialization — analytics only fires after explicit consent
+- **Assessment SELECT policy** properly restricts to owner or admin — anonymous submissions cannot be read back by other users
+- **Deals table** properly dual-gated: requires both `partner_id` match AND `partner` role
 
-The Proof page has a "Trusted by revenue leaders at" section showing gray placeholder boxes labeled "Legal Tech SaaS", "Healthcare Platform", "Cybersecurity Startup", etc. This is the single most credibility-damaging element on the site. It signals "template" at the exact moment a buyer is evaluating proof. **Remove this section entirely.** If you don't have real logos with permission, it shouldn't exist.
+---
 
-### 2. Metric Inconsistency: "rebuilt" vs "assessed"
+## Issues Found
 
-The TrustIndicators component (used elsewhere) says "42 systems rebuilt" but the canonical positioning everywhere else says "42 systems assessed." This is exactly the kind of detail that erodes trust with Fortune 500-level buyers. Fix to "assessed" site-wide.
+### ISSUE 1: Error Message Leakage in Assessment Report Function
+**Severity: Medium | File: `supabase/functions/send-assessment-report/index.ts`**
 
-### 3. Homepage Section Rhythm Is Broken
+Line 193 returns `error.message` directly to the client:
+```typescript
+JSON.stringify({ error: error.message })
+```
 
-"What We're Seeing Right Now" and "Who This Is For" both use `variant="muted"` — they visually merge into one indistinguishable block. There's no alternating rhythm. The standard/muted alternation that works beautifully on About and Assessment is missing here. Fix: alternate the variants so each section has a clear visual boundary.
+This can expose internal implementation details (database errors, API keys in error strings, stack traces) to attackers. The nurture sequence function already handles this correctly by returning a generic message. This function should do the same.
 
-### 4. Footer Subtitle Doesn't Match Canonical Positioning
+**Fix:** Replace `error.message` with a generic error string like `"Failed to process assessment report"`.
 
-The footer subtitle says "Revenue architecture for high-trust teams" but the canonical tagline is "Systems Architecture" and the thesis is "Growth dies when systems break." The subtitle should align with the current positioning — either use the tagline or remove the subtitle and let the logo speak.
+---
 
-### 5. Email Address Inconsistency
+### ISSUE 2: GDPR Functions Use Deprecated `verify_jwt = true`
+**Severity: Medium | File: `supabase/config.toml`**
 
-Footer uses `hello@thecwtstudio.com`. Contact page uses `shannon@thecwtstudio.com`. Pick one and enforce it everywhere. For the operator-grade positioning, `shannon@` is more consistent with the single-architect brand.
+The `gdpr-data-export` and `gdpr-data-deletion` functions are set to `verify_jwt = true` in config.toml. With the signing-keys system, this deprecated flag can silently block valid requests. Both functions already perform proper auth validation in code (checking Authorization header, calling `getUser()`, verifying ownership), so the config flag is redundant and potentially harmful.
 
-### 6. About Page Diagnostic Questions Don't Map to "What I've Seen"
+**Fix:** Set both to `verify_jwt = false` in config.toml. The in-code auth validation remains as the actual security gate.
 
-The three diagnostic questions currently cover data governance and billing gaps, but miss access visibility and tool selection — the two patterns you just refined in "What I've Seen." Adding two questions (Option B from the previous discussion) would complete the alignment:
-- Q3: "If someone left tomorrow, how long would it take to revoke every system login they have?" (Surfaces access chaos)
-- Q4: "Who chose your current CRM — and did anyone evaluate whether it fit?" (Surfaces tool selection by familiarity)
+---
 
-### 7. Duplicated Operating Rules Between About and How We Work
+### ISSUE 3: Assessment Report Function Missing from config.toml
+**Severity: Medium | File: `supabase/config.toml`**
 
-The same 5 rules appear on both pages verbatim. This creates a "copy-paste" feeling when someone navigates between them. About should keep the Rules as personal operating principles (first-person authority). How We Work should frame them as project constraints (methodology context). Same content, different framing — or remove from one page entirely.
+The `send-assessment-report` function has no entry in config.toml, meaning it defaults to `verify_jwt = true`. This function is called after anonymous assessment submissions (no auth required), so the default JWT verification could silently block legitimate assessment report emails. The function also lacks rate limiting.
 
-### 8. Proof Page Cards Have No Interaction States
+**Fix:** Add `[functions.send-assessment-report]` with `verify_jwt = false` to config.toml, and add rate limiting logic to the function (matching the pattern used in the nurture sequence function).
 
-The 8 case study cards on the Proof page are completely static — no hover state, no visual feedback, no indication that 3 of them have detail pages. Adding a subtle hover state (border-primary transition) and linking the 3 that have detail pages would add the polish that signals "this was designed, not assembled."
+---
+
+### ISSUE 4: CORS Wildcard on Edge Functions
+**Severity: Low (Informational)**
+
+All edge functions use `Access-Control-Allow-Origin: *`. This is standard practice for public API endpoints and edge functions that serve a single-domain frontend, but worth noting for the audit record. Since the functions validate auth tokens independently and don't rely on origin for security, this is acceptable.
+
+**Action:** No change needed. Documented for compliance record.
 
 ---
 
 ## Implementation Plan
 
-### Step 1: Remove Placeholder Trust Indicators
-- Delete the `PartnerLogos` component usage from Proof page
-- This is the highest-impact single change
+### Step 1: Fix error message leakage in send-assessment-report
+- Replace `error.message` with a generic `"Failed to process assessment report"` string
+- Add rate limiting to the function (IP-based, matching nurture sequence pattern)
 
-### Step 2: Fix Metric Consistency
-- Update TrustIndicators default badges: "42 systems rebuilt" to "42 systems assessed"
+### Step 2: Update config.toml for all edge functions
+- Set `gdpr-data-export` to `verify_jwt = false`
+- Set `gdpr-data-deletion` to `verify_jwt = false`
+- Add `send-assessment-report` with `verify_jwt = false`
 
-### Step 3: Fix Homepage Section Rhythm
-- Change "Who This Is For" section from `variant="muted"` to standard (no variant) so it alternates properly with the muted section above it
-
-### Step 4: Align Footer Subtitle
-- Change footer subtitle from "Revenue architecture for high-trust teams" to "Systems architecture for high-trust teams" to match current positioning
-
-### Step 5: Standardize Contact Email
-- Update footer email from `hello@thecwtstudio.com` to `shannon@thecwtstudio.com` to match Contact page
-
-### Step 6: Update About Page Diagnostic Questions
-- Replace Q3 ("What happens when reality changes...") with access governance question
-- Add Q4 for tool selection pattern
-- Update purposes to match
-
-### Step 7: Differentiate Rules Between Pages
-- On How We Work, the rules already have a slightly different framing ("Prevents mid-project drift" vs "Skipping this adds 6 weeks") — keep this differentiation but make it more pronounced. No code change needed if the current differentiation is acceptable; otherwise, adjust the How We Work consequences to be more methodology-specific.
-
-### Step 8: Add Hover States to Proof Cards
-- Add hover border transition to case study cards
-- Link cards that have detail pages (/proof/healthcare, /proof/b2b-saas, /proof/cybersecurity) so they're clickable
+### Step 3: Update security findings
+- Record resolved items and document accepted risks
 
 ---
 
-## What This Does NOT Include
+## Summary Table
 
-- No new pages or sections
-- No content rewrites (the copy is already strong)
-- No design system changes (the system is solid)
-- No new features or functionality
-
-This is pure consistency enforcement and interaction polish — the difference between "good" and "obviously intentional."
-
+| Area | Status |
+|------|--------|
+| Database RLS | All 8 tables protected, 33 restrictive policies |
+| Client-side secrets | Clean — only publishable key shipped |
+| API input validation | All 4 endpoints validated (rate limit, size, format, length) |
+| Edge function auth | GDPR functions verify ownership; nurture has rate limiting |
+| XSS prevention | No dangerouslySetInnerHTML; all outputs HTML-escaped |
+| Error handling | 1 function leaks internal errors (fix in Step 1) |
+| JWT configuration | 2 functions use deprecated flag; 1 missing from config (fix in Step 2) |
+| CORS | Wildcard — acceptable for this architecture |
+| Cookie consent | Analytics gated behind explicit consent |
+| GDPR compliance | Export + deletion functions with ownership verification |
