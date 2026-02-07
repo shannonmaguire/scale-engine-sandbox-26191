@@ -1,119 +1,80 @@
 
 
-# Full Site Alignment Update
+# Rewrite "What I've Seen" Section — About Page
 
-## Issues Found
+## The Problem
 
-After reviewing all pages, I found several inconsistencies that need alignment:
+The current "Pattern Recognition" section reads like internal shorthand. Descriptions like "No validation. Duplicates found when finance asks." are telegraphic to the point of being cryptic for visitors. The actual buyer profile — owners and operators at family-owned businesses and PE-backed companies doing ~$100M — needs to see themselves in this language. Right now, the copy names failure modes without grounding them in buyer context.
 
-### 1. Operating Rules Mismatch (How We Work vs About)
+## Current State (What Needs to Change)
 
-**How We Work page** has outdated rules:
 ```text
-Rule 3: "Fixed scope, not hourly" → "Incentivizes efficiency"
-Rule 5: "You own everything" → "No vendor lock-in"
+CSV IMPORT CHAOS
+"No validation. Duplicates found when finance asks."
+
+INVOICE-DELIVERY GAP
+"Access before payment. Revenue recognized, cash missing."
+
+SHARED LOGIN SPRAWL
+"Compliance asks for access audit. Nobody can produce one."
+
+TOOL SELECTION BY FAMILIARITY
+"Architecture never evaluated."
 ```
 
-**About page** (recently updated) has:
-```text
-Rule 3: "Fixed scope, not hourly." → "We sell outcomes, not time."
-Rule 5: "Your team runs it." → "We build. We train. You operate."
-```
+These are too compressed. A visitor at a $100M family-owned distributor or a PE portfolio company doesn't recognize themselves in "CSV Import Chaos." They recognize themselves in "products are in three systems and nobody knows which price is right."
 
-The About page is the canonical version per your recent updates.
+## Proposed Rewrite
 
----
+Grounded in VoC transcript language, expanded to 2-sentence descriptions that name the situation AND the consequence. Labels shifted from jargon to plain failure modes.
 
-### 2. Assessment Page - Vendor Names Still Present
+| Label | Description (VoC-grounded) |
+|-------|---------------------------|
+| DATA ENTERS WITHOUT GOVERNANCE | Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one — so your team quotes from memory. |
+| BILLING NEVER FOLLOWS DELIVERY | Client gets onboarded, access gets granted, invoice never gets sent. Revenue shows on the books, but cash never arrives. |
+| NOBODY KNOWS WHO HAS ACCESS | Everyone uses the same login. When compliance asks for an access audit, nobody can produce one. |
+| TOOLS CHOSEN BY WHOEVER USED THEM LAST | The CRM got picked because someone used it at their last company. Nobody evaluated whether it fit the business you're running now. |
 
-The Assessment page still contains specific vendor names that violate the vendor-neutral standard:
-- Line 70: `"Stripe, QuickBooks, invoicing tools—none talking to each other. Manual reconciliation."`
+## What Changes and Why
 
-Should be generic like the Home page fix: `"Financial tools don't sync. Manual reconciliation."`
-
----
-
-### 3. Contact Page - Already Aligned
-
-The Contact page already uses compressed copy:
-- `"Usually faster. No sales calls."` (line 303)
-
-No changes needed.
-
----
-
-### 4. How I Work Intro Paragraph (About Page)
-
-The "How I Work" section has a 2-sentence intro paragraph:
-```text
-"Every engagement starts with the same questions. They surface where the system is actually failing—not where you think it's failing."
-```
-
-Per compression standards, this could be cut entirely since the diagnostic questions are self-explanatory.
-
----
+- **Labels**: Rewritten from internal category codes ("CSV IMPORT CHAOS") to plain-language failure statements that an owner/operator would say out loud.
+- **Descriptions**: Expanded from 1-line fragments to 2-sentence descriptions pulled directly from VoC transcript phrases ("We quote from memory because no system is accurate," "Everyone uses the same login," etc.)
+- **Buyer context**: Language now reflects the reality of companies with real operations, real compliance exposure, and real teams — not abstract "data governance" problems.
 
 ## Technical Changes
 
 | File | Change |
 |------|--------|
-| `src/pages/HowWeWork.tsx` | Update rules 3 and 5 to match About page canonical versions |
-| `src/pages/Assessment.tsx` | Remove "Stripe, QuickBooks" vendor names from integration pattern |
-| `src/pages/About.tsx` | Remove intro paragraph from "How I Work" section |
+| `src/pages/About.tsx` | Rewrite the `seenPatterns` array (lines 14-31) with updated labels and descriptions |
 
----
+## Specific Edit
 
-## Specific Edits
+### About.tsx — `seenPatterns` array (lines 14-31)
 
-### HowWeWork.tsx (lines 9-30)
+Replace with:
 
-Update `sequencingRules` array:
 ```typescript
-const sequencingRules = [
+const seenPatterns = [
   {
-    rule: "Discovery before scope",
-    consequence: "Prevents mid-project drift"
+    label: "DATA ENTERS WITHOUT GOVERNANCE",
+    description: "Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one — so your team quotes from memory."
   },
   {
-    rule: "No skipped layers",
-    consequence: "The skipped layer becomes the one that breaks"
+    label: "BILLING NEVER FOLLOWS DELIVERY",
+    description: "Client gets onboarded, access gets granted, invoice never gets sent. Revenue shows on the books, but cash never arrives."
   },
   {
-    rule: "Fixed scope, not hourly",
-    consequence: "We sell outcomes, not time"
+    label: "NOBODY KNOWS WHO HAS ACCESS",
+    description: "Everyone uses the same login. When compliance asks for an access audit, nobody can produce one."
   },
   {
-    rule: "Build → Document → Handoff",
-    consequence: "Undocumented systems die with the builder"
-  },
-  {
-    rule: "Your team runs it",
-    consequence: "We build. We train. You operate."
+    label: "TOOLS CHOSEN BY WHOEVER USED THEM LAST",
+    description: "The CRM got picked because someone used it at their last company. Nobody evaluated whether it fit the business you're running now."
   }
 ];
 ```
 
-### Assessment.tsx (lines 68-71)
-
-Update integration pattern signal:
-```typescript
-{
-  category: "INTEGRATION",
-  question: "Are your financial systems disconnected from your CRM?",
-  signal: "Financial tools don't sync. Manual reconciliation."
-}
-```
-
-### About.tsx (lines 250-254)
-
-Remove intro paragraph from "How I Work" section. Keep the system-status badge and heading, go straight into the questions.
-
----
-
 ## Result
 
-After these changes:
-- All 5 operating rules will be consistent across How We Work and About pages
-- All vendor names removed site-wide (vendor-neutral standard)
-- Intro scaffolding removed per compression philosophy
+The "What I've Seen" section will read like pattern recognition from someone who has sat across from these operators — not like a consultant's internal taxonomy. Every description uses language buyers actually said in discovery calls.
 
