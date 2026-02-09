@@ -86,8 +86,8 @@ const PrivacyPolicy = memo(() => {
               </section>
 
               <section>
-                <h2 className="text-2xl font-semibold mb-4">6. Your Rights (GDPR & CCPA)</h2>
-                <p className="mb-4">You have the following rights regarding your personal data:</p>
+                <h2 className="text-2xl font-semibold mb-4">6. Your Rights (PIPEDA, GDPR & CCPA)</h2>
+                <p className="mb-4">Under Canada's Personal Information Protection and Electronic Documents Act (PIPEDA), the EU General Data Protection Regulation (GDPR), and the California Consumer Privacy Act (CCPA), you have the following rights regarding your personal data:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Access:</strong> Request a copy of your personal data</li>
                   <li><strong>Rectification:</strong> Request correction of inaccurate data</li>
@@ -99,7 +99,7 @@ const PrivacyPolicy = memo(() => {
                 </ul>
                 <p className="mt-4">
                   To exercise these rights, you can use our <a href="/data-rights" className="text-primary hover:underline font-medium">Data Rights Portal</a> to 
-                  export or delete your personal data, or contact us at hello@thecwtstudio.com.
+                  export or delete your personal data, or contact us at shannon@thecwtstudio.com.
                 </p>
                 <div className="mt-4 p-4 bg-muted rounded-lg">
                   <a href="/data-rights" className="inline-flex items-center text-primary hover:underline font-medium">
@@ -129,8 +129,8 @@ const PrivacyPolicy = memo(() => {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">9. International Data Transfers</h2>
                 <p className="mb-4">
-                  Your information may be transferred to and processed in countries other than your own. 
-                  We ensure appropriate safeguards are in place to protect your data in accordance with this privacy policy.
+                  CWT Studio is based in Canada. Your information may be transferred to and processed in countries other than your own. 
+                  We ensure appropriate safeguards are in place, consistent with PIPEDA and applicable international regulations, to protect your data in accordance with this privacy policy.
                 </p>
               </section>
 
@@ -156,9 +156,9 @@ const PrivacyPolicy = memo(() => {
                   If you have questions about this privacy policy or our data practices, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
+                  <li><strong>Email:</strong> shannon@thecwtstudio.com</li>
                   <li><strong>Company:</strong> CWT Studio</li>
-                  <li><strong>Location:</strong> United States</li>
+                  <li><strong>Location:</strong> Canada</li>
                 </ul>
               </section>
             </div>

@@ -149,11 +149,11 @@ const TermsOfService = memo(() => {
                 <h3 className="text-xl font-medium mb-3">11.1 Governing Law</h3>
                 <p className="mb-4">
                   These Terms shall be governed by and construed in accordance with the laws of the 
-                  State of Delaware, United States, without regard to conflict of law provisions.
+                  Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict of law provisions.
                 </p>
                 <p className="mb-4">
-                  Any disputes arising under these Terms shall be resolved in the state or federal 
-                  courts located in Delaware, and you consent to personal jurisdiction in such courts.
+                  Any disputes arising under these Terms shall be resolved in the courts of competent 
+                  jurisdiction located in Ontario, Canada, and you consent to personal jurisdiction in such courts.
                 </p>
 
                 <h3 className="text-xl font-medium mb-3">11.2 Arbitration</h3>
@@ -194,7 +194,7 @@ const TermsOfService = memo(() => {
                   For questions about these Terms, please contact us:
                 </p>
                 <ul className="list-none space-y-2">
-                  <li><strong>Email:</strong> hello@thecwtstudio.com</li>
+                  <li><strong>Email:</strong> shannon@thecwtstudio.com</li>
                 </ul>
               </section>
             </div>
