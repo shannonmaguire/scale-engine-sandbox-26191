@@ -2,7 +2,7 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import SEOHead from "@/components/SEOHead";
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
+
 
 interface CaseStudy {
   id: number;
@@ -179,21 +179,10 @@ const Proof = () => {
       {/* All 8 Case Studies - Single scannable grid */}
       <Section className="border-b border-border">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {caseStudies.map((study) => {
-            const detailRoutes: Record<string, string> = {
-              "Healthcare": "/proof/healthcare",
-              "B2B SaaS": "/proof/b2b-saas",
-              "Compliance Advisory": "/proof/cybersecurity"
-            };
-            const detailRoute = detailRoutes[study.industry];
-            const CardWrapper = detailRoute ? Link : 'div';
-            const wrapperProps = detailRoute ? { to: detailRoute } : {};
-
-            return (
-              <CardWrapper
+          {caseStudies.map((study) => (
+              <div
                 key={study.id}
-                {...wrapperProps as any}
-                className={`bg-card border border-border p-5 flex flex-col h-full transition-colors duration-200 hover:border-primary ${detailRoute ? 'cursor-pointer' : ''}`}
+                className="bg-card border border-border p-5 flex flex-col h-full"
               >
                 {/* Header */}
                 <div className="flex items-start justify-between gap-3 mb-3">
@@ -215,9 +204,8 @@ const Proof = () => {
                   <span className="text-primary">→</span>
                   <span className="text-foreground whitespace-nowrap">{study.afterMetric.value}</span>
                 </div>
-              </CardWrapper>
-            );
-          })}
+              </div>
+          ))}
         </div>
       </Section>
 
