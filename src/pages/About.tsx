@@ -14,7 +14,7 @@ import { CTA, ROUTES } from "@/lib/canonical-constants";
 const seenPatterns = [
   {
     label: "DATA ENTERS WITHOUT GOVERNANCE",
-    description: "Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one — so your team quotes from memory."
+    description: "Product data lives in the CRM, the accounting system, and a spreadsheet. Pricing is different in every one, so your team quotes from memory."
   },
   {
     label: "BILLING NEVER FOLLOWS DELIVERY",
@@ -61,7 +61,7 @@ const diagnosticQuestions = [
     purpose: "Surfaces access governance gaps."
   },
   {
-    question: '"Who chose your current CRM — and did anyone evaluate whether it fit?"',
+    question: '"Who chose your current CRM, and did anyone evaluate whether it fit?"',
     purpose: "Surfaces tool selection by familiarity."
   }
 ];
@@ -99,7 +99,7 @@ const About = () => {
       <EngagementTracker />
       <SEOHead 
         title="About Shannon Maguire | Revenue Systems Architect | CWT Studio" 
-        description="Shannon Maguire finds where revenue systems are failing—then installs enforcement so they can't fail again. For teams where broken systems erode customer trust." 
+        description="Shannon Maguire finds where revenue systems are failing, then installs enforcement so they can't fail again. For teams where broken systems erode customer trust." 
         keywords={[
           'about CWT Studio', 
           'revenue infrastructure', 
@@ -111,7 +111,7 @@ const About = () => {
         personSchema={{
           name: 'Shannon Maguire',
           jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, CloudRoute',
-          description: "Finds where revenue systems are failing—then installs enforcement so they cannot fail again. Every system documented. Every handoff clean.",
+          description: "Finds where revenue systems are failing, then installs enforcement so they cannot fail again. Every system documented. Every handoff clean.",
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
           image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
         }}
@@ -171,7 +171,7 @@ const About = () => {
 
               <div className="space-y-4">
                 <p className="text-xl text-foreground leading-relaxed">
-                  Former Salesforce AE. I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold—systems that survive the first quarter of actual use.
+                  Former Salesforce AE. I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold. Systems that survive the first quarter of actual use.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
