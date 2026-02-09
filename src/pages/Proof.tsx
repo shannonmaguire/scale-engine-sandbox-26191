@@ -23,7 +23,6 @@ interface CaseStudy {
 
 const Proof = () => {
   
-  // Case studies rewritten with human problems first
   const caseStudies: CaseStudy[] = [
     {
       id: 1,
@@ -31,8 +30,8 @@ const Proof = () => {
       vertical: "AI-Assisted Wellness Clinic",
       size: "Launch stage",
       timeline: "90 Days",
-      humanProblem: "Great idea. Zero patients. Marketing, ops, and tech all pointing fingers.",
-      whatBroke: "No patient acquisition system. No team alignment.",
+      humanProblem: "New clinic, zero patients. Marketing, operations, and clinical teams weren't coordinated.",
+      whatBroke: "No system to attract patients or align the team.",
       pullQuote: "We went from zero patients to a working system in 90 days",
       system: ["Landing page that converts", "Lead flow from quiz to booking to follow-up", "All teams on the same playbook"],
       beforeMetric: { label: "Patients", value: "Zero" },
@@ -46,8 +45,8 @@ const Proof = () => {
       vertical: "Digital Education Platform",
       size: "Thousands of members",
       timeline: "6 months",
-      humanProblem: "Leads came in. Nobody followed up. Everything depended on memory.",
-      whatBroke: "No follow-up system. Deals went cold.",
+      humanProblem: "Leads came in but nobody followed up. Everything depended on one person's memory.",
+      whatBroke: "No system to track or follow up with leads.",
       pullQuote: "Zero leads fall through now. 2-5 qualified calls a day.",
       system: ["Mapped all lead entry points", "Built clear ownership structure", "Automated follow-up that sounds human"],
       beforeMetric: { label: "Follow-up rate", value: "None" },
@@ -61,14 +60,14 @@ const Proof = () => {
       vertical: "Federal Cybersecurity",
       size: "Founder + contractors",
       timeline: "90 Days",
-      humanProblem: "Zero pipeline. No predictable revenue. Just waiting for inbound that never came.",
-      whatBroke: "No outbound. No ICP. No demand system.",
+      humanProblem: "No predictable revenue. No way to find new clients. Just waiting for referrals that rarely came.",
+      whatBroke: "No outreach system. No clear target audience defined.",
       pullQuote: "We went from zero pipeline to $500K in 90 days",
-      system: ["Narrowed from 9 target types to 3", "Built cold outreach that gets responses", "Handoff docs so anyone can run it"],
+      system: ["Narrowed target audience from 9 segments to 3", "Built outreach that gets responses", "Documented process so anyone can run it"],
       beforeMetric: { label: "Pipeline", value: "$0" },
       afterMetric: { label: "Pipeline", value: "$500K+" },
       growth: "$500K+ Pipeline",
-      patternRestored: "40%+ email open rates. Repeatable outbound without the founder."
+      patternRestored: "40%+ email open rates. Repeatable outreach without the founder."
     },
     {
       id: 4,
@@ -76,29 +75,29 @@ const Proof = () => {
       vertical: "Subscription Legal",
       size: "Boutique firm",
       timeline: "90 Days",
-      humanProblem: "$500/hour partners doing $50/hour admin work. Wanted subscriptions but didn't know if the math worked.",
-      whatBroke: "Wrong business model. Partners drowning in low-value tasks.",
+      humanProblem: "Senior attorneys spending half their time on admin. Wanted to offer subscriptions but didn't know if the economics worked.",
+      whatBroke: "Business model needed restructuring. Senior staff stuck on low-value work.",
       pullQuote: "We proved subscription legal works. Partners stopped doing admin",
-      system: ["Subscription tiers that make money", "Full subscriber funnel", "Dashboards for retention tracking"],
+      system: ["Subscription tiers with validated pricing", "Full subscriber acquisition funnel", "Dashboards for retention tracking"],
       beforeMetric: { label: "Partner time", value: "Wasted on admin" },
       afterMetric: { label: "Subscription model", value: "Live and working" },
       growth: "Model Shift",
-      patternRestored: "Unit economics proven. Partners back to practicing law."
+      patternRestored: "Pricing validated. Senior staff back to client work."
     },
     {
       id: 5,
       industry: "IT Services",
-      vertical: "Apple Authorized Reseller",
+      vertical: "Hardware Reseller",
       size: "Regional operation",
       timeline: "90 Days",
-      humanProblem: "CSV uploads to Salesforce every month. Zero validation. Asset records didn't match vendor records.",
-      whatBroke: "Data governance gaps. Serial numbers in Salesforce didn't tie back to anything.",
+      humanProblem: "Manual data imports every month. No validation. Inventory records didn't match vendor records.",
+      whatBroke: "No data quality checks. Records couldn't be trusted.",
       pullQuote: "Finally, one source of truth for asset records",
-      system: ["Data validation layer for imports", "Asset tracking tied to vendor records", "Finance can now trust the numbers"],
+      system: ["Automated validation for data imports", "Inventory tracking tied to vendor records", "Finance can now trust the numbers"],
       beforeMetric: { label: "Data trust", value: "None" },
       afterMetric: { label: "Reconciliation", value: "Automated" },
       growth: "Data Integrity",
-      patternRestored: "Single source of truth for physical and digital assets."
+      patternRestored: "Single source of truth for all inventory and asset records."
     },
     {
       id: 6,
@@ -106,14 +105,14 @@ const Proof = () => {
       vertical: "Project Management Platform",
       size: "$4.2M ARR, Series A",
       timeline: "90 Days",
-      humanProblem: "800 trials a month, 6% converted. Sales calling everyone, even people who never logged in.",
-      whatBroke: "No way to tell who was actually using the product.",
+      humanProblem: "800 free trials a month, only 6% became paying customers. Sales was calling everyone — even users who never logged in.",
+      whatBroke: "No way to tell which trial users were actually interested.",
       pullQuote: "We 4x'd trial conversion by only calling people who actually use the product",
-      system: ["Product usage connected to Salesforce", "Leads scored by feature adoption", "Playbooks for each usage pattern"],
+      system: ["Product usage data connected to CRM", "Leads scored by actual feature usage", "Sales playbooks for each behavior pattern"],
       beforeMetric: { label: "Trial conversion", value: "6%" },
-      afterMetric: { label: "PQL conversion", value: "24%" },
+      afterMetric: { label: "Trial conversion", value: "24%" },
       growth: "4x Conversion",
-      patternRestored: "Sales stopped wasting time. Only talk to people who want to talk."
+      patternRestored: "Sales focuses on engaged users. Conversion rate 4x'd."
     },
     {
       id: 7,
@@ -121,14 +120,14 @@ const Proof = () => {
       vertical: "Marketing Agency",
       size: "$2.8M revenue, 12 employees",
       timeline: "90 Days",
-      humanProblem: "Projects lived in email, Slack, Drive, and Trello. 15 hours a week just figuring out what's happening.",
-      whatBroke: "No single source of truth. Everything scattered.",
-      pullQuote: "Cut 87% of the admin time. NPS jumped from 6.8 to 8.9",
-      system: ["Everything in one place", "Templates for consistent project execution", "Dashboards clients can read"],
+      humanProblem: "Project information scattered across email, chat, file storage, and task boards. 15 hours a week just tracking status.",
+      whatBroke: "No central system. Information scattered across too many tools.",
+      pullQuote: "Cut 87% of the admin time. Client satisfaction jumped from 6.8 to 8.9",
+      system: ["All project data in one place", "Standardized templates for delivery", "Client-facing dashboards"],
       beforeMetric: { label: "Admin time", value: "15hrs/week" },
       afterMetric: { label: "Admin time", value: "2hrs/week" },
       growth: "87% Time Saved",
-      patternRestored: "Clients happier. Team happier. Less time hunting for status."
+      patternRestored: "Less time on status updates. More time on client work."
     },
     {
       id: 8,
@@ -136,14 +135,14 @@ const Proof = () => {
       vertical: "Financial Intelligence SaaS",
       size: "Pre-launch MVP",
       timeline: "6 months",
-      humanProblem: "Creator income scattered across PayPal, Stripe, Shopify, spreadsheets. Nobody had a clear picture.",
-      whatBroke: "Great idea, no way to test if people would pay.",
-      pullQuote: "100+ signups validated the idea. 9-11% conversion rate on cold outreach",
-      system: ["MVP for income tracking", "600 creator leads enriched", "Cold outreach that converted"],
+      humanProblem: "Income data scattered across multiple payment platforms and spreadsheets. No clear financial picture.",
+      whatBroke: "Product idea untested. No proof that customers would pay.",
+      pullQuote: "100+ signups validated the idea. 9-11% conversion rate on outreach",
+      system: ["Working prototype for income tracking", "600 qualified leads identified", "Outreach system that converted"],
       beforeMetric: { label: "Validated demand", value: "Unknown" },
       afterMetric: { label: "User signups", value: "100+" },
       growth: "MVP Validated",
-      patternRestored: "Pain point validated with real money. Ready to build the real thing."
+      patternRestored: "Demand validated with real signups. Ready to build the full product."
     }
   ];
 
