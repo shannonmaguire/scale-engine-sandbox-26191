@@ -16,7 +16,7 @@ const Home = () => {
   const currentPatterns = [
     {
       category: "DATA STRUCTURE",
-      title: "CSV uploads to Salesforce. Zero validation.",
+      title: "Data imported manually. Zero validation.",
       description: "Data enters without governance."
     },
     {
@@ -32,12 +32,12 @@ const Home = () => {
     {
       category: "CREDENTIAL CHAOS",
       title: "Shared logins. No audit trail.",
-      description: "Former contractor still has Salesforce access."
+      description: "Former contractor still has system access."
     },
     {
       category: "PARTNER HANDOFF",
       title: "Deals registered. Then silence.",
-      description: "AE can't scope technical work. Pipeline stalls."
+      description: "Sales can't scope technical work. Pipeline stalls."
     },
     {
       category: "TRIAL CONVERSION",
@@ -46,7 +46,7 @@ const Home = () => {
     },
     {
       category: "SCATTERED OPERATIONS",
-      title: "Projects live in email, Slack, Drive, and Trello.",
+      title: "Projects live across 4+ disconnected tools.",
       description: "15 hours/week figuring out what's happening."
     },
     {
@@ -70,7 +70,7 @@ const Home = () => {
   // Single proof point
   const proof = {
     quote: "We went from zero outbound to a repeatable system with 40%+ open rates.",
-    attribution: "FEDERAL CYBERSECURITY (SAVIINT PIPELINE)",
+    attribution: "FEDERAL CYBERSECURITY",
     result: "$500k pipeline built in 90 days."
   };
 

@@ -48,7 +48,7 @@ const InfrastructureAssessment = () => {
   ];
 
   const included = [
-    "System configuration audit (CRM, marketing automation, data infrastructure)",
+    "System configuration audit (sales tools, marketing automation, data infrastructure)",
     "Stakeholder interviews (3-5 key operators)",
     "Benchmark analysis against industry standards",
     "Technical debt and risk assessment",
@@ -61,7 +61,7 @@ const InfrastructureAssessment = () => {
   const qualificationPatterns = [
     {
       category: "DATA GOVERNANCE",
-      question: "Do you manually import data into Salesforce via CSV?",
+      question: "Do you manually import data into your systems via spreadsheet?",
       signal: "Asset records, serial numbers, product data entering the system without validation."
     },
     {
@@ -81,7 +81,7 @@ const InfrastructureAssessment = () => {
     },
     {
       category: "TOOL SPRAWL",
-      question: "Do projects live in email, Slack, Drive, and 3+ other tools?",
+      question: "Do projects live across 4+ disconnected tools?",
       signal: "No single source of truth. 15 hours a week just figuring out what's happening."
     },
     {
@@ -96,13 +96,13 @@ const InfrastructureAssessment = () => {
       title: "Focused Implementation",
       scope: "Direct Delivery",
       badge: null as string | null,
-      description: "HubSpot and lighter stacks. 4-8 weeks."
+      description: "Streamlined systems. 4-8 weeks."
     },
     {
-      title: "Enterprise Salesforce",
-      scope: "CWT-led, CloudRoute-built",
-      badge: "PARTNER",
-      description: "Complete Salesforce architecture. 3-6 months. I remain your architect."
+      title: "Enterprise Architecture",
+      scope: "Architect-Led Build",
+      badge: null as string | null,
+      description: "Full-scale system rebuild. 3-6 months. I remain your architect."
     }
   ];
 
