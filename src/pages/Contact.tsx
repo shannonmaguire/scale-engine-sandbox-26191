@@ -8,7 +8,7 @@ import { Section } from "@/components/ui/section";
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { trackEvent } from "@/hooks/usePageTracking";
-import { Mail, ArrowRight, CheckCircle2, AlertCircle, Loader2, Clock, MessageSquare } from "lucide-react";
+import { CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { callJsonFunction } from "@/lib/serverless";
 
 const initialFormState = {
@@ -266,10 +266,7 @@ const Contact = () => {
                       Sending...
                     </>
                   ) : (
-                    <>
-                      Send Message
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </>
+                    "Send Message"
                   )}
                 </Button>
 
@@ -294,10 +291,7 @@ const Contact = () => {
             {/* Side Info */}
             <div className="lg:col-span-2 space-y-6">
               <div className="border border-border p-4 md:p-6 bg-card overflow-hidden">
-                <div className="flex items-center gap-3 mb-4">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <h3 className="font-mono text-xs uppercase tracking-wide">Response Time</h3>
-                </div>
+                <h3 className="font-mono text-xs uppercase tracking-wide mb-4">Response Time</h3>
                 <p className="text-2xl font-bold text-foreground mb-2">24 hours</p>
                 <p className="text-sm text-muted-foreground">
                   Usually faster. No sales calls.
@@ -305,10 +299,7 @@ const Contact = () => {
               </div>
 
               <div className="border border-border p-4 md:p-6 bg-card overflow-hidden">
-                <div className="flex items-center gap-3 mb-4">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <h3 className="font-mono text-xs uppercase tracking-wide">Direct Email</h3>
-                </div>
+                <h3 className="font-mono text-xs uppercase tracking-wide mb-4">Direct Email</h3>
                 <a 
                   href="mailto:shannon@thecwtstudio.com" 
                   className="text-primary hover:text-primary/80 font-mono transition-colors break-all"
@@ -318,10 +309,7 @@ const Contact = () => {
               </div>
 
               <div className="border border-border p-4 md:p-6 bg-card overflow-hidden">
-                <div className="flex items-center gap-3 mb-4">
-                  <MessageSquare className="w-5 h-5 text-primary" />
-                  <h3 className="font-mono text-xs uppercase tracking-wide">What Happens Next</h3>
-                </div>
+                <h3 className="font-mono text-xs uppercase tracking-wide mb-4">What Happens Next</h3>
                 <ol className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="font-mono text-primary">1.</span>

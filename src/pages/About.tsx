@@ -4,7 +4,7 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import { Linkedin, CheckSquare } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import shannonHeadshot from "@/assets/shannon-headshot.jpg";
@@ -155,9 +155,7 @@ const About = () => {
                   href="https://www.linkedin.com/in/shanmag/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
                 >
-                  <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
               </Button>
@@ -246,12 +244,9 @@ const About = () => {
 
           <div className="space-y-6">
             {diagnosticQuestions.map((item, index) => (
-              <div key={index} className="flex gap-4">
-                <CheckSquare className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                <div>
-                  <p className="font-mono text-foreground mb-1">{item.question}</p>
-                  <p className="text-sm text-muted-foreground">{item.purpose}</p>
-                </div>
+              <div key={index}>
+                <p className="font-mono text-foreground mb-1">{item.question}</p>
+                <p className="text-sm text-muted-foreground">{item.purpose}</p>
               </div>
             ))}
           </div>
