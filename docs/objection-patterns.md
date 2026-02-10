@@ -54,7 +54,7 @@ Cheap rates signal junior work. Price communicates capability.
 - Testing commitment level
 
 **Response framework:**
-"The Assessment is the smaller start. 2 weeks, fixed fee, 100% credit to Sprint. If the Assessment reveals issues we can't fix, you've spent $2K to find that out. If it reveals fixable issues, you've already paid for the first Sprint."
+"The Assessment is the smaller start. 2 weeks, fixed fee, 100% credit to Sprint. If the Assessment reveals issues we can't fix, you've spent $2.5K to find that out. If it reveals fixable issues, you've already paid for the first Sprint."
 
 ---
 
