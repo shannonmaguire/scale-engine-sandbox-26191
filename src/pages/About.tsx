@@ -168,12 +168,12 @@ const About = () => {
               </p>
 
               <div className="space-y-4">
-                <p className="text-xl text-foreground leading-relaxed">
-                  Former Salesforce AE. I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold. Systems that survive the first quarter of actual use.
+              <p className="text-xl text-foreground leading-relaxed">
+                  I watched implementations fail because sales sold what the business couldn't absorb. Now I architect what gets sold. Systems that survive the first quarter of actual use.
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Enterprise Salesforce through CloudRoute (ISV Partner). HubSpot and lighter stacks direct. Every system documented. Every handoff clean.
+                  Architect-led builds for enterprise through CloudRoute. Streamlined systems direct. Every system documented. Every handoff clean.
                 </p>
               </div>
 

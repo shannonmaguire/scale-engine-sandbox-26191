@@ -44,15 +44,6 @@ const InfrastructureAssessment = () => {
     }
   ];
 
-  const included = [
-    "System configuration audit (sales tools, marketing automation, data infrastructure)",
-    "Stakeholder interviews (3-5 key operators)",
-    "Benchmark analysis against industry standards",
-    "Technical debt and risk assessment",
-    "Prioritized implementation roadmap",
-    "Executive presentation and recommendations document",
-    "30-day post-delivery Q&A support window"
-  ];
 
   // VoC-grounded qualification patterns
   const qualificationPatterns = [
@@ -238,17 +229,6 @@ const InfrastructureAssessment = () => {
             ))}
           </div>
 
-          <div className="border border-border bg-card/50 p-8">
-            <h3 className="heading-subsection mb-6">Complete Scope</h3>
-            <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-              {included.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <span className="font-mono text-primary text-sm flex-shrink-0">—</span>
-                  <p className="text-description text-foreground">{item}</p>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </Section>
 
@@ -293,7 +273,7 @@ const InfrastructureAssessment = () => {
           <h2 className="heading-section mb-4">What Happens Next</h2>
 
           <p className="text-description text-foreground/80 mb-8 max-w-2xl">
-            We recommend one of two paths based on findings:
+            The assessment ends in one of two paths:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -330,7 +310,7 @@ const InfrastructureAssessment = () => {
 
           <h2 className="heading-section mb-6">Book Your Assessment</h2>
           <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            {TIMELINES.assessment} diagnostic audit. System scorecard, gap analysis, implementation pathway.
+            {TIMELINES.assessment} diagnostic. You'll know what's broken, what it's costing, and what to fix first.
           </p>
 
           <ConversionOptimizedButton

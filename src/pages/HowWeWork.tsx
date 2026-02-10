@@ -51,7 +51,7 @@ const HowWeWork = () => {
           <div className="system-status mb-8">METHODOLOGY</div>
           <h1 className="heading-page mb-6">How We Work</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Revenue infrastructure is built in layers. Each layer depends on the one before it. Skip a layer, and growth exposes the gap.
+            Skip a layer, and growth exposes the gap.
           </p>
         </div>
       </Section>
@@ -71,7 +71,7 @@ const HowWeWork = () => {
           <div className="system-status mb-6">CONSTRAINTS</div>
           <h2 className="heading-section mb-4">Operating Rules</h2>
           <p className="text-base text-muted-foreground mb-10 max-w-2xl">
-            Each constraint protects system integrity. Violating any of them creates rework.
+            Violate any of these. The project fails.
           </p>
 
           <div className="space-y-4">

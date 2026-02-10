@@ -55,7 +55,7 @@ export const RevenueArchitectureDiagram = () => {
         <h2 className="heading-section mb-6">How We Build It</h2>
 
         <p className="text-base text-muted-foreground mb-10 max-w-2xl">
-          Six layers. Each one depends on the one before it. Skip a layer, and everything downstream breaks.
+          Skip a layer. Everything downstream breaks.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

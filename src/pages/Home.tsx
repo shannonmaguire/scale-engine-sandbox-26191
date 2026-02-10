@@ -51,8 +51,8 @@ const Home = () => {
     },
     {
       category: "TOOL SELECTION",
-      title: "We picked it because someone used it before.",
-      description: "Nobody evaluated fit."
+      title: "The CRM got picked because someone used it at their last job.",
+      description: "Nobody evaluated whether it fit the business you're running now."
     }
   ];
 
@@ -69,9 +69,9 @@ const Home = () => {
 
   // Single proof point
   const proof = {
-    quote: "We went from zero outbound to a repeatable system with 40%+ open rates.",
+    quote: "Zero pipeline. No outreach system. No defined target. We had $500K in qualified pipeline 90 days later.",
     attribution: "FEDERAL CYBERSECURITY",
-    result: "$500k pipeline built in 90 days."
+    result: "$0 → $500K pipeline. 90 days."
   };
 
   return (
