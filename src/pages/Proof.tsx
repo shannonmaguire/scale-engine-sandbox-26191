@@ -216,7 +216,7 @@ const Proof = () => {
             Find Out What's Breaking
           </h2>
           <p className="text-description text-muted-foreground mb-10">
-            2-week diagnostic. System scorecard, risk assessment, implementation pathway.
+            2-week diagnostic. You'll know exactly what's broken and what it's costing.
           </p>
           <ConversionOptimizedButton 
             to="/assessment" 
