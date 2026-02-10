@@ -22,12 +22,10 @@ const Contact = lazy(() => import("@/pages/Contact"));
 const Assessment = lazy(() => import("@/pages/Assessment"));
 const About = lazy(() => import("@/pages/About"));
 const Proof = lazy(() => import("@/pages/Proof"));
-const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 
-const SampleReport = lazy(() => import("@/pages/SampleReport"));
 const Outbound = lazy(() => import("@/pages/Outbound"));
 
 // Case Study pages
@@ -82,22 +80,6 @@ const AppContent = () => {
             <Route path="/how-we-work" element={<HowWeWork />} />
             <Route path="/assessment" element={<Assessment />} />
             
-            {/* Redirects for old service routes - all go to assessment */}
-            <Route path="/sprint" element={<Navigate to="/assessment" replace />} />
-            <Route path="/salesforce" element={<Navigate to="/assessment" replace />} />
-            <Route path="/salesforce/delivery" element={<Navigate to="/assessment" replace />} />
-            <Route path="/fractional" element={<Navigate to="/assessment" replace />} />
-            <Route path="/fractional-ops" element={<Navigate to="/assessment" replace />} />
-            <Route path="/web-systems" element={<Navigate to="/assessment" replace />} />
-            <Route path="/web-system" element={<Navigate to="/assessment" replace />} />
-            <Route path="/web" element={<Navigate to="/assessment" replace />} />
-            
-            {/* Redirects for old assessment routes and typos */}
-            <Route path="/self-assessment" element={<Navigate to="/assessment" replace />} />
-            <Route path="/assessment-preview" element={<Navigate to="/assessment" replace />} />
-            <Route path="/assessment-results" element={<Navigate to="/assessment" replace />} />
-            <Route path="/infrastructure-assessment" element={<Navigate to="/assessment" replace />} />
-            <Route path="/assesment" element={<Navigate to="/assessment" replace />} />
             
             <Route path="/proof" element={<Proof />} />
             <Route path="/proof/healthcare" element={<HealthcareCaseStudy />} />
@@ -105,19 +87,8 @@ const AppContent = () => {
             <Route path="/proof/cybersecurity" element={<CybersecurityCaseStudy />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/ae-support" element={<AETechnicalSupport />} />
-            <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
-            <Route path="/start-here" element={<Navigate to="/assessment" replace />} />
-            <Route path="/start" element={<Navigate to="/assessment" replace />} />
-            <Route path="/upwork" element={<Navigate to="/assessment" replace />} />
-            <Route path="/diagnostic" element={<Navigate to="/assessment" replace />} />
-            <Route path="/diagnostic/healthcare" element={<Navigate to="/assessment?vertical=healthcare" replace />} />
-            <Route path="/diagnostic/law" element={<Navigate to="/assessment?vertical=law" replace />} />
             
             <Route path="/outbound" element={<Outbound />} />
-            <Route path="/sample-report" element={<SampleReport />} />
-            
-            <Route path="/operatorsprint" element={<Navigate to="/assessment" replace />} />
             
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />

@@ -49,12 +49,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cwtstudio.com/sample-report</loc>
-    <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://cwtstudio.com/contact</loc>
     <lastmod>2026-01-30</lastmod>
     <changefreq>yearly</changefreq>
