@@ -118,14 +118,14 @@ const Home = () => {
 
           <div className="flex flex-col gap-6">
             <ConversionOptimizedButton
-              to={ROUTES.assessment}
+              to={ROUTES.diagnostic}
               ctaName="Hero - Book System Audit"
               location="Homepage Hero"
               size="lg"
               className="w-full sm:w-auto"
             >
-              <span className="hidden sm:inline text-inherit">Book a System Audit</span>
-              <span className="sm:hidden text-inherit">Book Audit</span>
+               <span className="hidden sm:inline text-inherit">Book a System Diagnostic</span>
+               <span className="sm:hidden text-inherit">Book Diagnostic</span>
             </ConversionOptimizedButton>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground font-mono">
@@ -234,12 +234,12 @@ const Home = () => {
           </p>
 
           <ConversionOptimizedButton
-            to={ROUTES.assessment}
+            to={ROUTES.diagnostic}
             ctaName="Final CTA - Book Assessment"
             location="Final CTA Section"
             size="lg"
           >
-            Book Assessment
+            Book Diagnostic
           </ConversionOptimizedButton>
         </div>
       </Section>

@@ -206,15 +206,15 @@ const BlogPost = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-4">Find Out What's Breaking</h2>
           <p className="text-muted-foreground mb-8">
-            Every system starts with a deep technical assessment.
+            Every system starts with a diagnostic.
           </p>
           <ConversionOptimizedButton 
-            to={ROUTES.assessment}
-            ctaName="Blog Post - Book Assessment" 
+            to={ROUTES.diagnostic}
+            ctaName="Blog Post - Book Diagnostic" 
             location="Blog Post CTA"
             size="lg"
           >
-            {CTA.bookAssessment}
+            {CTA.bookDiagnostic}
           </ConversionOptimizedButton>
         </div>
       </Section>

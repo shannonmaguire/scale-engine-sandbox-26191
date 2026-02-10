@@ -97,12 +97,12 @@ const HowWeWork = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ConversionOptimizedButton
-              to={ROUTES.assessment}
-              ctaName="How We Work - Book Assessment"
+              to={ROUTES.diagnostic}
+              ctaName="How We Work - Book Diagnostic"
               location="How We Work CTA"
               size="lg"
             >
-              Book Assessment
+              Book Diagnostic
             </ConversionOptimizedButton>
             <ConversionOptimizedButton
               to="/proof"

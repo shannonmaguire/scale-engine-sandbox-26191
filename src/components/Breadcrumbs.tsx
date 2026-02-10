@@ -29,7 +29,7 @@ export const Breadcrumbs = () => {
       "healthcare": "Healthcare",
       "law": "Legal",
       "how-we-work": "How We Work",
-      "assessment": "Assessment",
+      "assessment": "Diagnostic",
       "privacy-policy": "Privacy Policy",
       "terms-of-service": "Terms of Service",
       "cookie-policy": "Cookie Policy",

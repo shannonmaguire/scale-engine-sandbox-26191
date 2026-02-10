@@ -57,10 +57,10 @@ const Outbound = () => {
           {/* What happens */}
           <div className="space-y-4 border-t border-border pt-8">
             <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              {TIMELINES.assessment} diagnostic
+              {TIMELINES.diagnostic} diagnostic
             </p>
             <div className="space-y-2 text-sm text-foreground/80">
-              <p>Fixed scope. $2,500. Full system audit with documented findings and implementation pathway.</p>
+              <p>Fixed scope. $2,000. Full system diagnostic with documented findings and implementation pathway.</p>
               <p>You'll know exactly what's broken, what it's costing, and what to fix first.</p>
             </div>
           </div>
@@ -68,10 +68,10 @@ const Outbound = () => {
           {/* Single CTA */}
           <div className="border-t border-border pt-8">
             <Link
-              to="/assessment"
+              to="/diagnostic"
               className="inline-flex items-center justify-center bg-primary text-primary-foreground font-mono text-sm uppercase tracking-widest px-8 py-4 hover:bg-primary/90 transition-colors min-h-[48px]"
             >
-              {CTA.bookAssessment}
+              {CTA.bookDiagnostic}
             </Link>
           </div>
 
