@@ -26,7 +26,7 @@ const AETechnicalSupport = lazy(() => import("@/pages/AETechnicalSupport"));
 const PrivacyPolicy = lazy(() => import("@/pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
-const Upwork = lazy(() => import("@/pages/Upwork"));
+
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
 
 // Case Study pages
@@ -48,7 +48,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = location.pathname === '/upwork';
+  const isStandalonePage = false;
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -108,14 +108,14 @@ const AppContent = () => {
             <Route path="/ae-technical-support" element={<Navigate to="/ae-support" replace />} />
             <Route path="/start-here" element={<Navigate to="/assessment" replace />} />
             <Route path="/start" element={<Navigate to="/assessment" replace />} />
-            <Route path="/upwork" element={<Upwork />} />
+            <Route path="/upwork" element={<Navigate to="/assessment" replace />} />
             <Route path="/diagnostic" element={<Navigate to="/assessment" replace />} />
             <Route path="/diagnostic/healthcare" element={<Navigate to="/assessment?vertical=healthcare" replace />} />
             <Route path="/diagnostic/law" element={<Navigate to="/assessment?vertical=law" replace />} />
             
             <Route path="/sample-report" element={<SampleReport />} />
             
-            <Route path="/operatorsprint" element={<Navigate to="/upwork" replace />} />
+            <Route path="/operatorsprint" element={<Navigate to="/assessment" replace />} />
             
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
