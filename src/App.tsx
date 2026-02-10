@@ -28,6 +28,7 @@ const TermsOfService = lazy(() => import("@/pages/TermsOfService"));
 const CookiePolicy = lazy(() => import("@/pages/CookiePolicy"));
 
 const SampleReport = lazy(() => import("@/pages/SampleReport"));
+const Outbound = lazy(() => import("@/pages/Outbound"));
 
 // Case Study pages
 const HealthcareCaseStudy = lazy(() => import("@/pages/case-studies/HealthcareCaseStudy"));
@@ -48,7 +49,7 @@ const AppContent = () => {
   useErrorTracking();
 
   // Determine if we're on standalone pages (no nav/footer)
-  const isStandalonePage = false;
+  const isStandalonePage = location.pathname === '/outbound';
 
   // Scroll restoration - scroll to top on route change, then handle hash if present
   useEffect(() => {
@@ -113,6 +114,7 @@ const AppContent = () => {
             <Route path="/diagnostic/healthcare" element={<Navigate to="/assessment?vertical=healthcare" replace />} />
             <Route path="/diagnostic/law" element={<Navigate to="/assessment?vertical=law" replace />} />
             
+            <Route path="/outbound" element={<Outbound />} />
             <Route path="/sample-report" element={<SampleReport />} />
             
             <Route path="/operatorsprint" element={<Navigate to="/assessment" replace />} />
