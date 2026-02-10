@@ -5,7 +5,7 @@ import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButto
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
-import { CheckCircle, X } from "lucide-react";
+
 import { POSITIONING, ROUTES } from "@/lib/canonical-constants";
 
 const Home = () => {
@@ -173,8 +173,7 @@ const Home = () => {
               <div className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Good Fit</div>
               <div className="space-y-3">
                 {fitCriteria.filter(c => c.fit).map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 text-foreground">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" strokeWidth={2} />
+                  <div key={index} className="text-foreground">
                     <span>{item.label}</span>
                   </div>
                 ))}
@@ -184,8 +183,7 @@ const Home = () => {
               <div className="text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4">Not a Fit</div>
               <div className="space-y-3">
                 {fitCriteria.filter(c => !c.fit).map((item, index) => (
-                  <div key={index} className="flex items-center gap-3 text-muted-foreground">
-                    <X className="w-5 h-5 flex-shrink-0" strokeWidth={2} />
+                  <div key={index} className="text-muted-foreground">
                     <span>{item.label}</span>
                   </div>
                 ))}

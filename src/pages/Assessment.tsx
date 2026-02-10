@@ -1,5 +1,5 @@
 import { Section } from "@/components/ui/section";
-import { CheckCircle, FileText, BarChart3, Target, X } from "lucide-react";
+
 import SEOHead from "@/components/SEOHead";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
@@ -8,17 +8,14 @@ import { CTA, TIMELINES } from "@/lib/canonical-constants";
 const InfrastructureAssessment = () => {
   const deliverables = [
     {
-      icon: BarChart3,
       title: "System Health Report",
       description: "Data accuracy, automation reliability, integration health, adoption rates."
     },
     {
-      icon: Target,
       title: "What's Broken & What It's Costing You",
       description: "Gaps, risks, adoption failures, cost of inaction."
     },
     {
-      icon: FileText,
       title: "Implementation Pathway",
       description: "Two paths: focused implementation or enterprise architecture."
     }
@@ -191,30 +188,12 @@ const InfrastructureAssessment = () => {
               Do Not Book If
             </h3>
             <ul className="space-y-2 text-base text-foreground">
-              <li className="flex items-start gap-3 min-h-[44px] py-2">
-                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                <span>Seeking validation.</span>
-              </li>
-              <li className="flex items-start gap-3 min-h-[44px] py-2">
-                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                <span>Unwilling to rebuild.</span>
-              </li>
-              <li className="flex items-start gap-3 min-h-[44px] py-2">
-                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                <span>Comparing on price.</span>
-              </li>
-              <li className="flex items-start gap-3 min-h-[44px] py-2">
-                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                <span>Nothing built yet.</span>
-              </li>
-              <li className="flex items-start gap-3 min-h-[44px] py-2">
-                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                <span>Education without ownership transfer.</span>
-              </li>
-              <li className="flex items-start gap-3 min-h-[44px] py-2">
-                <X className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
-                <span>Addicted to optionality.</span>
-              </li>
+              <li className="min-h-[44px] py-2">Seeking validation.</li>
+              <li className="min-h-[44px] py-2">Unwilling to rebuild.</li>
+              <li className="min-h-[44px] py-2">Comparing on price.</li>
+              <li className="min-h-[44px] py-2">Nothing built yet.</li>
+              <li className="min-h-[44px] py-2">Education without ownership transfer.</li>
+              <li className="min-h-[44px] py-2">Addicted to optionality.</li>
             </ul>
           </div>
         </div>
@@ -223,10 +202,7 @@ const InfrastructureAssessment = () => {
       {/* Qualification Patterns - VoC Based */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">Recognize Any of These?</h2>
-          </div>
+          <h2 className="heading-section mb-10">Recognize Any of These?</h2>
 
           <div className="grid md:grid-cols-2 gap-4">
             {qualificationPatterns.map((pattern, index) => (
@@ -249,18 +225,12 @@ const InfrastructureAssessment = () => {
       {/* What's Included */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">What's Included</h2>
-          </div>
+          <h2 className="heading-section mb-10">What's Included</h2>
 
           <div className="space-y-6 mb-10">
             {deliverables.map((item, index) => (
               <div key={index} className="border-l-4 border-primary pl-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <item.icon className="w-6 h-6 text-primary" />
-                  <h3 className="heading-subsection">{item.title}</h3>
-                </div>
+                <h3 className="heading-subsection mb-3">{item.title}</h3>
                 <p className="text-description text-muted-foreground">
                   {item.description}
                 </p>
@@ -273,7 +243,7 @@ const InfrastructureAssessment = () => {
             <div className="grid md:grid-cols-2 gap-3 md:gap-4">
               {included.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+                  <span className="font-mono text-primary text-sm flex-shrink-0">—</span>
                   <p className="text-description text-foreground">{item}</p>
                 </div>
               ))}
@@ -285,18 +255,15 @@ const InfrastructureAssessment = () => {
       {/* Process Timeline */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="flex items-center gap-4 mb-10">
-            <div className="w-12 h-px bg-primary" />
-            <h2 className="heading-section">{TIMELINES.assessment} Process</h2>
-          </div>
+          <h2 className="heading-section mb-10">{TIMELINES.assessment} Process</h2>
 
           <div className="space-y-8">
             {process.map((phase, index) => (
               <div key={index} className="border border-border bg-card p-4 md:p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">
-                    {index + 1}
-                  </div>
+                  <span className="font-mono text-2xl text-primary font-bold">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                   <div>
                     <div className="font-mono text-xs uppercase tracking-widest text-primary mb-1">
                       {phase.phase}
@@ -307,7 +274,7 @@ const InfrastructureAssessment = () => {
                 <ul className="space-y-3">
                   {phase.activities.map((activity, actIndex) => (
                     <li key={actIndex} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" strokeWidth={2} />
+                      <span className="font-mono text-primary text-sm flex-shrink-0">—</span>
                       <span className="text-description text-foreground">{activity}</span>
                     </li>
                   ))}
