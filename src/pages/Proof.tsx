@@ -219,12 +219,12 @@ const Proof = () => {
             2-week diagnostic. You'll know exactly what's broken and what it's costing.
           </p>
           <ConversionOptimizedButton 
-            to="/assessment" 
-            ctaName="Proof Page - Book Assessment" 
+            to="/diagnostic" 
+            ctaName="Proof Page - Book Diagnostic" 
             location="Proof Page CTA" 
             size="lg"
           >
-            Book Assessment
+            Book Diagnostic
           </ConversionOptimizedButton>
         </div>
       </Section>

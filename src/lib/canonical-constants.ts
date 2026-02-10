@@ -10,14 +10,14 @@
 export const POSITIONING = {
   primary: "Revenue systems break. We find where.",
   tagline: "Systems Architecture",
-  supportingLine: "2-week audit. We diagnose where deals stall, forecasts fail, and customers lose trust.",
+  supportingLine: "2-week diagnostic. We find where deals stall, forecasts fail, and customers lose trust.",
   targetLine: "For teams where system failure means lost deals, not just lost time.",
   velocity: "Systems that hold under load.",
 } as const;
 
 // ===== SERVICE NAMES =====
 export const SERVICES = {
-  assessment: "Revenue Infrastructure Assessment",
+  diagnostic: "Revenue Infrastructure Diagnostic",
 } as const;
 
 // ===== CTA TEXT =====
@@ -25,8 +25,8 @@ export const CTA = {
   // Primary CTA
   findWhatsBreaking: "Find Out What's Breaking",
   
-  // Assessment CTAs (2-week diagnostic)
-  bookAssessment: "Book Assessment",
+  // Diagnostic CTAs (2-week diagnostic)
+  bookDiagnostic: "Book Diagnostic",
   
   // Secondary CTAs
   seeProof: "See Proof",
@@ -39,7 +39,7 @@ export const CTA = {
 
 // ===== CTA ROUTES =====
 export const ROUTES = {
-  assessment: "/assessment",
+  diagnostic: "/diagnostic",
   proof: "/proof",
   contact: "/contact",
   about: "/about",
@@ -60,12 +60,12 @@ export const PARTNERS = {
 
 // ===== TIMELINES =====
 export const TIMELINES = {
-  assessment: "2 weeks",
+  diagnostic: "2 weeks",
 } as const;
 
 // ===== VALUE PROPOSITIONS =====
 export const VALUE_PROPS = {
-  assessmentRequired: "We start with the assessment",
+  diagnosticRequired: "We start with the diagnostic",
   implementationPath: "Implementation engagement or enterprise architecture engagement",
 } as const;
 

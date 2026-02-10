@@ -52,9 +52,9 @@ export const NinetyDaySystemArticle = () => {
       <p><strong>Key Activities:</strong></p>
       <ul>
         <li>Current-state process mapping (what actually happens, not what should happen)</li>
-        <li>Data audit: where revenue data lives, how it flows, what's missing</li>
+        <li>Data diagnostic: where revenue data lives, how it flows, what's missing</li>
         <li>Stakeholder interviews: sales, ops, finance—everyone who touches the system</li>
-        <li>Technical assessment: existing Salesforce config, integrations, technical debt</li>
+        <li>Technical review: existing system config, integrations, technical debt</li>
       </ul>
 
       <p><strong>Deliverables:</strong></p>
@@ -167,8 +167,8 @@ export const NinetyDaySystemArticle = () => {
 
       <div className="mt-16 pt-8 border-t border-border">
         <Button asChild size="lg">
-          <a href="/assessment">
-            Begin Technical Assessment
+          <a href="/diagnostic">
+            Begin System Diagnostic
             <ArrowRight className="ml-2 h-4 w-4" />
           </a>
         </Button>

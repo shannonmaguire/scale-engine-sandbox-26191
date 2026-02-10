@@ -39,9 +39,9 @@ const TermsOfService = memo(() => {
                   CWT Studio provides revenue infrastructure installation and optimization services. Our Services include:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Assessment: Deep diagnostic of revenue infrastructure with 90-day roadmaps</li>
-                  <li>Sprint: 8-12 week implementation of CRM, automation, and pipeline infrastructure</li>
-                  <li>Fractional Ops: Ongoing revenue operations support and optimization</li>
+                  <li>Diagnostic: 2-week system diagnostic with findings report and implementation pathway</li>
+                  <li>Implementation: Focused system builds based on diagnostic findings</li>
+                  <li>Enterprise Architecture: Architect-led system rebuilds</li>
                   <li>Web Systems: Custom web application development and optimization</li>
                   <li>Salesforce: Implementation, optimization, and technical support</li>
                   <li>AE Technical Support: Deal support and objection handling for account executives</li>

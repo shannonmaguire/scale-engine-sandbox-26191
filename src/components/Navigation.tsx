@@ -54,7 +54,7 @@ const Navigation = () => {
           {/* Primary CTA - Console Button */}
           <div className="hidden md:block">
             <Button asChild className="btn-console">
-              <Link to="/assessment">Find Out What's Breaking</Link>
+              <Link to="/diagnostic">Find Out What's Breaking</Link>
             </Button>
           </div>
 
@@ -90,7 +90,7 @@ const Navigation = () => {
               {/* CTA Button */}
               <div className="pt-4">
                 <Link
-                  to="/assessment"
+                  to="/diagnostic"
                   className="block px-5 py-4 text-base font-bold bg-white text-black rounded border-2 border-white transition-all min-h-[56px] flex items-center justify-center hover:bg-black hover:text-white"
                   onClick={() => setIsOpen(false)}
                 >

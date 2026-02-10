@@ -12,7 +12,7 @@ export const BreakagePointsArticle = () => {
 
       <h2>The Pattern Is Predictable</h2>
       <p>
-        After auditing 40+ companies in this range, the failure modes are consistent. Revenue grows faster than infrastructure. Spreadsheets replace processes. "Temporary" workarounds become permanent load-bearing architecture.
+        After 40+ diagnostics in this range, the failure modes are consistent. Revenue grows faster than infrastructure. Spreadsheets replace processes. "Temporary" workarounds become permanent load-bearing architecture.
       </p>
 
       <p>
@@ -186,15 +186,11 @@ export const BreakagePointsArticle = () => {
 
       <h2>How We Catch This Early</h2>
       <p>
-        Our technical assessment specifically looks for these five breaking points. We analyze:
+        Our diagnostic specifically looks for these five breaking points. We analyze:
       </p>
 
       <ul>
-        <li><strong>Lead velocity vs. assignment speed:</strong> Growing gap = routing problem incoming</li>
-        <li><strong>Forecast variance trend:</strong> Increasing volatility = stage definition breakdown</li>
-        <li><strong>Manual task volume per rep:</strong> Rising admin time = automation gap</li>
-        <li><strong>Data quality score by object:</strong> Declining = validation rules missing</li>
-        <li><strong>Quote-to-cash cycle time:</strong> Lengthening = approval bottleneck</li>
+...
       </ul>
 
       <p>
@@ -203,13 +199,13 @@ export const BreakagePointsArticle = () => {
 
       <div className="my-16 flex justify-center">
         <ConversionOptimizedButton 
-          to="/assessment"
+          to="/diagnostic"
           variant="default"
           size="lg"
-          ctaName="Get a Technical Assessment"
+          ctaName="Get a System Diagnostic"
           location="breakage-points-article-bottom"
         >
-          Get a Technical Assessment
+          Get a System Diagnostic
         </ConversionOptimizedButton>
       </div>
 

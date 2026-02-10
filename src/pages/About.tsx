@@ -281,12 +281,12 @@ const About = () => {
           <h2 className="heading-section mb-8">Find Out What's Breaking</h2>
 
           <ConversionOptimizedButton 
-            to={ROUTES.assessment}
-            ctaName="About - Book Assessment" 
+            to={ROUTES.diagnostic}
+            ctaName="About - Book Diagnostic" 
             location="About CTA Section"
             size="lg"
           >
-            {CTA.bookAssessment}
+            {CTA.bookDiagnostic}
           </ConversionOptimizedButton>
         </div>
       </Section>

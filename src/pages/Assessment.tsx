@@ -5,7 +5,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { CTA, TIMELINES } from "@/lib/canonical-constants";
 
-const InfrastructureAssessment = () => {
+const InfrastructureDiagnostic = () => {
   const deliverables = [
     {
       title: "System Health Report",
@@ -24,17 +24,17 @@ const InfrastructureAssessment = () => {
   const process = [
     {
       phase: "Week 1",
-      title: "Discovery & Audit",
+      title: "Discovery & Analysis",
       activities: [
         "System access and stakeholder interviews",
-        "Configuration audit and data quality analysis",
+        "Configuration review and data quality analysis",
         "Workflow documentation and bottleneck mapping",
-        "Integration inventory and API assessment"
+        "Integration inventory and dependency mapping"
       ]
     },
     {
       phase: "Week 2",
-      title: "Analysis & Roadmap",
+      title: "Findings & Roadmap",
       activities: [
         "Benchmark comparison and maturity scoring",
         "Gap prioritization and effort estimation",
@@ -60,7 +60,7 @@ const InfrastructureAssessment = () => {
     {
       category: "ACCESS CONTROL",
       question: "Do team members share system credentials?",
-      signal: "Shared logins, no audit trail, unclear who has access to what."
+      signal: "Shared logins, no trail, unclear who has access to what."
     },
     {
       category: "FOLLOW-UP",
@@ -97,26 +97,26 @@ const InfrastructureAssessment = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="System Audit | CWT Studio"
-        description="2-week audit. We diagnose where deals stall, forecasts fail, and customers lose trust."
+        title="System Diagnostic | CWT Studio"
+        description="2-week diagnostic. We find where deals stall, forecasts fail, and customers lose trust."
         keywords={[
-          'systems audit',
+          'systems diagnostic',
           'revenue systems diagnostic',
-          'technical maturity assessment',
-          'RevOps assessment',
+          'technical maturity diagnostic',
+          'RevOps diagnostic',
           'implementation roadmap'
         ]}
-        canonicalUrl="/assessment"
+        canonicalUrl="/diagnostic"
         serviceSchema={{
-          name: 'System Audit',
+          name: 'System Diagnostic',
           description: 'Comprehensive 2-week systems diagnostic delivering system scorecard, gap analysis, and prioritized implementation pathway.',
           offers: [
             {
               name: 'Revenue Infrastructure Scorecard',
-              description: 'Quantitative audit across data, automation, integration, governance, reporting, and adoption'
+              description: 'Quantitative diagnostic across data, automation, integration, governance, reporting, and adoption'
             },
             {
-              name: 'Gap Analysis & Risk Assessment',
+              name: 'Gap Analysis & Risk Identification',
               description: 'Technical debt inventory and system vulnerability mapping'
             },
             {
@@ -127,20 +127,20 @@ const InfrastructureAssessment = () => {
         }}
         faqSchema={[
           {
-            question: 'What is a revenue infrastructure assessment?',
-            answer: 'A comprehensive 2-week diagnostic audit of your revenue systems including CRM, marketing automation, and data infrastructure. Deliverables include a quantitative scorecard, gap analysis, risk assessment, and prioritized implementation pathway.'
+            question: 'What is a revenue infrastructure diagnostic?',
+            answer: 'A comprehensive 2-week diagnostic of your revenue systems including CRM, marketing automation, and data infrastructure. Deliverables include a quantitative scorecard, gap analysis, risk identification, and prioritized implementation pathway.'
           },
           {
-            question: 'How is the assessment scoped?',
-            answer: 'Assessment scope is determined during the initial conversation based on infrastructure complexity. This is a required entry point before any implementation engagement.'
+            question: 'How is the diagnostic scoped?',
+            answer: 'Diagnostic scope is determined during the initial conversation based on infrastructure complexity. This is a required entry point before any implementation engagement.'
           },
           {
-            question: 'What happens after the assessment?',
-            answer: 'The assessment ends in one of two outcomes: an implementation engagement for focused fixes, or an enterprise architecture engagement for foundational rebuilds.'
+            question: 'What happens after the diagnostic?',
+            answer: 'The diagnostic ends in one of two outcomes: an implementation engagement for focused fixes, or an enterprise architecture engagement for foundational rebuilds.'
           },
           {
-            question: 'Do I need an assessment before working with CWT Studio?',
-            answer: 'Yes. We start with the assessment. This ensures accurate scoping, sets realistic expectations, and qualifies whether we are the right fit for each other.'
+            question: 'Do I need a diagnostic before working with CWT Studio?',
+            answer: 'Yes. We start with the diagnostic. This ensures accurate scoping, sets realistic expectations, and qualifies whether we are the right fit for each other.'
           }
         ]}
       />
@@ -150,23 +150,23 @@ const InfrastructureAssessment = () => {
       {/* Hero */}
       <Section className="border-b border-border">
         <div className="max-w-4xl">
-          <div className="system-status mb-8">REVENUE INFRASTRUCTURE ASSESSMENT</div>
+          <div className="system-status mb-8">REVENUE INFRASTRUCTURE DIAGNOSTIC</div>
           
           <h1 className="heading-page mb-6 leading-[1.1]">
             Find Out What's Breaking
           </h1>
           
           <p className="text-description text-foreground/80 leading-relaxed max-w-2xl mb-10">
-            {TIMELINES.assessment} diagnostic. System bottlenecks, data leaks, process gaps.
+            {TIMELINES.diagnostic} diagnostic. System bottlenecks, data leaks, process gaps.
           </p>
 
           <ConversionOptimizedButton
-            to="/contact?interest=assessment&source_page=assessment"
-            ctaName="Assessment - Book Assessment Hero"
-            location="Assessment Hero"
+            to="/contact?interest=diagnostic&source_page=diagnostic"
+            ctaName="Diagnostic - Book Diagnostic Hero"
+            location="Diagnostic Hero"
             size="lg"
           >
-            {CTA.bookAssessment}
+            {CTA.bookDiagnostic}
           </ConversionOptimizedButton>
         </div>
       </Section>
@@ -235,7 +235,7 @@ const InfrastructureAssessment = () => {
       {/* Process Timeline */}
       <Section variant="muted" className="border-b border-border">
         <div className="max-w-4xl">
-          <h2 className="heading-section mb-10">{TIMELINES.assessment} Process</h2>
+          <h2 className="heading-section mb-10">{TIMELINES.diagnostic} Process</h2>
 
           <div className="space-y-8">
             {process.map((phase, index) => (
@@ -273,7 +273,7 @@ const InfrastructureAssessment = () => {
           <h2 className="heading-section mb-4">What Happens Next</h2>
 
           <p className="text-description text-foreground/80 mb-8 max-w-2xl">
-            The assessment ends in one of two paths:
+            The diagnostic ends in one of two paths:
           </p>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -296,7 +296,7 @@ const InfrastructureAssessment = () => {
           </div>
 
           <p className="text-description text-muted-foreground mt-8 text-center">
-            The assessment report includes a clear recommendation for which path applies to you.
+            The diagnostic report includes a clear recommendation for which path applies to you.
           </p>
         </div>
       </Section>
@@ -308,18 +308,18 @@ const InfrastructureAssessment = () => {
             <span className="text-primary font-semibold">Start Here</span>
           </div>
 
-          <h2 className="heading-section mb-6">Book Your Assessment</h2>
+          <h2 className="heading-section mb-6">Book Your Diagnostic</h2>
           <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
-            {TIMELINES.assessment} diagnostic. You'll know what's broken, what it's costing, and what to fix first.
+            {TIMELINES.diagnostic} diagnostic. You'll know what's broken, what it's costing, and what to fix first.
           </p>
 
           <ConversionOptimizedButton
-            to="/contact?interest=assessment&source_page=assessment"
-            ctaName="Assessment - Book Assessment CTA"
-            location="Assessment CTA"
+            to="/contact?interest=diagnostic&source_page=diagnostic"
+            ctaName="Diagnostic - Book Diagnostic CTA"
+            location="Diagnostic CTA"
             size="lg"
           >
-            {CTA.bookAssessment}
+            {CTA.bookDiagnostic}
           </ConversionOptimizedButton>
         </div>
       </Section>
@@ -327,4 +327,4 @@ const InfrastructureAssessment = () => {
   );
 };
 
-export default InfrastructureAssessment;
+export default InfrastructureDiagnostic;

@@ -181,11 +181,11 @@ const Blog = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-4">Ready to Fix Your Systems?</h2>
           <p className="text-muted-foreground mb-8">
-            Book an assessment to identify what's breaking and what to fix first.
+            Book a diagnostic to find what's breaking and what to fix first.
           </p>
           <Button asChild size="lg">
-            <Link to="/assessment">
-              Book Assessment
+            <Link to="/diagnostic">
+              Book Diagnostic
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
