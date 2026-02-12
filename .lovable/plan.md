@@ -1,61 +1,66 @@
 
 
-# Strip Visual Clutter Site-Wide
+## Diagnostic Page Rebuild: From Generic Consultant to Category A Authority
 
-## The Problem
+### Current Problems Identified
 
-The site uses icons as visual crutches: checkmarks next to every list item, X marks for exclusions, arrow icons on every button, decorative corner accents on diagram cards, and decorative line dividers before section headings. These small decorations accumulate into noise. The best operator-grade sites let the words carry the weight.
+**Structure & Length:** 6 sections across multiple viewports. Feels padded and consultant-standard. Compare to Home (4 tight sections) and About (5 purpose-built sections).
 
-## What Changes
+**Language Issues:**
+- "System Health Report" + "Benchmark comparison" + "maturity scoring" = consultant jargon, not failure modes
+- "What's Included" lists deliverables (how consultants sell) not consequences (how architects sell)
+- Process timeline reads like a generic 2-week sprint, not a diagnostic discipline
+- "Do Not Book If" uses internal language ("Addicted to optionality") rather than recognizable buyer behavior
 
-### 1. Remove arrow icons from all CTA buttons
-**File: `src/components/ConversionOptimizedButton.tsx`**
-- Remove the `ArrowRight` icon that appends to every single CTA button site-wide
-- Remove the `showArrow` prop entirely
-- Buttons become text-only, which reads cleaner and more confident
+**Missing Authority Signals:**
+- No proof point or case study on the entry page
+- No price signal ($2,000) to anchor qualification
+- No Category A validation language
 
-### 2. Strip CheckCircle icons from the Home page
-**File: `src/pages/Home.tsx`**
-- "Who This Is For" section: Replace `CheckCircle` icons with plain text dashes or no prefix
-- Replace `X` icons with plain text dashes or no prefix
-- Let the "Good Fit" / "Not a Fit" labels do the work instead of colored icons
+**CTA Redundancy:** Hero CTA + Final section CTA with near-identical copy. Home has hero + one secondary, About has one strategic placement.
 
-### 3. Strip CheckSquare icons from the About page
-**File: `src/pages/About.tsx`**
-- "How I Work" diagnostic questions: Remove `CheckSquare` icons, use numbered items or plain text
-- Remove the `Linkedin` icon from the button (keep the text "LinkedIn")
+### Rebuild Approach
 
-### 4. Strip CheckCircle icons from the Assessment page
-**File: `src/pages/Assessment.tsx`**
-- "Complete Scope" list: Remove `CheckCircle` icons from every list item, use plain dashes or mono-spaced bullets
-- "Process Timeline" activities: Remove `CheckCircle` icons, use plain text
-- "Do Not Book If" section: Remove `X` icons, use plain text
-- Remove `BarChart3`, `Target`, `FileText` icons from deliverable cards (the titles are clear enough)
-- Remove the rounded-full number circles from the process timeline (use mono text numbers instead, consistent with the squared aesthetic)
+**Structure: Compress to 5 tight sections (fit one viewport scroll)**
 
-### 5. Simplify the Architecture Diagram
-**File: `src/components/RevenueArchitectureDiagram.tsx`**
-- Remove the 6 layer icons (`Server`, `Database`, `GitBranch`, `Zap`, `BarChart3`, `FileText`)
-- Remove the decorative corner accent marks (the 8 tiny border elements on each card)
-- Remove `AlertTriangle` icon from "If skipped" sections
-- Let the layer numbers, labels, and text carry the meaning
+1. **Hero** (with system-status badge)
+   - Positioning line
+   - H1: "Find Out What's Breaking"
+   - Single supporting line: VoC-grounded consequence (not feature list)
+   - Single CTA: "Book Diagnostic"
 
-### 6. Clean up the Contact page
-**File: `src/pages/Contact.tsx`**
-- Remove `ArrowRight` from the submit button (use text only)
-- Keep `Loader2` spinner (functional, not decorative)
-- Keep `CheckCircle2` and `AlertCircle` for form status messages (functional feedback)
-- Remove `Clock`, `Mail`, `MessageSquare` icons from sidebar info cards (the headings are sufficient)
+2. **Exclusion Framework** (variant="muted")
+   - `Do Not Book If` section with **buyer behavior** instead of jargon
+   - Example: "Nothing built yet" + "You're comparing on price" + "You want validation"
+   - Keep destructive styling but rewrite signals to match Home's binary language
 
-### 7. Remove decorative line dividers from section headings
-**Files: `src/pages/Assessment.tsx`, `src/components/RevenueArchitectureDiagram.tsx`**
-- Remove the `<div className="w-12 h-px bg-primary" />` decorative lines that appear before some section headings but not others (inconsistent and adds clutter)
+3. **Qualification Patterns** (Keep, but tighten)
+   - Keep the 6 VoC patterns (DATA GOVERNANCE, INTEGRATION, etc.)
+   - These are Category A validation language
+   - Compress grid to more visual density
 
-## What Stays
-- Functional icons: Loader spinner, form validation status icons
-- The `→` arrow in Proof page metric comparisons (Before → After) since it communicates data transformation
-- The `→` arrow in How We Work sequencing rules (Rule → Consequence) for the same reason
-- Navigation hamburger menu icon (functional)
+4. **What You'll Know** (replaces "What's Included")
+   - Consequence-based framing: "After the diagnostic, you'll know..."
+   - 3 bullets max: What's broken | What it costs | What to fix first
+   - Tie each to a failure mode (not a deliverable)
 
-## Result
-Every page becomes text-driven. The typography, spacing, and content do the work. No decorative icons competing for attention. Matches the operator-grade, documentation-style aesthetic the site is built on.
+5. **Book Your Diagnostic** CTA (variant="muted")
+   - Price signal ($2,000) visible on page
+   - Final outcome anchor: "2 weeks. You'll know what's broken."
+   - Single button
+
+**Tone Shift:**
+- Remove all consultant deliverable language
+- Replace with consequence language (e.g., "You can't see in dashboards" not "bottleneck mapping")
+- Match the direct, operator voice of Home + About
+
+**Technical Details:**
+- Rewrite exclusion list to use Category A buyer language (no jargon)
+- Keep qualification patterns but enhance copy
+- Remove "Process Timeline" section entirely (it's not buying signal, it's consultant theater)
+- Remove "Outcomes" section entirely (step-up structure doesn't belong on diagnostic entry page; that lives on Contact/post-conversation)
+- Remove double CTAs; use single strategic placement
+- Add $2,000 price anchor somewhere visible
+
+**Result:** Page compresses from ~6,500px to ~3,500px (single viewport scroll area), matches Home/About structure, uses Category A language throughout, and increases qualification precision by removing explanation scaffolding.
+
