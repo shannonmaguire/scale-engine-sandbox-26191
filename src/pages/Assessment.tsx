@@ -149,26 +149,26 @@ const InfrastructureDiagnostic = () => {
           <h2 className="heading-section mb-10">What You'll Know</h2>
 
           <p className="text-description text-muted-foreground mb-8 max-w-2xl">
-            Most teams discover the blocking layer isn't the software—it's the governance structure that was never built.
+            Most teams discover the blocking layer isn't the software. It's the governance structure that was never built.
           </p>
 
           <div className="space-y-6">
             <div className="border-l-4 border-primary pl-6">
               <h3 className="heading-subsection mb-3">What's broken</h3>
               <p className="text-description text-muted-foreground">
-                The specific systems, integrations, and processes that are failing — not a scorecard, a diagnosis.
+                The specific systems, integrations, and processes that are failing. A diagnosis, not a scorecard.
               </p>
             </div>
             <div className="border-l-4 border-primary pl-6">
               <h3 className="heading-subsection mb-3">What it costs</h3>
               <p className="text-description text-muted-foreground">
-                The revenue leaking, the hours wasted, the decisions made on bad data — quantified.
+                The revenue leaking, the hours wasted, the decisions made on bad data. Quantified.
               </p>
             </div>
             <div className="border-l-4 border-primary pl-6">
               <h3 className="heading-subsection mb-3">What to fix first</h3>
               <p className="text-description text-muted-foreground">
-                Prioritized by impact. Not a backlog — a sequence.
+                Prioritized by impact. A sequence, not a backlog.
               </p>
             </div>
           </div>
