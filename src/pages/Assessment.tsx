@@ -42,7 +42,7 @@ const InfrastructureDiagnostic = () => {
     <div className="min-h-screen">
       <SEOHead
         title="System Diagnostic | CWT Studio"
-        description="$2,000 diagnostic. 2 weeks. You'll know what's broken, what it costs, and what to fix first."
+        description="Without diagnosis, revenue leaks silently. $2,000 diagnostic reveals what's broken, what it costs, and what to fix first. 2 weeks."
         keywords={[
           "systems diagnostic",
           "revenue systems diagnostic",
