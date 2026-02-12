@@ -156,7 +156,7 @@ const InfrastructureDiagnostic = () => {
             <div className="border-l-4 border-primary pl-6">
               <h3 className="heading-subsection mb-3">What's broken</h3>
               <p className="text-description text-muted-foreground">
-                The specific systems, integrations, and processes that are failing. A diagnosis, not a scorecard.
+                The specific systems, integrations, and processes that are failing. Diagnosed and mapped.
               </p>
             </div>
             <div className="border-l-4 border-primary pl-6">
@@ -168,7 +168,7 @@ const InfrastructureDiagnostic = () => {
             <div className="border-l-4 border-primary pl-6">
               <h3 className="heading-subsection mb-3">What to fix first</h3>
               <p className="text-description text-muted-foreground">
-                Prioritized by impact. A sequence, not a backlog.
+                Prioritized by impact. Sequenced for execution.
               </p>
             </div>
           </div>
