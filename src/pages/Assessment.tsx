@@ -148,6 +148,10 @@ const InfrastructureDiagnostic = () => {
         <div className="max-w-4xl">
           <h2 className="heading-section mb-10">What You'll Know</h2>
 
+          <p className="text-description text-muted-foreground mb-8 max-w-2xl">
+            Most teams discover the blocking layer isn't the software—it's the governance structure that was never built.
+          </p>
+
           <div className="space-y-6">
             <div className="border-l-4 border-primary pl-6">
               <h3 className="heading-subsection mb-3">What's broken</h3>
