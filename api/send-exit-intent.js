@@ -9,7 +9,7 @@ import {
 const RECIPIENT =
   process.env.EXIT_INTENT_RECIPIENT ||
   process.env.CONTACT_RECIPIENT ||
-  "hello@thecwtstudio.com";
+  "shannon@thecwtstudio.com";
 const FROM_ADDRESS =
   process.env.CONTACT_FROM || "CWT Studio Guides <onboarding@resend.dev>";
 
