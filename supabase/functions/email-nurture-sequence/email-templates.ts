@@ -135,7 +135,7 @@ Founder, CWT Studio`,
         
         <p><strong>Timeline:</strong> 2 weeks from kickoff to delivery.</p>
         
-        <p><a href="https://cwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
+        <p><a href="https://thecwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -156,7 +156,7 @@ What you get:
 
 Timeline: 2 weeks from kickoff to delivery.
 
-Start Assessment: https://cwtstudio.com/assessment
+Start Assessment: https://thecwtstudio.com/assessment
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -259,7 +259,7 @@ Founder, CWT Studio`,
         
         <p><strong>Average outcome:</strong> 18-25% improvement in forecast accuracy within 90 days.</p>
         
-        <p><a href="https://cwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
+        <p><a href="https://thecwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -280,7 +280,7 @@ What you get:
 
 Average outcome: 18-25% improvement in forecast accuracy within 90 days.
 
-Start Assessment: https://cwtstudio.com/assessment
+Start Assessment: https://thecwtstudio.com/assessment
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -394,7 +394,7 @@ Founder, CWT Studio`,
         
         <p><strong>Typical finding:</strong> 60% of "urgent" items teams want to fix aren't blockers. We resequence to focus on the 3-4 changes that actually move metrics.</p>
         
-        <p><a href="https://cwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
+        <p><a href="https://thecwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -415,7 +415,7 @@ What you get:
 
 Typical finding: 60% of "urgent" items teams want to fix aren't blockers. We resequence to focus on the 3-4 changes that actually move metrics.
 
-Start Assessment: https://cwtstudio.com/assessment
+Start Assessment: https://thecwtstudio.com/assessment
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -523,7 +523,7 @@ Founder, CWT Studio`,
         
         <p><strong>Timeline:</strong> 2 weeks Assessment + 90 days Sprint = 14 weeks total to working system.</p>
         
-        <p><a href="https://cwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
+        <p><a href="https://thecwtstudio.com/assessment" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Assessment</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -544,7 +544,7 @@ What you get:
 
 Timeline: 2 weeks Assessment + 90 days Sprint = 14 weeks total to working system.
 
-Start Assessment: https://cwtstudio.com/assessment
+Start Assessment: https://thecwtstudio.com/assessment
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -654,7 +654,7 @@ Founder, CWT Studio`,
         
         <p><strong>Ideal partner profile:</strong> AEs selling into RevOps, Salesforce admins, or IT leaders at $2M-$50M ARR B2B companies.</p>
         
-        <p><a href="https://cwtstudio.com/salesforce-partners" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Apply for Partnership</a></p>
+        <p><a href="https://thecwtstudio.com/salesforce-partners" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Apply for Partnership</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -675,7 +675,7 @@ What you get as a partner:
 
 Ideal partner profile: AEs selling into RevOps, Salesforce admins, or IT leaders at $2M-$50M ARR B2B companies.
 
-Apply for Partnership: https://cwtstudio.com/salesforce-partners
+Apply for Partnership: https://thecwtstudio.com/salesforce-partners
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -783,7 +783,7 @@ Founder, CWT Studio`,
         
         <p><strong>Timeline:</strong> 6-8 weeks from kickoff to launch (assuming 40+ checklist score).</p>
         
-        <p><a href="https://cwtstudio.com/web-systems" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Web Project</a></p>
+        <p><a href="https://thecwtstudio.com/web-systems" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Web Project</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -804,7 +804,7 @@ What you get:
 
 Timeline: 6-8 weeks from kickoff to launch (assuming 40+ checklist score).
 
-Start Web Project: https://cwtstudio.com/web-systems
+Start Web Project: https://thecwtstudio.com/web-systems
 
 Shannon Greenberg
 Founder, CWT Studio`,
@@ -913,7 +913,7 @@ Founder, CWT Studio`,
         
         <p><strong>Timeline:</strong> 2-4 weeks from kickoff to full ownership.</p>
         
-        <p><a href="https://cwtstudio.com/web-systems" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Handoff Process</a></p>
+        <p><a href="https://thecwtstudio.com/web-systems" style="display: inline-block; background: #8B0000; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold;">Start Handoff Process</a></p>
         
         <p>Shannon Greenberg<br>
         Founder, CWT Studio</p>
@@ -934,7 +934,7 @@ What you get:
 
 Timeline: 2-4 weeks from kickoff to full ownership.
 
-Start Handoff Process: https://cwtstudio.com/web-systems
+Start Handoff Process: https://thecwtstudio.com/web-systems
 
 Shannon Greenberg
 Founder, CWT Studio`,

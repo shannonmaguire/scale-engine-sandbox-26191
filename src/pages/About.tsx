@@ -113,7 +113,7 @@ const About = () => {
           jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, CloudRoute',
           description: "Finds where revenue systems are failing, then installs enforcement so they cannot fail again. Every system documented. Every handoff clean.",
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
-          image: 'https://cwtstudio.com/assets/shannon-headshot.jpg'
+          image: 'https://thecwtstudio.com/assets/shannon-headshot.jpg'
         }}
         faqSchema={[
           {

@@ -14,6 +14,6 @@ Disallow: /partner-dashboard
 Disallow: /upwork
 Disallow: /start
 
-Sitemap: https://cwtstudio.com/sitemap.xml
+Sitemap: https://thecwtstudio.com/sitemap.xml
 
-Host: cwtstudio.com
+Host: thecwtstudio.com

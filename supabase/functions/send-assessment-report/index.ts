@@ -130,25 +130,25 @@ const handler = async (req: Request): Promise<Response> => {
         label: "Optimized",
         message: "Your environment is technically mature and ready to absorb growth. The focus now shifts to scale plays: outbound programs, new verticals, and advanced experimentation across your stack.",
         cta: "Explore Expansion and New Verticals",
-        ctaUrl: "https://cwtstudio.com/contact?service=Sprint&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20want%20to%20explore%20expansion%20opportunities"
+        ctaUrl: "https://thecwtstudio.com/contact?service=Sprint&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20want%20to%20explore%20expansion%20opportunities"
       };
       if (score >= 21) return {
         label: "Structured",
         message: "Your foundation is strong. Data, CRM, and execution have structure, and the main gaps sit in optimization and scale. You are ready for outbound engines, deeper analytics, and stronger automation layers.",
         cta: "Design Your Revenue Engine Blueprint",
-        ctaUrl: "https://cwtstudio.com/contact?service=Sprint&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20want%20to%20design%20a%20revenue%20engine%20blueprint"
+        ctaUrl: "https://thecwtstudio.com/contact?service=Sprint&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20want%20to%20design%20a%20revenue%20engine%20blueprint"
       };
       if (score >= 11) return {
         label: "Emerging",
         message: "You have pieces in place, yet the system leaks. Data hygiene, automations, and reporting exist in pockets rather than as a connected whole. The next step is to standardize your core workflows and fix the highest-impact breaks.",
         cta: "Schedule a 90-Day Infrastructure Sprint",
-        ctaUrl: "https://cwtstudio.com/sprint"
+        ctaUrl: "https://thecwtstudio.com/sprint"
       };
       return {
         label: "Foundational",
         message: "Your systems are carrying more risk than you see day to day. Data quality, pipeline structure, and execution discipline all need a clean reset before growth efforts will stick. The next step is a focused architecture review and a minimum viable operating system.",
         cta: "Book a Technical Architecture Review",
-        ctaUrl: "https://cwtstudio.com/contact?service=Assessment&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20need%20an%20architecture%20review"
+        ctaUrl: "https://thecwtstudio.com/contact?service=Assessment&message=I%20scored%20" + score + "%20on%20the%20assessment%20and%20need%20an%20architecture%20review"
       };
     };
 
@@ -211,7 +211,7 @@ const handler = async (req: Request): Promise<Response> => {
               <a href="${tierData.ctaUrl}" class="cta">${tierData.cta}</a>
 
               <p style="color: #666; font-size: 14px; margin-top: 30px;">
-                View your full results with category breakdown at <a href="https://cwtstudio.com/assessment-results" style="color: #8B0000;">cwtstudio.com/assessment-results</a>
+                View your full results with category breakdown at <a href="https://thecwtstudio.com/assessment-results" style="color: #8B0000;">cwtstudio.com/assessment-results</a>
               </p>
             </div>
 

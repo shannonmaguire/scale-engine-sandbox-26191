@@ -51,7 +51,7 @@ const SEOHead = ({
   title = 'CWT Studio | Systems Architecture',
   description = 'Revenue systems break. We find where—then install enforcement. For legal, healthcare, compliance, and SaaS teams.',
   keywords = [
-    'cwtstudio.com',
+    'thecwtstudio.com',
     'systems architecture',
     'revenue systems audit',
     'Salesforce implementation',
@@ -59,7 +59,7 @@ const SEOHead = ({
     'revenue operations',
     'high-trust industries'
   ],
-  ogImage = 'https://cwtstudio.com/og-image.jpg',
+  ogImage = 'https://thecwtstudio.com/og-image.jpg',
   canonicalUrl,
   noindex = false,
   type = 'website',
@@ -71,7 +71,7 @@ const SEOHead = ({
   caseStudySchema
 }: SEOHeadProps) => {
   const location = useLocation();
-  const baseUrl = 'https://cwtstudio.com';
+  const baseUrl = 'https://thecwtstudio.com';
   const fullUrl = canonicalUrl
     ? canonicalUrl.startsWith('http')
       ? canonicalUrl
@@ -84,7 +84,7 @@ const SEOHead = ({
 
   const mergedKeywords = Array.from(
     new Set([
-      'cwtstudio.com',
+      'thecwtstudio.com',
       'studio',
       'backend revenue systems',
       'revenue infrastructure',
@@ -92,6 +92,10 @@ const SEOHead = ({
       'Salesforce optimization',
       'revenue operations',
       'high-trust industries',
+      'automation',
+      'automation direct',
+      'inbound',
+      'lead',
       ...resolvedKeywords
     ])
   ).join(', ');
@@ -160,8 +164,8 @@ const SEOHead = ({
     '@type': 'Organization',
     name: 'CWT Studio',
     legalName: 'Creator Wealth Tools LLC',
-    url: 'https://cwtstudio.com',
-    logo: 'https://cwtstudio.com/og-image.jpg',
+    url: 'https://thecwtstudio.com',
+    logo: 'https://thecwtstudio.com/og-image.jpg',
     foundingDate: '2018',
     founder: {
       '@type': 'Person',
@@ -190,7 +194,7 @@ const SEOHead = ({
     name: personSchema.name,
     jobTitle: personSchema.jobTitle,
     description: personSchema.description,
-    url: personSchema.url || 'https://cwtstudio.com/about',
+    url: personSchema.url || 'https://thecwtstudio.com/about',
     worksFor: {
       '@type': 'Organization',
       name: 'CWT Studio'
@@ -222,7 +226,7 @@ const SEOHead = ({
     provider: {
       '@type': 'Organization',
       name: serviceSchema.provider || 'CWT Studio',
-      url: 'https://cwtstudio.com'
+      url: 'https://thecwtstudio.com'
     },
     areaServed: serviceSchema.areaServed || ['United States', 'Canada'],
     serviceType: 'Backend Revenue Systems',
@@ -278,14 +282,14 @@ const SEOHead = ({
     author: {
       '@type': 'Person',
       name: article.author || 'Shannon Maguire',
-      url: 'https://cwtstudio.com/about'
+      url: 'https://thecwtstudio.com/about'
     },
     publisher: {
       '@type': 'Organization',
       name: 'CWT Studio',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://cwtstudio.com/og-image.jpg'
+        url: 'https://thecwtstudio.com/og-image.jpg'
       }
     },
     mainEntityOfPage: {
