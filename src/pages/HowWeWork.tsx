@@ -50,8 +50,11 @@ const HowWeWork = () => {
         <div className="max-w-3xl">
           <div className="system-status mb-8">METHODOLOGY</div>
           <h1 className="heading-page mb-6">How We Work</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl mb-6">
             Skip a layer, and growth exposes the gap.
+          </p>
+          <p className="text-base text-muted-foreground max-w-2xl">
+            Every engagement starts with a 2-week diagnostic. We figure out which layers are broken and what they're costing you. Then we build the fix in dependency order.
           </p>
         </div>
       </Section>
