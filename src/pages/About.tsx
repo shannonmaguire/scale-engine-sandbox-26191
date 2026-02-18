@@ -110,7 +110,7 @@ const About = () => {
         includeOrganizationSchema={true}
         personSchema={{
           name: 'Shannon Maguire',
-          jobTitle: 'Principal System Architect, CWT Studio | Managing Partner, CloudRoute',
+          jobTitle: 'Principal System Architect, CWT Studio',
           description: "Finds where revenue systems are failing, then installs enforcement so they cannot fail again. Every system documented. Every handoff clean.",
           sameAs: ['https://www.linkedin.com/in/shannonmaguire'],
           image: 'https://thecwtstudio.com/assets/shannon-headshot.jpg'
@@ -164,7 +164,7 @@ const About = () => {
             <div>
               <h1 className="heading-section mb-2">Shannon Maguire</h1>
               <p className="text-label text-muted-foreground mb-8">
-                Principal System Architect, CWT Studio | Managing Partner, CloudRoute
+                Principal System Architect, CWT Studio
               </p>
 
               <div className="space-y-4">
@@ -173,7 +173,7 @@ const About = () => {
                 </p>
                 
                 <p className="text-muted-foreground leading-relaxed">
-                  Architect-led builds for enterprise through CloudRoute. Streamlined systems direct. Every system documented. Every handoff clean.
+                  Enterprise architecture through partner capacity. Streamlined systems direct. Every system documented. Every handoff clean.
                 </p>
               </div>
 
