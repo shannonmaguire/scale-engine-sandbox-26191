@@ -207,7 +207,7 @@ const Home = () => {
           <h2 className="heading-section mb-4">Find Out What's Breaking</h2>
           
           <p className="text-muted-foreground mb-8">
-            2-week audit. Active pipeline required.
+            2-week diagnostic. You'll know exactly what's broken and what it's costing you.
           </p>
 
           <ConversionOptimizedButton
