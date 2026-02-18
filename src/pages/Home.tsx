@@ -1,10 +1,11 @@
 import { Section } from "@/components/ui/section";
-import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { ConversionOptimizedButton } from "@/components/ConversionOptimizedButton";
 import { useScrollDepth } from "@/hooks/useScrollDepth";
 import { usePerformanceMonitoring } from "@/hooks/usePerformanceMonitoring";
 import { EngagementTracker } from "@/components/EngagementTracker";
+import { HomepageProofRotation } from "@/components/home/HomepageProofRotation";
+import { HowItWorks } from "@/components/home/HowItWorks";
 
 import { POSITIONING, ROUTES } from "@/lib/canonical-constants";
 
@@ -67,12 +68,7 @@ const Home = () => {
     { fit: false, label: "Comparing consultants on hourly rate" }
   ];
 
-  // Single proof point
-  const proof = {
-    quote: "Zero pipeline. No outreach system. No defined target. We had $500K in qualified pipeline 90 days later.",
-    attribution: "FEDERAL CYBERSECURITY",
-    result: "$0 → $500K pipeline. 90 days."
-  };
+
 
   return (
     <div className="min-h-screen">
@@ -124,8 +120,7 @@ const Home = () => {
               size="lg"
               className="w-full sm:w-auto"
             >
-               <span className="hidden sm:inline text-inherit">Book a System Diagnostic</span>
-               <span className="sm:hidden text-inherit">Book Diagnostic</span>
+               Book a System Diagnostic
             </ConversionOptimizedButton>
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground font-mono">
@@ -193,34 +188,16 @@ const Home = () => {
         </div>
       </Section>
 
+      {/* How It Works */}
+      <Section className="border-t border-border">
+        <HowItWorks />
+      </Section>
+
       {/* What Happened - Proof */}
       <Section className="border-t border-border">
         <div className="max-w-3xl">
           <h2 className="heading-section mb-10">What Happened</h2>
-
-          <div className="border border-border bg-card p-8">
-            <blockquote className="text-xl md:text-2xl text-foreground font-medium mb-6 border-l-2 border-primary pl-6 italic">
-              "{proof.quote}"
-            </blockquote>
-            
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                {proof.attribution}
-              </div>
-              <div className="text-sm text-primary font-medium">{proof.result}</div>
-            </div>
-          </div>
-
-          <div className="mt-8">
-            <ConversionOptimizedButton
-              to="/proof"
-              ctaName="Proof - See All Case Studies"
-              location="Proof Section"
-              variant="outline"
-            >
-              See All 8 Case Studies
-            </ConversionOptimizedButton>
-          </div>
+          <HomepageProofRotation />
         </div>
       </Section>
 
@@ -239,7 +216,7 @@ const Home = () => {
             location="Final CTA Section"
             size="lg"
           >
-            Book Diagnostic
+            Book a System Diagnostic
           </ConversionOptimizedButton>
         </div>
       </Section>
