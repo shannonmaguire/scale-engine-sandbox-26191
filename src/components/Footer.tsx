@@ -73,6 +73,11 @@ const Footer = () => {
                   Cookie Policy
                 </Link>
               </li>
+              <li>
+                <a href="mailto:shannon@thecwtstudio.com?subject=Data%20Rights%20Request" className="text-white/80 hover:text-white transition-colors text-base sm:text-sm inline-block min-h-[44px] sm:min-h-0 flex items-center">
+                  Data Rights
+                </a>
+              </li>
             </ul>
           </div>
 
