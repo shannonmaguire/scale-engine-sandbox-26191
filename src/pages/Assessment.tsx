@@ -42,7 +42,7 @@ const InfrastructureDiagnostic = () => {
     <div className="min-h-screen">
       <SEOHead
         title="System Diagnostic | CWT Studio"
-        description="Without diagnosis, revenue leaks silently. $7,500 diagnostic reveals what's broken, what it costs, and what to fix first. 2 weeks."
+        description="Without diagnosis, revenue leaks silently. 2-week diagnostic reveals what's broken, what it costs, and what to fix first."
         keywords={[
           "systems diagnostic",
           "revenue systems diagnostic",
@@ -53,7 +53,7 @@ const InfrastructureDiagnostic = () => {
         serviceSchema={{
           name: "System Diagnostic",
           description:
-            "$7,500 diagnostic delivering clear identification of system failures, their cost, and prioritized fix sequence.",
+            "Diagnostic delivering clear identification of system failures, their cost, and prioritized fix sequence.",
           offers: [
             {
               name: "System Diagnostic",
@@ -66,7 +66,7 @@ const InfrastructureDiagnostic = () => {
           {
             question: "What is a system diagnostic?",
             answer:
-              "A 2-week, $7,500 diagnostic that identifies where your revenue systems are failing, what those failures cost, and what to fix first.",
+              "A 2-week diagnostic that identifies where your revenue systems are failing, what those failures cost, and what to fix first.",
           },
           {
             question: "Do I need a diagnostic before working with CWT Studio?",
@@ -178,12 +178,9 @@ const InfrastructureDiagnostic = () => {
       {/* Book Diagnostic CTA */}
       <Section variant="muted">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="heading-section mb-6">Book Your Diagnostic</h2>
-          <p className="text-description text-muted-foreground mb-4 max-w-2xl mx-auto">
-            {TIMELINES.diagnostic}. You'll know what's broken.
-          </p>
-          <p className="font-mono text-sm uppercase tracking-widest text-primary mb-10">
-            $7,500
+          <h2 className="heading-section mb-6">Book a Diagnostic Call</h2>
+          <p className="text-description text-muted-foreground mb-10 max-w-2xl mx-auto">
+            20 minutes. No pitch. We look at your systems and tell you what we see.
           </p>
 
           <ConversionOptimizedButton
