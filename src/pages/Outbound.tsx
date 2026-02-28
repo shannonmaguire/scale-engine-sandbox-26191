@@ -60,7 +60,7 @@ const Outbound = () => {
               {TIMELINES.diagnostic} diagnostic
             </p>
             <div className="space-y-2 text-sm text-foreground/80">
-              <p>Fixed scope. $2,000. Full system diagnostic with documented findings and implementation pathway.</p>
+              <p>Fixed scope. $7,500. Full system diagnostic with documented findings and implementation pathway.</p>
               <p>You'll know exactly what's broken, what it's costing, and what to fix first.</p>
             </div>
           </div>
