@@ -26,7 +26,7 @@ export const CTA = {
   findWhatsBreaking: "Find Out What's Breaking",
   
   // Diagnostic CTAs (2-week diagnostic)
-  bookDiagnostic: "Book Diagnostic",
+  bookDiagnostic: "Book a Diagnostic Call",
   
   // Secondary CTAs
   seeProof: "See Proof",
