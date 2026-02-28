@@ -6,13 +6,12 @@ const PrivacyPolicy = memo(() => {
   return (
     <>
       <SEOHead
-        title="Privacy Policy | CWT Studio Business Automation & Salesforce Services"
-        description="Understand how CWT Studio protects data for business automation, Salesforce, web, and mobile projects. Review your privacy rights when partnering with Creator Wealth Tools."
+        title="Privacy Policy | CWT Studio"
+        description="How CWT Studio collects, uses, and protects your data. Review your privacy rights under PIPEDA, GDPR, and CCPA."
         keywords={[
           'CWT Studio privacy policy',
-          'business automation data protection',
-          'Salesforce services privacy',
-          'Creator Wealth Tools compliance',
+          'revenue systems data protection',
+          'PIPEDA compliance',
           'GDPR CCPA notice'
         ]}
         canonicalUrl="/privacy-policy"
@@ -22,7 +21,7 @@ const PrivacyPolicy = memo(() => {
         <Section className="pt-32 pb-16">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Privacy Policy</h1>
-            <p className="text-muted-foreground mb-8">Last updated: January 30, 2026</p>
+            <p className="text-muted-foreground mb-8">Last updated: February 28, 2026</p>
 
             <div className="space-y-8 text-foreground">
               <section>
@@ -98,15 +97,11 @@ const PrivacyPolicy = memo(() => {
                   <li><strong>Withdraw Consent:</strong> Withdraw consent at any time</li>
                 </ul>
                 <p className="mt-4">
-                  To exercise these rights, you can use our <a href="/data-rights" className="text-primary hover:underline font-medium">Data Rights Portal</a> to 
-                  export or delete your personal data, or contact us at shannon@thecwtstudio.com.
+                  To exercise these rights, contact us at{' '}
+                  <a href="mailto:shannon@thecwtstudio.com?subject=Data%20Rights%20Request" className="text-primary hover:underline font-medium">
+                    shannon@thecwtstudio.com
+                  </a>.
                 </p>
-                <div className="mt-4 p-4 bg-muted rounded-lg">
-                  <a href="/data-rights" className="inline-flex items-center text-primary hover:underline font-medium">
-                    Manage Your Data →
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-1">Export or delete your personal data</p>
-                </div>
               </section>
 
               <section>

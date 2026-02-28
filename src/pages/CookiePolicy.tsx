@@ -10,10 +10,9 @@ const CookiePolicy = memo(() => {
         description="How CWT Studio uses cookies to deliver revenue infrastructure services. Cookie types, purposes, and your control options."
         keywords={[
           'CWT Studio cookies',
-          'business automation analytics',
-          'Salesforce services cookies',
-          'Creator Wealth Tools privacy',
-          'web development cookie policy'
+          'cookie policy',
+          'website cookies',
+          'cookie preferences'
         ]}
         canonicalUrl="/cookie-policy"
       />
@@ -22,7 +21,7 @@ const CookiePolicy = memo(() => {
         <Section className="pt-32 pb-16">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Cookie Policy</h1>
-            <p className="text-muted-foreground mb-8">Last updated: January 30, 2026</p>
+            <p className="text-muted-foreground mb-8">Last updated: February 28, 2026</p>
 
             <div className="space-y-8 text-foreground/90">
               <section>
@@ -155,8 +154,8 @@ const CookiePolicy = memo(() => {
                 <h3 className="text-xl font-medium mb-3">7.1 Cookie Banner</h3>
                 <p className="mb-4">
                   When you first visit our website, you'll see a cookie banner where you can accept or decline 
-                  non-essential cookies. You can change your preferences at any time by clicking the "Cookie Settings" 
-                  link in the footer.
+                  non-essential cookies. You can change your preferences at any time by clicking "Customize" on the 
+                  cookie banner when it appears, or by clearing your cookie preferences in your browser settings.
                 </p>
 
                 <h3 className="text-xl font-medium mb-3">7.2 Browser Settings</h3>

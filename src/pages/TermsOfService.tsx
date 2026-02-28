@@ -6,14 +6,13 @@ const TermsOfService = memo(() => {
   return (
     <>
       <SEOHead
-        title="Terms of Service | CWT Studio Automation, Web & Salesforce Engagements"
-        description="Read the service terms that govern CWT Studio's business automation, Salesforce consulting, and custom web and mobile development engagements."
+        title="Terms of Service | CWT Studio"
+        description="Terms governing CWT Studio's revenue infrastructure diagnostic, implementation, and systems architecture engagements."
         keywords={[
           'CWT Studio terms',
-          'business automation contract',
-          'Salesforce consulting agreement',
-          'Creator Wealth Tools legal terms',
-          'web development service terms'
+          'revenue infrastructure terms',
+          'systems architecture agreement',
+          'consulting service terms'
         ]}
         canonicalUrl="/terms-of-service"
       />
@@ -22,7 +21,7 @@ const TermsOfService = memo(() => {
         <Section className="pt-32 pb-16">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Terms of Service</h1>
-            <p className="text-muted-foreground mb-8">Last updated: January 30, 2026</p>
+            <p className="text-muted-foreground mb-8">Last updated: February 28, 2026</p>
 
             <div className="space-y-8 text-foreground">
               <section>
@@ -39,13 +38,10 @@ const TermsOfService = memo(() => {
                   CWT Studio provides revenue infrastructure installation and optimization services. Our Services include:
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Diagnostic: 2-week system diagnostic with findings report and implementation pathway</li>
-                  <li>Implementation: Focused system builds based on diagnostic findings</li>
-                  <li>Enterprise Architecture: Architect-led system rebuilds</li>
-                  <li>Web Systems: Custom web application development and optimization</li>
-                  <li>Salesforce: Implementation, optimization, and technical support</li>
-                  <li>AE Technical Support: Deal support and objection handling for account executives</li>
-                  <li>Custom development, integrations, and system installations</li>
+                  <li><strong>System Diagnostic:</strong> 2-week diagnostic with findings report and implementation pathway</li>
+                  <li><strong>Implementation Engagements:</strong> Fixed-scope system builds based on diagnostic findings</li>
+                  <li><strong>Fractional Operations:</strong> Ongoing systems management in 90-day cycles</li>
+                  <li><strong>Web Systems:</strong> Custom web application development and optimization</li>
                 </ul>
               </section>
 
@@ -166,7 +162,7 @@ const TermsOfService = memo(() => {
               <section>
                 <h2 className="text-2xl font-semibold mb-4">12. Third-Party Services</h2>
                 <p className="mb-4">
-                  Our Services may integrate with or link to third-party services (e.g., Salesforce). We are not 
+                  Our Services may integrate with or link to third-party services. We are not 
                   responsible for the content, privacy practices, or availability of third-party services.
                 </p>
               </section>
